@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚗 خودرو | عیب‌یابی، تعمیرات، قیمت | رهیلا</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:Arial;background:radial-gradient(circle at center,#0a1a1a,#1a4a4a,#66ccaa);color:#fff;text-align:center;padding:15px;min-height:100vh}
+        .header{background:rgba(255,255,255,.08);backdrop-filter:blur(20px);border-radius:25px;padding:20px;margin-bottom:15px}
+        .header h1{color:#ffd700;font-size:22px}
+        .back-btn{display:inline-block;background:rgba(255,255,255,.15);color:#fff;padding:8px 20px;border-radius:20px;text-decoration:none;margin:10px 0;font-size:14px}
+        .section-title{color:#ffd700;font-size:18px;margin:20px 0 10px}
+        .grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+        .card{background:rgba(255,255,255,.05);border-radius:12px;padding:15px;border:1px solid rgba(255,255,255,.1);text-align:right}
+        .card:active{background:rgba(255,215,0,.2)}
+        .card h3{font-size:14px;color:#ffd700}
+        .card p{font-size:10px;color:#aaa;margin-top:3px}
+    </style>
+</head>
+<body>
+    <div class="header"><h1>🚗 خودرو و تعمیرات</h1></div>
+    <a href="index.html" class="back-btn">🔙 برگشت</a>
+
+    <div class="section-title">🔧 عیب‌یابی خودرو</div>
+    <div class="grid">
+        <div class="card"><h3>ماشین استارت نمیخوره</h3><p>دلایل و راه حل</p></div>
+        <div class="card"><h3>ماشین خاموش میشه</h3><p>در حین حرکت</p></div>
+        <div class="card"><h3>ماشین ریپ میزنه</h3><p>علت و درمان</p></div>
+        <div class="card"><h3>چراغ چک روشن</h3><p>معنی چراغ‌ها</p></div>
+        <div class="card"><h3>دود سفید اگزوز</h3><p>نشانه چیست</p></div>
+        <div class="card"><h3>دود سیاه اگزوز</h3><p>مشکل کجاست</p></div>
+        <div class="card"><h3>کولر خنک نمیکنه</h3><p>شارژ گاز کولر</p></div>
+        <div class="card"><h3>ترمز صدا میده</h3><p>لنت و دیسک</p></div>
+    </div>
+
+    <div class="section-title">🛞 لاستیک و چرخ</div>
+    <div class="grid">
+        <div class="card"><h3>قیمت لاستیک</h3><p>انواع برندها</p></div>
+        <div class="card"><h3>تنظیم باد لاستیک</h3><p>مقدار استاندارد</p></div>
+        <div class="card"><h3>عمر لاستیک</h3><p>کی تعویض کنیم</p></div>
+        <div class="card"><h3>لاستیک پنچر</h3><p>تعمیر فوری</p></div>
+    </div>
+
+    <div class="section-title">✨ نگهداری</div>
+    <div class="grid">
+        <div class="card"><h3>پولیش و واکس</h3><p>براق کردن بدنه</p></div>
+        <div class="card"><h3>سرامیک خودرو</h3><p>مزایا و معایب</p></div>
+        <div class="card"><h3>آبکاری قطعات</h3><p>سماور و کتری</p></div>
+        <div class="card"><h3>بازسازی ظروف تفلون</h3><p>روش ترمیم</p></div>
+    </div>
+
+    <div class="section-title">🔐 امنیت</div>
+    <div class="grid">
+        <div class="card"><h3>قفل هوشمند</h3><p>انواع و قیمت</p></div>
+        <div class="card"><h3>دزدگیر خودرو</h3><p>بهترین برندها</p></div>
+        <div class="card"><h3>ردیاب خودرو</h3><p>مدل‌های جدید</p></div>
+        <div class="card"><h3>باز کردن قفل شکسته</h3><p>راهکار فوری</p></div>
+    </div>
+
+    <div class="section-title">🏍️ موتور سیکلت</div>
+    <div class="grid">
+        <div class="card"><h3>عیب‌یابی موتور</h3><p>مشکلات رایج</p></div>
+        <div class="card"><h3>قیمت موتور</h3><p>مدل‌های جدید</p></div>
+        <div class="card"><h3>بیمه موتور</h3><p>شخص ثالث</p></div>
+        <div class="card"><h3>گواهینامه موتور</h3><p>شرایط و هزینه</p></div>
+    </div>
+
+    <p style="margin-top:15px"><a href="index.html" style="color:#ffd700">🔙 برگشت به صفحه اصلی</a></p>
+</body>
+</html>
