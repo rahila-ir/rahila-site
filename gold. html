@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💰 قیمت طلا و دلار | رهیلا</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:Arial;background:radial-gradient(circle at center,#0a1a1a,#1a4a4a,#66ccaa);color:#fff;text-align:center;padding:15px;min-height:100vh}
+        .header{background:rgba(255,255,255,.08);backdrop-filter:blur(20px);border-radius:25px;padding:20px;margin-bottom:15px}
+        .header h1{color:#ffd700;font-size:22px}
+        .back-btn{display:inline-block;background:rgba(255,255,255,.15);color:#fff;padding:8px 20px;border-radius:20px;text-decoration:none;margin:10px 0;font-size:14px}
+        .price-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:15px 0}
+        .price-card{background:rgba(255,255,255,.05);border-radius:15px;padding:18px;border:1px solid rgba(255,255,255,.1)}
+        .price-card .emoji{font-size:35px}
+        .price-card h3{font-size:13px;color:#ffd700;margin:5px 0}
+        .price-card .price{font-size:22px;font-weight:bold;color:#0fc;text-shadow:0 0 10px #0fc}
+        .price-card .change{font-size:12px}
+        .up{color:#0f0}.down{color:#f00}
+        .update{color:#aaa;font-size:11px;margin-top:20px}
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>💰 قیمت‌های روز</h1>
+        <p>قیمت لحظه‌ای طلا، سکه، دلار، یورو و...</p>
+    </div>
+    <a href="index.html" class="back-btn">🔙 برگشت به خانه</a>
+
+    <div class="price-grid">
+        <div class="price-card">
+            <div class="emoji">🪙</div>
+            <h3>سکه بهار آزادی</h3>
+            <div class="price">۳۲,۵۰۰,۰۰۰</div>
+            <div class="change up">▲ ۲.۵٪</div>
+        </div>
+        <div class="price-card">
+            <div class="emoji">🥇</div>
+            <h3>طلا ۱۸ عیار</h3>
+            <div class="price">۳,۴۵۰,۰۰۰</div>
+            <div class="change up">▲ ۱.۸٪</div>
+        </div>
+        <div class="price-card">
+            <div class="emoji">💵</div>
+            <h3>دلار آمریکا</h3>
+            <div class="price">۵۲,۵۰۰</div>
+            <div class="change down">▼ ۰.۵٪</div>
+        </div>
+        <div class="price-card">
+            <div class="emoji">💶</div>
+            <h3>یورو</h3>
+            <div class="price">۵۷,۸۰۰</div>
+            <div class="change up">▲ ۰.۳٪</div>
+        </div>
+        <div class="price-card">
+            <div class="emoji">💷</div>
+            <h3>پوند</h3>
+            <div class="price">۶۶,۲۰۰</div>
+            <div class="change up">▲ ۰.۷٪</div>
+        </div>
+        <div class="price-card">
+            <div class="emoji">₿</div>
+            <h3>بیت‌کوین</h3>
+            <div class="price">$۶۷,۵۰۰</div>
+            <div class="change up">▲ ۳.۲٪</div>
+        </div>
+    </div>
+
+    <h3 style="color:#ffd700;margin:15px 0">🪙 انواع سکه</h3>
+    <div class="price-grid">
+        <div class="price-card"><h3>سکه امامی</h3><div class="price">۳۵,۲۰۰,۰۰۰</div></div>
+        <div class="price-card"><h3>نیم سکه</h3><div class="price">۲۱,۵۰۰,۰۰۰</div></div>
+        <div class="price-card"><h3>ربع سکه</h3><div class="price">۱۲,۸۰۰,۰۰۰</div></div>
+        <div class="price-card"><h3>سکه پارسیان</h3><div class="price">۳۱,۰۰۰,۰۰۰</div></div>
+    </div>
+
+    <h3 style="color:#ffd700;margin:15px 0">💱 ارزهای دیگه</h3>
+    <div class="price-grid">
+        <div class="price-card"><h3>🇹🇷 لیر ترکیه</h3><div class="price">۱,۸۵۰</div></div>
+        <div class="price-card"><h3>🇦🇪 درهم امارات</h3><div class="price">۱۴,۳۰۰</div></div>
+        <div class="price-card"><h3>🇨🇳 یوان چین</h3><div class="price">۷,۴۰۰</div></div>
+        <div class="price-card"><h3>🇯🇵 ین ژاپن</h3><div class="price">۳۸۰</div></div>
+    </div>
+
+    <p class="update">⏰ آخرین بروزرسانی: امروز - قیمت‌ها حدودی و در حال تغییر هستند</p>
+    <p style="margin-top:15px"><a href="index.html" style="color:#ffd700">🔙 برگشت به صفحه اصلی</a></p>
+</body>
+</html>
