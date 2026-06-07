@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⏰ ساعت و تقویم | رهیلا</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:Arial;background:radial-gradient(circle at center,#0a1a1a,#1a4a4a,#66ccaa);color:#fff;text-align:center;padding:15px;min-height:100vh}
+        .header{background:rgba(255,255,255,.08);backdrop-filter:blur(20px);border-radius:25px;padding:20px;margin-bottom:15px}
+        .header h1{color:#ffd700;font-size:22px}
+        .back-btn{display:inline-block;background:rgba(255,255,255,.15);color:#fff;padding:8px 20px;border-radius:20px;text-decoration:none;margin:10px 0}
+        .clock-box{background:rgba(0,0,0,.5);border-radius:25px;padding:30px;margin:15px 0}
+        #bigClock{font-size:60px;font-weight:bold;color:#0fc;text-shadow:0 0 30px #0fc}
+        #bigDate{font-size:14px;color:#ffd700;line-height:2.5;margin-top:10px}
+        .tool-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:15px 0}
+        .tool-card{background:rgba(255,255,255,.05);border-radius:15px;padding:18px;border:1px solid rgba(255,255,255,.1)}
+        .tool-card .emoji{font-size:30px}
+        .tool-card h3{font-size:13px;color:#ffd700}
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>⏰ ساعت و تقویم</h1>
+        <p>ساعت زنده | تاریخ شمسی، میلادی و قمری</p>
+    </div>
+    <a href="index.html" class="back-btn">🔙 برگشت به خانه</a>
+
+    <div class="clock-box">
+        <div id="bigClock">00:00:00</div>
+        <div id="bigDate"></div>
+    </div>
+
+    <div class="tool-grid">
+        <div class="tool-card"><div class="emoji">⏱️</div><h3>تایمر پومودورو</h3></div>
+        <div class="tool-card"><div class="emoji">⏲️</div><h3>کرنومتر</h3></div>
+        <div class="tool-card"><div class="emoji">🕌</div><h3>اوقات شرعی</h3></div>
+        <div class="tool-card"><div class="emoji">🌍</div><h3>ساعت جهانی</h3></div>
+        <div class="tool-card"><div class="emoji">🌤️</div><h3>آب و هوا</h3></div>
+        <div class="tool-card"><div class="emoji">📅</div><h3>تقویم ۱۴۰۴</h3></div>
+    </div>
+
+    <p style="margin-top:15px"><a href="index.html" style="color:#ffd700">🔙 برگشت به صفحه اصلی</a></p>
+
+<script>
+function updateClock(){
+    let n=new Date();
+    let h=n.getHours(),m=n.getMinutes(),s=n.getSeconds();
+    h=h<10?'0'+h:h;m=m<10?'0'+m:m;s=s<10?'0'+s:s;
+    document.getElementById('bigClock').textContent=h+':'+m+':'+s;
+    let jd=gregorianToJalali(n.getFullYear(),n.getMonth()+1,n.getDate());
+    let days=['یکشنبه','دوشنبه','سه‌شنبه','چهارشنبه','پنجشنبه','جمعه','شنبه'];
+    let months=['فروردین','اردیبهشت','خرداد','تیر','مرداد','شهریور','مهر','آبان','آذر','دی','بهمن','اسفند'];
+    let miladi=n.getDate()+' '+['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][n.getMonth()]+' '+n.getFullYear();
+    let qamari=islamicDate(n);
+    document.getElementById('bigDate').innerHTML='☀️ '+days[n.getDay()]+' '+jd[2]+' '+months[jd[1]-1]+' '+jd[0]+'<br>🌍 '+miladi+'<br>🌙 '+qamari;
+}
+function gregorianToJalali(gy,gm,gd){
+    let gdm=[0,31,59,90,120,151,181,212,243,273,304,334];
+    let gy2=(gm>2)?(gy+1):gy;
+    let days=355666+(365*gy)+Math.floor((gy2+3)/4)-Math.floor((gy2+99)/100)+Math.floor((gy2+399)/400)+gd+gdm[gm-1];
+    let jy=-1595+(33*Math.floor(days/12053));
+    days%=12053;jy+=4*Math.floor(days/1461);days%=1461;
+    if(days>365){jy+=Math.floor((days-1)/365);days=(days-1)%365;}
+    let jm,jd;
+    if(days<186){jm=1+Math.floor(days/31);jd=1+(days%31);}
+    else{jm=7+Math.floor((days-186)/30);jd=1+((days-186)%30);}
+    return[jy,jm,jd];
+}
+function islamicDate(d){
+    let jd=gregorianToJalali(d.getFullYear(),d.getMonth()+1,d.getDate());
+    let jy=jd[0],jm=jd[1],jdd=jd[2];
+    let l=jy-((jy<0)?0:1);
+    let is=Math.floor((l-1)/33)+1;
+    let iy=l-33*(is-1)-1;
+    let id=Math.floor((iy*365.25)+(jm-1)*30.5+jdd-1+0.5);
+    let im=Math.floor(id/29.5)+1;
+    let idd=Math.floor(id-(im-1)*29.5)+1;
+    if(idd>30){im++;idd-=30;}
+    if(im>12)im-=12;
+    let mNames=['محرم','صفر','ربیع‌الاول','ربیع‌الثانی','جمادی‌الاول','جمادی‌الثانی','رجب','شعبان','رمضان','شوال','ذی‌القعده','ذی‌الحجه'];
+    return idd+' '+mNames[im-1];
+}
+setInterval(updateClock,1000);updateClock();
+</script>
+</body>
+</html>
