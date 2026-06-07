@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🤲 ادعیه و زیارات | رهیلا</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:Arial;background:radial-gradient(circle at center,#0a1a1a,#1a4a4a,#66ccaa);color:#fff;text-align:center;padding:15px;min-height:100vh}
+        .header{background:rgba(255,255,255,.08);backdrop-filter:blur(20px);border-radius:25px;padding:20px;margin-bottom:15px}
+        .header h1{color:#ffd700;font-size:22px}
+        .back-btn{display:inline-block;background:rgba(255,255,255,.15);color:#fff;padding:8px 20px;border-radius:20px;text-decoration:none;margin:10px 0;font-size:14px}
+        .section-title{color:#ffd700;font-size:18px;margin:20px 0 10px}
+        .grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+        .card{background:rgba(255,255,255,.05);border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,.1);text-align:right}
+        .card:active{background:rgba(255,215,0,.2)}
+        .card h3{font-size:15px;color:#ffd700}
+        .card p{font-size:10px;color:#aaa;margin-top:3px}
+    </style>
+</head>
+<body>
+    <div class="header"><h1>🤲 ادعیه و زیارات</h1></div>
+    <a href="index.html" class="back-btn">🔙 برگشت</a>
+
+    <div class="section-title">🌟 دعاهای معروف</div>
+    <div class="grid">
+        <div class="card"><h3>دعای توسل</h3><p>متن کامل</p></div>
+        <div class="card"><h3>دعای کمیل</h3><p>متن کامل</p></div>
+        <div class="card"><h3>دعای ندبه</h3><p>متن کامل</p></div>
+        <div class="card"><h3>دعای عرفه</h3><p>متن کامل</p></div>
+        <div class="card"><h3>دعای افتتاح</h3><p>ماه رمضان</p></div>
+        <div class="card"><h3>دعای ابوحمزه</h3><p>سحرهای رمضان</p></div>
+    </div>
+
+    <div class="section-title">🕌 زیارات</div>
+    <div class="grid">
+        <div class="card"><h3>زیارت عاشورا</h3><p>امام حسین (ع)</p></div>
+        <div class="card"><h3>زیارت اربعین</h3><p>متن کامل</p></div>
+        <div class="card"><h3>زیارت امین‌الله</h3><p>امام علی (ع)</p></div>
+        <div class="card"><h3>زیارت جامعه کبیره</h3><p>همه ائمه</p></div>
+    </div>
+
+    <div class="section-title">📿 جوشن</div>
+    <div class="grid">
+        <div class="card"><h3>جوشن کبیر</h3><p>۱۰۰ بند</p></div>
+        <div class="card"><h3>جوشن صغیر</h3><p>متن کامل</p></div>
+    </div>
+
+    <div class="section-title">🌙 شب‌های قدر</div>
+    <div class="grid">
+        <div class="card"><h3>اعمال شب قدر</h3><p>نوزدهم، بیست و یکم، بیست و سوم</p></div>
+        <div class="card"><h3>قرآن به سر</h3><p>روش صحیح</p></div>
+        <div class="card"><h3>دعای جوشن کبیر</h3><p>متن کامل شب قدر</p></div>
+        <div class="card"><h3>شب زنده‌داری</h3><p>آداب و اعمال</p></div>
+    </div>
+
+    <div class="section-title">🔮 سحر و طلسم</div>
+    <div class="grid">
+        <div class="card"><h3>باطل‌السحر</h3><p>دعاهای مجرب</p></div>
+        <div class="card"><h3>نمک برای دفع طلسم</h3><p>روش استفاده</p></div>
+        <div class="card"><h3>آداب نوشتن دعا</h3><p>شرایط و نکات</p></div>
+        <div class="card"><h3>حروف ابجد</h3><p>کبیر و صغیر</p></div>
+    </div>
+
+    <div class="section-title">✨ دعاهای خاص</div>
+    <div class="grid">
+        <div class="card"><h3>دعای فرج</h3><p>برای ظهور امام زمان</p></div>
+        <div class="card"><h3>دعای جذب خواستگار</h3><p>متن و روش</p></div>
+        <div class="card"><h3>دعای جذب ثروت</h3><p>رزق و روزی</p></div>
+        <div class="card"><h3>دعای موفقیت</h3><p>در کارها</p></div>
+    </div>
+
+    <div class="section-title">📿 اذکار</div>
+    <div class="grid">
+        <div class="card"><h3>ختم صلوات</h3><p>۱۴۰۰۰ و ۲۴۰۰۰</p></div>
+        <div class="card"><h3>ذکر روزانه</h3><p>برنامه هفتگی</p></div>
+        <div class="card"><h3>ذکر برای حاجت</h3><p>مجرب و سریع</p></div>
+        <div class="card"><h3>استخاره با قرآن</h3><p>روش صحیح</p></div>
+    </div>
+
+    <p style="margin-top:15px"><a href="index.html" style="color:#ffd700">🔙 برگشت</a></p>
+</body>
+</html>
