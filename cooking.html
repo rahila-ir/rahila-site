@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🍳 آشپزی | صبحانه، ناهار، شام | رهیلا</title>
+    <title>🍳 آشپزی کامل | رهیلا</title>
     <style>
         *{margin:0;padding:0;box-sizing:border-box}
         body{font-family:Arial;background:radial-gradient(circle at center,#0a1a1a,#1a4a4a,#66ccaa);color:#fff;text-align:center;padding:15px;min-height:100vh}
@@ -11,35 +11,99 @@
         .header h1{color:#ffd700;font-size:22px}
         .back-btn{display:inline-block;background:rgba(255,255,255,.15);color:#fff;padding:8px 20px;border-radius:20px;text-decoration:none;margin:10px 0;font-size:14px}
         .section-title{color:#ffd700;font-size:18px;margin:20px 0 10px}
-        .food-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}
-        .food-card{background:rgba(255,255,255,.05);border-radius:15px;padding:15px;border:1px solid rgba(255,255,255,.1);transition:.3s;text-decoration:none;color:#fff;text-align:right}
-        .food-card:active{background:rgba(255,215,0,.2)}
-        .food-card h3{font-size:14px;color:#ffd700}
-        .food-card p{font-size:11px;color:#aaa;margin-top:3px}
-        .emoji-big{font-size:40px}
+        .grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+        .card{background:rgba(255,255,255,.05);border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,.1);text-align:right}
+        .card:active{background:rgba(255,215,0,.2)}
+        .card h3{font-size:15px;color:#ffd700}
+        .card p{font-size:11px;color:#aaa;margin-top:3px}
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>🍳 آشپزی رهیلا</h1>
-        <p>صبحانه، ناهار، شام، دسر، کیک، شیرینی، دمنوش و...</p>
-    </div>
-    <a href="index.html" class="back-btn">🔙 برگشت به خانه</a>
+    <div class="header"><h1>🍳 آشپزی رهیلا</h1><p>کامل‌ترین مجموعه غذاهای ایرانی و خارجی</p></div>
+    <a href="index.html" class="back-btn">🔙 برگشت</a>
 
-    <!-- صبحانه -->
-    <div class="section-title">🌅 صبحانه</div>
-    <div class="food-grid">
-        <div class="food-card"><h3>🥚 املت</h3><p>ساده و خوشمزه</p></div>
-        <div class="food-card"><h3>🍳 نیمرو</h3><p>صبحانه کلاسیک</p></div>
-        <div class="food-card"><h3>🥞 پنکیک</h3><p>نرم و پفکی</p></div>
-        <div class="food-card"><h3>🧇 وافل</h3><p>صبحانه مدرن</p></div>
-        <div class="food-card"><h3>🥣 فرنی</h3><p>مقوی و ساده</p></div>
-        <div class="food-card"><h3>🍞 تست فرانسوی</h3><p>صبحانه خاص</p></div>
+    <div class="section-title">🍲 خورش‌های ایرانی</div>
+    <div class="grid">
+        <div class="card"><h3>قورمه سبزی</h3><p>سبزی، لوبیا، گوشت</p></div>
+        <div class="card"><h3>قیمه</h3><p>لپه، گوشت، رب گوجه</p></div>
+        <div class="card"><h3>فسنجون</h3><p>گردو، رب انار، مرغ</p></div>
+        <div class="card"><h3>کرفس</h3><p>کرفس، گوشت، نعنا</p></div>
+        <div class="card"><h3>بادمجان</h3><p>بادمجان، گوجه، گوشت</p></div>
+        <div class="card"><h3>آلو اسفناج</h3><p>اسفناج، آلو، گوشت</p></div>
+        <div class="card"><h3>کدو</h3><p>کدو، گوشت، گوجه</p></div>
+        <div class="card"><h3>بامیه</h3><p>بامیه، گوشت، رب</p></div>
     </div>
 
-    <!-- ناهار -->
-    <div class="section-title">☀️ ناهار</div>
-    <div class="food-grid">
-        <div class="food-card"><h3>🍲 قورمه سبزی</h3><p>غذای اصیل ایرانی</p></div>
-        <div class="food-card"><h3>🍲 قیمه</h3><p>با سیب‌زمینی</p></div>
+    <div class="section-title">🍚 پلوهای ایرانی</div>
+    <div class="grid">
+        <div class="card"><h3>زرشک پلو با مرغ</h3><p>زرشک، زعفران، مرغ</p></div>
+        <div class="card"><h3>باقالی پلو</h3><p>باقالی، شوید، ماهیچه</p></div>
+        <div class="card"><h3>لوبیا پلو</h3><p>لوبیا سبز، گوشت</p></div>
+        <div class="card"><h3>عدس پلو</h3><p>عدس، کشمش، گوشت</p></div>
+        <div class="card"><h3>کلم پلو</h3><p>کلم، سبزی، گوشت</p></div>
+        <div class="card"><h3>آلبالو پلو</h3><p>آلبالو، شکر، مرغ</p></div>
+        <div class="card"><h3>سبزی پلو با ماهی</h3><p>سبزی، ماهی</p></div>
+        <div class="card"><h3>ته‌چین</h3><p>مرغ، ماست، زعفران</p></div>
+    </div>
 
+    <div class="section-title">🍗 کباب‌ها</div>
+    <div class="grid">
+        <div class="card"><h3>جوجه کباب</h3><p>مرغ، زعفران، لیمو</p></div>
+        <div class="card"><h3>کباب کوبیده</h3><p>گوشت چرخ کرده، پیاز</p></div>
+        <div class="card"><h3>کباب برگ</h3><p>گوشت گوسفند</p></div>
+        <div class="card"><h3>شیشلیک</h3><p>گوشت دنده</p></div>
+        <div class="card"><h3>کباب ترش</h3><p>گوشت، رب انار، گردو</p></div>
+        <div class="card"><h3>کباب بختیاری</h3><p>مرغ و گوشت</p></div>
+    </div>
+
+    <div class="section-title">🥗 پیش‌غذا و سالاد</div>
+    <div class="grid">
+        <div class="card"><h3>سالاد شیرازی</h3><p>خیار، گوجه، پیاز</p></div>
+        <div class="card"><h3>سالاد سزار</h3><p>کاهو، مرغ، سس</p></div>
+        <div class="card"><h3>کشک بادمجان</h3><p>بادمجان، کشک، سیر</p></div>
+        <div class="card"><h3>میرزا قاسمی</h3><p>بادمجان، گوجه، سیر</p></div>
+        <div class="card"><h3>حلیم بادمجان</h3><p>بادمجان، گوشت، کشک</p></div>
+        <div class="card"><h3>دلمه برگ مو</h3><p>برگ مو، برنج، گوشت</p></div>
+    </div>
+
+    <div class="section-title">🍜 آش و سوپ</div>
+    <div class="grid">
+        <div class="card"><h3>آش رشته</h3><p>رشته، حبوبات، کشک</p></div>
+        <div class="card"><h3>آش دوغ</h3><p>دوغ، سبزی، نخود</p></div>
+        <div class="card"><h3>سوپ جو</h3><p>جو، مرغ، هویج</p></div>
+        <div class="card"><h3>سوپ قارچ</h3><p>قارچ، شیر، آرد</p></div>
+        <div class="card"><h3>سوپ گوجه</h3><p>گوجه، ریحان</p></div>
+        <div class="card"><h3>آش شله قلمکار</h3><p>حبوبات، گوشت</p></div>
+    </div>
+
+    <div class="section-title">🍝 غذاهای سریع</div>
+    <div class="grid">
+        <div class="card"><h3>ماکارونی</h3><p>پاستا، گوشت، پنیر</p></div>
+        <div class="card"><h3>پیتزا خانگی</h3><p>آرد، پنیر، سوسیس</p></div>
+        <div class="card"><h3>کوکو سبزی</h3><p>سبزی، تخم مرغ</p></div>
+        <div class="card"><h3>کوکو سیب زمینی</h3><p>سیب زمینی، تخم مرغ</p></div>
+        <div class="card"><h3>املت</h3><p>تخم مرغ، گوجه</p></div>
+        <div class="card"><h3>نیمرو</h3><p>تخم مرغ</p></div>
+    </div>
+
+    <div class="section-title">🍰 کیک و شیرینی</div>
+    <div class="grid">
+        <div class="card"><h3>کیک اسفنجی</h3><p>آرد، تخم مرغ، شکر</p></div>
+        <div class="card"><h3>کیک شکلاتی</h3><p>شکلات، آرد</p></div>
+        <div class="card"><h3>کیک هویج</h3><p>هویج، گردو</p></div>
+        <div class="card"><h3>کیک یزدی</h3><p>آرد، ماست</p></div>
+        <div class="card"><h3>کوکی</h3><p>شکلات، آرد</p></div>
+        <div class="card"><h3>مافین</h3><p>آرد، شیر</p></div>
+    </div>
+
+    <div class="section-title">🍵 دمنوش</div>
+    <div class="grid">
+        <div class="card"><h3>بابونه</h3><p>آرامش‌بخش</p></div>
+        <div class="card"><h3>نعناع</h3><p>گوارش</p></div>
+        <div class="card"><h3>زنجبیل</h3><p>لاغری</p></div>
+        <div class="card"><h3>گل گاو زبان</h3><p>اعصاب</p></div>
+    </div>
+
+    <p style="margin-top:15px"><a href="index.html" style="color:#ffd700">🔙 برگشت</a></p>
+</body>
+</html>
