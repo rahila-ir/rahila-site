@@ -1,61 +1,98 @@
-">
+<!DOCTYPE html>
+<html lang="fa">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🍳 آشپزی | رهیلا</title>
+    <title>🍲 قورمه سبزی | رهیلا</title>
     <style>
         *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:Arial;background:radial-gradient(circle at center,#0a1a1a,#1a4a4a,#66ccaa);color:#fff;padding:15px;min-height:100vh}
+        body{font-family:'Arial';background:radial-gradient(circle at center,#0a1a1a,#1a4a4a,#66ccaa);color:#fff;padding:15px;min-height:100vh}
         .header{background:rgba(255,255,255,.08);backdrop-filter:blur(20px);border-radius:25px;padding:20px;margin-bottom:15px;text-align:center}
-        .header h1{color:#ffd700;font-size:22px}
-        .back-btn{display:inline-block;background:rgba(255,255,255,.15);color:#fff;padding:8px 20px;border-radius:20px;text-decoration:none;margin:10px 0;font-size:14px}
-        .recipe{background:linear-gradient(135deg,rgba(255,255,255,.05),rgba(255,215,0,.1));border-radius:20px;padding:25px;margin:20px 0;text-align:right;border:1px solid rgba(255,215,0,.3);position:relative;overflow:hidden}
-        .recipe::before{content:'';position:absolute;top:-50px;right:-50px;font-size:150px;opacity:.1}
-        .recipe h2{color:#ffd700;font-size:22px;margin-bottom:15px;border-bottom:2px solid rgba(255,215,0,.3);padding-bottom:10px}
-        .recipe h3{color:#0fc;font-size:16px;margin:15px 0 10px}
-        .recipe p{color:#ddd;font-size:14px;line-height:2.2}
-        .ingredients{background:rgba(0,0,0,.4);padding:15px;border-radius:15px;margin:10px 0;color:#ffd700;font-size:14px;line-height:2}
-        .tips{background:rgba(0,255,200,.1);padding:15px;border-radius:15px;margin:10px 0;border-right:3px solid #0fc;color:#0fc;font-size:13px}
-        .food-img{width:100%;max-width:300px;border-radius:15px;margin:10px auto;display:block;border:2px solid rgba(255,215,0,.3)}
+        .header h1{color:#ffd700;font-size:24px}
+        .back-btn{display:inline-block;background:rgba(255,255,255,.15);color:#fff;padding:10px 25px;border-radius:25px;text-decoration:none;margin:15px 0}
+        .recipe-card{background:linear-gradient(135deg,rgba(255,255,255,.03),rgba(255,215,0,.08));border-radius:25px;padding:25px;margin:20px 0;border:1px solid rgba(255,215,0,.2);text-align:right}
+        .recipe-card h2{color:#ffd700;font-size:26px;text-align:center;margin-bottom:20px}
+        .food-img{width:100%;max-width:400px;border-radius:20px;margin:15px auto;display:block;border:3px solid rgba(255,215,0,.3);box-shadow:0 10px 30px rgba(0,0,0,.5)}
+        .section{background:rgba(0,0,0,.4);border-radius:15px;padding:20px;margin:15px 0;border-right:3px solid #ffd700}
+        .section h3{color:#ffd700;font-size:18px;margin-bottom:12px}
+        .section p{color:#eee;font-size:15px;line-height:2.2}
+        .ingredients-grid{display:grid;grid-template-columns:1fr 1fr;gap:5px;color:#ddd;font-size:14px}
+        .ingredients-grid span{background:rgba(255,255,255,.05);padding:8px;border-radius:8px}
+        .steps{list-style:none;counter-reset:step}
+        .steps li{counter-increment:step;color:#ddd;font-size:15px;line-height:2;padding:8px 0;border-bottom:1px dashed rgba(255,255,255,.1)}
+        .steps li::before{content:counter(step);background:#ffd700;color:#000;font-weight:bold;padding:2px 10px;border-radius:50%;margin-left:8px;font-size:14px}
+        .tips-box{background:rgba(0,255,200,.1);border-radius:15px;padding:20px;border:1px solid rgba(0,255,200,.3)}
+        .tips-box h3{color:#0fc;font-size:18px}
+        .tips-box ul{color:#0fc;font-size:14px;line-height:2.2;padding-right:20px}
+        .info-row{display:flex;justify-content:space-around;text-align:center;margin:15px 0;flex-wrap:wrap}
+        .info-item{background:rgba(255,255,255,.05);padding:15px;border-radius:15px;min-width:80px}
+        .info-item .value{color:#ffd700;font-size:20px;font-weight:bold}
+        .info-item .label{color:#aaa;font-size:11px}
     </style>
 </head>
 <body>
-    <div class="header"><h1>🍳 آشپزی رهیلا</h1><p>طرز تهیه غذاهای ایرانی با نکات طلایی</p></div>
-    <a href="index.html" class="back-btn">🔙 برگشت</a>
+    <div class="header">
+        <h1>🍲 قورمه سبزی</h1>
+        <p>محبوب‌ترین غذای ایرانی | اصیل و جاافتاده</p>
+    </div>
+    <a href="cooking2.html" class="back-btn">🔙 غذاهای بیشتر</a>
 
-    <div class="recipe">
-        <h2>🍲 قورمه سبزی</h2>
-        <div class="ingredients">
-            🥩 <b>مواد لازم:</b><br>
-            • گوشت خورشتی ۳۰۰ گرم<br>
-            • سبزی قورمه ۵۰۰ گرم (تره، جعفری، گشنیز، شنبلیله)<br>
-            • لوبیا چیتی ۱ پیمانه<br>
-            • لیمو عمانی ۴ عدد<br>
-            • پیاز بزرگ ۲ عدد<br>
-            • روغن، نمک، فلفل، زردچوبه
+    <div class="recipe-card">
+        <img src="https://blog.okcs.com/wp-content/uploads/2022/07/قورمه-سبزی.jpg" class="food-img" alt="قورمه سبزی">
+
+        <div class="info-row">
+            <div class="info-item"><div class="value">⏰ ۳ ساعت</div><div class="label">زمان پخت</div></div>
+            <div class="info-item"><div class="value">👥 ۴ نفر</div><div class="label">تعداد</div></div>
+            <div class="info-item"><div class="value">🔥 متوسط</div><div class="label">سختی</div></div>
+            <div class="info-item"><div class="value">⭐ ۵/۵</div><div class="label">امتیاز</div></div>
         </div>
-        <h3>🍳 طرز تهیه گام به گام:</h3>
-        <p>
-            <b>گام ۱:</b> پیاز رو خلالی خرد کن و توی روغن سرخ کن تا طلایی بشه.<br>
-            <b>گام ۲:</b> گوشت رو اضافه کن و تفت بده تا رنگش عوض بشه و آبش کشیده بشه.<br>
-            <b>گام ۳:</b> زردچوبه و فلفل سیاه رو اضافه کن و ۱ دقیقه تفت بده تا عطر ادویه بلند بشه.<br>
-            <b>گام ۴:</b> لوبیای چیتی که از شب قبل خیس خورده رو اضافه کن.<br>
-            <b>گام ۵:</b> ۳ لیوان آب جوش اضافه کن و بذار ۲ ساعت با حرارت کم بپزه.<br>
-            <b>گام ۶:</b> سبزی قورمه رو جداگونه توی روغن حسابی سرخ کن (راز خوشمزگی!).<br>
-            <b>گام ۷:</b> سبزی سرخ شده رو به خورش اضافه کن.<br>
-            <b>گام ۸:</b> لیمو عمانی رو با چنگال سوراخ کن و بذار توی خورش.<br>
-            <b>گام ۹:</b> نمک رو در انتها اضافه کن و بذار ۱ ساعت دیگه جا بیفته.
-        </p>
-        <div class="tips">
-            ⭐ <b>نکات طلایی:</b><br>
-            • سبزی رو با حوصله و به اندازه کافی سرخ کن تا خوشرنگ بشه.<br>
-            • لیمو عمانی رو قبل از استفاده ۱۰ دقیقه توی آب گرم بخیسون.<br>
-            • قورمه سبزی هر چی بیشتر بمونه، جاافتاده‌تر میشه!
+
+        <div class="section">
+            <h3>🥩 مواد لازم</h3>
+            <div class="ingredients-grid">
+                <span>🥩 گوشت خورشتی ۳۰۰ گرم</span>
+                <span>🌿 سبزی قورمه ۵۰۰ گرم</span>
+                <span>🫘 لوبیا چیتی ۱ پیمانه</span>
+                <span>🍋 لیمو عمانی ۴ عدد</span>
+                <span>🧅 پیاز بزرگ ۲ عدد</span>
+                <span>🫒 روغن مایع</span>
+                <span>🧂 نمک و فلفل سیاه</span>
+                <span>🟡 زردچوبه</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>🍳 طرز تهیه گام به گام</h3>
+            <ol class="steps">
+                <li>پیاز رو خلالی خرد کن و توی روغن سرخ کن تا طلایی و کاراملی بشه.</li>
+                <li>گوشت خورشتی رو اضافه کن و تفت بده تا رنگش تغییر کنه و آبش کاملاً کشیده بشه.</li>
+                <li>زردچوبه و فلفل سیاه رو اضافه کن و ۱-۲ دقیقه تفت بده تا عطر ادویه بلند بشه.</li>
+                <li>لوبیا چیتی که از شب قبل خیس خورده رو اضافه کن و مخلوط کن.</li>
+                <li>۳ لیوان آب جوش اضافه کن و بذار با حرارت کم ۱.۵ ساعت بپزه.</li>
+                <li>سبزی قورمه (تره، جعفری، گشنیز، شنبلیله) رو ریز خرد کن.</li>
+                <li>سبزی رو توی روغن فراوان و با حرارت متوسط سرخ کن تا تیره و خوشرنگ بشه (راز اصلی خوشمزگی!).</li>
+                <li>سبزی سرخ شده رو به قابلمه اضافه کن و هم بزن.</li>
+                <li>لیمو عمانی رو با چنگال سوراخ کن و توی خورش بذار.</li>
+                <li>نمک رو در انتها اضافه کن و بذار ۱ ساعت دیگه با حرارت خیلی کم جا بیفته.</li>
+                <li>قورمه سبزی رو با پلو زعفرانی سرو کن و نوش جون کن! 😋</li>
+            </ol>
+        </div>
+
+        <div class="tips-box">
+            <h3>⭐ نکات طلایی برای قورمه سبزی عالی</h3>
+            <ul>
+                <li>🔸 سبزی قورمه باید <b>کاملاً سرخ بشه</b> و رنگش تیره بشه - این راز خوشمزگیه!</li>
+                <li>🔸 لیمو عمانی رو قبل از استفاده ۱۰ دقیقه توی آب گرم بخیسون تا تلخی نده.</li>
+                <li>🔸 نمک رو <b>همیشه آخر کار</b> بزن تا گوشت سفت نشه.</li>
+                <li>🔸 قورمه سبزی هر چی بیشتر بمونه و فردا گرم بشه، <b>جاافتاده‌تر و خوشمزه‌تر</b> میشه!</li>
+                <li>🔸 اگه سبزی قورمه آماده می‌خری، حتماً دوباره تفتش بده.</li>
+                <li>🔸 می‌تونی ۱ قاشق رب گوجه هم اضافه کنی برای رنگ بهتر.</li>
+            </ul>
         </div>
     </div>
 
-    <p style="text-align:center;margin-top:15px">
-        <a href="cooking2.html" style="color:#ffd700;font-size:16px">🍲 غذاهای بیشتر ←</a>
+    <p style="text-align:center;margin:20px 0">
+        <a href="cooking2.html" style="color:#ffd700;font-size:16px;text-decoration:none">🍲 غذای بعدی: قیمه ←</a>
     </p>
     <p style="text-align:center"><a href="index.html" style="color:#ffd700">🔙 برگشت به خانه</a></p>
 </body>
