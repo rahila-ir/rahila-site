@@ -8,18 +8,18 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2212822534276249" crossorigin="anonymous"></script>
     <style>
         *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:Arial;background:radial-gradient(circle at center,#0a1a1a,#1a4a4a,#66ccaa);color:#fff;text-align:center;padding:10px;min-height:100vh}
-        .header{background:rgba(255,255,255,.08);backdrop-filter:blur(20px);border-radius:25px;padding:20px;margin-bottom:15px}
-        .header h1{color:#ffd700;font-size:24px}
-        .header p{color:#aaa;font-size:12px;margin-top:5px}
-        .section-title{color:#ffd700;font-size:16px;margin:15px 0 8px}
+        body{font-family:'Arial';background:linear-gradient(135deg,#f5f7fa,#c3cfe2);color:#333;text-align:center;padding:10px;min-height:100vh}
+        .header{background:rgba(255,255,255,.9);backdrop-filter:blur(20px);border-radius:25px;padding:20px;margin-bottom:15px;box-shadow:0 5px 20px rgba(0,0,0,.1)}
+        .header h1{color:#1a1a4a;font-size:24px}
+        .header p{color:#666;font-size:12px;margin-top:5px}
+        .section-title{color:#1a1a4a;font-size:16px;margin:15px 0 8px;font-weight:bold}
         .grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px}
-        .card{background:rgba(255,255,255,.05);border-radius:12px;padding:15px 6px;text-decoration:none;color:#fff;display:block;border:1px solid rgba(255,255,255,.1);transition:.3s}
-        .card:active{transform:scale(.95);background:rgba(255,215,0,.2)}
+        .card{background:rgba(255,255,255,.8);border-radius:12px;padding:15px 6px;text-decoration:none;color:#333;display:block;border:1px solid rgba(0,0,0,.1);transition:.3s;box-shadow:0 2px 10px rgba(0,0,0,.05)}
+        .card:active{transform:scale(.95);background:rgba(0,0,0,.05)}
         .card .emoji{font-size:25px}
-        .card h3{font-size:10px;margin-top:4px;color:#fff}
-        .footer{background:rgba(0,0,0,.5);padding:15px;margin-top:15px;font-size:10px;color:#aaa}
-        .footer a{color:#ffd700;text-decoration:none}
+        .card h3{font-size:10px;margin-top:4px;color:#1a1a4a}
+        .footer{background:rgba(255,255,255,.8);padding:15px;margin-top:15px;font-size:10px;color:#666;border-radius:15px}
+        .footer a{color:#1a1a4a;text-decoration:none;font-weight:bold}
     </style>
 </head>
 <body>
@@ -30,12 +30,22 @@
 
     <div class="section-title">🍳 آشپزی (۱۲۰+ غذا)</div>
     <div class="grid">
-        <a href="cooking.html" class="card"><div class="emoji">🍳</div><h3>بخش ۱</h3></a>
-        <a href="cooking2.html" class="card"><div class="emoji">🍲</div><h3>بخش ۲</h3></a>
-        <a href="cooking3.html" class="card"><div class="emoji">🍗</div><h3>بخش ۳</h3></a>
-        <a href="cooking4.html" class="card"><div class="emoji">🍝</div><h3>بخش ۴</h3></a>
-        <a href="cooking5.html" class="card"><div class="emoji">🍰</div><h3>بخش ۵</h3></a>
-        <a href="cooking6.html" class="card"><div class="emoji">🥗</div><h3>بخش ۶</h3></a>
+        <a href="foods-1.html" class="card"><div class="emoji">🍳</div><h3>غذاهای ۱-۳۰</h3></a>
+        <a href="foods-2.html" class="card"><div class="emoji">🍲</div><h3>غذاهای ۳۱-۶۰</h3></a>
+        <a href="foods-3.html" class="card"><div class="emoji">🍗</div><h3>غذاهای ۶۱-۹۰</h3></a>
+        <a href="foods-4.html" class="card"><div class="emoji">🍝</div><h3>غذاهای ۹۱-۱۲۰</h3></a>
+        <a href="cooking.html" class="card"><div class="emoji">⭐</div><h3>قورمه سبزی</h3></a>
+        <a href="cooking2.html" class="card"><div class="emoji">⭐</div><h3>قیمه</h3></a>
+    </div>
+
+    <div class="section-title">🤲 ادعیه و دینی</div>
+    <div class="grid">
+        <a href="dua.html" class="card"><div class="emoji">🤲</div><h3>ادعیه کامل</h3></a>
+        <a href="quran.html" class="card"><div class="emoji">📖</div><h3>قرآن</h3></a>
+        <a href="prayer.html" class="card"><div class="emoji">🕌</div><h3>نماز</h3></a>
+        <a href="haj.html" class="card"><div class="emoji">🕋</div><h3>حج</h3></a>
+        <a href="magic.html" class="card"><div class="emoji">🔮</div><h3>طلسم</h3></a>
+        <a href="ghadir.html" class="card"><div class="emoji">🎉</div><h3>عیدها</h3></a>
     </div>
 
     <div class="section-title">🎬 فیلم و سینما</div>
@@ -45,23 +55,11 @@
         <a href="irani-film.html" class="card"><div class="emoji">🇮🇷</div><h3>فیلم ایرانی</h3></a>
     </div>
 
-    <div class="section-title">📺 کارتون و انیمیشن</div>
+    <div class="section-title">📺 کارتون</div>
     <div class="grid">
         <a href="cartoon.html" class="card"><div class="emoji">🐱</div><h3>کارتون نوستالژیک</h3></a>
         <a href="spongebob.html" class="card"><div class="emoji">🧽</div><h3>باب اسفنجی</h3></a>
         <a href="tom-jerry.html" class="card"><div class="emoji">🐱</div><h3>تام و جری</h3></a>
-    </div>
-
-    <div class="section-title">🎮 بازی</div>
-    <div class="grid">
-        <a href="games.html" class="card"><div class="emoji">🎮</div><h3>۲۰۰+ بازی</h3></a>
-    </div>
-
-    <div class="section-title">📖 دینی</div>
-    <div class="grid">
-        <a href="quran.html" class="card"><div class="emoji">📖</div><h3>قرآن</h3></a>
-        <a href="dua.html" class="card"><div class="emoji">🤲</div><h3>ادعیه</h3></a>
-        <a href="prayer.html" class="card"><div class="emoji">🕌</div><h3>نماز</h3></a>
     </div>
 
     <div class="section-title">💄 زیبایی و مد</div>
@@ -76,9 +74,11 @@
         <a href="pregnancy.html" class="card"><div class="emoji">🤰</div><h3>بارداری</h3></a>
     </div>
 
-    <div class="section-title">🚗 خودرو</div>
+    <div class="section-title">🚗 خودرو و تکنولوژی</div>
     <div class="grid">
         <a href="car.html" class="card"><div class="emoji">🚗</div><h3>خودرو</h3></a>
+        <a href="mobile-repair.html" class="card"><div class="emoji">📱</div><h3>موبایل</h3></a>
+        <a href="clock.html" class="card"><div class="emoji">⏰</div><h3>ساعت</h3></a>
     </div>
 
     <div class="section-title">📄 اطلاعات</div>
