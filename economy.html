@@ -41,9 +41,6 @@
         .price-card .emoji{font-size:35px;margin-bottom:8px}
         .price-card .name{color:#0d47a1;font-size:15px;font-weight:bold;margin-bottom:6px}
         .price-card .value{color:#000;font-size:20px;font-weight:bold}
-        .price-card .change{font-size:14px;margin-top:4px;font-weight:bold}
-        .up{color:#0f0}
-        .down{color:#f00}
         .golden-box{
             background:linear-gradient(135deg,#fff8e1,#ffe082,#ffd54f);
             border-right:5px solid #ff8f00;
@@ -169,32 +166,32 @@
 </div>
 
 <div class="blue-box">
-    <p>📊 <strong>نحوه محاسبه:</strong> قیمت انس جهانی طلا × نرخ دلار ایران. سکه = طلا ۱۸ × ۱.۰۵. ارزهای دیجیتال از CoinGecko.</p>
+    <p>📊 <strong>نحوه محاسبه:</strong> انس جهانی طلا × نرخ دلار ایران. سکه = طلا ۱۸ × ۱.۰۵. ارزهای دیجیتال از CoinGecko.</p>
 </div>
 
 <div class="red-box">
-    <p>⚠️ <strong>توجه:</strong> قیمت‌ها از APIهای جهانی دریافت میشن و ممکنه چند ثانیه تأخیر داشته باشن. برای دقت بیشتر از چند منبع چک کنید.</p>
+    <p>⚠️ <strong>توجه:</strong> قیمت‌ها از APIهای جهانی دریافت میشن. نرخ دلار (تومان) رو باید دستی آپدیت کنی.</p>
 </div>
 
 <a href="index.html" class="back-btn">🔙 بازگشت به خانه</a>
 
 <div class="footer">
     <p>🌟 rahilanab.com | <a href="index.html">🏠 خانه</a> | <a href="all.html">📋 همه لینک‌ها</a></p>
-    <p>📅 بروزرسانی خودکار | API: CoinGecko, ExchangeRate, Metals.live</p>
 </div>
 
 <script>
-// تاریخ امروز
-let now=new Date();
-let days=['یکشنبه','دوشنبه','سه‌شنبه','چهارشنبه','پنجشنبه','جمعه','شنبه'];
-let months=['فروردین','اردیبهشت','خرداد','تیر','مرداد','شهریور','مهر','آبان','آذر','دی','بهمن','اسفند'];
-let dateStr=days[now.getDay()]+' '+now.getDate()+' '+months[now.getMonth()]+' ۱۴۰۵';
-document.getElementById('todayDate').textContent=dateStr;
+// 📅 تاریخ امروز — خودکار از سیستم
+function getToday(){
+    let now=new Date();
+    let options={weekday:'long',year:'numeric',month:'long',day:'numeric'};
+    return now.toLocaleDateString('fa-IR',options);
+}
+document.getElementById('todayDate').textContent=getToday();
 
 // فرمت‌دهی اعداد
 function formatPrice(num,currency){
     if(currency==='toman')return Math.round(num).toLocaleString('fa-IR')+' تومان';
-    if(currency==='dollar')return '$'+Number(num).toLocaleString('en-US',{minimumFractionDigits:0,maximumFractionDigits:0});
+    if(currency==='dollar')return '$'+Number(num).toLocaleString('en-US',{maximumFractionDigits:0});
     if(currency==='dollar2')return '$'+Number(num).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
     return num.toLocaleString('fa-IR');
 }
@@ -205,8 +202,8 @@ let goldOunce=2900;
 let eurRate=1.08;
 let gbpRate=1.26;
 
-// گرفتن قیمت دلار از Bonbast (تلاش برای API ایرانی)
-async function getDollarRate(){
+// گرفتن نرخ ارز از ExchangeRate API
+async function getForexRates(){
     try{
         let r=await fetch('https://api.exchangerate-api.com/v4/latest/USD');
         let d=await r.json();
@@ -215,9 +212,9 @@ async function getDollarRate(){
     }catch(e){}
     
     document.getElementById('dollar').textContent=formatPrice(dollarRate,'toman');
-    document.getElementById('euro').textContent=formatPrice(dollarRate*eurRate,'toman');
-    document.getElementById('pound').textContent=formatPrice(dollarRate*gbpRate,'toman');
-    document.getElementById('usdt').textContent=formatPrice(dollarRate*1.02,'toman');
+    document.getElementById('euro').textContent=formatPrice(Math.round(dollarRate*eurRate),'toman');
+    document.getElementById('pound').textContent=formatPrice(Math.round(dollarRate*gbpRate),'toman');
+    document.getElementById('usdt').textContent=formatPrice(Math.round(dollarRate*1.02),'toman');
 }
 
 // گرفتن قیمت انس طلا از Metals.live
@@ -241,7 +238,7 @@ async function getGoldRate(){
 // گرفتن قیمت ارز دیجیتال از CoinGecko
 async function getCrypto(){
     try{
-        let r=await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,tether,dogecoin&vs_currencies=usd');
+        let r=await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,dogecoin&vs_currencies=usd');
         let d=await r.json();
         document.getElementById('btc').textContent=formatPrice(d.bitcoin.usd,'dollar');
         document.getElementById('eth').textContent=formatPrice(d.ethereum.usd,'dollar');
@@ -262,7 +259,7 @@ function updateTime(){
 async function updateAll(){
     updateTime();
     await getGoldRate();
-    await getDollarRate();
+    await getForexRates();
     await getCrypto();
 }
 
