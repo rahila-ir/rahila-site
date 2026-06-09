@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎮 ۲۰ بازی | رهیلا | rahilanab.com</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{
+            font-family:'Arial', sans-serif;
+            background:linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color:#fff;
+            padding:15px;
+            min-height:100vh;
+            text-align:center;
+        }
+        .header{
+            background:rgba(255,255,255,.1);
+            border-radius:20px;
+            padding:20px;
+            margin-bottom:20px;
+            backdrop-filter:blur(10px);
+            border:1px solid rgba(255,255,255,.2);
+        }
+        .header h1{font-size:28px;color:#ffd700;margin-bottom:5px}
+        .header p{color:#ccc;font-size:14px}
+        .game-zone{
+            background:rgba(255,255,255,.08);
+            border-radius:18px;
+            padding:20px;
+            margin:15px 0;
+            backdrop-filter:blur(5px);
+            border:1px solid rgba(255,255,255,.15);
+            transition:.3s;
+        }
+        .game-zone:hover{transform:translateY(-3px);box-shadow:0 8px 25px rgba(0,0,0,.3)}
+        .game-zone h2{color:#ffd700;margin-bottom:12px;font-size:20px}
+        .game-zone p{color:#ddd;margin:8px 0}
+        button{
+            padding:10px 22px;
+            font-size:15px;
+            background:linear-gradient(135deg,#ffd700,#ffaa00);
+            color:#1a1a2e;
+            border:none;
+            border-radius:25px;
+            cursor:pointer;
+            margin:4px;
+            font-weight:bold;
+            transition:.3s;
+        }
+        button:hover{transform:scale(1.05);box-shadow:0 4px 15px rgba(255,215,0,.4)}
+        button:active{transform:scale(.95)}
+        .result{
+            font-size:18px;
+            color:#ffd700;
+            font-weight:bold;
+            margin:10px 0;
+            min-height:30px;
+        }
+        input,select{
+            padding:10px 15px;
+            font-size:16px;
+            border-radius:25px;
+            border:2px solid #ffd700;
+            background:rgba(255,255,255,.1);
+            color:#fff;
+            text-align:center;
+            margin:8px;
+            outline:none;
+        }
+        input::placeholder{color:#aaa}
+        .emoji-big{font-size:50px;margin:10px 0}
+        .grid{
+            display:grid;
+            grid-template-columns:repeat(3,1fr);
+            gap:8px;
+            max-width:250px;
+            margin:10px auto;
+        }
+        .grid button{
+            padding:15px;
+            font-size:20px;
+            background:rgba(255,255,255,.15);
+            color:#fff;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>🎮 ۲۰ بازی جذاب</h1>
+    <p>rahilanab.com | ساخته شده با 💙</p>
+</div>
+
+<!-- ۱ --><div class="game-zone"><h2>۱. 🎲 تاس</h2><button onclick="rollDice()">🎲 بنداز</button><p class="result" id="diceR"></p></div>
+
+<!-- ۲ --><div class="game-zone"><h2>۲. 🔢 حدس عدد</h2><p>عددی بین ۱ تا ۱۰۰ حدس بزن</p><input id="guessNum" type="number" placeholder="حدس تو"><button onclick="guessNumber()">حدس</button><p class="result" id="guessR"></p><p id="guessHint"></p></div>
+
+<!-- ۳ --><div class="game-zone"><h2>۳. ✊✋✌️ سنگ کاغذ قیچی</h2><button onclick="rps('rock')">✊</button><button onclick="rps('paper')">✋</button><button onclick="rps('scissors')">✌️</button><p class="result" id="rpsR"></p></div>
+
+<!-- ۴ --><div class="game-zone"><h2>۴. ⏱️ کرونومتر</h2><p class="result" id="timer" style="font-size:30px">00:00</p><button onclick="startTimer()" id="timerBtn">▶ شروع</button><button onclick="resetTimer()">🔄 صفر</button></div>
+
+<!-- ۵ --><div class="game-zone"><h2>۵. 🧮 ماشین حساب</h2><input id="calcDisplay" readonly style="width:200px;font-size:20px"><br><div class="grid" style="grid-template-columns:repeat(4,1fr);max-width:250px"><button onclick="calcAdd('7')">7</button><button onclick="calcAdd('8')">8</button><button onclick="calcAdd('9')">9</button><button onclick="calcAdd('/')">/</button><button onclick="calcAdd('4')">4</button><button onclick="calcAdd('5')">5</button><button onclick="calcAdd('6')">6</button><button onclick="calcAdd('*')">*</button><button onclick="calcAdd('1')">1</button><button onclick="calcAdd('2')">2</button><button onclick="calcAdd('3')">3</button><button onclick="calcAdd('-')">-</button><button onclick="calcAdd('0')">0</button><button onclick="calcAdd('.')">.</button><button onclick="calcResult()">=</button><button onclick="calcAdd('+')">+</button><button onclick="calcClear()" style="grid-column:span 4">C</button></div></div>
+
+<!-- ۶ --><div class="game-zone"><h2>۶. 🎯 واکنش</h2><button id="reactBtn" onclick="reactGame()" style="padding:25px 40px;font-size:18px">کلیک کن</button><p class="result" id="reactGR"></p></div>
+
+<!-- ۷ --><div class="game-zone"><h2>۷. 🎨 حدس رنگ</h2><div id="colorBox" style="width:100px;height:100px;margin:10px auto;border-radius:15px"></div><button onclick="colorGuess('red')">قرمز</button><button onclick="colorGuess('blue')">آبی</button><button onclick="colorGuess('green')">سبز</button><button onclick="colorGuess('yellow')">زرد</button><p class="result" id="colorGR"></p></div>
+
+<!-- ۸ --><div class="game-zone"><h2>۸. 📝 یادداشت سریع</h2><textarea id="note" rows="3" style="width:90%;border-radius:12px;padding:10px;background:rgba(255,255,255,.1);color:#fff;border:1px solid #ffd700" placeholder="یادداشتت رو بنویس..."></textarea><br><button onclick="saveNote()">💾 ذخیره</button><button onclick="clearNote()">🗑 پاک</button><p class="result" id="noteR"></p></div>
+
+<!-- ۹ --><div class="game-zone"><h2>۹. 🔤 کلمه تصادفی</h2><button onclick="randomWord()">🔤 کلمه جدید</button><p class="result" id="randWord" style="font-size:24px"></p></div>
+
+<!-- ۱۰ --><div class="game-zone"><h2>۱۰. 🐍 مار (Snake)</h2><canvas id="snakeCanvas" width="240" height="240" style="background:#111;border-radius:10px;margin:10px auto;display:block"></canvas><p>امتیاز: <span id="snakeScore">0</span></p><button onclick="snakeReset()">🔄 شروع مجدد</button></div>
+
+<!-- ۱۱ --><div class="game-zone"><h2>۱۱. 🎯 دارت</h2><p>امتیاز: <span id="dartScore">0</span></p><div id="dartArea" onclick="dartHit(event)" style="width:200px;height:200px;background:radial-gradient(circle,red 5%,#1a1a2e 20%,#ffd700 20%,#1a1a2e 40%,#ffd700 40%,#1a1a2e 60%,#ffd700 60%,#1a1a2e 100%);border-radius:50%;margin:10px auto;cursor:crosshair"></div><p class="result" id="dartR"></p></div>
+
+<!-- ۱۲ --><div class="game-zone"><h2>۱۲. 💡 لامپ</h2><div class="emoji-big" id="lamp">💡</div><button onclick="toggleLamp()">روشن/خاموش</button></div>
+
+<!-- ۱۳ --><div class="game-zone"><h2>۱۳. 🎵 پخش صدا</h2><button onclick="playBeep()">🔊 بیپ</button><button onclick="playDoubleBeep()">🔊🔊 دو بیپ</button></div>
+
+<!-- ۱۴ --><div class="game-zone"><h2>۱۴. 🧩 حافظه</h2><div class="grid" id="memoryGrid"></div><p>حرکات: <span id="memMoves">0</span></p><button onclick="memoryReset()">🔄 شروع مجدد</button></div>
+
+<!-- ۱۵ --><div class="game-zone"><h2>۱۵. 🔤 حروف درهم</h2><p id="scrambledWord"></p><input id="unscrambleIn" placeholder="کلمه رو حدس بزن"><button onclick="unscrambleCheck()">بررسی</button><p class="result" id="unscrambleR"></p></div>
+
+<!-- ۱۶ --><div class="game-zone"><h2>۱۶. 🎳 بولینگ</h2><p>پین‌های افتاده: <span id="bowlPins">-</span></p><button onclick="bowl()">🎳 پرتاب</button><p class="result" id="bowlR"></p></div>
+
+<!-- ۱۷ --><div class="game-zone"><h2>۱۷. 🎰 اسلات ماشین</h2><p class="result" id="slotDisplay" style="font-size:30px">🎰 🎰 🎰</p><button onclick="spinSlot()">🎰 بچرخون</button><p class="result" id="slotR"></p></div>
+
+<!-- ۱۸ --><div class="game-zone"><h2>۱۸. 🧠 سوال ریاضی</h2><p id="mathQ"></p><input id="mathA" type="number" placeholder="جواب"><button onclick="mathCheck()">بررسی</button><p class="result" id="mathR"></p></div>
+
+<!-- ۱۹ --><div class="game-zone"><h2>۱۹. 🪙 شیر یا خط</h2><button onclick="coinFlip()">🪙 بنداز</button><p class="result" id="coinR" style="font-size:40px"></p></div>
+
+<!-- ۲۰ --><div class="game-zone"><h2>۲۰. ⭐ امتیاز کل</h2><p style="font-size:24px">امتیاز کل: <span id="totalScore">0</span></p><button onclick="resetAllScores()">🔄 صفر کردن همه</button></div>
+
+<script>
+// ============ ۱. تاس ============
+function rollDice(){
+    let n=Math.floor(Math.random()*6)+1;
+    let emojis=['⚀','⚁','⚂','⚃','⚄','⚅'];
+    document.getElementById('diceR').innerHTML=emojis[n-1]+' عدد '+n;
+}
+
+// ============ ۲. حدس عدد ============
+let targetNum=Math.floor(Math.random()*100)+1;
+let guessCount=0;
+function guessNumber(){
+    let g=parseInt(document.getElementById('guessNum').value);
+    guessCount++;
+    if(g===targetNum){
+        document.getElementById('guessR').textContent='🎉 آفرین! '+guessCount+' بار حدس زدی';
+        document.getElementById('guessHint').textContent='';
+        targetNum=Math.floor(Math.random()*100)+1;
+        guessCount=0;
+    }else if(g<targetNum){
+        document.getElementById('guessR').textContent='⬆ برو بالا';
+    }else{
+        document.getElementById('guessR').textContent='⬇ برو پایین';
+    }
+}
+
+// ============ ۳. سنگ کاغذ قیچی ============
+function rps(choice){
+    let opts=['rock','paper','scissors'];
+    let emojis={'rock':'✊','paper':'✋','scissors':'✌️'};
+    let ai=opts[Math.floor(Math.random()*3)];
+    let result='';
+    if(choice===ai)result='مساوی!';
+    else if((choice==='rock'&&ai==='scissors')||(choice==='paper'&&ai==='rock')||(choice==='scissors'&&ai==='paper'))
+        result='🎉 بردی!';
+    else result='😢 باختی';
+    document.getElementById('rpsR').innerHTML='تو: '+emojis[choice]+' | سیستم: '+emojis[ai]+'<br>'+result;
+}
+
+// ============ ۴. کرونومتر ============
+let timerInterval,timerSeconds=0;
+function startTimer(){
+    let btn=document.getElementById('timerBtn');
+    if(btn.textContent.includes('شروع')){
+        btn.textContent='⏸ توقف';
+        timerInterval=setInterval(()=>{
+            timerSeconds++;
+            let m=Math.floor(timerSeconds/60);
+            let s=timerSeconds%60;
+            document.getElementById('timer').textContent=(m<10?'0'+m:m)+':'+(s<10?'0'+s:s);
+        },1000);
+    }else{
+        clearInterval(timerInterval);
+        btn.textContent='▶ شروع';
+    }
+}
+function resetTimer(){
+    clearInterval(timerInterval);
+    timerSeconds=0;
+    document.getElementById('timer').textContent='00:00';
+    document.getElementById('timerBtn').textContent='▶ شروع';
+}
+
+// ============ ۵. ماشین حساب ============
+function calcAdd(v){document.getElementById('calcDisplay').value+=v}
+function calcResult(){document.getElementById('calcDisplay').value=eval(document.getElementById('calcDisplay').value)}
+function calcClear(){document.getElementById('calcDisplay').value=''}
+
+// ============ ۶. واکنش ============
+let reactTime;
+function reactGame(){
+    let b=document.getElementById('reactBtn');
+    if(b.textContent.includes('کلیک کن')){
+        b.textContent='صبر کن...';
+        b.style.background='red';
+        setTimeout(()=>{
+            b.textContent='الان بزن!';
+            b.style.background='lime';
+            reactTime=Date.now();
+        },Math.random()*3000+1000);
+    }else if(b.textContent.includes('الان')){
+        let t=Date.now()-reactTime;
+        document.getElementById('reactGR').textContent='⏱️ '+t+' میلی‌ثانیه';
+        b.textContent='کلیک کن';
+        b.style.background='linear-gradient(135deg,#ffd700,#ffaa00)';
+    }
+}
+
+// ============ ۷. حدس رنگ ============
+let colorTarget;
+let colors=['red','blue','green','yellow'];
+let colorNamesFa=['قرمز','آبی','سبز','زرد'];
+newColorTarget();
+function newColorTarget(){
+    colorTarget=Math.floor(Math.random()*4);
+    document.getElementById('colorBox').style.background=colors[colorTarget];
+}
+function colorGuess(c){
+    let i={'red':0,'blue':1,'green':2,'yellow':3};
+    if(i[c]===colorTarget){
+        document.getElementById('colorGR').textContent='✅ درسته!';
+        newColorTarget();
+    }else{
+        document.getElementById('colorGR').textContent='❌ اشتباه';
+    }
+}
+
+// ============ ۸. یادداشت ============
+function saveNote(){
+    let n=document.getElementById('note').value;
+    localStorage.setItem('rahilaNote',n);
+    document.getElementById('noteR').textContent='✅ ذخیره شد!';
+}
+function clearNote(){
+    document.getElementById('note').value='';
+    localStorage.removeItem('rahilaNote');
+    document.getElementById('noteR').textContent='🗑 پاک شد';
+}
+window.onload=function(){
+    let saved=localStorage.getItem('rahilaNote');
+    if(saved)document.getElementById('note').value=saved;
+    memoryReset();
+}
+
+// ============ ۹. کلمه تصادفی ============
+let randWords=['ستاره','دریا','کوهستان','آسمان','گل','ماه','خورشید','جنگل','رود','ابر','بهار','عشق','نور','آزادی','رنگین‌کمان'];
+function randomWord(){
+    document.getElementById('randWord').textContent=randWords[Math.floor(Math.random()*randWords.length)];
+}
+
+// ============ ۱۰. مار ============
+let snakeCanvas,snakeCtx,snake,snakeDir,food,snakeScore,snakeInterval;
+function snakeReset(){
+    snakeCanvas=document.getElementById('snakeCanvas');
+    snakeCtx=snakeCanvas.getContext('2d');
+    snake=[{x:120,y:120}];
+    snakeDir={x:10,y:0};
+    snakeScore=0;
+    document.getElementById('snakeScore').textContent='0';
+    snakePlaceFood();
+    clearInterval(snakeInterval);
+    snakeInterval=setInterval(snakeUpdate,100);
+}
+function snakePlaceFood(){
+    food={x:Math.floor(Math.random()*24)*10,y:Math.floor(Math.random()*24)*10};
+}
+function snakeUpdate(){
+    let head={x:snake[0].x+snakeDir.x,y:snake[0].y+snakeDir.y};
+    if(head.x<0||head.x>=240||head.y<0||head.y>=240||snake.some(s=>s.x===head.x&&s.y===head.y)){
+        clearInterval(snakeInterval);
+        return;
+    }
+    snake.unshift(head);
+    if(head.x===food.x&&head.y===food.y){
+        snakeScore+=10;
+        document.getElementById('snakeScore').textContent=snakeScore;
+        snakePlaceFood();
+    }else{
+        snake.pop();
+    }
+    snakeCtx.clearRect(0,0,240,240);
+    snakeCtx.fillStyle='lime';
+    snake.forEach(s=>snakeCtx.fillRect(s.x,s.y,10,10));
+    snakeCtx.fillStyle='red';
+    snakeCtx.fillRect(food.x,food.y,10,10);
+}
+document.addEventListener('keydown',e=>{
+    if(e.key==='ArrowUp'&&snakeDir.y===0){snakeDir={x:0,y:-10}}
+    if(e.key==='ArrowDown'&&snakeDir.y===0){snakeDir={x:0,y:10}}
+    if(e.key==='ArrowLeft'&&snakeDir.x===0){snakeDir={x:-10,y:0}}
+    if(e.key==='ArrowRight'&&snakeDir.x===0){snakeDir={x:10,y:0}}
+});
+snakeReset();
+
+// ============ ۱۱. دارت ============
+let dartScore=0;
+function dartHit(e){
+    let r=e.target.getBoundingClientRect();
+    let x=e.clientX-r.left-100;
+    let y=e.clientY-r.top-100;
+    let dist=Math.sqrt(x*x+y*y);
+    let pts;
+    if(dist<20)pts=100;
+    else if(dist<50)pts=50;
+    else if(dist<100)pts=25;
+    else pts=5;
+    dartScore+=pts;
+    document.getElementById('dartScore').textContent=dartScore;
+    document.getElementById('dartR').textContent='+'+pts+' امتیاز';
+}
+
+// ============ ۱۲. لامپ ============
+let lampOn=true;
+function toggleLamp(){
+    lampOn=!lampOn;
+    document.getElementById('lamp').textContent=lampOn?'💡':'🌑';
+}
+
+// ============ ۱۳. صدا ============
+let audioCtx=new(window.AudioContext||window.webkitAudioContext)();
+function beep(freq,dur){
+    let o=audioCtx.createOscillator();
+    let g=audioCtx.createGain();
+    o.connect(g);g.connect(audioCtx.destination);
+    o.frequency.value=freq;g.gain.value=0.3;
+    o.start();setTimeout(()=>o.stop(),dur);
+}
+function playBeep(){beep(440,200)}
+function playDoubleBeep(){beep(440,150);setTimeout(()=>beep(440,150),200)}
+
+// ============ ۱۴. حافظه ============
+let memCards,memFlipped,memMoves,memLocked;
+function memoryReset(){
+    let emojis=['🍎','🍊','🍋','🍉','🍇','🍓'];
+    let deck=[...emojis,...emojis].sort(()=>Math.random()-0.5);
+    memCards=deck;memFlipped=[];memMoves=0;memLocked=false;
+    document.getElementById('memMoves').textContent='0';
+    let grid=document.getElementById('memoryGrid');
+    grid.innerHTML='';
+    deck.forEach((e,i)=>{
+        let btn=document.createElement('button');
+        btn.textContent='?';
+        btn.setAttribute('data-id',i);
+        btn.onclick=()=>memoryFlip(i,btn);
+        grid.appendChild(btn);
+    });
+}
+function memoryFlip(i,btn){
+    if(memLocked||memFlipped.length>=2||btn.textContent!=='?')return;
+    btn.textContent=memCards[i];
+    memFlipped.push({i,btn});
+    if(memFlipped.length===2){
+        memMoves++;
+        document.getElementById('memMoves').textContent=memMoves;
+        let[a,b]=memFlipped;
+        if(memCards[a.i]===memCards[b.i]){
+            memFlipped=[];
+        }else{
+            memLocked=true;
+            setTimeout(()=>{
+                a.btn.textContent='?';
+                b.btn.textContent='?';
+                memFlipped=[];
+                memLocked=false;
+            },700);
+        }
+    }
+}
+
+// ============ ۱۵. حروف درهم ============
+let unscrambleWord;
+let unscrambleWords=['کتاب','مداد','میز','صندلی','پنجره','آسمان','دریا'];
+function newUnscramble(){
+    unscrambleWord=unscrambleWords[Math.floor(Math.random()*unscrambleWords.length)];
+    let scrambled=unscrambleWord.split('').sort(()=>Math.random()-0.5).join('');
+    document.getElementById('scrambledWord').textContent=scrambled;
+}
+function unscrambleCheck(){
+    let g=document.getElementById('unscrambleIn').value;
+    if(g===unscrambleWord){
+        document.getElementById('unscrambleR').textContent='🎉 درسته!';
+        newUnscramble();
+    }else{
+        document.getElementById('unscrambleR').textContent='❌ دوباره';
+    }
+    document.getElementById('unscrambleIn').value='';
+}
+newUnscramble();
+
+// ============ ۱۶. بولینگ ============
+function bowl(){
+    let pins=Math.floor(Math.random()*11);
+    document.getElementById('bowlPins').textContent=pins;
+    document.getElementById('bowlR').textContent=pins===10?'🎳 اعتصاب!':'امتیاز: '+pins;
+}
+
+// ============ ۱۷. اسلات ماشین ============
+function spinSlot(){
+    let emojis=['🍒','🍋','🍊','⭐','7️⃣'];
+    let s1=emojis[Math.floor(Math.random()*5)];
+    let s2=emojis[Math.floor(Math.random()*5)];
+    let s3=emojis[Math.floor(Math.random()*5)];
+    document.getElementById('slotDisplay').textContent=s1+' '+s2+' '+s3;
+    if(s1===s2&&s2===s3)
+        document.getElementById('slotR').textContent='🎉 جکپات!';
+    else
+        document.getElementById('slotR').textContent='🔄 دوباره';
+}
+
+// ============ ۱۸. سوال ریاضی ============
+let mathAnswer;
+function newMathQ(){
+    let a=Math.floor(Math.random()*20)+1;
+    let b=Math.floor(Math.random()*20)+1;
+    let op=Math.random()<0.5?'+':'-';
+    mathAnswer=op==='+'?a+b:a-b;
+    document.getElementById('mathQ').textContent=a+' '+op+' '+b+' = ؟';
+}
+function mathCheck(){
+    let g=parseInt(document.getElementById('mathA').value);
+    if(g===mathAnswer){
+        document.getElementById('mathR').textContent='✅ درسته!';
+        newMathQ();
+    }else{
+        document.getElementById('mathR').textContent='❌ اشتباه';
+    }
+    document.getElementById('mathA').value='';
+}
+newMathQ();
+
+// ============ ۱۹. شیر یا خط ============
+function coinFlip(){
+    let r=Math.random()<0.5?'🦁 شیر':'📖 خط';
+    document.getElementById('coinR').textContent=r;
+}
+
+// ============ ۲۰. امتیاز کل ============
+function resetAllScores(){
+    dartScore=0;
+    document.getElementById('dartScore').textContent='0';
+    document.getElementById('dartR').textContent='';
+    document.getElementById('totalScore').textContent='0';
+}
+
+</script>
+
+<div style="margin:20px 0;color:#aaa;font-size:13px">
+    © rahilanab.com | ساخته شده با 💙 برای رهیلا
+</div>
+
+</body>
+</html>
