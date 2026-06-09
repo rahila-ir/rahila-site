@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚗 خودرو ۲ | رهیلا</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Arial';background:linear-gradient(135deg,#e3f2fd,#bbdefb,#90caf9,#a5d6a7);color:#111;padding:15px;min-height:100vh}
+        .header{background:#fff;border-radius:20px;padding:18px;margin-bottom:15px;text-align:center;box-shadow:0 4px 15px rgba(0,0,0,.1)}
+        .header h1{color:#0d47a1;font-size:22px}
+        .back-btn{display:inline-block;background:#0d47a1;color:#fff;padding:10px 25px;border-radius:20px;text-decoration:none;margin:10px 0}
+        .car-card{background:#fff;border-radius:20px;padding:20px;margin:20px 0;box-shadow:0 2px 15px rgba(0,0,0,.08);text-align:right}
+        .car-card h2{color:#0d47a1;font-size:20px;text-align:center;margin-bottom:10px}
+        .section{background:#f8f9fa;border-radius:12px;padding:12px;margin:8px 0;border-right:3px solid #0d47a1}
+        .section h3{color:#0d47a1;font-size:15px;margin-bottom:6px}
+        .section p{color:#333;font-size:13px;line-height:2}
+        .tips-box{background:#e8f5e9;border-radius:12px;padding:12px;border:1px solid #a5d6a7;margin:8px 0}
+        .tips-box h3{color:#2e7d32;font-size:14px}
+        .tips-box ul{color:#333;font-size:12px;line-height:2;padding-right:12px}
+    </style>
+</head>
+<body>
+    <div class="header"><h1>🚗 خودرو ۲</h1><p>rahilanab.com</p></div>
+    <a href="car.html" class="back-btn">🔙 خودرو ۱</a>
+
+<div class="car-card"><h2>۲۶. 🚗 تعویض روغن</h2><div class="section"><h3>📋 نکات</h3><p>هر ۵۰۰۰ کیلومتر. روغن موتور مناسب با گرانروی توصیه شده. فیلتر روغن هم همزمان عوض بشه.</p></div></div>
+
+<div class="car-card"><h2>۲۷. 🚗 پولیش و واکس</h2><div class="section"><h3>📋 روش</h3><p>۱. شستشوی کامل ۲. پولیش با دستگاه ۳. واکس محافظ. هر ۶ ماه یکبار.</p></div></div>
+
+<div class="car-card"><h2>۲۸. 🚗 سرامیک خودرو</h2><div class="section"><h3>📋 توضیح</h3><p>پوشش محافظ نانو سرامیک. ماندگاری ۲-۵ سال. ضد آب، ضد خط و خش، براق‌کننده.</p></div></div>
+
+<div class="car-card"><h2>۲۹. 🚗 قیمت خودرو</h2><div class="section"><h3>📋 خودروهای داخلی</h3><p>پراید، تیبا، کوییک، ساینا، پژو ۲۰۶، پژو ۴۰۵، سمند، دنا، رانا.</p></div></div>
+
+<div class="car-card"><h2>۳۰. 🚗 قیمت خودرو خارجی</h2><div class="section"><h3>📋 برندها</h3><p>هیوندای، کیا، تویوتا، نیسان، رنو، بی ام و، بنز.</p></div></div>
+
+<div class="car-card"><h2>۳۱. 🚗 کارواش</h2><div class="section"><h3>📋 روش صحیح</h3><p>۱. پیش‌شستشو ۲. شامپو مخصوص ۳. آب‌کشی ۴. خشک کردن با حوله میکروفایبر.</p></div></div>
+
+<div class="car-card"><h2>۳۲. 🚗 باد لاستیک</h2><div class="section"><h3>📋 مقدار استاندارد</h3><p>پراید: ۲۸-۳۰ PSI. سمند: ۳۰-۳۲ PSI. خودروهای شاسی‌بلند: ۳۲-۳۵ PSI.</p></div></div>
+
+<div class="car-card"><h2>۳۳. 🚗 زاپاس</h2><div class="section"><h3>📋 نکات</h3><p>هر ۳ ماه باد زاپاس رو چک کن. زاپاس رو هر ۵ سال تعویض کن حتی اگر استفاده نشده.</p></div></div>
+
+<div class="car-card"><h2>۳۴. 🚗 ضد یخ</h2><div class="section"><h3>📋 نکات</h3><p>ترکیب ۵۰٪ ضد یخ + ۵۰٪ آب. هر ۲ سال تعویض کن.</p></div></div>
+
+<div class="car-card"><h2>۳۵. 🚗 تسمه تایم</h2><div class="section"><h3>📋 نکات</h3><p>تعویض هر ۶۰,۰۰۰ کیلومتر. اگه پاره بشه = خرابی کامل موتور!</p></div></div>
+
+<div class="car-card"><h2>۳۶. 🚗 لنت ترمز</h2><div class="section"><h3>📋 علائم</h3><p>صدای جیغ، لرزش پدال، افزایش مسافت ترمز. تعویض هر ۲۰-۳۰ هزار کیلومتر.</p></div></div>
+
+<div class="car-card"><h2>۳۷. 🚗 فیلتر هوا</h2><div class="section"><h3>📋 نکات</h3><p>تعویض هر ۱۰,۰۰۰ کیلومتر. فیلتر کثیف = مصرف بنزین بالا + شتاب کم.</p></div></div>
+
+<div class="car-card"><h2>۳۸. 🚗 شمع‌ها</h2><div class="section"><h3>📋 علائم</h3><p>ریپ زدن، شتاب کم، مصرف بالا. تعویض هر ۲۰,۰۰۰ کیلومتر.</p></div></div>
+
+<div class="car-card"><h2>۳۹. 🚗 کمک فنر</h2><div class="section"><h3>📋 علائم</h3><p>خودرو روی دست‌انداز می‌پره، چسبندگی کم، لاستیک‌ها ساییده میشن.</p></div></div>
+
+<div class="car-card"><h2>۴۰. 🚗 گیربکس</h2><div class="section"><h3>📋 نکات</h3><p>روغن گیربکس هر ۴۰,۰۰۰ کیلومتر تعویض کن. دنده سخت = مشکل گیربکس.</p></div></div>
+
+    <p style="text-align:center;margin:20px 0"><a href="car.html" style="color:#0d47a1">← خودرو ۱</a></p>
+    <p style="text-align:center"><a href="index.html" style="color:#0d47a1">🔙 خانه</a></p>
+</body>
+</html>
