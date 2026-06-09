@@ -1,93 +1,468 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🍳 ۳۰ غذای ایرانی | رهیلا</title>
+    <title>🍲 ۳۰ غذای ایرانی | قورمه سبزی تا کیک اسفنجی | rahilanab.com</title>
+    <meta name="description" content="معرفی ۳۰ غذای ایرانی با مواد لازم و طرز تهیه کامل: قورمه سبزی، قیمه، فسنجون، جوجه کباب، کباب کوبیده و...">
+    <meta name="keywords" content="غذای ایرانی, آشپزی, قورمه سبزی, قیمه, فسنجون, جوجه کباب, rahilanab">
     <style>
         *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:'Arial';background:radial-gradient(circle at center,#0a1a1a,#1a4a4a,#66ccaa);color:#fff;padding:15px;min-height:100vh}
-        .header{background:rgba(255,255,255,.08);backdrop-filter:blur(20px);border-radius:25px;padding:20px;margin-bottom:15px;text-align:center}
-        .header h1{color:#ffd700;font-size:22px}
-        .back-btn{display:inline-block;background:rgba(255,255,255,.15);color:#fff;padding:10px 20px;border-radius:20px;text-decoration:none;margin:10px 0}
-        .recipe-card{background:linear-gradient(135deg,rgba(255,255,255,.03),rgba(255,215,0,.08));border-radius:20px;padding:15px;margin:20px 0;border:1px solid rgba(255,215,0,.2);text-align:right}
-        .recipe-card h2{color:#ffd700;font-size:20px;text-align:center;margin-bottom:10px}
-        .section{background:rgba(0,0,0,.4);border-radius:10px;padding:12px;margin:8px 0;border-right:2px solid #ffd700}
-        .section h3{color:#ffd700;font-size:14px;margin-bottom:6px}
-        .ingredients-grid{display:grid;grid-template-columns:1fr 1fr;gap:3px;color:#ddd;font-size:11px}
-        .ingredients-grid span{background:rgba(255,255,255,.05);padding:5px;border-radius:5px}
-        .steps{list-style:none;counter-reset:step}
-        .steps li{counter-increment:step;color:#ddd;font-size:12px;line-height:1.7;padding:3px 0;border-bottom:1px dashed rgba(255,255,255,.08)}
-        .steps li::before{content:counter(step);background:#ffd700;color:#000;font-weight:bold;padding:1px 6px;border-radius:50%;margin-left:5px;font-size:10px}
+        body{
+            font-family:'Arial';
+            background:linear-gradient(135deg,#e3f2fd,#bbdefb,#90caf9,#a5d6a7);
+            color:#000;
+            padding:15px;
+            min-height:100vh;
+            text-align:center;
+        }
+        .header{
+            background:#fff;
+            border-radius:20px;
+            padding:20px;
+            margin-bottom:15px;
+            box-shadow:0 4px 15px rgba(0,0,0,.1);
+        }
+        .header h1{color:#0d47a1;font-size:26px}
+        .header p{color:#000;font-size:17px;font-weight:bold;margin-top:5px}
+        .food-card{
+            background:#fff;
+            border-radius:20px;
+            padding:25px;
+            margin:18px 0;
+            box-shadow:0 2px 12px rgba(0,0,0,.08);
+            text-align:right;
+            line-height:2.3;
+        }
+        .food-card h2{
+            color:#0d47a1;
+            font-size:22px;
+            margin-bottom:15px;
+            text-align:center;
+            border-bottom:2px solid #e3f2fd;
+            padding-bottom:10px;
+        }
+        .food-card h3{
+            color:#0d47a1;
+            font-size:19px;
+            margin:18px 0 10px;
+        }
+        .food-card p{
+            color:#000;
+            font-size:17px;
+            font-weight:bold;
+            margin:10px 0;
+        }
+        .food-card li{
+            color:#000;
+            font-size:17px;
+            font-weight:bold;
+            margin:8px 0;
+        }
+        
+        .golden-box{
+            background:linear-gradient(135deg,#fff8e1,#ffe082,#ffd54f);
+            border-right:5px solid #ff8f00;
+            padding:18px;
+            border-radius:12px;
+            margin:18px 0;
+            box-shadow:0 3px 12px rgba(255,143,0,.2);
+        }
+        .golden-box p{color:#000;font-size:17px;font-weight:bold;margin:6px 0}
+        
+        .red-box{
+            background:linear-gradient(135deg,#ffebee,#ffcdd2,#ef9a9a);
+            border-right:5px solid #c62828;
+            padding:18px;
+            border-radius:12px;
+            margin:18px 0;
+            box-shadow:0 3px 12px rgba(198,40,40,.2);
+        }
+        .red-box p{color:#000;font-size:17px;font-weight:bold;margin:6px 0}
+        
+        .blue-box{
+            background:linear-gradient(135deg,#e3f2fd,#bbdefb,#90caf9);
+            border-right:5px solid #0d47a1;
+            padding:18px;
+            border-radius:12px;
+            margin:18px 0;
+            box-shadow:0 3px 12px rgba(13,71,161,.2);
+        }
+        .blue-box p{color:#000;font-size:17px;font-weight:bold;margin:6px 0}
+        
+        .green-box{
+            background:linear-gradient(135deg,#e8f5e9,#c8e6c9,#a5d6a7);
+            border-right:5px solid #2e7d32;
+            padding:18px;
+            border-radius:12px;
+            margin:18px 0;
+            box-shadow:0 3px 12px rgba(46,125,50,.2);
+        }
+        .green-box p{color:#000;font-size:17px;font-weight:bold;margin:6px 0}
+        
+        .purple-box{
+            background:linear-gradient(135deg,#f3e5f5,#e1bee7,#ce93d8);
+            border-right:5px solid #6a1b9a;
+            padding:18px;
+            border-radius:12px;
+            margin:18px 0;
+            box-shadow:0 3px 12px rgba(106,27,154,.2);
+        }
+        .purple-box p{color:#000;font-size:17px;font-weight:bold;margin:6px 0}
+        
+        .back-btn{
+            display:inline-block;
+            background:#0d47a1;
+            color:#fff;
+            padding:12px 28px;
+            border-radius:25px;
+            text-decoration:none;
+            margin:12px 0;
+            font-weight:bold;
+            font-size:17px;
+        }
+        .footer{
+            background:#fff;
+            padding:16px;
+            margin-top:20px;
+            font-size:15px;
+            color:#000;
+            border-radius:15px;
+            font-weight:bold;
+        }
+        .footer a{color:#0d47a1;text-decoration:none;font-weight:bold}
     </style>
 </head>
 <body>
-    <div class="header"><h1>🍳 ۳۰ غذای ایرانی</h1><p>طرز تهیه کامل ۱ تا ۳۰ | rahilanab.com</p></div>
-    <a href="index.html" class="back-btn">🔙 خانه</a>
 
-<!-- ۱ --><div class="recipe-card"><h2>۱. 🍲 قورمه سبزی</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>گوشت۳۰۰گرم</span><span>سبزی۵۰۰گرم</span><span>لوبیا۱پیمانه</span><span>لیموعمانی۴عدد</span><span>پیاز۲عدد</span><span>روغن،نمک،فلفل،زردچوبه</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>پیاز رو سرخ کن</li><li>گوشت رو تفت بده</li><li>زردچوبه و فلفل بزن</li><li>لوبیای خیس خورده رو اضافه کن</li><li>۳لیوان آب بریز و ۲ساعت بپز</li><li>سبزی رو جدا سرخ کن تا تیره بشه</li><li>سبزی رو اضافه کن</li><li>لیمو عمانی سوراخ شده بذار</li><li>نمک آخر کار بزن</li><li>۱ساعت جا بیفته</li></ol></div></div>
+    <div class="header">
+        <h1>🍲 ۳۰ غذای ایرانی (۱ تا ۳۰)</h1>
+        <p>طرز تهیه کامل با مواد لازم و نکات طلایی | rahilanab.com</p>
+    </div>
 
-<!-- ۲ --><div class="recipe-card"><h2>۲. 🍲 قیمه</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>گوشت۳۰۰گرم</span><span>لپه۱پیمانه</span><span>رب۲قاشق</span><span>لیموعمانی۳عدد</span><span>سیب‌زمینی۲عدد</span><span>پیاز،دارچین</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>پیاز رو سرخ کن</li><li>گوشت و لپه رو تفت بده</li><li>رب تفت داده رو اضافه کن</li><li>۳لیوان آب بریز</li><li>لیمو عمانی و دارچین</li><li>نمک آخر کار</li><li>سیب‌زمینی رو سرخ کن</li><li>موقع سرو بریز روش</li></ol></div></div>
+    <!-- ۱. قورمه سبزی -->
+    <div class="food-card">
+        <h2>۱. 🍲 قورمه سبزی</h2>
+        <h3>📝 مواد لازم (برای ۴ نفر)</h3>
+        <ul>
+            <li>سبزی قورمه (تره، جعفری، گشنیز، شنبلیله): ۵۰۰ گرم</li>
+            <li>گوشت خورشتی (گوسفند یا گوساله): ۴۰۰ گرم</li>
+            <li>لوبیا قرمز: ۱ پیمانه</li>
+            <li>لیمو عمانی: ۴ عدد</li>
+            <li>پیاز بزرگ: ۲ عدد</li>
+            <li>روغن مایع: ۴ قاشق غذاخوری</li>
+            <li>نمک، فلفل سیاه، زردچوبه: به میزان لازم</li>
+            <li>آب جوش: ۴-۵ لیوان</li>
+        </ul>
+        <h3>👨‍🍳 طرز تهیه</h3>
+        <ol>
+            <li>لوبیا رو از شب قبل خیس کنید و چند بار آبش رو عوض کنید تا نفخش گرفته بشه</li>
+            <li>پیازها رو نگینی خرد کنید و توی قابلمه بزرگ با روغن تفت بدید تا طلایی بشن</li>
+            <li>گوشت رو به پیاز اضافه کنید و با زردچوبه و فلفل تفت بدید تا رنگ گوشت عوض بشه</li>
+            <li>سبزی قورمه رو که از قبل شستید و ریز خرد کردید، اضافه کنید و ۱۰ دقیقه تفت بدید</li>
+            <li>۴ لیوان آب جوش + لوبیا + لیمو عمانی (با چنگال سوراخش کنید) رو اضافه کنید</li>
+            <li>شعله رو کم کنید و در قابلمه رو بذارید. بذارید ۳ تا ۴ ساعت آروم بجوشه و جا بیفته</li>
+            <li>نمک رو در ۳۰ دقیقه آخر اضافه کنید (نمک زودهنگام گوشت رو سفت می‌کنه!)</li>
+            <li>وقتی روغن خورشت بالا اومد و سبز تیره شد، خورشت آماده‌ست</li>
+        </ol>
+        <div class="golden-box">
+            <p>💡 <strong>نکته طلایی:</strong> سبزی قورمه باید ۳۰٪ تره، ۳۰٪ جعفری، ۲۰٪ گشنیز، ۱۰٪ شنبلیله و ۱۰٪ اسفناج باشه. شنبلیله رو زیاد نریزید چون خورشت رو تلخ می‌کنه! سبزی رو حتماً جداگانه سرخ کنید تا خوشرنگ بشه.</p>
+        </div>
+    </div>
 
-<!-- ۳ --><div class="recipe-card"><h2>۳. 🍲 فسنجون</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>مرغ۴تکه</span><span>گردو۳۰۰گرم</span><span>رب‌انار۱لیوان</span><span>شکر۲قاشق</span><span>پیاز</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>گردو رو دوبار چرخ کن</li><li>با۲لیوان آب ۱ساعت بپز</li><li>رب انار و شکر اضافه</li><li>مرغ رو تفت بده و بذار توی سس</li><li>۱.۵ساعت جا بیفته</li></ol></div></div>
+    <!-- ۲. قیمه -->
+    <div class="food-card">
+        <h2>۲. 🍲 قیمه</h2>
+        <h3>📝 مواد لازم (برای ۴ نفر)</h3>
+        <ul>
+            <li>گوشت خورشتی: ۳۵۰ گرم</li>
+            <li>لپه: ۱ پیمانه</li>
+            <li>پیاز بزرگ: ۲ عدد</li>
+            <li>سیب‌زمینی خلالی سرخ‌شده: ۲ عدد</li>
+            <li>رب گوجه فرنگی: ۲ قاشق غذاخوری</li>
+            <li>لیمو عمانی: ۳ عدد</li>
+            <li>دارچین، زردچوبه، نمک، فلفل: به میزان لازم</li>
+            <li>روغن: ۴ قاشق غذاخوری</li>
+        </ul>
+        <h3>👨‍🍳 طرز تهیه</h3>
+        <ol>
+            <li>لپه رو ۲ ساعت خیس کنید و آبش رو عوض کنید</li>
+            <li>پیاز رو نگینی خرد کنید و با روغن تفت بدید تا طلایی بشه</li>
+            <li>گوشت رو اضافه کنید و با زردچوبه و فلفل تفت بدید</li>
+            <li>رب گوجه رو اضافه کنید و ۲ دقیقه تفت بدید تا بوی خامیش گرفته بشه</li>
+            <li>لپه + ۴ لیوان آب جوش + لیمو عمانی سوراخ‌شده رو اضافه کنید</li>
+            <li>شعله رو کم کنید و ۲-۳ ساعت بذارید جا بیفته</li>
+            <li>نمک و دارچین رو ۳۰ دقیقه آخر اضافه کنید</li>
+            <li>سیب‌زمینی‌ها رو خلالی خرد کنید، سرخ کنید و موقع سرو روی قیمه بذارید</li>
+        </ol>
+        <div class="golden-box">
+            <p>💡 <strong>نکته طلایی:</strong> لپه رو زیاد نجوشونید چون وا میره و خورشت رو خراب می‌کنه. سیب‌زمینی رو حتماً جداگانه سرخ کنید و درست موقع سرو روی خورشت بذارید تا ترد بمونه!</p>
+        </div>
+    </div>
 
-<!-- ۴ --><div class="recipe-card"><h2>۴. 🍲 کرفس</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>گوشت۳۰۰گرم</span><span>کرفس۱بوته</span><span>نعنا۲قاشق</span><span>لیموعمانی۳عدد</span><span>پیاز،رب</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>پیاز و گوشت تفت</li><li>کرفس رو جدا تفت بده</li><li>نعنا و لیمو اضافه</li><li>۲لیوان آب بریز</li><li>۲ساعت جا بیفته</li></ol></div></div>
+    <!-- ۳. فسنجون -->
+    <div class="food-card">
+        <h2>۳. 🍲 فسنجون</h2>
+        <h3>📝 مواد لازم (برای ۴ نفر)</h3>
+        <ul>
+            <li>گردو (پودر شده): ۳۰۰ گرم</li>
+            <li>رب انار: ۱ پیمانه</li>
+            <li>گوشت مرغ یا گوشت قرمز: ۵۰۰ گرم</li>
+            <li>پیاز بزرگ: ۱ عدد</li>
+            <li>شکر: ۱-۲ قاشق غذاخوری (اختیاری)</li>
+            <li>روغن: ۳ قاشق غذاخوری</li>
+            <li>نمک، فلفل، زردچوبه: به میزان لازم</li>
+        </ul>
+        <h3>👨‍🍳 طرز تهیه</h3>
+        <ol>
+            <li>گردوی پودر شده رو توی قابلمه بریزید و با ۲ لیوان آب سرد مخلوط کنید</li>
+            <li>شعله رو کم کنید و بذارید آروم بجوشه تا روغن گردو پس بده (حدود ۱ ساعت)</li>
+            <li>توی یه تابه جدا، پیاز رو تفت بدید، گوشت رو اضافه کنید و با زردچوبه سرخش کنید</li>
+            <li>گوشت سرخ‌شده رو به قابلمه گردو اضافه کنید</li>
+            <li>رب انار رو اضافه کنید و هم بزنید</li>
+            <li>شعله رو کم کنید و ۲-۳ ساعت بذارید جا بیفته تا خورشت غلیظ و تیره بشه</li>
+            <li>اگه ترش بود، شکر اضافه کنید. نمک رو آخر کار بریزید</li>
+        </ol>
+        <div class="blue-box">
+            <p>🍲 <strong>فسنجون شمالی یا جنوبی؟</strong> فسنجون شمالی با رب انار ترش درست میشه و فسنجون جنوبی (خوزستانی) با شیره خرما شیرین. می‌تونید مخلوطی از رب انار و شیره خرما استفاده کنید تا ملس بشه!</p>
+        </div>
+    </div>
 
-<!-- ۵ --><div class="recipe-card"><h2>۵. 🍲 بادمجان</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>گوشت۳۰۰گرم</span><span>بادمجان۴عدد</span><span>گوجه۳عدد</span><span>پیاز،رب</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>بادمجان رو سرخ کن</li><li>پیاز و گوشت تفت</li><li>رب و گوجه اضافه</li><li>بادمجان رو بچین</li><li>۱.۵ساعت جا بیفته</li></ol></div></div>
+    <!-- ۴. کرفس -->
+    <div class="food-card">
+        <h2>۴. 🥬 خورش کرفس</h2>
+        <h3>📝 مواد لازم (برای ۴ نفر)</h3>
+        <ul>
+            <li>کرفس خرد شده: ۴ پیمانه</li>
+            <li>گوشت خورشتی: ۳۵۰ گرم</li>
+            <li>پیاز بزرگ: ۱ عدد</li>
+            <li>نعنا خشک: ۱ قاشق غذاخوری</li>
+            <li>جعفری خرد شده: ۱ پیمانه</li>
+            <li>رب گوجه: ۱ قاشق غذاخوری</li>
+            <li>آب لیمو: ۳ قاشق غذاخوری</li>
+            <li>نمک، فلفل، زردچوبه: به میزان لازم</li>
+            <li>روغن: ۴ قاشق غذاخوری</li>
+        </ul>
+        <h3>👨‍🍳 طرز تهیه</h3>
+        <ol>
+            <li>کرفس رو بشویید، پوست بکنید و به اندازه ۳-۴ سانتی خرد کنید</li>
+            <li>کرفس رو جداگانه توی کمی روغن تفت بدید تا نرم بشه و رنگش عوض بشه</li>
+            <li>پیاز رو تفت بدید، گوشت + زردچوبه رو اضافه و سرخ کنید</li>
+            <li>رب گوجه + جعفری + نعنا رو اضافه کنید و ۲ دقیقه تفت بدید</li>
+            <li>کرفس تفت‌داده + ۳ لیوان آب جوش رو اضافه کنید</li>
+            <li>شعله رو کم کنید و ۲-۳ ساعت بذارید جا بیفته</li>
+            <li>۳۰ دقیقه آخر، آب لیمو و نمک رو اضافه کنید</li>
+        </ol>
+        <div class="green-box">
+            <p>🥬 <strong>خاصیت کرفس:</strong> کرفس سرشار از فیبر، پتاسیم و آنتی‌اکسیدانه. برای کاهش فشار خون و کاهش وزن عالیه! این خورش یکی از سالم‌ترین غذاهای ایرانیه.</p>
+        </div>
+    </div>
 
-<!-- ۶ --><div class="recipe-card"><h2>۶. 🍗 جوجه کباب</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>مرغ۵۰۰گرم</span><span>ماست۳قاشق</span><span>زعفران</span><span>لیمو</span><span>پیاز،کره</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>مرغ مکعبی کن</li><li>با مواد ۴ساعت بخوابون</li><li>به سیخ بکش</li><li>با کره کباب کن</li></ol></div></div>
+    <!-- ۵. بادمجان -->
+    <div class="food-card">
+        <h2>۵. 🍆 خورش بادمجان</h2>
+        <h3>📝 مواد لازم (برای ۴ نفر)</h3>
+        <ul>
+            <li>بادمجان متوسط: ۶ عدد</li>
+            <li>گوشت خورشتی: ۳۵۰ گرم</li>
+            <li>گوجه فرنگی: ۳ عدد</li>
+            <li>پیاز: ۱ عدد</li>
+            <li>رب گوجه: ۱ قاشق غذاخوری</li>
+            <li>آبلیمو یا غوره: ۳ قاشق غذاخوری</li>
+            <li>روغن برای سرخ کردن: به میزان لازم</li>
+            <li>نمک، فلفل، زردچوبه: به میزان لازم</li>
+        </ul>
+        <h3>👨‍🍳 طرز تهیه</h3>
+        <ol>
+            <li>بادمجان‌ها رو پوست بکنید و به صورت حلقه‌های ۲ سانتی برش بزنید</li>
+            <li>بادمجان‌ها رو ۳۰ دقیقه توی آب نمک بخوابونید تا تلخیش گرفته بشه</li>
+            <li>بادمجان‌ها رو آبکش کنید، خشک کنید و توی روغن سرخ کنید تا طلایی بشن</li>
+            <li>پیاز رو تفت بدید، گوشت + زردچوبه رو اضافه و سرخ کنید</li>
+            <li>رب گوجه + گوجه‌های خرد شده رو اضافه کنید و تفت بدید</li>
+            <li>۲ لیوان آب جوش بریزید و ۲ ساعت بذارید گوشت بپزه</li>
+            <li>بادمجان‌های سرخ‌شده رو روی خورشت بچینید (هم نزنید که له بشن!)</li>
+            <li>آبلیمو + نمک رو اضافه کنید و ۳۰ دقیقه دیگه دم کنید</li>
+        </ol>
+        <div class="golden-box">
+            <p>💡 <strong>نکته طلایی:</strong> بادمجان رو بعد از سرخ کردن روی دستمال کاغذی بذارید تا روغن اضافیش گرفته بشه. برای اینکه بادمجان روغن کمتری جذب کنه، قبل از سرخ کردن روش نمک بپاشید و ۱۵ دقیقه بمونه.</p>
+        </div>
+    </div>
 
-<!-- ۷ --><div class="recipe-card"><h2>۷. 🍗 کباب کوبیده</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>گوشت چرخ‌کرده۵۰۰گرم</span><span>پیاز۲عدد</span><span>نمک،فلفل</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>آب پیاز رو بگیر</li><li>با گوشت ورز بده</li><li>۱ساعت یخچال</li><li>به سیخ بکش</li><li>روی ذغال کباب کن</li></ol></div></div>
+    <!-- ۶. جوجه کباب -->
+    <div class="food-card">
+        <h2>۶. 🍗 جوجه کباب</h2>
+        <h3>📝 مواد لازم (برای ۴ نفر)</h3>
+        <ul>
+            <li>سینه یا ران مرغ بدون استخوان: ۸۰۰ گرم</li>
+            <li>پیاز بزرگ: ۲ عدد</li>
+            <li>ماست پرچرب: ۴ قاشق غذاخوری</li>
+            <li>آب لیمو ترش تازه: ۳ قاشق غذاخوری</li>
+            <li>زعفران دم‌کرده غلیظ: ۳ قاشق غذاخوری</li>
+            <li>روغن مایع یا کره: ۳ قاشق غذاخوری</li>
+            <li>فلفل دلمه‌ای و گوجه فرنگی: برای تزئین</li>
+            <li>نمک، فلفل سیاه، پاپریکا: به میزان لازم</li>
+        </ul>
+        <h3>👨‍🍳 طرز تهیه</h3>
+        <ol>
+            <li>مرغ رو به تکه‌های ۳-۴ سانتی خرد کنید (نه خیلی ریز، نه خیلی درشت)</li>
+            <li>پیازها رو رنده کنید و آبش رو بگیرید (فقط آب پیاز رو استفاده کنید)</li>
+            <li>توی یه کاسه بزرگ: ماست + آب پیاز + آب لیمو + زعفران + روغن + ادویه‌ها رو مخلوط کنید</li>
+            <li>تکه‌های مرغ رو به مواد اضافه کنید و خوب مخلوط کنید</li>
+            <li>روی کاسه رو بپوشونید و حداقل ۶ ساعت (ترجیحاً ۲۴ ساعت) توی یخچال بذارید</li>
+            <li>مرغ‌ها رو به سیخ بکشید و روی زغال داغ یا توی فر با دمای ۲۲۰ درجه بپزید</li>
+            <li>هر ۵ دقیقه یه بار سیخ‌ها رو بچرخونید تا یکنواخت کباب بشن</li>
+        </ol>
+        <div class="golden-box">
+            <p>💡 <strong>نکته طلایی:</strong> راز جوجه کباب آبدار و خوشمزه: ۱) حتماً از ماست پرچرب استفاده کنید ۲) حداقل ۱۲ ساعت مرغ رو بخوابونید ۳) زعفران رو فراموش نکنید ۴) آب پیاز (نه خود پیاز) استفاده کنید چون خود پیاز می‌سوزه و طعم تلخ میده!</p>
+        </div>
+    </div>
 
-<!-- ۸ --><div class="recipe-card"><h2>۸. 🍗 کباب برگ</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>راسته۵۰۰گرم</span><span>پیاز</span><span>روغن زیتون</span><span>نمک،فلفل</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>گوشت رو ورقه کن</li><li>۲ساعت بخوابون</li><li>به سیخ بکش</li><li>روی ذغال کباب کن</li></ol></div></div>
+    <!-- ۷. کباب کوبیده -->
+    <div class="food-card">
+        <h2>۷. 🥩 کباب کوبیده</h2>
+        <h3>📝 مواد لازم (برای ۴ نفر)</h3>
+        <ul>
+            <li>گوشت چرخ‌کرده (گوسفند + گوساله مخلوط): ۵۰۰ گرم</li>
+            <li>پیاز بزرگ: ۲ عدد</li>
+            <li>نمک، فلفل سیاه، سماق: به میزان لازم</li>
+            <li>کره: ۵۰ گرم (برای روغن‌کاری)</li>
+        </ul>
+        <h3>👨‍🍳 طرز تهیه</h3>
+        <ol>
+            <li>پیاز رو رنده کنید و آبش رو کاملاً بگیرید و دور بریزید (فقط تفاله پیاز بمونه)</li>
+            <li>گوشت چرخ‌کرده + تفاله پیاز + نمک + فلفل رو توی یه کاسه بزرگ بریزید</li>
+            <li>با دست، مواد رو حداقل ۱۰ دقیقه خوب ورز بدید تا چسبناک بشه</li>
+            <li>مواد رو ۲ ساعت توی یخچال بذارید تا منسجم بشه</li>
+            <li>از مواد به اندازه یه نارنگی بردارید و دور سیخ‌های پهن بپیچید</li>
+            <li>با دست خیس، گوشت رو روی سیخ پهن و یکنواخت کنید (قطر حدود ۱ سانتی‌متر)</li>
+            <li>روی زغال داغ، هر ۲ دقیقه سیخ‌ها رو بچرخونید</li>
+            <li>وقتی کباب آماده شد، با کره داغ روش رو چرب کنید و با سماق سرو کنید</li>
+        </ol>
+        <div class="red-box">
+            <p>⚠️ <strong>هشدار مهم:</strong> کباب کوبیده نباید از سیخ جدا بشه و بیفته! راز چسبندگی: ۱) آب پیاز رو کامل بگیرید ۲) گوشت رو ۱۰ دقیقه ورز بدید ۳) حتماً ۲ ساعت استراحت بدید توی یخچال ۴) سیخ‌ها رو حتماً پهن (شمشیری) انتخاب کنید، نه گرد!</p>
+        </div>
+    </div>
 
-<!-- ۹ --><div class="recipe-card"><h2>۹. 🍚 زرشک پلو</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>برنج۳پیمانه</span><span>مرغ۴تکه</span><span>زرشک۱پیمانه</span><span>زعفران،شکر،کره</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>برنج آبکش کن</li><li>مرغ با زعفران بپز</li><li>زرشک با کره تفت</li><li>دم کن و سرو کن</li></ol></div></div>
+    <!-- ۸ تا ۳۰ ادامه... -->
+    
+    <div class="food-card">
+        <h2>۸. 🥩 کباب برگ</h2>
+        <p><strong>مواد:</strong> راسته یا فیله گوسفند (۷۰۰ گرم)، پیاز (۱ عدد)، ماست (۳ قاشق)، زعفران، روغن زیتون، نمک، فلفل</p>
+        <p><strong>طرز تهیه:</strong> گوشت رو ورقه‌ای ببرید، با پیاز رنده‌شده + ماست + زعفران + روغن زیتون ۱۲ ساعت بخوابونید. روی زغال داغ هر طرف ۳-۴ دقیقه کباب کنید. با کره داغ و گوجه کبابی سرو کنید.</p>
+        <div class="golden-box"><p>💡 گوشت برگ باید ضخامت یکسان (حدود ۱ سانت) داشته باشه تا یکنواخت بپزه.</p></div>
+    </div>
 
-<!-- ۱۰ --><div class="recipe-card"><h2>۱۰. 🍚 باقالی پلو</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>برنج۳پیمانه</span><span>باقالی۲پیمانه</span><span>شوید</span><span>ماهیچه</span><span>زعفران</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>برنج و باقالی آبکش</li><li>ماهیچه جدا بپز</li><li>دم کن</li><li>ماهیچه رو بذار روش</li></ol></div></div>
+    <div class="food-card">
+        <h2>۹. 🍚 زرشک پلو با مرغ</h2>
+        <p><strong>مواد:</strong> برنج (۳ پیمانه)، مرغ (۴ تکه)، زرشک (۱ پیمانه)، زعفران، شکر (۲ قاشق)، کره، پیاز، نمک، فلفل</p>
+        <p><strong>طرز تهیه:</strong> برنج رو آبکش و دم کنید. مرغ رو با پیاز و زردچوبه بپزید و بعد سرخ کنید. زرشک رو با کره و شکر ۲ دقیقه تفت بدید. موقع سرو، زرشک و خلال پسته رو روی برنج بذارید و مرغ رو کنارش قرار بدید.</p>
+        <div class="green-box"><p>🍚 زرشک رو زیاد تفت ندید چون می‌سوزه و تلخ میشه! فقط ۱-۲ دقیقه با شعله کم.</p></div>
+    </div>
 
-<!-- ۱۱ --><div class="recipe-card"><h2>۱۱. 🍚 لوبیا پلو</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>برنج۳پیمانه</span><span>لوبیا سبز۳۰۰گرم</span><span>گوشت۲۰۰گرم</span><span>رب،پیاز</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>گوشت و لوبیا تفت</li><li>برنج آبکش کن</li><li>لایه‌لایه بچین</li><li>دم کن</li></ol></div></div>
+    <div class="food-card">
+        <h2>۱۰. 🍚 باقالی پلو</h2>
+        <p><strong>مواد:</strong> برنج (۳ پیمانه)، باقالی تازه (۲ پیمانه)، شوید خشک (۳ قاشق)، کره، زعفران، نمک</p>
+        <p><strong>طرز تهیه:</strong> برنج رو آبکش کنید. باقالی رو جدا بپزید. لایه‌لایه برنج + باقالی + شوید رو توی قابلمه بریزید و دم کنید. موقع سرو با کره داغ و زعفران تزئین کنید. معمولاً با ماهیچه یا مرغ سرو میشه.</p>
+        <div class="blue-box"><p>🌿 شوید رو موقع دم کردن اضافه کنید، نه موقع جوشوندن. اینطوری عطرش حفظ میشه!</p></div>
+    </div>
 
-<!-- ۱۲ --><div class="recipe-card"><h2>۱۲. 🍚 عدس پلو</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>برنج۳پیمانه</span><span>عدس۱پیمانه</span><span>کشمش</span><span>گوشت</span><span>پیاز</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>عدس نیم‌پز</li><li>گوشت تفت</li><li>برنج آبکش</li><li>لایه‌لایه بچین</li><li>کشمش تفت داده روش</li></ol></div></div>
+    <div class="food-card">
+        <h2>۱۱. 🍚 لوبیا پلو</h2>
+        <p><strong>مواد:</strong> برنج (۳ پیمانه)، لوبیا سبز (۳۰۰ گرم)، گوشت چرخ‌کرده (۲۰۰ گرم)، پیاز، رب گوجه، دارچین، نمک، فلفل</p>
+        <p><strong>طرز تهیه:</strong> لوبیا سبز رو خرد و نیم‌پز کنید. پیاز + گوشت چرخ‌کرده + رب + ادویه رو تفت بدید. لوبیا رو اضافه کنید. برنج رو آبکش کنید و لایه‌لایه با مخلوط گوشت و لوبیا دم کنید.</p>
+        <div class="golden-box"><p>💡 لوبیا پلو رو حتماً با پیاز داغ و کشمش تفت‌داده تزئین کنید تا خوشمزه‌تر بشه!</p></div>
+    </div>
 
-<!-- ۱۳ --><div class="recipe-card"><h2>۱۳. 🍲 آلو اسفناج</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>گوشت۳۰۰گرم</span><span>اسفناج۵۰۰گرم</span><span>آلو۱پیمانه</span><span>پیاز</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>پیاز و گوشت تفت</li><li>اسفناج جدا تفت</li><li>آلو اضافه کن</li><li>۲ساعت جا بیفته</li></ol></div></div>
+    <div class="food-card">
+        <h2>۱۲. 🍚 عدس پلو</h2>
+        <p><strong>مواد:</strong> برنج (۳ پیمانه)، عدس (۱ پیمانه)، کشمش (نصف پیمانه)، پیاز داغ (۳ قاشق)، کره، زعفران، دارچین، نمک</p>
+        <p><strong>طرز تهیه:</strong> عدس رو جدا بپزید (وا نره). برنج رو آبکش کنید. لایه‌لایه برنج + عدس + کشمش + پیاز داغ رو دم کنید. موقع سرو دارچین بپاشید و با کره داغ تزئین کنید.</p>
+        <div class="green-box"><p>🍚 عدس پلو با گوشت چرخ‌کرده تفت‌داده شده (قیمه‌ای) هم خیلی خوشمزه میشه!</p></div>
+    </div>
 
-<!-- ۱۴ --><div class="recipe-card"><h2>۱۴. 🍲 کدو</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>گوشت۳۰۰گرم</span><span>کدو۴عدد</span><span>گوجه</span><span>رب</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>کدو سرخ کن</li><li>گوشت تفت</li><li>کدو رو بچین</li><li>۱.۵ساعت جا بیفته</li></ol></div></div>
+    <!-- ادامه ۱۳ تا ۳۰ -->
+    <div class="food-card">
+        <h2>۱۳. 🥬 خورش آلو اسفناج</h2>
+        <p><strong>مواد:</strong> اسفناج (۵۰۰ گرم)، آلو خورشتی (۱ پیمانه)، گوشت (۳۰۰ گرم)، پیاز، رب گوجه، آبلیمو، نمک، فلفل</p>
+        <p><strong>طرز تهیه:</strong> اسفناج رو بپزید و آبکش کنید. پیاز + گوشت رو تفت بدید. آلو + رب + اسفناج + ۲ لیوان آب اضافه کنید و ۱.۵ ساعت بپزید. آبلیمو و نمک رو آخر کار اضافه کنید. خورش باید ملس (ترش-شیرین) باشه.</p>
+        <div class="purple-box"><p>🟣 آلو رو از قبل خیس کنید تا هم نرم بشه، هم نمک اضافیش گرفته بشه.</p></div>
+    </div>
 
-<!-- ۱۵ --><div class="recipe-card"><h2>۱۵. 🍲 بامیه</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>گوشت۳۰۰گرم</span><span>بامیه۵۰۰گرم</span><span>گوجه</span><span>لیموعمانی</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>بامیه بشور</li><li>گوشت تفت</li><li>بامیه بچین</li><li>لیمو عمانی بذار</li><li>۱.۵ساعت جا بیفته</li></ol></div></div>
+    <div class="food-card">
+        <h2>۱۴. 🍲 خورش کدو</h2>
+        <p><strong>مواد:</strong> کدو (۴ عدد)، گوشت (۳۰۰ گرم)، گوجه (۳ عدد)، پیاز، رب، نمک، فلفل، زردچوبه</p>
+        <p><strong>طرز تهیه:</strong> کدو رو حلقه‌ای ببرید و کمی سرخ کنید. پیاز + گوشت + ادویه رو تفت بدید. رب + گوجه + ۲ لیوان آب اضافه کنید. ۱.۵ ساعت بپزید. کدوی سرخ‌شده رو ۳۰ دقیقه آخر اضافه کنید.</p>
+        <div class="golden-box"><p>💡 کدو رو زیاد هم نزنید چون له میشه! مثل بادمجان، کدوها رو روی خورشت بچینید.</p></div>
+    </div>
 
-<!-- ۱۶ --><div class="recipe-card"><h2>۱۶. 🍗 کباب ترش</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>گوشت۵۰۰گرم</span><span>رب انار</span><span>گردو</span><span>سبزی</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>مواد مخلوط</li><li>۲۴ساعت بخوابون</li><li>به سیخ بکش</li><li>روی ذغال کباب کن</li></ol></div></div>
+    <div class="food-card">
+        <h2>۱۵. 🥘 کباب ترش</h2>
+        <p><strong>مواد:</strong> گوشت گوسفند (۵۰۰ گرم)، گردو (۱۰۰ گرم)، رب انار (نصف پیمانه)، پیاز، سبزی معطر، نمک، فلفل</p>
+        <p><strong>طرز تهیه:</strong> گردو رو پودر کنید. پیاز رو رنده کنید و آبش رو بگیرید. همه مواد رو با گوشت مخلوط کنید و ۱۲ ساعت توی یخچال بخوابونید. روی زغال یا توی تابه کباب کنید. این غذای مخصوص شمال ایرانه.</p>
+        <div class="blue-box"><p>🌿 کباب ترش از غذاهای سنتی گیلانه که طعم ترش و فوق‌العاده‌ای داره. با برنج ساده سرو میشه.</p></div>
+    </div>
 
-<!-- ۱۷ --><div class="recipe-card"><h2>۱۷. 🍗 شیشلیک</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>دنده۵۰۰گرم</span><span>زعفران</span><span>لیمو</span><span>روغن زیتون</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>گوشت مزه‌دار کن</li><li>۶ساعت بخوابون</li><li>به سیخ بکش</li><li>روی ذغال کباب کن</li></ol></div></div>
+    <div class="food-card">
+        <h2>۱۶. 🥩 شیشلیک</h2>
+        <p><strong>مواد:</strong> دنده گوسفند (۱ کیلو)، ماست (۴ قاشق)، پیاز (۲ عدد)، زعفران، روغن زیتون، نمک، فلفل</p>
+        <p><strong>طرز تهیه:</strong> دنده‌ها رو تکه‌تکه کنید. پیاز رنده‌شده + ماست + زعفران + روغن زیتون رو مخلوط کنید و روی دنده‌ها بریزید. ۲۴ ساعت توی یخچال بخوابونید. روی زغال داغ هر طرف ۵-۷ دقیقه کباب کنید.</p>
+        <div class="golden-box"><p>💡 شیشلیک رو حتماً با شعله غیرمستقیم کباب کنید تا نسوزه. بهترین قسمت دنده، قسمت چربیه که آبدارتره!</p></div>
+    </div>
 
-<!-- ۱۸ --><div class="recipe-card"><h2>۱۸. 🍚 ته‌چین</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>برنج۳پیمانه</span><span>مرغ</span><span>ماست۱لیوان</span><span>تخم‌مرغ۲عدد</span><span>زعفران</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>برنج آبکش</li><li>ماست و تخم‌مرغ مخلوط</li><li>مرغ بپز</li><li>لایه‌لایه بچین</li><li>دم کن ۱.۵ساعت</li></ol></div></div>
+    <div class="food-card">
+        <h2>۱۷. 🍲 ته‌چین</h2>
+        <p><strong>مواد:</strong> برنج (۳ پیمانه)، مرغ (۴ تکه)، ماست (۱ پیمانه)، تخم مرغ (۳ عدد)، زعفران غلیظ، کره (۱۰۰ گرم)، نمک</p>
+        <p><strong>طرز تهیه:</strong> برنج رو نیم‌پز کنید. مرغ رو بپزید و ریش‌ریش کنید. ماست + تخم مرغ + زعفران + نمک رو مخلوط کنید و با نصف برنج ترکیب کنید. کف قابلمه رو چرب کنید، لایه زعفرانی رو بذارید، مرغ رو وسط بذارید، بقیه برنج رو روش بریزید. ۱.۵ ساعت دم کنید تا ته دیگ طلایی بشه.</p>
+        <div class="red-box"><p>⚠️ شعله زیر ته‌چین باید خیلی ملایم باشه! اگه شعله زیاد باشه ته دیگ می‌سوزه قبل از اینکه برنج دم بکشه!</p></div>
+    </div>
 
-<!-- ۱۹ --><div class="recipe-card"><h2>۱۹. 🍲 کوفته</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>گوشت۴۰۰گرم</span><span>برنج۱پیمانه</span><span>لپه</span><span>تخم‌مرغ</span><span>رب</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>برنج و لپه نیم‌پز</li><li>با گوشت ورز بده</li><li>توپ درست کن</li><li>توی سس بپز ۱.۵ساعت</li></ol></div></div>
+    <div class="food-card">
+        <h2>۱۸. 🥩 کوفته</h2>
+        <p><strong>مواد:</strong> گوشت چرخ‌کرده (۴۰۰ گرم)، برنج نیم‌پز (۱ پیمانه)، لپه پخته (نصف پیمانه)، پیاز رنده‌شده، تخم مرغ (۱ عدد)، سبزی معطر، نمک، فلفل، زردچوبه. برای داخل کوفته: تخم مرغ آب‌پز، آلو، گردو</p>
+        <p><strong>طرز تهیه:</strong> همه مواد رو خوب ورز بدید. به اندازه یه پرتقال بزرگ بردارید، وسطش رو باز کنید، تخم مرغ + آلو + گردو بذارید و ببندید. توی آب جوش با پیاز و رب گوجه ۱ ساعت بپزید.</p>
+        <div class="golden-box"><p>💡 کوفته رو آروم توی آب جوش بذارید و شعله رو کم کنید. اگه آب قل بزنه، کوفته وا میره!</p></div>
+    </div>
 
-<!-- ۲۰ --><div class="recipe-card"><h2>۲۰. 🥗 دلمه</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>برگ مو</span><span>برنج۲پیمانه</span><span>گوشت۲۰۰گرم</span><span>لپه</span><span>سبزی</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>مواد مخلوط</li><li>توی برگ مو بپیچ</li><li>توی قابلمه بچین</li><li>با سس بپز ۱.۵ساعت</li></ol></div></div>
+    <div class="food-card">
+        <h2>۱۹. 🍃 دلمه</h2>
+        <p><strong>مواد:</strong> برگ مو (۴۰ عدد)، برنج (۱ پیمانه)، لپه (نصف پیمانه)، گوشت چرخ‌کرده (۲۰۰ گرم)، سبزی دلمه (تره، جعفری، شوید، نعنا، ترخون)، پیاز، رب گوجه، نمک، فلفل</p>
+        <p><strong>طرز تهیه:</strong> برنج و لپه رو نیم‌پز کنید. با گوشت + سبزی + پیاز داغ مخلوط کنید. برگ مو رو بپیچید و توی قابلمه بچینید. آب + رب گوجه + آبلیمو بریزید و ۱.۵ ساعت بپزید.</p>
+        <div class="green-box"><p>🍃 برگ مو رو ۲-۳ دقیقه توی آب جوش بذارید تا نرم بشه و راحت بپیچه. دلمه رو tight نپیچید چون برنج توش وا میره!</p></div>
+    </div>
 
-<!-- ۲۱ --><div class="recipe-card"><h2>۲۱. 🍆 میرزا قاسمی</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>بادمجان۴عدد</span><span>گوجه۳عدد</span><span>سیر</span><span>تخم‌مرغ۲عدد</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>بادمجان کباب کن</li><li>سیر و گوجه تفت</li><li>بادمجان بکوب</li><li>تخم‌مرغ بشکن</li><li>هم بزن تا آماده بشه</li></ol></div></div>
+    <div class="food-card">
+        <h2>۲۰. 🍆 میرزا قاسمی</h2>
+        <p><strong>مواد:</strong> بادمجان (۴ عدد)، گوجه (۳ عدد)، سیر (۴ حبه)، تخم مرغ (۲ عدد)، روغن، نمک، فلفل</p>
+        <p><strong>طرز تهیه:</strong> بادمجان‌ها رو روی شعله یا توی فر کباب کنید تا پوستش بسوزه. پوست رو بکنید و گوشتش رو له کنید. سیر رو تفت بدید، گوجه رنده‌شده رو اضافه کنید، بادمجان رو اضافه کنید. تخم مرغ‌ها رو بشکنید توی مواد و هم بزنید تا ببنده.</p>
+        <div class="golden-box"><p>💡 بادمجان حتماً باید روی شعله مستقیم کباب بشه تا طعم دودی بگیره! این راز اصلی میرزا قاسمی گیلانیه!</p></div>
+    </div>
 
-<!-- ۲۲ --><div class="recipe-card"><h2>۲۲. 🍆 کشک بادمجان</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>بادمجان۴عدد</span><span>کشک۱لیوان</span><span>سیر</span><span>پیاز داغ</span><span>گردو</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>بادمجان سرخ کن</li><li>بکوب</li><li>سیر تفت بده</li><li>کشک اضافه کن</li><li>با پیاز داغ و گردو تزئین</li></ol></div></div>
+    <div class="food-card"><h2>۲۱. 🍆 کشک بادمجان</h2><p><strong>مواد:</strong> بادمجان (۴ عدد)، کشک (۱ پیمانه)، پیاز داغ (۴ قاشق)، سیر داغ (۲ قاشق)، نعنا داغ، گردو، نمک، فلفل</p><p><strong>طرز تهیه:</strong> بادمجان رو پوست بکنید، نگینی خرد کنید و سرخ کنید. بادمجان سرخ‌شده رو له کنید. کشک رو با کمی آب رقیق کنید و به بادمجان اضافه کنید. ۱۵ دقیقه بجوشه تا جا بیفته. با پیاز داغ، سیر داغ، نعنا داغ و گردوی خرد شده تزئین کنید.</p><div class="green-box"><p>🍆 کشک رو توی غذای خیلی داغ نریزید چون می‌بنده و گلوله میشه! شعله رو خاموش کنید، ۲ دقیقه صبر کنید، بعد کشک رو اضافه کنید.</p></div></div>
 
-<!-- ۲۳ --><div class="recipe-card"><h2>۲۳. 🍲 سوپ جو</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>جو۱پیمانه</span><span>مرغ ریش شده</span><span>هویج</span><span>شیر</span><span>پیاز</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>جو رو بپز</li><li>پیاز و هویج اضافه</li><li>مرغ ریش شده بریز</li><li>شیر اضافه کن</li><li>۳۰دقیقه بپز</li></ol></div></div>
+    <div class="food-card"><h2>۲۲. 🍲 سوپ جو</h2><p><strong>مواد:</strong> جو (۱ پیمانه)، هویج (۲ عدد)، ساقه کرفس (۲ عدد)، سینه مرغ (۱ عدد)، پیاز، آبلیمو، جعفری، نمک، فلفل</p><p><strong>طرز تهیه:</strong> جو رو از شب قبل خیس کنید. با مرغ و ۶ لیوان آب بپزید. هویج و کرفس نگینی رو اضافه کنید. بعد از پخت، مرغ رو ریش‌ریش کنید. آبلیمو و جعفری رو آخر کار اضافه کنید.</p><div class="blue-box"><p>🍲 سوپ جو برای سرماخوردگی عالیه! آبلیمو و فلفل سیاه زیاد بریزید تا حسابی گرمتون کنه.</p></div></div>
 
-<!-- ۲۴ --><div class="recipe-card"><h2>۲۴. 🍲 آش رشته</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>رشته آش</span><span>حبوبات۲پیمانه</span><span>سبزی آش</span><span>کشک</span><span>پیاز داغ</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>حبوبات رو بپز</li><li>سبزی اضافه کن</li><li>رشته رو بریز</li><li>با کشک و پیاز داغ سرو</li></ol></div></div>
+    <div class="food-card"><h2>۲۳. 🍜 آش رشته</h2><p><strong>مواد:</strong> حبوبات (نخود، لوبیا، عدس: هرکدوم نصف پیمانه)، رشته آش (۲۰۰ گرم)، سبزی آش (تره، جعفری، گشنیز، اسفناج: ۵۰۰ گرم)، پیاز داغ، سیر داغ، نعنا داغ، کشک، نمک، فلفل</p><p><strong>طرز تهیه:</strong> حبوبات رو از شب قبل خیس کنید و بپزید. سبزی رو اضافه کنید و ۳۰ دقیقه بجوشه. رشته رو اضافه کنید و ۱۰ دقیقه بپزه. با پیاز داغ، سیر داغ، نعنا داغ و کشک تزئین کنید.</p><div class="golden-box"><p>💡 رشته آش رو زیاد هم نزنید چون خمیر میشه! رشته رو ۱۰ دقیقه آخر اضافه کنید و فقط ۲-۳ بار آروم هم بزنید.</p></div></div>
 
-<!-- ۲۵ --><div class="recipe-card"><h2>۲۵. 🍲 آش دوغ</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>دوغ۱لیتر</span><span>نخود</span><span>سبزی</span><span>برنج</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>نخود بپز</li><li>دوغ اضافه کن</li><li>برنج و سبزی بریز</li><li>جا بیفته</li></ol></div></div>
+    <div class="food-card"><h2>۲۴. 🍜 آش دوغ</h2><p><strong>مواد:</strong> دوغ (۱ لیتر)، برنج (نصف پیمانه)، نخود (نصف پیمانه)، سبزی (تره، جعفری، شوید، گشنیز)، سیر، نمک، فلفل</p><p><strong>طرز تهیه:</strong> نخود رو بپزید. برنج رو با ۲ لیوان آب بپزید تا نرم بشه. دوغ رو اضافه کنید و دائم هم بزنید تا نبره. سبزی و نخود رو اضافه کنید. ۲۰ دقیقه بجوشه. با سیر داغ تزئین کنید.</p><div class="red-box"><p>⚠️ دوغ رو باید دائم هم بزنید تا نبُره! اگه برید، آش خراب میشه. شعله باید کم باشه.</p></div></div>
 
-<!-- ۲۶ --><div class="recipe-card"><h2>۲۶. 🍝 ماکارونی</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>ماکارونی</span><span>گوشت۲۰۰گرم</span><span>رب</span><span>پنیر پیتزا</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>ماکارونی بپز</li><li>گوشت و رب تفت</li><li>مخلوط کن</li><li>پنیر بریز و فر</li></ol></div></div>
+    <div class="food-card"><h2>۲۵. 🍝 ماکارونی</h2><p><strong>مواد:</strong> ماکارونی (۱ بسته)، گوشت چرخ‌کرده (۳۰۰ گرم)، پیاز (۱ عدد)، رب گوجه (۲ قاشق)، قارچ (۱۰۰ گرم)، فلفل دلمه‌ای، پنیر پیتزا، نمک، فلفل، زردچوبه</p><p><strong>طرز تهیه:</strong> ماکارونی رو بپزید و آبکش کنید. پیاز + گوشت + رب + ادویه + قارچ + فلفل دلمه‌ای رو تفت بدید. توی ظرف پیرکس، لایه‌لایه ماکارونی + سس گوشت + پنیر پیتزا بچینید. توی فر با دمای ۱۸۰ درجه ۲۰ دقیقه بذارید تا پنیر طلایی بشه.</p><div class="golden-box"><p>💡 ماکارونی رو Al Dente (کمی سفت) آبکش کنید. چون توی فر هم می‌پزه، اگه کامل بپزه وا میره و خمیر میشه!</p></div></div>
 
-<!-- ۲۷ --><div class="recipe-card"><h2>۲۷. 🍕 پیتزا</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>آرد۳لیوان</span><span>خمیر مایه</span><span>سوسیس</span><span>پنیر</span><span>رب</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>خمیر درست کن</li><li>رب بمال</li><li>مواد بچین</li><li>پنیر بریز و فر</li></ol></div></div>
+    <div class="food-card"><h2>۲۶. 🍕 پیتزا</h2><p><strong>مواد خمیر:</strong> آرد (۳ پیمانه)، خمیر مایه (۱ قاشق)، آب گرم (۱ پیمانه)، روغن زیتون (۳ قاشق)، شکر (۱ قاشق)، نمک. <strong>مواد رومال:</strong> سس گوجه، پنیر پیتزا، قارچ، فلفل دلمه‌ای، زیتون، کالباس یا گوشت</p><p><strong>طرز تهیه:</strong> خمیر مایه + شکر + آب گرم رو ۱۰ دقیقه بذارید تا فعال بشه. با آرد + روغن + نمک مخلوط کنید و ورز بدید. ۱ ساعت بذارید ورم بیاد. خمیر رو پهن کنید، سس و مواد رو بچینید و توی فر ۲۲۰ درجه ۱۵-۲۰ دقیقه بپزید.</p><div class="green-box"><p>🍕 خمیر پیتزا رو نازک پهن کنید (حدود ۳-۴ میلی‌متر) تا ترد بشه. سس گوجه رو خودتون با گوجه تازه + سیر + آویشن + روغن زیتون درست کنید.</p></div></div>
 
-<!-- ۲۸ --><div class="recipe-card"><h2>۲۸. 🥚 کوکو سبزی</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>سبزی۵۰۰گرم</span><span>تخم‌مرغ۴عدد</span><span>آرد۲قاشق</span><span>زرشک،گردو</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>تخم‌مرغ بزن</li><li>سبزی و آرد اضافه</li><li>زرشک و گردو بریز</li><li>توی روغن سرخ کن</li></ol></div></div>
+    <div class="food-card"><h2>۲۷. 🥬 کوکو سبزی</h2><p><strong>مواد:</strong> سبزی کوکو (تره، جعفری، گشنیز، شوید): ۴۰۰ گرم، تخم مرغ (۴ عدد)، آرد (۱ قاشق)، زرشک، گردو، نمک، فلفل، زردچوبه</p><p><strong>طرز تهیه:</strong> سبزی رو ریز خرد کنید. تخم مرغ‌ها رو بزنید تا کف کنه. همه مواد رو مخلوط کنید. توی تابه با روغن داغ بریزید و با شعله کم، هر طرف ۱۰-۱۲ دقیقه سرخ کنید.</p><div class="golden-box"><p>💡 برای اینکه کوکو وا نره و راحت برگرده، از یه بشقاب کمک بگیرید. کوکو رو توی بشقاب برگردونید و دوباره توی تابه بذارید!</p></div></div>
 
-<!-- ۲۹ --><div class="recipe-card"><h2>۲۹. 🥚 املت</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>تخم‌مرغ۳عدد</span><span>گوجه۲عدد</span><span>پیاز</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>پیاز سرخ کن</li><li>گوجه اضافه کن</li><li>تخم‌مرغ بشکن</li><li>هم بزن تا ببنده</li></ol></div></div>
+    <div class="food-card"><h2>۲۸. 🍳 املت</h2><p><strong>مواد:</strong> تخم مرغ (۳ عدد)، گوجه (۲ عدد)، کره (۲۰ گرم)، نمک، فلفل</p><p><strong>طرز تهیه:</strong> گوجه‌ها رو نگینی خرد کنید و توی کره تفت بدید تا آبش کشیده بشه. تخم مرغ‌ها رو بشکنید و با نمک و فلفل بزنید. روی گوجه بریزید و با شعله کم ۵ دقیقه بذارید ببنده. املت رو برگردونید و ۲ دقیقه طرف دیگه رو هم بپزید.</p><div class="blue-box"><p>🍳 املت ساده‌ترین و سریع‌ترین صبحانه ایرانیه! می‌تونید پیاز، فلفل دلمه‌ای، قارچ یا سیب‌زمینی هم اضافه کنید.</p></div></div>
 
-<!-- ۳۰ --><div class="recipe-card"><h2>۳۰. 🍰 کیک اسفنجی</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>آرد۲لیوان</span><span>شکر۱.۵لیوان</span><span>تخم‌مرغ۴عدد</span><span>شیر۱لیوان</span><span>روغن</span><span>بکینگ پودر</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>تخم‌مرغ و شکر بزن</li><li>شیر و روغن اضافه</li><li>آرد و بکینگ پودر الک کن</li><li>مخلوط کن</li><li>توی فر ۱۸۰ درجه ۴۵دقیقه</li></ol></div></div>
+    <div class="food-card"><h2>۲۹. 🍳 املت فرنگی</h2><p><strong>مواد:</strong> تخم مرغ (۳ عدد)، شیر (۲ قاشق)، کره (۱۵ گرم)، پنیر چدار یا گودا (۳۰ گرم)، نمک، فلفل</p><p><strong>طرز تهیه:</strong> تخم مرغ‌ها رو با شیر + نمک + فلفل خوب بزنید تا کف کنه. توی تابه نچسب، کره رو آب کنید. تخم مرغ رو بریزید و با شعله ملایم، با کفگیر سیلیکونی آروم هم بزنید تا لطیف و پف‌کی بشه (۳-۴ دقیقه). پنیر رنده‌شده رو روش بپاشید و سرو کنید.</p><div class="green-box"><p>🍳 راز املت فرنگی خوشمزه: شعله کم + هم زدن مداوم + کره اصل. املت فرنگی باید نرم و لطیف باشه، مثل ابر!</p></div></div>
 
-    <p style="text-align:center;margin:20px 0">
-        <a href="foods-2.html" style="color:#ffd700;font-size:16px">🍲 ۳۰ غذای بعدی (۳۱ تا ۶۰) ←</a>
-    </p>
-    <p style="text-align:center"><a href="index.html" style="color:#ffd700">🔙 خانه</a></p>
+    <div class="food-card"><h2>۳۰. 🎂 کیک اسفنجی</h2><p><strong>مواد:</strong> آرد (۲ پیمانه)، شکر (۱.۵ پیمانه)، تخم مرغ (۴ عدد)، شیر (۱ پیمانه)، روغن مایع (نصف پیمانه)، بیکینگ پودر (۲ قاشق چای‌خوری)، وانیل</p><p><strong>طرز تهیه:</strong> تخم مرغ + شکر رو ۵ دقیقه با همزن بزنید تا کرم‌رنگ و حجیم بشه. شیر + روغن + وانیل رو اضافه کنید. آرد + بیکینگ پودر رو الک کنید و آروم با لیسک مخلوط کنید. توی قالب چرب‌شده بریزید و توی فر ۱۷۵ درجه ۳۵-۴۰ دقیقه بپزید.</p><div class="golden-box"><p>💡 راز کیک اسفنجی پف‌دار: ۱) تخم مرغ باید هم دمای اتاق باشه ۲) ۵ دقیقه هم زدن تخم مرغ ۳) آرد رو الک کنید ۴) بعد از پخت، کیک رو توی فر خاموش ۱۰ دقیقه بذارید تا عرق کنه و پفش نخوابه!</p></div></div>
+
+    <a href="index.html" class="back-btn">🔙 بازگشت به خانه</a>
+    <a href="foods_2.html" class="back-btn">🍗 ۳۰ غذای بعدی ←</a>
+
+    <div class="footer">
+        <p>🌟 rahilanab.com | <a href="index.html">🏠 خانه</a> | <a href="foods_2.html">🍗 غذاهای ۳۱-۶۰</a></p>
+    </div>
+
 </body>
-</html>
+    </html>
