@@ -1,78 +1,42 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>📋 همه لینک‌ها | رهیلا</title>
+    <title>📋 همه لینک‌ها | rahilanab.com</title>
+    <meta name="description" content="لیست کامل همه صفحات سایت رهیلا">
+    <meta name="keywords" content="همه لینک‌ها, رهیلا, rahilanab">
     <style>
         *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:'Arial';background:linear-gradient(135deg,#e3f2fd,#bbdefb,#90caf9,#a5d6a7);color:#111;padding:15px;min-height:100vh}
-        .header{background:#fff;border-radius:20px;padding:18px;margin-bottom:15px;text-align:center;box-shadow:0 4px 15px rgba(0,0,0,.1)}
-        .header h1{color:#0d47a1;font-size:22px}
-        .back-btn{display:inline-block;background:#0d47a1;color:#fff;padding:8px 20px;border-radius:20px;text-decoration:none;margin:10px 0}
-        .section{background:#fff;border-radius:15px;padding:15px;margin:12px 0;box-shadow:0 2px 10px rgba(0,0,0,.05)}
-        .section h2{color:#0d47a1;font-size:16px;margin-bottom:10px;border-bottom:2px solid #e3f2fd;padding-bottom:8px}
-        .link-grid{display:grid;grid-template-columns:1fr 1fr;gap:5px}
-        .link-card{background:#f8f9fa;padding:10px;border-radius:10px;text-decoration:none;color:#333;font-size:12px;text-align:right;border:1px solid #eee}
-        .link-card:active{background:#e3f2fd}
-        .link-card .emoji{font-size:16px}
+        body{font-family:'Arial';background:linear-gradient(135deg,#e3f2fd,#bbdefb,#90caf9,#a5d6a7);color:#000;padding:15px;min-height:100vh;text-align:center}
+        .header{background:#fff;border-radius:20px;padding:20px;margin-bottom:15px;box-shadow:0 4px 15px rgba(0,0,0,.1)}
+        .header h1{color:#0d47a1;font-size:26px}
+        .header p{color:#000;font-size:17px;font-weight:bold;margin-top:5px}
+        .section{background:#fff;border-radius:20px;padding:20px;margin:18px 0;box-shadow:0 2px 12px rgba(0,0,0,.08);text-align:right;line-height:2.5}
+        .section h2{color:#0d47a1;font-size:20px;margin:15px 0;text-align:center;border-bottom:1px solid #e3f2fd;padding-bottom:8px}
+        .section a{color:#0d47a1;text-decoration:none;font-size:16px;font-weight:bold}
+        .back-btn{display:inline-block;background:#0d47a1;color:#fff;padding:12px 28px;border-radius:25px;text-decoration:none;margin:12px 0;font-weight:bold;font-size:17px}
+        .footer{background:#fff;padding:16px;margin-top:20px;font-size:15px;color:#000;border-radius:15px;font-weight:bold}
+        .footer a{color:#0d47a1;text-decoration:none;font-weight:bold}
     </style>
 </head>
 <body>
-    <div class="header"><h1>📋 همه لینک‌های رهیلا</h1><p>فهرست کامل صفحات | rahilanab.com</p></div>
-    <a href="index.html" class="back-btn">🔙 خانه</a>
-
-    <div class="section"><h2>🍳 آشپزی</h2><div class="link-grid">
-        <a href="cooking.html" class="link-card"><span class="emoji">🍲</span> قورمه سبزی</a>
-        <a href="cooking2.html" class="link-card"><span class="emoji">🍲</span> قیمه</a>
-        <a href="foods-1.html" class="link-card"><span class="emoji">🍳</span> غذاهای ۱-۳۰</a>
-        <a href="foods-2.html" class="link-card"><span class="emoji">🍗</span> غذاهای ۳۱-۶۰</a>
-        <a href="foods-3.html" class="link-card"><span class="emoji">🍝</span> غذاهای ۶۱-۹۰</a>
-        <a href="foods-4.html" class="link-card"><span class="emoji">🍰</span> غذاهای ۹۱-۱۲۰</a>
-    </div></div>
-
-    <div class="section"><h2>🤲 ادعیه و دینی</h2><div class="link-grid">
-        <a href="dua.html" class="link-card"><span class="emoji">🤲</span> ادعیه کامل</a>
-        <a href="quran.html" class="link-card"><span class="emoji">📖</span> قرآن کریم</a>
-        <a href="prayer.html" class="link-card"><span class="emoji">🕌</span> نماز</a>
-        <a href="haj.html" class="link-card"><span class="emoji">🕋</span> حج</a>
-        <a href="magic.html" class="link-card"><span class="emoji">🔮</span> طلسم و سحر</a>
-        <a href="ghadir.html" class="link-card"><span class="emoji">🎉</span> عیدها</a>
-    </div></div>
-
-    <div class="section"><h2>🎬 فیلم و کارتون</h2><div class="link-grid">
-        <a href="cartoon.html" class="link-card"><span class="emoji">🐱</span> کارتون نوستالژیک</a>
-        <a href="spongebob.html" class="link-card"><span class="emoji">🧽</span> باب اسفنجی</a>
-        <a href="tom-jerry.html" class="link-card"><span class="emoji">🐱</span> تام و جری</a>
-        <a href="fajr.html" class="link-card"><span class="emoji">🏆</span> فیلم فجر</a>
-        <a href="hafez-fest.html" class="link-card"><span class="emoji">🎭</span> جشن حافظ</a>
-    </div></div>
-
-    <div class="section"><h2>💄 زیبایی و مد</h2><div class="link-grid">
-        <a href="beauty.html" class="link-card"><span class="emoji">💄</span> زیبایی</a>
-        <a href="fashion.html" class="link-card"><span class="emoji">👗</span> مد و لباس</a>
-        <a href="skin.html" class="link-card"><span class="emoji">✨</span> پوست و مو</a>
-    </div></div>
-
-    <div class="section"><h2>💊 سلامت</h2><div class="link-grid">
-        <a href="health.html" class="link-card"><span class="emoji">💊</span> سلامت</a>
-        <a href="pregnancy.html" class="link-card"><span class="emoji">🤰</span> بارداری</a>
-        <a href="diet.html" class="link-card"><span class="emoji">🥗</span> رژیم</a>
-    </div></div>
-
-    <div class="section"><h2>🚗 خودرو و تکنولوژی</h2><div class="link-grid">
-        <a href="car.html" class="link-card"><span class="emoji">🚗</span> خودرو</a>
-        <a href="clock.html" class="link-card"><span class="emoji">⏰</span> ساعت</a>
-        <a href="mobile-repair.html" class="link-card"><span class="emoji">📱</span> موبایل</a>
-        <a href="phone-settings.html" class="link-card"><span class="emoji">⚙️</span> تنظیمات</a>
-    </div></div>
-
-    <div class="section"><h2>📄 اطلاعات</h2><div class="link-grid">
-        <a href="about.html" class="link-card"><span class="emoji">📄</span> درباره ما</a>
-        <a href="contact.html" class="link-card"><span class="emoji">📧</span> تماس با ما</a>
-        <a href="privacy.html" class="link-card"><span class="emoji">🔒</span> حریم خصوصی</a>
-    </div></div>
-
-    <p style="text-align:center;margin:15px 0"><a href="index.html" style="color:#0d47a1">🔙 خانه</a></p>
+<div class="header"><h1>📋 همه لینک‌ها</h1><p>rahilanab.com</p></div>
+<div class="section">
+    <h2>🍳 آشپزی</h2>
+    <p><a href="foods_1.html">غذاهای ۱-۳۰</a> | <a href="foods_2.html">غذاهای ۳۱-۶۰</a> | <a href="foods_3.html">غذاهای ۶۱-۹۰</a> | <a href="foods_4.html">غذاهای ۹۱-۱۲۰</a></p>
+    <h2>💊 سلامت</h2>
+    <p><a href="health.html">سلامت ۱-۱۵</a> | <a href="health2.html">سلامت ۱۶-۳۰</a></p>
+    <h2>💄 زیبایی</h2>
+    <p><a href="beauty.html">زیبایی ۱-۲۰</a> | <a href="beauty2.html">زیبایی ۲۱-۴۰</a></p>
+    <h2>🎮 بازی‌ها</h2>
+    <p><a href="games.html">۲۰ بازی</a> | <a href="game2.html">۱۰ بازی</a> | <a href="game3.html">۲۰ بازی جذاب</a></p>
+    <h2>💰 اقتصاد</h2>
+    <p><a href="economy.html">قیمت‌های لحظه‌ای</a></p>
+    <h2>📄 صفحات</h2>
+    <p><a href="about">درباره ما</a> | <a href="contact">تماس با ما</a> | <a href="privacy">حریم خصوصی</a> | <a href="clock.html">ساعت</a></p>
+</div>
+<a href="index.html" class="back-btn">🔙 بازگشت به خانه</a>
+<div class="footer"><p>🌟 rahilanab.com | <a href="index.html">🏠 خانه</a></p></div>
 </body>
 </html>
