@@ -3,69 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🚗 خودرو | عیب‌یابی، تعمیرات، قیمت | رهیلا</title>
+    <title>🚗 خودرو و عیب‌یابی | رهیلا</title>
     <style>
         *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:Arial;background:radial-gradient(circle at center,#0a1a1a,#1a4a4a,#66ccaa);color:#fff;text-align:center;padding:15px;min-height:100vh}
-        .header{background:rgba(255,255,255,.08);backdrop-filter:blur(20px);border-radius:25px;padding:20px;margin-bottom:15px}
-        .header h1{color:#ffd700;font-size:22px}
-        .back-btn{display:inline-block;background:rgba(255,255,255,.15);color:#fff;padding:8px 20px;border-radius:20px;text-decoration:none;margin:10px 0;font-size:14px}
-        .section-title{color:#ffd700;font-size:18px;margin:20px 0 10px}
-        .grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-        .card{background:rgba(255,255,255,.05);border-radius:12px;padding:15px;border:1px solid rgba(255,255,255,.1);text-align:right}
-        .card:active{background:rgba(255,215,0,.2)}
-        .card h3{font-size:14px;color:#ffd700}
-        .card p{font-size:10px;color:#aaa;margin-top:3px}
+        body{font-family:'Arial';background:linear-gradient(135deg,#e3f2fd,#bbdefb,#90caf9,#a5d6a7);color:#111;padding:15px;min-height:100vh}
+        .header{background:#fff;border-radius:20px;padding:18px;margin-bottom:15px;text-align:center;box-shadow:0 4px 15px rgba(0,0,0,.1)}
+        .header h1{color:#0d47a1;font-size:22px}
+        .back-btn{display:inline-block;background:#0d47a1;color:#fff;padding:10px 25px;border-radius:20px;text-decoration:none;margin:10px 0}
+        .car-card{background:#fff;border-radius:20px;padding:20px;margin:20px 0;box-shadow:0 2px 15px rgba(0,0,0,.08);text-align:right}
+        .car-card h2{color:#0d47a1;font-size:20px;text-align:center;margin-bottom:10px;border-bottom:2px solid #e3f2fd;padding-bottom:8px}
+        .section{background:#f8f9fa;border-radius:12px;padding:12px;margin:8px 0;border-right:3px solid #0d47a1}
+        .section h3{color:#0d47a1;font-size:15px;margin-bottom:6px}
+        .section p{color:#333;font-size:13px;line-height:2}
+        .tips-box{background:#e8f5e9;border-radius:12px;padding:12px;border:1px solid #a5d6a7;margin:8px 0}
+        .tips-box h3{color:#2e7d32;font-size:14px}
+        .tips-box ul{color:#333;font-size:12px;line-height:2;padding-right:12px}
     </style>
 </head>
 <body>
-    <div class="header"><h1>🚗 خودرو و تعمیرات</h1></div>
-    <a href="index.html" class="back-btn">🔙 برگشت</a>
+    <div class="header"><h1>🚗 عیب‌یابی خودرو</h1><p>راهنمای کامل مشکلات رایج خودرو | rahilanab.com</p></div>
+    <a href="index.html" class="back-btn">🔙 خانه</a>
 
-    <div class="section-title">🔧 عیب‌یابی خودرو</div>
-    <div class="grid">
-        <div class="card"><h3>ماشین استارت نمیخوره</h3><p>دلایل و راه حل</p></div>
-        <div class="card"><h3>ماشین خاموش میشه</h3><p>در حین حرکت</p></div>
-        <div class="card"><h3>ماشین ریپ میزنه</h3><p>علت و درمان</p></div>
-        <div class="card"><h3>چراغ چک روشن</h3><p>معنی چراغ‌ها</p></div>
-        <div class="card"><h3>دود سفید اگزوز</h3><p>نشانه چیست</p></div>
-        <div class="card"><h3>دود سیاه اگزوز</h3><p>مشکل کجاست</p></div>
-        <div class="card"><h3>کولر خنک نمیکنه</h3><p>شارژ گاز کولر</p></div>
-        <div class="card"><h3>ترمز صدا میده</h3><p>لنت و دیسک</p></div>
-    </div>
+<div class="car-card"><h2>۱. 🚗 ماشین استارت نمیخوره</h2><div class="section"><h3>📋 دلایل</h3><p>باتری خراب، استارت معیوب، سوئیچ مشکل دار، فیوز سوخته، باک خالی.</p></div><div class="tips-box"><h3>⭐ راه حل</h3><ul><li>چک کردن باتری و کابل‌ها</li><li>باتری به باتری کردن</li><li>مراجعه به مکانیک</li></ul></div></div>
 
-    <div class="section-title">🛞 لاستیک و چرخ</div>
-    <div class="grid">
-        <div class="card"><h3>قیمت لاستیک</h3><p>انواع برندها</p></div>
-        <div class="card"><h3>تنظیم باد لاستیک</h3><p>مقدار استاندارد</p></div>
-        <div class="card"><h3>عمر لاستیک</h3><p>کی تعویض کنیم</p></div>
-        <div class="card"><h3>لاستیک پنچر</h3><p>تعمیر فوری</p></div>
-    </div>
+<div class="car-card"><h2>۲. 🚗 چراغ چک روشن شده</h2><div class="section"><h3>📋 دلایل</h3><p>مشکل سنسور اکسیژن، کاتالیست، شمع‌ها، سیستم سوخت‌رسانی.</p></div><div class="tips-box"><h3>⭐ راه حل</h3><ul><li>دستگاه دیاگ بزنید</li><li>اگه چشمک میزنه = خطرناکه</li><li>اگه ثابته = میتونید برانید</li></ul></div></div>
 
-    <div class="section-title">✨ نگهداری</div>
-    <div class="grid">
-        <div class="card"><h3>پولیش و واکس</h3><p>براق کردن بدنه</p></div>
-        <div class="card"><h3>سرامیک خودرو</h3><p>مزایا و معایب</p></div>
-        <div class="card"><h3>آبکاری قطعات</h3><p>سماور و کتری</p></div>
-        <div class="card"><h3>بازسازی ظروف تفلون</h3><p>روش ترمیم</p></div>
-    </div>
+<div class="car-card"><h2>۳. 🚗 ماشین خاموش میشه</h2><div class="section"><h3>📋 دلایل</h3><p>پمپ بنزین ضعیف، فیلتر هوا کثیف، سنسور میل‌لنگ خراب.</p></div></div>
 
-    <div class="section-title">🔐 امنیت</div>
-    <div class="grid">
-        <div class="card"><h3>قفل هوشمند</h3><p>انواع و قیمت</p></div>
-        <div class="card"><h3>دزدگیر خودرو</h3><p>بهترین برندها</p></div>
-        <div class="card"><h3>ردیاب خودرو</h3><p>مدل‌های جدید</p></div>
-        <div class="card"><h3>باز کردن قفل شکسته</h3><p>راهکار فوری</p></div>
-    </div>
+<div class="car-card"><h2>۴. 🚗 ریپ زدن موتور</h2><div class="section"><h3>📋 دلایل</h3><p>شمع‌ها خراب، وایر شمع، کوئل معیوب، انژکتور کثیف.</p></div></div>
 
-    <div class="section-title">🏍️ موتور سیکلت</div>
-    <div class="grid">
-        <div class="card"><h3>عیب‌یابی موتور</h3><p>مشکلات رایج</p></div>
-        <div class="card"><h3>قیمت موتور</h3><p>مدل‌های جدید</p></div>
-        <div class="card"><h3>بیمه موتور</h3><p>شخص ثالث</p></div>
-        <div class="card"><h3>گواهینامه موتور</h3><p>شرایط و هزینه</p></div>
-    </div>
+<div class="car-card"><h2>۵. 🚗 دود سفید اگزوز</h2><div class="section"><h3>📋 علت</h3><p>نشت مایع خنک‌کننده به داخل موتور (واشر سرسیلندر).</p></div></div>
 
-    <p style="margin-top:15px"><a href="index.html" style="color:#ffd700">🔙 برگشت به صفحه اصلی</a></p>
+<div class="car-card"><h2>۶. 🚗 دود سیاه اگزوز</h2><div class="section"><h3>📋 علت</h3><p>سوخت بیش از حد. مشکل در انژکتورها یا سنسور اکسیژن.</p></div></div>
+
+<div class="car-card"><h2>۷. 🚗 دود آبی اگزوز</h2><div class="section"><h3>📋 علت</h3><p>روغن‌سوزی. رینگ پیستون یا گاید سوپاپ خراب.</p></div></div>
+
+<div class="car-card"><h2>۸. 🚗 کولر خنک نمیکنه</h2><div class="section"><h3>📋 دلایل</h3><p>گاز کولر کم، کمپرسور خراب، کندانسور کثیف، فیلتر کابین.</p></div></div>
+
+<div class="car-card"><h2>۹. 🚗 ترمز صدا میده</h2><div class="section"><h3>📋 علت</h3><p>لنت ترمز تمام شده، دیسک تاب برداشته، سنگ ریزه بین لنت و دیسک.</p></div></div>
+
+<div class="car-card"><h2>۱۰. 🚗 فرمان می‌لرزه</h2><div class="section"><h3>📋 دلایل</h3><p>بالانس نبودن چرخ‌ها، جلوبندی خراب، دیسک ترمز تاب برداشته.</p></div></div>
+
+<div class="car-card"><h2>۱۱. 🚗 دنده جا نمیره</h2><div class="section"><h3>📋 علت</h3><p>کلاچ تمام شده، روغن گیربکس کم، سیم کلاچ پاره.</p></div></div>
+
+<div class="car-card"><h2>۱۲. 🚗 بوی بنزین</h2><div class="section"><h3>📋 علت</h3><p>نشت در سیستم سوخت‌رسانی، شلنگ بنزین پوسیده، باک سوراخ.</p></div></div>
+
+<div class="car-card"><h2>۱۳. 🚗 آمپر آب بالا میره</h2><div class="section"><h3>📋 دلایل</h3><p>کمبود آب رادیاتور، ترموستات خراب، واتر پمپ معیوب، رادیاتور گرفته.</p></div></div>
+
+<div class="car-card"><h2>۱۴. 🚗 روغن کم میکنه</h2><div class="section"><h3>📋 علت</h3><p>نشتی روغن، روغن‌سوزی، کاسه نمد خراب.</p></div></div>
+
+<div class="car-card"><h2>۱۵. 🚗 باتری خالی میشه</h2><div class="section"><h3>📋 دلایل</h3><p>دینام خراب، باتری فرسوده، مصرف برق زیاد.</p></div></div>
+
+<div class="car-card"><h2>۱۶. 🚗 شتاب کم</h2><div class="section"><h3>📋 دلایل</h3><p>فیلتر هوا کثیف، پمپ بنزین ضعیف، شمع‌ها خراب.</p></div></div>
+
+<div class="car-card"><h2>۱۷. 🚗 مصرف بنزین بالا</h2><div class="section"><h3>📋 دلایل</h3><p>فیلتر هوا، سنسور اکسیژن، باد لاستیک کم، رانندگی پرشتاب.</p></div></div>
+
+<div class="car-card"><h2>۱۸. 🚗 پدال کلاچ سفت</h2><div class="section"><h3>📋 علت</h3><p>کابل کلاچ خشک، صفحه کلاچ تمام شده.</p></div></div>
+
+<div class="car-card"><h2>۱۹. 🚗 چراغ باتری روشن</h2><div class="section"><h3>📋 علت</h3><p>دینام خراب، تسمه دینام پاره، باتری معیوب.</p></div></div>
+
+<div class="car-card"><h2>۲۰. 🚗 چراغ روغن روشن</h2><div class="section"><h3>📋 علت</h3><p>روغن موتور کم، پمپ روغن خراب، فیلتر روغن گرفته.</p></div></div>
+
+<div class="car-card"><h2>۲۱. 🚗 چراغ ABS روشن</h2><div class="section"><h3>📋 علت</h3><p>سنسور ABS خراب، مشکل در سیستم ترمز.</p></div></div>
+
+<div class="car-card"><h2>۲۲. 🚗 چراغ ایربگ روشن</h2><div class="section"><h3>📋 علت</h3><p>مشکل در سیستم ایربگ، سنسور صندلی.</p></div></div>
+
+<div class="car-card"><h2>۲۳. 🛞 لاستیک‌ها</h2><div class="section"><h3>📋 نکات</h3><p>تنظیم باد ماهانه، تعویض هر ۴۰-۵۰ هزار کیلومتر، آج حداقل ۱.۶ میلیمتر.</p></div></div>
+
+<div class="car-card"><h2>۲۴. 🔧 سرویس‌های دوره‌ای</h2><div class="section"><h3>📋 برنامه</h3><p>تعویض روغن هر ۵۰۰۰ کیلومتر، فیلتر هوا هر ۱۰۰۰۰، شمع هر ۲۰۰۰۰، تسمه تایم هر ۶۰۰۰۰.</p></div></div>
+
+<div class="car-card"><h2>۲۵. 🚗 بیمه خودرو</h2><div class="section"><h3>📋 انواع</h3><p>شخص ثالث (اجباری)، بدنه (اختیاری). عوامل مؤثر: نوع خودرو، سال ساخت، تخفیف عدم خسارت.</p></div></div>
+
+    <p style="text-align:center;margin:20px 0"><a href="car2.html" style="color:#0d47a1">🚗 مطالب بیشتر ←</a></p>
+    <p style="text-align:center"><a href="index.html" style="color:#0d47a1">🔙 خانه</a></p>
 </body>
 </html>
