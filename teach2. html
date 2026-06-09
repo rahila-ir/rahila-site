@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📱 تکنولوژی ۲ | رهیلا</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Arial';background:linear-gradient(135deg,#e3f2fd,#bbdefb,#90caf9,#a5d6a7);color:#111;padding:15px;min-height:100vh}
+        .header{background:#fff;border-radius:20px;padding:18px;margin-bottom:15px;text-align:center;box-shadow:0 4px 15px rgba(0,0,0,.1)}
+        .header h1{color:#0d47a1;font-size:22px}
+        .back-btn{display:inline-block;background:#0d47a1;color:#fff;padding:10px 25px;border-radius:20px;text-decoration:none;margin:10px 0}
+        .card{background:#fff;border-radius:15px;padding:15px;margin:12px 0;box-shadow:0 2px 10px rgba(0,0,0,.08);text-align:right}
+        .card h2{color:#0d47a1;font-size:18px;text-align:center;margin-bottom:8px}
+        .card p{color:#333;font-size:13px;line-height:2}
+    </style>
+</head>
+<body>
+    <div class="header"><h1>📱 تکنولوژی ۲ (۳۱-۵۰)</h1><p>rahilanab.com</p></div>
+    <a href="tech.html" class="back-btn">🔙 تکنولوژی ۱</a>
+
+<div class="card"><h2>۳۱. 📱 ریکاوری اطلاعات</h2><p>بازیابی عکس‌های پاک شده، recovery مموری کارت و هارد.</p></div>
+<div class="card"><h2>۳۲. 💻 نصب ویندوز</h2><p>آموزش گام به گام نصب ویندوز ۱۱. بوت فلش، پارتیشن‌بندی.</p></div>
+<div class="card"><h2>۳۳. 💻 رفع مشکل ویندوز</h2><p>کند شدن، هنگ کردن، آپدیت نشدن، صفحه آبی مرگ.</p></div>
+<div class="card"><h2>۳۴. 📱 آیفون</h2><p>معرفی مدل‌های جدید، iOS ۲۰، مقایسه با اندروید.</p></div>
+<div class="card"><h2>۳۵. 📱 سامسونگ</h2><p>گلکسی S، A، Z fold. One UI. مقایسه با شیائومی.</p></div>
+<div class="card"><h2>۳۶. 📱 شیائومی</h2><p>پوکو، ردمی، می. MIUI vs HyperOS.</p></div>
+<div class="card"><h2>۳۷. 📱 اندروید</h2><p>نسخه‌های اندروید، تنظیمات مخفی، Developer options.</p></div>
+<div class="card"><h2>۳۸. 📱 iOS</h2><p>اپ استور، iCloud، AirDrop، FaceTime.</p></div>
+<div class="card"><h2>۳۹. 💻 مک‌بوک</h2><p>MacBook Air vs Pro. macOS. برنامه‌های کاربردی.</p></div>
+<div class="card"><h2>۴۰. 🎧 هدفون</h2><p>ایرپاد، هدفون بی‌سیم، نویز کنسلینگ.</p></div>
+<div class="card"><h2>۴۱. ⌚ ساعت هوشمند</h2><p>اپل واچ، گلکسی واچ، شیائومی بند. کاربردها.</p></div>
+<div class="card"><h2>۴۲. 📷 دوربین عکاسی</h2><p>DSLR vs Mirrorless. کانن، نیکون، سونی.</p></div>
+<div class="card"><h2>۴۳. 🖨️ پرینتر</h2><p>جوهرافشان vs لیزری. کارتریج، شارژ مجدد.</p></div>
+<div class="card"><h2>۴۴. 🎮 کنسول بازی</h2><p>PS5، Xbox، Nintendo Switch. بهترین بازی‌ها.</p></div>
+<div class="card"><h2>۴۵. 🖥️ مانیتور</h2><p>گیمینگ، طراحی، اداری. IPS، VA، OLED.</p></div>
+<div class="card"><h2>۴۶. ⌨️ کیبورد و موس</h2><p>مکانیکال، گیمینگ، بی‌سیم. برندهای معروف.</p></div>
+<div class="card"><h2>۴۷. 💾 هارد و SSD</h2><p>HDD vs SSD vs NVMe. ظرفیت، سرعت، قیمت.</p></div>
+<div class="card"><h2>۴۸. 📡 مودم و روتر</h2><p>تنظیمات، افزایش سرعت، امنیت شبکه.</p></div>
+<div class="card"><h2>۴۹. 🔋 پاوربانک</h2><p>ظرفیت، سرعت شارژ، برندهای معتبر.</p></div>
+<div class="card"><h2>۵۰. 🤖 رباتیک</h2><p>ربات‌های خانگی، جاروبرقی هوشمند، هوش مصنوعی.</p></div>
+
+    <p style="text-align:center;margin:20px 0"><a href="tech.html" style="color:#0d47a1">← تکنولوژی ۱</a></p>
+    <p style="text-align:center"><a href="index.html" style="color:#0d47a1">🔙 خانه</a></p>
+</body>
+</html>
