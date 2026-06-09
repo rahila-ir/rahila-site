@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🤲 ادعیه ۲ | رهیلا</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Arial';background:linear-gradient(135deg,#e3f2fd,#bbdefb,#90caf9,#a5d6a7);color:#111;padding:15px;min-height:100vh}
+        .header{background:#fff;border-radius:20px;padding:18px;margin-bottom:15px;text-align:center;box-shadow:0 4px 15px rgba(0,0,0,.1)}
+        .header h1{color:#0d47a1;font-size:22px}
+        .back-btn{display:inline-block;background:#0d47a1;color:#fff;padding:10px 25px;border-radius:20px;text-decoration:none;margin:10px 0}
+        .dua-card{background:#fff;border-radius:20px;padding:20px;margin:20px 0;box-shadow:0 2px 15px rgba(0,0,0,.08);text-align:right}
+        .dua-card h2{color:#0d47a1;font-size:20px;text-align:center;margin-bottom:12px;border-bottom:2px solid #e3f2fd;padding-bottom:8px}
+        .dua-text{background:#f8f9fa;border-radius:12px;padding:15px;margin:10px 0;line-height:2.5;text-align:center}
+        .dua-text .arabic{color:#1a237e;font-size:17px;line-height:2.8;font-weight:bold}
+        .dua-text .farsi{color:#555;font-size:13px;line-height:2}
+        .info-row{display:flex;justify-content:space-around;text-align:center;margin:10px 0;flex-wrap:wrap}
+        .info-item{background:#f0f4ff;padding:10px;border-radius:10px;min-width:70px}
+        .info-item .value{color:#0d47a1;font-size:14px;font-weight:bold}.info-item .label{color:#666;font-size:9px}
+    </style>
+</head>
+<body>
+    <div class="header"><h1>🤲 ادعیه و زیارات ۲</h1><p>rahilanab.com</p></div>
+    <a href="dua.html" class="back-btn">🔙 ادعیه ۱</a>
+
+    <!-- دعای ندبه -->
+    <div class="dua-card">
+        <h2>🌙 دعای ندبه</h2>
+        <div class="info-row"><div class="info-item"><div class="value">📿 صبح جمعه</div></div><div class="info-item"><div class="value">🤲 امام زمان</div></div></div>
+        <div class="dua-text">
+            <p class="arabic">اللَّهُمَّ لَكَ الْحَمْدُ عَلَى مَا جَرَى بِهِ قَضَاؤُكَ فِي أَوْلِيَائِكَ</p>
+            <p class="farsi">خدایا تو را سپاس بر آنچه قضایت در حق دوستانت جاری ساخت</p>
+            <p class="arabic">أَيْنَ الْمُنْتَظَرُ لِإِقَامَةِ الْأَمْتِ وَالْعِوَجِ</p>
+            <p class="farsi">کجاست آن بزرگواری که برای برپایی راستی و از بین بردن کجی‌ها انتظار می‌رود</p>
+            <p class="arabic">أَيْنَ الْمُدَّخَرُ لِتَجْدِيدِ الْفَرَائِضِ وَالسُّنَنِ</p>
+            <p class="farsi">کجاست آن ذخیره شده برای تجدید واجبات و سنت‌ها</p>
+            <p style="color:#0d47a1;text-align:center;margin-top:10px">✨ دعای ندبه در فراق امام زمان (عج) خوانده می‌شود ✨</p>
+        </div>
+    </div>
+
+    <!-- دعای عرفه -->
+    <div class="dua-card">
+        <h2>🌙 دعای عرفه (امام حسین)</h2>
+        <div class="info-row"><div class="info-item"><div class="value">📿 روز عرفه</div></div><div class="info-item"><div class="value">🤲 امام حسین (ع)</div></div></div>
+        <div class="dua-text">
+            <p class="arabic">الْحَمْدُ لِلَّهِ الَّذِي لَيْسَ لِقَضَائِهِ دَافِعٌ</p>
+            <p class="farsi">ستایش خدایی را که هیچ چیز مانع قضایش نیست</p>
+            <p class="arabic">اللَّهُمَّ اجْعَلْنِي أَخْشَاكَ كَأَنِّي أَرَاكَ</p>
+            <p class="farsi">خدایا چنان کن که از تو بترسم چنانکه گویی تو را می‌بینم</p>
+            <p style="color:#0d47a1;text-align:center;margin-top:10px">✨ امام حسین (ع) این دعا را در صحرای عرفات خواندند ✨</p>
+        </div>
+    </div>
+
+    <!-- زیارت اربعین -->
+    <div class="dua-card">
+        <h2>🕌 زیارت اربعین</h2>
+        <div class="info-row"><div class="info-item"><div class="value">📿 اربعین حسینی</div></div><div class="info-item"><div class="value">❤️ امام حسین (ع)</div></div></div>
+        <div class="dua-text">
+            <p class="arabic">السَّلَامُ عَلَى وَلِيِّ اللَّهِ وَحَبِيبِهِ السَّلَامُ عَلَى خَلِيلِ اللَّهِ وَنَجِيبِهِ</p>
+            <p class="farsi">سلام بر ولی خدا و حبیبش، سلام بر خلیل خدا و برگزیده‌اش</p>
+            <p class="arabic">السَّلَامُ عَلَى صَفِيِّ اللَّهِ وَابْنِ صَفِيِّهِ</p>
+            <p class="farsi">سلام بر برگزیده خدا و فرزند برگزیده‌اش</p>
+            <p style="color:#0d47a1;text-align:center;margin-top:10px">🕊️ زیارت اربعین از نشانه‌های مؤمن است ✨</p>
+        </div>
+    </div>
+
+    <!-- دعای افتتاح -->
+    <div class="dua-card">
+        <h2>🌙 دعای افتتاح</h2>
+        <div class="info-row"><div class="info-item"><div class="value">📿 شب‌های ماه رمضان</div></div></div>
+        <div class="dua-text">
+            <p class="arabic">اللَّهُمَّ إِنِّي أَفْتَتِحُ الثَّنَاءَ بِحَمْدِكَ</p>
+            <p class="farsi">خدایا من ستایش را با حمد تو آغاز می‌کنم</p>
+            <p class="arabic">اللَّهُمَّ إِنَّا نَرْغَبُ إِلَيْكَ فِي دَوْلَةٍ كَرِيمَةٍ</p>
+            <p class="farsi">خدایا ما به سوی تو مشتاقیم برای دولت کریمه (ظهور امام زمان)</p>
+        </div>
+    </div>
+
+    <!-- دعای ابوحمزه ثمالی -->
+    <div class="dua-card">
+        <h2>🌙 دعای ابوحمزه ثمالی</h2>
+        <div class="info-row"><div class="info-item"><div class="value">📿 سحرهای رمضان</div></div></div>
+        <div class="dua-text">
+            <p class="arabic">إِلَهِي لَا تُؤَدِّبْنِي بِعُقُوبَتِكَ</p>
+            <p class="farsi">خدایا مرا با عقوبتت ادب نکن</p>
+            <p class="arabic">إِلَهِي أَنَا الْفَقِيرُ فِي غِنَايَ فَكَيْفَ لَا أَكُونُ فَقِيرًا فِي فَقْرِي</p>
+            <p class="farsi">خدایا من در بی‌نیازیم فقیرم، پس چگونه در فقرم فقیر نباشم</p>
+        </div>
+    </div>
+
+    <!-- دعای سمات -->
+    <div class="dua-card">
+        <h2>🌟 دعای سمات</h2>
+        <div class="info-row"><div class="info-item"><div class="value">📿 عصر جمعه</div></div></div>
+        <div class="dua-text">
+            <p class="arabic">اللَّهُمَّ إِنِّي أَسْأَلُكَ بِاسْمِكَ الْعَظِيمِ الْأَعْظَمِ</p>
+            <p class="farsi">خدایا از تو می‌خواهم به حق نام بزرگ و بزرگترینت</p>
+            <p class="arabic">الَّذِي إِذَا دُعِيتَ بِهِ أَجَبْتَ</p>
+            <p class="farsi">که چون با آن خوانده شوی پاسخ دهی</p>
+        </div>
+    </div>
+
+    <p style="text-align:center;margin:20px 0"><a href="dua.html" style="color:#0d47a1">← ادعیه ۱</a></p>
+    <p style="text-align:center"><a href="index.html" style="color:#0d47a1">🔙 خانه</a></p>
+</body>
+</html>
