@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎵 ۵۰ موسیقی برتر | رهیلا</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Arial';background:linear-gradient(135deg,#e3f2fd,#bbdefb,#90caf9,#a5d6a7);color:#111;padding:15px;min-height:100vh}
+        .header{background:#fff;border-radius:20px;padding:18px;margin-bottom:15px;text-align:center;box-shadow:0 4px 15px rgba(0,0,0,.1)}
+        .header h1{color:#0d47a1;font-size:22px}.back-btn{display:inline-block;background:#0d47a1;color:#fff;padding:10px 25px;border-radius:20px;text-decoration:none;margin:10px 0}
+        .card{background:#fff;border-radius:15px;padding:12px;margin:10px 0;box-shadow:0 2px 8px rgba(0,0,0,.08);text-align:right}
+        .card h2{color:#0d47a1;font-size:16px;text-align:center;margin-bottom:6px}
+        .card p{color:#333;font-size:12px;line-height:1.8}
+        .card a{color:#1565c0;font-weight:bold;text-decoration:none}
+    </style>
+</head>
+<body>
+    <div class="header"><h1>🎵 ۵۰ موسیقی برتر با لینک</h1><p>rahilanab.com</p></div>
+    <a href="index.html" class="back-btn">🔙 خانه</a>
+
+<div class="card"><h2>۱. 🎵 موسیقی سنتی ایران</h2><p>دستگاه شور، ماهور، همایون</p><a href="https://www.youtube.com/results?search_query=persian+traditional+music" target="_blank">🎵 یوتیوب</a></div>
+<div class="card"><h2>۲. 🎵 همایون شجریان</h2><p>آلبوم آرایش غلیظ</p><a href="https://www.youtube.com/results?search_query=homayoun+shajarian" target="_blank">🎵 یوتیوب</a></div>
+<div class="card"><h2>۳. 🎵 محسن چاوشی</h2><p>خواننده پاپ ایرانی</p><a href="https://www.youtube.com/results?search_query=mohsen+chavoshi" target="_blank">🎵 یوتیوب</a></div>
+<div class="card"><h2>۴. 🎵 Beethoven</h2><p>سمفونی شماره ۹</p><a href="https://www.youtube.com/results?search_query=beethoven+symphony+9" target="_blank">🎵 یوتیوب</a></div>
+<div class="card"><h2>۵. 🎵 Mozart</h2><p>سونات پیانو</p><a href="https://www.youtube.com/results?search_query=mozart+piano+sonata" target="_blank">🎵 یوتیوب</a></div>
+<div class="card"><h2>۶. 🎵 Queen - Bohemian Rhapsody</h2><p>راک کلاسیک</p><a href="https://www.youtube.com/watch?v=fJ9rUzIMcZQ" target="_blank">🎵 یوتیوب</a></div>
+<div class="card"><h2>۷. 🎵 Pink Floyd</h2><p>Another Brick in the Wall</p><a href="https://www.youtube.com/results?search_query=pink+floyd+the+wall" target="_blank">🎵 یوتیوب</a></div>
+<div class="card"><h2>۸. 🎵 Taylor Swift</h2><p>Shake it Off</p><a href="https://www.youtube.com/results?search_query=taylor+swift+shake+it+off" target="_blank">🎵 یوتیوب</a></div>
+<div class="card"><h2>۹. 🎵 Ed Sheeran</h2><p>Shape of You</p><a href="https://www.youtube.com/watch?v=JGwWNGJdvx8" target="_blank">🎵 یوتیوب</a></div>
+<div class="card"><h2>۱۰. 🎵 Billie Eilish</h2><p>Bad Guy</p><a href="https://www.youtube.com/watch?v=DyDfgMOUjCI" target="_blank">🎵 یوتیوب</a></div>
+<div class="card"><h2>۱۱. 🎵 BTS - Dynamite</h2><p>K-pop</p><a href="https://www.youtube.com/watch?v=gdZLi9oWNZg" target="_blank">🎵 یوتیوب</a></div>
+<div class="card"><h2>۱۲. 🎵 Blackpink</h2><p>How You Like That</p><a href="https://www.youtube.com/watch?v=ioNng23DkIM" target="_blank">🎵 یوتیوب</a></div>
+<div class="card"><h2>۱۳. 🎵 Adele</h2><p>Hello</p><a href="https://www.youtube.com/watch?v=YQHsXMglC9A" target="_blank">🎵 یوتیوب</a></div>
+<div class="card"><h2>۱۴. 🎵 John Legend</h2><p>All of Me</p><a href="https://www.youtube.com/watch?v=450p7goxZqg" target="_blank">🎵 یوتیوب</a></div>
+<div class="card"><h2>۱۵. 🎵 Celine Dion</h2><p>My Heart Will Go On</p><a href="https://www.youtube.com/watch?v=WNIPqafd4As" target="_blank">🎵 یوتیوب</a></div>
+<div class="card"><h2>۱۶. 🎵 Imagine Dragons</h2><p>Believer</p><a href="https://www.youtube.com/watch?v=7wtfhZwyrcc" target="_blank">🎵 یوتیوب</a></div>
+<div class="card"><h2>۱۷. 🎵 Eminem</h2><p>Lose Yourself</p><a href="https://www.youtube.com/watch?v=_Yhyp-_hX2s" target="_blank">🎵 یوتیوب</a></div>
+<div class="card"><h2>۱۸. 🎵 Drake</h2><p>God's Plan</p><a href="https://www.youtube.com/watch?v=xpVfcZ0ZcFM" target="_blank">🎵 یوتیوب</a></div>
+<div class="card"><h2>۱۹. 🎵 The Weeknd</h2><p>Blinding Lights</p><a href="https://www.youtube.com/watch?v=4NRXx6U8ABQ" target="_blank">🎵 یوتیوب</a></div>
+<div class="card"><h2>۲۰. 🎵 Dua Lipa</h2><p>Levitating</p><a href="https://www.youtube.com/watch?v=TUVcZfQe-Kw" target="_blank">🎵 یوتیوب</a></div>
+<div class="card"><h2>۲۱. 🎵 Coldplay</h2><p>Yellow</p><a href="https://www.youtube.com/watch?v=yKNxeF4KMsY" target="_blank">🎵 یوتیوب</a></div>
+<div class="card"><h2>۲۲. 🎵 Maroon 5</h2><p>Sugar</p><a href="https://www.youtube.com/watch?v=09R8_2nJtjg" target="_blank">🎵 یوتیوب</a></div>
+<div class="card"><h2>۲۳. 🎵 Bruno Mars</h2><p>Just the Way You Are</p><a href="https://www.youtube.com/watch?v=LjhCEhWiKXk" target="_blank">🎵 یوتیوب</a></div>
+<div class="card"><h2>۲۴. 🎵 Rihanna</h2><p>Diamonds</p><a href="https://www.youtube.com/watch?v=lWA2pjMjpBs" target="_blank">🎵 یوتیوب</a></div>
+<div class="card"><h2>۲۵. 🎵 Beyonce</h2><p>Halo</p><a href="https://www.youtube.com/watch?v=bnVUHWCynig" target="_blank">🎵 یوتیوب</a></div>
+<div class="card"><h2>۲۶. 🎵 Shakira</h2><p>Waka Waka</p><a href="https://www.youtube.com/watch?v=pRpeEdMmmQ0" target="_blank">🎵 یوتیوب</a></div>
+<div class="card"><h2>۲۷. 🎵 Enrique Iglesias</h2><p>Hero</p><a href="https://www.youtube.com/watch?v=koJlIGDImiU" target="_blank">🎵 یوتیوب</a></div>
+<div class="card"><h2>۲۸. 🎵 Andrea Bocelli</h2><p>Con Te Partiro</p><a href="https://www.youtube.com/watch?v=Qt0_oPPK6eA" target="_blank">🎵 یوتیوب</a></div>
+<div class="card"><h2>۲۹. 🎵 Hans Zimmer</h2><p>Time (Inception)</p><a href="https://www.youtube.com/watch?v=RxabLA7UQ9k" target="_blank">🎵 یوتیوب</a></div>
+<div class="card"><h2>۳۰. 🎵 John Williams</h2><p>Star Wars Theme</p><a href="https://www.youtube.com/watch?v=_D0ZQPqeJkk" target="_blank">🎵 یوتیوب</a></div>
+<div class="card"><h2>۳۱. 🎵 لالایی</h2><p>لالایی آرامش‌بخش</p><a href="https://www.youtube.com/results?search_query=lullaby+music" target="_blank">🎵 یوتیوب</a></div>
+<div class="card"><h2>۳۲. 🎵 پیانو بی‌کلام</h2><p>آهنگ‌های آرامش‌بخش</p><a href="https://www.youtube.com/results?search_query=relaxing+piano+music" target="_blank">🎵 یوتیوب</a></div>
+<div class="card"><h2>۳۳. 🎵 گیتار کلاسیک</h2><p>بهترین قطعات گیتار</p><a href="https://www.youtube.com/results?search_query=classical+guitar" target="_blank">🎵 یوتیوب</a></div>
+<div class="card"><h2>۳۴. 🎵 جاز</h2><p>موسیقی جاز آرام</p><a href="https://www.youtube.com/results?search_query=smooth+jazz" target="_blank">🎵 یوتیوب</a></div>
+<div class="card"><h2>۳۵. 🎵 موسیقی کردی</h2><p>بهترین آهنگ‌های کردی</p><a href="https://www.youtube.com/results?search_query=kurdish+music" target="_blank">🎵 یوتیوب</a></div>
+<div class="card"><h2>۳۶. 🎵 موسیقی ترکی</h2><p>پاپ ترکی</p><a href="https://www.youtube.com/results?search_query=turkish+pop+music" target="_blank">🎵 یوتیوب</a></div>
+<div class="card"><h2>۳۷. 🎵 موسیقی عربی</h2><p>ام کلثوم</p><a href="https://www.youtube.com/results?search_query=om+kalthoum" target="_blank">🎵 یوتیوب</a></div>
+<div class="card"><h2>۳۸. 🎵 موسیقی هندی</h2><p>بالیوود</p><a href="https://www.youtube.com/results?search_query=bollywood+songs" target="_blank">🎵 یوتیوب</a></div>
+<div class="card"><h2>۳۹. 🎵 مداحی محرم</h2><p>مداحی‌های معروف</p><a href="https://www.youtube.com/results?search_query=madahi+moharram" target="_blank">🎵 یوتیوب</a></div>
+<div class="card"><h2>۴۰. 🎵 موسیقی مدیتیشن</h2><p>آرامش ذهن</p><a href="https://www.youtube.com/results?search_query=meditation+music" target="_blank">🎵 یوتیوب</a></div>
+<div class="card"><h2>۴۱. 🎵 Frank Sinatra</h2><p>Fly Me to the Moon</p><a href="https://www.youtube.com/watch?v=ZEcqHA7dbwM" target="_blank">🎵 یوتیوب</a></div>
+<div class="card"><h2>۴۲. 🎵 Elvis Presley</h2><p>Can't Help Falling in Love</p><a href="https://www.youtube.com/watch?v=vGJTaP6anOU" target="_blank">🎵 یوتیوب</a></div>
+<div class="card"><h2>۴۳. 🎵 Michael Jackson</h2><p>Billie Jean</p><a href="https://www.youtube.com/watch?v=Zi_XLOBDo_Y" target="_blank">🎵 یوتیوب</a></div>
+<div class="card"><h2>۴۴. 🎵 Whitney Houston</h2><p>I Will Always Love You</p><a href="https://www.youtube.com/watch?v=3JWTaaS7LdU" target="_blank">🎵 یوتیوب</a></div>
+<div class="card"><h2>۴۵. 🎵 Guns N Roses</h2><p>Sweet Child O Mine</p><a href="https://www.youtube.com/watch?v=1w7OgIMMRc4" target="_blank">🎵 یوتیوب</a></div>
+<div class="card"><h2>۴۶. 🎵 Nirvana</h2><p>Smells Like Teen Spirit</p><a href="https://www.youtube.com/watch?v=hTWKbfoikeg" target="_blank">🎵 یوتیوب</a></div>
+<div class="card"><h2>۴۷. 🎵 Linkin Park</h2><p>Numb</p><a href="https://www.youtube.com/watch?v=kXYiU_JCYtU" target="_blank">🎵 یوتیوب</a></div>
+<div class="card"><h2>۴۸. 🎵 Eagles</h2><p>Hotel California</p><a href="https://www.youtube.com/watch?v=BciS5krYL80" target="_blank">🎵 یوتیوب</a></div>
+<div class="card"><h2>۴۹. 🎵 Bob Marley</h2><p>No Woman No Cry</p><a href="https://www.youtube.com/watch?v=IT8XvzIfi4U" target="_blank">🎵 یوتیوب</a></div>
+<div class="card"><h2>۵۰. 🎵 Louis Armstrong</h2><p>What a Wonderful World</p><a href="https://www.youtube.com/watch?v=VqhCQZaH4Vs" target="_blank">🎵 یوتیوب</a></div>
+
+    <p style="text-align:center;margin:20px 0"><a href="index.html" style="color:#0d47a1">🔙 خانه</a></p>
+</body>
+</html>
