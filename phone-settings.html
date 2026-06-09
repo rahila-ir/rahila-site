@@ -3,103 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>📱 آموزش تنظیمات گوشی | اندروید، شیائومی، سامسونگ، آیفون | rahilanab.com</title>
-    <meta name="description" content="آموزش کامل تنظیمات گوشی برای تمام برندها: سامسونگ، شیائومی، آیفون و اندروید. اینترنت، وای‌فای، بلوتوث، امنیت، باتری و ...">
-    <meta name="keywords" content="تنظیمات گوشی, آموزش تنظیمات, سامسونگ, شیائومی, آیفون, اندروید, وایفای, بلوتوث, باتری">
+    <title>📱 آموزش کامل تنظیمات گوشی | سامسونگ، شیائومی، آیفون | rahilanab.com</title>
+    <meta name="description" content="آموزش کامل تنظیمات گوشی برای تمام برندها: سامسونگ، شیائومی، آیفون و اندروید. اینترنت، وای‌فای، بلوتوث، امنیت، باتری و...">
+    <meta name="keywords" content="تنظیمات گوشی, آموزش تنظیمات, سامسونگ, شیائومی, آیفون, اندروید, وایفای, بلوتوث, باتری, rahilanab">
     <style>
         *{margin:0;padding:0;box-sizing:border-box}
         body{
-            font-family:'Arial', sans-serif;
-            background:#f5f5f5;
-            color:#333;
-            line-height:1.8;
-        }
-        
-        /* هدر اصلی */
-        .main-header{
-            background:linear-gradient(135deg, #1a73e8, #0d47a1);
-            color:#fff;
-            padding:25px 15px;
+            font-family:'Arial';
+            background:linear-gradient(135deg,#e3f2fd,#bbdefb,#90caf9,#a5d6a7);
+            color:#000;
+            padding:15px;
+            min-height:100vh;
             text-align:center;
         }
-        .main-header h1{font-size:26px;margin-bottom:8px}
-        .main-header p{font-size:15px;opacity:0.9}
-        
-        /* منوی ناوبری */
-        .navbar{
+        .header{
             background:#fff;
-            padding:12px 15px;
-            box-shadow:0 2px 8px rgba(0,0,0,.1);
-            display:flex;
-            gap:12px;
-            overflow-x:auto;
-            flex-wrap:wrap;
-            justify-content:center;
-            position:sticky;
-            top:0;
-            z-index:100;
-        }
-        .navbar a{
-            text-decoration:none;
-            color:#1a73e8;
-            padding:8px 16px;
             border-radius:20px;
-            background:#e8f0fe;
-            font-size:14px;
-            white-space:nowrap;
-            transition:.3s;
-        }
-        .navbar a:hover{background:#1a73e8;color:#fff}
-        
-        /* محتوای اصلی */
-        .container{
-            max-width:800px;
-            margin:0 auto;
-            padding:20px 15px;
-        }
-        
-        /* بخش‌ها */
-        .section{
-            background:#fff;
-            border-radius:15px;
-            padding:25px;
-            margin:20px 0;
-            box-shadow:0 2px 12px rgba(0,0,0,.06);
-        }
-        .section h2{
-            color:#1a73e8;
-            font-size:22px;
+            padding:20px;
             margin-bottom:15px;
-            padding-bottom:10px;
-            border-bottom:2px solid #e8f0fe;
-            display:flex;
-            align-items:center;
-            gap:10px;
-        }
-        .section h3{
-            color:#333;
-            font-size:18px;
-            margin:15px 0 8px;
-        }
-        .section p{margin:10px 0}
-        
-        /* تصاویر */
-        .img-box{
-            text-align:center;
-            margin:20px 0;
-        }
-        .img-box img{
-            max-width:100%;
-            border-radius:10px;
             box-shadow:0 4px 15px rgba(0,0,0,.1);
         }
-        .img-box .caption{
-            font-size:13px;
-            color:#888;
-            margin-top:8px;
+        .header h1{color:#0d47a1;font-size:26px}
+        .header p{color:#000;font-size:17px;font-weight:bold;margin-top:5px}
+        .nav-bar{
+            display:flex;
+            flex-wrap:wrap;
+            gap:6px;
+            justify-content:center;
+            margin:12px 0;
+        }
+        .nav-bar a{
+            background:#0d47a1;
+            color:#fff;
+            padding:8px 14px;
+            border-radius:20px;
+            text-decoration:none;
+            font-size:14px;
+            font-weight:bold;
+        }
+        .section{
+            background:#fff;
+            border-radius:20px;
+            padding:25px;
+            margin:18px 0;
+            box-shadow:0 2px 12px rgba(0,0,0,.08);
+            text-align:right;
+            line-height:2.3;
+        }
+        .section h2{
+            color:#0d47a1;
+            font-size:22px;
+            margin-bottom:15px;
+            text-align:center;
+            border-bottom:2px solid #e3f2fd;
+            padding-bottom:10px;
+        }
+        .section h3{
+            color:#0d47a1;
+            font-size:19px;
+            margin:18px 0 10px;
+        }
+        .section p{
+            color:#000;
+            font-size:17px;
+            font-weight:bold;
+            margin:10px 0;
+        }
+        .section li{
+            color:#000;
+            font-size:17px;
+            font-weight:bold;
+            margin:8px 0;
+        }
+        table{
+            width:100%;
+            border-collapse:collapse;
+            margin:15px 0;
+            font-size:16px;
+        }
+        th{
+            background:#0d47a1;
+            color:#fff;
+            padding:12px;
+            font-size:16px;
+            font-weight:bold;
+        }
+        td{
+            padding:12px;
+            border:1px solid #ddd;
+            color:#000;
+            font-size:16px;
+            font-weight:bold;
         }
         
-        /* ویدیو */
+        /* باکس طلایی */
+        .golden-box{
+            background:linear-gradient(135deg,#fff8e1,#ffe082,#ffd54f);
+            border-right:5px solid #ff8f00;
+            padding:18px;
+            border-radius:12px;
+            margin:18px 0;
+            box-shadow:0 3px 12px rgba(255,143,0,.2);
+        }
+        .golden-box p{color:#000;font-size:17px;font-weight:bold;margin:6px 0}
+        
+        /* باکس قرمز */
+        .red-box{
+            background:linear-gradient(135deg,#ffebee,#ffcdd2,#ef9a9a);
+            border-right:5px solid #c62828;
+            padding:18px;
+            border-radius:12px;
+            margin:18px 0;
+            box-shadow:0 3px 12px rgba(198,40,40,.2);
+        }
+        .red-box p{color:#000;font-size:17px;font-weight:bold;margin:6px 0}
+        
+        /* باکس آبی */
+        .blue-box{
+            background:linear-gradient(135deg,#e3f2fd,#bbdefb,#90caf9);
+            border-right:5px solid #0d47a1;
+            padding:18px;
+            border-radius:12px;
+            margin:18px 0;
+            box-shadow:0 3px 12px rgba(13,71,161,.2);
+        }
+        .blue-box p{color:#000;font-size:17px;font-weight:bold;margin:6px 0}
+        
+        /* باکس سبز */
+        .green-box{
+            background:linear-gradient(135deg,#e8f5e9,#c8e6c9,#a5d6a7);
+            border-right:5px solid #2e7d32;
+            padding:18px;
+            border-radius:12px;
+            margin:18px 0;
+            box-shadow:0 3px 12px rgba(46,125,50,.2);
+        }
+        .green-box p{color:#000;font-size:17px;font-weight:bold;margin:6px 0}
+        
+        /* باکس بنفش */
+        .purple-box{
+            background:linear-gradient(135deg,#f3e5f5,#e1bee7,#ce93d8);
+            border-right:5px solid #6a1b9a;
+            padding:18px;
+            border-radius:12px;
+            margin:18px 0;
+            box-shadow:0 3px 12px rgba(106,27,154,.2);
+        }
+        .purple-box p{color:#000;font-size:17px;font-weight:bold;margin:6px 0}
+        
         .video-box{
             position:relative;
             padding-bottom:56.25%;
@@ -107,6 +158,7 @@
             margin:20px 0;
             border-radius:12px;
             overflow:hidden;
+            box-shadow:0 4px 15px rgba(0,0,0,.15);
         }
         .video-box iframe{
             position:absolute;
@@ -114,362 +166,345 @@
             width:100%;height:100%;
             border-radius:12px;
         }
-        
-        /* جداول */
-        table{
-            width:100%;
-            border-collapse:collapse;
-            margin:15px 0;
-            font-size:14px;
-        }
-        th{
-            background:#1a73e8;
-            color:#fff;
-            padding:12px;
-            text-align:center;
-        }
-        td{
-            padding:10px;
-            border:1px solid #ddd;
-            text-align:center;
-        }
-        tr:nth-child(even){background:#f9f9f9}
-        
-        /* نکات */
-        .tip{
-            background:#fff8e1;
-            border-right:4px solid #ffa000;
-            padding:15px;
-            border-radius:8px;
-            margin:15px 0;
-        }
-        .tip strong{color:#ff6f00}
-        
-        .warning{
-            background:#ffebee;
-            border-right:4px solid #f44336;
-            padding:15px;
-            border-radius:8px;
-            margin:15px 0;
-        }
-        
-        /* لیست */
-        ul,ol{padding-right:25px;margin:10px 0}
-        li{margin:8px 0}
-        
-        /* دکمه */
-        .btn{
+        .back-btn{
             display:inline-block;
-            background:#1a73e8;
+            background:#0d47a1;
             color:#fff;
-            padding:12px 25px;
+            padding:12px 28px;
             border-radius:25px;
             text-decoration:none;
+            margin:12px 0;
             font-weight:bold;
-            margin:8px 4px;
-            transition:.3s;
+            font-size:17px;
         }
-        .btn:hover{background:#0d47a1;transform:translateY(-2px)}
-        
-        /* فوتر */
         .footer{
-            background:#1a73e8;
-            color:#fff;
-            text-align:center;
-            padding:20px;
-            margin-top:30px;
-            font-size:14px;
+            background:#fff;
+            padding:16px;
+            margin-top:20px;
+            font-size:15px;
+            color:#000;
+            border-radius:15px;
+            font-weight:bold;
         }
-        .footer a{color:#ffd700;text-decoration:none}
-        
-        /* واکنش‌گرا */
-        @media(max-width:600px){
-            .main-header h1{font-size:20px}
-            .section{padding:15px}
-            .section h2{font-size:18px}
-            table{font-size:12px}
-            th,td{padding:8px}
-        }
+        .footer a{color:#0d47a1;text-decoration:none;font-weight:bold}
     </style>
 </head>
 <body>
 
-<!-- هدر -->
-<header class="main-header">
-    <h1>📱 آموزش کامل تنظیمات گوشی</h1>
-    <p>سامسونگ | شیائومی | آیفون | اندروید — همه چیز درباره تنظیمات گوشی شما</p>
-</header>
-
-<!-- منو -->
-<nav class="navbar">
-    <a href="#internet">📶 اینترنت و وای‌فای</a>
-    <a href="#battery">🔋 باتری</a>
-    <a href="#security">🔒 امنیت</a>
-    <a href="#bluetooth">📡 بلوتوث</a>
-    <a href="#display">🖥️ نمایشگر</a>
-    <a href="#apps">📦 برنامه‌ها</a>
-    <a href="#accounts">👤 حساب‌ها</a>
-    <a href="#reset">🔄 بازنشانی</a>
-</nav>
-
-<!-- محتوا -->
-<div class="container">
-
-    <!-- مقدمه -->
-    <div class="section">
-        <h2>📱 تنظیمات گوشی؛ هر چیزی که باید بدانید</h2>
-        <p>
-            گوشی‌های هوشمند امروزی پر از تنظیمات مختلف هستن. از <strong>وای‌فای و اینترنت</strong> گرفته تا <strong>امنیت و حریم خصوصی</strong>.
-            تو این راهنما، قدم به قدم تمام تنظیمات مهم رو بهتون آموزش می‌دیم.
-        </p>
-        
-        <!-- تصویر -->
-        <div class="img-box">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200'%3E%3Crect fill='%23e8f0fe' width='300' height='200' rx='15'/%3E%3Ctext fill='%231a73e8' x='80' y='100' font-size='20' font-family='Arial'%3E📱 Settings%3C/text%3E%3C/svg%3E" alt="تنظیمات گوشی">
-            <p class="caption">نمایی از منوی تنظیمات گوشی‌های اندروید</p>
-        </div>
-        
-        <p>
-            فرقی نمی‌کنه گوشیتون <strong>سامسونگ</strong> باشه یا <strong>شیائومی</strong>،
-            <strong>آیفون</strong> یا هر برند دیگه‌ای. اصول کلی تنظیمات یکسانه و ما اینجا همه رو پوشش می‌دیم.
-        </p>
+    <div class="header">
+        <h1>📱 آموزش کامل تنظیمات گوشی</h1>
+        <p>سامسونگ | شیائومی | آیفون | اندروید — راهنمای کامل و ویدیویی</p>
     </div>
 
-    <!-- اینترنت و وای‌فای -->
-    <div class="section" id="internet">
+    <div class="nav-bar">
+        <a href="#intro">📱 معرفی</a>
+        <a href="#wifi">📶 وای‌فای</a>
+        <a href="#data">📱 دیتا</a>
+        <a href="#battery">🔋 باتری</a>
+        <a href="#security">🔒 امنیت</a>
+        <a href="#bluetooth">📡 بلوتوث</a>
+        <a href="#display">🖥️ نمایشگر</a>
+        <a href="#apps">📦 برنامه‌ها</a>
+        <a href="#accounts">👤 حساب‌ها</a>
+        <a href="#reset">🔄 بازنشانی</a>
+    </div>
+
+    <!-- معرفی -->
+    <div class="section" id="intro">
+        <h2>📱 تنظیمات گوشی؛ هر چیزی که باید بدانید</h2>
+        <p>گوشی‌های هوشمند امروزی پر از تنظیمات مختلف هستن. از <strong>وای‌فای و اینترنت</strong> گرفته تا <strong>امنیت و حریم خصوصی</strong>. توی این راهنمای کامل، قدم به قدم تمام تنظیمات مهم رو به صورت تصویری و ویدیویی بهتون آموزش می‌دیم.</p>
+        <p>فرقی نمی‌کنه گوشیتون <strong>سامسونگ</strong> باشه یا <strong>شیائومی</strong>، <strong>آیفون</strong> یا <strong>هواوی</strong>. اصول کلی تنظیمات یکسانه و ما اینجا همه برندها رو کامل پوشش می‌دیم.</p>
+        
+        <div class="blue-box">
+            <p>📱 <strong>نکته مهم:</strong> این راهنما برای تمام گوشی‌های اندرویدی (سامسونگ، شیائومی، هواوی، نوکیا، گوگل پیکسل) و آیفون (iOS) کاربرد داره. تفاوت‌های جزئی بین برندها توی جداول مشخص شده.</p>
+        </div>
+
+        <div class="video-box">
+            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="معرفی تنظیمات گوشی" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <!-- وای‌فای -->
+    <div class="section" id="wifi">
         <h2>📶 ۱. تنظیمات اینترنت و وای‌فای</h2>
         
-        <h3>📡 اتصال به وای‌فای</h3>
+        <h3>📡 اتصال به شبکه وای‌فای</h3>
+        <p>برای وصل شدن به اینترنت وای‌فای، مراحل زیر رو قدم به قدم دنبال کنید:</p>
         <ol>
-            <li>وارد <strong>Settings</strong> (تنظیمات) بشید</li>
-            <li>روی <strong>Wi-Fi</strong> یا <strong>Network & Internet</strong> کلیک کنید</li>
-            <li>وای‌فای رو روشن کنید</li>
-            <li>شبکه مورد نظر رو انتخاب کنید</li>
-            <li>رمز عبور رو وارد کنید</li>
+            <li>وارد برنامه <strong>Settings</strong> یا <strong>تنظیمات</strong> گوشی بشید</li>
+            <li>گزینه <strong>Wi-Fi</strong> یا <strong>Network & Internet</strong> رو انتخاب کنید</li>
+            <li>کلید وای‌فای رو روشن کنید (بکشید سمت راست تا آبی بشه)</li>
+            <li>گوشی شروع به جستجوی خودکار شبکه‌های اطراف می‌کنه</li>
+            <li>اسم شبکه مورد نظرتون رو از لیست پیدا کنید و روش کلیک کنید</li>
+            <li>رمز عبور رو با دقت کامل وارد کنید (حروف بزرگ و کوچک فرق داره!)</li>
+            <li>دکمه <strong>Connect</strong> یا <strong>اتصال</strong> رو بزنید</li>
+            <li>اگه وصل شد، زیر اسم شبکه عبارت <strong>Connected</strong> نمایش داده میشه</li>
         </ol>
-        
-        <div class="tip">
-            <strong>💡 نکته:</strong> اگه وای‌فای وصل نمیشه، مودم رو یه بار خاموش و روشن کنید. معمولاً مشکل حل میشه!
+
+        <div class="golden-box">
+            <p>💡 <strong>نکته طلایی:</strong> اگه وای‌فای وصل نمیشه، مودم رو ۳۰ ثانیه از برق بکشید و دوباره وصل کنید. این کار حافظه موقت مودم رو پاک می‌کنه و ۹۰٪ مشکلات وای‌فای رو حل می‌کنه!</p>
         </div>
+
+        <div class="green-box">
+            <p>✅ <strong>توصیه امنیتی:</strong> هیچوقت به وای‌فای‌های عمومی بدون رمز (مثل کافه‌ها و فرودگاه‌ها) بدون VPN وصل نشید! اطلاعات شما ممکنه دزدیده بشه.</p>
+        </div>
+
+        <div class="video-box">
+            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="اتصال به وای‌فای" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <!-- دیتا -->
+    <div class="section" id="data">
+        <h2>📱 ۲. اینترنت سیم‌کارت (دیتای موبایل)</h2>
         
-        <h3>📱 اینترنت سیم‌کارت (دیتا)</h3>
+        <h3>📱 فعال‌سازی اینترنت همراه</h3>
+        <p>برای استفاده از اینترنت سیم‌کارت (۴G یا ۵G)، باید دیتای موبایل رو فعال کنید. این کار از طریق تنظیمات گوشی یا نوار اعلان قابل انجامه:</p>
+        
         <table>
-            <tr><th>برند</th><th>مسیر تنظیمات</th></tr>
-            <tr><td>سامسونگ</td><td>Settings → Connections → Data Usage → Mobile Data</td></tr>
-            <tr><td>شیائومی</td><td>Settings → SIM cards & mobile networks → Data</td></tr>
-            <tr><td>آیفون</td><td>Settings → Cellular → Cellular Data</td></tr>
-            <tr><td>اندروید خام</td><td>Settings → Network & Internet → Mobile Network</td></tr>
+            <tr><th>برند گوشی</th><th>مسیر فعال‌سازی</th></tr>
+            <tr><td>📱 سامسونگ</td><td>Settings → Connections → Data Usage → Mobile Data</td></tr>
+            <tr><td>📱 شیائومی</td><td>Settings → SIM cards & mobile networks → Data</td></tr>
+            <tr><td>📱 آیفون</td><td>Settings → Cellular → Cellular Data</td></tr>
+            <tr><td>📱 هواوی</td><td>Settings → Mobile Network → Mobile Data</td></tr>
+            <tr><td>📱 اندروید خام</td><td>Settings → Network & Internet → Mobile Network</td></tr>
         </table>
+
+        <div class="red-box">
+            <p>⚠️ <strong>هشدار مهم:</strong> اینترنت همراه مصرف باتری زیادی داره! وقتی نیاز ندارید حتماً خاموشش کنید. همچنین مراقب مصرف دیتای خود باشید — بعضی برنامه‌ها در پس‌زمینه دیتای زیادی مصرف می‌کنن!</p>
+        </div>
+
+        <div class="video-box">
+            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="تنظیمات اینترنت همراه" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
     </div>
 
     <!-- باتری -->
     <div class="section" id="battery">
-        <h2>🔋 ۲. تنظیمات باتری و صرفه‌جویی</h2>
+        <h2>🔋 ۳. تنظیمات باتری و افزایش عمر</h2>
         
-        <h3>⚡ حالت ذخیره باتری (Power Saving)</h3>
-        <p>
-            همه گوشی‌ها یه حالت <strong>صرفه‌جویی در مصرف باتری</strong> دارن که وقتی باتری کمه،
-            به‌طور خودکار برنامه‌های پس‌زمینه رو محدود می‌کنه.
-        </p>
-        
+        <h3>⚡ حالت ذخیره باتری (Power Saving Mode)</h3>
+        <p>همه گوشی‌های هوشمند یه حالت <strong>صرفه‌جویی در مصرف باتری</strong> دارن که وقتی شارژ باتری کم میشه (معمولاً زیر ۲۰٪ یا ۱۵٪)، به‌طور خودکار فعال میشه و کارهای زیر رو انجام میده:</p>
+        <ul>
+            <li>برنامه‌های پس‌زمینه رو محدود یا متوقف می‌کنه</li>
+            <li>نور صفحه رو کاهش میده</li>
+            <li>نوتیفیکیشن‌ها (اعلان‌ها) رو به تأخیر می‌ندازه</li>
+            <li>سرعت پردازنده رو کمی کاهش میده</li>
+            <li>همگام‌سازی خودکار (Sync) رو غیرفعال می‌کنه</li>
+        </ul>
+
         <table>
-            <tr><th>برند</th><th>مسیر فعال‌سازی</th></tr>
-            <tr><td>سامسونگ</td><td>Settings → Battery → Power Saving</td></tr>
-            <tr><td>شیائومی</td><td>Settings → Battery → Battery Saver</td></tr>
-            <tr><td>آیفون</td><td>Settings → Battery → Low Power Mode</td></tr>
+            <tr><th>برند گوشی</th><th>مسیر فعال‌سازی</th></tr>
+            <tr><td>📱 سامسونگ</td><td>Settings → Battery and device care → Battery → Power saving</td></tr>
+            <tr><td>📱 شیائومی</td><td>Settings → Battery & performance → Battery saver</td></tr>
+            <tr><td>📱 آیفون</td><td>Settings → Battery → Low Power Mode</td></tr>
+            <tr><td>📱 هواوی</td><td>Settings → Battery → Power saving mode</td></tr>
         </table>
-        
-        <div class="warning">
-            <strong>⚠️ هشدار:</strong> استفاده طولانی از حالت ذخیره باتری ممکنه باعث بشه بعضی اعلان‌ها (Notifications) رو دریافت نکنید.
+
+        <h3>🔋 ۱۰ روش طلایی برای افزایش عمر باتری</h3>
+        <ol>
+            <li>نور صفحه رو روی حالت <strong>خودکار (Auto)</strong> بذارید یا دستی کمتر از ۵۰٪ تنظیم کنید</li>
+            <li>بلوتوث، GPS و NFC رو وقتی نیاز ندارید خاموش کنید</li>
+            <li>برنامه‌های اضافی که در پس‌زمینه باز می‌مونن رو ببندید</li>
+            <li>از والپیپرهای <strong>تیره</strong> و حالت <strong>Dark Mode</strong> استفاده کنید</li>
+            <li>نوتیفیکیشن (اعلان) برنامه‌های غیرضروری رو غیرفعال کنید</li>
+            <li>باتری رو همیشه بین <strong>۲۰٪ تا ۸۰٪</strong> نگه دارید — این محدوده طلایی عمر باتریه!</li>
+            <li>از شارژر اصلی و معتبر استفاده کنید — شارژرهای تقلبی باتری رو نابود می‌کنن</li>
+            <li>گوشی رو در دمای خیلی گرم (بالای ۴۰ درجه) یا خیلی سرد (زیر ۰ درجه) نذارید</li>
+            <li>ویبره رو خاموش کنید — موتور ویبره باتری زیادی مصرف می‌کنه</li>
+            <li>برنامه‌های پرمصرف رو از Settings → Battery شناسایی کنید و اونایی که نیاز نیست رو محدود کنید</li>
+        </ol>
+
+        <div class="golden-box">
+            <p>💡 <strong>نکته طلایی:</strong> شارژ شبانه (گذاشتن گوشی در شارژ از شب تا صبح) دشمن اصلی باتریه! باتری‌های لیتیوم-یونی دوست دارن بین ۲۰٪ تا ۸۰٪ باشن. شارژ ۱۰۰٪ دائمی عمر باتری رو تا ۴۰٪ کاهش میده!</p>
         </div>
-        
-        <!-- ویدیوی یوتیوب -->
-        <h3>🎥 ویدیوی آموزشی</h3>
+
+        <div class="purple-box">
+            <p>🔋 <strong>راز افزایش عمر باتری:</strong> باتری گوشی شما بعد از حدود ۵۰۰ بار شارژ کامل (از ۰ تا ۱۰۰٪) شروع به تحلیل رفتن می‌کنه. اگه گوشیتون رو روزی یکبار شارژ می‌کنید، بعد از حدود ۱.۵ سال باید منتظر کاهش عمر باتری باشید.</p>
+        </div>
+
         <div class="video-box">
-            <iframe src="https://www.youtube.com/embed/placeholder" 
-                    title="آموزش تنظیمات باتری" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen>
-            </iframe>
+            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="افزایش عمر باتری" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
     </div>
 
     <!-- امنیت -->
     <div class="section" id="security">
-        <h2>🔒 ۳. تنظیمات امنیتی</h2>
+        <h2>🔒 ۴. تنظیمات امنیتی و قفل صفحه</h2>
         
-        <h3>🔑 قفل صفحه (Screen Lock)</h3>
-        <p>انواع قفل صفحه که می‌تونید استفاده کنید:</p>
+        <h3>🔑 انواع قفل صفحه (Screen Lock)</h3>
+        <p>برای محافظت از اطلاعات شخصی، حتماً یکی از انواع قفل صفحه رو فعال کنید:</p>
         <ul>
-            <li><strong>Pattern</strong> (الگو) — کشیدن شکل روی ۹ نقطه</li>
-            <li><strong>PIN</strong> — کد ۴ تا ۶ رقمی</li>
-            <li><strong>Password</strong> — رمز ترکیبی از حروف و اعداد</li>
-            <li><strong>Fingerprint</strong> (اثر انگشت) — سریع‌ترین روش</li>
-            <li><strong>Face Unlock</strong> (تشخیص چهره) — مخصوص گوشی‌های جدید</li>
+            <li><strong>Pattern (الگو):</strong> کشیدن یه شکل خاص روی ۹ نقطه — محبوب‌ترین روش در ایران</li>
+            <li><strong>PIN:</strong> کد ۴ تا ۶ رقمی عددی — سریع، ساده و نسبتاً امن</li>
+            <li><strong>Password:</strong> رمز عبور ترکیبی از حروف بزرگ، کوچک، اعداد و نمادها — امن‌ترین روش</li>
+            <li><strong>Fingerprint (اثر انگشت):</strong> سریع‌ترین، راحت‌ترین و نسبتاً امن‌ترین روش — در گوشی‌های امروزی</li>
+            <li><strong>Face Unlock (تشخیص چهره):</strong> مناسب گوشی‌های جدید با دوربین سلفی پیشرفته</li>
         </ul>
-        
-        <div class="tip">
-            <strong>💡 توصیه:</strong> بهترین کار استفاده از <strong>اثر انگشت + PIN</strong> هست.
-            هم سریع باز میشه، هم امنیت بالایی داره.
+
+        <div class="golden-box">
+            <p>💡 <strong>توصیه طلایی امنیتی:</strong> بهترین و امن‌ترین روش، استفاده همزمان از <strong>اثر انگشت + PIN</strong> هست. چون اگه یه روز انگشتتون خیس یا زخمی بود و اثر انگشت کار نکرد، PIN رو دارید. همچنین PIN رو جایی ننویسید و به کسی نگید!</p>
         </div>
-        
-        <h3>🛡️ گوگل پلی پروتکت</h3>
-        <p>
-            <strong>Google Play Protect</strong> یه سرویس امنیتی رایگان از گوگله که
-            برنامه‌های نصب‌شده رو اسکن می‌کنه و بدافزارها رو شناسایی می‌کنه.
-        </p>
-        <p>مسیر: <strong>Google Play Store → Menu → Play Protect</strong></p>
+
+        <div class="red-box">
+            <p>⚠️ <strong>هشدار جدی:</strong> از الگوهای ساده مثل L یا Z یا مربع استفاده نکنید! این الگوها اولین حدس هر سارق یا هکریه! یه الگوی پیچیده و منحصر به فرد بکشید که حداقل ۶ نقطه رو درگیر کنه.</p>
+        </div>
+
+        <div class="green-box">
+            <p>🛡️ <strong>Google Play Protect:</strong> این سرویس امنیتی رایگان گوگل، روزانه میلیاردها برنامه رو اسکن می‌کنه و بدافزارها رو شناسایی می‌کنه. مسیر: <strong>Google Play Store → Menu → Play Protect</strong></p>
+        </div>
+
+        <div class="video-box">
+            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="تنظیمات امنیتی" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
     </div>
 
     <!-- بلوتوث -->
     <div class="section" id="bluetooth">
-        <h2>📡 ۴. تنظیمات بلوتوث</h2>
+        <h2>📡 ۵. تنظیمات بلوتوث</h2>
         
         <h3>🔗 اتصال به دستگاه بلوتوثی</h3>
+        <p>برای اتصال هندزفری، اسپیکر، ساعت هوشمند، ماشین یا هر دستگاه بلوتوثی دیگه:</p>
         <ol>
-            <li>بلوتوث دستگاه مورد نظر (مثلاً هندزفری) رو روشن کنید</li>
-            <li>توی گوشی: <strong>Settings → Bluetooth</strong></li>
-            <li>بلوتوث رو روشن کنید</li>
-            <li>از لیست، دستگاه رو پیدا و انتخاب کنید</li>
-            <li>روی <strong>Pair</strong> کلیک کنید</li>
+            <li>دستگاه بلوتوثی رو روشن کنید و در <strong>حالت Pairing</strong> قرار بدید (معمولاً چراغ آبی-قرمز چشمک‌زن)</li>
+            <li>توی گوشی: <strong>Settings → Bluetooth</strong> رو باز کنید</li>
+            <li>بلوتوث گوشی رو روشن کنید (آیکونش آبی میشه)</li>
+            <li>گوشی شروع به جستجوی خودکار می‌کنه</li>
+            <li>اسم دستگاه مورد نظر رو از لیست <strong>Available devices</strong> پیدا کنید</li>
+            <li>روی اسمش کلیک کنید و <strong>Pair</strong> رو بزنید</li>
+            <li>اگه کد تأیید خواست، معمولاً <strong>۰۰۰۰</strong> یا <strong>۱۲۳۴</strong> رو وارد کنید</li>
         </ol>
-        
-        <div class="tip">
-            <strong>💡 نکته:</strong> اگه دستگاه پیدا نشد، یه بار بلوتوث رو خاموش و روشن کنید.
-            مطمئن بشید دستگاه در <strong>حالت Pairing</strong> قرار داره.
+
+        <div class="golden-box">
+            <p>💡 <strong>نکته طلایی:</strong> اگه دستگاه قبلاً به گوشی دیگه‌ای وصله، اول باید از اون گوشی <strong>Unpair</strong> یا <strong>Forget</strong> بشه. دستگاه‌های بلوتوثی معمولاً فقط به <strong>یک دستگاه</strong> در یک زمان وصل میشن!</p>
+        </div>
+
+        <div class="video-box">
+            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="اتصال بلوتوث" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
     </div>
 
     <!-- نمایشگر -->
     <div class="section" id="display">
-        <h2>🖥️ ۵. تنظیمات نمایشگر</h2>
+        <h2>🖥️ ۶. تنظیمات نمایشگر و Dark Mode</h2>
         
-        <h3>💡 روشنایی (Brightness)</h3>
-        <p>
-            کشیدن نوار اعلان از بالای صفحه به پایین، سریع‌ترین راه تنظیم روشناییه.
-            همچنین می‌تونید از مسیر <strong>Settings → Display → Brightness</strong> اقدام کنید.
-        </p>
-        
+        <h3>💡 تنظیم روشنایی (Brightness)</h3>
+        <p>سریع‌ترین راه: کشیدن <strong>نوار اعلان</strong> از بالای صفحه به پایین و تنظیم اسلایدر روشنایی. همچنین از مسیر <strong>Settings → Display → Brightness level</strong> می‌تونید تنظیم کنید.</p>
+
         <h3>🌙 حالت تاریک (Dark Mode)</h3>
+        <p>حالت تاریک باعث میشه پس‌زمینه‌ها <strong>مشکی یا خاکستری تیره</strong> بشن. این قابلیت ۳ مزیت بزرگ داره:</p>
+        <ul>
+            <li>🔋 <strong>کاهش مصرف باتری:</strong> تا ۳۰٪ در نمایشگرهای AMOLED</li>
+            <li>👁️ <strong>کاهش خستگی چشم:</strong> مخصوصاً در شب و محیط‌های کم‌نور</li>
+            <li>😴 <strong>بهبود خواب:</strong> کاهش نور آبی مضر صفحه نمایش</li>
+        </ul>
+
         <table>
-            <tr><th>برند</th><th>مسیر</th></tr>
-            <tr><td>سامسونگ</td><td>Settings → Display → Dark Mode</td></tr>
-            <tr><td>شیائومی</td><td>Settings → Display → Dark Mode</td></tr>
-            <tr><td>آیفون</td><td>Settings → Display & Brightness → Dark</td></tr>
+            <tr><th>برند</th><th>مسیر فعال‌سازی Dark Mode</th></tr>
+            <tr><td>📱 سامسونگ</td><td>Settings → Display → Dark mode settings</td></tr>
+            <tr><td>📱 شیائومی</td><td>Settings → Display → Dark mode</td></tr>
+            <tr><td>📱 آیفون</td><td>Settings → Display & Brightness → Appearance → Dark</td></tr>
+            <tr><td>📱 هواوی</td><td>Settings → Display & brightness → Dark mode</td></tr>
         </table>
-        
-        <div class="tip">
-            <strong>💡 فایده Dark Mode:</strong> هم باتری کمتر مصرف میشه (مخصوص نمایشگرهای OLED)،
-            هم چشم کمتر خسته میشه.
+
+        <div class="blue-box">
+            <p>🌙 <strong>زمان‌بندی Dark Mode:</strong> می‌تونید Dark Mode رو طوری تنظیم کنید که به‌طور خودکار از غروب تا طلوع آفتاب فعال بشه (Sunset to Sunrise). این بهترین حالت استفاده‌ست!</p>
         </div>
-        
-        <!-- تصویر -->
-        <div class="img-box">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='180'%3E%3Crect fill='%23111' width='300' height='180' rx='12'/%3E%3Ctext fill='%23fff' x='90' y='95' font-size='18' font-family='Arial'%3E🌙 Dark Mode%3C/text%3E%3C/svg%3E" alt="حالت تاریک">
-            <p class="caption">حالت تاریک در گوشی‌های مختلف</p>
+
+        <div class="video-box">
+            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="تنظیمات Dark Mode" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
     </div>
 
     <!-- برنامه‌ها -->
     <div class="section" id="apps">
-        <h2>📦 ۶. مدیریت برنامه‌ها</h2>
+        <h2>📦 ۷. مدیریت برنامه‌ها و پاک کردن کش</h2>
         
-        <h3>🗑 حذف برنامه</h3>
-        <ol>
-            <li><strong>Settings → Apps</strong></li>
-            <li>برنامه مورد نظر رو پیدا کنید</li>
-            <li>روش کلیک کنید</li>
-            <li><strong>Uninstall</strong> رو بزنید</li>
-        </ol>
-        
-        <h3>🧹 پاک کردن کش (Cache)</h3>
-        <p>
-            کش برنامه‌ها فایل‌های موقتی هستن که به مرور زمان فضای زیادی اشغال می‌کنن.
-            پاک کردنشون آسیبی به اطلاعات برنامه نمی‌زنه.
-        </p>
+        <h3>🗑 حذف برنامه (Uninstall)</h3>
+        <p><strong>Settings → Apps → [اسم برنامه] → Uninstall</strong></p>
+        <p>همچنین می‌تونید از صفحه Home، انگشتتون رو روی آیکون برنامه نگه دارید و گزینه <strong>Uninstall</strong> رو بزنید.</p>
+
+        <h3>🧹 پاک کردن کش (Clear Cache)</h3>
+        <p>کش (Cache) فایل‌های موقتی هستن که برنامه‌ها برای سریع‌تر باز شدن ذخیره می‌کنن. این فایل‌ها به مرور زمان می‌تونن <strong>چندین گیگابایت</strong> از حافظه گوشی رو اشغال کنن!</p>
         <p>مسیر: <strong>Settings → Apps → [اسم برنامه] → Storage → Clear Cache</strong></p>
-        
-        <div class="warning">
-            <strong>⚠️ دقت کنید:</strong> گزینه <strong>Clear Data</strong> اطلاعات برنامه رو کامل پاک می‌کنه.
-            فقط زمانی ازش استفاده کنید که برنامه مشکل جدی داره.
+
+        <div class="golden-box">
+            <p>💡 <strong>نکته طلایی:</strong> پاک کردن کش <strong>هیچ آسیبی</strong> به اطلاعات اصلی برنامه (چت‌ها، عکس‌ها، اکانت، تنظیمات) نمی‌زنه! فقط فایل‌های موقت حذف میشن. این کار رو هر ماه یه بار برای برنامه‌های سنگین مثل اینستاگرام، تلگرام، واتساپ و یوتیوب انجام بدید.</p>
+        </div>
+
+        <div class="red-box">
+            <p>⚠️ <strong>هشدار خیلی مهم:</strong> گزینه <strong>Clear Data</strong> یا <strong>Clear Storage</strong> با <strong>Clear Cache</strong> کاملاً فرق داره! Clear Data همه چیز رو پاک می‌کنه: اکانت، چت‌ها، فایل‌ها، عکس‌ها، تنظیمات... انگار برنامه رو تازه نصب کردید! فقط وقتی از Clear Data استفاده کنید که برنامه crashed کرده و هیچ راه دیگه‌ای جواب نداده!</p>
+        </div>
+
+        <div class="video-box">
+            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="مدیریت برنامه‌ها" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
     </div>
 
     <!-- حساب‌ها -->
     <div class="section" id="accounts">
-        <h2>👤 ۷. حساب‌های کاربری</h2>
+        <h2>👤 ۸. حساب‌های کاربری و اکانت گوگل</h2>
         
         <h3>➕ اضافه کردن حساب گوگل</h3>
+        <p>اضافه کردن حساب گوگل به گوشی باعث میشه به سرویس‌های <strong>Gmail</strong>، <strong>Google Drive</strong> (۱۵ گیگ رایگان)، <strong>Google Photos</strong>، <strong>Google Calendar</strong>، <strong>Google Keep</strong> و <strong>Google Play Store</strong> دسترسی داشته باشید.</p>
         <ol>
-            <li><strong>Settings → Accounts</strong> (یا Users & Accounts)</li>
-            <li><strong>Add Account</strong></li>
-            <li><strong>Google</strong> رو انتخاب کنید</li>
-            <li>ایمیل و رمز عبور رو وارد کنید</li>
+            <li>برو به <strong>Settings → Accounts</strong> (یا <strong>Users & Accounts</strong>)</li>
+            <li>گزینه <strong>Add Account</strong> رو بزنید</li>
+            <li>از لیست، <strong>Google</strong> رو انتخاب کنید</li>
+            <li>ایمیل جیمیل و رمز عبور رو وارد کنید</li>
+            <li>مراحل تأیید دو مرحله‌ای (اگه فعاله) رو انجام بدید</li>
         </ol>
-        
-        <p>
-            با اضافه کردن حساب گوگل، می‌تونید از <strong>Gmail</strong>، <strong>Google Drive</strong>،
-            <strong>Google Photos</strong> و کلی سرویس دیگه استفاده کنید.
-        </p>
+
+        <div class="green-box">
+            <p>✅ <strong>مزیت:</strong> با اضافه کردن حساب گوگل، مخاطبین، تقویم و اطلاعات شما به‌طور خودکار Sync میشن و اگه گوشیتون گم بشه یا عوض کنید، هیچ اطلاعاتی رو از دست نمیدید!</p>
+        </div>
+
+        <div class="video-box">
+            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="اضافه کردن حساب گوگل" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
     </div>
 
     <!-- بازنشانی -->
     <div class="section" id="reset">
-        <h2>🔄 ۸. بازنشانی (Reset)</h2>
+        <h2>🔄 ۹. بازنشانی به تنظیمات کارخانه (Factory Reset)</h2>
         
-        <h3>🔁 Factory Reset (بازگشت به تنظیمات کارخانه)</h3>
-        
-        <div class="warning">
-            <strong>⚠️ بسیار مهم:</strong> این کار <strong>تمام اطلاعات گوشی</strong> رو پاک می‌کنه!
-            قبلش حتماً از عکس‌ها، مخاطبین و فایل‌هاتون <strong>پشتیبان بگیرید</strong>.
+        <div class="red-box">
+            <p>⚠️ <strong>اخطار حیاتی:</strong> این عملیات <strong>تمامی اطلاعات گوشی شما</strong> رو به طور کامل، دائمی و غیرقابل برگشت پاک می‌کنه! شامل: تمام عکس‌ها و فیلم‌ها، تمام مخاطبین، تمام پیامک‌ها و چت‌ها، تمام برنامه‌های نصب‌شده، تمام اکانت‌ها و رمزهای عبور ذخیره‌شده، تمام تنظیمات شخصی‌سازی‌شده، و تمام فایل‌های دانلودشده!</p>
         </div>
+
+        <h3>📱 قبل از ریست، حتماً این کارها رو انجام بدید:</h3>
+        <ol>
+            <li>📸 <strong>عکس‌ها و فیلم‌ها:</strong> به Google Photos یا یه هارد اکسترنال منتقل کنید</li>
+            <li>👥 <strong>مخاطبین:</strong> با اکانت گوگل همگام‌سازی (Sync) کنید</li>
+            <li>📁 <strong>فایل‌های مهم:</strong> به Google Drive یا Dropbox آپلود کنید</li>
+            <li>💬 <strong>چت‌های واتساپ:</strong> از Settings → Chats → Chat backup بکاپ بگیرید</li>
+            <li>💬 <strong>چت‌های تلگرام:</strong> همه فایل‌های مهم رو Save to Downloads کنید</li>
+            <li>🔑 <strong>رمزهای عبور:</strong> مطمئن بشید همه رو جایی یادداشت کردید</li>
+        </ol>
         
         <table>
-            <tr><th>برند</th><th>مسیر</th></tr>
-            <tr><td>سامسونگ</td><td>Settings → General Management → Reset → Factory Data Reset</td></tr>
-            <tr><td>شیائومی</td><td>Settings → About Phone → Factory Reset</td></tr>
-            <tr><td>آیفون</td><td>Settings → General → Transfer or Reset iPhone → Erase All Content</td></tr>
+            <tr><th>برند گوشی</th><th>مسیر بازنشانی</th></tr>
+            <tr><td>📱 سامسونگ</td><td>Settings → General management → Reset → Factory data reset → Reset → Delete all</td></tr>
+            <tr><td>📱 شیائومی</td><td>Settings → About phone → Factory reset → Erase all data</td></tr>
+            <tr><td>📱 آیفون</td><td>Settings → General → Transfer or Reset iPhone → Erase All Content and Settings</td></tr>
+            <tr><td>📱 هواوی</td><td>Settings → System & updates → Reset → Factory reset</td></tr>
         </table>
-        
-        <p>بعد از بازنشانی، گوشی مثل <strong>روز اول</strong> میشه و باید دوباره تنظیمش کنید.</p>
+
+        <div class="blue-box">
+            <p>🔄 <strong>بعد از بازنشانی:</strong> گوشی دقیقاً مثل روز اول میشه. باید زبان، منطقه، وای‌فای، اکانت گوگل و همه برنامه‌ها رو از اول تنظیم کنید. این فرآیند معمولاً ۱۵ تا ۳۰ دقیقه طول می‌کشه.</p>
+        </div>
+
+        <div class="video-box">
+            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="فکتوری ریست" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
     </div>
 
-    <!-- جمع‌بندی -->
-    <div class="section" style="background:#e8f0fe;border:2px solid #1a73e8">
-        <h2>✅ جمع‌بندی</h2>
-        <p>
-            توی این راهنما، مهم‌ترین تنظیمات گوشی رو بررسی کردیم:
-        </p>
-        <ul>
-            <li>📶 اینترنت و وای‌فای</li>
-            <li>🔋 باتری و صرفه‌جویی</li>
-            <li>🔒 امنیت و قفل صفحه</li>
-            <li>📡 بلوتوث</li>
-            <li>🖥️ نمایشگر و Dark Mode</li>
-            <li>📦 مدیریت برنامه‌ها</li>
-            <li>👤 حساب‌های کاربری</li>
-            <li>🔄 بازنشانی</li>
-        </ul>
-        <p style="margin-top:15px">
-            <strong>سوالی دارید؟</strong> توی بخش نظرات بپرسید تا کمکتون کنیم! 💙
-        </p>
+    <a href="index.html" class="back-btn">🔙 بازگشت به خانه</a>
+
+    <div class="footer">
+        <p>🌟 rahilanab.com | <a href="index.html">🏠 خانه</a> | <a href="all. html">📋 همه لینک‌ها</a></p>
+        <p>📱 آموزش کامل تنظیمات گوشی — آپدیت ۲۰۲۶</p>
     </div>
-
-</div>
-
-<!-- فوتر -->
-<footer class="footer">
-    <p>© rahilanab.com | تمام حقوق محفوظ است</p>
-    <p>
-        <a href="index.html">🏠 خانه</a> |
-        <a href="about.html">📄 درباره ما</a> |
-        <a href="contact.html">📞 تماس با ما</a>
-    </p>
-    <p style="margin-top:10px;font-size:12px">
-        به‌روزرسانی: فروردین ۱۴۰۴
-    </p>
-</footer>
 
 </body>
-                  </html>
+                                                                                                         </html>
