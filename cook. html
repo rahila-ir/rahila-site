@@ -1,87 +1,115 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>⏰ ساعت و تقویم | رهیلا</title>
+    <title>🍳 آشپزی آسان | ۱۵ غذای سریع و خوشمزه | rahilanab.com</title>
+    <meta name="description" content="آموزش آشپزی آسان: ۱۵ غذای سریع، ارزان و خوشمزه برای دانشجویان و شاغلین. املت، ماکارونی، کوکو، پنکیک، برنج کته‌ای">
+    <meta name="keywords" content="آشپزی آسان, غذای سریع, غذای دانشجویی, املت, ماکارونی, پنکیک, rahilanab">
     <style>
-        *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:Arial;background:radial-gradient(circle at center,#0a1a1a,#1a4a4a,#66ccaa);color:#fff;text-align:center;padding:15px;min-height:100vh}
-        .header{background:rgba(255,255,255,.08);backdrop-filter:blur(20px);border-radius:25px;padding:20px;margin-bottom:15px}
-        .header h1{color:#ffd700;font-size:22px}
-        .back-btn{display:inline-block;background:rgba(255,255,255,.15);color:#fff;padding:8px 20px;border-radius:20px;text-decoration:none;margin:10px 0}
-        .clock-box{background:rgba(0,0,0,.5);border-radius:25px;padding:30px;margin:15px 0}
-        #bigClock{font-size:60px;font-weight:bold;color:#0fc;text-shadow:0 0 30px #0fc}
-        #bigDate{font-size:14px;color:#ffd700;line-height:2.5;margin-top:10px}
-        .tool-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:15px 0}
-        .tool-card{background:rgba(255,255,255,.05);border-radius:15px;padding:18px;border:1px solid rgba(255,255,255,.1)}
-        .tool-card .emoji{font-size:30px}
-        .tool-card h3{font-size:13px;color:#ffd700}
+        *{margin:0;padding:0;box-sizing:border-box}body{font-family:'Arial';background:linear-gradient(135deg,#e3f2fd,#bbdefb,#90caf9,#a5d6a7);color:#000;text-align:center;padding:10px;min-height:100vh}.header{background:#fff;border-radius:20px;padding:18px;margin-bottom:10px;box-shadow:0 4px 15px rgba(0,0,0,.1)}.header h1{color:#0d47a1;font-size:24px}.header p{color:#000;font-size:14px;font-weight:bold}.full-card{background:#fff;border-radius:15px;padding:20px;margin:12px 0;box-shadow:0 2px 10px rgba(0,0,0,.08);text-align:right;line-height:2.2}.full-card h2{color:#0d47a1;font-size:19px;margin-bottom:10px;text-align:center;border-bottom:1px solid #e3f2fd;padding-bottom:8px}.full-card p{color:#000;font-size:15px;font-weight:bold;margin:8px 0}.full-card li{color:#000;font-size:15px;font-weight:bold;margin:6px 0}.golden-box{background:linear-gradient(135deg,#fff8e1,#ffe082,#ffd54f);border-right:4px solid #ff8f00;padding:15px;border-radius:10px;margin:15px 0;box-shadow:0 3px 10px rgba(255,143,0,.15)}.golden-box p{color:#000;font-size:15px;font-weight:bold}.blue-box{background:linear-gradient(135deg,#e3f2fd,#bbdefb,#90caf9);border-right:4px solid #0d47a1;padding:15px;border-radius:10px;margin:15px 0;box-shadow:0 3px 10px rgba(13,71,161,.15)}.blue-box p{color:#000;font-size:15px;font-weight:bold}.green-box{background:linear-gradient(135deg,#e8f5e9,#c8e6c9,#a5d6a7);border-right:4px solid #2e7d32;padding:15px;border-radius:10px;margin:15px 0;box-shadow:0 3px 10px rgba(46,125,50,.15)}.green-box p{color:#000;font-size:15px;font-weight:bold}.back-btn{display:inline-block;background:#0d47a1;color:#fff;padding:10px 22px;border-radius:20px;text-decoration:none;margin:10px 0;font-weight:bold;font-size:15px}.footer{background:#fff;padding:12px;margin-top:12px;font-size:11px;color:#000;border-radius:15px;font-weight:bold}.footer a{color:#0d47a1}
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>⏰ ساعت و تقویم</h1>
-        <p>ساعت زنده | تاریخ شمسی، میلادی و قمری</p>
-    </div>
-    <a href="index.html" class="back-btn">🔙 برگشت به خانه</a>
+<div class="header"><h1>🍳 آشپزی آسان</h1><p>۱۵ غذای سریع، ارزان و خوشمزه | rahilanab.com</p></div>
 
-    <div class="clock-box">
-        <div id="bigClock">00:00:00</div>
-        <div id="bigDate"></div>
-    </div>
+<div class="full-card">
+    <h2>۱. 🍳 املت گوجه فرنگی (۵ دقیقه)</h2>
+    <p><strong>مواد:</strong> تخم مرغ ۲ عدد، گوجه ۲ عدد، کره ۲۰ گرم، نمک و فلفل.</p>
+    <p><strong>طرز تهیه:</strong> گوجه‌ها را نگینی خرد کنید، با کره ۳-۴ دقیقه تفت دهید. تخم مرغ‌ها را بشکنید، نمک و فلفل بزنید، روی گوجه بریزید. در تابه را ببندید و ۳-۴ دقیقه صبر کنید تا ببندد.</p>
+    <div class="golden-box"><p>💡 می‌توانید پیاز، فلفل دلمه‌ای یا قارچ هم اضافه کنید. صبحانه کامل در ۱۰ دقیقه!</p></div>
+</div>
 
-    <div class="tool-grid">
-        <div class="tool-card"><div class="emoji">⏱️</div><h3>تایمر پومودورو</h3></div>
-        <div class="tool-card"><div class="emoji">⏲️</div><h3>کرنومتر</h3></div>
-        <div class="tool-card"><div class="emoji">🕌</div><h3>اوقات شرعی</h3></div>
-        <div class="tool-card"><div class="emoji">🌍</div><h3>ساعت جهانی</h3></div>
-        <div class="tool-card"><div class="emoji">🌤️</div><h3>آب و هوا</h3></div>
-        <div class="tool-card"><div class="emoji">📅</div><h3>تقویم ۱۴۰۴</h3></div>
-    </div>
+<div class="full-card">
+    <h2>۲. 🍝 ماکارونی ساده (۱۵ دقیقه)</h2>
+    <p><strong>مواد:</strong> ماکارونی ۲۰۰ گرم، رب گوجه ۲ قاشق، پنیر پیتزا ۱۰۰ گرم، نمک و زردچوبه.</p>
+    <p><strong>طرز تهیه:</strong> ماکارونی را بپزید و آبکش کنید. رب را با روغن تفت دهید، زردچوبه بزنید. ماکارونی را با رب مخلوط کنید، پنیر بریزید و ۵ دقیقه دم کنید.</p>
+    <div class="blue-box"><p>🍝 می‌توانید قارچ، ذرت، کالباس یا گوشت چرخ‌کرده هم اضافه کنید.</p></div>
+</div>
 
-    <p style="margin-top:15px"><a href="index.html" style="color:#ffd700">🔙 برگشت به صفحه اصلی</a></p>
+<div class="full-card">
+    <h2>۳. 🥬 کوکو سبزی فوری (۲۰ دقیقه)</h2>
+    <p><strong>مواد:</strong> سبزی کوکو ۲۰۰ گرم، تخم مرغ ۳ عدد، آرد ۱ قاشق، نمک و زردچوبه.</p>
+    <p><strong>طرز تهیه:</strong> همه مواد را مخلوط کنید. در تابه با روغن داغ بریزید، هر طرف ۸-۱۰ دقیقه سرخ کنید. با نان و ماست سرو کنید.</p>
+    <div class="golden-box"><p>💡 برای برگرداندن کوکو از یک بشقاب کمک بگیرید!</p></div>
+</div>
 
-<script>
-function updateClock(){
-    let n=new Date();
-    let h=n.getHours(),m=n.getMinutes(),s=n.getSeconds();
-    h=h<10?'0'+h:h;m=m<10?'0'+m:m;s=s<10?'0'+s:s;
-    document.getElementById('bigClock').textContent=h+':'+m+':'+s;
-    let jd=gregorianToJalali(n.getFullYear(),n.getMonth()+1,n.getDate());
-    let days=['یکشنبه','دوشنبه','سه‌شنبه','چهارشنبه','پنجشنبه','جمعه','شنبه'];
-    let months=['فروردین','اردیبهشت','خرداد','تیر','مرداد','شهریور','مهر','آبان','آذر','دی','بهمن','اسفند'];
-    let miladi=n.getDate()+' '+['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][n.getMonth()]+' '+n.getFullYear();
-    let qamari=islamicDate(n);
-    document.getElementById('bigDate').innerHTML='☀️ '+days[n.getDay()]+' '+jd[2]+' '+months[jd[1]-1]+' '+jd[0]+'<br>🌍 '+miladi+'<br>🌙 '+qamari;
-}
-function gregorianToJalali(gy,gm,gd){
-    let gdm=[0,31,59,90,120,151,181,212,243,273,304,334];
-    let gy2=(gm>2)?(gy+1):gy;
-    let days=355666+(365*gy)+Math.floor((gy2+3)/4)-Math.floor((gy2+99)/100)+Math.floor((gy2+399)/400)+gd+gdm[gm-1];
-    let jy=-1595+(33*Math.floor(days/12053));
-    days%=12053;jy+=4*Math.floor(days/1461);days%=1461;
-    if(days>365){jy+=Math.floor((days-1)/365);days=(days-1)%365;}
-    let jm,jd;
-    if(days<186){jm=1+Math.floor(days/31);jd=1+(days%31);}
-    else{jm=7+Math.floor((days-186)/30);jd=1+((days-186)%30);}
-    return[jy,jm,jd];
-}
-function islamicDate(d){
-    let jd=gregorianToJalali(d.getFullYear(),d.getMonth()+1,d.getDate());
-    let jy=jd[0],jm=jd[1],jdd=jd[2];
-    let l=jy-((jy<0)?0:1);
-    let is=Math.floor((l-1)/33)+1;
-    let iy=l-33*(is-1)-1;
-    let id=Math.floor((iy*365.25)+(jm-1)*30.5+jdd-1+0.5);
-    let im=Math.floor(id/29.5)+1;
-    let idd=Math.floor(id-(im-1)*29.5)+1;
-    if(idd>30){im++;idd-=30;}
-    if(im>12)im-=12;
-    let mNames=['محرم','صفر','ربیع‌الاول','ربیع‌الثانی','جمادی‌الاول','جمادی‌الثانی','رجب','شعبان','رمضان','شوال','ذی‌القعده','ذی‌الحجه'];
-    return idd+' '+mNames[im-1];
-}
-setInterval(updateClock,1000);updateClock();
-</script>
+<div class="full-card">
+    <h2>۴. 🍚 برنج کته‌ای با تخم مرغ (۲۰ دقیقه)</h2>
+    <p><strong>مواد:</strong> برنج ۱ پیمانه، آب ۱.۵ پیمانه، تخم مرغ ۱ عدد، روغن و نمک.</p>
+    <p><strong>طرز تهیه:</strong> برنج را با آب و نمک و روغن بجوشانید. وقتی آب تمام شد، تخم مرغ را روی برنج بشکنید. دم کنید ۱۵ دقیقه.</p>
+</div>
+
+<div class="full-card">
+    <h2>۵. 🥞 پنکیک (۱۵ دقیقه)</h2>
+    <p><strong>مواد:</strong> آرد ۱.۵ پیمانه، شیر ۱ پیمانه، تخم مرغ ۱ عدد، شکر ۲ قاشق، بیکینگ پودر ۱ قاشق چای‌خوری.</p>
+    <p><strong>طرز تهیه:</strong> همه مواد را مخلوط کنید. در تابه نچسب هر طرف ۲ دقیقه بپزید. با عسل یا مربا سرو کنید.</p>
+    <div class="golden-box"><p>💡 خمیر پنکیک را زیاد هم نزنید! گلوله‌های ریز = پنکیک نرم‌تر.</p></div>
+</div>
+
+<div class="full-card">
+    <h2>۶. 🥪 ساندویچ تخم مرغ (۵ دقیقه)</h2>
+    <p><strong>مواد:</strong> نان تست ۲ برش، تخم مرغ ۱ عدد، پنیر ورقه‌ای، کره.</p>
+    <p><strong>طرز تهیه:</strong> تخم مرغ را نیمرو کنید. نان را با کره تست کنید. نیمرو و پنیر را بین نان بگذارید و ۱ دقیقه گرم کنید.</p>
+</div>
+
+<div class="full-card">
+    <h2>۷. 🥗 سالاد ماکارونی (۱۵ دقیقه)</h2>
+    <p><strong>مواد:</strong> ماکارونی ۱ پیمانه، سس مایونز ۳ قاشق، خیارشور ۳ عدد، ذرت، کالباس.</p>
+    <p><strong>طرز تهیه:</strong> ماکارونی را بپزید. همه را خرد و مخلوط کنید. ۳۰ دقیقه در یخچال بگذارید.</p>
+</div>
+
+<div class="full-card">
+    <h2>۸. 🍞 تست فرانسوی (۱۰ دقیقه)</h2>
+    <p><strong>مواد:</strong> نان تست ۴ برش، تخم مرغ ۲ عدد، شیر ۳ قاشق، شکر ۱ قاشق، دارچین.</p>
+    <p><strong>طرز تهیه:</strong> تخم مرغ و شیر و شکر و دارچین را مخلوط کنید. نان را خیس کنید. هر طرف ۲-۳ دقیقه سرخ کنید.</p>
+</div>
+
+<div class="full-card">
+    <h2>۹. 🥣 سوپ جو آماده (۱۵ دقیقه)</h2>
+    <p><strong>مواد:</strong> جو پرک ۱ پیمانه، هویج ۱ عدد، عصاره مرغ، آب ۳ لیوان.</p>
+    <p><strong>طرز تهیه:</strong> جو را با آب و عصاره مرغ بپزید. هویج رنده شده را اضافه کنید. ۱۰ دقیقه بجوشد. با آبلیمو سرو کنید.</p>
+</div>
+
+<div class="full-card">
+    <h2>۱۰. 🥔 پوره سیب‌زمینی (۱۵ دقیقه)</h2>
+    <p><strong>مواد:</strong> سیب‌زمینی ۳ عدد، کره ۳۰ گرم، شیر گرم ۱/۴ پیمانه، نمک.</p>
+    <p><strong>طرز تهیه:</strong> سیب‌زمینی را آب‌پز کنید. له کنید. کره و شیر گرم را اضافه کنید و هم بزنید تا کرمی شود.</p>
+</div>
+
+<div class="full-card">
+    <h2>۱۱. 🥚 تخم مرغ آب‌پز (۱۰ دقیقه)</h2>
+    <p><strong>طرز تهیه:</strong> آب را جوش بیاورید. تخم مرغ را آرام بگذارید. عسلی: ۶ دقیقه. سفت: ۱۰ دقیقه. بلافاصله در آب سرد بگذارید.</p>
+</div>
+
+<div class="full-card">
+    <h2>۱۲. 🥜 کره بادام زمینی خونگی (۱۰ دقیقه)</h2>
+    <p><strong>مواد:</strong> بادام زمینی ۲ پیمانه، عسل ۲ قاشق.</p>
+    <p><strong>طرز تهیه:</strong> بادام زمینی را ۱۰ دقیقه در فر بو دهید. پوست بکنید. در غذاساز ۵-۱۰ دقیقه میکس کنید تا کره شود.</p>
+</div>
+
+<div class="full-card">
+    <h2>۱۳. 🍋 لیموناد (۵ دقیقه)</h2>
+    <p><strong>مواد:</strong> آب لیمو ۱ پیمانه، شکر نصف پیمانه، آب سرد ۴ لیوان، یخ، نعنا.</p>
+    <p><strong>طرز تهیه:</strong> شکر را در آب گرم حل کنید. با آب لیمو و آب سرد مخلوط کنید. با یخ و نعنا سرو کنید.</p>
+</div>
+
+<div class="full-card">
+    <h2>۱۴. 🍿 پاپ کورن (۵ دقیقه)</h2>
+    <p><strong>مواد:</strong> ذرت پاپ کورن نصف پیمانه، روغن ۲ قاشق، کره ۳۰ گرم، نمک.</p>
+    <p><strong>طرز تهیه:</strong> روغن را داغ کنید. ذرت‌ها را بریزید، در قابلمه را ببندید. گاهی تکان دهید. کره آب‌شده و نمک بریزید.</p>
+</div>
+
+<div class="full-card">
+    <h2>۱۵. 🍞 نان سیر (۱۰ دقیقه)</h2>
+    <p><strong>مواد:</strong> نان باگت، کره ۵۰ گرم، سیر ۴ حبه، پنیر پیتزا، جعفری.</p>
+    <p><strong>طرز تهیه:</strong> کره + سیر رنده شده + جعفری را مخلوط کنید. روی نان بمالید. پنیر بریزید. در فر ۱۰ دقیقه گریل کنید.</p>
+</div>
+
+<div class="golden-box"><p>💡 <strong>همه این غذاها زیر ۲۰ دقیقه آماده می‌شوند!</strong> مناسب دانشجویان، شاغلین و هر کسی که وقت آشپزی ندارد.</p></div>
+<div class="green-box"><p>💚 <strong>نکته:</strong> همیشه چند قلم مواد اولیه (تخم مرغ، ماکارونی، رب، پنیر) در خانه داشته باشید تا در هر لحظه بتوانید یک غذای سریع درست کنید!</p></div>
+
+<a href="index.html" class="back-btn">🔙 بازگشت به خانه</a>
+<div class="footer"><p>🌟 rahilanab.com | <a href="index.html">🏠 خانه</a></p></div>
 </body>
 </html>
