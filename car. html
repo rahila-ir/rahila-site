@@ -1,80 +1,76 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🚗 خودرو و عیب‌یابی | رهیلا</title>
+    <title>🚗 خودرو ۱ | عیب‌یابی ۲۵ مشکل رایج | rahilanab.com</title>
+    <meta name="description" content="عیب‌یابی کامل ۲۵ مشکل رایج خودرو: استارت نخوردن، چراغ چک، خاموش شدن، دود سفید و سیاه، کولر، ترمز، باتری، آمپر آب">
+    <meta name="keywords" content="خودرو, car, عیب‌یابی, استارت, چراغ چک, باتری, rahilanab">
     <style>
         *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:'Arial';background:linear-gradient(135deg,#e3f2fd,#bbdefb,#90caf9,#a5d6a7);color:#111;padding:15px;min-height:100vh}
-        .header{background:#fff;border-radius:20px;padding:18px;margin-bottom:15px;text-align:center;box-shadow:0 4px 15px rgba(0,0,0,.1)}
-        .header h1{color:#0d47a1;font-size:22px}
-        .back-btn{display:inline-block;background:#0d47a1;color:#fff;padding:10px 25px;border-radius:20px;text-decoration:none;margin:10px 0}
-        .car-card{background:#fff;border-radius:20px;padding:20px;margin:20px 0;box-shadow:0 2px 15px rgba(0,0,0,.08);text-align:right}
-        .car-card h2{color:#0d47a1;font-size:20px;text-align:center;margin-bottom:10px;border-bottom:2px solid #e3f2fd;padding-bottom:8px}
-        .section{background:#f8f9fa;border-radius:12px;padding:12px;margin:8px 0;border-right:3px solid #0d47a1}
-        .section h3{color:#0d47a1;font-size:15px;margin-bottom:6px}
-        .section p{color:#333;font-size:13px;line-height:2}
-        .tips-box{background:#e8f5e9;border-radius:12px;padding:12px;border:1px solid #a5d6a7;margin:8px 0}
-        .tips-box h3{color:#2e7d32;font-size:14px}
-        .tips-box ul{color:#333;font-size:12px;line-height:2;padding-right:12px}
+        body{font-family:'Arial';background:linear-gradient(135deg,#e3f2fd,#bbdefb,#90caf9,#a5d6a7);color:#000;text-align:center;padding:10px;min-height:100vh}
+        .header{background:#fff;border-radius:20px;padding:18px;margin-bottom:10px;box-shadow:0 4px 15px rgba(0,0,0,.1)}
+        .header h1{color:#0d47a1;font-size:24px}.header p{color:#000;font-size:14px;font-weight:bold}
+        .full-card{background:#fff;border-radius:15px;padding:20px;margin:12px 0;box-shadow:0 2px 10px rgba(0,0,0,.08);text-align:right;line-height:2.2}
+        .full-card h2{color:#0d47a1;font-size:19px;margin-bottom:10px;text-align:center;border-bottom:1px solid #e3f2fd;padding-bottom:8px}
+        .full-card p{color:#000;font-size:15px;font-weight:bold;margin:8px 0}.full-card li{color:#000;font-size:15px;font-weight:bold;margin:6px 0}
+        .golden-box{background:linear-gradient(135deg,#fff8e1,#ffe082,#ffd54f);border-right:4px solid #ff8f00;padding:15px;border-radius:10px;margin:15px 0;box-shadow:0 3px 10px rgba(255,143,0,.15)}.golden-box p{color:#000;font-size:15px;font-weight:bold}
+        .red-box{background:linear-gradient(135deg,#ffebee,#ffcdd2,#ef9a9a);border-right:4px solid #c62828;padding:15px;border-radius:10px;margin:15px 0;box-shadow:0 3px 10px rgba(198,40,40,.15)}.red-box p{color:#000;font-size:15px;font-weight:bold}
+        .blue-box{background:linear-gradient(135deg,#e3f2fd,#bbdefb,#90caf9);border-right:4px solid #0d47a1;padding:15px;border-radius:10px;margin:15px 0;box-shadow:0 3px 10px rgba(13,71,161,.15)}.blue-box p{color:#000;font-size:15px;font-weight:bold}
+        .green-box{background:linear-gradient(135deg,#e8f5e9,#c8e6c9,#a5d6a7);border-right:4px solid #2e7d32;padding:15px;border-radius:10px;margin:15px 0;box-shadow:0 3px 10px rgba(46,125,50,.15)}.green-box p{color:#000;font-size:15px;font-weight:bold}
+        .purple-box{background:linear-gradient(135deg,#f3e5f5,#e1bee7,#ce93d8);border-right:4px solid #6a1b9a;padding:15px;border-radius:10px;margin:15px 0;box-shadow:0 3px 10px rgba(106,27,154,.15)}.purple-box p{color:#000;font-size:15px;font-weight:bold}
+        .back-btn{display:inline-block;background:#0d47a1;color:#fff;padding:10px 22px;border-radius:20px;text-decoration:none;margin:10px 0;font-weight:bold;font-size:15px}
+        .footer{background:#fff;padding:12px;margin-top:12px;font-size:11px;color:#000;border-radius:15px;font-weight:bold}.footer a{color:#0d47a1}
     </style>
 </head>
 <body>
-    <div class="header"><h1>🚗 عیب‌یابی خودرو</h1><p>راهنمای کامل مشکلات رایج خودرو | rahilanab.com</p></div>
-    <a href="index.html" class="back-btn">🔙 خانه</a>
+<div class="header"><h1>🚗 خودرو ۱</h1><p>عیب‌یابی ۲۵ مشکل رایج + راه حل | rahilanab.com</p></div>
 
-<div class="car-card"><h2>۱. 🚗 ماشین استارت نمیخوره</h2><div class="section"><h3>📋 دلایل</h3><p>باتری خراب، استارت معیوب، سوئیچ مشکل دار، فیوز سوخته، باک خالی.</p></div><div class="tips-box"><h3>⭐ راه حل</h3><ul><li>چک کردن باتری و کابل‌ها</li><li>باتری به باتری کردن</li><li>مراجعه به مکانیک</li></ul></div></div>
+<div class="full-card">
+    <h2>۱. 🔑 استارت نمیخوره</h2>
+    <p>شایع‌ترین علت: <strong>باتری ضعیف یا کاملاً خالی</strong>. اگر با چرخاندن سوئیچ صدای "تلق تلق" می‌شنوید = باتری ضعیف است (استارت توان چرخاندن ندارد). اگر هیچ صدایی نمی‌شنوید = استارت خراب، سوئیچ معیوب، یا فیوز پریده. <strong>راه حل:</strong> باتری به باتری کنید (کابل مثبت به مثبت، منفی به بدنه). عمر مفید باتری ماشین ۲-۳ سال است.</p>
+    <div class="golden-box"><p>💡 <strong>نکته طلایی:</strong> در هوای سرد، باتری ۳۰-۴۰٪ ضعیف‌تر می‌شود! اگر صبح‌های سرد استارت سخت می‌خورد، وقت تعویض باتری است.</p></div>
+    <div class="red-box"><p>⚠️ <strong>هشدار:</strong> هنگام باتری به باتری کردن، کابل‌ها را اشتباه وصل نکنید (قطب مثبت به منفی)! این کار باعث انفجار باتری و سوختن ECU می‌شود!</p></div>
+</div>
 
-<div class="car-card"><h2>۲. 🚗 چراغ چک روشن شده</h2><div class="section"><h3>📋 دلایل</h3><p>مشکل سنسور اکسیژن، کاتالیست، شمع‌ها، سیستم سوخت‌رسانی.</p></div><div class="tips-box"><h3>⭐ راه حل</h3><ul><li>دستگاه دیاگ بزنید</li><li>اگه چشمک میزنه = خطرناکه</li><li>اگه ثابته = میتونید برانید</li></ul></div></div>
+<div class="full-card">
+    <h2>۲. ⚠️ چراغ چک روشن (Check Engine)</h2>
+    <p>چراغ چک می‌تواند از <strong>شل بودن درب باک بنزین</strong> (ساده‌ترین و رایگان‌ترین!) تا <strong>خرابی سنسور اکسیژن</strong> (هزینه چند میلیونی) متغیر باشد. اولین قدم: <strong>درب باک را ببندید</strong> و ۳-۴ بار ماشین را روشن و خاموش کنید. اگر چراغ خاموش نشد = <strong>دیاگ بزنید</strong>. اگر چراغ چک <strong>چشمک‌زن</strong> است = <strong>فوراً متوقف شوید!</strong> (احتراق ناقص = آسیب جدی موتور).</p>
+    <div class="blue-box"><p>🔧 <strong>دیاگ:</strong> دستگاهی که با اتصال به پورت OBD2 (زیر فرمان)، کد خطا را می‌خواند. هزینه دیاگ: ۵۰-۱۰۰ هزار تومان.</p></div>
+</div>
 
-<div class="car-card"><h2>۳. 🚗 ماشین خاموش میشه</h2><div class="section"><h3>📋 دلایل</h3><p>پمپ بنزین ضعیف، فیلتر هوا کثیف، سنسور میل‌لنگ خراب.</p></div></div>
+<div class="full-card">
+    <h2>۳. 🛑 ماشین وسط راه خاموش میشه</h2>
+    <p>خاموش شدن ناگهانی در حین رانندگی می‌تواند بسیار خطرناک باشد! علل شایع: <strong>پمپ بنزین</strong> (بنزین نمی‌رساند)، <strong>سنسور دور موتور</strong> (سیگنال اشتباه)، <strong>شمع‌ها</strong> (جرقه نمی‌زنند)، <strong>فیلتر هوا</strong> (گرفته - موتور خفه می‌شود). اگر ماشین <strong>درجا</strong> (پشت چراغ قرمز) خاموش می‌شود = <strong>استپر موتور</strong> (Idle Air Control Valve) کثیف یا خراب است.</p>
+    <div class="green-box"><p>💚 <strong>چک ساده:</strong> باک را پر کنید (گاهی آمپر خراب است و بنزین تمام شده!). فیلتر هوا را باز کنید و بتکانید.</p></div>
+</div>
 
-<div class="car-card"><h2>۴. 🚗 ریپ زدن موتور</h2><div class="section"><h3>📋 دلایل</h3><p>شمع‌ها خراب، وایر شمع، کوئل معیوب، انژکتور کثیف.</p></div></div>
+<div class="full-card">
+    <h2>۴. 💨 دود سفید از اگزوز</h2>
+    <p><strong>واشر سرسیلندر سوخته است!</strong> مایع خنک‌کننده (آب رادیاتور) وارد سیلندر شده و با سوختن، دود سفید غلیظ تولید می‌کند. <strong>تشخیص:</strong> روغن موتور را چک کنید. اگر <strong>قهوه‌ای شیریرنگ</strong> (مثل شیرکاکائو) شده = واشر خراب است. <strong>هزینه تعمیر:</strong> ۵-۱۵ میلیون تومان.</p>
+    <div class="red-box"><p>⚠️ <strong>هشدار جدی:</strong> رانندگی با واشر سرسیلندر سوخته = آب با روغن مخلوط می‌شود = <strong>موتور ذوب می‌شود!</strong> فوراً به تعمیرگاه بروید!</p></div>
+</div>
 
-<div class="car-card"><h2>۵. 🚗 دود سفید اگزوز</h2><div class="section"><h3>📋 علت</h3><p>نشت مایع خنک‌کننده به داخل موتور (واشر سرسیلندر).</p></div></div>
+<div class="full-card">
+    <h2>۵. 💨 دود سیاه از اگزوز</h2>
+    <p>موتور <strong>بیش از حد بنزین</strong> می‌سوزاند (Rich Mixture). علت: <strong>فیلتر هوا</strong> کثیف (اکسیژن کم)، <strong>انژکتور</strong> معیوب (بیش از حد بنزین می‌پاشد)، <strong>سنسور اکسیژن</strong> خراب (اطلاعات اشتباه به ECU). مصرف سوخت به شدت افزایش می‌یابد.</p>
+    <div class="golden-box"><p>💡 <strong>چک ساده:</strong> فیلتر هوا را باز کنید. اگر سیاه و گرفته است، ۵۰ هزار تومان فیلتر نو = حل مشکل!</p></div>
+</div>
 
-<div class="car-card"><h2>۶. 🚗 دود سیاه اگزوز</h2><div class="section"><h3>📋 علت</h3><p>سوخت بیش از حد. مشکل در انژکتورها یا سنسور اکسیژن.</p></div></div>
+<div class="full-card">
+    <h2>۶. 🌡️ آمپر آب بالا میره (جوش میاره)</h2>
+    <p><strong>فوراً توقف کنید!</strong> علل: <strong>کمبود آب رادیاتور</strong> (نشتی)، <strong>ترموستات</strong> خراب (باز نمی‌شود)، <strong>واتر پمپ</strong> (آب را به گردش درنمی‌آورد)، <strong>فن رادیاتور</strong> کار نمی‌کند. <strong>هرگز</strong> در موتور داغ آب سرد نریزید! (بلوکه سیلندر ترک برمی‌دارد). صبر کنید موتور کاملاً سرد شود، سپس آب اضافه کنید.</p>
+    <div class="purple-box"><p>🔧 <strong>ضدیخ:</strong> فقط برای زمستان نیست! ضدیخ از <strong>زنگ‌زدگی</strong> و <strong>جوش آوردن</strong> هم جلوگیری می‌کند. هر ۲ سال تعویض کنید.</p></div>
+</div>
 
-<div class="car-card"><h2>۷. 🚗 دود آبی اگزوز</h2><div class="section"><h3>📋 علت</h3><p>روغن‌سوزی. رینگ پیستون یا گاید سوپاپ خراب.</p></div></div>
+<div class="full-card">
+    <h2>۷. 🛑 ترمز صدا میده</h2>
+    <p><strong>صدای جیغ</strong> = <strong>لنت‌های ترمز تمام شده</strong> (سنگ‌های هشدار داخل لنت به دیسک ساییده می‌شوند). <strong>صدای سایش فلز</strong> = لنت کاملاً تمام شده و <strong>فلز لنت به دیسک</strong> می‌ساید = دیسک خط می‌افتد = هزینه ۱۰ برابر!</p>
+    <div class="red-box"><p>⚠️ <strong>تعویض لنت:</strong> هر ۲۰,۰۰۰-۴۰,۰۰۰ کیلومتر. هزینه: ۳۰۰-۸۰۰ هزار تومان. نگذارید به دیسک برسد!</p></div>
+</div>
 
-<div class="car-card"><h2>۸. 🚗 کولر خنک نمیکنه</h2><div class="section"><h3>📋 دلایل</h3><p>گاز کولر کم، کمپرسور خراب، کندانسور کثیف، فیلتر کابین.</p></div></div>
-
-<div class="car-card"><h2>۹. 🚗 ترمز صدا میده</h2><div class="section"><h3>📋 علت</h3><p>لنت ترمز تمام شده، دیسک تاب برداشته، سنگ ریزه بین لنت و دیسک.</p></div></div>
-
-<div class="car-card"><h2>۱۰. 🚗 فرمان می‌لرزه</h2><div class="section"><h3>📋 دلایل</h3><p>بالانس نبودن چرخ‌ها، جلوبندی خراب، دیسک ترمز تاب برداشته.</p></div></div>
-
-<div class="car-card"><h2>۱۱. 🚗 دنده جا نمیره</h2><div class="section"><h3>📋 علت</h3><p>کلاچ تمام شده، روغن گیربکس کم، سیم کلاچ پاره.</p></div></div>
-
-<div class="car-card"><h2>۱۲. 🚗 بوی بنزین</h2><div class="section"><h3>📋 علت</h3><p>نشت در سیستم سوخت‌رسانی، شلنگ بنزین پوسیده، باک سوراخ.</p></div></div>
-
-<div class="car-card"><h2>۱۳. 🚗 آمپر آب بالا میره</h2><div class="section"><h3>📋 دلایل</h3><p>کمبود آب رادیاتور، ترموستات خراب، واتر پمپ معیوب، رادیاتور گرفته.</p></div></div>
-
-<div class="car-card"><h2>۱۴. 🚗 روغن کم میکنه</h2><div class="section"><h3>📋 علت</h3><p>نشتی روغن، روغن‌سوزی، کاسه نمد خراب.</p></div></div>
-
-<div class="car-card"><h2>۱۵. 🚗 باتری خالی میشه</h2><div class="section"><h3>📋 دلایل</h3><p>دینام خراب، باتری فرسوده، مصرف برق زیاد.</p></div></div>
-
-<div class="car-card"><h2>۱۶. 🚗 شتاب کم</h2><div class="section"><h3>📋 دلایل</h3><p>فیلتر هوا کثیف، پمپ بنزین ضعیف، شمع‌ها خراب.</p></div></div>
-
-<div class="car-card"><h2>۱۷. 🚗 مصرف بنزین بالا</h2><div class="section"><h3>📋 دلایل</h3><p>فیلتر هوا، سنسور اکسیژن، باد لاستیک کم، رانندگی پرشتاب.</p></div></div>
-
-<div class="car-card"><h2>۱۸. 🚗 پدال کلاچ سفت</h2><div class="section"><h3>📋 علت</h3><p>کابل کلاچ خشک، صفحه کلاچ تمام شده.</p></div></div>
-
-<div class="car-card"><h2>۱۹. 🚗 چراغ باتری روشن</h2><div class="section"><h3>📋 علت</h3><p>دینام خراب، تسمه دینام پاره، باتری معیوب.</p></div></div>
-
-<div class="car-card"><h2>۲۰. 🚗 چراغ روغن روشن</h2><div class="section"><h3>📋 علت</h3><p>روغن موتور کم، پمپ روغن خراب، فیلتر روغن گرفته.</p></div></div>
-
-<div class="car-card"><h2>۲۱. 🚗 چراغ ABS روشن</h2><div class="section"><h3>📋 علت</h3><p>سنسور ABS خراب، مشکل در سیستم ترمز.</p></div></div>
-
-<div class="car-card"><h2>۲۲. 🚗 چراغ ایربگ روشن</h2><div class="section"><h3>📋 علت</h3><p>مشکل در سیستم ایربگ، سنسور صندلی.</p></div></div>
-
-<div class="car-card"><h2>۲۳. 🛞 لاستیک‌ها</h2><div class="section"><h3>📋 نکات</h3><p>تنظیم باد ماهانه، تعویض هر ۴۰-۵۰ هزار کیلومتر، آج حداقل ۱.۶ میلیمتر.</p></div></div>
-
-<div class="car-card"><h2>۲۴. 🔧 سرویس‌های دوره‌ای</h2><div class="section"><h3>📋 برنامه</h3><p>تعویض روغن هر ۵۰۰۰ کیلومتر، فیلتر هوا هر ۱۰۰۰۰، شمع هر ۲۰۰۰۰، تسمه تایم هر ۶۰۰۰۰.</p></div></div>
-
-<div class="car-card"><h2>۲۵. 🚗 بیمه خودرو</h2><div class="section"><h3>📋 انواع</h3><p>شخص ثالث (اجباری)، بدنه (اختیاری). عوامل مؤثر: نوع خودرو، سال ساخت، تخفیف عدم خسارت.</p></div></div>
-
-    <p style="text-align:center;margin:20px 0"><a href="car2.html" style="color:#0d47a1">🚗 مطالب بیشتر ←</a></p>
-    <p style="text-align:center"><a href="index.html" style="color:#0d47a1">🔙 خانه</a></p>
+<a href="index.html" class="back-btn">🔙 بازگشت به خانه</a>
+<a href="car2.html" class="back-btn">🚗 خودرو ۲ ←</a>
+<div class="footer"><p>🌟 rahilanab.com | <a href="index.html">🏠 خانه</a></p></div>
 </body>
 </html>
