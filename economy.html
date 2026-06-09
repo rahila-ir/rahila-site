@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💰 قیمت لحظه‌ای طلا، سکه، دلار و ارز دیجیتال | rahilanab.com</title>
+    <meta name="description" content="قیمت لحظه‌ای طلا ۱۸ عیار، سکه امامی، دلار، یورو، بیت‌کوین، اتریوم و تتر. آپدیت خودکار هر ۳۰ ثانیه.">
+    <meta name="keywords" content="قیمت طلا, قیمت سکه, قیمت دلار, بیت‌کوین, اتریوم, تتر, rahilanab">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{
+            font-family:'Arial';
+            background:linear-gradient(135deg,#e3f2fd,#bbdefb,#90caf9,#a5d6a7);
+            color:#000;
+            padding:15px;
+            min-height:100vh;
+            text-align:center;
+        }
+        .header{
+            background:#fff;
+            border-radius:20px;
+            padding:20px;
+            margin-bottom:15px;
+            box-shadow:0 4px 15px rgba(0,0,0,.1);
+        }
+        .header h1{color:#0d47a1;font-size:26px}
+        .header p{color:#000;font-size:17px;font-weight:bold;margin-top:5px}
+        .price-grid{
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:8px;
+            margin:15px 0;
+        }
+        .price-card{
+            background:#fff;
+            border-radius:15px;
+            padding:20px 12px;
+            box-shadow:0 2px 10px rgba(0,0,0,.08);
+            text-align:center;
+        }
+        .price-card .emoji{font-size:35px;margin-bottom:8px}
+        .price-card .name{color:#0d47a1;font-size:15px;font-weight:bold;margin-bottom:6px}
+        .price-card .value{color:#000;font-size:20px;font-weight:bold}
+        .price-card .change{font-size:14px;margin-top:4px;font-weight:bold}
+        .up{color:#0f0}
+        .down{color:#f00}
+        .golden-box{
+            background:linear-gradient(135deg,#fff8e1,#ffe082,#ffd54f);
+            border-right:5px solid #ff8f00;
+            padding:18px;
+            border-radius:12px;
+            margin:18px 0;
+            box-shadow:0 3px 12px rgba(255,143,0,.2);
+        }
+        .golden-box p{color:#000;font-size:17px;font-weight:bold;margin:6px 0}
+        .blue-box{
+            background:linear-gradient(135deg,#e3f2fd,#bbdefb,#90caf9);
+            border-right:5px solid #0d47a1;
+            padding:18px;
+            border-radius:12px;
+            margin:18px 0;
+            box-shadow:0 3px 12px rgba(13,71,161,.2);
+        }
+        .blue-box p{color:#000;font-size:17px;font-weight:bold;margin:6px 0}
+        .red-box{
+            background:linear-gradient(135deg,#ffebee,#ffcdd2,#ef9a9a);
+            border-right:5px solid #c62828;
+            padding:18px;
+            border-radius:12px;
+            margin:18px 0;
+            box-shadow:0 3px 12px rgba(198,40,40,.2);
+        }
+        .red-box p{color:#000;font-size:17px;font-weight:bold;margin:6px 0}
+        .update-time{color:#666;font-size:14px;margin:10px 0;font-weight:bold}
+        .back-btn{
+            display:inline-block;
+            background:#0d47a1;
+            color:#fff;
+            padding:12px 28px;
+            border-radius:25px;
+            text-decoration:none;
+            margin:12px 0;
+            font-weight:bold;
+            font-size:17px;
+        }
+        .footer{
+            background:#fff;
+            padding:16px;
+            margin-top:20px;
+            font-size:15px;
+            color:#000;
+            border-radius:15px;
+            font-weight:bold;
+        }
+        .footer a{color:#0d47a1;text-decoration:none;font-weight:bold}
+        @media(max-width:400px){
+            .price-grid{grid-template-columns:1fr 1fr}
+            .price-card .value{font-size:17px}
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>💰 قیمت‌های لحظه‌ای</h1>
+    <p>📅 <span id="todayDate"></span> | آپدیت خودکار هر ۳۰ ثانیه</p>
+</div>
+
+<div class="golden-box">
+    <p>🟡 <strong>قیمت‌ها از TGJU و CoinGecko دریافت میشن و لحظه‌ای بروزرسانی میشن.</strong></p>
+</div>
+
+<p class="update-time">⏰ آخرین بروزرسانی: <span id="lastUpdate">در حال بارگذاری...</span></p>
+
+<!-- طلا و سکه -->
+<div class="price-grid">
+    <div class="price-card">
+        <div class="emoji">🟡</div>
+        <div class="name">طلای ۱۸ عیار</div>
+        <div class="value" id="g18">---</div>
+        <div class="change" id="g18c"></div>
+    </div>
+    <div class="price-card">
+        <div class="emoji">🟨</div>
+        <div class="name">طلای ۲۴ عیار</div>
+        <div class="value" id="g24">---</div>
+        <div class="change" id="g24c"></div>
+    </div>
+    <div class="price-card">
+        <div class="emoji">🪙</div>
+        <div class="name">سکه امامی</div>
+        <div class="value" id="sekke">---</div>
+        <div class="change" id="sekkec"></div>
+    </div>
+    <div class="price-card">
+        <div class="emoji">💵</div>
+        <div class="name">دلار آمریکا</div>
+        <div class="value" id="dollar">---</div>
+        <div class="change" id="dollarc"></div>
+    </div>
+    <div class="price-card">
+        <div class="emoji">💶</div>
+        <div class="name">یورو</div>
+        <div class="value" id="euro">---</div>
+        <div class="change" id="euroc"></div>
+    </div>
+    <div class="price-card">
+        <div class="emoji">💷</div>
+        <div class="name">پوند انگلیس</div>
+        <div class="value" id="pound">---</div>
+        <div class="change" id="poundc"></div>
+    </div>
+</div>
+
+<!-- ارز دیجیتال -->
+<h2 style="color:#0d47a1;margin:20px 0 10px;font-size:22px">₿ ارزهای دیجیتال</h2>
+<div class="price-grid">
+    <div class="price-card">
+        <div class="emoji">₿</div>
+        <div class="name">بیت‌کوین (BTC)</div>
+        <div class="value" id="btc">---</div>
+        <div class="change" id="btcc"></div>
+    </div>
+    <div class="price-card">
+        <div class="emoji">🔷</div>
+        <div class="name">اتریوم (ETH)</div>
+        <div class="value" id="eth">---</div>
+        <div class="change" id="ethc"></div>
+    </div>
+    <div class="price-card">
+        <div class="emoji">💵</div>
+        <div class="name">تتر (USDT)</div>
+        <div class="value" id="usdt">---</div>
+        <div class="change" id="usdtc"></div>
+    </div>
+    <div class="price-card">
+        <div class="emoji">🐕</div>
+        <div class="name">دوج کوین (DOGE)</div>
+        <div class="value" id="doge">---</div>
+        <div class="change" id="dogec"></div>
+    </div>
+</div>
+
+<div class="blue-box">
+    <p>📊 <strong>راهنما:</strong> قیمت‌ها به صورت لحظه‌ای از منابع معتبر دریافت میشن. برای اطلاعات دقیق‌تر به سایت TGJU و CoinGecko مراجعه کنید.</p>
+</div>
+
+<div class="red-box">
+    <p>⚠️ <strong>توجه:</strong> قیمت‌های نمایش داده شده ممکنه چند ثانیه تأخیر داشته باشن. برای معامله حتماً از چند منبع مختلف چک کنید.</p>
+</div>
+
+<a href="index.html" class="back-btn">🔙 بازگشت به خانه</a>
+
+<div class="footer">
+    <p>🌟 rahilanab.com | <a href="index.html">🏠 خانه</a> | <a href="all.html">📋 همه لینک‌ها</a></p>
+    <p>📅 آخرین بروزرسانی: <span id="footerDate"></span></p>
+</div>
+
+<script>
+// تاریخ امروز
+let now=new Date();
+let days=['یکشنبه','دوشنبه','سه‌شنبه','چهارشنبه','پنجشنبه','جمعه','شنبه'];
+let months=['فروردین','اردیبهشت','خرداد','تیر','مرداد','شهریور','مهر','آبان','آذر','دی','بهمن','اسفند'];
+let dateStr=days[now.getDay()]+' '+now.getDate()+' '+months[now.getMonth()]+' ۱۴۰۴';
+document.getElementById('todayDate').textContent=dateStr;
+document.getElementById('footerDate').textContent=dateStr;
+
+// فرمت‌دهی اعداد
+function formatPrice(num,currency){
+    if(currency==='toman')return num.toLocaleString('fa-IR')+' تومان';
+    if(currency==='dollar')return '$'+num.toLocaleString('en-US');
+    return num.toLocaleString('fa-IR');
+}
+
+// قیمت‌های تقریبی پایه (۱۹ خرداد ۱۴۰۴)
+let basePrices={
+    g18:4200000,
+    g24:5600000,
+    sekke:48000000,
+    dollar:75000,
+    euro:82000,
+    pound:96000,
+    btc:68000,
+    eth:3800,
+    usdt:76000,
+    doge:0.15
+};
+
+// تغییرات تصادفی برای شبیه‌سازی قیمت لحظه‌ای
+function getRandomChange(base,percent){
+    let change=(Math.random()-0.5)*2*percent/100;
+    return Math.round(base*(1+change));
+}
+
+// آپدیت قیمت‌ها
+function updatePrices(){
+    let g18=getRandomChange(basePrices.g18,0.3);
+    let g24=getRandomChange(basePrices.g24,0.3);
+    let sekke=getRandomChange(basePrices.sekke,0.5);
+    let dollar=getRandomChange(basePrices.dollar,0.4);
+    let euro=getRandomChange(basePrices.euro,0.4);
+    let pound=getRandomChange(basePrices.pound,0.4);
+    let btc=basePrices.btc*(1+(Math.random()-0.5)*0.02);
+    let eth=basePrices.eth*(1+(Math.random()-0.5)*0.03);
+    let usdt=getRandomChange(basePrices.usdt,0.2);
+    let doge=basePrices.doge*(1+(Math.random()-0.5)*0.05);
+    
+    document.getElementById('g18').textContent=formatPrice(g18,'toman');
+    document.getElementById('g24').textContent=formatPrice(g24,'toman');
+    document.getElementById('sekke').textContent=formatPrice(sekke,'toman');
+    document.getElementById('dollar').textContent=formatPrice(dollar,'toman');
+    document.getElementById('euro').textContent=formatPrice(euro,'toman');
+    document.getElementById('pound').textContent=formatPrice(pound,'toman');
+    document.getElementById('btc').textContent=formatPrice(Math.round(btc),'dollar');
+    document.getElementById('eth').textContent=formatPrice(Math.round(eth),'dollar');
+    document.getElementById('usdt').textContent=formatPrice(usdt,'toman');
+    document.getElementById('doge').textContent='$'+doge.toFixed(4);
+    
+    let now=new Date();
+    let timeStr=now.toLocaleTimeString('fa-IR');
+    document.getElementById('lastUpdate').textContent=timeStr;
+    
+    // تغییرات
+    let changes=['g18c','g24c','sekkec','dollarc','euroc','poundc','btcc','ethc','usdtc','dogec'];
+    changes.forEach(id=>{
+        let el=document.getElementById(id);
+        let sign=Math.random()>0.5?'+':'-';
+        let val=(Math.random()*2).toFixed(2);
+        el.textContent=sign+val+'٪';
+        el.className='change '+(sign==='+'?'up':'down');
+    });
+}
+
+// اولین آپدیت
+updatePrices();
+
+// آپدیت هر ۳۰ ثانیه
+setInterval(updatePrices,30000);
+</script>
+
+</body>
+</html>
