@@ -1,74 +1,124 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🍳 ۳۰ غذای ایرانی (۹۱-۱۲۰) | رهیلا</title>
+    <title>🍰 ۳۰ غذای بین‌المللی | اسپاگتی تا سوشی | rahilanab.com</title>
+    <meta name="description" content="معرفی ۳۰ غذای خارجی: اسپاگتی، تاکو، سوشی، رامن، کاری، پیراشکی، پائیا و...">
+    <meta name="keywords" content="اسپاگتی, تاکو, سوشی, رامن, غذای خارجی, rahilanab">
     <style>
         *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:'Arial';background:radial-gradient(circle at center,#0a1a1a,#1a4a4a,#66ccaa);color:#fff;padding:15px;min-height:100vh}
-        .header{background:rgba(255,255,255,.08);backdrop-filter:blur(20px);border-radius:25px;padding:20px;margin-bottom:15px;text-align:center}
-        .header h1{color:#ffd700;font-size:22px}
-        .back-btn{display:inline-block;background:rgba(255,255,255,.15);color:#fff;padding:10px 20px;border-radius:20px;text-decoration:none;margin:10px 0}
-        .recipe-card{background:linear-gradient(135deg,rgba(255,255,255,.03),rgba(255,215,0,.08));border-radius:20px;padding:15px;margin:20px 0;border:1px solid rgba(255,215,0,.2);text-align:right}
-        .recipe-card h2{color:#ffd700;font-size:20px;text-align:center;margin-bottom:10px}
-        .section{background:rgba(0,0,0,.4);border-radius:10px;padding:12px;margin:8px 0;border-right:2px solid #ffd700}
-        .section h3{color:#ffd700;font-size:14px;margin-bottom:6px}
-        .ingredients-grid{display:grid;grid-template-columns:1fr 1fr;gap:3px;color:#ddd;font-size:11px}
-        .ingredients-grid span{background:rgba(255,255,255,.05);padding:5px;border-radius:5px}
-        .steps{list-style:none;counter-reset:step}
-        .steps li{counter-increment:step;color:#ddd;font-size:12px;line-height:1.7;padding:3px 0;border-bottom:1px dashed rgba(255,255,255,.08)}
-        .steps li::before{content:counter(step);background:#ffd700;color:#000;font-weight:bold;padding:1px 6px;border-radius:50%;margin-left:5px;font-size:10px}
+        body{font-family:'Arial';background:linear-gradient(135deg,#e3f2fd,#bbdefb,#90caf9,#a5d6a7);color:#000;padding:15px;min-height:100vh;text-align:center}
+        .header{background:#fff;border-radius:20px;padding:20px;margin-bottom:15px;box-shadow:0 4px 15px rgba(0,0,0,.1)}
+        .header h1{color:#0d47a1;font-size:26px}
+        .header p{color:#000;font-size:17px;font-weight:bold;margin-top:5px}
+        .food-card{background:#fff;border-radius:20px;padding:25px;margin:18px 0;box-shadow:0 2px 12px rgba(0,0,0,.08);text-align:right;line-height:2.3}
+        .food-card h2{color:#0d47a1;font-size:22px;margin-bottom:15px;text-align:center;border-bottom:2px solid #e3f2fd;padding-bottom:10px}
+        .food-card h3{color:#0d47a1;font-size:19px;margin:18px 0 10px}
+        .food-card p{color:#000;font-size:17px;font-weight:bold;margin:10px 0}
+        .food-card li{color:#000;font-size:17px;font-weight:bold;margin:8px 0}
+        .golden-box{background:linear-gradient(135deg,#fff8e1,#ffe082,#ffd54f);border-right:5px solid #ff8f00;padding:18px;border-radius:12px;margin:18px 0}
+        .golden-box p{color:#000;font-size:17px;font-weight:bold}
+        .red-box{background:linear-gradient(135deg,#ffebee,#ffcdd2,#ef9a9a);border-right:5px solid #c62828;padding:18px;border-radius:12px;margin:18px 0}
+        .red-box p{color:#000;font-size:17px;font-weight:bold}
+        .blue-box{background:linear-gradient(135deg,#e3f2fd,#bbdefb,#90caf9);border-right:5px solid #0d47a1;padding:18px;border-radius:12px;margin:18px 0}
+        .blue-box p{color:#000;font-size:17px;font-weight:bold}
+        .green-box{background:linear-gradient(135deg,#e8f5e9,#c8e6c9,#a5d6a7);border-right:5px solid #2e7d32;padding:18px;border-radius:12px;margin:18px 0}
+        .green-box p{color:#000;font-size:17px;font-weight:bold}
+        .back-btn{display:inline-block;background:#0d47a1;color:#fff;padding:12px 28px;border-radius:25px;text-decoration:none;margin:12px 0;font-weight:bold;font-size:17px}
+        .footer{background:#fff;padding:16px;margin-top:20px;font-size:15px;color:#000;border-radius:15px;font-weight:bold}
+        .footer a{color:#0d47a1;text-decoration:none;font-weight:bold}
     </style>
 </head>
 <body>
-    <div class="header"><h1>🍳 ۳۰ غذای ایرانی (۹۱ تا ۱۲۰)</h1><p>rahilanab.com</p></div>
-    <a href="foods-3.html" class="back-btn">🔙 ۳۰ تای قبل</a>
 
-<!-- ۹۱ --><div class="recipe-card"><h2>۹۱. 🍝 اسپاگتی</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>اسپاگتی</span><span>گوشت۲۰۰گرم</span><span>پیاز</span><span>سیر</span><span>رب</span><span>پنیر</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>اسپاگتی بپز</li><li>گوشت با پیاز و سیر تفت</li><li>رب اضافه کن</li><li>با اسپاگتی مخلوط</li><li>پنیر بریز</li></ol></div></div>
+<div class="header">
+    <h1>🍰 ۳۰ غذای بین‌المللی (۹۱ تا ۱۲۰)</h1>
+    <p>طرز تهیه کامل با مواد لازم و نکات طلایی | rahilanab.com</p>
+</div>
 
-<!-- ۹۲ --><div class="recipe-card"><h2>۹۲. 🌮 تاکو</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>گوشت چرخ کرده</span><span>نان ترتیلا</span><span>کاهو</span><span>گوجه</span><span>پنیر</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>گوشت با ادویه تفت</li><li>نان رو گرم کن</li><li>گوشت و سبزیجات بذار</li><li>پنیر و سس بریز</li></ol></div></div>
+<!-- ۹۱ -->
+<div class="food-card">
+    <h2>۹۱. 🍝 اسپاگتی</h2>
+    <h3>📝 مواد لازم</h3>
+    <ul><li>اسپاگتی: ۱ بسته</li><li>گوشت چرخ‌کرده: ۳۰۰ گرم</li><li>پیاز: ۱ عدد</li><li>سیر: ۳ حبه</li><li>رب گوجه: ۳ قاشق</li><li>گوجه رنده‌شده: ۳ عدد</li><li>آویشن، پونه کوهی، نمک، فلفل</li><li>پنیر پارمزان برای سرو</li></ul>
+    <h3>👨‍🍳 طرز تهیه</h3>
+    <ol><li>اسپاگتی رو طبق دستور بسته بپزید و آبکش کنید</li><li>پیاز + سیر رو تفت بدید، گوشت رو اضافه کنید</li><li>رب + گوجه + ادویه رو اضافه کنید و ۲۰ دقیقه بجوشه</li><li>سس رو روی اسپاگتی بریزید و با پنیر پارمزان سرو کنید</li></ol>
+    <div class="golden-box"><p>💡 آب اسپاگتی رو دور نریزید! یه لیوانش رو نگه دارید و به سس اضافه کنید تا غلیظ‌تر بشه.</p></div>
+</div>
 
-<!-- ۹۳ --><div class="recipe-card"><h2>۹۳. 🌯 بوریتو</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>مرغ</span><span>برنج</span><span>لوبیا</span><span>نان ترتیلا</span><span>پنیر</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>مرغ بپز و ریش کن</li><li>برنج بپز</li><li>همه رو توی نان بپیچ</li><li>فر گرم کن</li></ol></div></div>
+<!-- ۹۲ -->
+<div class="food-card"><h2>۹۲. 🌮 تاکو</h2><h3>📝 مواد لازم</h3><ul><li>نان تاکو: ۶ عدد</li><li>گوشت چرخ‌کرده: ۳۰۰ گرم</li><li>کاهو خرد شده، گوجه نگینی، پنیر چدار</li><li>سس سالسا، خامه ترش، آووکادو</li><li>ادویه تاکو (زیره، پاپریکا، پودر سیر، فلفل قرمز)</li></ul><h3>👨‍🍳 طرز تهیه</h3><ol><li>گوشت رو با ادویه تاکو تفت بدید</li><li>نان تاکو رو گرم کنید</li><li>گوشت + کاهو + گوجه + پنیر + سس رو توی نان بریزید</li></ol><div class="green-box"><p>🌮 تاکو غذای ملی مکزیکه! می‌تونید با مرغ، ماهی یا حتی گیاهی هم درستش کنید.</p></div></div>
 
-<!-- ۹۴ --><div class="recipe-card"><h2>۹۴. 🍜 رامن</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>نودل ژاپنی</span><span>تخم‌مرغ</span><span>مرغ</span><span>سبزیجات</span><span>سس سویا</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>نودل بپز</li><li>مرغ بپز</li><li>تخم‌مرغ آب‌پز کن</li><li>همه توی کاسه بچین</li><li>سس سویا بریز</li></ol></div></div>
+<!-- ۹۳ -->
+<div class="food-card"><h2>۹۳. 🌯 بوریتو</h2><h3>📝 مواد لازم</h3><ul><li>نان تورتیلا: ۴ عدد</li><li>برنج پخته: ۲ پیمانه</li><li>لوبیا قرمز پخته: ۱ پیمانه</li><li>گوشت چرخ‌کرده یا مرغ: ۲۰۰ گرم</li><li>پنیر چدار، کاهو، گوجه، خامه ترش</li></ul><h3>👨‍🍳 طرز تهیه</h3><ol><li>همه مواد رو روی نان تورتیلا بچینید</li><li>نان رو محکم بپیچید</li><li>توی تابه یا فر گرم کنید تا پنیر آب بشه</li></ol><div class="blue-box"><p>🌯 بوریتو (Burrito) یعنی "الاغ کوچولو" به اسپانیایی! یه غذای کامل توی یه لقمه.</p></div></div>
 
-<!-- ۹۵ --><div class="recipe-card"><h2>۹۵. 🍣 سوشی</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>برنج سوشی</span><span>ماهی سالمون</span><span>جلبک نوری</span><span>سرکه</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>برنج بپز و با سرکه مخلوط</li><li>جلبک پهن کن</li><li>برنج و ماهی بذار</li><li>رول کن</li><li>برش بزن</li></ol></div></div>
+<!-- ۹۴ -->
+<div class="food-card"><h2>۹۴. 🍜 رامن</h2><h3>📝 مواد لازم</h3><ul><li>نودل رامن: ۲ بسته</li><li>آب مرغ یا گوشت: ۴ لیوان</li><li>تخم مرغ آب‌پز: ۲ عدد</li><li>گوشت خوک یا مرغ: ۲۰۰ گرم</li><li>پیازچه، جلبک نوری، ذرت</li><li>سس سویا، زنجبیل، سیر</li></ul><h3>👨‍🍳 طرز تهیه</h3><ol><li>آب مرغ + زنجبیل + سیر + سس سویا رو بجوشونید</li><li>نودل رو اضافه کنید و ۳-۴ دقیقه بپزه</li><li>توی کاسه بریزید و با تخم مرغ، گوشت و سبزیجات تزئین کنید</li></ol><div class="golden-box"><p>💡 رامن (Ramen) غذای ملی ژاپنه! هر منطقه ژاپن رامن مخصوص خودش رو داره.</p></div></div>
 
-<!-- ۹۶ --><div class="recipe-card"><h2>۹۶. 🥘 پائیا</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>برنج</span><span>میگو</span><span>مرغ</span><span>زعفران</span><span>فلفل دلمه</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>مرغ تفت بده</li><li>برنج اضافه کن</li><li>زعفران و آب بریز</li><li>میگو و سبزیجات بذار</li><li>دم کن</li></ol></div></div>
+<!-- ۹۵ -->
+<div class="food-card"><h2>۹۵. 🍣 سوشی</h2><h3>📝 مواد لازم</h3><ul><li>برنج سوشی: ۲ پیمانه</li><li>سرکه برنج: ۳ قاشق</li><li>شکر: ۱ قاشق</li><li>نمک: نصف قاشق</li><li>ماهی سالمون یا تن تازه: ۲۰۰ گرم</li><li>جلبک نوری، خیار، آووکادو</li><li>سس سویا، واسابی، زنجبیل ترشی</li></ul><h3>👨‍🍳 طرز تهیه</h3><ol><li>برنج رو بپزید و با سرکه + شکر + نمک مخلوط کنید</li><li>جلبک رو روی حصیر بامبو بذارید</li><li>برنج + ماهی + خیار + آووکادو رو بچینید</li><li>محکم بپیچید و با چاقوی تیز ببرید</li></ol><div class="red-box"><p>⚠️ برای سوشی حتماً از ماهی مخصوص سوشی (sushi-grade) استفاده کنید که انگل نداشته باشه!</p></div></div>
 
-<!-- ۹۷ --><div class="recipe-card"><h2>۹۷. 🍛 کاری</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>مرغ</span><span>شیر نارگیل</span><span>پودر کاری</span><span>پیاز</span><span>زنجبیل</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>پیاز و زنجبیل تفت</li><li>مرغ اضافه کن</li><li>پودر کاری بریز</li><li>شیر نارگیل بریز</li><li>۳۰دقیقه بپز</li></ol></div></div>
+<!-- ۹۶ -->
+<div class="food-card"><h2>۹۶. 🥘 پائیا</h2><h3>📝 مواد لازم</h3><ul><li>برنج: ۲ پیمانه</li><li>میگو: ۲۰۰ گرم</li><li>صدف: ۲۰۰ گرم</li><li>مرغ: ۲۰۰ گرم</li><li>زعفران: به میزان لازم</li><li>فلفل دلمه‌ای، نخود فرنگی، گوجه</li><li>عصاره مرغ یا ماهی: ۴ لیوان</li></ul><h3>👨‍🍳 طرز تهیه</h3><ol><li>مرغ رو تفت بدید و کنار بذارید</li><li>سبزیجات رو تفت بدید</li><li>برنج + زعفران + عصاره رو اضافه کنید</li><li>میگو و صدف و مرغ رو روی برنج بچینید</li><li>توی فر یا روی شعله ۲۰-۲۵ دقیقه بپزه</li></ol><div class="green-box"><p>🥘 پائیا (Paella) غذای ملی اسپانیاست. اسمش از تابه مخصوصش (paellera) گرفته شده!</p></div></div>
 
-<!-- ۹۸ --><div class="recipe-card"><h2>۹۸. 🥟 پیراشکی</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>آرد۳لیوان</span><span>گوشت چرخ کرده</span><span>پیاز</span><span>روغن</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>خمیر درست کن</li><li>گوشت با پیاز تفت</li><li>توی خمیر بذار و بپیچ</li><li>توی روغن سرخ کن</li></ol></div></div>
+<!-- ۹۷ -->
+<div class="food-card"><h2>۹۷. 🍛 کاری</h2><h3>📝 مواد لازم</h3><ul><li>مرغ: ۵۰۰ گرم</li><li>پیاز: ۲ عدد</li><li>سیر: ۴ حبه</li><li>زنجبیل تازه: ۲ سانتی‌متر</li><li>شیر نارگیل: ۱ قوطی</li><li>پودر کاری: ۲ قاشق</li><li>زردچوبه، زیره، گشنیز، فلفل قرمز</li><li>رب گوجه: ۱ قاشق</li></ul><h3>👨‍🍳 طرز تهیه</h3><ol><li>پیاز + سیر + زنجبیل رو تفت بدید</li><li>ادویه‌ها رو اضافه کنید و ۱ دقیقه تفت بدید</li><li>مرغ رو اضافه کنید و تفت بدید</li><li>شیر نارگیل + رب رو اضافه کنید</li><li>۳۰-۴۰ دقیقه بجوشه تا مرغ بپزه و سس غلیظ بشه</li></ol><div class="golden-box"><p>💡 کاری (Curry) یه غذای هندیه که هزاران نوع مختلف داره. شیر نارگیل راز اصلی کاری خوشمزه‌ست!</p></div></div>
 
-<!-- ۹۹ --><div class="recipe-card"><h2>۹۹. 🥘 قیمه بادمجان</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>گوشت۳۰۰گرم</span><span>لپه</span><span>بادمجان</span><span>رب</span><span>لیمو عمانی</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>مثل قیمه بپز</li><li>بادمجان سرخ کن</li><li>روی قیمه بذار</li><li>۳۰دقیقه دم کن</li></ol></div></div>
+<!-- ۹۸ -->
+<div class="food-card"><h2>۹۸. 🥟 پیراشکی</h2><h3>📝 مواد لازم</h3><ul><li>آرد: ۳ پیمانه</li><li>شیر گرم: ۱ پیمانه</li><li>خمیر مایه: ۱ قاشق</li><li>تخم مرغ: ۱ عدد</li><li>کره: ۵۰ گرم</li><li>شکر: ۲ قاشق</li><li><strong>مواد میانی:</strong> گوشت چرخ‌کرده + پیاز + قارچ + پنیر پیتزا</li><li>روغن برای سرخ کردن</li></ul><h3>👨‍🍳 طرز تهیه</h3><ol><li>خمیر رو درست کنید و ۱ ساعت استراحت بدید</li><li>مواد میانی رو تفت بدید</li><li>خمیر رو باز کنید، مواد رو بذارید و ببندید</li><li>توی روغن داغ سرخ کنید تا طلایی بشه</li></ol><div class="blue-box"><p>🥟 پیراشکی رو می‌تونید توی فر هم بپزید تا سالم‌تر باشه. با فر ۱۸۰ درجه ۲۰-۲۵ دقیقه.</p></div></div>
 
-<!-- ۱۰۰ --><div class="recipe-card"><h2>۱۰۰. 🍲 آبگوشت</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>گوشت۳۰۰گرم</span><span>نخود</span><span>لوبیا</span><span>سیب‌زمینی</span><span>گوجه</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>حبوبات خیس کن</li><li>همه مواد توی قابلمه</li><li>۳ساعت بپز</li><li>گوشت رو بکوب</li></ol></div></div>
+<!-- ۹۹ تا ۱۲۰ -->
+<div class="food-card"><h2>۹۹. 🍲 قیمه بادمجان</h2><p><strong>مواد:</strong> گوشت (۳۰۰ گرم)، لپه (نصف پیمانه)، بادمجان (۳ عدد)، پیاز، رب، لیمو عمانی</p><p><strong>طرز تهیه:</strong> مثل قیمه معمولی، بادمجان سرخ‌شده رو ۳۰ دقیقه آخر روی خورشت بچینید.</p><div class="golden-box"><p>💡 بادمجان رو جدا سرخ کنید و روی خورشت بچینید، هم نزنید که له بشه!</p></div></div>
 
-<!-- ۱۰۱-۱۲۰ --><div class="recipe-card"><h2>۱۰۱. 🥗 تبوله</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>بلغور</span><span>جعفری</span><span>گوجه</span><span>پیاز</span><span>لیمو</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>بلغور خیس کن</li><li>سبزیجات خرد</li><li>همه مخلوط</li><li>لیمو و روغن زیتون</li></ol></div></div>
-<div class="recipe-card"><h2>۱۰۲. 🥗 فتوش</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>نان پیتا</span><span>کاهو</span><span>گوجه</span><span>خیار</span><span>لیمو</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>نان سرخ کن</li><li>سبزیجات خرد</li><li>همه مخلوط</li><li>لیمو و روغن زیتون</li></ol></div></div>
-<div class="recipe-card"><h2>۱۰۳. 🥮 قطاب</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>آرد۲لیوان</span><span>گردو</span><span>شکر</span><span>هل</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>خمیر درست کن</li><li>گردو و شکر مخلوط</li><li>توی خمیر بپیچ</li><li>سرخ کن</li><li>توی پودر قند بغلطون</li></ol></div></div>
-<div class="recipe-card"><h2>۱۰۴. 🍪 باقلوا</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>خمیر یوفکا</span><span>گردو</span><span>پسته</span><span>کره</span><span>گلاب</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>خمیر لایه‌لایه کره بزن</li><li>گردو بریز</li><li>برش بزن</li><li>فر بپز</li><li>شربت گلاب بریز</li></ol></div></div>
-<div class="recipe-card"><h2>۱۰۵. 🍚 شیربرنج</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>برنج۱پیمانه</span><span>شیر۴لیوان</span><span>شکر</span><span>گلاب</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>برنج با آب بپز</li><li>شیر اضافه کن</li><li>هم بزن تا غلیظ</li><li>شکر و گلاب بریز</li><li>با دارچین تزئین</li></ol></div></div>
-<div class="recipe-card"><h2>۱۰۶. 🍵 چای ماسالا</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>شیر</span><span>چای سیاه</span><span>زنجبیل</span><span>هل</span><span>دارچین</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>شیر و آب بجوشون</li><li>ادویه‌ها اضافه</li><li>چای بریز</li><li>۵دقیقه دم کن</li></ol></div></div>
-<div class="recipe-card"><h2>۱۰۷. 🥤 لیموناد</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>لیمو۳عدد</span><span>شکر۴قاشق</span><span>آب</span><span>یخ</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>لیمو آب بگیر</li><li>شکر توی آب حل کن</li><li>آب لیمو اضافه</li><li>یخ و نعنا بریز</li></ol></div></div>
-<div class="recipe-card"><h2>۱۰۸. 🍞 نان سیر</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>نان باگت</span><span>کره</span><span>سیر</span><span>جعفری</span><span>پنیر</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>کره و سیر مخلوط</li><li>روی نان بمال</li><li>پنیر بریز</li><li>فر ۵دقیقه</li></ol></div></div>
-<div class="recipe-card"><h2>۱۰۹. 🥒 ترشی</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>خیار</span><span>هویج</span><span>گل کلم</span><span>سیر</span><span>سرکه</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>سبزیجات خرد</li><li>توی شیشه بریز</li><li>سرکه و نمک اضافه</li><li>۲هفته صبر کن</li></ol></div></div>
-<div class="recipe-card"><h2>۱۱۰. 🥫 رب گوجه</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>گوجه۵کیلو</span><span>نمک</span><span>روغن</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>گوجه بپز و پوست بکن</li><li>میکس کن</li><li>بجوشون تا غلیظ</li><li>نمک و روغن بریز</li><li>توی شیشه بریز</li></ol></div></div>
-<div class="recipe-card"><h2>۱۱۱. 🧈 کره بادام زمینی</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>بادام زمینی۲لیوان</span><span>عسل</span><span>نمک</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>بادام فر بو بده</li><li>توی غذاساز میکس</li><li>تا کره بشه</li><li>عسل و نمک اضافه</li></ol></div></div>
-<div class="recipe-card"><h2>۱۱۲. 🍯 مربای هویج</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>هویج۱کیلو</span><span>شکر۱کیلو</span><span>گلاب</span><span>هل</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>هویج رنده کن</li><li>با شکر ۲ساعت بمونه</li><li>روی حرارت بجوشون</li><li>گلاب و هل بریز</li></ol></div></div>
-<div class="recipe-card"><h2>۱۱۳. 🍯 مربای آلبالو</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>آلبالو۱کیلو</span><span>شکر۸۰۰گرم</span><span>وانیل</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>آلبالو هسته بگیر</li><li>با شکر ۳ساعت بمونه</li><li>روی حرارت بجوشون</li><li>وانیل بریز</li></ol></div></div>
-<div class="recipe-card"><h2>۱۱۴. 🥒 خیارشور</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>خیار ریز۱کیلو</span><span>سرکه</span><span>آب</span><span>نمک</span><span>سیر</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>خیارها بشور</li><li>توی شیشه بچین</li><li>سیر و شوید اضافه</li><li>آب و نمک و سرکه جوشونده بریز</li><li>۱هفته صبر کن</li></ol></div></div>
-<div class="recipe-card"><h2>۱۱۵. 🥬 کلم ترش</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>کلم سفید</span><span>نمک</span><span>سرکه</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>کلم خلالی کن</li><li>نمک بزن و ورز بده</li><li>توی شیشه فشار بده</li><li>سرکه بریز</li><li>۲هفته صبر کن</li></ol></div></div>
-<div class="recipe-card"><h2>۱۱۶. 🧄 ترشی سیر</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>سیر۵۰۰گرم</span><span>سرکه</span><span>نمک</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>سیر پوست بکن</li><li>توی شیشه بریز</li><li>سرکه و نمک اضافه</li><li>۱ماه صبر کن</li></ol></div></div>
-<div class="recipe-card"><h2>۱۱۷. 🍿 پاپ کورن</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>ذرت پاپ کورن</span><span>روغن</span><span>کره</span><span>نمک</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>روغن داغ کن</li><li>ذرت بریز</li><li>در قابلمه رو ببند</li><li>بذار بترکه</li><li>کره و نمک بریز</li></ol></div></div>
-<div class="recipe-card"><h2>۱۱۸. 🥔 چیپس خانگی</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>سیب‌زمینی۳عدد</span><span>روغن</span><span>نمک</span><span>پاپریکا</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>سیب‌زمینی نازک خرد</li><li>توی آب سرد بخیسون</li><li>خشک کن</li><li>توی روغن سرخ کن</li><li>نمک و پاپریکا بزن</li></ol></div></div>
-<div class="recipe-card"><h2>۱۱۹. 🧅 پیاز داغ</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>پیاز۵عدد</span><span>روغن</span><span>زردچوبه</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>پیاز خلالی کن</li><li>توی روغن سرخ کن</li><li>زردچوبه بزن</li><li>تا طلایی بشه</li></ol></div></div>
-<div class="recipe-card"><h2>۱۲۰. 🍳 سس مایونز</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>تخم‌مرغ۱عدد</span><span>روغن۱لیوان</span><span>لیمو</span><span>نمک</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>تخم‌مرغ و لیمو توی مخلوط کن</li><li>روغن کم‌کم اضافه</li><li>هم بزن تا سفت بشه</li><li>نمک اضافه کن</li></ol></div></div>
+<div class="food-card"><h2>۱۰۰. 🍲 آبگوشت</h2><p><strong>مواد:</strong> گوشت با استخوان (۵۰۰ گرم)، نخود، لوبیا، سیب‌زمینی، گوجه، پیاز، لیمو عمانی</p><p><strong>طرز تهیه:</strong> همه مواد رو با ۶ لیوان آب ۴-۵ ساعت بپزید. آبش رو با نان ترید کنید، گوشت و حبوبات رو بکوبید.</p><div class="green-box"><p>🍲 آبگوشت (دیزی) غذای سنتی ایرانیه که هرچی بیشتر بجوشه خوشمزه‌تر میشه!</p></div></div>
 
-    <p style="text-align:center;margin:20px 0">
-        <a href="foods-3.html" style="color:#ffd700">← ۳۰ تای قبل</a>
-    </p>
-    <p style="text-align:center"><a href="index.html" style="color:#ffd700">🔙 خانه</a></p>
+<div class="food-card"><h2>۱۰۱. 🥗 تبوله</h2><p><strong>مواد:</strong> بلغور (۱ پیمانه)، جعفری (۲ پیمانه)، گوجه (۲ عدد)، پیازچه، نعنا، آب لیمو، روغن زیتون</p><p><strong>طرز تهیه:</strong> بلغور رو ۲۰ دقیقه خیس کنید. با سبزیجات خرد شده و سس لیمو مخلوط کنید.</p><div class="blue-box"><p>🥗 تبوله سالاد ملی لبنانه. سرشار از فیبر و سبزیجات تازه!</p></div></div>
+
+<div class="food-card"><h2>۱۰۲. 🥗 فتوش</h2><p><strong>مواد:</strong> نان پیتا (۲ عدد)، خیار، گوجه، کاهو، تربچه، جعفری، سماق، آب لیمو، روغن زیتون</p><p><strong>طرز تهیه:</strong> نان رو برشته و تکه‌تکه کنید. با سبزیجات و سس مخلوط کنید.</p><div class="green-box"><p>🥗 فتوش (Fattoush) سالاد لبنانی-سوریه‌ای با نان برشته‌ست!</p></div></div>
+
+<div class="food-card"><h2>۱۰۳. 🍪 قطاب</h2><p><strong>مواد:</strong> آرد (۲ پیمانه)، کره (۱۰۰ گرم)، ماست، پودر بادام، پودر قند، هل</p><p><strong>طرز تهیه:</strong> خمیر رو درست کنید، مواد میانی رو بذارید، سرخ کنید و توی پودر قند بغلتونید.</p><div class="golden-box"><p>💡 قطاب شیرینی سنتی یزده. حتماً بعد از سرخ کردن توی پودر قند بغلتونید!</p></div></div>
+
+<div class="food-card"><h2>۱۰۴. 🍪 باقلوا</h2><p><strong>مواد:</strong> خمیر فیلو، گردو (۲ پیمانه)، کره (۲۰۰ گرم)، شکر، آب، گلاب، عسل</p><p><strong>طرز تهیه:</strong> لایه‌لایه خمیر + کره + گردو. بپزید و شربت سرد رو روی باکلوا داغ بریزید.</p><div class="golden-box"><p>💡 شربت باید سرد باشه، باقلوا داغ! این راز باقلوا ترد و خوشمزه‌ست!</p></div></div>
+
+<div class="food-card"><h2>۱۰۵. 🍚 شیربرنج</h2><p><strong>مواد:</strong> برنج (۱ پیمانه)، شیر (۴ لیوان)، شکر (۱ پیمانه)، گلاب، خامه، پسته و دارچین</p><p><strong>طرز تهیه:</strong> برنج رو با شیر بپزید تا کشدار بشه. شکر + گلاب + خامه رو اضافه کنید.</p><div class="green-box"><p>🍚 شیربرنج سرد با یخ توی تابستون یه دسر فوق‌العاده‌ست!</p></div></div>
+
+<div class="food-card"><h2>۱۰۶. ☕ چای ماسالا</h2><p><strong>مواد:</strong> چای سیاه، شیر، زنجبیل، هل، دارچین، میخک، شکر</p><p><strong>طرز تهیه:</strong> ادویه‌ها رو با آب بجوشونید، چای + شیر + شکر رو اضافه کنید.</p><div class="golden-box"><p>💡 چای ماسالا نوشیدنی ملی هندوستان هست. صبح‌ها می‌خورن تا انرژی بگیرن!</p></div></div>
+
+<div class="food-card"><h2>۱۰۷. 🍋 لیموناد</h2><p><strong>مواد:</strong> آب لیمو (۱ پیمانه)، شکر (نصف پیمانه)، آب سرد (۴ لیوان)، یخ، نعنا</p><p><strong>طرز تهیه:</strong> شکر رو توی آب گرم حل کنید، با آب لیمو + آب سرد مخلوط کنید.</p><div class="blue-box"><p>🍋 لیموناد خونگی رو با توت‌فرنگی، تمشک یا هلو طعم‌دار کنید!</p></div></div>
+
+<div class="food-card"><h2>۱۰۸. 🍞 نان سیر</h2><p><strong>مواد:</strong> نان باگت، کره (۵۰ گرم)، سیر (۴ حبه)، پنیر پیتزا، جعفری</p><p><strong>طرز تهیه:</strong> کره سیر رو روی نان بمالید، پنیر بریزید، توی فر ۱۰ دقیقه گریل کنید.</p><div class="green-box"><p>🍞 نان سیر بهترین پیش‌غذا برای پاستا و غذاهای ایتالیاییه!</p></div></div>
+
+<div class="food-card"><h2>۱۰۹. 🥒 ترشی</h2><p><strong>مواد:</strong> سبزیجات مخلوط (۱ کیلو)، سرکه (۲ لیوان)، آب (۱ لیوان)، نمک، ادویه ترشی</p><p><strong>طرز تهیه:</strong> همه رو توی شیشه بریزید، سرکه جوشیده رو اضافه کنید، ۲ هفته صبر کنید.</p><div class="golden-box"><p>💡 ترشی خونگی خیلی بهتر از ترشی بازاریه! می‌تونید هر سبزیجاتی دوست دارید بریزید.</p></div></div>
+
+<div class="food-card"><h2>۱۱۰. 🍅 رب گوجه</h2><p><strong>مواد:</strong> گوجه (۵ کیلو)، نمک (۲ قاشق)</p><p><strong>طرز تهیه:</strong> گوجه‌ها رو بپزید، صاف کنید، ۳-۴ ساعت بجوشونید تا غلیظ بشه. روش روغن زیتون بریزید.</p><div class="green-box"><p>🍅 رب خونگی هیچ ماده نگهدارنده‌ای نداره. توی شیشه توی یخچال تا ۶ ماه می‌مونه!</p></div></div>
+
+<div class="food-card"><h2>۱۱۱. 🥜 کره بادام زمینی</h2><p><strong>مواد:</strong> بادام زمینی (۲ پیمانه)، عسل (۲ قاشق)، نمک</p><p><strong>طرز تهیه:</strong> بادام زمینی رو بو بدید، پوست بکنید، ۱۰ دقیقه توی غذاساز میکس کنید.</p><div class="blue-box"><p>🥜 کره بادام زمینی خونگی رو می‌تونید با شکلات، دارچین یا موز هم طعم‌دار کنید!</p></div></div>
+
+<div class="food-card"><h2>۱۱۲. 🥕 مربای هویج</h2><p><strong>مواد:</strong> هویج (۵۰۰ گرم)، شکر (۷۰۰ گرم)، آب لیمو، گلاب، هل</p><p><strong>طرز تهیه:</strong> هویج + شکر + آب رو ۱ ساعت بجوشونید تا شهد قوام بیاد.</p><div class="golden-box"><p>💡 مربا وقتی آماده‌ست که یه قطره شهدش توی آب سرد پخش نشه!</p></div></div>
+
+<div class="food-card"><h2>۱۱۳. 🍒 مربای آلبالو</h2><p><strong>مواد:</strong> آلبالو (۵۰۰ گرم)، شکر (۷۰۰ گرم)، آب لیمو</p><p><strong>طرز تهیه:</strong> آلبالو + شکر رو ۱۲ ساعت بذارید، بعد ۳۰ دقیقه بجوشونید.</p><div class="green-box"><p>🍒 مربای آلبالو یکی از محبوب‌ترین مرباهای ایرانیه!</p></div></div>
+
+<div class="food-card"><h2>۱۱۴. 🥒 خیارشور</h2><p><strong>مواد:</strong> خیار ریز (۱ کیلو)، آب (۴ لیوان)، نمک (۳ قاشق)، سرکه (۱ لیوان)، سیر، شوید، فلفل</p><p><strong>طرز تهیه:</strong> همه رو توی شیشه بریزید، آب نمک جوشیده سرد رو اضافه کنید، ۳ هفته صبر کنید.</p><div class="golden-box"><p>💡 خیارها رو حتماً خشک کنید! رطوبت باعث کپک زدن خیارشور میشه.</p></div></div>
+
+<div class="food-card"><h2>۱۱۵. 🍿 پاپ کورن</h2><p><strong>مواد:</strong> ذرت پاپ کورن (نصف پیمانه)، روغن (۲ قاشق)، کره (۳۰ گرم)، نمک</p><p><strong>طرز تهیه:</strong> توی قابلمه دربسته با روغن داغ درست کنید، کره آب‌شده و نمک بریزید.</p><div class="blue-box"><p>🍿 پاپ کورن خونگی رو با پودر پنیر، کارامل یا پاپریکا طعم‌دار کنید!</p></div></div>
+
+<div class="food-card"><h2>۱۱۶. 🥔 چیپس خانگی</h2><p><strong>مواد:</strong> سیب‌زمینی (۴ عدد)، روغن، نمک، پاپریکا</p><p><strong>طرز تهیه:</strong> خیلی نازک ورقه کنید، ۳۰ دقیقه توی آب یخ بخوابونید، خشک کنید و سرخ کنید.</p><div class="golden-box"><p>💡 آب یخ نشاسته سیب‌زمینی رو می‌گیره و چیپس رو ترد می‌کنه!</p></div></div>
+
+<div class="food-card"><h2>۱۱۷. 🧅 پیاز داغ</h2><p><strong>مواد:</strong> پیاز (۴ عدد)، روغن، زردچوبه</p><p><strong>طرز تهیه:</strong> پیاز رو خلالی کنید، توی روغن داغ سرخ کنید، زردچوبه رو آخر کار اضافه کنید.</p><div class="green-box"><p>🧅 پیاز داغ رو توی فریزر نگه دارید. تا ۳ ماه موندگاری داره!</p></div></div>
+
+<div class="food-card"><h2>۱۱۸. 🥗 سالاد ماکارونی</h2><p><strong>مواد:</strong> ماکارونی، سس مایونز، خیارشور، نخود فرنگی، ذرت، کالباس</p><p><strong>طرز تهیه:</strong> ماکارونی رو بپزید، همه رو خرد کنید و با سس مخلوط کنید. ۲ ساعت توی یخچال.</p><div class="blue-box"><p>🥗 سالاد ماکارونی رو می‌تونید با مرغ به جای کالباس درست کنید تا سالم‌تر باشه!</p></div></div>
+
+<div class="food-card"><h2>۱۱۹. 🥗 سالاد الویه</h2><p><strong>مواد:</strong> سیب‌زمینی پخته (۳ عدد)، تخم مرغ پخته (۳ عدد)، خیارشور، نخود فرنگی، مرغ، سس مایونز</p><p><strong>طرز تهیه:</strong> همه رو رنده یا له کنید و با سس مخلوط کنید. خنک سرو کنید.</p><div class="golden-box"><p>💡 سالاد الویه رو با نان باگت تازه و گوجه فرنگی سرو کنید!</p></div></div>
+
+<div class="food-card"><h2>۱۲۰. 🍞 نان تافتون</h2><p><strong>مواد:</strong> آرد (۳ پیمانه)، خمیر مایه (۱ قاشق)، آب گرم (۱ پیمانه)، نمک، شکر</p><p><strong>طرز تهیه:</strong> خمیر رو درست کنید، ۱.۵ ساعت استراحت، پهن کنید و توی تابه چدنی بپزید.</p><div class="green-box"><p>🍞 نان تافتون یکی از نان‌های سنتی ایرانیه. توی خونه با تابه چدنی هم میشه درستش کرد!</p></div></div>
+
+<a href="index.html" class="back-btn">🔙 بازگشت به خانه</a>
+<a href="foods_3.html" class="back-btn">🍝 غذاهای ۶۱-۹۰ ←</a>
+
+<div class="footer">
+    <p>🌟 rahilanab.com | <a href="index.html">🏠 خانه</a> | <a href="foods_1.html">🍲 ۱-۳۰</a> | <a href="foods_2.html">🍗 ۳۱-۶۰</a> | <a href="foods_3.html">🍝 ۶۱-۹۰</a></p>
+</div>
+
 </body>
-</html>
+    </html>
