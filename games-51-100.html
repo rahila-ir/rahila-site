@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎮 ۵۰ بازی | rahilanab.com</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{
+            font-family:'Arial', sans-serif;
+            background:linear-gradient(180deg, #1a0033, #2d004d, #400066, #2d004d, #1a0033);
+            color:#fff;
+            padding:15px;
+            min-height:100vh;
+            text-align:center;
+            background-attachment:fixed;
+        }
+        .header{
+            background:rgba(255,255,255,.08);
+            border-radius:25px;
+            padding:25px;
+            margin-bottom:25px;
+            backdrop-filter:blur(15px);
+            border:2px solid rgba(255,215,0,.3);
+            box-shadow:0 8px 32px rgba(0,0,0,.3);
+        }
+        .header h1{font-size:30px;background:linear-gradient(135deg,#ffd700,#ffaa00,#ffd700);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+        .header p{color:#ccc;font-size:15px}
+        .header .nav-links{margin-top:15px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+        .header .nav-links a{color:#ffd700;text-decoration:none;padding:8px 18px;background:rgba(255,215,0,.1);border-radius:20px;border:1px solid rgba(255,215,0,.3);transition:.3s}
+        .header .nav-links a:hover{background:rgba(255,215,0,.2)}
+        .game-zone{
+            background:rgba(255,255,255,.06);
+            border-radius:20px;
+            padding:22px;
+            margin:18px 0;
+            backdrop-filter:blur(8px);
+            border:1px solid rgba(255,255,255,.12);
+            transition:all .3s ease;
+        }
+        .game-zone:hover{
+            transform:translateY(-4px);
+            box-shadow:0 12px 35px rgba(0,0,0,.4);
+            border-color:rgba(255,215,0,.4);
+        }
+        .game-zone h2{
+            color:#ffd700;
+            margin-bottom:14px;
+            font-size:21px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            gap:8px;
+        }
+        .game-zone p{color:#ddd;margin:8px 0;line-height:1.6}
+        button{
+            padding:11px 24px;
+            font-size:15px;
+            background:linear-gradient(135deg,#ffd700,#f0a500);
+            color:#1a0033;
+            border:none;
+            border-radius:25px;
+            cursor:pointer;
+            margin:5px;
+            font-weight:bold;
+            transition:all .3s ease;
+            box-shadow:0 4px 15px rgba(255,215,0,.25);
+        }
+        button:hover{
+            transform:scale(1.06);
+            box-shadow:0 6px 22px rgba(255,215,0,.45);
+        }
+        button:active{transform:scale(.94)}
+        .result{
+            font-size:19px;
+            color:#ffd700;
+            font-weight:bold;
+            margin:12px 0;
+            min-height:32px;
+            text-shadow:0 0 10px rgba(255,215,0,.3);
+        }
+        input, select{
+            padding:11px 16px;
+            font-size:16px;
+            border-radius:25px;
+            border:2px solid rgba(255,215,0,.5);
+            background:rgba(255,255,255,.08);
+            color:#fff;
+            text-align:center;
+            margin:8px;
+            outline:none;
+            transition:.3s;
+        }
+        input:focus{border-color:#ffd700;box-shadow:0 0 15px rgba(255,215,0,.3)}
+        input::placeholder{color:#999}
+        .emoji-big{font-size:55px;margin:12px 0}
+        .grid{display:grid;gap:8px;max-width:320px;margin:12px auto}
+        .grid-3{grid-template-columns:repeat(3,1fr)}
+        .grid-4{grid-template-columns:repeat(4,1fr)}
+        .grid-5{grid-template-columns:repeat(5,1fr)}
+        .grid button{
+            padding:14px 10px;
+            font-size:20px;
+            background:rgba(255,255,255,.12);
+            color:#fff;
+            border:1px solid rgba(255,255,255,.2);
+            border-radius:12px;
+        }
+        .grid button:hover{background:rgba(255,215,0,.2);border-color:#ffd700}
+        canvas{display:block;margin:10px auto;border-radius:12px;background:#111}
+        .badge{
+            display:inline-block;
+            background:rgba(255,215,0,.2);
+            color:#ffd700;
+            padding:5px 14px;
+            border-radius:15px;
+            font-size:13px;
+            margin:3px;
+        }
+        @media(max-width:600px){
+            .game-zone{padding:15px;margin:12px 0}
+            button{padding:9px 18px;font-size:14px}
+            .grid button{padding:10px 6px;font-size:16px}
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>🎮 ۵۰ بازی | Games 51-100</h1>
+    <p>🚀 rahilanab.com | ساخته شده با 💙</p>
+    <div class="nav-links">
+        <a href="games-1-50.html">🎯 بازی‌های ۱-۵۰</a>
+        <a href="games-51-100.html">🎮 بازی‌های ۵۱-۱۰۰</a>
+        <a href="games-101-150.html">🕹️ بازی‌های ۱۰۱-۱۵۰</a>
+        <a href="games-151-200.html">👾 بازی‌های ۱۵۱-۲۰۰</a>
+    </div>
+</div>
+
+<!-- بازی ۵۱ -->
+<div class="game-zone">
+    <h2>۵۱. 🎱 پینگ پنگ</h2>
+    <canvas id="pongCanvas" width="320" height="200"></canvas>
+    <p>امتیاز: <span id="pongScore">0</span> | با کلیدهای ⬆⬇ بازی کن</p>
+    <button onclick="pongReset()">🔄 شروع مجدد</button>
+</div>
+
+<!-- بازی ۵۲ -->
+<div class="game-zone">
+    <h2>۵۲. 🃏 کارت شانس</h2>
+    <p>یک کارت بکش و ببین شانس چی میاره!</p>
+    <button onclick="drawCard()">🃏 بکش</button>
+    <p class="result" id="cardR"></p>
+    <p class="emoji-big" id="cardEmoji">🃏</p>
+</div>
+
+<!-- بازی ۵۳ -->
+<div class="game-zone">
+    <h2>۵۳. 🎹 پیانو کوچک</h2>
+    <div class="grid grid-5">
+        <button onclick="playNote(262)">دو</button>
+        <button onclick="playNote(294)">ر</button>
+        <button onclick="playNote(330)">می</button>
+        <button onclick="playNote(349)">فا</button>
+        <button onclick="playNote(392)">سل</button>
+    </div>
+    <p class="result" id="pianoNote"></p>
+</div>
+
+<!-- بازی ۵۴ -->
+<div class="game-zone">
+    <h2>۵۴. 🧙‍♂️ طالع‌بینی</h2>
+    <p>اسمت رو وارد کن تا طالعت رو بگم</p>
+    <input id="fortuneName" placeholder="اسمت">
+    <button onclick="tellFortune()">🔮 بگو</button>
+    <p class="result" id="fortuneR"></p>
+</div>
+
+<!-- بازی ۵۵ -->
+<div class="game-zone">
+    <h2>۵۵. 🔫 هدف‌گیری</h2>
+    <p>تا می‌تونی سریع کلیک کن روی هدف!</p>
+    <div id="targetArea" style="width:280px;height:200px;background:rgba(0,0,0,.3);border-radius:15px;margin:10px auto;position:relative;cursor:crosshair;overflow:hidden">
+        <div id="shootingTarget" style="width:45px;height:45px;background:red;border-radius:50%;position:absolute;top:80px;left:120px;cursor:crosshair" onclick="shootTarget()"></div>
+    </div>
+    <p>امتیاز: <span id="shootScore">0</span></p>
+    <button onclick="resetShoot()">🔄 صفر</button>
+</div>
+
+<!-- بازی ۵۶ -->
+<div class="game-zone">
+    <h2>۵۶. 🎵 آهنگ حدس بزن</h2>
+    <p>نت‌ها رو گوش کن و آهنگ رو حدس بزن</p>
+    <button onclick="playMelody()">🎵 پخش</button>
+    <input id="melodyGuess" placeholder="اسم آهنگ">
+    <button onclick="checkMelody()">حدس</button>
+    <p class="result" id="melodyR"></p>
+</div>
+
+<!-- بازی ۵۷ -->
+<div class="game-zone">
+    <h2>۵۷. 🧊 تتریس ساده</h2>
+    <canvas id="tetrisCanvas" width="200" height="300"></canvas>
+    <p>امتیاز: <span id="tetrisScore">0</span></p>
+    <button onclick="tetrisReset()">🔄 شروع</button>
+    <p style="font-size:12px">کلیدها: ⬅➡⬇ و ⬆ برای چرخش</p>
+</div>
+
+<!-- بازی ۵۸ -->
+<div class="game-zone">
+    <h2>۵۸. 🎤 تکرار کلمه</h2>
+    <p id="repeatWord" style="font-size:22px;color:#ffd700"></p>
+    <input id="repeatInput" placeholder="کلمه رو تایپ کن">
+    <button onclick="checkRepeat()">بررسی</button>
+    <p class="result" id="repeatR"></p>
+</div>
+
+<!-- بازی ۵۹ -->
+<div class="game-zone">
+    <h2>۵۹. 🌈 رنگین کمان</h2>
+    <p>رنگ‌ها رو به ترتیب بچین</p>
+    <div class="grid grid-5" id="rainbowGrid"></div>
+    <p class="result" id="rainbowR"></p>
+</div>
+
+<!-- بازی ۶۰ -->
+<div class="game-zone">
+    <h2>۶۰. 🎪 حلقه پرتاب</h2>
+    <p>حلقه رو روی میله بنداز!</p>
+    <button onclick="throwRing()">🎪 پرتاب</button>
+    <p class="result" id="ringR"></p>
+    <p>پرتاب‌های موفق: <span id="ringScore">0</span></p>
+</div>
+
+<!-- بازی ۶۱ -->
+<div class="game-zone">
+    <h2>۶۱. 📊 نمودار شانس</h2>
+    <p>ببین امروز چقدر شانس داری</p>
+    <button onclick="luckMeter()">🎰 بچرخون</button>
+    <div style="width:250px;height:25px;background:#333;border-radius:15px;margin:10px auto;overflow:hidden">
+        <div id="luckBar" style="height:100%;background:linear-gradient(90deg,red,yellow,lime);width:50%;border-radius:15px;transition:.5s"></div>
+    </div>
+    <p class="result" id="luckR"></p>
+</div>
+
+<!-- بازی ۶۲ -->
+<div class="game-zone">
+    <h2>۶۲. 🏓 تنیس کلیکی</h2>
+    <p>روی توپ کلیک کن تا امتیاز بگیری</p>
+    <div style="width:280px;height:180px;background:rgba(0,0,0,.3);border-radius:15px;margin:10px auto;position:relative;overflow:hidden">
+        <div id="tennisBall" style="width:40px;height:40px;background:lime;border-radius:50%;position:absolute;top:70px;left:120px;cursor:pointer" onclick="hitTennis()"></div>
+    </div>
+    <p>امتیاز: <span id="tennisScore">0</span></p>
+</div>
+
+<!-- بازی ۶۳ -->
+<div class="game-zone">
+    <h2>۶۳. 🎲 تاس تقلبی</h2>
+    <p>تاس رو بنداز، ولی می‌تونی تقلب کنی!</p>
+    <button onclick="rollHonest()">🎲 صادقانه</button>
+    <button onclick="rollCheat()">🃏 تقلبی</button>
+    <p class="result" id="cheatDiceR"></p>
+</div>
+
+<!-- بازی ۶۴ -->
+<div class="game-zone">
+    <h2>۶۴. 🔠 الفبای فارسی</h2>
+    <p>حرف نمایش داده شده رو تایپ کن</p>
+    <p class="emoji-big" id="alphaLetter">ا</p>
+    <input id="alphaInput" maxlength="1" style="width:80px;font-size:22px">
+    <button onclick="checkAlpha()">بررسی</button>
+    <p class="result" id="alphaR"></p>
+</div>
+
+<!-- بازی ۶۵ -->
+<div class="game-zone">
+    <h2>۶۵. 🕳️ مین‌روب ساده</h2>
+    <p>مواظب مین‌ها باش!</p>
+    <div class="grid grid-5" id="mineGrid"></div>
+    <p class="result" id="mineR"></p>
+    <button onclick="mineReset()">🔄 شروع مجدد</button>
+</div>
+
+<!-- بازی ۶۶ -->
+<div class="game-zone">
+    <h2>۶۶. 🎯 دارت ۲</h2>
+    <p>نقطه وسط رو بزن!</p>
+    <div style="width:220px;height:220px;background:radial-gradient(circle,#f00 10%,#fff 10%,#f00 25%,#fff 25%,#f00 50%,#fff 50%,#f00 100%);border-radius:50%;margin:10px auto;cursor:crosshair" id="dart2Board" onclick="dart2Hit(event)"></div>
+    <p class="result" id="dart2R"></p>
+    <p>امتیاز: <span id="dart2Score">0</span></p>
+</div>
+
+<!-- بازی ۶۷ -->
+<div class="game-zone">
+    <h2>۶۷. ⚽ پنالتی</h2>
+    <p>جهت شوت رو انتخاب کن</p>
+    <button onclick="penalty('left')">⬅ چپ</button>
+    <button onclick="penalty('center')">⬆ وسط</button>
+    <button onclick="penalty('right')">➡ راست</button>
+    <p class="result" id="penaltyR"></p>
+</div>
+
+<!-- بازی ۶۸ -->
+<div class="game-zone">
+    <h2>۶۸. 🔢 شمارش معکوس</h2>
+    <p>عدد رو وارد کن تا شمارش معکوس شروع بشه</p>
+    <input id="countdownNum" type="number" placeholder="عدد" value="10">
+    <button onclick="startCountdown()">⏱ شروع</button>
+    <p class="result" id="countdownR" style="font-size:35px"></p>
+</div>
+
+<!-- بازی ۶۹ -->
+<div class="game-zone">
+    <h2>۶۹. 🌟 ستاره‌ها</h2>
+    <p>چند تا ستاره می‌بینی؟</p>
+    <div id="starField" style="width:280px;height:180px;background:#000;border-radius:15px;margin:10px auto;position:relative;overflow:hidden"></div>
+    <input id="starGuess" type="number" placeholder="تعداد">
+    <button onclick="checkStars()">بررسی</button>
+    <p class="result" id="starR"></p>
+</div>
+
+<!-- بازی ۷۰ -->
+<div class="game-zone">
+    <h2>۷۰. 🎤 میکروفون</h2>
+    <p>روی دکمه کلیک کن و صدا دربیار!</p>
+    <button onclick="micEffect()" style="padding:25px 40px;font-size:22px">🎤</button>
+    <div id="micVisual" style="width:250px;height:8px;background:#333;border-radius:5px;margin:10px auto;overflow:hidden">
+        <div id="micBar" style="height:100%;background:#ffd700;width:0%;transition:.1s;border-radius:5px"></div>
+    </div>
+</div>
+
+<!-- بازی ۷۱ -->
+<div class="game-zone">
+    <h2>۷۱. 🧩 پازل ۳×۳</h2>
+    <div class="grid grid-3" id="puzzleGrid"></div>
+    <p>حرکات: <span id="puzzleMoves">0</span></p>
+    <button onclick="puzzleReset()">🔄 بریز به هم</button>
+</div>
+
+<!-- بازی ۷۲ -->
+<div class="game-zone">
+    <h2>۷۲. 🎰 بخت آزمایی</h2>
+    <p>۵ عدد شانسی انتخاب کن</p>
+    <button onclick="lottoDraw()">🎱 قرعه‌کشی</button>
+    <p class="result" id="lottoR"></p>
+</div>
+
+<!-- بازی ۷۳ -->
+<div class="game-zone">
+    <h2>۷۳. 🏃 مسابقه</h2>
+    <p>دکمه رو سریع بزن تا برنده شی!</p>
+    <button onclick="raceClick()" id="raceBtn" style="padding:18px 35px;font-size:18px">🏃 کلیک کن!</button>
+    <p>پیشرفت: <span id="raceProgress">0</span>/20</p>
+    <div style="width:250px;height:20px;background:#333;border-radius:10px;margin:8px auto;overflow:hidden">
+        <div id="raceBar" style="height:100%;background:#0f0;width:0%;transition:.2s;border-radius:10px"></div>
+    </div>
+</div>
+
+<!-- بازی ۷۴ -->
+<div class="game-zone">
+    <h2>۷۴. 📝 دیکته</h2>
+    <p>کلمه رو گوش کن و بنویس (کلمه رو می‌بینی)</p>
+    <p id="dictationWord" style="font-size:24px;color:#ffd700"></p>
+    <button onclick="showDictation()">👀 نشون بده</button>
+    <input id="dictationInput" placeholder="بنویس">
+    <button onclick="checkDictation()">بررسی</button>
+    <p class="result" id="dictationR"></p>
+</div>
+
+<!-- بازی ۷۵ -->
+<div class="game-zone">
+    <h2>۷۵. 🎭 ماسک صورت</h2>
+    <p>حالت صورت رو حدس بزن</p>
+    <p class="emoji-big" id="faceEmoji">😊</p>
+    <button onclick="guessMood('happy')">خوشحال</button>
+    <button onclick="guessMood('sad')">ناراحت</button>
+    <button onclick="guessMood('angry')">عصبانی</button>
+    <button onclick="guessMood('surprised')">متعجب</button>
+    <p class="result" id="moodR"></p>
+</div>
+
+<!-- بازی ۷۶ -->
+<div class="game-zone">
+    <h2>۷۶. 🌡️ دماسنج</h2>
+    <p>دمای امروز رو حدس بزن</p>
+    <input id="tempGuess" type="number" placeholder="دما (سانتی‌گراد)">
+    <button onclick="checkTemp()">حدس</button>
+    <p class="result" id="tempR"></p>
+</div>
+
+<!-- بازی ۷۷ -->
+<div class="game-zone">
+    <h2>۷۷. 💣 بمب ساعتی</h2>
+    <p>سیم درست رو ببر!</p>
+    <button onclick="cutWire('red')" style="background:#f00">🔴 قرمز</button>
+    <button onclick="cutWire('blue')" style="background:#00f">🔵 آبی</button>
+    <button onclick="cutWire('green')" style="background:#0f0">🟢 سبز</button>
+    <button onclick="cutWire('yellow')" style="background:#ff0;color:#000">🟡 زرد</button>
+    <p class="result" id="bombR"></p>
+</div>
+
+<!-- بازی ۷۸ -->
+<div class="game-zone">
+    <h2>۷۸. 📏 اندازه‌گیری</h2>
+    <p>کدوم خط بلندتره؟</p>
+    <div id="line1" style="height:6px;background:#ffd700;margin:10px auto;border-radius:3px;transition:.3s"></div>
+    <div id="line2" style="height:6px;background:#ffd700;margin:10px auto;border-radius:3px;transition:.3s"></div>
+    <button onclick="guessLine('top')">⬆ بالا</button>
+    <button onclick="guessLine('bottom')">⬇ پایین</button>
+    <button onclick="guessLine('equal')">= مساوی</button>
+    <p class="result" id="lineR"></p>
+</div>
+
+<!-- بازی ۷۹ -->
+<div class="game-zone">
+    <h2>۷۹. 🎪 دلقک</h2>
+    <p>ببین دلقک چی میگه!</p>
+    <button onclick="clownTalk()">🤡 حرف بزن</button>
+    <p class="result" id="clownR"></p>
+</div>
+
+<!-- بازی ۸۰ -->
+<div class="game-zone">
+    <h2>۸۰. 🧮 محاسبه سریع</h2>
+    <p id="fastMathQ"></p>
+    <input id="fastMathA" type="number" placeholder="جواب">
+    <button onclick="fastMathCheck()">جواب</button>
+    <p class="result" id="fastMathR"></p>
+    <p>امتیاز: <span id="fastMathScore">0</span> | زمان: <span id="fastMathTime">0</span>s</p>
+</div>
+
+<!-- بازی ۸۱ -->
+<div class="game-zone">
+    <h2>۸۱. 🔍 ذره‌بین</h2>
+    <p>چیز مخفی شده رو پیدا کن</p>
+    <div style="width:200px;height:150px;background:#222;border-radius:15px;margin:10px auto;position:relative;overflow:hidden;cursor:crosshair" id="magnifyArea" onclick="magnifyFind(event)">
+        <div id="hiddenItem" style="width:18px;height:18px;background:#ffd700;border-radius:50%;position:absolute;top:60px;left:90px"></div>
+    </div>
+    <p class="result" id="magnifyR"></p>
+</div>
+
+<!-- بازی ۸۲ -->
+<div class="game-zone">
+    <h2>۸۲. 🎨 قلمو جادویی</h2>
+    <canvas id="drawCanvas" width="280" height="180" style="background:#fff;cursor:crosshair"></canvas>
+    <p>با موس نقاشی کن</p>
+    <button onclick="clearCanvas()">🗑 پاک</button>
+    <input type="color" id="drawColor" value="#ff0000">
+</div>
+
+<!-- بازی ۸۳ -->
+<div class="game-zone">
+    <h2>۸۳. 🧂 شیشه عطر</h2>
+    <p>عطر امروزت رو انتخاب کن</p>
+    <button onclick="pickPerfume('rose')">🌹 رز</button>
+    <button onclick="pickPerfume('lavender')">💜 اسطوخودوس</button>
+    <button onclick="pickPerfume('jasmine')">🌸 یاس</button>
+    <button onclick="pickPerfume('ocean')">🌊 اقیانوس</button>
+    <p class="result" id="perfumeR"></p>
+</div>
+
+<!-- بازی ۸۴ -->
+<div class="game-zone">
+    <h2>۸۴. 🕰️ ساعت</h2>
+    <canvas id="clockCanvas" width="180" height="180"></canvas>
+    <p id="clockDigital"></p>
+</div>
+
+<!-- بازی ۸۵ -->
+<div class="game-zone">
+    <h2>۸۵. 🎣 ماهیگیری</h2>
+    <p>قلاب رو بنداز و ماهی بگیر</p>
+    <button onclick="goFishing()">🎣 ماهیگیری</button>
+    <p class="result" id="fishingR"></p>
+    <p>ماهی‌های گرفته شده: <span id="fishCount">0</span></p>
+</div>
+
+<!-- بازی ۸۶ -->
+<div class="game-zone">
+    <h2>۸۶. 🧮 جدول ضرب</h2>
+    <p id="multiplyQ"></p>
+    <input id="multiplyA" type="number" placeholder="جواب">
+    <button onclick="checkMultiply()">بررسی</button>
+    <p class="result" id="multiplyR"></p>
+</div>
+
+<!-- بازی ۸۷ -->
+<div class="game-zone">
+    <h2>۸۷. 🎭 شکلک</h2>
+    <p>شکلک رو کپی کن</p>
+    <p class="emoji-big" id="emojiToCopy">🥳</p>
+    <button onclick="copyEmoji()">📋 کپی</button>
+    <p class="result" id="copyR"></p>
+</div>
+
+<!-- بازی ۸۸ -->
+<div class="game-zone">
+    <h2>۸۸. 🌍 کشورها</h2>
+    <p>پرچم رو ببین و کشور رو حدس بزن</p>
+    <p class="emoji-big" id="flagEmoji">🇮🇷</p>
+    <input id="countryGuess" placeholder="اسم کشور">
+    <button onclick="checkCountry()">حدس</button>
+    <p class="result" id="countryR"></p>
+</div>
+
+<!-- بازی ۸۹ -->
+<div class="game-zone">
+    <h2>۸۹. 🎵 نت موسیقی</h2>
+    <p>نت رو حدس بزن</p>
+    <button onclick="playRandomNote()">🔊 گوش کن</button>
+    <button onclick="guessNote('do')">دو</button>
+    <button onclick="guessNote('re')">ر</button>
+    <button onclick="guessNote('mi')">می</button>
+    <button onclick="guessNote('fa')">فا</button>
+    <p class="result" id="noteR"></p>
+</div>
+
+<!-- بازی ۹۰ -->
+<div class="game-zone">
+    <h2>۹۰. 🕹️ جوی استیک</h2>
+    <p>جهت رو با جوی استیک انتخاب کن</p>
+    <div class="grid grid-3" style="max-width:180px">
+        <button onclick="joystick('up-left')">↖</button>
+        <button onclick="joystick('up')">⬆</button>
+        <button onclick="joystick('up-right')">↗</button>
+        <button onclick="joystick('left')">⬅</button>
+        <button style="background:#ffd700;color:#000">🎯</button>
+        <button onclick="joystick('right')">➡</button>
+        <button onclick="joystick('down-left')">↙</button>
+        <button onclick="joystick('down')">⬇</button>
+        <button onclick="joystick('down-right')">↘</button>
+    </div>
+    <p class="result" id="joystickR"></p>
+</div>
+
+<!-- بازی ۹۱ -->
+<div class="game-zone">
+    <h2>۹۱. 🎪 بادکنک</h2>
+    <p>بادکنک رو باد کن، مواظب باش نترکه!</p>
+    <button onclick="inflateBalloon()">💨 باد</button>
+    <p class="emoji-big" id="balloonEmoji">🎈</p>
+    <p class="result" id="balloonR"></p>
+</div>
+
+<!-- بازی ۹۲ -->
+<div class="game-zone">
+    <h2>۹۲. 📸 فیلتر عکس</h2>
+    <p>یه فیلتر جذاب انتخاب کن</p>
+    <button onclick="applyFilter('warm')">☀️ گرم</button>
+    <button onclick="applyFilter('cool')">❄️ سرد</button>
+    <button onclick="applyFilter('vintage')">📷 وینتیج</button>
+    <div style="width:200px;height:150px;background:url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22150%22><rect fill=%22%23444%22 width=%22200%22 height=%22150%22/><text fill=%22white%22 x=%2250%22 y=%2280%22>📸</text></svg>');margin:10px auto;border-radius:15px" id="filterPreview"></div>
+    <p class="result" id="filterR"></p>
+</div>
+
+<!-- بازی ۹۳ -->
+<div class="game-zone">
+    <h2>۹۳. 🔮 گوی کریستال</h2>
+    <p>سوال بپرس تا گوی کریستال جواب بده</p>
+    <input id="crystalQ" placeholder="سوال بپرس">
+    <button onclick="crystalBall()">🔮</button>
+    <p class="result" id="crystalR"></p>
+</div>
+
+<!-- بازی ۹۴ -->
+<div class="game-zone">
+    <h2>۹۴. 🏗️ برج</h2>
+    <p>برج رو تا جایی که می‌تونی بالا ببر</p>
+    <button onclick="buildTower()">🧱 اضافه کن</button>
+    <p>ارتفاع برج: <span id="towerHeight">0</span></p>
+    <div style="width:60px;margin:10px auto;display:flex;flex-direction:column-reverse;align-items:center;min-height:150px" id="towerVisual"></div>
+    <p class="result" id="towerR"></p>
+</div>
+
+<!-- بازی ۹۵ -->
+<div class="game-zone">
+    <h2>۹۵. 🎵 دی‌جی</h2>
+    <button onclick="djScratch()">🎧 اسکرچ</button>
+    <button onclick="djBass()">🔊 بیس</button>
+    <button onclick="djMelody()">🎹 ملودی</button>
+    <p class="result" id="djR"></p>
+</div>
+
+<!-- بازی ۹۶ -->
+<div class="game-zone">
+    <h2>۹۶. 🧠 حافظه عددی</h2>
+    <p>عدد رو ۳ ثانیه حفظ کن</p>
+    <p id="memoryNum" style="font-size:28px;color:#ffd700">---</p>
+    <button onclick="showMemoryNum()">🔢 نشون بده</button>
+    <input id="memoryNumGuess" placeholder="عدد یادته؟">
+    <button onclick="checkMemoryNum()">بررسی</button>
+    <p class="result" id="memoryNumR"></p>
+</div>
+
+<!-- بازی ۹۷ -->
+<div class="game-zone">
+    <h2>۹۷. 🎯 نقطه زن</h2>
+    <p>دقیقاً وسط رو بزن!</p>
+    <div style="width:250px;height:250px;border:2px solid #ffd700;border-radius:50%;margin:10px auto;position:relative;cursor:crosshair" id="aimArea" onclick="aimHit(event)">
+        <div style="position:absolute;top:50%;left:50%;width:10px;height:10px;background:#ffd700;border-radius:50%;transform:translate(-50%,-50%)"></div>
+    </div>
+    <p class="result" id="aimR"></p>
+</div>
+
+<!-- بازی ۹۸ -->
+<div class="game-zone">
+    <h2>۹۸. 🎰 انتخابگر تصادفی</h2>
+    <p>بین گزینه‌هات یکی رو انتخاب کن</p>
+    <input id="randomOptions" placeholder="گزینه‌ها (با کاما جدا کن)" style="width:250px">
+    <button onclick="randomPicker()">🎯 انتخاب</button>
+    <p class="result" id="pickerR"></p>
+</div>
+
+<!-- بازی ۹۹ -->
+<div class="game-zone">
+    <h2>۹۹. 🏁 پرچم‌ها</h2>
+    <p>پرچم کشورها رو بشناس</p>
+    <p class="emoji-big" id="flagQuiz"></p>
+    <button onclick="flagQuiz('ایران')">ایران</button>
+    <button onclick="flagQuiz('ژاپن')">ژاپن</button>
+    <button onclick="flagQuiz('برزیل')">برزیل</button>
+    <button onclick="flagQuiz('کانادا')">کانادا</button>
+    <p class="result" id="flagQuizR"></p>
+</div>
+
+<!-- بازی ۱۰۰ -->
+<div class="game-zone" style="border:2px solid #ffd700;background:rgba(255,215,0,.08)">
+    <h2>💯 ۱۰۰. جشن ۱۰۰!</h2>
+    <p>تبریک! به بازی ۱۰۰ رسیدی!</p>
+    <button onclick="celebrate()" style="padding:20px 40px;font-size:20px">🥳 جشن بگیر!</button>
+    <p class="result" id="celebrateR"></p>
+    <div id="confettiArea" style="min-height:100px"></div>
+</div>
+
+<script>
+// ============ ۵۱. پینگ پنگ ============
+let pongCanvas,pongCtx,pongBall,pongPaddle,pongScoreVal=0,pongInterval;
+function pongReset(){
+    pongCanvas=document.getElementById('pongCanvas');
+    pongCtx=pongCanvas.getContext('2d');
+    pongBall={x:160,y:100,vx:3,vy:3};
+    pongPaddle={x:150,y:180,w:50,h:8};
+    pongScoreVal=0;
+    document.getElementById('pongScore').textContent='0';
+    clearInterval(pongInterval);
+    pongInterval=setInterval(pongLoop,16);
+}
+function pongLoop(){
+    pongBall.x+=pongBall.vx;pongBall.y+=pongBall.vy;
+    if(pongBall.x<=0||pongBall.x>=310)pongBall.vx*=-1;
+    if(pongBall.y<=0)pongBall.vy*=-1;
+    if(pongBall.y>=pongPaddle.y&&pongBall.x>pongPaddle.x&&pongBall.x<pongPaddle.x+50){
+        pongBall.vy*=-1;pongScoreVal+=5;
+        document.getElementById('pongScore').textContent=pongScoreVal;
+    }
+    if(pongBall.y>200){clearInterval(pongInterval);return}
+    pongCtx.clearRect(0,0,320,200);
+    pongCtx.fillStyle='#ffd700';pongCtx.beginPath();
+    pongCtx.arc(pongBall.x,pongBall.y,6,0,Math.PI*2);pongCtx.fill();
+    pongCtx.fillStyle='#fff';pongCtx.fillRect(pongPaddle.x,pongPaddle.y,50,8);
+}
+document.addEventListener('mousemove',e=>{
+    let r=pongCanvas?.getBoundingClientRect();
+    if(r)pongPaddle.x=Math.min(270,Math.max(0,e.clientX-r.left-25));
+});
+pongReset();
+
+// ============ ۵۲. کارت شانس ============
+function drawCard(){
+    let cards=['🃑 شانس بزرگ!','🃒 موفقیت نزدیکه','🃓 یه غافلگیری خوب','🃔 امروز روز توئه','🃕 صبر کن...','🂾 هیجان!'];
+    let c=cards[Math.floor(Math.random()*cards.length)];
+    document.getElementById('cardR').textContent=c;
+    document.getElementById('cardEmoji').textContent='🃏✨';
+}
+
+// ============ ۵۳. پیانو ============
+function playNote(freq){
+    let a=new AudioContext();
+    let o=a.createOscillator();
+    let g=a.createGain();
+    o.connect(g);g.connect(a.destination);
+    o.frequency.value=freq;g.gain.value=0.3;
+    o.start();setTimeout(()=>o.stop(),300);
+    document.getElementById('pianoNote').textContent='🎵 نت با فرکانس '+freq+'Hz';
+}
+
+// ============ ۵۴. طالع بینی ============
+function tellFortune(){
+    let name=document.getElementById('fortuneName').value||'ناشناس';
+    let fortunes=['🌞 روز درخشانی داری','💫 ستاره‌ها هواتو دارن','🌈 رنگین‌کمان تو راهه','🦋 یه تغییر بزرگ نزدیکه','🌟 یه خبر خوب میاد','🎯 به هدفت نزدیک میشی'];
+    document.getElementById('fortuneR').textContent=name+'! '+fortunes[Math.floor(Math.random()*fortunes.length)];
+}
+
+// ============ ۵۵. هدف‌گیری ============
+let shootScoreVal=0;
+function shootTarget(){
+    shootScoreVal++;
+    document.getElementById('shootScore').textContent=shootScoreVal;
+    let t=document.getElementById('shootingTarget');
+    t.style.top=Math.random()*160+'px';
+    t.style.left=Math.random()*240+'px';
+}
+function resetShoot(){shootScoreVal=0;document.getElementById('shootScore').textContent='0'}
+
+// ============ ۵۶. آهنگ حدس بزن ============
+function playMelody(){
+    let notes=[262,294,330,349,392,349,330,294];
+    notes.forEach((n,i)=>setTimeout(()=>playNote(n),i*300));
+    document.getElementById('melodyR').textContent='🎵 گوش دادی؟ حالا حدس بزن';
+}
+function checkMelody(){
+    let g=document.getElementById('melodyGuess').value;
+    document.getElementById('melodyR').textContent=g?'🤔 مطمئن نیستم، شاید درسته!':'❌ یه چیزی بنویس';
+}
+
+// ============ ۵۷. تتریس ساده ============
+let tetrisCanvas,tetrisCtx,tetrisBoard,tetrisPiece,tetrisScoreVal=0,tetrisInterval;
+function tetrisReset(){
+    tetrisCanvas=document.getElementById('tetrisCanvas');
+    tetrisCtx=tetrisCanvas.getContext('2d');
+    tetrisBoard=Array(15).fill().map(()=>Array(10).fill(0));
+    tetrisPiece={x:4,y:0,shape:[[1,1],[1,1]]};
+    tetrisScoreVal=0;
+    document.getElementById('tetrisScore').textContent='0';
+    clearInterval(tetrisInterval);
+    tetrisInterval=setInterval(tetrisLoop,500);
+}
+function tetrisLoop(){
+    tetrisPiece.y++;
+    if(tetrisCollide()){
+        tetrisPiece.y--;
+        tetrisMerge();
+        tetrisPiece={x:4,y:0,shape:[[1,1],[1,1]]};
+        if(tetrisCollide()){clearInterval(tetrisInterval);return}
+    }
+    tetrisDraw();
+}
+function tetrisCollide(){
+    for(let y=0;y<tetrisPiece.shape.length;y++)
+        for(let x=0;x<tetrisPiece.shape[y].length;x++)
+            if(tetrisPiece.shape[y][x]&&(tetrisBoard[tetrisPiece.y+y]?.[tetrisPiece.x+x]!==0))return true;
+    return tetrisPiece.y+tetrisPiece.shape.length>15;
+}
+function tetrisMerge(){
+    for(let y=0;y<tetrisPiece.shape.length;y++)
+        for(let x=0;x<tetrisPiece.shape[y].length;x++)
+            if(tetrisPiece.shape[y][x])tetrisBoard[tetrisPiece.y+y][tetrisPiece.x+x]=1;
+    tetrisBoard=Array(15).fill().map(()=>Array(10).fill(0));
+    tetrisScoreVal+=10;
+    document.getElementById('tetrisScore').textContent=tetrisScoreVal;
+}
+function tetrisDraw(){
+    tetrisCtx.clearRect(0,0,200,300);
+    for(let y=0;y<tetrisPiece.shape.length;y++)
+        for(let x=0;x<tetrisPiece.shape[y].length;x++)
+            if(tetrisPiece.shape[y][x]){tetrisCtx.fillStyle='#ffd700';tetrisCtx.fillRect((tetrisPiece.x+x)*20,(tetrisPiece.y+y)*20,20,20)}
+}
+document.addEventListener('keydown',e=>{
+    if(e.key==='ArrowLeft')tetrisPiece.x--;
+    if(e.key==='ArrowRight')tetrisPiece.x++;
+    if(e.key==='ArrowDown')tetrisPiece.y++;
+    if(e.key==='ArrowUp')tetrisPiece.shape=tetrisPiece.shape[0].map((_,i)=>tetrisPiece.shape.map(r=>r[i]).reverse());
+    tetrisDraw();
+});
+tetrisReset();
+
+// ============ ۵۸. تکرار کلمه ============
+let repeatWordsList=['سلام','دنیا','بازی','شادی','نور','ماه','ستاره'];
+let currentRepeatWord;
+function newRepeatWord(){currentRepeatWord=repeatWordsList[Math.floor(Math.random()*repeatWordsList.length)];document.getElementById('repeatWord').textContent=currentRepeatWord}
+function checkRepeat(){
+    let g=document.getElementById('repeatInput').value;
+    document.getElementById('repeatR').textContent=g===currentRepeatWord?'✅ درست!':'❌ اشتباه';
+    if(g===currentRepeatWord)newRepeatWord();
+    document.getElementById('repeatInput').value='';
+}
+newRepeatWord();
+
+// ============ ۵۹. رنگین کمان ============
+let rainbowOrder=['red','orange','yellow','green','blue'];
+let rainbowCurrent=[];
+function rainbowReset(){
+    rainbowCurrent=[];
+    document.getElementById('rainbowR').textContent='';
+    let g=document.getElementById('rainbowGrid');
+    g.innerHTML='';
+    let shuffled=[...rainbowOrder].sort(()=>Math.random()-0.5);
+    shuffled.forEach(c=>{
+        let b=document.createElement('button');
+        b.style.background=c;b.style.width='50px';b.style.height='50px';b.style.borderRadius='50%';
+        b.onclick=()=>{rainbowCurrent.push(c);if(rainbowCurrent.length===5)checkRainbow()};
+        g.appendChild(b);
+    });
+}
+function checkRainbow(){
+    let ok=rainbowCurrent.every((c,i)=>c===rainbowOrder[i]);
+    document.getElementById('rainbowR').textContent=ok?'✅ درسته!':'❌ اشتباه';
+    rainbowReset();
+}
+rainbowReset();
+
+// ============ ۶۰. حلقه پرتاب ============
+let ringScoreVal=0;
+function throwRing(){
+    let success=Math.random()<0.4;
+    document.getElementById('ringR').textContent=success?'🎉 افتاد رو میله!':'😅 این دفعه نشد';
+    if(success){ringScoreVal++;document.getElementById('ringScore').textContent=ringScoreVal}
+}
+
+// ============ ۶۱. نمودار شانس ============
+function luckMeter(){
+    let v=Math.random()*100;
+    document.getElementById('luckBar').style.width=v+'%';
+    let txt=v>70?'🍀 شانس عالی':v>40?'😊 شانس خوب':v>15?'🤔 شانس متوسط':'😬 شانس کم';
+    document.getElementById('luckR').textContent=txt;
+}
+
+// ============ ۶۲. تنیس کلیکی ============
+let tennisScoreVal=0;
+function hitTennis(){
+    tennisScoreVal++;
+    document.getElementById('tennisScore').textContent=tennisScoreVal;
+    let b=document.getElementById('tennisBall');
+    b.style.top=Math.random()*140+'px';
+    b.style.left=Math.random()*240+'px';
+}
+
+// ============ ۶۳. تاس تقلبی ============
+function rollHonest(){document.getElementById('cheatDiceR').textContent='🎲 '+(Math.floor(Math.random()*6)+1)}
+function rollCheat(){document.getElementById('cheatDiceR').textContent='🃏 '+(Math.random()>0.5?6:5)}
+
+// ============ ۶۴. الفبای فارسی ============
+let alphaList=['ا','ب','پ','ت','ث','ج','چ','ح','خ','د','ذ','ر','ز','س','ش'];
+let currentAlpha;
+function newAlpha(){currentAlpha=alphaList[Math.floor(Math.random()*alphaList.length)];document.getElementById('alphaLetter').textContent=currentAlpha}
+function checkAlpha(){
+    let g=document.getElementById('alphaInput').value;
+    document.getElementById('alphaR').textContent=g===currentAlpha?'✅ درست!':'❌ اشتباه';
+    if(g===currentAlpha)newAlpha();
+    document.getElementById('alphaInput').value='';
+}
+newAlpha();
+
+// ============ ۶۵. مین‌روب ساده ============
+let mineGrid,mines;
+function mineReset(){
+    mines=[];
+    while(mines.length<3){let m=Math.floor(Math.random()*25);if(!mines.includes(m))mines.push(m)}
+    let g=document.getElementById('mineGrid');g.innerHTML='';
+    for(let i=0;i<25;i++){
+        let b=document.createElement('button');
+        b.textContent='⬜';
+        b.onclick=()=>{if(mines.includes(i)){b.textContent='💣';document.getElementById('mineR').textContent='💥 باختی!';mineReveal()}else{b.textContent='✅';b.disabled=true}};
+        g.appendChild(b);
+    }
+    document.getElementById('mineR').textContent='';
+}
+function mineReveal(){
+    let g=document.getElementById('mineGrid');
+    g.querySelectorAll('button').forEach((b,i)=>{if(mines.includes(i))b.textContent='💣'});
+}
+mineReset();
+
+// ============ ۶۶. دارت ۲ ============
+let dart2ScoreVal=0;
+function dart2Hit(e){
+    let r=e.target.getBoundingClientRect();
+    let x=e.clientX-r.left-110,y=e.clientY-r.top-110;
+    let dist=Math.sqrt(x*x+y*y);
+    let pts=dist<15?50:dist<35?25:dist<70?10:1;
+    dart2ScoreVal+=pts;
+    document.getElementById('dart2Score').textContent=dart2ScoreVal;
+    document.getElementById('dart2R').textContent='+'+pts+' امتیاز';
+}
+
+// ============ ۶۷. پنالتی ============
+function penalty(dir){
+    let keeper=['left','center','right'][Math.floor(Math.random()*3)];
+    let result=dir===keeper?'🧤 دروازه‌بان گرفت':'🥅 گل!';
+    document.getElementById('penaltyR').textContent=result+' (دروازه‌بان: '+keeper+')';
+}
+
+// ============ ۶۸. شمارش معکوس ============
+function startCountdown(){
+    let n=parseInt(document.getElementById('countdownNum').value)||10;
+    let r=document.getElementById('countdownR');
+    r.textContent=n;
+    let interval=setInterval(()=>{
+        n--;r.textContent=n;
+        if(n<=0){clearInterval(interval);r.textContent='🎉 تمام!'}
+    },1000);
+}
+
+// ============ ۶۹. ستاره‌ها ============
+let starCount;
+function starReset(){
+    starCount=Math.floor(Math.random()*10)+3;
+    let f=document.getElementById('starField');
+    f.innerHTML='';
+    for(let i=0;i<starCount;i++){
+        let s=document.createElement('div');
+        s.style.cssText='position:absolute;width:4px;height:4px;background:#ffd700;border-radius:50%;top:'+Math.random()*170+'px;left:'+Math.random()*270+'px';
+        f.appendChild(s);
+    }
+    document.getElementById('starR').textContent='';
+}
+function checkStars(){
+    let g=parseInt(document.getElementById('starGuess').value);
+    document.getElementById('starR').textContent=g===starCount?'✅ درست! '+starCount+' تا':'❌ اشتباه، '+starCount+' تا بود';
+    starReset();
+}
+starReset();
+
+// ============ ۷۰. میکروفون ============
+function micEffect(){
+    let v=Math.random()*100;
+    document.getElementById('micBar').style.width=v+'%';
+    setTimeout(()=>document.getElementById('micBar').style.width='0%',200);
+}
+
+// ============ ۷۱. پازل ۳×۳ ============
+let puzzleTiles,puzzleMovesCount;
+function puzzleReset(){
+    puzzleTiles=[1,2,3,4,5,6,7,8,0].sort(()=>Math.random()-0.5);
+    puzzleMovesCount=0;
+    document.getElementById('puzzleMoves').textContent='0';
+    puzzleDraw();
+}
+function puzzleDraw(){
+    let g=document.getElementById('puzzleGrid');g.innerHTML='';
+    puzzleTiles.forEach((t,i)=>{
+        let b=document.createElement('button');
+        b.textContent=t||'⬜';
+        b.onclick=()=>puzzleMove(i);
+        g.appendChild(b);
+    });
+}
+function puzzleMove(i){
+    let empty=puzzleTiles.indexOf(0);
+    if([i-1,i+1,i-3,i+3].includes(empty)){
+        [puzzleTiles[i],puzzleTiles[empty]]=[puzzleTiles[empty],puzzleTiles[i]];
+        puzzleMovesCount++;
+        document.getElementById('puzzleMoves').textContent=puzzleMovesCount;
+        puzzleDraw();
+    }
+}
+puzzleReset();
+
+// ============ ۷۲. بخت آزمایی ============
+function lottoDraw(){
+    let nums=[];while(nums.length<5){let n=Math.floor(Math.random()*90)+1;if(!nums.includes(n))nums.push(n)}
+    document.getElementById('lottoR').textContent='🎱 '+nums.sort((a,b)=>a-b).join(' - ');
+}
+
+// ============ ۷۳. مسابقه ============
+let raceProgress=0;
+function raceClick(){
+    raceProgress++;
+    document.getElementById('raceProgress').textContent=raceProgress;
+    document.getElementById('raceBar').style.width=(raceProgress*5)+'%';
+    if(raceProgress>=20){document.getElementById('raceBtn').textContent='🥇 برنده!';raceProgress=0;setTimeout(()=>{document.getElementById('raceBtn').textContent='🏃 کلیک کن!';document.getElementById('raceProgress').textContent='0';document.getElementById('raceBar').style.width='0%'},2000)}
+}
+
+// ============ ۷۴. دیکته ============
+let dictationWordsList=['آسمان','دریا','کتاب','مداد','ماه','گل','ستاره'];
+let currentDictWord;
+function showDictation(){
+    currentDictWord=dictationWordsList[Math.floor(Math.random()*dictationWordsList.length)];
+    document.getElementById('dictationWord').textContent=currentDictWord;
+    setTimeout(()=>document.getElementById('dictationWord').textContent='❓',2000);
+}
+function checkDictation(){
+    let g=document.getElementById('dictationInput').value;
+    document.getElementById('dictationR').textContent=g===currentDictWord?'✅ درست!':'❌ اشتباه، کلمه '+currentDictWord+' بود';
+}
+
+// ============ ۷۵. ماسک صورت ============
+let moods={'happy':'😊','sad':'😢','angry':'😠','surprised':'😲'};
+let currentMood;
+function newMood(){
+    let keys=Object.keys(moods);
+    currentMood=keys[Math.floor(Math.random()*keys.length)];
+    document.getElementById('faceEmoji').textContent=moods[currentMood];
+}
+function guessMood(g){
+    document.getElementById('moodR').textContent=g===currentMood?'✅ درست!':'❌ اشتباه';
+    newMood();
+}
+newMood();
+
+// ============ ۷۶. دماسنج ============
+let todayTemp=Math.floor(Math.random()*35)+5;
+function checkTemp(){
+    let g=parseInt(document.getElementById('tempGuess').value);
+    let diff=Math.abs(g-todayTemp);
+    document.getElementById('tempR').textContent=diff===0?'✅ دقیقاً درسته!':diff<=3?'😊 نزدیک بودی ('+todayTemp+'°)':'❌ فرق داره ('+todayTemp+'°)';
+}
+
+// ============ ۷۷. بمب ساعتی ============
+let bombWire=['red','blue','green','yellow'][Math.floor(Math.random()*4)];
+function cutWire(c){
+    document.getElementById('bombR').textContent=c===bombWire?'✅ نجات پیدا کردی!':'💥 بوم! سیم '+bombWire+' درست بود';
+    bombWire=['red','blue','green','yellow'][Math.floor(Math.random()*4)];
+}
+
+// ============ ۷۸. اندازه‌گیری ============
+function newLines(){
+    let l1=Math.floor(Math.random()*150)+50;
+    let l2=Math.floor(Math.random()*150)+50;
+    document.getElementById('line1').style.width=l1+'px';
+    document.getElementById('line2').style.width=l2+'px';
+    return l1>l2?'top':l1<l2?'bottom':'equal';
+}
+let lineAnswer=newLines();
+function guessLine(g){
+    document.getElementById('lineR').textContent=g===lineAnswer?'✅ درست!':'❌ اشتباه';
+    lineAnswer=newLines();
+}
+
+// ============ ۷۹. دلقک ============
+function clownTalk(){
+    let jokes=['🤡 هو هو هو!','🤡 چرا جدی‌ای؟ بخند!','🤡 من دلقک مورد علاقه توام!','🤡 امروز روز شادیه!'];
+    document.getElementById('clownR').textContent=jokes[Math.floor(Math.random()*jokes.length)];
+}
+
+// ============ ۸۰. محاسبه سریع ============
+let fastMathScore=0,fastMathTime=0,fastMathInterval,fastMathAnswer;
+function fastMathNewQ(){
+    let a=Math.floor(Math.random()*20)+1,b=Math.floor(Math.random()*20)+1;
+    let op=['+','-','*'][Math.floor(Math.random()*3)];
+    fastMathAnswer=op==='+'?a+b:op==='-'?a-b:a*b;
+    document.getElementById('fastMathQ').textContent=a+' '+op+' '+b+' = ?';
+}
+function fastMathCheck(){
+    let g=parseInt(document.getElementById('fastMathA').value);
+    if(g===fastMathAnswer){fastMathScore++;document.getElementById('fastMathScore').textContent=fastMathScore}
+    document.getElementById('fastMathR').textContent=g===fastMathAnswer?'✅':'❌';
+    document.getElementById('fastMathA').value='';
+    fastMathNewQ();
+}
+setInterval(()=>{fastMathTime++;document.getElementById('fastMathTime').textContent=fastMathTime},1000);
+fastMathNewQ();
+
+// ============ ۸۱. ذره‌بین ============
+function magnifyFind(e){
+    let item=document.getElementById('hiddenItem');
+    let r=e.target.getBoundingClientRect();
+    let x=e.clientX-r.left,y=e.clientY-r.top;
+    let ix=parseInt(item.style.left),iy=parseInt(item.style.top);
+    let dist=Math.sqrt((x-ix)**2+(y-iy)**2);
+    document.getElementById('magnifyR').textContent=dist<25?'✅ پیداش کردی!':'🔍 نزدیک‌تر...';
+    if(dist<25){item.style.top=Math.random()*130+'px';item.style.left=Math.random()*180+'px'}
+}
+
+// ============ ۸۲. قلمو جادویی ============
+let drawCanvas,drawCtx,drawing=false;
+drawCanvas=document.getElementById('drawCanvas');
+drawCtx=drawCanvas.getContext('2d');
+drawCanvas.addEventListener('mousedown',()=>drawing=true);
+drawCanvas.addEventListener('mouseup',()=>drawing=false);
+drawCanvas.addEventListener('mousemove',e=>{
+    if(!drawing)return;
+    let r=drawCanvas.getBoundingClientRect();
+    drawCtx.fillStyle=document.getElementById('drawColor').value;
+    drawCtx.beginPath();drawCtx.arc(e.clientX-r.left,e.clientY-r.top,5,0,Math.PI*2);drawCtx.fill();
+});
+function clearCanvas(){drawCtx.clearRect(0,0,280,180)}
+
+// ============ ۸۳. شیشه عطر ============
+function pickPerfume(p){
+    let desc={'rose':'🌹 عطر رز، لطیف و عاشقانه','lavender':'💜 اسطوخودوس، آرامش‌بخش','jasmine':'🌸 یاس، شیرین و دلنشین','ocean':'🌊 اقیانوس، خنک و آزاد'};
+    document.getElementById('perfumeR').textContent=desc[p];
+}
+
+// ============ ۸۴. ساعت ============
+function updateClock(){
+    let c=document.getElementById('clockCanvas');
+    let ctx=c.getContext('2d');
+    ctx.clearRect(0,0,180,180);
+    let now=new Date();
+    let h=now.getHours()%12,m=now.getMinutes(),s=now.getSeconds();
+    ctx.strokeStyle='#ffd700';ctx.lineWidth=3;
+    ctx.beginPath();ctx.arc(90,90,70,0,Math.PI*2);ctx.stroke();
+    let drawHand=(angle,len,width)=>{
+        ctx.beginPath();ctx.moveTo(90,90);
+        ctx.lineTo(90+Math.sin(angle)*len,90-Math.cos(angle)*len);
+        ctx.lineWidth=width;ctx.stroke();
+    };
+    drawHand((h+m/60)*Math.PI/6,40,5);
+    drawHand((m+s/60)*Math.PI/30,55,3);
+    drawHand(s*Math.PI/30,65,1);
+    document.getElementById('clockDigital').textContent=now.toLocaleTimeString('fa-IR');
+}
+setInterval(updateClock,1000);updateClock();
+
+// ============ ۸۵. ماهیگیری ============
+let fishCount=0;
+function goFishing(){
+    let fish=['🐟 ماهی قرمز','🐠 ماهی رنگارنگ','🐡 ماهی بادکنکی','🦈 کوسه!','🐳 نهنگ!','❌ هیچی'];
+    let f=fish[Math.floor(Math.random()*fish.length)];
+    document.getElementById('fishingR').textContent=f;
+    if(!f.includes('هیچی')){fishCount++;document.getElementById('fishCount').textContent=fishCount}
+}
+
+// ============ ۸۶. جدول ضرب ============
+let multA,multB;
+function newMultiply(){
+    multA=Math.floor(Math.random()*10)+1;multB=Math.floor(Math.random()*10)+1;
+    document.getElementById('multiplyQ').textContent=multA+' × '+multB+' = ?';
+}
+function checkMultiply(){
+    let g=parseInt(document.getElementById('multiplyA').value);
+    document.getElementById('multiplyR').textContent=g===multA*multB?'✅ درست!':'❌ اشتباه';
+    if(g===multA*multB)newMultiply();
+    document.getElementById('multiplyA').value='';
+}
+newMultiply();
+
+// ============ ۸۷. شکلک ============
+let emojisToCopy=['🥳','😎','🤩','🥰','😇','🤗','🦄','🌈','🎉','💖'];
+function copyEmoji(){
+    let e=emojisToCopy[Math.floor(Math.random()*emojisToCopy.length)];
+    document.getElementById('emojiToCopy').textContent=e;
+    navigator.clipboard?.writeText(e);
+    document.getElementById('copyR').textContent='📋 کپی شد! '+e;
+}
+
+// ============ ۸۸. کشورها ============
+let flags={iran:'🇮🇷',japan:'🇯🇵',brazil:'🇧🇷',canada:'🇨🇦',france:'🇫🇷',germany:'🇩🇪'};
+let currentFlag,currentCountry;
+function newFlag(){
+    let keys=Object.keys(flags);
+    currentCountry=keys[Math.floor(Math.random()*keys.length)];
+    currentFlag=flags[currentCountry];
+    document.getElementById('flagEmoji').textContent=currentFlag;
+}
+function checkCountry(){
+    let g=document.getElementById('countryGuess').value;
+    document.getElementById('countryR').textContent=g===currentCountry||g==='ایران'&&currentCountry==='iran'?'✅ درست!':'❌ اشتباه، '+currentCountry+' بود';
+    newFlag();
+}
+newFlag();
+
+// ============ ۸۹. نت موسیقی ============
+let notesFreq={do:262,re:294,mi:330,fa:349};
+let currentNoteKey;
+function playRandomNote(){
+    let keys=Object.keys(notesFreq);
+    currentNoteKey=keys[Math.floor(Math.random()*keys.length)];
+    playNote(notesFreq[currentNoteKey]);
+}
+function guessNote(g){
+    document.getElementById('noteR').textContent=g===currentNoteKey?'✅ درست!':'❌ اشتباه، '+currentNoteKey+' بود';
+}
+
+// ============ ۹۰. جوی استیک ============
+function joystick(dir){
+    document.getElementById('joystickR').textContent='🕹️ جهت: '+dir;
+}
+
+// ============ ۹۱. بادکنک ============
+let balloonSize=1;
+function inflateBalloon(){
+    balloonSize+=0.2;
+    document.getElementById('balloonEmoji').style.fontSize=(50*balloonSize)+'px';
+    if(balloonSize>2){document.getElementById('balloonEmoji').textContent='💥';document.getElementById('balloonR').textContent='ترکید!';balloonSize=0.5;setTimeout(()=>{document.getElementById('balloonEmoji').textContent='🎈';document.getElementById('balloonEmoji').style.fontSize='50px';document.getElementById('balloonR').textContent=''},1000)}
+}
+
+// ============ ۹۲. فیلتر عکس ============
+function applyFilter(f){
+    let filters={warm:'sepia(50%) saturate(150%)',cool:'hue-rotate(180deg) saturate(80%)',vintage:'sepia(80%) contrast(120%)'};
+    document.getElementById('filterPreview').style.filter=filters[f];
+    document.getElementById('filterR').textContent='✅ فیلتر '+f+' اعمال شد';
+}
+
+// ============ ۹۳. گوی کریستال ============
+function crystalBall(){
+    let answers=['✨ قطعاً','🌟 به زودی','☁️ مبهمه','💫 ستاره‌ها میگن آره','🌙 شاید','🔮 جواب مثبته'];
+    let q=document.getElementById('crystalQ').value||'سوال نپرسیدی';
+    document.getElementById('crystalR').textContent=q+' → '+answers[Math.floor(Math.random()*answers.length)];
+}
+
+// ============ ۹۴. برج ============
+let towerH=0;
+function buildTower(){
+    towerH++;
+    document.getElementById('towerHeight').textContent=towerH;
+    let v=document.getElementById('towerVisual');
+    let b=document.createElement('div');
+    b.style.cssText='width:50px;height:15px;background:linear-gradient(90deg,#ffd700,#f0a500);margin:2px 0;border-radius:3px';
+    v.appendChild(b);
+    let collapse=Math.random()<0.15&&towerH>3;
+    if(collapse){v.innerHTML='';towerH=0;document.getElementById('towerHeight').textContent='0';document.getElementById('towerR').textContent='😱 برج خراب شد!'}
+    else document.getElementById('towerR').textContent='';
+}
+
+// ============ ۹۵. دی‌جی ============
+function djScratch(){playNote(200);playNote(300);document.getElementById('djR').textContent='🎧 اسکرچ!'}
+function djBass(){playNote(80);setTimeout(()=>playNote(80),100);document.getElementById('djR').textContent='🔊 بیس!'}
+function djMelody(){[262,330,392,523].forEach((n,i)=>setTimeout(()=>playNote(n),i*150));document.getElementById('djR').textContent='🎹 ملودی!'}
+
+// ============ ۹۶. حافظه عددی ============
+let memoryNumber;
+function showMemoryNum(){
+    memoryNumber=Math.floor(Math.random()*900)+100;
+    document.getElementById('memoryNum').textContent=memoryNumber;
+    setTimeout(()=>document.getElementById('memoryNum').textContent='❓',3000);
+}
+function checkMemoryNum(){
+    let g=parseInt(document.getElementById('memoryNumGuess').value);
+    document.getElementById('memoryNumR').textContent=g===memoryNumber?'✅ عالیه!':'❌ اشتباه، '+memoryNumber+' بود';
+}
+
+// ============ ۹۷. نقطه زن ============
+function aimHit(e){
+    let r=e.target.getBoundingClientRect();
+    let x=e.clientX-r.left-125,y=e.clientY-r.top-125;
+    let dist=Math.sqrt(x*x+y*y);
+    document.getElementById('aimR').textContent='فاصله از مرکز: '+Math.round(dist)+'px'+(dist<10?' 🎯 عالی!':'');
+}
+
+// ============ ۹۸. انتخابگر تصادفی ============
+function randomPicker(){
+    let opts=document.getElementById('randomOptions').value.split(',').map(o=>o.trim()).filter(o=>o);
+    if(opts.length)document.getElementById('pickerR').textContent='🎯 '+opts[Math.floor(Math.random()*opts.length)];
+}
+
+// ============ ۹۹. پرچم‌ها ============
+let flagQuizData={ایران:'🇮🇷',ژاپن:'🇯🇵',برزیل:'🇧🇷',کانادا:'🇨🇦'};
+function flagQuiz(country){
+    document.getElementById('flagQuizR').textContent=flagQuizData[country]+' '+country;
+}
+
+// ============ ۱۰۰. جشن ۱۰۰ ============
+function celebrate(){
+    document.getElementById('celebrateR').textContent='🎉🎊🥳 تبریک رهیلا! ۱۰۰ بازی ساختی! 🥳🎊🎉';
+    let confetti=document.getElementById('confettiArea');
+    for(let i=0;i<30;i++){
+        let c=document.createElement('span');
+        c.textContent=['🎉','✨','🌟','💫','🎊','🎀','💖','⭐'][Math.floor(Math.random()*8)];
+        c.style.cssText='position:absolute;font-size:20px;animation:fall '+Math.random()*2+1+'s linear;left:'+Math.random()*250+'px';
+        confetti.appendChild(c);
+        setTimeout(()=>c.remove(),3000);
+    }
+}
+</script>
+<style>
+@keyframes fall{from{transform:translateY(-100px);opacity:1}to{transform:translateY(200px);opacity:0}}
+#confettiArea{position:relative;overflow:hidden}
+</style>
+
+<div style="margin:25px 0;color:#aaa;font-size:13px;text-align:center">
+    © rahilanab.com | ساخته شده با 💙 برای رهیلا | Games 51-100
+</div>
+
+</body>
+  </html>
