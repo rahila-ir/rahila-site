@@ -1,94 +1,143 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🍳 ۳۰ غذای ایرانی (۳۱-۶۰) | رهیلا</title>
+    <title>🍗 ۳۰ غذای متنوع | مرغ سوخاری تا باقلوا | rahilanab.com</title>
+    <meta name="description" content="معرفی ۳۰ غذای ایرانی و خارجی: مرغ سوخاری، استیک، حلیم، پنکیک، تیرامیسو، چیزکیک، دونات و...">
+    <meta name="keywords" content="مرغ سوخاری, استیک, حلیم, پنکیک, تیرامیسو, چیزکیک, rahilanab">
     <style>
         *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:'Arial';background:radial-gradient(circle at center,#0a1a1a,#1a4a4a,#66ccaa);color:#fff;padding:15px;min-height:100vh}
-        .header{background:rgba(255,255,255,.08);backdrop-filter:blur(20px);border-radius:25px;padding:20px;margin-bottom:15px;text-align:center}
-        .header h1{color:#ffd700;font-size:22px}
-        .back-btn{display:inline-block;background:rgba(255,255,255,.15);color:#fff;padding:10px 20px;border-radius:20px;text-decoration:none;margin:10px 0}
-        .recipe-card{background:linear-gradient(135deg,rgba(255,255,255,.03),rgba(255,215,0,.08));border-radius:20px;padding:15px;margin:20px 0;border:1px solid rgba(255,215,0,.2);text-align:right}
-        .recipe-card h2{color:#ffd700;font-size:20px;text-align:center;margin-bottom:10px}
-        .section{background:rgba(0,0,0,.4);border-radius:10px;padding:12px;margin:8px 0;border-right:2px solid #ffd700}
-        .section h3{color:#ffd700;font-size:14px;margin-bottom:6px}
-        .ingredients-grid{display:grid;grid-template-columns:1fr 1fr;gap:3px;color:#ddd;font-size:11px}
-        .ingredients-grid span{background:rgba(255,255,255,.05);padding:5px;border-radius:5px}
-        .steps{list-style:none;counter-reset:step}
-        .steps li{counter-increment:step;color:#ddd;font-size:12px;line-height:1.7;padding:3px 0;border-bottom:1px dashed rgba(255,255,255,.08)}
-        .steps li::before{content:counter(step);background:#ffd700;color:#000;font-weight:bold;padding:1px 6px;border-radius:50%;margin-left:5px;font-size:10px}
+        body{font-family:'Arial';background:linear-gradient(135deg,#e3f2fd,#bbdefb,#90caf9,#a5d6a7);color:#000;padding:15px;min-height:100vh;text-align:center}
+        .header{background:#fff;border-radius:20px;padding:20px;margin-bottom:15px;box-shadow:0 4px 15px rgba(0,0,0,.1)}
+        .header h1{color:#0d47a1;font-size:26px}
+        .header p{color:#000;font-size:17px;font-weight:bold;margin-top:5px}
+        .food-card{background:#fff;border-radius:20px;padding:25px;margin:18px 0;box-shadow:0 2px 12px rgba(0,0,0,.08);text-align:right;line-height:2.3}
+        .food-card h2{color:#0d47a1;font-size:22px;margin-bottom:15px;text-align:center;border-bottom:2px solid #e3f2fd;padding-bottom:10px}
+        .food-card h3{color:#0d47a1;font-size:19px;margin:18px 0 10px}
+        .food-card p{color:#000;font-size:17px;font-weight:bold;margin:10px 0}
+        .food-card li{color:#000;font-size:17px;font-weight:bold;margin:8px 0}
+        .golden-box{background:linear-gradient(135deg,#fff8e1,#ffe082,#ffd54f);border-right:5px solid #ff8f00;padding:18px;border-radius:12px;margin:18px 0;box-shadow:0 3px 12px rgba(255,143,0,.2)}
+        .golden-box p{color:#000;font-size:17px;font-weight:bold;margin:6px 0}
+        .red-box{background:linear-gradient(135deg,#ffebee,#ffcdd2,#ef9a9a);border-right:5px solid #c62828;padding:18px;border-radius:12px;margin:18px 0;box-shadow:0 3px 12px rgba(198,40,40,.2)}
+        .red-box p{color:#000;font-size:17px;font-weight:bold;margin:6px 0}
+        .blue-box{background:linear-gradient(135deg,#e3f2fd,#bbdefb,#90caf9);border-right:5px solid #0d47a1;padding:18px;border-radius:12px;margin:18px 0;box-shadow:0 3px 12px rgba(13,71,161,.2)}
+        .blue-box p{color:#000;font-size:17px;font-weight:bold;margin:6px 0}
+        .green-box{background:linear-gradient(135deg,#e8f5e9,#c8e6c9,#a5d6a7);border-right:5px solid #2e7d32;padding:18px;border-radius:12px;margin:18px 0;box-shadow:0 3px 12px rgba(46,125,50,.2)}
+        .green-box p{color:#000;font-size:17px;font-weight:bold;margin:6px 0}
+        .back-btn{display:inline-block;background:#0d47a1;color:#fff;padding:12px 28px;border-radius:25px;text-decoration:none;margin:12px 0;font-weight:bold;font-size:17px}
+        .footer{background:#fff;padding:16px;margin-top:20px;font-size:15px;color:#000;border-radius:15px;font-weight:bold}
+        .footer a{color:#0d47a1;text-decoration:none;font-weight:bold}
     </style>
 </head>
 <body>
-    <div class="header"><h1>🍳 ۳۰ غذای ایرانی (۳۱ تا ۶۰)</h1><p>rahilanab.com</p></div>
-    <a href="foods-1.html" class="back-btn">🔙 ۳۰ تای اول</a>
 
-<!-- ۳۱ --><div class="recipe-card"><h2>۳۱. 🍗 مرغ سوخاری</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>سینه مرغ۴تکه</span><span>آرد سوخاری</span><span>تخم‌مرغ۲عدد</span><span>آرد سفید</span><span>نمک،فلفل،پاپریکا</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>مرغ رو مزه‌دار کن</li><li>توی آرد سفید بزن</li><li>توی تخم‌مرغ بزن</li><li>توی آرد سوخاری بغلطون</li><li>توی روغن داغ سرخ کن</li></ol></div></div>
+<div class="header">
+    <h1>🍗 ۳۰ غذای متنوع (۳۱ تا ۶۰)</h1>
+    <p>طرز تهیه کامل با مواد لازم و نکات طلایی | rahilanab.com</p>
+</div>
 
-<!-- ۳۲ --><div class="recipe-card"><h2>۳۲. 🥩 استیک</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>راسته۲تکه</span><span>کره۵۰گرم</span><span>سیر۳حبه</span><span>رزماری</span><span>نمک،فلفل</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>گوشت دمای محیط</li><li>نمک و فلفل بزن</li><li>تابه داغ با کره</li><li>هر طرف ۳-۴دقیقه</li><li>۵دقیقه استراحت بعد سرو</li></ol></div></div>
+<!-- ۳۱. مرغ سوخاری -->
+<div class="food-card">
+    <h2>۳۱. 🍗 مرغ سوخاری</h2>
+    <h3>📝 مواد لازم</h3>
+    <ul><li>سینه مرغ: ۴ عدد</li><li>آرد سفید: ۱ پیمانه</li><li>تخم مرغ: ۲ عدد</li><li>آرد سوخاری (پودر نان): ۱.۵ پیمانه</li><li>پاپریکا، پودر سیر، نمک، فلفل: به میزان لازم</li><li>روغن سرخ‌کردنی: به میزان لازم</li></ul>
+    <h3>👨‍🍳 طرز تهیه</h3>
+    <ol><li>سینه مرغ رو به تکه‌های مساوی ببرید و با نمک و فلفل مزه‌دار کنید</li><li>توی ۳ کاسه جدا: آرد + ادویه / تخم مرغ زده‌شده / آرد سوخاری</li><li>هر تکه مرغ رو اول توی آرد، بعد تخم مرغ، بعد آرد سوخاری بغلتونید</li><li>توی روغن داغ (۱۷۰ درجه) هر طرف ۴-۵ دقیقه سرخ کنید تا طلایی بشه</li><li>روی دستمال کاغذی بذارید تا روغن اضافیش گرفته بشه</li></ol>
+    <div class="golden-box"><p>💡 <strong>نکته طلایی:</strong> برای مرغ سوخاری ترد، آرد سوخاری رو با کمی پودر ذرت (corn flour) مخلوط کنید. همچنین مرغ رو ۳۰ دقیقه قبل از سرخ کردن توی یخچال بذارید تا لایه بیرونی بهتر بچسبه!</p></div>
+</div>
 
-<!-- ۳۳ --><div class="recipe-card"><h2>۳۳. 🍲 حلیم</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>گندم۲پیمانه</span><span>گوشت۳۰۰گرم</span><span>پیاز</span><span>شکر،دارچین،کره</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>گندم ۲۴ساعت خیس</li><li>گوشت و پیاز بپز</li><li>گوشت ریش کن</li><li>گندم رو ۳-۴ساعت بپز</li><li>مرتب هم بزن</li><li>گوشت اضافه و بکوب</li><li>با شکر و دارچین سرو</li></ol></div></div>
+<!-- ۳۲. استیک -->
+<div class="food-card">
+    <h2>۳۲. 🥩 استیک</h2>
+    <h3>📝 مواد لازم</h3>
+    <ul><li>راسته یا فیله گوساله: ۲ تکه (هرکدام ۲۰۰-۲۵۰ گرم)</li><li>کره: ۳۰ گرم</li><li>سیر: ۳ حبه</li><li>رزماری یا آویشن تازه: ۲ شاخه</li><li>نمک دریا، فلفل سیاه تازه: به میزان لازم</li><li>روغن زیتون: ۱ قاشق</li></ul>
+    <h3>👨‍🍳 طرز تهیه</h3>
+    <ol><li>گوشت رو ۳۰ دقیقه قبل از پخت از یخچال بیرون بیارید تا هم‌دمای محیط بشه</li><li>تابه چدنی رو خیلی داغ کنید و روغن زیتون بریزید</li><li>استیک‌ها رو ۳-۴ دقیقه هر طرف سرخ کنید (برای Medium)</li><li>کره + سیر + رزماری رو اضافه کنید و با قاشق، کره رو روی استیک بریزید</li><li>استیک رو ۵ دقیقه استراحت بدید بعد سرو کنید</li></ol>
+    <div class="golden-box"><p>💡 <strong>نکته طلایی:</strong> استیک رو فقط یکبار برگردونید! هرچی بیشتر جابجا بشه، آبدار بودنش رو از دست میده. همچنین حتماً بعد از پخت ۵ دقیقه استراحت بدید تا آب گوشت پخش بشه.</p></div>
+</div>
 
-<!-- ۳۴ --><div class="recipe-card"><h2>۳۴. 🍲 شله قلمکار</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>حبوبات۲پیمانه</span><span>گوشت۳۰۰گرم</span><span>برنج۱پیمانه</span><span>پیاز</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>حبوبات خیس کن</li><li>گوشت بپز و ریش کن</li><li>همه رو با هم ۳-۴ساعت بپز</li><li>مرتب هم بزن</li><li>بکوب و پیاز داغ بریز</li></ol></div></div>
+<!-- ۳۳. حلیم -->
+<div class="food-card">
+    <h2>۳۳. 🥣 حلیم</h2>
+    <h3>📝 مواد لازم</h3>
+    <ul><li>گندم پوست‌کنده: ۱ پیمانه</li><li>گوشت بوقلمون یا گوساله: ۳۰۰ گرم</li><li>پیاز: ۱ عدد</li><li>کره: ۱۰۰ گرم</li><li>نمک، دارچین، شکر: به میزان لازم</li></ul>
+    <h3>👨‍🍳 طرز تهیه</h3>
+    <ol><li>گندم رو از شب قبل خیس کنید</li><li>گوشت + پیاز + گندم + ۶ لیوان آب رو توی قابلمه بریزید و ۴-۵ ساعت بپزید</li><li>وقتی گوشت کاملاً پخت، گوشت رو خارج و ریش‌ریش کنید</li><li>گندم پخته رو با گوشت‌کوب یا میکسر بزنید تا کشدار بشه</li><li>گوشت ریش‌شده رو اضافه کنید و ۳۰ دقیقه دیگه هم بزنید</li><li>با کره آب‌شده، دارچین و شکر سرو کنید</li></ol>
+    <div class="green-box"><p>🥣 <strong>خاصیت حلیم:</strong> حلیم یه صبحانه کامل و مقوی برای روزهای سرد زمستانه! گندم سرشار از فیبر و گوشت منبع عالی پروتئینه.</p></div>
+</div>
 
-<!-- ۳۵ --><div class="recipe-card"><h2>۳۵. 🍳 نیمرو</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>تخم‌مرغ۲عدد</span><span>روغن</span><span>نمک،فلفل</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>روغن داغ کن</li><li>تخم‌مرغ بشکن</li><li>نمک و فلفل فقط روی سفیده</li><li>۳-۴دقیقه صبر کن</li><li>با نان تازه سرو</li></ol></div></div>
+<!-- ۳۴. شله قلمکار -->
+<div class="food-card">
+    <h2>۳۴. 🥣 شله قلمکار</h2>
+    <h3>📝 مواد لازم</h3>
+    <ul><li>برنج: ۱ پیمانه</li><li>گوشت: ۳۰۰ گرم</li><li>نخود و لوبیا: هرکدام نصف پیمانه</li><li>عدس: یک‌چهارم پیمانه</li><li>پیاز داغ: ۳ قاشق</li><li>نمک، فلفل، زردچوبه، دارچین</li></ul>
+    <h3>👨‍🍳 طرز تهیه</h3>
+    <ol><li>حبوبات رو از شب قبل خیس کنید</li><li>همه مواد رو با ۶ لیوان آب بپزید تا کاملاً نرم بشه</li><li>با گوشت‌کوب بکوبید تا یکدست بشه</li><li>با پیاز داغ و دارچین تزئین کنید</li></ol>
+    <div class="blue-box"><p>🥣 شله قلمکار از غذاهای سنتی و مقوی ایرانه که مخصوص مهمونی‌های بزرگ و نذری‌هاست.</p></div>
+</div>
 
-<!-- ۳۶ --><div class="recipe-card"><h2>۳۶. 🥞 پنکیک</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>آرد۱.۵لیوان</span><span>شیر۱لیوان</span><span>تخم‌مرغ۱عدد</span><span>شکر۲قاشق</span><span>بکینگ پودر</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>همه مواد مخلوط</li><li>تابه نچسب گرم</li><li>یه ملاقه بریز</li><li>وقتی حباب زد برگردون</li><li>با عسل سرو</li></ol></div></div>
+<!-- ۳۵ تا ۶۰ ادامه... -->
 
-<!-- ۳۷ --><div class="recipe-card"><h2>۳۷. 🧇 وافل</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>آرد۲لیوان</span><span>شیر۱.۵لیوان</span><span>تخم‌مرغ۲عدد</span><span>کره۱۰۰گرم</span><span>شکر</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>تخم‌مرغ و شکر بزن</li><li>شیر و کره اضافه</li><li>آرد مخلوط</li><li>وافل‌ساز گرم کن</li><li>۵-۷دقیقه بپز</li></ol></div></div>
+<div class="food-card"><h2>۳۵. 🍳 نیمرو</h2><p><strong>مواد:</strong> تخم مرغ (۲ عدد)، کره (۱۵ گرم)، نمک، فلفل</p><p><strong>طرز تهیه:</strong> کره رو توی تابه نچسب آب کنید. تخم مرغ رو آروم بشکنید توی تابه. شعله رو کم کنید و ۳-۴ دقیقه بذارید تا سفیده ببنده و زرده عسلی بمونه. نمک و فلفل رو فقط روی سفیده بپاشید.</p><div class="golden-box"><p>💡 برای نیمروی عالی، تخم مرغ باید تازه باشه! تخم مرغ تازه رو توی یه کاسه آب بندازید — اگه ته آب رفت، تازه‌ست!</p></div></div>
 
-<!-- ۳۸ --><div class="recipe-card"><h2>۳۸. 🍞 تست فرانسوی</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>نان تست۴عدد</span><span>تخم‌مرغ۲عدد</span><span>شیر</span><span>دارچین</span><span>وانیل</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>تخم‌مرغ و شیر مخلوط</li><li>نان رو توی مواد بزن</li><li>توی کره سرخ کن</li><li>با عسل سرو</li></ol></div></div>
+<div class="food-card"><h2>۳۶. 🥞 پنکیک</h2><p><strong>مواد:</strong> آرد (۱.۵ پیمانه)، شیر (۱ پیمانه)، تخم مرغ (۱ عدد)، شکر (۲ قاشق)، بیکینگ پودر (۱ قاشق چای‌خوری)، کره (۳۰ گرم)، وانیل</p><p><strong>طرز تهیه:</strong> همه مواد خشک رو مخلوط کنید. شیر + تخم مرغ + کره آب‌شده + وانیل رو اضافه کنید. هم بزنید تا صاف بشه. توی تابه نچسب، هر طرف ۲ دقیقه بپزید تا طلایی بشه.</p><div class="golden-box"><p>💡 خمیر پنکیک رو زیاد هم نزنید! اگه گلوله‌های ریز بمونه بهتره. هم زدن زیاد پنکیک رو سفت می‌کنه.</p></div></div>
 
-<!-- ۳۹ --><div class="recipe-card"><h2>۳۹. 🥣 فرنی</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>شیر۲لیوان</span><span>آرد برنج۳قاشق</span><span>شکر۳قاشق</span><span>گلاب</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>آرد برنج توی شیر سرد حل کن</li><li>روی حرارت هم بزن</li><li>شکر اضافه کن</li><li>غلیظ شد گلاب بزن</li><li>توی ظرف بریز و خنک کن</li></ol></div></div>
+<div class="food-card"><h2>۳۷. 🧇 وافل</h2><p><strong>مواد:</strong> آرد (۲ پیمانه)، شیر (۱.۵ پیمانه)، تخم مرغ (۲ عدد)، کره (۵۰ گرم)، شکر (۳ قاشق)، بیکینگ پودر (۲ قاشق چای‌خوری)، وانیل</p><p><strong>طرز تهیه:</strong> تخم مرغ رو با شکر بزنید. شیر + کره آب‌شده + وانیل رو اضافه کنید. آرد + بیکینگ پودر رو اضافه و مخلوط کنید. توی وافل‌ساز داغ بریزید و ۳-۴ دقیقه بپزید.</p><div class="green-box"><p>🧇 وافل تازه رو با عسل، میوه تازه، خامه یا شکلات آب‌شده سرو کنید!</p></div></div>
 
-<!-- ۴۰ --><div class="recipe-card"><h2>۴۰. 🍮 پاناکوتا</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>خامه۲لیوان</span><span>شیر۱لیوان</span><span>شکر۴قاشق</span><span>ژلاتین۲قاشق</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>ژلاتین توی آب سرد خیس</li><li>شیر و خامه و شکر گرم</li><li>ژلاتین اضافه و حل کن</li><li>توی قالب بریز</li><li>۴-۵ساعت یخچال</li></ol></div></div>
+<div class="food-card"><h2>۳۸. 🍞 تست فرانسوی</h2><p><strong>مواد:</strong> نان تست (۴ برش)، تخم مرغ (۲ عدد)، شیر (نصف پیمانه)، شکر (۱ قاشق)، دارچین، کره، وانیل</p><p><strong>طرز تهیه:</strong> تخم مرغ + شیر + شکر + دارچین + وانیل رو مخلوط کنید. نان رو توی مخلوط بزنید تا خیس بشه. توی تابه با کره داغ، هر طرف ۲-۳ دقیقه سرخ کنید. با عسل یا میوه سرو کنید.</p><div class="golden-box"><p>💡 بهترین نان برای تست فرانسوی، نان تست چند روزه‌ست که کمی خشک شده باشه. نان تازه زود وا میره!</p></div></div>
 
-<!-- ۴۱ --><div class="recipe-card"><h2>۴۱. 🍰 تیرامیسو</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>بیسکویت لیدی فینگر</span><span>پنیر ماسکارپونه</span><span>خامه</span><span>قهوه اسپرسو</span><span>پودر کاکائو</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>پنیر و خامه و شکر بزن</li><li>بیسکویت توی قهوه بزن</li><li>لایه‌لایه بچین</li><li>کاکائو بپاش</li><li>۶ساعت یخچال</li></ol></div></div>
+<div class="food-card"><h2>۳۹. 🍮 فرنی</h2><p><strong>مواد:</strong> شیر (۲ لیوان)، آرد برنج (۳ قاشق)، شکر (۴ قاشق)، گلاب (۲ قاشق)، پودر پسته برای تزئین</p><p><strong>طرز تهیه:</strong> آرد برنج رو توی شیر سرد حل کنید. روی شعله ملایم بذارید و مدام هم بزنید تا غلیظ بشه. شکر + گلاب رو اضافه کنید. توی ظرف بریزید و با پسته تزئین کنید.</p><div class="green-box"><p>🍮 فرنی رو توی یخچال بذارید تا خنک بشه. سردش خوشمزه‌تره!</p></div></div>
 
-<!-- ۴۲ --><div class="recipe-card"><h2>۴۲. 🧀 چیزکیک</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>بیسکویت۲۰۰گرم</span><span>کره۱۰۰گرم</span><span>پنیر خامه‌ای۴۰۰گرم</span><span>خامه</span><span>ژلاتین</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>بیسکویت پودر و با کره مخلوط</li><li>کف قالب بریز</li><li>پنیر و خامه و شکر بزن</li><li>ژلاتین اضافه</li><li>روی بیسکویت بریز</li><li>۶ساعت یخچال</li></ol></div></div>
+<div class="food-card"><h2>۴۰. 🍮 پاناکوتا</h2><p><strong>مواد:</strong> خامه صبحانه (۲ لیوان)، شیر (نصف لیوان)، شکر (نصف پیمانه)، ژلاتین (۲ قاشق چای‌خوری)، وانیل</p><p><strong>طرز تهیه:</strong> ژلاتین رو با ۳ قاشق آب سرد مخلوط کنید. شیر + خامه + شکر رو گرم کنید (نجوشه!). ژلاتین + وانیل رو اضافه کنید. توی قالب بریزید و ۴-۶ ساعت توی یخچال بذارید.</p><div class="blue-box"><p>🍮 پاناکوتا (Panna Cotta) یعنی "خامه پخته" به زبان ایتالیایی. یه دسر شیک و فوق‌العاده آسون!</p></div></div>
 
-<!-- ۴۳ --><div class="recipe-card"><h2>۴۳. 🍫 موس شکلات</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>شکلات تلخ۲۰۰گرم</span><span>خامه۲لیوان</span><span>تخم‌مرغ۲عدد</span><span>شکر</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>شکلات ذوب کن</li><li>زرده تخم‌مرغ بزن</li><li>خامه فرم بگیر</li><li>همه مخلوط</li><li>۴ساعت یخچال</li></ol></div></div>
+<div class="food-card"><h2>۴۱. 🍰 تیرامیسو</h2><p><strong>مواد:</strong> بیسکویت لیدی فینگر (۲۰۰ گرم)، پنیر ماسکارپونه (۲۵۰ گرم)، خامه (۲۰۰ گرم)، شکر (نصف پیمانه)، قهوه اسپرسو (۱ لیوان)، پودر کاکائو</p><p><strong>طرز تهیه:</strong> خامه + شکر رو بزنید تا فرم بگیره. پنیر ماسکارپونه رو اضافه کنید و هم بزنید. بیسکویت‌ها رو سریع توی قهوه سرد بزنید و کف ظرف بچینید. لایه پنیر بدید و تکرار کنید. ۶ ساعت توی یخچال بذارید. موقع سرو کاکائو بپاشید.</p><div class="golden-box"><p>💡 بیسکویت رو فقط ۱ ثانیه توی قهوه بزنید! اگه زیاد خیس بشه، تیرامیسو شل میشه و وا میره.</p></div></div>
 
-<!-- ۴۴ --><div class="recipe-card"><h2>۴۴. 🍮 کرم بروله</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>خامه۲لیوان</span><span>زرده تخم‌مرغ۴عدد</span><span>شکر</span><span>وانیل</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>خامه گرم کن</li><li>زرده و شکر بزن</li><li>مخلوط و توی قالب</li><li>توی فر بپز</li><li>شکر بپاش و کاراملی کن</li></ol></div></div>
+<div class="food-card"><h2>۴۲. 🍰 چیزکیک</h2><p><strong>مواد پایه:</strong> بیسکویت پتی بور (۲۰۰ گرم)، کره (۱۰۰ گرم). <strong>مواد میانی:</strong> پنیر خامه‌ای (۴۰۰ گرم)، خامه (۲۰۰ گرم)، شکر (۱ پیمانه)، تخم مرغ (۳ عدد)، وانیل، آب لیمو</p><p><strong>طرز تهیه:</strong> بیسکویت رو پودر کنید و با کره آب‌شده مخلوط کنید. کف قالب کمربندی بریزید و فشار بدید. مواد میانی رو بزنید و روی پایه بریزید. توی فر ۱۶۰ درجه ۵۰-۶۰ دقیقه بپزید. بذارید سرد بشه بعد ۴ ساعت توی یخچال بذارید.</p><div class="red-box"><p>⚠️ چیزکیک بعد از پخت باید کمی بلرزه! این یعنی آماده‌ست. اگه کاملاً سفت بشه، یعنی زیادی پخته و خشک میشه.</p></div></div>
 
-<!-- ۴۵ --><div class="recipe-card"><h2>۴۵. 🍩 دونات</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>آرد۳لیوان</span><span>شیر۱لیوان</span><span>تخم‌مرغ</span><span>کره</span><span>خمیر مایه</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>خمیر درست کن</li><li>۱ساعت استراحت</li><li>پهن کن و حلقه بزن</li><li>توی روغن سرخ کن</li><li>توی شکر بغلطون</li></ol></div></div>
+<div class="food-card"><h2>۴۳. 🍫 موس شکلات</h2><p><strong>مواد:</strong> شکلات تلخ (۲۰۰ گرم)، کره (۵۰ گرم)، تخم مرغ (۳ عدد، زرده و سفیده جدا)، شکر (۳ قاشق)، خامه (۱۰۰ گرم)</p><p><strong>طرز تهیه:</strong> شکلات + کره رو ذوب کنید. زرده تخم مرغ رو اضافه کنید. سفیده رو با شکر بزنید تا فرم بگیره. خامه رو جدا بزنید. همه رو آروم مخلوط کنید. ۴ ساعت توی یخچال بذارید.</p><div class="golden-box"><p>💡 راز موس شکلات سبک و پف‌دار: سفیده تخم مرغ رو آروم و با لیسک مخلوط کنید، نه با همزن!</p></div></div>
 
-<!-- ۴۶ --><div class="recipe-card"><h2>۴۶. 🍪 شیرینی نخودچی</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>آرد نخودچی۲لیوان</span><span>روغن جامد۱لیوان</span><span>پودر قند۱لیوان</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>همه مواد مخلوط</li><li>ورز بده</li><li>قالب بزن</li><li>فر ۱۸۰ درجه ۱۵دقیقه</li></ol></div></div>
+<div class="food-card"><h2>۴۴. 🍮 کرم بروله</h2><p><strong>مواد:</strong> خامه (۲ لیوان)، زرده تخم مرغ (۴ عدد)، شکر (نصف پیمانه + ۴ قاشق برای رویه)، وانیل</p><p><strong>طرز تهیه:</strong> خامه رو گرم کنید (نجوشه). زرده + شکر رو بزنید. خامه داغ رو آروم به زرده اضافه کنید. توی ظرف‌های کوچک بریزید و توی فر با بخار آب ۴۰ دقیقه بپزید. بعد از سرد شدن، روش شکر بپاشید و با شعله مستقیم کاراملیزه کنید.</p><div class="blue-box"><p>🍮 کرم بروله (Crème Brûlée) یه دسر فرانسوی شیکه که معنیش "خامه سوخته" هست!</p></div></div>
 
-<!-- ۴۷ --><div class="recipe-card"><h2>۴۷. 🧁 کاپ کیک</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>آرد۲لیوان</span><span>شکر۱لیوان</span><span>کره۱۵۰گرم</span><span>تخم‌مرغ۲عدد</span><span>شیر</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>کره و شکر بزن</li><li>تخم‌مرغ اضافه</li><li>آرد و شیر مخلوط</li><li>توی قالب بریز</li><li>فر ۱۸۰ درجه ۲۰دقیقه</li></ol></div></div>
+<div class="food-card"><h2>۴۵. 🍩 دونات</h2><p><strong>مواد:</strong> آرد (۳ پیمانه)، شیر گرم (۱ پیمانه)، خمیر مایه (۱ قاشق)، شکر (۳ قاشق)، تخم مرغ (۱ عدد)، کره (۵۰ گرم)، نمک، روغن برای سرخ کردن</p><p><strong>طرز تهیه:</strong> خمیر مایه + شیر گرم + شکر رو ۱۰ دقیقه بذارید. با بقیه مواد مخلوط و ورز بدید. ۱ ساعت بذارید ورم بیاد. خمیر رو باز کنید و با لیوان گرد ببرید. وسطش رو با در بطری سوراخ کنید. ۱ ساعت دیگه استراحت بدید. توی روغن داغ سرخ کنید.</p><div class="golden-box"><p>💡 دونات رو توی روغن با حرارت متوسط سرخ کنید. اگه روغن خیلی داغ باشه، بیرون می‌سوزه و داخلش خمیر می‌مونه!</p></div></div>
 
-<!-- ۴۸ --><div class="recipe-card"><h2>۴۸. 🍹 اسموتی</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>موز۲عدد</span><span>شیر۱لیوان</span><span>عسل</span><span>یخ</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>همه مواد توی مخلوط کن</li><li>میکس کن تا یکدست</li><li>توی لیوان بریز</li></ol></div></div>
+<div class="food-card"><h2>۴۶. 🍪 شیرینی نخودچی</h2><p><strong>مواد:</strong> آرد نخودچی (۲ پیمانه)، پودر قند (۱ پیمانه)، روغن جامد یا کره (۱ پیمانه)، پودر هل (۱ قاشق چای‌خوری)</p><p><strong>طرز تهیه:</strong> روغن رو با همزن بزنید تا کرمی بشه. پودر قند + هل رو اضافه کنید. آرد نخودچی رو کمکم اضافه کنید و با دست ورز بدید. خمیر رو ۳۰ دقیقه استراحت بدید. قالب بزنید و توی فر ۱۶۰ درجه ۱۵-۲۰ دقیقه بپزید.</p><div class="green-box"><p>🍪 شیرینی نخودچی یکی از شیرینی‌های سنتی ایرانیه که مخصوص عید نوروزه. آرد نخودچی رو از فروشگاه‌های معتبر بخرید.</p></div></div>
 
-<!-- ۴۹ --><div class="recipe-card"><h2>۴۹. 🍹 شربت</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>شکر۲لیوان</span><span>آب۲لیوان</span><span>لیمو</span><span>نعنا</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>شکر و آب بجوشون</li><li>لیمو اضافه کن</li><li>خنک کن</li><li>با یخ و نعنا سرو</li></ol></div></div>
+<div class="food-card"><h2>۴۷. 🧁 کاپ کیک</h2><p><strong>مواد:</strong> آرد (۱.۵ پیمانه)، شکر (۱ پیمانه)، کره (۱۰۰ گرم)، تخم مرغ (۲ عدد)، شیر (نصف پیمانه)، بیکینگ پودر (۱.۵ قاشق چای‌خوری)، وانیل</p><p><strong>طرز تهیه:</strong> کره + شکر رو بزنید. تخم مرغ + وانیل رو اضافه کنید. آرد + بیکینگ پودر + شیر رو یک‌درمیون اضافه کنید. توی قالب مافین بریزید و ۱۸۰ درجه ۱۸-۲۰ دقیقه بپزید. بعد از سرد شدن با خامه یا کرم تزئین کنید.</p><div class="golden-box"><p>💡 قالب کاپ کیک رو تا ۲/۳ پر کنید. اگه تا آخر پر کنید، سرریز میشه و شکل قشنگی نداره!</p></div></div>
 
-<!-- ۵۰ --><div class="recipe-card"><h2>۵۰. 🍹 میلک شیک</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>شیر۲لیوان</span><span>بستنی وانیلی</span><span>شکلات</span><span>موز</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>همه مواد توی مخلوط کن</li><li>میکس کن</li><li>توی لیوان بریز</li><li>با خامه تزئین</li></ol></div></div>
+<div class="food-card"><h2>۴۸. 🥤 اسموتی</h2><p><strong>مواد:</strong> موز (۱ عدد)، توت‌فرنگی (۱ پیمانه)، ماست (نصف پیمانه)، شیر (نصف پیمانه)، عسل (۱ قاشق)</p><p><strong>طرز تهیه:</strong> همه مواد رو توی مخلوط‌کن بریزید و ۳۰ ثانیه میکس کنید. اگه خیلی غلیظ بود، کمی شیر اضافه کنید. فوری سرو کنید.</p><div class="green-box"><p>🥤 اسموتی یه نوشیدنی سالم و مقویه. می‌تونید از هر میوه‌ای که دوست دارید استفاده کنید. موز یخ‌زده اسموتی رو خامه‌ای‌تر می‌کنه!</p></div></div>
 
-<!-- ۵۱ --><div class="recipe-card"><h2>۵۱. 🥮 سمبوسه</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>آرد۲لیوان</span><span>سیب‌زمینی</span><span>پیاز</span><span>فلفل</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>خمیر درست کن</li><li>سیب‌زمینی و پیاز مخلوط</li><li>توی خمیر بپیچ</li><li>توی روغن سرخ کن</li></ol></div></div>
+<div class="food-card"><h2>۴۹. 🍹 شربت</h2><p><strong>مواد:</strong> شکر (۱ پیمانه)، آب (۱ پیمانه)، آب لیمو (نصف پیمانه)، گلاب (۲ قاشق)، نعنا تازه</p><p><strong>طرز تهیه:</strong> شکر + آب رو بجوشونید تا شکر حل بشه. بذارید خنک بشه. آب لیمو + گلاب رو اضافه کنید. توی پارچ با یخ و برگ نعنا سرو کنید.</p><div class="blue-box"><p>🍹 این شربت پایه‌ست. می‌تونید به جاش از زعفران، آلبالو، آلوچه یا هر طعم دیگه‌ای استفاده کنید.</p></div></div>
 
-<!-- ۵۲ --><div class="recipe-card"><h2>۵۲. 🍢 کباب تابستانی</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>مرغ</span><span>فلفل دلمه</span><span>قارچ</span><span>گوجه</span><span>زعفران</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>همه رو تکه‌ای خرد کن</li><li>مزه‌دار کن</li><li>به سیخ بکش</li><li>روی ذغال کباب کن</li></ol></div></div>
+<div class="food-card"><h2>۵۰. 🥤 میلک شیک</h2><p><strong>مواد:</strong> بستنی وانیلی (۳ اسکوپ)، شیر سرد (۱ لیوان)، شکلات یا کارامل (۲ قاشق)، خامه برای تزئین</p><p><strong>طرز تهیه:</strong> همه مواد رو توی مخلوط‌کن بریزید و ۲۰ ثانیه میکس کنید. توی لیوان بلند بریزید و با خامه زده‌شده تزئین کنید.</p><div class="golden-box"><p>💡 شیر و لیوان رو از قبل توی فریزر بذارید تا خیلی سرد باشه. میلک شیک گرم افتضاحه!</p></div></div>
 
-<!-- ۵۳ --><div class="recipe-card"><h2>۵۳. 🥘 عدسی</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>عدس۲پیمانه</span><span>سیب‌زمینی</span><span>پیاز</span><span>رب</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>عدس بپز</li><li>پیاز سرخ کن</li><li>سیب‌زمینی اضافه</li><li>رب و ادویه بزن</li></ol></div></div>
+<div class="food-card"><h2>۵۱. 🥟 سمبوسه</h2><p><strong>مواد:</strong> نان سمبوسه یا خمیر یوفکا، سیب‌زمینی پخته (۳ عدد)، پیاز (۱ عدد)، نخود فرنگی (نصف پیمانه)، ادویه کاری، نمک، فلفل، روغن</p><p><strong>طرز تهیه:</strong> سیب‌زمینی رو له کنید. پیاز داغ + نخود + ادویه رو اضافه کنید. مواد رو وسط نان بذارید و مثلثی بپیچید. توی روغن داغ سرخ کنید.</p><div class="green-box"><p>🥟 سمبوسه یه غذای خیابونی محبوب در هند و پاکستانه. می‌تونید با گوشت چرخ‌کرده هم درست کنید.</p></div></div>
 
-<!-- ۵۴ --><div class="recipe-card"><h2>۵۴. 🥘 خوراک لوبیا</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>لوبیا چیتی۲پیمانه</span><span>سیب‌زمینی</span><span>پیاز</span><span>رب</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>لوبیا خیس و بپز</li><li>پیاز سرخ کن</li><li>سیب‌زمینی اضافه</li><li>رب و ادویه بزن</li></ol></div></div>
+<div class="food-card"><h2>۵۲. 🥘 عدسی</h2><p><strong>مواد:</strong> عدس (۱ پیمانه)، سیب‌زمینی (۱ عدد)، پیاز (۱ عدد)، رب گوجه (۱ قاشق)، نمک، فلفل، زردچوبه</p><p><strong>طرز تهیه:</strong> عدس رو با ۳ لیوان آب بپزید. پیاز داغ + رب + زردچوبه رو اضافه کنید. سیب‌زمینی نگینی خرد شده رو اضافه کنید و ۲۰ دقیقه دیگه بپزید.</p><div class="blue-box"><p>🥘 عدسی یه صبحانه گرم، مقوی و ارزونه. با پیاز داغ و فلفل سیاه سرو کنید.</p></div></div>
 
-<!-- ۵۵ --><div class="recipe-card"><h2>۵۵. 🍛 قیمه بادمجان</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>گوشت۳۰۰گرم</span><span>لپه</span><span>بادمجان</span><span>رب</span><span>لیمو عمانی</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>مثل قیمه بپز</li><li>بادمجان سرخ کن</li><li>روی قیمه بذار</li><li>۳۰دقیقه دم کن</li></ol></div></div>
+<div class="food-card"><h2>۵۳. 🥘 خوراک لوبیا</h2><p><strong>مواد:</strong> لوبیا چیتی (۲ پیمانه)، پیاز (۲ عدد)، رب گوجه (۲ قاشق)، سیر (۳ حبه)، نمک، فلفل، زردچوبه</p><p><strong>طرز تهیه:</strong> لوبیا رو از شب قبل خیس کنید و بپزید. پیاز + سیر + رب رو تفت بدید و به لوبیا اضافه کنید. ۳۰ دقیقه بجوشه تا جا بیفته.</p><div class="green-box"><p>🥘 خوراک لوبیا رو با نان تازه و سبزی خوردن سرو کنید. یه غذای ساده و فوق‌العاده خوشمزه!</p></div></div>
 
-<!-- ۵۶ --><div class="recipe-card"><h2>۵۶. 🍲 آبگوشت</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>گوشت۳۰۰گرم</span><span>نخود</span><span>لوبیا</span><span>سیب‌زمینی</span><span>گوجه</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>حبوبات خیس کن</li><li>همه مواد توی قابلمه</li><li>۳ساعت بپز</li><li>گوشت رو بکوب</li></ol></div></div>
+<div class="food-card"><h2>۵۴. 🍲 قیمه بادمجان</h2><p><strong>مواد:</strong> گوشت (۳۰۰ گرم)، لپه (نصف پیمانه)، بادمجان (۳ عدد)، پیاز، رب گوجه، لیمو عمانی، ادویه</p><p><strong>طرز تهیه:</strong> مثل قیمه معمولی، ولی بادمجان سرخ‌شده رو ۳۰ دقیقه آخر اضافه کنید. بادمجان رو مثل خورش بادمجان سرخ کنید و روی خورشت بچینید.</p><div class="golden-box"><p>💡 قیمه بادمجون ترکیبی از قیمه و خورش بادمجانه! بهترین هردو دنیا!</p></div></div>
 
-<!-- ۵۷ --><div class="recipe-card"><h2>۵۷. 🥗 تبوله</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>بلغور</span><span>جعفری</span><span>گوجه</span><span>پیاز</span><span>لیمو</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>بلغور خیس کن</li><li>سبزیجات خرد کن</li><li>همه مخلوط</li><li>لیمو و روغن زیتون بریز</li></ol></div></div>
+<div class="food-card"><h2>۵۵. 🍲 آبگوشت</h2><p><strong>مواد:</strong> گوشت گوسفند با استخوان (۵۰۰ گرم)، نخود و لوبیا سفید (هرکدام نصف پیمانه)، سیب‌زمینی (۳ عدد)، گوجه (۳ عدد)، پیاز (۲ عدد)، رب گوجه (۲ قاشق)، لیمو عمانی، ادویه</p><p><strong>طرز تهیه:</strong> حبوبات رو از شب قبل خیس کنید. همه مواد رو با ۶ لیوان آب بپزید. ۳-۴ ساعت بجوشه تا جا بیفته. آبگوشت رو صاف کنید و با نان ترید کنید. گوشت و حبوبات رو جدا با پیاز و ترشی سرو کنید (گوشت کوبیده).</p><div class="golden-box"><p>💡 آبگوشت هرچی بیشتر بجوشه خوشمزه‌تر میشه! ۴-۵ ساعت بهترین زمان پخته.</p></div></div>
 
-<!-- ۵۸ --><div class="recipe-card"><h2>۵۸. 🥗 فتوش</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>نان پیتا</span><span>کاهو</span><span>گوجه</span><span>خیار</span><span>لیمو</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>نان رو سرخ کن</li><li>سبزیجات خرد کن</li><li>همه مخلوط</li><li>لیمو و روغن زیتون</li></ol></div></div>
+<div class="food-card"><h2>۵۶. 🥗 تبوله</h2><p><strong>مواد:</strong> بلغور گندم (۱ پیمانه)، جعفری ریز خرد شده (۲ پیمانه)، گوجه نگینی (۲ عدد)، پیازچه (۳ عدد)، نعنا تازه، آب لیمو، روغن زیتون، نمک</p><p><strong>طرز تهیه:</strong> بلغور رو ۲۰ دقیقه توی آب گرم خیس کنید و آبکش کنید. همه مواد رو مخلوط کنید و با آب لیمو و روغن زیتون سرو کنید.</p><div class="green-box"><p>🥗 تبوله (Tabbouleh) یه سالاد لبنانیه که سرشار از سبزی و فیبره. برای کاهش وزن عالیه!</p></div></div>
 
-<!-- ۵۹ --><div class="recipe-card"><h2>۵۹. 🥮 قطاب</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>آرد۲لیوان</span><span>گردو</span><span>شکر</span><span>هل</span><span>پودر قند</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>خمیر درست کن</li><li>گردو و شکر مخلوط</li><li>توی خمیر بپیچ</li><li>سرخ کن</li><li>توی پودر قند بغلطون</li></ol></div></div>
+<div class="food-card"><h2>۵۷. 🥗 فتوش</h2><p><strong>مواد:</strong> نان پیتا یا لواش (۲ عدد)، خیار (۲ عدد)، گوجه (۲ عدد)، کاهو، تربچه، جعفری، نعنا، آب لیمو، روغن زیتون، سماق</p><p><strong>طرز تهیه:</strong> نان رو تکه‌تکه کنید و توی فر یا تابه برشته کنید. سبزیجات رو خرد کنید و با نان برشته مخلوط کنید. سس لیمو + روغن زیتون + سماق رو بریزید.</p><div class="blue-box"><p>🥗 فتوش (Fattoush) یه سالاد لبنانی-سوریه‌ای با نان برشته‌ست. خیلی خوشمزه و تابستانیه!</p></div></div>
 
-<!-- ۶۰ --><div class="recipe-card"><h2>۶۰. 🍪 باقلوا</h2><div class="section"><h3>🥩 مواد</h3><div class="ingredients-grid"><span>خمیر یوفکا</span><span>گردو</span><span>پسته</span><span>کره</span><span>شکر،گلاب</span></div></div><div class="section"><h3>🍳 طرز تهیه</h3><ol class="steps"><li>خمیر لایه‌لایه و کره بزن</li><li>گردو بریز</li><li>برش بزن</li><li>فر بپز</li><li>شربت گلاب بریز روش</li></ol></div></div>
+<div class="food-card"><h2>۵۸. 🍪 قطاب</h2><p><strong>مواد خمیر:</strong> آرد (۲ پیمانه)، کره (۱۰۰ گرم)، ماست (نصف پیمانه)، بیکینگ پودر. <strong>مواد میانی:</strong> پودر بادام (۱ پیمانه)، پودر قند (نصف پیمانه)، هل</p><p><strong>طرز تهیه:</strong> خمیر رو درست کنید و نیم ساعت استراحت بدید. باز کنید و دایره ببرید. مواد میانی رو بذارید و ببندید. توی روغن داغ سرخ کنید و توی پودر قند بغلتونید.</p><div class="golden-box"><p>💡 قطاب رو حتماً بعد از سرخ کردن توی پودر قند بغلتونید تا شیرین بشه. قطاب مخصوص شهر یزده!</p></div></div>
 
-    <p style="text-align:center;margin:20px 0">
-        <a href="foods-1.html" style="color:#ffd700">← ۳۰ تای اول</a> | 
-        <a href="foods-3.html" style="color:#ffd700">۳۰ تای بعدی →</a>
-    </p>
-    <p style="text-align:center"><a href="index.html" style="color:#ffd700">🔙 خانه</a></p>
+<div class="food-card"><h2>۵۹. 🍪 باقلوا</h2><p><strong>مواد:</strong> خمیر فیلو (۱ بسته)، گردو یا پسته پودر شده (۲ پیمانه)، کره (۲۰۰ گرم)، شکر (۱ پیمانه)، آب (نصف پیمانه)، گلاب، عسل</p><p><strong>طرز تهیه:</strong> لایه‌لایه خمیر فیلو رو با کره چرب کنید و گردو بپاشید. ۱۰-۱۲ لایه بچینید. به صورت لوزی ببرید و ۱۸۰ درجه ۳۰-۳۵ دقیقه بپزید. شربت (شکر + آب + گلاب) رو بعد از پخت روی باکلوا بریزید.</p><div class="golden-box"><p>💡 شربت باید سرد باشه و باقلوا داغ! اگه هردو داغ باشن یا هردو سرد، باقلوا خمیر میشه. این راز اصلی باقلوا ترد و خوشمزه‌ست!</p></div></div>
+
+<div class="food-card"><h2>۶۰. 🍚 شیربرنج</h2><p><strong>مواد:</strong> برنج (۱ پیمانه)، شیر (۴ لیوان)، شکر (۱ پیمانه)، گلاب (۳ قاشق)، خامه (۲ قاشق)، پودر پسته و دارچین</p><p><strong>طرز تهیه:</strong> برنج رو از شب قبل خیس کنید. با ۲ لیوان آب نیم‌پز کنید. شیر رو اضافه کنید و روی شعله ملایم ۱ ساعت هم بزنید تا برنج کاملاً نرم و کشدار بشه. شکر + گلاب + خامه رو اضافه کنید. توی ظرف بریزید و با پسته و دارچین تزئین کنید.</p><div class="green-box"><p>🍚 شیربرنج یکی از دسرهای سنتی و محبوب ایرانه. می‌تونید گرم یا سرد سرو کنید. شیربرنج سرد با یخ خیلی خوشمزه‌ست!</p></div></div>
+
+<a href="index.html" class="back-btn">🔙 بازگشت به خانه</a>
+<a href="foods_1.html" class="back-btn">🍲 ۳۰ غذای اول ←</a>
+<a href="foods_3html" class="back-btn">🍝 ۳۰ غذای بعدی ←</a>
+
+<div class="footer">
+    <p>🌟 rahilanab.com | <a href="index.html">🏠 خانه</a> | <a href="foods_1.html">🍲 ۱-۳۰</a> | <a href="foods_3html">🍝 ۶۱-۹۰</a></p>
+</div>
+
 </body>
 </html>
