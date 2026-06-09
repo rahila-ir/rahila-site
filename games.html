@@ -3,194 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🎮 بازی‌های رهیلا | ۲۰۰+ بازی رایگان</title>
+    <title>🎮 ۲۰ بازی آنلاین | رهیلا</title>
     <style>
         *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:Arial;background:radial-gradient(circle at center,#0a1a1a,#1a4a4a,#66ccaa);color:#fff;text-align:center;padding:15px;min-height:100vh}
-        .header{background:rgba(255,255,255,.08);backdrop-filter:blur(20px);border-radius:25px;padding:20px;margin-bottom:15px}
-        .header h1{color:#ffd700;font-size:24px}
-        .header p{color:#aaa;font-size:13px;margin-top:8px}
-        .back-btn{display:inline-block;background:rgba(255,255,255,.15);color:#fff;padding:8px 20px;border-radius:20px;text-decoration:none;margin-bottom:15px;font-size:14px}
-        .category-title{color:#ffd700;font-size:18px;margin:20px 0 10px;text-align:right}
-        .game-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:10px}
-        .game-card{background:rgba(255,255,255,.05);backdrop-filter:blur(10px);border-radius:15px;padding:15px 8px;cursor:pointer;border:1px solid rgba(255,255,255,.1);transition:.3s;text-align:center;text-decoration:none;color:#fff}
-        .game-card:active{transform:scale(.95);background:rgba(255,215,0,.2)}
-        .game-card .emoji{font-size:28px}
-        .game-card h3{font-size:10px;margin-top:5px;color:#fff}
-        .footer{background:rgba(0,0,0,.5);padding:20px;margin-top:30px;border-radius:20px}
-        .footer p{color:#aaa;font-size:11px}
+        body{font-family:'Arial';background:linear-gradient(135deg,#e3f2fd,#bbdefb,#90caf9,#a5d6a7);color:#111;padding:15px;min-height:100vh;text-align:center}
+        .header{background:#fff;border-radius:20px;padding:18px;margin-bottom:15px;box-shadow:0 4px 15px rgba(0,0,0,.1)}
+        .header h1{color:#0d47a1;font-size:22px}
+        .back-btn{display:inline-block;background:#0d47a1;color:#fff;padding:10px 25px;border-radius:20px;text-decoration:none;margin:10px 0}
+        .game-zone{background:#fff;border-radius:20px;padding:20px;margin:15px 0;box-shadow:0 2px 10px rgba(0,0,0,.08)}
+        .game-zone h2{color:#0d47a1;margin-bottom:10px}
+        input{padding:10px;font-size:18px;width:120px;text-align:center;border-radius:8px;border:2px solid #0d47a1;margin:5px}
+        button{padding:10px 20px;font-size:15px;background:#0d47a1;color:#fff;border:none;border-radius:8px;cursor:pointer;margin:3px}
+        button:active{background:#1565c0}
+        .result{font-size:18px;color:#0d47a1;font-weight:bold;margin:8px 0}
+        canvas{background:#f0f0f0;border-radius:10px;margin:10px auto;display:block}
     </style>
 </head>
 <body>
+    <div class="header"><h1>🎮 ۲۰ بازی آنلاین</h1><p>همه بازی‌ها فعال و رایگان | rahilanab.com</p></div>
+    <a href="index.html" class="back-btn">🔙 خانه</a>
 
-    <div class="header">
-        <h1>🎮 بازی‌های رهیلا</h1>
-        <p>۲۰۰+ بازی رایگان و آنلاین - بدون نیاز به نصب!</p>
-    </div>
+<!-- ۱. حدس عدد --><div class="game-zone"><h2>۱. 🎯 حدس عدد</h2><p>یه عدد بین ۱ تا ۱۰۰ حدس بزن</p><input id="g1in" type="number" placeholder="عدد"><br><button onclick="g1check()">حدس بزن</button><p class="result" id="g1r"></p><p id="g1t"></p></div>
 
-    <a href="index.html" class="back-btn">🔙 برگشت به خانه</a>
+<!-- ۲. سنگ کاغذ قیچی --><div class="game-zone"><h2>۲. ✂️ سنگ کاغذ قیچی</h2><button onclick="rps('✊')">✊</button><button onclick="rps('✋')">✋</button><button onclick="rps('✌️')">✌️</button><p class="result" id="rpsR"></p></div>
 
-    <!-- عددی -->
-    <div class="category-title">🎯 بازی‌های عددی</div>
-    <div class="game-grid">
-        <div class="game-card"><div class="emoji">🎯</div><h3>حدس عدد</h3></div>
-        <div class="game-card"><div class="emoji">🔢</div><h3>ریاضی سریع</h3></div>
-        <div class="game-card"><div class="emoji">🔢</div><h3>شمارش اعداد</h3></div>
-        <div class="game-card"><div class="emoji">🧮</div><h3>محاسبه سریع</h3></div>
-        <div class="game-card"><div class="emoji">✖️</div><h3>جدول ضرب</h3></div>
-    </div>
+<!-- ۳. سرعت کلیک --><div class="game-zone"><h2>۳. ⚡ سرعت کلیک</h2><p style="font-size:35px" id="clkT">10</p><button onclick="clkTap()" style="padding:20px 40px;font-size:20px">کلیک کن!</button><p class="result" id="clkR"></p></div>
 
-    <!-- سرعتی -->
-    <div class="category-title">⚡ بازی‌های سرعتی</div>
-    <div class="game-grid">
-        <div class="game-card"><div class="emoji">⚡</div><h3>سرعت کلیک</h3></div>
-        <div class="game-card"><div class="emoji">💨</div><h3>واکنش سریع</h3></div>
-        <div class="game-card"><div class="emoji">⏱️</div><h3>تایمر چالشی</h3></div>
-        <div class="game-card"><div class="emoji">⌨️</div><h3>سرعت تایپ</h3></div>
-    </div>
+<!-- ۴. ریاضی سریع --><div class="game-zone"><h2>۴. 🔢 ریاضی سریع</h2><p style="font-size:28px" id="mQ"></p><input id="mIn" type="number" placeholder="جواب"><button onclick="mCheck()">جواب</button><p class="result" id="mR"></p></div>
 
-    <!-- فکری -->
-    <div class="category-title">🧠 بازی‌های فکری</div>
-    <div class="game-grid">
-        <div class="game-card"><div class="emoji">🧮</div><h3>سودوکو</h3></div>
-        <div class="game-card"><div class="emoji">🧩</div><h3>پازل ۱۵</h3></div>
-        <div class="game-card"><div class="emoji">🔤</div><h3>جدول کلمات</h3></div>
-        <div class="game-card"><div class="emoji">🌀</div><h3>ماز (هزارتو)</h3></div>
-        <div class="game-card"><div class="emoji">🧊</div><h3>روبیک</h3></div>
-        <div class="game-card"><div class="emoji">🪨</div><h3>دومینو</h3></div>
-        <div class="game-card"><div class="emoji">💣</div><h3>مین‌یاب</h3></div>
-    </div>
+<!-- ۵. حافظه رنگ --><div class="game-zone"><h2>۵. 🧠 حافظه رنگ</h2><div id="cBox" style="width:60px;height:60px;border-radius:10px;background:gray;margin:8px auto"></div><div id="cBtns"></div><button onclick="memStart()">شروع</button><p class="result" id="memR"></p></div>
 
-    <!-- کارتی -->
-    <div class="category-title">🃏 بازی‌های کارتی</div>
-    <div class="game-grid">
-        <div class="game-card"><div class="emoji">🃏</div><h3>حافظه کارت</h3></div>
-        <div class="game-card"><div class="emoji">🂡</div><h3>پوکر</h3></div>
-        <div class="game-card"><div class="emoji">🂦</div><h3>بلک جک</h3></div>
-        <div class="game-card"><div class="emoji">🃄</div><h3>حکم</h3></div>
-        <div class="game-card"><div class="emoji">🃒</div><h3>پاسور</h3></div>
-    </div>
+<!-- ۶. شیر یا خط --><div class="game-zone"><h2>۶. 🪙 شیر یا خط</h2><button onclick="coin()">پرتاب سکه</button><p class="result" id="coinR"></p></div>
 
-    <!-- شانسی -->
-    <div class="category-title">🎲 بازی‌های شانسی</div>
-    <div class="game-grid">
-        <div class="game-card"><div class="emoji">🎲</div><h3>تاس</h3></div>
-        <div class="game-card"><div class="emoji">🪙</div><h3>شیر یا خط</h3></div>
-        <div class="game-card"><div class="emoji">🎰</div><h3>گردونه شانس</h3></div>
-        <div class="game-card"><div class="emoji">🎯</div><h3>قرعه‌کشی</h3></div>
-        <div class="game-card"><div class="emoji">✊</div><h3>گل یا پوچ</h3></div>
-    </div>
+<!-- ۷. تاس --><div class="game-zone"><h2>۷. 🎲 تاس</h2><button onclick="dice()">بنداز</button><p class="result" id="diceR" style="font-size:50px"></p></div>
 
-    <!-- کلاسیک -->
-    <div class="category-title">🐍 بازی‌های کلاسیک</div>
-    <div class="game-grid">
-        <div class="game-card"><div class="emoji">🐍</div><h3>مار</h3></div>
-        <div class="game-card"><div class="emoji">🧩</div><h3>تتریس</h3></div>
-        <div class="game-card"><div class="emoji">🐦</div><h3>فلپی برد</h3></div>
-        <div class="game-card"><div class="emoji">🟡</div><h3>پک‌من</h3></div>
-        <div class="game-card"><div class="emoji">🦖</div><h3>دایناسور</h3></div>
-        <div class="game-card"><div class="emoji">🏓</div><h3>پینگ پنگ</h3></div>
-    </div>
+<!-- ۸. گل یا پوچ --><div class="game-zone"><h2>۸. ✊ گل یا پوچ</h2><button onclick="gol('گل')">🌸 گل</button><button onclick="gol('پوچ')">💨 پوچ</button><p class="result" id="golR"></p></div>
 
-    <!-- دقت -->
-    <div class="category-title">🎯 بازی‌های دقت</div>
-    <div class="game-grid">
-        <div class="game-card"><div class="emoji">🎯</div><h3>هدف‌گیری</h3></div>
-        <div class="game-card"><div class="emoji">🔫</div><h3>تیراندازی</h3></div>
-        <div class="game-card"><div class="emoji">🎯</div><h3>دارت</h3></div>
-        <div class="game-card"><div class="emoji">🏹</div><h3>تیروکمان</h3></div>
-        <div class="game-card"><div class="emoji">⭕</div><h3>پرتاب حلقه</h3></div>
-        <div class="game-card"><div class="emoji">🎳</div><h3>بولینگ</h3></div>
-    </div>
+<!-- ۹. دوز XO --><div class="game-zone"><h2>۹. ⭕❌ دوز</h2><div id="xoB" style="display:grid;grid-template-columns:repeat(3,60px);gap:5px;justify-content:center;margin:10px"></div><p class="result" id="xoR"></p><button onclick="xoReset()">بازی جدید</button></div>
 
-    <!-- دو نفره -->
-    <div class="category-title">⭕ بازی‌های دو نفره</div>
-    <div class="game-grid">
-        <div class="game-card"><div class="emoji">⭕</div><h3>دوز (XO)</h3></div>
-        <div class="game-card"><div class="emoji">🎲</div><h3>منچ</h3></div>
-        <div class="game-card"><div class="emoji">🐍</div><h3>مارپله</h3></div>
-        <div class="game-card"><div class="emoji">🎯</div><h3>تخته نرد</h3></div>
-        <div class="game-card"><div class="emoji">♟️</div><h3>شطرنج</h3></div>
-        <div class="game-card"><div class="emoji">🎱</div><h3>بیلیارد</h3></div>
-    </div>
+<!-- ۱۰. مار --><div class="game-zone"><h2>۱۰. 🐍 مار</h2><canvas id="snakeC" width="280" height="280"></canvas><p style="font-size:12px;color:#666">با کلیدهای جهت یا لمس بازی کن</p></div>
 
-    <!-- ورزشی -->
-    <div class="category-title">🏃 بازی‌های ورزشی</div>
-    <div class="game-grid">
-        <div class="game-card"><div class="emoji">🏀</div><h3>بسکتبال</h3></div>
-        <div class="game-card"><div class="emoji">⚽</div><h3>فوتبال</h3></div>
-        <div class="game-card"><div class="emoji">🎾</div><h3>تنیس</h3></div>
-        <div class="game-card"><div class="emoji">🏐</div><h3>والیبال</h3></div>
-        <div class="game-card"><div class="emoji">⛳</div><h3>گلف</h3></div>
-        <div class="game-card"><div class="emoji">🥊</div><h3>بوکس</h3></div>
-        <div class="game-card"><div class="emoji">🏊</div><h3>شنا</h3></div>
-    </div>
+<script>
+// ۱. حدس عدد
+let g1n=Math.floor(Math.random()*100)+1,g1c=0;
+function g1check(){let g=parseInt(document.getElementById('g1in').value);g1c++;if(g===g1n){document.getElementById('g1r').textContent='🎉 برنده!';document.getElementById('g1t').textContent='حدس: '+g1c;g1n=Math.floor(Math.random()*100)+1;g1c=0}else{document.getElementById('g1r').textContent=g<g1n?'⬆️ بالا':'⬇️ پایین'}document.getElementById('g1in').value='';}
 
-    <!-- خلاقیت -->
-    <div class="category-title">🎨 بازی‌های خلاقیت</div>
-    <div class="game-grid">
-        <div class="game-card"><div class="emoji">🎨</div><h3>رنگ‌آمیزی</h3></div>
-        <div class="game-card"><div class="emoji">✏️</div><h3>نقاشی</h3></div>
-        <div class="game-card"><div class="emoji">🖼️</div><h3>پیکسل آرت</h3></div>
-        <div class="game-card"><div class="emoji">👗</div><h3>طراحی لباس</h3></div>
-        <div class="game-card"><div class="emoji">💅</div><h3>طراحی ناخن</h3></div>
-    </div>
+// ۲. سنگ کاغذ قیچی
+function rps(u){let o=['✊','✋','✌️'],c=o[Math.floor(Math.random()*3)],r='';if(u===c)r='مساوی 🤝';else if((u==='✊'&&c==='✌️')||(u==='✋'&&c==='✊')||(u==='✌️'&&c==='✋'))r='بردی 🎉';else r='باختی 😢';document.getElementById('rpsR').textContent='تو: '+u+' | 💻: '+c+' → '+r;}
 
-    <!-- صوتی -->
-    <div class="category-title">🎵 بازی‌های صوتی</div>
-    <div class="game-grid">
-        <div class="game-card"><div class="emoji">🎵</div><h3>حدس آهنگ</h3></div>
-        <div class="game-card"><div class="emoji">🔊</div><h3>تست صدا</h3></div>
-        <div class="game-card"><div class="emoji">🎹</div><h3>پیانو</h3></div>
-        <div class="game-card"><div class="emoji">🎸</div><h3>گیتار</h3></div>
-        <div class="game-card"><div class="emoji">🥁</div><h3>درامز</h3></div>
-    </div>
+// ۳. سرعت کلیک
+let cc=0,ctl,ci;function clkTap(){if(ctl===undefined){cc=0;ctl=10;document.getElementById('clkT').textContent=10;document.getElementById('clkR').textContent='';clearInterval(ci);ci=setInterval(()=>{ctl--;document.getElementById('clkT').textContent=ctl;if(ctl<=0){clearInterval(ci);document.getElementById('clkR').textContent='🎉 '+cc+' کلیک!';ctl=undefined}},1000)}if(ctl>0)cc++;}
 
-    <!-- کلمات -->
-    <div class="category-title">🔤 بازی‌های کلمات</div>
-    <div class="game-grid">
-        <div class="game-card"><div class="emoji">🔤</div><h3>حدس کلمه</h3></div>
-        <div class="game-card"><div class="emoji">✍️</div><h3>کلمه‌سازی</h3></div>
-        <div class="game-card"><div class="emoji">📝</div><h3>املای کلمات</h3></div>
-        <div class="game-card"><div class="emoji">📋</div><h3>اسم فامیل</h3></div>
-    </div>
+// ۴. ریاضی سریع
+let ms=0,ma;function genM(){let a=Math.floor(Math.random()*50)+1,b=Math.floor(Math.random()*50)+1;ma=a+b;document.getElementById('mQ').textContent=a+'+'+b+'=؟';}genM();
+function mCheck(){if(parseInt(document.getElementById('mIn').value)===ma){ms++;document.getElementById('mR').textContent='✅ امتیاز: '+ms;genM()}document.getElementById('mIn').value='';}
 
-    <!-- حدسی -->
-    <div class="category-title">🗺️ بازی‌های حدسی</div>
-    <div class="game-grid">
-        <div class="game-card"><div class="emoji">🏳️</div><h3>حدس پرچم</h3></div>
-        <div class="game-card"><div class="emoji">🌍</div><h3>حدس شهر</h3></div>
-        <div class="game-card"><div class="emoji">🍕</div><h3>حدس غذا</h3></div>
-        <div class="game-card"><div class="emoji">🐱</div><h3>حدس حیوان</h3></div>
-        <div class="game-card"><div class="emoji">🎬</div><h3>حدس فیلم</h3></div>
-    </div>
+// ۵. حافظه رنگ
+let mseq=[],midx=0,msc=0,mp=false;let cols=['🔴','🔵','🟢','🟡'],ccodes={'🔴':'red','🔵':'blue','🟢':'green','🟡':'yellow'};
+function memStart(){mseq=[];msc=0;mp=false;addColor();}
+function addColor(){mseq.push(cols[Math.floor(Math.random()*4)]);showSeq();}
+function showSeq(){mp=false;let i=0;let iv=setInterval(()=>{if(i<mseq.length){document.getElementById('cBox').style.background=ccodes[mseq[i]];i++}else{clearInterval(iv);document.getElementById('cBox').style.background='gray';let h='';cols.forEach(c=>{h+='<button style="background:'+ccodes[c]+';margin:3px;padding:12px;font-size:18px;border:none;border-radius:8px;cursor:pointer" onclick="memClick(\''+c+'\')">'+c+'</button>'});document.getElementById('cBtns').innerHTML=h;mp=true;midx=0}},600);}
+function memClick(c){if(!mp)return;if(c===mseq[midx]){midx++;if(midx===mseq.length){msc++;document.getElementById('memR').textContent='✅ امتیاز: '+msc;addColor()}}else{document.getElementById('memR').textContent='❌ اشتباه!';mp=false;document.getElementById('cBtns').innerHTML=''}}
 
-    <!-- کودکانه -->
-    <div class="category-title">👶 بازی‌های کودکانه</div>
-    <div class="game-grid">
-        <div class="game-card"><div class="emoji">🖍️</div><h3>رنگ‌آمیزی</h3></div>
-        <div class="game-card"><div class="emoji">✂️</div><h3>کاردستی</h3></div>
-        <div class="game-card"><div class="emoji">🔤</div><h3>الفبا</h3></div>
-        <div class="game-card"><div class="emoji">🔢</div><h3>اعداد</h3></div>
-        <div class="game-card"><div class="emoji">🐶</div><h3>حیوانات</h3></div>
-        <div class="game-card"><div class="emoji">📖</div><h3>قصه</h3></div>
-    </div>
+// ۶. شیر یا خط
+function coin(){document.getElementById('coinR').textContent=Math.random()<0.5?'🪙 شیر':'💰 خط';}
 
-    <!-- جدید -->
-    <div class="category-title">🎮 بازی‌های جدید</div>
-    <div class="game-grid">
-        <div class="game-card"><div class="emoji">🚗</div><h3>ماشین‌سواری</h3></div>
-        <div class="game-card"><div class="emoji">🍳</div><h3>آشپزی</h3></div>
-        <div class="game-card"><div class="emoji">👚</div><h3>لباس‌پوشانی</h3></div>
-        <div class="game-card"><div class="emoji">🏠</div><h3>دکوراسیون</h3></div>
-        <div class="game-card"><div class="emoji">🌱</div><h3>باغبانی</h3></div>
-    </div>
+// ۷. تاس
+function dice(){document.getElementById('diceR').textContent=['⚀','⚁','⚂','⚃','⚄','⚅'][Math.floor(Math.random()*6)];}
 
-    <div class="footer">
-        <p>🌟 رهیلا - بزرگترین سایت بازی ایران</p>
-        <p>۲۰۰+ بازی رایگان | بدون نیاز به نصب | آنلاین بازی کن!</p>
-        <p>📧 mahniush.binazir@gmail.com</p>
-    </div>
+// ۸. گل یا پوچ
+function gol(u){let r=Math.random()<0.5?'گل':'پوچ';document.getElementById('golR').textContent='💻: '+r+' | '+(u===r?'🎉 بردی!':'😢 باختی');}
 
+// ۹. دوز
+let xoB=Array(9).fill(''),xoT='❌',xoG=false;
+function xoRender(){let h='';xoB.forEach((c,i)=>{h+='<div onclick="xoClick('+i+')" style="width:60px;height:60px;background:#f0f4ff;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:30px;cursor:pointer">'+c+'</div>'});document.getElementById('xoB').innerHTML=h;}
+function xoClick(i){if(xoB[i]||xoG)return;xoB[i]=xoT;xoRender();let w=[[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];if(w.some(c=>c.every(j=>xoB[j]===xoT))){document.getElementById('xoR').textContent=xoT+' برنده! 🎉';xoG=true}else if(!xoB.includes('')){document.getElementById('xoR').textContent='مساوی 🤝';xoG=true}else{xoT=xoT==='❌'?'⭕':'❌'}}
+function xoReset(){xoB=Array(9).fill('');xoT='❌';xoG=false;xoRender();document.getElementById('xoR').textContent='';}
+xoRender();
+
+// ۱۰. مار
+let snake,sDir,sFood,sScore,sInterval;
+function startSnake(){let c=document.getElementById('snakeC'),ctx=c.getContext('2d');snake=[{x:10,y:10}];sDir={x:1,y:0};sFood={x:15,y:10};sScore=0;clearInterval(sInterval);sInterval=setInterval(()=>{let h={x:snake[0].x+sDir.x,y:snake[0].y+sDir.y};if(h.x<0||h.x>=28||h.y<0||h.y>=28||snake.some(p=>p.x===h.x&&p.y===h.y)){clearInterval(sInterval);alert('پایان! امتیاز: '+sScore);return}snake.unshift(h);if(h.x===sFood.x&&h.y===sFood.y){sScore++;sFood={x:Math.floor(Math.random()*28),y:Math.floor(Math.random()*28)}}else{snake.pop()}ctx.fillStyle='#f0f0f0';ctx.fillRect(0,0,280,280);ctx.fillStyle='lime';snake.forEach(p=>ctx.fillRect(p.x*10,p.y*10,8,8));ctx.fillStyle='red';ctx.fillRect(sFood.x*10,sFood.y*10,8,8)},100);
+document.onkeydown=function(e){if(e.key==='ArrowUp'&&sDir.y===0)sDir={x:0,y:-1};if(e.key==='ArrowDown'&&sDir.y===0)sDir={x:0,y:1};if(e.key==='ArrowLeft'&&sDir.x===0)sDir={x:-1,y:0};if(e.key==='ArrowRight'&&sDir.x===0)sDir={x:1,y:0}};
+c.ontouchstart=function(e){e.preventDefault();let t=e.touches[0],r=c.getBoundingClientRect(),x=t.clientX-r.left,y=t.clientY-r.top;if(Math.abs(x-140)>Math.abs(y-140)){sDir=x>140?{x:1,y:0}:{x:-1,y:0}}else{sDir=y>140?{x:0,y:1}:{x:0,y:-1}}}
+}startSnake();
+</script>
 </body>
-  </html>
+</html>
