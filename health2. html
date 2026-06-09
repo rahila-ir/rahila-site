@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💊 ۱۵ بیماری و درمان (۱۶-۳۰) | رهیلا</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Arial';background:linear-gradient(135deg,#e3f2fd,#bbdefb,#90caf9,#a5d6a7);color:#111;padding:15px;min-height:100vh}
+        .header{background:#fff;border-radius:20px;padding:18px;margin-bottom:15px;text-align:center;box-shadow:0 4px 15px rgba(0,0,0,.1)}
+        .header h1{color:#0d47a1;font-size:22px}
+        .back-btn{display:inline-block;background:#0d47a1;color:#fff;padding:10px 25px;border-radius:20px;text-decoration:none;margin:10px 0}
+        .health-card{background:#fff;border-radius:20px;padding:20px;margin:20px 0;box-shadow:0 2px 15px rgba(0,0,0,.08);text-align:right}
+        .health-card h2{color:#0d47a1;font-size:20px;text-align:center;margin-bottom:12px;border-bottom:2px solid #e3f2fd;padding-bottom:8px}
+        .section{background:#f8f9fa;border-radius:12px;padding:12px;margin:8px 0;border-right:3px solid #0d47a1}
+        .section h3{color:#0d47a1;font-size:15px;margin-bottom:6px}
+        .section p{color:#333;font-size:13px;line-height:2}
+        .tips-box{background:#e8f5e9;border-radius:12px;padding:12px;border:1px solid #a5d6a7;margin:8px 0}
+        .tips-box h3{color:#2e7d32;font-size:14px}
+        .tips-box ul{color:#333;font-size:12px;line-height:2;padding-right:12px}
+    </style>
+</head>
+<body>
+    <div class="header"><h1>💊 ۱۵ بیماری و درمان (۱۶ تا ۳۰)</h1><p>rahilanab.com</p></div>
+    <a href="health.html" class="back-btn">🔙 ۱۵ تای اول</a>
+
+<!-- ۱۶ --><div class="health-card"><h2>۱۶. 🤮 تهوع و استفراغ</h2><div class="section"><h3>📋 علائم</h3><p>احساس ناخوشی در معده، میل به استفراغ، سرگیجه.</p></div><div class="section"><h3>💊 درمان</h3><p>مایعات کم‌کم. زنجبیل. پرهیز از غذای سنگین.</p></div><div class="tips-box"><h3>⭐ طبیعی</h3><ul><li>زنجبیل تازه</li><li>نعناع</li><li>لیمو</li></ul></div></div>
+
+<!-- ۱۷ --><div class="health-card"><h2>۱۷. 🦵 واریس</h2><div class="section"><h3>📋 علائم</h3><p>رگ‌های برجسته و پیچ‌خورده در پا، درد، سنگینی، تورم.</p></div><div class="section"><h3>💊 درمان</h3><p>بالا نگه داشتن پا. جوراب واریس. ورزش. کاهش وزن.</p></div><div class="tips-box"><h3>⭐ طبیعی</h3><ul><li>سرکه سیب</li><li>سیر</li><li>روغن زیتون ماساژ</li></ul></div></div>
+
+<!-- ۱۸ --><div class="health-card"><h2>۱۸. 👃 آلرژی</h2><div class="section"><h3>📋 علائم</h3><p>عطسه، آبریزش بینی، خارش چشم، کهیر پوستی.</p></div><div class="section"><h3>💊 درمان</h3><p>آنتی‌هیستامین. پرهیز از ماده حساسیت‌زا. شستشوی بینی.</p></div><div class="tips-box"><h3>⭐ طبیعی</h3><ul><li>عسل محلی</li><li>دمنوش گزنه</li><li>بخور آب گرم</li></ul></div></div>
+
+<!-- ۱۹ --><div class="health-card"><h2>۱۹. 💇 ریزش مو</h2><div class="section"><h3>📋 علائم</h3><p>نازک شدن مو، کم‌پشتی، طاسی منطقه‌ای.</p></div><div class="section"><h3>💊 درمان</h3><p>تغذیه مناسب. ماساژ پوست سر. شامپوهای تقویتی.</p></div><div class="tips-box"><h3>⭐ طبیعی</h3><ul><li>روغن نارگیل</li><li>آب پیاز</li><li>ماسک تخم مرغ</li></ul></div></div>
+
+<!-- ۲۰ --><div class="health-card"><h2>۲۰. 🦶 ناخن فرو رفته</h2><div class="section"><h3>📋 علائم</h3><p>درد، قرمزی، تورم کنار ناخن شست پا.</p></div><div class="section"><h3>💊 درمان</h3><p>خیساندن در آب گرم نمک. کوتاه کردن صاف ناخن. مراجعه به پزشک.</p></div><div class="tips-box"><h3>⭐ طبیعی</h3><ul><li>آب نمک گرم</li><li>روغن درخت چای</li><li>سرکه سیب</li></ul></div></div>
+
+<!-- ۲۱ --><div class="health-card"><h2>۲۱. 🩸 بواسیر</h2><div class="section"><h3>📋 علائم</h3><p>خونریزی، درد، خارش ناحیه مقعد.</p></div><div class="section"><h3>💊 درمان</h3><p>فیبر بالا. آب فراوان. پماد مخصوص. حمام سیتز.</p></div><div class="tips-box"><h3>⭐ طبیعی</h3><ul><li>آلوئه ورا</li><li>روغن نارگیل</li><li>یخ</li></ul></div></div>
+
+<!-- ۲۲ --><div class="health-card"><h2>۲۲. 🦷 آفت دهان</h2><div class="section"><h3>📋 علائم</h3><p>زخم‌های کوچک سفید یا زرد داخل دهان، سوزش.</p></div><div class="section"><h3>💊 درمان</h3><p>دهانشویه نمکی. ژل آفت. پرهیز از غذای تند.</p></div><div class="tips-box"><h3>⭐ طبیعی</h3><ul><li>عسل</li><li>نارگیل</li><li>جوش شیرین</li></ul></div></div>
+
+<!-- ۲۳ --><div class="health-card"><h2>۲۳. 👁️ سیاهی زیر چشم</h2><div class="section"><h3>📋 علائم</h3><p>تیرگی پوست زیر چشم، پف، خستگی ظاهری.</p></div><div class="section"><h3>💊 درمان</h3><p>خواب کافی. کمپرس سرد. کرم دور چشم.</p></div><div class="tips-box"><h3>⭐ طبیعی</h3><ul><li>چای کیسه‌ای سرد</li><li>خیار</li><li>روغن بادام</li></ul></div></div>
+
+<!-- ۲۴ --><div class="health-card"><h2>۲۴. 🦵 گرفتگی عضلات</h2><div class="section"><h3>📋 علائم</h3><p>انقباض ناگهانی و دردناک عضله، معمولاً در پا.</p></div><div class="section"><h3>💊 درمان</h3><p>کشش عضله. کمپرس گرم. ماساژ. منیزیم.</p></div><div class="tips-box"><h3>⭐ طبیعی</h3><ul><li>موز (پتاسیم)</li><li>آب نمک</li><li>روغن اسطوخودوس</li></ul></div></div>
+
+<!-- ۲۵ --><div class="health-card"><h2>۲۵. 👂 وزوز گوش</h2><div class="section"><h3>📋 علائم</h3><p>صدای زنگ یا سوت مداوم در گوش.</p></div><div class="section"><h3>💊 درمان</h3><p>پرهیز از صدای بلند. کاهش کافئین. مراجعه به پزشک.</p></div><div class="tips-box"><h3>⭐ طبیعی</h3><ul><li>زنجبیل</li><li>سیر</li><li>روغن کنجد در گوش</li></ul></div></div>
+
+<!-- ۲۶ --><div class="health-card"><h2>۲۶. 🩹 اگزما</h2><div class="section"><h3>📋 علائم</h3><p>پوست خشک، قرمز، خارش‌دار، پوسته‌پوسته.</p></div><div class="section"><h3>💊 درمان</h3><p>مرطوب‌کننده. پرهیز از مواد حساسیت‌زا. کرم کورتیکواستروئید.</p></div><div class="tips-box"><h3>⭐ طبیعی</h3><ul><li>روغن نارگیل</li><li>آلوئه ورا</li><li>جو دوسر</li></ul></div></div>
+
+<!-- ۲۷ --><div class="health-card"><h2>۲۷. 🦴 آرتروز</h2><div class="section"><h3>📋 علائم</h3><p>درد و خشکی مفاصل، تورم، کاهش حرکت.</p></div><div class="section"><h3>💊 درمان</h3><p>ورزش ملایم. فیزیوتراپی. مسکن. کمپرس گرم.</p></div><div class="tips-box"><h3>⭐ طبیعی</h3><ul><li>زنجبیل</li><li>زردچوبه</li><li>روغن زیتون ماساژ</li></ul></div></div>
+
+<!-- ۲۸ --><div class="health-card"><h2>۲۸. 🫁 آسم</h2><div class="section"><h3>📋 علائم</h3><p>تنگی نفس، خس‌خس سینه، سرفه شبانه.</p></div><div class="section"><h3>💊 درمان</h3><p>اسپری تنفسی. پرهیز از محرک‌ها. تنفس عمیق.</p></div><div class="tips-box"><h3>⭐ طبیعی</h3><ul><li>عسل</li><li>زنجبیل</li><li>بخور اکالیپتوس</li></ul></div></div>
+
+<!-- ۲۹ --><div class="health-card"><h2>۲۹. 💉 دیابت</h2><div class="section"><h3>📋 علائم</h3><p>تشنگی زیاد، تکرر ادرار، خستگی، کاهش وزن.</p></div><div class="section"><h3>💊 درمان</h3><p>کنترل قند خون. رژیم غذایی. ورزش. انسولین یا دارو.</p></div><div class="tips-box"><h3>⭐ طبیعی</h3><ul><li>دارچین</li><li>زیره سیاه</li><li>کدو تلخ</li></ul></div></div>
+
+<!-- ۳۰ --><div class="health-card"><h2>۳۰. 🦷 بوی بد دهان</h2><div class="section"><h3>📋 علائم</h3><p>بوی نامطبوع از دهان، طعم بد.</p></div><div class="section"><h3>💊 درمان</h3><p>مسواک و نخ دندان. شستشوی دهان. نوشیدن آب.</p></div><div class="tips-box"><h3>⭐ طبیعی</h3><ul><li>جعفری</li><li>چای سبز</li><li>لیمو</li></ul></div></div>
+
+    <p style="text-align:center;margin:20px 0">
+        <a href="health.html" style="color:#0d47a1">← ۱۵ تای اول</a>
+    </p>
+    <p style="text-align:center"><a href="index.html" style="color:#0d47a1">🔙 خانه</a></p>
+</body>
+</html>
