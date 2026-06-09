@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎮 ۱۰ بازی بعدی | رهیلا</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Arial';background:linear-gradient(135deg,#e3f2fd,#bbdefb,#90caf9,#a5d6a7);color:#111;padding:15px;min-height:100vh;text-align:center}
+        .header{background:#fff;border-radius:20px;padding:18px;margin-bottom:15px;box-shadow:0 4px 15px rgba(0,0,0,.1)}
+        .header h1{color:#0d47a1;font-size:22px}
+        .back-btn{display:inline-block;background:#0d47a1;color:#fff;padding:10px 25px;border-radius:20px;text-decoration:none;margin:10px 0}
+        .game-zone{background:#fff;border-radius:20px;padding:20px;margin:15px 0;box-shadow:0 2px 10px rgba(0,0,0,.08)}
+        .game-zone h2{color:#0d47a1;margin-bottom:10px}
+        button{padding:10px 20px;font-size:15px;background:#0d47a1;color:#fff;border:none;border-radius:8px;cursor:pointer;margin:3px}
+        button:active{background:#1565c0}
+        .result{font-size:18px;color:#0d47a1;font-weight:bold;margin:8px 0}
+        input{padding:10px;font-size:18px;width:120px;text-align:center;border-radius:8px;border:2px solid #0d47a1;margin:5px}
+    </style>
+</head>
+<body>
+    <div class="header"><h1>🎮 ۱۰ بازی بعدی (۱۱-۲۰)</h1><p>rahilanab.com</p></div>
+    <a href="games.html" class="back-btn">🔙 ۱۰ بازی اول</a>
+
+<!-- ۱۱ --><div class="game-zone"><h2>۱۱. 🎯 دارت</h2><p>امتیاز: <span id="dartScore">0</span></p><div id="dartArea" style="width:250px;height:250px;background:#f0f4ff;border-radius:50%;margin:10px auto;position:relative;cursor:crosshair" onclick="dartHit(event)"><div style="position:absolute;top:50%;left:50%;width:20px;height:20px;background:red;border-radius:50%;transform:translate(-50%,-50%)"></div></div><p class="result" id="dartR"></p></div>
+
+<!-- ۱۲ --><div class="game-zone"><h2>۱۲. 🔢 حدس کلمه</h2><p>کلمه ۵ حرفی رو حدس بزن</p><input id="wordIn" placeholder="کلمه"><button onclick="wordGuess()">حدس</button><p class="result" id="wordR"></p></div>
+
+<!-- ۱۳ --><div class="game-zone"><h2>۱۳. ⏱️ زمان واکنش</h2><button id="reactBtn" onclick="reactStart()" style="padding:30px;font-size:20px">کلیک کن تا شروع بشه</button><p class="result" id="reactR"></p></div>
+
+<!-- ۱۴ --><div class="game-zone"><h2>۱۴. 🎨 انتخاب رنگ</h2><p>رنگ رو حدس بزن: <span id="colorName"></span></p><button style="background:red" onclick="colorPick('red')"></button><button style="background:blue" onclick="colorPick('blue')"></button><button style="background:green" onclick="colorPick('green')"></button><button style="background:yellow" onclick="colorPick('yellow')"></button><p class="result" id="colorR"></p></div>
+
+<!-- ۱۵ --><div class="game-zone"><h2>۱۵. 🔤 کلمه‌سازی</h2><p>حروف: <span id="letters"></span></p><input id="wordMake" placeholder="کلمه بساز"><button onclick="wordMake()">بساز</button><p class="result" id="wordMakeR"></p></div>
+
+<script>
+// دارت
+let dartS=0;function dartHit(e){let r=e.target.getBoundingClientRect(),x=e.clientX-r.left-125,y=e.clientY-r.top-125,dist=Math.sqrt(x*x+y*y);if(dist<20)dartS+=100;else if(dist<50)dartS+=50;else if(dist<100)dartS+=25;else dartS+=5;document.getElementById('dartScore').textContent=dartS;document.getElementById('dartR').textContent='+'+dartS+' امتیاز!'}
+
+// حدس کلمه
+let words=['سلام','کتاب','مداد','مادر','آسمان','زمین','دریا','کوه','گل','ابر','ماه','ستاره'];let wTarget=words[Math.floor(Math.random()*words.length)];
+function wordGuess(){let g=document.getElementById('wordIn').value;if(g===wTarget){document.getElementById('wordR').textContent='🎉 درسته!';wTarget=words[Math.floor(Math.random()*words.length)]}else{document.getElementById('wordR').textContent='❌ دوباره سعی کن'}document.getElementById('wordIn').value='';}
+
+// زمان واکنش
+let reactStartTime;function reactStart(){let b=document.getElementById('reactBtn');if(b.textContent.includes('کلیک کن')){b.textContent='صبر کن...';b.style.background='red';setTimeout(()=>{b.textContent='الان بزن!';b.style.background='lime';reactStartTime=Date.now()},Math.random()*3000+1000)}else if(b.textContent==='الان بزن!'){let t=Date.now()-reactStartTime;document.getElementById('reactR').textContent='⏱️ '+t+' میلی‌ثانیه!';b.textContent='کلیک کن تا شروع بشه';b.style.background='#0d47a1'}}
+
+// انتخاب رنگ
+let colorNames=['قرمز','آبی','سبز','زرد'];let cTarget=Math.floor(Math.random()*4);document.getElementById('colorName').textContent=colorNames[cTarget];
+function colorPick(c){let i={'red':0,'blue':1,'green':2,'yellow':3};if(i[c]===cTarget){document.getElementById('colorR').textContent='✅ درسته!';cTarget=Math.floor(Math.random()*4);document.getElementById('colorName').textContent=colorNames[cTarget]}else{document.getElementById('colorR').textContent='❌ اشتباه!'}}
+
+// کلمه‌سازی
+let letters='اب ت ث ج ح خ د ذ ر ز س ش ص ض ط ظ ع غ ف ق ک ل م ن و ه ی'.split(' ');let selected=letters.sort(()=>Math.random()-0.5).slice(0,6);
+document.getElementById('letters').textContent=selected.join(' ');
+function wordMake(){let w=document.getElementById('wordMake').value;let ok=true;for(let c of w){if(!selected.includes(c)){ok=false;break}}document.getElementById('wordMakeR').textContent=ok?'✅ کلمه معتبر!':'❌ از این حروف استفاده کن';document.getElementById('wordMake').value='';}
+</script>
+</body>
+</html>
