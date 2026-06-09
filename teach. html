@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📱 تکنولوژی | رهیلا</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Arial';background:linear-gradient(135deg,#e3f2fd,#bbdefb,#90caf9,#a5d6a7);color:#111;padding:15px;min-height:100vh}
+        .header{background:#fff;border-radius:20px;padding:18px;margin-bottom:15px;text-align:center;box-shadow:0 4px 15px rgba(0,0,0,.1)}
+        .header h1{color:#0d47a1;font-size:22px}
+        .back-btn{display:inline-block;background:#0d47a1;color:#fff;padding:10px 25px;border-radius:20px;text-decoration:none;margin:10px 0}
+        .card{background:#fff;border-radius:15px;padding:15px;margin:12px 0;box-shadow:0 2px 10px rgba(0,0,0,.08);text-align:right}
+        .card h2{color:#0d47a1;font-size:18px;text-align:center;margin-bottom:8px}
+        .card p{color:#333;font-size:13px;line-height:2}
+    </style>
+</head>
+<body>
+    <div class="header"><h1>📱 تکنولوژی و موبایل</h1><p>rahilanab.com</p></div>
+    <a href="index.html" class="back-btn">🔙 خانه</a>
+
+<div class="card"><h2>۱. 📱 بهترین گوشی‌های ۲۰۲۶</h2><p>شیائومی ۱۴، سامسونگ S25، آیفون ۱۷، پوکو X7. بررسی قیمت و مشخصات.</p></div>
+<div class="card"><h2>۲. 📱 خرید گوشی</h2><p>راهنمای خرید: نیازسنجی، بودجه، مقایسه مشخصات. توجه به رم، حافظه، دوربین، باتری.</p></div>
+<div class="card"><h2>۳. 📱 آنلاک گوشی</h2><p>رفع قفل شبکه. روش‌های قانونی و غیرقانونی.</p></div>
+<div class="card"><h2>۴. 📱 افزایش سرعت گوشی</h2><p>حذف برنامه‌های اضافی، پاک کردن کش، غیرفعال کردن انیمیشن.</p></div>
+<div class="card"><h2>۵. 📱 باتری و شارژ</h2><p>بهترین روش شارژ: ۲۰-۸۰٪. شارژ سریع. پاوربانک مناسب.</p></div>
+<div class="card"><h2>۶. 💻 خرید لپ‌تاپ</h2><p>بررسی انواع: Ultrabook، Gaming، Business. پردازنده، رم، SSD.</p></div>
+<div class="card"><h2>۷. 💻 ارتقای لپ‌تاپ</h2><p>افزایش رم، تعویض هارد با SSD. خودت انجام بده!</p></div>
+<div class="card"><h2>۸. 🖥️ کامپیوتر</h2><p>اسمبل کردن کیس. قطعات: CPU، GPU، RAM، Motherboard.</p></div>
+<div class="card"><h2>۹. 📱 اینترنت</h2><p>ADSL، فیبر نوری، 4G، 5G. مقایسه سرعت و قیمت.</p></div>
+<div class="card"><h2>۱۰. 📱 وای‌فای</h2><p>تنظیمات مودم، افزایش برد، امنیت وای‌فای، رمزگذاری WPA2.</p></div>
+<div class="card"><h2>۱۱. 📱 بلوتوث</h2><p>اتصال به هندزفری، اسپیکر، ماشین. رفع مشکل قطع و وصل.</p></div>
+<div class="card"><h2>۱۲. 📱 هوش مصنوعی</h2><p>ChatGPT، Google Gemini، بینگ AI. کاربردها و آینده.</p></div>
+<div class="card"><h2>۱۳. 📱 امنیت گوشی</h2><p>قفل اثر انگشت، تشخیص چهره، رمز عبور قوی.</p></div>
+<div class="card"><h2>۱۴. 📱 بدافزارها</h2><p>ویروس‌های گوشی، بدافزار، آنتی‌ویروس مناسب.</p></div>
+<div class="card"><h2>۱۵. 📱 هک و امنیت</h2><p>فیشینگ، کلاهبرداری اینترنتی، راه‌های محافظت.</p></div>
+<div class="card"><h2>۱۶. 📱 گوگل پلی</h2><p>دانلود برنامه، پرداخت درون‌برنامه‌ای، رفع محدودیت.</p></div>
+<div class="card"><h2>۱۷. 📱 دوربین گوشی</h2><p>تنظیمات دوربین، عکاسی حرفه‌ای با گوشی، اپلیکیشن‌های دوربین.</p></div>
+<div class="card"><h2>۱۸. 📱 حافظه گوشی</h2><p>انواع حافظه: داخلی، رم، microSD. افزایش حافظه.</p></div>
+<div class="card"><h2>۱۹. 📱 نمایشگر</h2><p>AMOLED vs IPS. رزولوشن، نرخ تازه‌سازی.</p></div>
+<div class="card"><h2>۲۰. 📱 گارانتی</h2><p>گارانتی اصلی، تقلبی، شرایط استفاده.</p></div>
+<div class="card"><h2>۲۱. 📱 سیم‌کارت</h2><p>همراه اول، ایرانسل، رایتل. بسته‌های اینترنت.</p></div>
+<div class="card"><h2>۲۲. 📱 eSIM</h2><p>سیم‌کارت الکترونیکی، فعال‌سازی، مزایا.</p></div>
+<div class="card"><h2>۲۳. 📱 VPN</h2><p>فیلترشکن، تحریم، بهترین VPN رایگان.</p></div>
+<div class="card"><h2>۲۴. 📱 شبکه‌های اجتماعی</h2><p>اینستاگرام، تلگرام، واتساپ، تیک‌تاک، ایکس (توییتر).</p></div>
+<div class="card"><h2>۲۵. 📱 اپلیکیشن‌های ضروری</h2><p>نقشه، تاکسی اینترنتی، بانک، آموزش.</p></div>
+<div class="card"><h2>۲۶. 📱 گجت‌ها</h2><p>ساعت هوشمند، هندزفری بی‌سیم، پاوربانک، شارژر وایرلس.</p></div>
+<div class="card"><h2>۲۷. 📱 واقعیت مجازی</h2><p>VR، متاورس، عینک‌های واقعیت مجازی.</p></div>
+<div class="card"><h2>۲۸. 📱 رمزارزها</h2><p>بیت‌کوین، اتریوم، تتر. کیف پول دیجیتال.</p></div>
+<div class="card"><h2>۲۹. 📱 اینترنت اشیاء</h2><p>خانه هوشمند، لامپ هوشمند، قفل هوشمند.</p></div>
+<div class="card"><h2>۳۰. 📱 برنامه‌نویسی</h2><p>آموزش پایتون، HTML، CSS، جاوااسکریپت. مسیر شغلی.</p></div>
+
+    <p style="text-align:center;margin:20px 0"><a href="index.html" style="color:#0d47a1">🔙 خانه</a></p>
+</body>
+</html>
