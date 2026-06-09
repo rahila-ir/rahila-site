@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 ۵۰ فیلم برتر | رهیلا</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Arial';background:linear-gradient(135deg,#e3f2fd,#bbdefb,#90caf9,#a5d6a7);color:#111;padding:15px;min-height:100vh}
+        .header{background:#fff;border-radius:20px;padding:18px;margin-bottom:15px;text-align:center;box-shadow:0 4px 15px rgba(0,0,0,.1)}
+        .header h1{color:#0d47a1;font-size:22px}.back-btn{display:inline-block;background:#0d47a1;color:#fff;padding:10px 25px;border-radius:20px;text-decoration:none;margin:10px 0}
+        .card{background:#fff;border-radius:15px;padding:12px;margin:10px 0;box-shadow:0 2px 8px rgba(0,0,0,.08);text-align:right}
+        .card h2{color:#0d47a1;font-size:16px;text-align:center;margin-bottom:6px}
+        .card p{color:#333;font-size:12px;line-height:1.8}
+        .card a{color:#1565c0;font-weight:bold;text-decoration:none}
+    </style>
+</head>
+<body>
+    <div class="header"><h1>🎬 ۵۰ فیلم برتر با لینک IMDb</h1><p>rahilanab.com</p></div>
+    <a href="index.html" class="back-btn">🔙 خانه</a>
+
+<div class="card"><h2>۱. رستگاری در شاوشنک (۹.۳)</h2><p>درام | ۱۹۹۴ | داستان امید و دوستی در زندان</p><a href="https://www.imdb.com/title/tt0111161/" target="_blank">🎬 IMDb</a></div>
+<div class="card"><h2>۲. پدرخوانده (۹.۲)</h2><p>جنایی | ۱۹۷۲ | خانواده مافیایی کورلئونه</p><a href="https://www.imdb.com/title/tt0068646/" target="_blank">🎬 IMDb</a></div>
+<div class="card"><h2>۳. شوالیه تاریکی (۹.۰)</h2><p>اکشن | ۲۰۰۸ | بتمن در برابر جوکر</p><a href="https://www.imdb.com/title/tt0468569/" target="_blank">🎬 IMDb</a></div>
+<div class="card"><h2>۴. فارست گامپ (۸.۸)</h2><p>درام | ۱۹۹۴ | زندگی یه مرد ساده‌دل</p><a href="https://www.imdb.com/title/tt0109830/" target="_blank">🎬 IMDb</a></div>
+<div class="card"><h2>۵. تایتانیک (۷.۹)</h2><p>عاشقانه | ۱۹۹۷ | عشق در کشتی تایتانیک</p><a href="https://www.imdb.com/title/tt0120338/" target="_blank">🎬 IMDb</a></div>
+<div class="card"><h2>۶. اینتراستلار (۸.۷)</h2><p>علمی-تخیلی | ۲۰۱۴ | سفر به فضا</p><a href="https://www.imdb.com/title/tt0816692/" target="_blank">🎬 IMDb</a></div>
+<div class="card"><h2>۷. ماتریکس (۸.۷)</h2><p>علمی-تخیلی | ۱۹۹۹ | دنیای مجازی</p><a href="https://www.imdb.com/title/tt0133093/" target="_blank">🎬 IMDb</a></div>
+<div class="card"><h2>۸. Inception (۸.۸)</h2><p>علمی-تخیلی | ۲۰۱۰ | دزدی در رویاها</p><a href="https://www.imdb.com/title/tt1375666/" target="_blank">🎬 IMDb</a></div>
+<div class="card"><h2>۹. نجات سرباز رایان (۸.۶)</h2><p>جنگی | ۱۹۹۸ | جنگ جهانی دوم</p><a href="https://www.imdb.com/title/tt0120815/" target="_blank">🎬 IMDb</a></div>
+<div class="card"><h2>۱۰. گلادیاتور (۸.۵)</h2><p>تاریخی | ۲۰۰۰ | انتقام در میدان نبرد</p><a href="https://www.imdb.com/title/tt0172495/" target="_blank">🎬 IMDb</a></div>
+<div class="card"><h2>۱۱. جان ویک (۷.۴)</h2><p>اکشن | ۲۰۱۴ | انتقام یک قاتل حرفه‌ای</p><a href="https://www.imdb.com/title/tt2911666/" target="_blank">🎬 IMDb</a></div>
+<div class="card"><h2>۱۲. انگل Parasite (۸.۵)</h2><p>درام | ۲۰۱۹ | برنده اسکار - کره</p><a href="https://www.imdb.com/title/tt6751668/" target="_blank">🎬 IMDb</a></div>
+<div class="card"><h2>۱۳. جدایی نادر از سیمین (۸.۳)</h2><p>درام | ۲۰۱۱ | برنده اسکار - ایران</p><a href="https://www.imdb.com/title/tt1832382/" target="_blank">🎬 IMDb</a></div>
+<div class="card"><h2>۱۴. شیر شاه (۸.۵)</h2><p>انیمیشن | ۱۹۹۴ | سیمبا پادشاه شیرها</p><a href="https://www.imdb.com/title/tt0110357/" target="_blank">🎬 IMDb</a></div>
+<div class="card"><h2>۱۵. هری پاتر (۸.۱)</h2><p>فانتزی | ۲۰۰۱ | دنیای جادوگری</p><a href="https://www.imdb.com/title/tt0241527/" target="_blank">🎬 IMDb</a></div>
+<div class="card"><h2>۱۶. ارباب حلقه‌ها (۸.۸)</h2><p>فانتزی | ۲۰۰۱ | نبرد برای حلقه قدرت</p><a href="https://www.imdb.com/title/tt0120737/" target="_blank">🎬 IMDb</a></div>
+<div class="card"><h2>۱۷. بازی‌های گرسنگی (۷.۲)</h2><p>علمی-تخیلی | ۲۰۱۲ | بقا در مسابقه مرگبار</p><a href="https://www.imdb.com/title/tt1392170/" target="_blank">🎬 IMDb</a></div>
+<div class="card"><h2>۱۸. سریع و خشمگین (۷.۴)</h2><p>اکشن | ۲۰۰۱ | مسابقات خیابانی</p><a href="https://www.imdb.com/title/tt0232500/" target="_blank">🎬 IMDb</a></div>
+<div class="card"><h2>۱۹. جنگ ستارگان (۸.۶)</h2><p>علمی-تخیلی | ۱۹۷۷ | کهکشان</p><a href="https://www.imdb.com/title/tt0076759/" target="_blank">🎬 IMDb</a></div>
+<div class="card"><h2>۲۰. داستان اسباب‌بازی (۸.۳)</h2><p>انیمیشن | ۱۹۹۵ | والت دیزنی</p><a href="https://www.imdb.com/title/tt0114709/" target="_blank">🎬 IMDb</a></div>
+<div class="card"><h2>۲۱. من نفرت‌انگیز (۷.۶)</h2><p>انیمیشن | ۲۰۱۰ | گرو و مینیون‌ها</p><a href="https://www.imdb.com/title/tt1323594/" target="_blank">🎬 IMDb</a></div>
+<div class="card"><h2>۲۲. کوکو (۸.۴)</h2><p>انیمیشن | ۲۰۱۷ | موسیقی و خانواده</p><a href="https://www.imdb.com/title/tt2380307/" target="_blank">🎬 IMDb</a></div>
+<div class="card"><h2>۲۳. وال-ای (۸.۴)</h2><p>انیمیشن | ۲۰۰۸ | ربات تنها</p><a href="https://www.imdb.com/title/tt0910970/" target="_blank">🎬 IMDb</a></div>
+<div class="card"><h2>۲۴. بالا Up (۸.۳)</h2><p>انیمیشن | ۲۰۰۹ | خانه پرنده</p><a href="https://www.imdb.com/title/tt1049413/" target="_blank">🎬 IMDb</a></div>
+<div class="card"><h2>۲۵. در جستجوی نمو (۸.۲)</h2><p>انیمیشن | ۲۰۰۳ | پیدا کردن نمو</p><a href="https://www.imdb.com/title/tt0266543/" target="_blank">🎬 IMDb</a></div>
+<div class="card"><h2>۲۶. پاندای کونگ‌فو (۷.۶)</h2><p>انیمیشن | ۲۰۰۸</p><a href="https://www.imdb.com/title/tt0441773/" target="_blank">🎬 IMDb</a></div>
+<div class="card"><h2>۲۷. شرک (۷.۹)</h2><p>انیمیشن | ۲۰۰۱</p><a href="https://www.imdb.com/title/tt0126029/" target="_blank">🎬 IMDb</a></div>
+<div class="card"><h2>۲۸. عصر یخبندان (۷.۵)</h2><p>انیمیشن | ۲۰۰۲</p><a href="https://www.imdb.com/title/tt0268380/" target="_blank">🎬 IMDb</a></div>
+<div class="card"><h2>۲۹. ماداگاسکار (۶.۹)</h2><p>انیمیشن | ۲۰۰۵</p><a href="https://www.imdb.com/title/tt0351283/" target="_blank">🎬 IMDb</a></div>
+<div class="card"><h2>۳۰. اژدهای خود را تربیت کن (۸.۱)</h2><p>انیمیشن | ۲۰۱۰</p><a href="https://www.imdb.com/title/tt0892769/" target="_blank">🎬 IMDb</a></div>
+<div class="card"><h2>۳۱. فروزن (۷.۴)</h2><p>انیمیشن | ۲۰۱۳</p><a href="https://www.imdb.com/title/tt2294629/" target="_blank">🎬 IMDb</a></div>
+<div class="card"><h2>۳۲. زوتوپیا (۸.۰)</h2><p>انیمیشن | ۲۰۱۶</p><a href="https://www.imdb.com/title/tt2948356/" target="_blank">🎬 IMDb</a></div>
+<div class="card"><h2>۳۳. موآنا (۷.۶)</h2><p>انیمیشن | ۲۰۱۶</p><a href="https://www.imdb.com/title/tt3521164/" target="_blank">🎬 IMDb</a></div>
+<div class="card"><h2>۳۴. راتاتویی (۸.۱)</h2><p>انیمیشن | ۲۰۰۷</p><a href="https://www.imdb.com/title/tt0382932/" target="_blank">🎬 IMDb</a></div>
+<div class="card"><h2>۳۵. ماشین‌ها (۷.۲)</h2><p>انیمیشن | ۲۰۰۶</p><a href="https://www.imdb.com/title/tt0317219/" target="_blank">🎬 IMDb</a></div>
+<div class="card"><h2>۳۶. Soul (۸.۰)</h2><p>انیمیشن | ۲۰۲۰</p><a href="https://www.imdb.com/title/tt2948372/" target="_blank">🎬 IMDb</a></div>
+<div class="card"><h2>۳۷. لوکا (۷.۴)</h2><p>انیمیشن | ۲۰۲۱</p><a href="https://www.imdb.com/title/tt12801262/" target="_blank">🎬 IMDb</a></div>
+<div class="card"><h2>۳۸. Inside Out 2 (۷.۸)</h2><p>انیمیشن | ۲۰۲۴</p><a href="https://www.imdb.com/title/tt22022452/" target="_blank">🎬 IMDb</a></div>
+<div class="card"><h2>۳۹. ددپول ۳ (۸.۰)</h2><p>اکشن | ۲۰۲۴</p><a href="https://www.imdb.com/title/tt6263850/" target="_blank">🎬 IMDb</a></div>
+<div class="card"><h2>۴۰. تلماسه ۲ (۸.۵)</h2><p>علمی-تخیلی | ۲۰۲۴</p><a href="https://www.imdb.com/title/tt15239678/" target="_blank">🎬 IMDb</a></div>
+<div class="card"><h2>۴۱. اوپنهایمر (۸.۳)</h2><p>تاریخی | ۲۰۲۳</p><a href="https://www.imdb.com/title/tt15398776/" target="_blank">🎬 IMDb</a></div>
+<div class="card"><h2>۴۲. باربی (۶.۸)</h2><p>کمدی | ۲۰۲۳</p><a href="https://www.imdb.com/title/tt1517268/" target="_blank">🎬 IMDb</a></div>
+<div class="card"><h2>۴۳. آواتار ۲ (۷.۵)</h2><p>علمی-تخیلی | ۲۰۲۲</p><a href="https://www.imdb.com/title/tt1630029/" target="_blank">🎬 IMDb</a></div>
+<div class="card"><h2>۴۴. اسپایدرمن (۸.۲)</h2><p>اکشن | ۲۰۲۱</p><a href="https://www.imdb.com/title/tt10872600/" target="_blank">🎬 IMDb</a></div>
+<div class="card"><h2>۴۵. بتمن (۷.۸)</h2><p>اکشن | ۲۰۲۲</p><a href="https://www.imdb.com/title/tt1877830/" target="_blank">🎬 IMDb</a></div>
+<div class="card"><h2>۴۶. تاپ گان (۸.۲)</h2><p>اکشن | ۲۰۲۲</p><a href="https://www.imdb.com/title/tt1745960/" target="_blank">🎬 IMDb</a></div>
+<div class="card"><h2>۴۷. جوکر (۸.۴)</h2><p>درام | ۲۰۱۹</p><a href="https://www.imdb.com/title/tt7286456/" target="_blank">🎬 IMDb</a></div>
+<div class="card"><h2>۴۸. انتقامجویان (۸.۴)</h2><p>اکشن | ۲۰۱۹</p><a href="https://www.imdb.com/title/tt4154796/" target="_blank">🎬 IMDb</a></div>
+<div class="card"><h2>۴۹. فروشنده (۸.۰)</h2><p>درام | ۲۰۱۶ | اصغر فرهادی</p><a href="https://www.imdb.com/title/tt5186714/" target="_blank">🎬 IMDb</a></div>
+<div class="card"><h2>۵۰. قهرمان (۷.۸)</h2><p>درام | ۲۰۲۱ | اصغر فرهادی</p><a href="https://www.imdb.com/title/tt11777766/" target="_blank">🎬 IMDb</a></div>
+
+    <p style="text-align:center;margin:20px 0"><a href="index.html" style="color:#0d47a1">🔙 خانه</a></p>
+</body>
+</html>
