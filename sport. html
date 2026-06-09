@@ -6,54 +6,50 @@
     <title>🏃 ورزش | رهیلا</title>
     <style>
         *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:Arial;background:radial-gradient(circle at center,#0a1a1a,#1a4a4a,#66ccaa);color:#fff;text-align:center;padding:15px;min-height:100vh}
-        .header{background:rgba(255,255,255,.08);backdrop-filter:blur(20px);border-radius:25px;padding:20px;margin-bottom:15px}
-        .header h1{color:#ffd700;font-size:22px}
-        .back-btn{display:inline-block;background:rgba(255,255,255,.15);color:#fff;padding:8px 20px;border-radius:20px;text-decoration:none;margin:10px 0;font-size:14px}
-        .section-title{color:#ffd700;font-size:18px;margin:20px 0 10px}
-        .grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
-        .card{background:rgba(255,255,255,.05);border-radius:12px;padding:15px 8px;border:1px solid rgba(255,255,255,.1)}
-        .card:active{background:rgba(255,215,0,.2)}
-        .card .emoji{font-size:28px}
-        .card h3{font-size:10px;color:#ffd700;margin-top:5px}
+        body{font-family:'Arial';background:linear-gradient(135deg,#e3f2fd,#bbdefb,#90caf9,#a5d6a7);color:#111;padding:15px;min-height:100vh}
+        .header{background:#fff;border-radius:20px;padding:18px;margin-bottom:15px;text-align:center;box-shadow:0 4px 15px rgba(0,0,0,.1)}
+        .header h1{color:#0d47a1;font-size:22px}
+        .back-btn{display:inline-block;background:#0d47a1;color:#fff;padding:10px 25px;border-radius:20px;text-decoration:none;margin:10px 0}
+        .card{background:#fff;border-radius:15px;padding:15px;margin:12px 0;box-shadow:0 2px 10px rgba(0,0,0,.08);text-align:right}
+        .card h2{color:#0d47a1;font-size:18px;text-align:center;margin-bottom:8px}
+        .card p{color:#333;font-size:13px;line-height:2}
     </style>
 </head>
 <body>
-    <div class="header"><h1>🏃 ورزش و تناسب اندام</h1></div>
-    <a href="index.html" class="back-btn">🔙 برگشت</a>
-    <div class="section-title">💪 بدنسازی</div>
-    <div class="grid">
-        <div class="card"><div class="emoji">💪</div><h3>برنامه مبتدی</h3></div>
-        <div class="card"><div class="emoji">🏋️</div><h3>تمرین سینه</h3></div>
-        <div class="card"><div class="emoji">🦵</div><h3>تمرین پا</h3></div>
-        <div class="card"><div class="emoji">💪</div><h3>تمرین بازو</h3></div>
-        <div class="card"><div class="emoji">🦾</div><h3>تمرین سرشانه</h3></div>
-        <div class="card"><div class="emoji">🏋️</div><h3>کراسفیت</h3></div>
-    </div>
-    <div class="section-title">🏃 هوازی</div>
-    <div class="grid">
-        <div class="card"><div class="emoji">🏃</div><h3>دویدن</h3></div>
-        <div class="card"><div class="emoji">🕺</div><h3>زومبا</h3></div>
-        <div class="card"><div class="emoji">🚴</div><h3>دوچرخه‌سواری</h3></div>
-        <div class="card"><div class="emoji">🏊</div><h3>شنا</h3></div>
-        <div class="card"><div class="emoji">⛷️</div><h3>اسکی</h3></div>
-        <div class="card"><div class="emoji">🛼</div><h3>اسکیت</h3></div>
-    </div>
-    <div class="section-title">🧘 آرامش</div>
-    <div class="grid">
-        <div class="card"><div class="emoji">🧘</div><h3>یوگا</h3></div>
-        <div class="card"><div class="emoji">😌</div><h3>مدیتیشن</h3></div>
-        <div class="card"><div class="emoji">🤸</div><h3>پیلاتس</h3></div>
-    </div>
-    <div class="section-title">⚽ ورزش‌ها</div>
-    <div class="grid">
-        <div class="card"><div class="emoji">⚽</div><h3>فوتبال</h3></div>
-        <div class="card"><div class="emoji">🏀</div><h3>بسکتبال</h3></div>
-        <div class="card"><div class="emoji">🏐</div><h3>والیبال</h3></div>
-        <div class="card"><div class="emoji">🎾</div><h3>تنیس</h3></div>
-        <div class="card"><div class="emoji">🐎</div><h3>اسب‌سواری</h3></div>
-        <div class="card"><div class="emoji">⚔️</div><h3>شمشیربازی</h3></div>
-    </div>
-    <p style="margin-top:15px"><a href="index.html" style="color:#ffd700">🔙 برگشت</a></p>
+    <div class="header"><h1>🏃 ورزش و تناسب اندام</h1><p>rahilanab.com</p></div>
+    <a href="index.html" class="back-btn">🔙 خانه</a>
+
+<div class="card"><h2>۱. 💪 بدنسازی</h2><p>برنامه مبتدی: ۳ روز در هفته. تمرینات: اسکات، پرس سینه، ددلیفت. تغذیه: پروتئین کافی.</p></div>
+<div class="card"><h2>۲. 🏋️ تمرین سینه</h2><p>پرس سینه با هالتر، پرس بالا، قفسه سینه، شنا سوئدی.</p></div>
+<div class="card"><h2>۳. 🦵 تمرین پا</h2><p>اسکات، لانج، پرس پا، ددلیفت رومانیایی.</p></div>
+<div class="card"><h2>۴. 💪 تمرین بازو</h2><p>جلو بازو هالتر، پشت بازو سیم‌کش، چکشی.</p></div>
+<div class="card"><h2>۵. 🏋️ تمرین سرشانه</h2><p>پرس سرشانه، نشر از جانب، نشر از جلو.</p></div>
+<div class="card"><h2>۶. 🏋️ تمرین زیربغل</h2><p>بارفیکس، پارویی، لت سیم‌کش.</p></div>
+<div class="card"><h2>۷. 🏋️ تمرین شکم</h2><p>کرانچ، پلانک، زیرشکم، چرخش روسی.</p></div>
+<div class="card"><h2>۸. 🏃 دویدن</h2><p>برنامه مبتدی: ۲۰ دقیقه. کفش مناسب. تنفس صحیح.</p></div>
+<div class="card"><h2>۹. 🏊 شنا</h2><p>بهترین ورزش برای کل بدن. کرال سینه، قورباغه.</p></div>
+<div class="card"><h2>۱۰. 🚴 دوچرخه‌سواری</h2><p>کالری‌سوزی بالا. تقویت پاها. دوچرخه ثابت برای خانه.</p></div>
+<div class="card"><h2>۱۱. 🧘 یوگا</h2><p>انعطاف‌پذیری، آرامش، کاهش استرس. حرکات مبتدی.</p></div>
+<div class="card"><h2>۱۲. 🧘 مدیتیشن</h2><p>تمرکز، آرامش ذهن، کاهش اضطراب. روزی ۱۰ دقیقه.</p></div>
+<div class="card"><h2>۱۳. 🏋️ پیلاتس</h2><p>تقویت عضلات مرکزی، بهبود posture.</p></div>
+<div class="card"><h2>۱۴. 🏃 کراسفیت</h2><p>تمرینات با شدت بالا. ترکیبی از وزنه و هوازی.</p></div>
+<div class="card"><h2>۱۵. ⚽ فوتبال</h2><p>محبوب‌ترین ورزش دنیا. قوانین، تکنیک‌ها، فوتبالیست‌های معروف.</p></div>
+<div class="card"><h2>۱۶. 🏀 بسکتبال</h2><p>قوانین، NBA، بازیکنان معروف.</p></div>
+<div class="card"><h2>۱۷. 🏐 والیبال</h2><p>قوانین، تکنیک‌ها، لیگ ایران.</p></div>
+<div class="card"><h2>۱۸. 🎾 تنیس</h2><p>قوانین، تکنیک‌ها، گرند اسلم.</p></div>
+<div class="card"><h2>۱۹. 🥊 بوکس</h2><p>تکنیک‌ها، مسابقات حرفه‌ای.</p></div>
+<div class="card"><h2>۲۰. 🥋 کاراته</h2><p>سبک‌ها، کمربندها، مسابقات.</p></div>
+<div class="card"><h2>۲۱. 🤼 کشتی</h2><p>آزاد و فرنگی. قهرمانان ایرانی.</p></div>
+<div class="card"><h2>۲۲. ⚽ فوتبال دستی</h2><p>قوانین، تکنیک‌ها.</p></div>
+<div class="card"><h2>۲۳. 🏓 پینگ پنگ</h2><p>تکنیک‌ها، قوانین.</p></div>
+<div class="card"><h2>۲۴. 🏸 بدمینتون</h2><p>قوانین، تکنیک‌ها.</p></div>
+<div class="card"><h2>۲۵. 🎳 بولینگ</h2><p>قوانین، تکنیک پرتاب.</p></div>
+<div class="card"><h2>۲۶. 🥗 تغذیه ورزشی</h2><p>پروتئین، کربوهیدرات، چربی سالم. وعده قبل و بعد تمرین.</p></div>
+<div class="card"><h2>۲۷. 💊 مکمل‌ها</h2><p>پروتئین وی، کراتین، BCAA، گلوتامین.</p></div>
+<div class="card"><h2>۲۸. ⚖️ کاهش وزن</h2><p>کمبود کالری، ورزش هوازی، رژیم غذایی.</p></div>
+<div class="card"><h2>۲۹. 💪 افزایش وزن</h2><p>مازاد کالری، بدنسازی سنگین، تغذیه مناسب.</p></div>
+<div class="card"><h2>۳۰. 🏃 برنامه تمرینی</h2><p>برنامه ۴ هفته‌ای مبتدی تا حرفه‌ای.</p></div>
+
+    <p style="text-align:center;margin:20px 0"><a href="index.html" style="color:#0d47a1">🔙 خانه</a></p>
 </body>
 </html>
