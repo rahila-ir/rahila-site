@@ -1,60 +1,52 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🚗 خودرو ۲ | رهیلا</title>
+    <title>🚗 خودرو ۲ | نگهداری و تعمیرات | rahilanab.com</title>
+    <meta name="description" content="راهنمای نگهداری خودرو: تعویض روغن، پولیش، سرامیک، باد لاستیک، ضد یخ، تسمه تایم، لنت ترمز، فیلتر هوا، شمع">
+    <meta name="keywords" content="خودرو, car, نگهداری, تعویض روغن, لنت, شمع, rahilanab">
     <style>
-        *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:'Arial';background:linear-gradient(135deg,#e3f2fd,#bbdefb,#90caf9,#a5d6a7);color:#111;padding:15px;min-height:100vh}
-        .header{background:#fff;border-radius:20px;padding:18px;margin-bottom:15px;text-align:center;box-shadow:0 4px 15px rgba(0,0,0,.1)}
-        .header h1{color:#0d47a1;font-size:22px}
-        .back-btn{display:inline-block;background:#0d47a1;color:#fff;padding:10px 25px;border-radius:20px;text-decoration:none;margin:10px 0}
-        .car-card{background:#fff;border-radius:20px;padding:20px;margin:20px 0;box-shadow:0 2px 15px rgba(0,0,0,.08);text-align:right}
-        .car-card h2{color:#0d47a1;font-size:20px;text-align:center;margin-bottom:10px}
-        .section{background:#f8f9fa;border-radius:12px;padding:12px;margin:8px 0;border-right:3px solid #0d47a1}
-        .section h3{color:#0d47a1;font-size:15px;margin-bottom:6px}
-        .section p{color:#333;font-size:13px;line-height:2}
-        .tips-box{background:#e8f5e9;border-radius:12px;padding:12px;border:1px solid #a5d6a7;margin:8px 0}
-        .tips-box h3{color:#2e7d32;font-size:14px}
-        .tips-box ul{color:#333;font-size:12px;line-height:2;padding-right:12px}
+        *{margin:0;padding:0;box-sizing:border-box}body{font-family:'Arial';background:linear-gradient(135deg,#e3f2fd,#bbdefb,#90caf9,#a5d6a7);color:#000;text-align:center;padding:10px;min-height:100vh}.header{background:#fff;border-radius:20px;padding:18px;margin-bottom:10px;box-shadow:0 4px 15px rgba(0,0,0,.1)}.header h1{color:#0d47a1;font-size:24px}.header p{color:#000;font-size:14px;font-weight:bold}.full-card{background:#fff;border-radius:15px;padding:20px;margin:12px 0;box-shadow:0 2px 10px rgba(0,0,0,.08);text-align:right;line-height:2.2}.full-card h2{color:#0d47a1;font-size:19px;margin-bottom:10px;text-align:center;border-bottom:1px solid #e3f2fd;padding-bottom:8px}.full-card p{color:#000;font-size:15px;font-weight:bold;margin:8px 0}.golden-box{background:linear-gradient(135deg,#fff8e1,#ffe082,#ffd54f);border-right:4px solid #ff8f00;padding:15px;border-radius:10px;margin:15px 0;box-shadow:0 3px 10px rgba(255,143,0,.15)}.golden-box p{color:#000;font-size:15px;font-weight:bold}.red-box{background:linear-gradient(135deg,#ffebee,#ffcdd2,#ef9a9a);border-right:4px solid #c62828;padding:15px;border-radius:10px;margin:15px 0;box-shadow:0 3px 10px rgba(198,40,40,.15)}.red-box p{color:#000;font-size:15px;font-weight:bold}.blue-box{background:linear-gradient(135deg,#e3f2fd,#bbdefb,#90caf9);border-right:4px solid #0d47a1;padding:15px;border-radius:10px;margin:15px 0;box-shadow:0 3px 10px rgba(13,71,161,.15)}.blue-box p{color:#000;font-size:15px;font-weight:bold}.green-box{background:linear-gradient(135deg,#e8f5e9,#c8e6c9,#a5d6a7);border-right:4px solid #2e7d32;padding:15px;border-radius:10px;margin:15px 0;box-shadow:0 3px 10px rgba(46,125,50,.15)}.green-box p{color:#000;font-size:15px;font-weight:bold}.back-btn{display:inline-block;background:#0d47a1;color:#fff;padding:10px 22px;border-radius:20px;text-decoration:none;margin:10px 0;font-weight:bold;font-size:15px}.footer{background:#fff;padding:12px;margin-top:12px;font-size:11px;color:#000;border-radius:15px;font-weight:bold}.footer a{color:#0d47a1}
     </style>
 </head>
 <body>
-    <div class="header"><h1>🚗 خودرو ۲</h1><p>rahilanab.com</p></div>
-    <a href="car.html" class="back-btn">🔙 خودرو ۱</a>
+<div class="header"><h1>🚗 خودرو ۲</h1><p>نگهداری و تعمیرات اساسی | rahilanab.com</p></div>
 
-<div class="car-card"><h2>۲۶. 🚗 تعویض روغن</h2><div class="section"><h3>📋 نکات</h3><p>هر ۵۰۰۰ کیلومتر. روغن موتور مناسب با گرانروی توصیه شده. فیلتر روغن هم همزمان عوض بشه.</p></div></div>
+<div class="full-card">
+    <h2>🔧 تعویض روغن موتور</h2>
+    <p>مهم‌ترین و اساسی‌ترین کار نگهداری خودرو! روغن موتور <strong>هر ۵۰۰۰-۷۰۰۰ کیلومتر</strong> (یا هر ۶ ماه) باید تعویض شود. همراه با روغن، <strong>فیلتر روغن</strong> هم حتماً تعویض کنید (فیلتر کثیف = روغن تمیز را هم خراب می‌کند). <strong>هزینه:</strong> ۵۰۰-۸۰۰ هزار تومان (بسته به نوع روغن).</p>
+    <p><strong>انواع روغن:</strong> <strong>مینرال</strong> (طبیعی، ارزان، ۵۰۰۰ کیلومتر)، <strong>سنتتیک</strong> (مصنوعی، عالی، ۱۰۰۰۰ کیلومتر)، <strong>نیمه‌سنتتیک</strong> (ترکیبی، ۷۰۰۰ کیلومتر).</p>
+    <div class="golden-box"><p>💡 <strong>نکته طلایی:</strong> تعویض به‌موقع روغن = عمر موتور ۲ برابر! ارزان‌ترین بیمه برای موتور خودرویتان.</p></div>
+    <div class="red-box"><p>⚠️ <strong>هشدار:</strong> روغن را بیش از حد تعویض نکنید (مثلاً هر ۱۰۰۰ کیلومتر) - اسراف است. اما دیرتر از ۷۰۰۰ کیلومتر هم نگذارید - لجن موتور می‌گیرد.</p></div>
+</div>
 
-<div class="car-card"><h2>۲۷. 🚗 پولیش و واکس</h2><div class="section"><h3>📋 روش</h3><p>۱. شستشوی کامل ۲. پولیش با دستگاه ۳. واکس محافظ. هر ۶ ماه یکبار.</p></div></div>
+<div class="full-card">
+    <h2>🔧 تسمه تایم (Timing Belt)</h2>
+    <p>تسمه تایم <strong>هماهنگی بین میل‌لنگ و میل‌سوپاپ</strong> را حفظ می‌کند. اگر پاره شود = <strong>سوپاپ‌ها با پیستون برخورد می‌کنند = موتور نابود می‌شود!</strong> (هزینه تعمیر: ۳۰-۸۰ میلیون!). <strong>زمان تعویض:</strong> هر <strong>۶۰,۰۰۰-۱۰۰,۰۰۰ کیلومتر</strong> (طبق دفترچه راهنما). همراه تسمه تایم، <strong>تسمه دینام</strong> و <strong>پولی‌ها</strong> و <strong>واتر پمپ</strong> را هم تعویض کنید.</p>
+    <div class="red-box"><p>⚠️ <strong>هشدار حیاتی:</strong> اگر صدای جیغ یا سوت از موتور می‌شنوید = تسمه در حال پاره شدن است! فوراً تعمیرگاه!</p></div>
+</div>
 
-<div class="car-card"><h2>۲۸. 🚗 سرامیک خودرو</h2><div class="section"><h3>📋 توضیح</h3><p>پوشش محافظ نانو سرامیک. ماندگاری ۲-۵ سال. ضد آب، ضد خط و خش، براق‌کننده.</p></div></div>
+<div class="full-card">
+    <h2>🔧 لنت و دیسک ترمز</h2>
+    <p><strong>لنت ترمز:</strong> هر ۲۰,۰۰۰-۴۰,۰۰۰ کیلومتر (بسته به سبک رانندگی). <strong>صدای جیغ</strong> = لنت تمام شده. <strong>دیسک ترمز:</strong> هر ۶۰,۰۰۰-۸۰,۰۰۰ کیلومتر. اگر لنت به موقع تعویض نشود، فلز لنت به دیسک می‌ساید و دیسک خط می‌افتد.</p>
+    <div class="golden-box"><p>💡 لنت عقب معمولاً <strong>زودتر</strong> از لنت جلو تمام می‌شود (برخلاف تصور عموم!). همیشه هر دو محور را چک کنید.</p></div>
+</div>
 
-<div class="car-card"><h2>۲۹. 🚗 قیمت خودرو</h2><div class="section"><h3>📋 خودروهای داخلی</h3><p>پراید، تیبا، کوییک، ساینا، پژو ۲۰۶، پژو ۴۰۵، سمند، دنا، رانا.</p></div></div>
+<div class="full-card">
+    <h2>🔧 شمع‌ها (Spark Plugs)</h2>
+    <p>شمع‌ها جرقه لازم برای احتراق را ایجاد می‌کنند. <strong>زمان تعویض:</strong> هر ۳۰,۰۰۰-۶۰,۰۰۰ کیلومتر. <strong>علائم خرابی:</strong> مصرف سوخت بالا، ریپ زدن، شتاب کم، استارت سخت. <strong>هزینه:</strong> ۲۰۰-۵۰۰ هزار تومان (۴ عدد).</p>
+    <div class="blue-box"><p>🔧 شمع‌های <strong>ایریدیوم</strong> (Iridium) تا ۱۰۰,۰۰۰ کیلومتر عمر می‌کنند و عملکرد بهتری دارند.</p></div>
+</div>
 
-<div class="car-card"><h2>۳۰. 🚗 قیمت خودرو خارجی</h2><div class="section"><h3>📋 برندها</h3><p>هیوندای، کیا، تویوتا، نیسان، رنو، بی ام و، بنز.</p></div></div>
+<div class="full-card">
+    <h2>🔧 فیلترها</h2>
+    <p><strong>فیلتر هوا:</strong> هر ۱۰,۰۰۰-۱۵,۰۰۰ کیلومتر. فیلتر کثیف = مصرف سوخت بالا + شتاب کم. <strong>فیلتر کابین:</strong> هر ۱۵,۰۰۰-۲۰,۰۰۰ کیلومتر (برای هوای داخل کابین). <strong>فیلتر بنزین:</strong> هر ۳۰,۰۰۰-۴۰,۰۰۰ کیلومتر.</p>
+    <div class="green-box"><p>💚 <strong>صرفه‌جویی:</strong> فیلتر هوا را می‌توانید خودتان در ۵ دقیقه تعویض کنید! (۵۰-۱۰۰ هزار تومان).</p></div>
+</div>
 
-<div class="car-card"><h2>۳۱. 🚗 کارواش</h2><div class="section"><h3>📋 روش صحیح</h3><p>۱. پیش‌شستشو ۲. شامپو مخصوص ۳. آب‌کشی ۴. خشک کردن با حوله میکروفایبر.</p></div></div>
-
-<div class="car-card"><h2>۳۲. 🚗 باد لاستیک</h2><div class="section"><h3>📋 مقدار استاندارد</h3><p>پراید: ۲۸-۳۰ PSI. سمند: ۳۰-۳۲ PSI. خودروهای شاسی‌بلند: ۳۲-۳۵ PSI.</p></div></div>
-
-<div class="car-card"><h2>۳۳. 🚗 زاپاس</h2><div class="section"><h3>📋 نکات</h3><p>هر ۳ ماه باد زاپاس رو چک کن. زاپاس رو هر ۵ سال تعویض کن حتی اگر استفاده نشده.</p></div></div>
-
-<div class="car-card"><h2>۳۴. 🚗 ضد یخ</h2><div class="section"><h3>📋 نکات</h3><p>ترکیب ۵۰٪ ضد یخ + ۵۰٪ آب. هر ۲ سال تعویض کن.</p></div></div>
-
-<div class="car-card"><h2>۳۵. 🚗 تسمه تایم</h2><div class="section"><h3>📋 نکات</h3><p>تعویض هر ۶۰,۰۰۰ کیلومتر. اگه پاره بشه = خرابی کامل موتور!</p></div></div>
-
-<div class="car-card"><h2>۳۶. 🚗 لنت ترمز</h2><div class="section"><h3>📋 علائم</h3><p>صدای جیغ، لرزش پدال، افزایش مسافت ترمز. تعویض هر ۲۰-۳۰ هزار کیلومتر.</p></div></div>
-
-<div class="car-card"><h2>۳۷. 🚗 فیلتر هوا</h2><div class="section"><h3>📋 نکات</h3><p>تعویض هر ۱۰,۰۰۰ کیلومتر. فیلتر کثیف = مصرف بنزین بالا + شتاب کم.</p></div></div>
-
-<div class="car-card"><h2>۳۸. 🚗 شمع‌ها</h2><div class="section"><h3>📋 علائم</h3><p>ریپ زدن، شتاب کم، مصرف بالا. تعویض هر ۲۰,۰۰۰ کیلومتر.</p></div></div>
-
-<div class="car-card"><h2>۳۹. 🚗 کمک فنر</h2><div class="section"><h3>📋 علائم</h3><p>خودرو روی دست‌انداز می‌پره، چسبندگی کم، لاستیک‌ها ساییده میشن.</p></div></div>
-
-<div class="car-card"><h2>۴۰. 🚗 گیربکس</h2><div class="section"><h3>📋 نکات</h3><p>روغن گیربکس هر ۴۰,۰۰۰ کیلومتر تعویض کن. دنده سخت = مشکل گیربکس.</p></div></div>
-
-    <p style="text-align:center;margin:20px 0"><a href="car.html" style="color:#0d47a1">← خودرو ۱</a></p>
-    <p style="text-align:center"><a href="index.html" style="color:#0d47a1">🔙 خانه</a></p>
+<a href="index.html" class="back-btn">🔙 خانه</a>
+<a href="car.html" class="back-btn">🚗 خودرو ۱ ←</a>
+<div class="footer"><p>🌟 rahilanab.com</p></div>
 </body>
 </html>
