@@ -3,36 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>⏰ ساعت زنده | تقویم شمسی | rahilanab.com</title>
-    <meta name="description" content="ساعت زنده و تقویم شمسی - زمان دقیق ایران">
-    <meta name="keywords" content="ساعت, تقویم, زمان, شمسی, rahilanab">
+    <title>⏰ ساعت زنده | تقویم شمسی، میلادی و قمری | rahilanab.com</title>
+    <meta name="description" content="ساعت زنده ایران، تقویم شمسی، میلادی، قمری، زمان دقیق تهران">
+    <meta name="keywords" content="ساعت, تقویم, شمسی, میلادی, قمری, rahilanab">
     <style>
-        *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:'Arial';background:linear-gradient(135deg,#e3f2fd,#bbdefb,#90caf9,#a5d6a7);color:#000;padding:15px;min-height:100vh;text-align:center}
-        .header{background:#fff;border-radius:20px;padding:20px;margin-bottom:15px;box-shadow:0 4px 15px rgba(0,0,0,.1)}
-        .header h1{color:#0d47a1;font-size:26px}
-        .header p{color:#000;font-size:17px;font-weight:bold;margin-top:5px}
-        .section{background:#fff;border-radius:20px;padding:30px;margin:18px 0;box-shadow:0 2px 12px rgba(0,0,0,.08)}
-        .section h2{color:#0d47a1;font-size:50px;font-weight:bold}
-        .section p{color:#000;font-size:18px;font-weight:bold;margin:8px 0}
-        .back-btn{display:inline-block;background:#0d47a1;color:#fff;padding:12px 28px;border-radius:25px;text-decoration:none;margin:12px 0;font-weight:bold;font-size:17px}
-        .footer{background:#fff;padding:16px;margin-top:20px;font-size:15px;color:#000;border-radius:15px;font-weight:bold}
-        .footer a{color:#0d47a1;text-decoration:none;font-weight:bold}
+        *{margin:0;padding:0;box-sizing:border-box}body{font-family:'Arial';background:linear-gradient(135deg,#e3f2fd,#bbdefb,#90caf9,#a5d6a7);color:#000;text-align:center;padding:10px;min-height:100vh}.header{background:#fff;border-radius:20px;padding:18px;margin-bottom:10px;box-shadow:0 4px 15px rgba(0,0,0,.1)}.header h1{color:#0d47a1;font-size:24px}.header p{color:#000;font-size:14px;font-weight:bold}.clock-box{background:#fff;border-radius:20px;padding:30px;box-shadow:0 2px 10px rgba(0,0,0,.08);margin:12px 0}.clock-box h2{color:#0d47a1;font-size:55px;font-weight:bold;margin:10px 0}.clock-box p{color:#000;font-size:18px;font-weight:bold;margin:8px 0}.full-card{background:#fff;border-radius:15px;padding:20px;margin:12px 0;box-shadow:0 2px 10px rgba(0,0,0,.08);text-align:right;line-height:2.2}.full-card h2{color:#0d47a1;font-size:19px;margin-bottom:10px;text-align:center;border-bottom:1px solid #e3f2fd;padding-bottom:8px}.full-card p{color:#000;font-size:15px;font-weight:bold;margin:8px 0}.golden-box{background:linear-gradient(135deg,#fff8e1,#ffe082,#ffd54f);border-right:4px solid #ff8f00;padding:15px;border-radius:10px;margin:15px 0}.golden-box p{color:#000;font-size:15px;font-weight:bold}.blue-box{background:linear-gradient(135deg,#e3f2fd,#bbdefb,#90caf9);border-right:4px solid #0d47a1;padding:15px;border-radius:10px;margin:15px 0}.blue-box p{color:#000;font-size:15px;font-weight:bold}.back-btn{display:inline-block;background:#0d47a1;color:#fff;padding:10px 22px;border-radius:20px;text-decoration:none;margin:10px 0;font-weight:bold;font-size:15px}.footer{background:#fff;padding:12px;margin-top:12px;font-size:11px;color:#000;border-radius:15px;font-weight:bold}.footer a{color:#0d47a1}
     </style>
 </head>
 <body>
-<div class="header"><h1>⏰ ساعت زنده</h1><p>rahilanab.com</p></div>
-<div class="section">
+<div class="header"><h1>⏰ ساعت زنده ایران</h1><p>تقویم شمسی | میلادی | قمری (خودکار) | rahilanab.com</p></div>
+
+<div class="clock-box">
     <h2 id="timeDisplay">--:--:--</h2>
-    <p id="dateDisplay">---</p>
+    <p id="shamsiDisplay">---</p>
+    <p id="miladiDisplay">---</p>
+    <p id="ghamariDisplay" style="color:#0d47a1">---</p>
 </div>
+
+<div class="full-card">
+    <h2>🌍 ساعت شهرهای مهم جهان</h2>
+    <p>🇬🇧 <strong>لندن:</strong> <span id="londonTime">---</span></p>
+    <p>🇺🇸 <strong>نیویورک:</strong> <span id="newyorkTime">---</span></p>
+    <p>🇯🇵 <strong>توکیو:</strong> <span id="tokyoTime">---</span></p>
+    <p>🇦🇪 <strong>دبی:</strong> <span id="dubaiTime">---</span></p>
+    <p>🇹🇷 <strong>استانبول:</strong> <span id="istanbulTime">---</span></p>
+</div>
+
+<div class="full-card">
+    <h2>📅 اطلاعات تقویم</h2>
+    <p>☀️ <strong>امروز (شمسی):</strong> <span id="infoShamsi">---</span></p>
+    <p>🌍 <strong>امروز (میلادی):</strong> <span id="infoMiladi">---</span></p>
+    <p>🌙 <strong>امروز (قمری):</strong> <span id="infoGhamari">---</span></p>
+    <p>🕐 <strong>ساعت فعلی:</strong> <span id="infoTime">---</span></p>
+</div>
+
+<div class="golden-box"><p>💡 ایران از سال ۱۴۰۲ دیگر ساعت رسمی را جلو و عقب نمی‌کشد! ساعت رسمی ایران ثابت است.</p></div>
+<div class="blue-box"><p>⏰ این ساعت به صورت زنده و خودکار بروزرسانی می‌شود - بدون نیاز به رفرش صفحه!</p></div>
+
 <a href="index.html" class="back-btn">🔙 بازگشت به خانه</a>
 <div class="footer"><p>🌟 rahilanab.com | <a href="index.html">🏠 خانه</a></p></div>
+
 <script>
-function updateClock(){
+// ============ تقویم قمری خودکار ============
+function shamsiToGhamari(){
     let now=new Date();
-    document.getElementById('timeDisplay').textContent=now.toLocaleTimeString('fa-IR');
-    document.getElementById('dateDisplay').textContent=now.toLocaleDateString('fa-IR',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+    let start=new Date(2026,5,9);
+    let diff=Math.floor((now-start)/(24*60*60*1000));
+    let ghDay=23+diff;let ghYear=1447;let ghMonth=12;
+    let months=[30,29,30,29,30,29,30,29,30,29,30,29];
+    while(ghDay>months[ghMonth-1]){ghDay-=months[ghMonth-1];ghMonth++;if(ghMonth>12){ghMonth=1;ghYear++}}
+    while(ghDay<1){ghMonth--;if(ghMonth<1){ghMonth=12;ghYear--}ghDay+=months[ghMonth-1]}
+    let ghMonthNames=['محرم','صفر','ربیع‌الاول','ربیع‌الثانی','جمادی‌الاول','جمادی‌الثانی','رجب','شعبان','رمضان','شوال','ذی‌القعده','ذی‌الحجه'];
+    return ghDay+' '+ghMonthNames[ghMonth-1]+' '+ghYear;
+}
+
+function updateClock(){
+    let n=new Date();
+    document.getElementById('timeDisplay').textContent=n.toLocaleTimeString('fa-IR',{hour12:false});
+    document.getElementById('shamsiDisplay').textContent='☀️ '+n.toLocaleDateString('fa-IR',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+    document.getElementById('miladiDisplay').textContent='🌍 '+n.toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+    document.getElementById('ghamariDisplay').textContent='🌙 '+shamsiToGhamari()+' هجری قمری';
+    document.getElementById('infoShamsi').textContent=n.toLocaleDateString('fa-IR',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+    document.getElementById('infoMiladi').textContent=n.toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+    document.getElementById('infoGhamari').textContent=shamsiToGhamari()+' هجری قمری';
+    document.getElementById('infoTime').textContent=n.toLocaleTimeString('fa-IR',{hour12:false});
+    document.getElementById('londonTime').textContent=new Date(n.getTime()).toLocaleTimeString('en-US',{hour12:false,timeZone:'Europe/London'});
+    document.getElementById('newyorkTime').textContent=new Date(n.getTime()).toLocaleTimeString('en-US',{hour12:false,timeZone:'America/New_York'});
+    document.getElementById('tokyoTime').textContent=new Date(n.getTime()).toLocaleTimeString('en-US',{hour12:false,timeZone:'Asia/Tokyo'});
+    document.getElementById('dubaiTime').textContent=new Date(n.getTime()).toLocaleTimeString('en-US',{hour12:false,timeZone:'Asia/Dubai'});
+    document.getElementById('istanbulTime').textContent=new Date(n.getTime()).toLocaleTimeString('en-US',{hour12:false,timeZone:'Europe/Istanbul'});
 }
 setInterval(updateClock,1000);updateClock();
 </script>
