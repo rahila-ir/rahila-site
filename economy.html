@@ -23,8 +23,8 @@
             margin-bottom:15px;
             box-shadow:0 4px 15px rgba(0,0,0,.1);
         }
-        .header h1{color:#0d47a1;font-size:26px}
-        .header p{color:#000;font-size:17px;font-weight:bold;margin-top:5px}
+        .header h1{color:#0d47a1;font-size:28px}
+        .header p{color:#000;font-size:18px;font-weight:bold;margin-top:5px}
         .price-grid{
             display:grid;
             grid-template-columns:1fr 1fr;
@@ -34,13 +34,13 @@
         .price-card{
             background:#fff;
             border-radius:15px;
-            padding:20px 12px;
+            padding:22px 12px;
             box-shadow:0 2px 10px rgba(0,0,0,.08);
             text-align:center;
         }
-        .price-card .emoji{font-size:35px;margin-bottom:8px}
-        .price-card .name{color:#0d47a1;font-size:15px;font-weight:bold;margin-bottom:6px}
-        .price-card .value{color:#000;font-size:20px;font-weight:bold}
+        .price-card .emoji{font-size:40px;margin-bottom:8px}
+        .price-card .name{color:#0d47a1;font-size:17px;font-weight:bold;margin-bottom:6px}
+        .price-card .value{color:#000;font-size:22px;font-weight:bold}
         .golden-box{
             background:linear-gradient(135deg,#fff8e1,#ffe082,#ffd54f);
             border-right:5px solid #ff8f00;
@@ -48,7 +48,7 @@
             border-radius:12px;
             margin:18px 0;
         }
-        .golden-box p{color:#000;font-size:16px;font-weight:bold;margin:6px 0}
+        .golden-box p{color:#000;font-size:17px;font-weight:bold;margin:6px 0}
         .blue-box{
             background:linear-gradient(135deg,#e3f2fd,#bbdefb,#90caf9);
             border-right:5px solid #0d47a1;
@@ -56,7 +56,7 @@
             border-radius:12px;
             margin:18px 0;
         }
-        .blue-box p{color:#000;font-size:16px;font-weight:bold;margin:6px 0}
+        .blue-box p{color:#000;font-size:17px;font-weight:bold;margin:6px 0}
         .red-box{
             background:linear-gradient(135deg,#ffebee,#ffcdd2,#ef9a9a);
             border-right:5px solid #c62828;
@@ -64,8 +64,8 @@
             border-radius:12px;
             margin:18px 0;
         }
-        .red-box p{color:#000;font-size:16px;font-weight:bold;margin:6px 0}
-        .update-time{color:#666;font-size:14px;margin:10px 0;font-weight:bold}
+        .red-box p{color:#000;font-size:17px;font-weight:bold;margin:6px 0}
+        .update-time{color:#666;font-size:16px;margin:10px 0;font-weight:bold}
         .back-btn{
             display:inline-block;
             background:#0d47a1;
@@ -81,7 +81,7 @@
             background:#fff;
             padding:16px;
             margin-top:20px;
-            font-size:15px;
+            font-size:16px;
             color:#000;
             border-radius:15px;
             font-weight:bold;
@@ -89,7 +89,7 @@
         .footer a{color:#0d47a1;text-decoration:none;font-weight:bold}
         @media(max-width:400px){
             .price-grid{grid-template-columns:1fr 1fr}
-            .price-card .value{font-size:17px}
+            .price-card .value{font-size:18px}
         }
     </style>
 </head>
@@ -106,167 +106,41 @@
 
 <p class="update-time">⏰ آخرین بروزرسانی: <span id="lastUpdate">در حال بارگذاری...</span></p>
 
-<!-- طلا و سکه -->
 <div class="price-grid">
-    <div class="price-card">
-        <div class="emoji">🟡</div>
-        <div class="name">طلای ۱۸ عیار (گرم)</div>
-        <div class="value" id="g18">در حال دریافت...</div>
-    </div>
-    <div class="price-card">
-        <div class="emoji">🟨</div>
-        <div class="name">طلای ۲۴ عیار (گرم)</div>
-        <div class="value" id="g24">در حال دریافت...</div>
-    </div>
-    <div class="price-card">
-        <div class="emoji">🪙</div>
-        <div class="name">سکه امامی</div>
-        <div class="value" id="sekke">در حال دریافت...</div>
-    </div>
-    <div class="price-card">
-        <div class="emoji">💵</div>
-        <div class="name">دلار (تومان)</div>
-        <div class="value" id="dollar">در حال دریافت...</div>
-    </div>
-    <div class="price-card">
-        <div class="emoji">💶</div>
-        <div class="name">یورو (تومان)</div>
-        <div class="value" id="euro">در حال دریافت...</div>
-    </div>
-    <div class="price-card">
-        <div class="emoji">💷</div>
-        <div class="name">پوند (تومان)</div>
-        <div class="value" id="pound">در حال دریافت...</div>
-    </div>
+    <div class="price-card"><div class="emoji">🟡</div><div class="name">طلای ۱۸ عیار (گرم)</div><div class="value" id="g18">---</div></div>
+    <div class="price-card"><div class="emoji">🟨</div><div class="name">طلای ۲۴ عیار (گرم)</div><div class="value" id="g24">---</div></div>
+    <div class="price-card"><div class="emoji">🪙</div><div class="name">سکه امامی</div><div class="value" id="sekke">---</div></div>
+    <div class="price-card"><div class="emoji">💵</div><div class="name">دلار (تومان)</div><div class="value" id="dollar">---</div></div>
+    <div class="price-card"><div class="emoji">💶</div><div class="name">یورو (تومان)</div><div class="value" id="euro">---</div></div>
+    <div class="price-card"><div class="emoji">💷</div><div class="name">پوند (تومان)</div><div class="value" id="pound">---</div></div>
 </div>
 
-<!-- ارز دیجیتال -->
 <h2 style="color:#0d47a1;margin:20px 0 10px;font-size:22px">₿ ارزهای دیجیتال</h2>
 <div class="price-grid">
-    <div class="price-card">
-        <div class="emoji">₿</div>
-        <div class="name">بیت‌کوین (BTC)</div>
-        <div class="value" id="btc">در حال دریافت...</div>
-    </div>
-    <div class="price-card">
-        <div class="emoji">🔷</div>
-        <div class="name">اتریوم (ETH)</div>
-        <div class="value" id="eth">در حال دریافت...</div>
-    </div>
-    <div class="price-card">
-        <div class="emoji">💵</div>
-        <div class="name">تتر (USDT)</div>
-        <div class="value" id="usdt">در حال دریافت...</div>
-    </div>
-    <div class="price-card">
-        <div class="emoji">🐕</div>
-        <div class="name">دوج کوین (DOGE)</div>
-        <div class="value" id="doge">در حال دریافت...</div>
-    </div>
+    <div class="price-card"><div class="emoji">₿</div><div class="name">بیت‌کوین (BTC)</div><div class="value" id="btc">---</div></div>
+    <div class="price-card"><div class="emoji">🔷</div><div class="name">اتریوم (ETH)</div><div class="value" id="eth">---</div></div>
+    <div class="price-card"><div class="emoji">💵</div><div class="name">تتر (USDT)</div><div class="value" id="usdt">---</div></div>
+    <div class="price-card"><div class="emoji">🐕</div><div class="name">دوج کوین (DOGE)</div><div class="value" id="doge">---</div></div>
 </div>
 
-<div class="blue-box">
-    <p>📊 <strong>نحوه محاسبه:</strong> انس جهانی طلا × نرخ دلار ایران. سکه = طلا ۱۸ × ۱.۰۵. ارزهای دیجیتال از CoinGecko.</p>
-</div>
-
-<div class="red-box">
-    <p>⚠️ <strong>توجه:</strong> قیمت‌ها از APIهای جهانی دریافت میشن. نرخ دلار (تومان) رو باید دستی آپدیت کنی.</p>
-</div>
+<div class="blue-box"><p>📊 <strong>نحوه محاسبه:</strong> انس جهانی طلا × نرخ دلار ایران. سکه = طلا ۱۸ × ۱.۰۵. ارزهای دیجیتال از CoinGecko.</p></div>
+<div class="red-box"><p>⚠️ <strong>توجه:</strong> قیمت‌ها از APIهای جهانی دریافت میشن. نرخ دلار (تومان) رو باید دستی آپدیت کنی.</p></div>
 
 <a href="index.html" class="back-btn">🔙 بازگشت به خانه</a>
 
-<div class="footer">
-    <p>🌟 rahilanab.com | <a href="index.html">🏠 خانه</a> | <a href="all.html">📋 همه لینک‌ها</a></p>
-</div>
+<div class="footer"><p>🌟 rahilanab.com | <a href="index.html">🏠 خانه</a> | <a href="all.html">📋 همه لینک‌ها</a></p></div>
 
 <script>
-// 📅 تاریخ امروز — خودکار از سیستم
-function getToday(){
-    let now=new Date();
-    let options={weekday:'long',year:'numeric',month:'long',day:'numeric'};
-    return now.toLocaleDateString('fa-IR',options);
-}
+function getToday(){let now=new Date();let options={weekday:'long',year:'numeric',month:'long',day:'numeric'};return now.toLocaleDateString('fa-IR',options);}
 document.getElementById('todayDate').textContent=getToday();
-
-// فرمت‌دهی اعداد
-function formatPrice(num,currency){
-    if(currency==='toman')return Math.round(num).toLocaleString('fa-IR')+' تومان';
-    if(currency==='dollar')return '$'+Number(num).toLocaleString('en-US',{maximumFractionDigits:0});
-    if(currency==='dollar2')return '$'+Number(num).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
-    return num.toLocaleString('fa-IR');
-}
-
-// متغیرهای جهانی
-let dollarRate=180000;
-let goldOunce=2900;
-let eurRate=1.08;
-let gbpRate=1.26;
-
-// گرفتن نرخ ارز از ExchangeRate API
-async function getForexRates(){
-    try{
-        let r=await fetch('https://api.exchangerate-api.com/v4/latest/USD');
-        let d=await r.json();
-        eurRate=d.rates.EUR;
-        gbpRate=d.rates.GBP;
-    }catch(e){}
-    
-    document.getElementById('dollar').textContent=formatPrice(dollarRate,'toman');
-    document.getElementById('euro').textContent=formatPrice(Math.round(dollarRate*eurRate),'toman');
-    document.getElementById('pound').textContent=formatPrice(Math.round(dollarRate*gbpRate),'toman');
-    document.getElementById('usdt').textContent=formatPrice(Math.round(dollarRate*1.02),'toman');
-}
-
-// گرفتن قیمت انس طلا از Metals.live
-async function getGoldRate(){
-    try{
-        let r=await fetch('https://api.metals.live/v1/spot/gold');
-        let data=await r.json();
-        if(data&&data[0]&&data[0].price)goldOunce=data[0].price;
-    }catch(e){}
-    
-    let onsGeram=goldOunce/31.1035;
-    let g18=Math.round(onsGeram*0.75*dollarRate);
-    let g24=Math.round(onsGeram*0.999*dollarRate);
-    let sekke=Math.round(g18*1.05);
-    
-    document.getElementById('g18').textContent=formatPrice(g18,'toman');
-    document.getElementById('g24').textContent=formatPrice(g24,'toman');
-    document.getElementById('sekke').textContent=formatPrice(sekke,'toman');
-}
-
-// گرفتن قیمت ارز دیجیتال از CoinGecko
-async function getCrypto(){
-    try{
-        let r=await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,dogecoin&vs_currencies=usd');
-        let d=await r.json();
-        document.getElementById('btc').textContent=formatPrice(d.bitcoin.usd,'dollar');
-        document.getElementById('eth').textContent=formatPrice(d.ethereum.usd,'dollar');
-        document.getElementById('doge').textContent=formatPrice(d.dogecoin.usd,'dollar2');
-    }catch(e){
-        document.getElementById('btc').textContent='---';
-        document.getElementById('eth').textContent='---';
-        document.getElementById('doge').textContent='---';
-    }
-}
-
-// آپدیت زمان
-function updateTime(){
-    document.getElementById('lastUpdate').textContent=new Date().toLocaleTimeString('fa-IR');
-}
-
-// آپدیت همه
-async function updateAll(){
-    updateTime();
-    await getGoldRate();
-    await getForexRates();
-    await getCrypto();
-}
-
-// شروع
-updateAll();
-setInterval(updateAll,30000);
+function formatPrice(num,currency){if(currency==='toman')return Math.round(num).toLocaleString('fa-IR')+' تومان';if(currency==='dollar')return '$'+Number(num).toLocaleString('en-US',{maximumFractionDigits:0});if(currency==='dollar2')return '$'+Number(num).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});return num.toLocaleString('fa-IR');}
+let dollarRate=180000;let goldOunce=2900;let eurRate=1.08;let gbpRate=1.26;
+async function getForexRates(){try{let r=await fetch('https://api.exchangerate-api.com/v4/latest/USD');let d=await r.json();eurRate=d.rates.EUR;gbpRate=d.rates.GBP}catch(e){}document.getElementById('dollar').textContent=formatPrice(dollarRate,'toman');document.getElementById('euro').textContent=formatPrice(Math.round(dollarRate*eurRate),'toman');document.getElementById('pound').textContent=formatPrice(Math.round(dollarRate*gbpRate),'toman');document.getElementById('usdt').textContent=formatPrice(Math.round(dollarRate*1.02),'toman')}
+async function getGoldRate(){try{let r=await fetch('https://api.metals.live/v1/spot/gold');let data=await r.json();if(data&&data[0]&&data[0].price)goldOunce=data[0].price}catch(e){}let onsGeram=goldOunce/31.1035;let g18=Math.round(onsGeram*0.75*dollarRate);let g24=Math.round(onsGeram*0.999*dollarRate);let sekke=Math.round(g18*1.05);document.getElementById('g18').textContent=formatPrice(g18,'toman');document.getElementById('g24').textContent=formatPrice(g24,'toman');document.getElementById('sekke').textContent=formatPrice(sekke,'toman')}
+async function getCrypto(){try{let r=await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,dogecoin&vs_currencies=usd');let d=await r.json();document.getElementById('btc').textContent=formatPrice(d.bitcoin.usd,'dollar');document.getElementById('eth').textContent=formatPrice(d.ethereum.usd,'dollar');document.getElementById('doge').textContent=formatPrice(d.dogecoin.usd,'dollar2')}catch(e){document.getElementById('btc').textContent='---';document.getElementById('eth').textContent='---';document.getElementById('doge').textContent='---'}}
+function updateTime(){document.getElementById('lastUpdate').textContent=new Date().toLocaleTimeString('fa-IR')}
+async function updateAll(){updateTime();await getGoldRate();await getForexRates();await getCrypto()}
+updateAll();setInterval(updateAll,30000);
 </script>
-
 </body>
 </html>
