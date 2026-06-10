@@ -1,107 +1,56 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🤲 ادعیه ۲ | رهیلا</title>
+    <title>🤲 ادعیه ۲ | ابوحمزه، سمات، مجیر، عشرات | rahilanab.com</title>
+    <meta name="description" content="متن کامل دعاهای ابوحمزه ثمالی، سمات، مجیر و عشرات با ترجمه فارسی">
+    <meta name="keywords" content="ابوحمزه, سمات, مجیر, عشرات, دعا, rahilanab">
     <style>
-        *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:'Arial';background:linear-gradient(135deg,#e3f2fd,#bbdefb,#90caf9,#a5d6a7);color:#111;padding:15px;min-height:100vh}
-        .header{background:#fff;border-radius:20px;padding:18px;margin-bottom:15px;text-align:center;box-shadow:0 4px 15px rgba(0,0,0,.1)}
-        .header h1{color:#0d47a1;font-size:22px}
-        .back-btn{display:inline-block;background:#0d47a1;color:#fff;padding:10px 25px;border-radius:20px;text-decoration:none;margin:10px 0}
-        .dua-card{background:#fff;border-radius:20px;padding:20px;margin:20px 0;box-shadow:0 2px 15px rgba(0,0,0,.08);text-align:right}
-        .dua-card h2{color:#0d47a1;font-size:20px;text-align:center;margin-bottom:12px;border-bottom:2px solid #e3f2fd;padding-bottom:8px}
-        .dua-text{background:#f8f9fa;border-radius:12px;padding:15px;margin:10px 0;line-height:2.5;text-align:center}
-        .dua-text .arabic{color:#1a237e;font-size:17px;line-height:2.8;font-weight:bold}
-        .dua-text .farsi{color:#555;font-size:13px;line-height:2}
-        .info-row{display:flex;justify-content:space-around;text-align:center;margin:10px 0;flex-wrap:wrap}
-        .info-item{background:#f0f4ff;padding:10px;border-radius:10px;min-width:70px}
-        .info-item .value{color:#0d47a1;font-size:14px;font-weight:bold}.info-item .label{color:#666;font-size:9px}
-    </style>
+        *{margin:0;padding:0;box-sizing:border-box}body{font-family:'Arial';background:linear-gradient(135deg,#e3f2fd,#bbdefb,#90caf9,#a5d6a7);color:#000;text-align:center;padding:10px;min-height:100vh}.header{background:#fff;border-radius:20px;padding:18px;margin-bottom:10px;box-shadow:0 4px 15px rgba(0,0,0,.1)}.header h1{color:#0d47a1;font-size:24px}.header p{color:#000;font-size:14px;font-weight:bold}.full-card{background:#fff;border-radius:15px;padding:20px;margin:12px 0;box-shadow:0 2px 10px rgba(0,0,0,.08);text-align:right;line-height:2.2}.full-card h2{color:#0d47a1;font-size:19px;margin-bottom:10px;text-align:center;border-bottom:1px solid #e3f2fd;padding-bottom:8px}.full-card p{color:#000;font-size:15px;font-weight:bold;margin:8px 0}.info-row{display:flex;justify-content:space-around;text-align:center;margin:10px 0;flex-wrap:wrap;gap:6px}.info-item{background:#f0f4ff;padding:10px;border-radius:10px;min-width:65px}.info-item .value{color:#0d47a1;font-size:13px;font-weight:bold}.info-item .label{color:#666;font-size:9px}.arabic{font-size:17px;line-height:2.8;text-align:center;color:#1a237e;font-weight:bold;margin:6px 0;padding:10px;background:#f8f9fa;border-radius:10px}.farsi{color:#333;font-size:14px;line-height:2.1;text-align:center;margin:4px 0;font-weight:bold}.golden-box{background:linear-gradient(135deg,#fff8e1,#ffe082,#ffd54f);border-right:4px solid #ff8f00;padding:15px;border-radius:10px;margin:15px 0}.golden-box p{color:#000;font-size:15px;font-weight:bold}.blue-box{background:linear-gradient(135deg,#e3f2fd,#bbdefb,#90caf9);border-right:4px solid #0d47a1;padding:15px;border-radius:10px;margin:15px 0}.blue-box p{color:#000;font-size:15px;font-weight:bold}.green-box{background:linear-gradient(135deg,#e8f5e9,#c8e6c9,#a5d6a7);border-right:4px solid #2e7d32;padding:15px;border-radius:10px;margin:15px 0}.green-box p{color:#000;font-size:15px;font-weight:bold}.purple-box{background:linear-gradient(135deg,#f3e5f5,#e1bee7,#ce93d8);border-right:4px solid #6a1b9a;padding:15px;border-radius:10px;margin:15px 0}.purple-box p{color:#000;font-size:15px;font-weight:bold}.back-btn{display:inline-block;background:#0d47a1;color:#fff;padding:10px 22px;border-radius:20px;text-decoration:none;margin:10px 0;font-weight:bold;font-size:15px}.footer{background:#fff;padding:12px;margin-top:12px;font-size:11px;color:#000;border-radius:15px;font-weight:bold}.footer a{color:#0d47a1}</style>
 </head>
 <body>
-    <div class="header"><h1>🤲 ادعیه و زیارات ۲</h1><p>rahilanab.com</p></div>
-    <a href="dua.html" class="back-btn">🔙 ادعیه ۱</a>
+<div class="header"><h1>🤲 ادعیه ۲</h1><p>ابوحمزه ثمالی | سمات | مجیر | عشرات | rahilanab.com</p></div>
 
-    <!-- دعای ندبه -->
-    <div class="dua-card">
-        <h2>🌙 دعای ندبه</h2>
-        <div class="info-row"><div class="info-item"><div class="value">📿 صبح جمعه</div></div><div class="info-item"><div class="value">🤲 امام زمان</div></div></div>
-        <div class="dua-text">
-            <p class="arabic">اللَّهُمَّ لَكَ الْحَمْدُ عَلَى مَا جَرَى بِهِ قَضَاؤُكَ فِي أَوْلِيَائِكَ</p>
-            <p class="farsi">خدایا تو را سپاس بر آنچه قضایت در حق دوستانت جاری ساخت</p>
-            <p class="arabic">أَيْنَ الْمُنْتَظَرُ لِإِقَامَةِ الْأَمْتِ وَالْعِوَجِ</p>
-            <p class="farsi">کجاست آن بزرگواری که برای برپایی راستی و از بین بردن کجی‌ها انتظار می‌رود</p>
-            <p class="arabic">أَيْنَ الْمُدَّخَرُ لِتَجْدِيدِ الْفَرَائِضِ وَالسُّنَنِ</p>
-            <p class="farsi">کجاست آن ذخیره شده برای تجدید واجبات و سنت‌ها</p>
-            <p style="color:#0d47a1;text-align:center;margin-top:10px">✨ دعای ندبه در فراق امام زمان (عج) خوانده می‌شود ✨</p>
-        </div>
-    </div>
+<!-- ۱. ابوحمزه ثمالی -->
+<div class="full-card"><h2>۱. 🌙 دعای ابوحمزه ثمالی</h2><div class="info-row"><div class="info-item"><div class="value">📿 سحرهای رمضان</div><div class="label">زمان</div></div><div class="info-item"><div class="value">👤 امام سجاد(ع)</div><div class="label">آموزنده</div></div><div class="info-item"><div class="value">📜 طولانی</div><div class="label">ویژگی</div></div></div>
+<p>دعای ابوحمزه ثمالی از <strong>امام سجاد (ع)</strong> نقل شده است. <strong>ابوحمزه ثمالی</strong> (ثابت بن دینار) از یاران خاص امام سجاد، امام باقر و امام صادق (ع) بود. حضرت سجاد (ع) این دعا را در <strong>سحرهای ماه رمضان</strong> در حالی که <strong>اشک از چشمانشان جاری بود</strong> می‌خواندند. ابوحمزه می‌گوید: "امام سجاد (ع) در تمام سحرهای رمضان این دعا را می‌خواندند و من هرگز دعایی به این بلندی و عمق ندیده بودم."</p>
+<div class="arabic">إِلَهِي لَا تُؤَدِّبْنِي بِعُقُوبَتِكَ وَلَا تَمْكُرْ بِي فِي حِيلَتِكَ</div><p class="farsi">خدایا! مرا با عقوبتت ادب مکن و با مکر و حیله‌ات مرا گرفتار مکن</p>
+<div class="arabic">مِنْ أَيْنَ لِيَ الْخَيْرُ يَا رَبِّ وَلَا يُوجَدُ إِلَّا مِنْ عِنْدِكَ وَمِنْ أَيْنَ لِيَ النَّجَاةُ وَلَا تُسْتَطَاعُ إِلَّا بِكَ</div><p class="farsi">از کجا خیر را بیابم ای پروردگار من در حالی که جز نزد تو یافت نمی‌شود و از کجا نجات را بیابم در حالی که جز با تو میسر نیست</p>
+<div class="arabic">إِلَهِي أَنَا الْفَقِيرُ فِي غِنَايَ فَكَيْفَ لَا أَكُونُ فَقِيرًا فِي فَقْرِي</div><p class="farsi">خدایا من در بی‌نیازیم فقیرم، پس چگونه در فقرم فقیر نباشم</p>
+<div class="arabic">إِلَهِي وَرَبِّي مَنْ لِي غَيْرُكَ أَسْأَلُهُ كَشْفَ ضُرِّي وَالنَّظَرَ فِي أَمْرِي</div><p class="farsi">خدای من و پروردگار من! چه کسی جز تو را دارم که از او برطرف شدن گرفتاریم و رسیدگی به کارم را بخواهم</p>
+<div class="arabic">إِلَهِي فَكَيْفَ تَطْرُدُنِي عَنْ بَابِكَ وَقَدْ وَقَفْتُ بِسَاحَةِ جُودِكَ</div><p class="farsi">خدایا چگونه مرا از درگاهت برانی در حالی که در آستانه بخششت ایستاده‌ام</p>
+<div class="arabic">إِلَهِي أَنْتَ الَّذِي تَفَرَّدْتَ بِالرُّبُوبِيَّةِ وَالْعِزَّةِ وَالْكِبْرِيَاءِ</div><p class="farsi">خدایا تویی که در ربوبیت و عزت و کبریایی یگانه‌ای</p>
+<div class="green-box"><p>💚 <strong>معروف‌ترین فراز:</strong> "الهی و ربی من لی غیرک" — خدای من، پروردگار من، چه کسی جز تو را دارم؟</p></div></div>
 
-    <!-- دعای عرفه -->
-    <div class="dua-card">
-        <h2>🌙 دعای عرفه (امام حسین)</h2>
-        <div class="info-row"><div class="info-item"><div class="value">📿 روز عرفه</div></div><div class="info-item"><div class="value">🤲 امام حسین (ع)</div></div></div>
-        <div class="dua-text">
-            <p class="arabic">الْحَمْدُ لِلَّهِ الَّذِي لَيْسَ لِقَضَائِهِ دَافِعٌ</p>
-            <p class="farsi">ستایش خدایی را که هیچ چیز مانع قضایش نیست</p>
-            <p class="arabic">اللَّهُمَّ اجْعَلْنِي أَخْشَاكَ كَأَنِّي أَرَاكَ</p>
-            <p class="farsi">خدایا چنان کن که از تو بترسم چنانکه گویی تو را می‌بینم</p>
-            <p style="color:#0d47a1;text-align:center;margin-top:10px">✨ امام حسین (ع) این دعا را در صحرای عرفات خواندند ✨</p>
-        </div>
-    </div>
+<!-- ۲. سمات -->
+<div class="full-card"><h2>۲. 🌟 دعای سمات (شبّور)</h2><div class="info-row"><div class="info-item"><div class="value">📿 عصر جمعه</div><div class="label">زمان</div></div><div class="info-item"><div class="value">👤 امام باقر(ع)</div><div class="label">نقل از</div></div><div class="info-item"><div class="value">🌟 اسم اعظم</div><div class="label">محتوا</div></div></div>
+<p>دعای سمات از <strong>امام باقر (ع)</strong> نقل شده. امام فرمودند: <strong>"اگر قسم یاد کنم که اسم اعظم خدا در این دعاست، راست گفته‌ام."</strong> در آخرین ساعات روز جمعه خوانده می‌شود.</p>
+<div class="arabic">اللَّهُمَّ إِنِّي أَسْأَلُكَ بِاسْمِكَ الْعَظِيمِ الْأَعْظَمِ الْأَجَلِّ الْأَكْرَمِ</div><p class="farsi">خدایا از تو می‌خواهم به حق نام بزرگ و بزرگترینت، باشکوه‌ترین و گرامی‌ترینت</p>
+<div class="arabic">الْمَخْزُونِ الْمَكْنُونِ الْمُطَهَّرِ الْمُقَدَّسِ الْمُبَارَكِ</div><p class="farsi">آن نام پنهان در خزانه غیب، پاک و مقدس و مبارک</p>
+<div class="arabic">وَبِمَجْدِكَ الَّذِي تَجَلَّيْتَ بِهِ لِمُوسَى كَلِيمِكَ عَلَى طُورِ سَيْنَاءَ</div><p class="farsi">و به حق شکوهت که بر موسی کلیم‌الله در طور سینا تجلی کردی</p>
+<div class="arabic">وَأَسْأَلُكَ بِاسْمِكَ الَّذِي وَضَعْتَهُ عَلَى الْأَرْضِ فَاسْتَقَرَّتْ</div><p class="farsi">و از تو می‌خواهم به نامت که آن را بر زمین نهادی پس آرام گرفت</p>
+<div class="arabic">وَأَسْأَلُكَ بِاسْمِكَ الَّذِي وَضَعْتَهُ عَلَى السَّمَاوَاتِ فَاسْتَقَلَّتْ</div><p class="farsi">و به نامت که بر آسمان‌ها نهادی پس برپا شدند</p>
+<div class="blue-box"><p>🌟 امام باقر(ع): "اگر مردم می‌دانستند چه چیزی در دعای سمات است، با شمشیرها برای یادگیری آن می‌جنگیدند!"</p></div></div>
 
-    <!-- زیارت اربعین -->
-    <div class="dua-card">
-        <h2>🕌 زیارت اربعین</h2>
-        <div class="info-row"><div class="info-item"><div class="value">📿 اربعین حسینی</div></div><div class="info-item"><div class="value">❤️ امام حسین (ع)</div></div></div>
-        <div class="dua-text">
-            <p class="arabic">السَّلَامُ عَلَى وَلِيِّ اللَّهِ وَحَبِيبِهِ السَّلَامُ عَلَى خَلِيلِ اللَّهِ وَنَجِيبِهِ</p>
-            <p class="farsi">سلام بر ولی خدا و حبیبش، سلام بر خلیل خدا و برگزیده‌اش</p>
-            <p class="arabic">السَّلَامُ عَلَى صَفِيِّ اللَّهِ وَابْنِ صَفِيِّهِ</p>
-            <p class="farsi">سلام بر برگزیده خدا و فرزند برگزیده‌اش</p>
-            <p style="color:#0d47a1;text-align:center;margin-top:10px">🕊️ زیارت اربعین از نشانه‌های مؤمن است ✨</p>
-        </div>
-    </div>
+<!-- ۳. مجیر -->
+<div class="full-card"><h2>۳. 🛡️ دعای مجیر</h2><div class="info-row"><div class="info-item"><div class="value">📿 ۱۳-۱۵ رمضان</div><div class="label">زمان</div></div><div class="info-item"><div class="value">👼 جبرئیل</div><div class="label">نازل کننده</div></div><div class="info-item"><div class="value">🛡️ پناه از آتش</div><div class="label">فضیلت</div></div></div>
+<p>دعای مجیر از <strong>جبرئیل</strong> بر پیامبر اکرم (ص) نازل شد. در <strong>ایام البیض (۱۳، ۱۴، ۱۵ ماه رمضان)</strong> خوانده می‌شود. پیامبر(ص) فرمودند: "هر کس این دعا را در ایام البیض بخواند، گناهانش آمرزیده می‌شود."</p>
+<div class="arabic">سُبْحَانَكَ يَا اللَّهُ تَعَالَيْتَ يَا رَحْمَنُ أَجِرْنَا مِنَ النَّارِ يَا مُجِيرُ</div><p class="farsi">منزهی تو ای خدا، برتری تو ای رحمان، پناهمان ده از آتش ای پناه‌دهنده</p>
+<div class="arabic">سُبْحَانَكَ يَا رَحِيمُ تَعَالَيْتَ يَا كَرِيمُ أَجِرْنَا مِنَ النَّارِ يَا مُجِيرُ</div><p class="farsi">منزهی تو ای مهربان، برتری تو ای کریم، پناهمان ده از آتش ای پناه‌دهنده</p>
+<div class="arabic">سُبْحَانَكَ يَا مَلِكُ تَعَالَيْتَ يَا مَالِكُ أَجِرْنَا مِنَ النَّارِ يَا مُجِيرُ</div><p class="farsi">منزهی تو ای پادشاه، برتری تو ای مالک، پناهمان ده از آتش ای پناه‌دهنده</p>
+<div class="arabic">سُبْحَانَكَ يَا قُدُّوسُ تَعَالَيْتَ يَا سَلَامُ أَجِرْنَا مِنَ النَّارِ يَا مُجِيرُ</div><p class="farsi">منزهی تو ای قدوس، برتری تو ای سلام، پناهمان ده از آتش ای پناه‌دهنده</p>
+<div class="golden-box"><p>💡 <strong>فضیلت:</strong> هر کس این دعا را در ایام البیض رمضان بخواند، خداوند گناهانش را می‌آمرزد، حتی اگر به اندازه قطرات باران و برگ درختان باشد!</p></div></div>
 
-    <!-- دعای افتتاح -->
-    <div class="dua-card">
-        <h2>🌙 دعای افتتاح</h2>
-        <div class="info-row"><div class="info-item"><div class="value">📿 شب‌های ماه رمضان</div></div></div>
-        <div class="dua-text">
-            <p class="arabic">اللَّهُمَّ إِنِّي أَفْتَتِحُ الثَّنَاءَ بِحَمْدِكَ</p>
-            <p class="farsi">خدایا من ستایش را با حمد تو آغاز می‌کنم</p>
-            <p class="arabic">اللَّهُمَّ إِنَّا نَرْغَبُ إِلَيْكَ فِي دَوْلَةٍ كَرِيمَةٍ</p>
-            <p class="farsi">خدایا ما به سوی تو مشتاقیم برای دولت کریمه (ظهور امام زمان)</p>
-        </div>
-    </div>
+<!-- ۴. عشرات -->
+<div class="full-card"><h2>۴. 🌙 دعای عشرات</h2><div class="info-row"><div class="info-item"><div class="value">📿 صبح و شام</div><div class="label">زمان</div></div><div class="info-item"><div class="value">👤 امام صادق(ع)</div><div class="label">نقل از</div></div><div class="info-item"><div class="value">🤲 دفع بلا</div><div class="label">فضیلت</div></div></div>
+<p>دعای عشرات از <strong>امام صادق (ع)</strong> نقل شده. برای <strong>دفع بلا، افزایش رزق، طول عمر و حفظ از دشمنان</strong>. بهتر است هر صبح (بین الطلوعین) و هر شب خوانده شود.</p>
+<div class="arabic">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ سُبْحَانَ اللَّهِ وَالْحَمْدُ لِلَّهِ وَلَا إِلَهَ إِلَّا اللَّهُ وَاللَّهُ أَكْبَرُ</div><p class="farsi">به نام خداوند بخشنده مهربان، منزه است خدا، ستایش از آن خداست، نیست معبودی جز خدا، خدا بزرگتر است</p>
+<div class="arabic">اللَّهُمَّ إِنِّي أَسْأَلُكَ بِحَقِّ مُحَمَّدٍ وَآلِ مُحَمَّدٍ أَنْ تُصَلِّيَ عَلَى مُحَمَّدٍ وَآلِ مُحَمَّدٍ</div><p class="farsi">خدایا از تو می‌خواهم به حق محمد و آل محمد که بر محمد و آل محمد درود فرستی</p>
+<div class="arabic">وَأَنْ تَجْعَلَ النُّورَ فِي بَصَرِي وَالْفَهْمَ فِي قَلْبِي وَالذِّكْرَ فِي لِسَانِي</div><p class="farsi">و قرار دهی نور را در چشمم، فهم را در قلبم و ذکر را بر زبانم</p>
+<div class="arabic">وَأَنْ تَرْزُقَنِي مِنْ فَضْلِكَ الْوَاسِعِ رِزْقًا حَلَالًا طَيِّبًا</div><p class="farsi">و از فضل گسترده‌ات روزی حلال و پاکیزه نصیبم کنی</p>
+<div class="purple-box"><p>🌙 <strong>توصیه:</strong> این دعا را هر روز صبح و شام بخوانید. امام صادق(ع) فرمودند: "هر کس این دعا را بخواند، خداوند او را از بلاها حفظ می‌کند."</p></div></div>
 
-    <!-- دعای ابوحمزه ثمالی -->
-    <div class="dua-card">
-        <h2>🌙 دعای ابوحمزه ثمالی</h2>
-        <div class="info-row"><div class="info-item"><div class="value">📿 سحرهای رمضان</div></div></div>
-        <div class="dua-text">
-            <p class="arabic">إِلَهِي لَا تُؤَدِّبْنِي بِعُقُوبَتِكَ</p>
-            <p class="farsi">خدایا مرا با عقوبتت ادب نکن</p>
-            <p class="arabic">إِلَهِي أَنَا الْفَقِيرُ فِي غِنَايَ فَكَيْفَ لَا أَكُونُ فَقِيرًا فِي فَقْرِي</p>
-            <p class="farsi">خدایا من در بی‌نیازیم فقیرم، پس چگونه در فقرم فقیر نباشم</p>
-        </div>
-    </div>
-
-    <!-- دعای سمات -->
-    <div class="dua-card">
-        <h2>🌟 دعای سمات</h2>
-        <div class="info-row"><div class="info-item"><div class="value">📿 عصر جمعه</div></div></div>
-        <div class="dua-text">
-            <p class="arabic">اللَّهُمَّ إِنِّي أَسْأَلُكَ بِاسْمِكَ الْعَظِيمِ الْأَعْظَمِ</p>
-            <p class="farsi">خدایا از تو می‌خواهم به حق نام بزرگ و بزرگترینت</p>
-            <p class="arabic">الَّذِي إِذَا دُعِيتَ بِهِ أَجَبْتَ</p>
-            <p class="farsi">که چون با آن خوانده شوی پاسخ دهی</p>
-        </div>
-    </div>
-
-    <p style="text-align:center;margin:20px 0"><a href="dua.html" style="color:#0d47a1">← ادعیه ۱</a></p>
-    <p style="text-align:center"><a href="index.html" style="color:#0d47a1">🔙 خانه</a></p>
-</body>
-</html>
+<a href="index.html" class="back-btn">🔙 خانه</a><a href="dua.html" class="back-btn">🤲 ادعیه ۱ ←</a>
+<a href="dua_full.html" class="back-btn">🛡️ جوشن کبیر ←</a>
+<div class="footer"><p>🌟 rahilanab.com</p></div></body></html>
