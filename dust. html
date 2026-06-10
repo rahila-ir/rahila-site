@@ -1,1 +1,82 @@
-<!DOCTYPE html><html lang="fa"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>🧹 نظافت حرفه‌ای | رهیلا</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial;background:radial-gradient(circle at center,#0a1a1a,#1a4a4a,#66ccaa);color:#fff;text-align:center;padding:15px;min-height:100vh}.header{background:rgba(255,255,255,.08);backdrop-filter:blur(20px);border-radius:25px;padding:20px;margin-bottom:15px}.header h1{color:#ffd700;font-size:22px}.back-btn{display:inline-block;background:rgba(255,255,255,.15);color:#fff;padding:8px 20px;border-radius:20px;text-decoration:none;margin:10px 0;font-size:14px}.section-title{color:#ffd700;font-size:18px;margin:20px 0 10px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.card{background:rgba(255,255,255,.05);border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,.1);text-align:right}.card:active{background:rgba(255,215,0,.2)}.card h3{font-size:15px;color:#ffd700}</style></head><body><div class="header"><h1>🧹 نظافت حرفه‌ای</h1></div><a href="index.html" class="back-btn">🔙 برگشت</a><div class="section-title">🧹 نظافت</div><div class="grid"><div class="card"><h3>پاکسازی منزل</h3></div><div class="card"><h3>فن شویی</h3></div><div class="card"><h3>از بین بردن لکه</h3></div><div class="card"><h3>گردگیری</h3></div><div class="card"><h3>شوینده خانگی</h3></div><div class="card"><h3>اسپری رنگ</h3></div></div><div class="section-title">🪴 گیاهان</div><div class="grid"><div class="card"><h3>گیاهان آپارتمانی</h3></div><div class="card"><h3>نگهداری گل</h3></div></div><div class="section-title">🐜 حشرات</div><div class="grid"><div class="card"><h3>فراری دادن حشرات</h3></div><div class="card"><h3>دفع سوسک</h3></div></div><p style="margin-top:15px"><a href="index.html" style="color:#ffd700">🔙 برگشت</a></p></body></html>
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧹 گرد و غبار | تمیزکاری + حساسیت + تصفیه هوا + مایت | rahilanab.com</title>
+    <meta name="description" content="راهنمای کامل مقابله با گرد و غبار: روش‌های تمیزکاری، دستگاه‌های تصفیه هوا، حساسیت و آلرژی به مایت، گیاهان تصفیه‌کننده، پیشگیری">
+    <meta name="keywords" content="گرد و غبار, dust, تمیزکاری, حساسیت, تصفیه هوا, مایت, هیره, rahilanab">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}body{font-family:'Arial';background:linear-gradient(135deg,#e3f2fd,#bbdefb,#90caf9,#a5d6a7);color:#000;text-align:center;padding:10px;min-height:100vh}.header{background:#fff;border-radius:20px;padding:18px;margin-bottom:10px;box-shadow:0 4px 15px rgba(0,0,0,.1)}.header h1{color:#0d47a1;font-size:24px}.header p{color:#000;font-size:14px;font-weight:bold}.full-card{background:#fff;border-radius:15px;padding:20px;margin:12px 0;box-shadow:0 2px 10px rgba(0,0,0,.08);text-align:right;line-height:2.2}.full-card h2{color:#0d47a1;font-size:19px;margin-bottom:10px;text-align:center;border-bottom:1px solid #e3f2fd;padding-bottom:8px}.full-card h3{color:#0d47a1;font-size:17px;margin:12px 0 6px}.full-card p{color:#000;font-size:15px;font-weight:bold;margin:8px 0}.full-card li{color:#000;font-size:15px;font-weight:bold;margin:6px 0}table{width:100%;border-collapse:collapse;margin:10px 0}th{background:#0d47a1;color:#fff;padding:12px;font-size:14px}td{padding:10px;border:1px solid #ddd;font-size:14px;font-weight:bold}.golden-box{background:linear-gradient(135deg,#fff8e1,#ffe082,#ffd54f);border-right:4px solid #ff8f00;padding:15px;border-radius:10px;margin:15px 0;box-shadow:0 3px 10px rgba(255,143,0,.15)}.golden-box p{color:#000;font-size:15px;font-weight:bold}.blue-box{background:linear-gradient(135deg,#e3f2fd,#bbdefb,#90caf9);border-right:4px solid #0d47a1;padding:15px;border-radius:10px;margin:15px 0;box-shadow:0 3px 10px rgba(13,71,161,.15)}.blue-box p{color:#000;font-size:15px;font-weight:bold}.red-box{background:linear-gradient(135deg,#ffebee,#ffcdd2,#ef9a9a);border-right:4px solid #c62828;padding:15px;border-radius:10px;margin:15px 0;box-shadow:0 3px 10px rgba(198,40,40,.15)}.red-box p{color:#000;font-size:15px;font-weight:bold}.green-box{background:linear-gradient(135deg,#e8f5e9,#c8e6c9,#a5d6a7);border-right:4px solid #2e7d32;padding:15px;border-radius:10px;margin:15px 0;box-shadow:0 3px 10px rgba(46,125,50,.15)}.green-box p{color:#000;font-size:15px;font-weight:bold}.purple-box{background:linear-gradient(135deg,#f3e5f5,#e1bee7,#ce93d8);border-right:4px solid #6a1b9a;padding:15px;border-radius:10px;margin:15px 0;box-shadow:0 3px 10px rgba(106,27,154,.15)}.purple-box p{color:#000;font-size:15px;font-weight:bold}.back-btn{display:inline-block;background:#0d47a1;color:#fff;padding:10px 22px;border-radius:20px;text-decoration:none;margin:10px 0;font-weight:bold;font-size:15px}.footer{background:#fff;padding:12px;margin-top:12px;font-size:11px;color:#000;border-radius:15px;font-weight:bold}.footer a{color:#0d47a1}</style>
+</head>
+<body>
+<div class="header"><h1>🧹 گرد و غبار</h1><p>تمیزکاری + حساسیت + تصفیه هوا + مایت + گیاهان | rahilanab.com</p></div>
+
+<div class="full-card">
+    <h2>🧹 گرد و غبار خانگی چیست؟</h2>
+    <p>گرد و غبار (House Dust) یک <strong>مخلوط پیچیده</strong> از ذرات ریز است که شامل <strong>سلول‌های مرده پوست انسان و حیوانات خانگی، الیاف پارچه و فرش و مبلمان، گرده گیاهان و درختان، هاگ قارچ‌ها و کپک‌ها، باکتری‌ها و ویروس‌ها، ذرات خاک و شن، دود سیگار و شومینه، و مدفوع مایت‌های گرد و غبار (هیره)</strong> می‌باشد. اندازه این ذرات از <strong>۰.۱ میکرون تا ۱۰۰ میکرون</strong> (یک دهم تا یک صدم میلی‌متر) متغیر است.</p>
+    <p>نکته تکان‌دهنده: <strong>حدود ۷۰٪ گرد و غبار خانه از سلول‌های مرده پوست انسان</strong> تشکیل شده است! هر انسان روزانه <strong>۱.۵ گرم پوست مرده</strong> از دست می‌دهد — یعنی حدود <strong>نیم کیلوگرم در سال!</strong> این سلول‌های پوست، <strong>غذای اصلی مایت‌ها</strong> هستند. یک تشک متوسط می‌تواند میزبان <strong>۱۰۰,۰۰۰ تا ۱۰ میلیون مایت</strong> باشد!</p>
+    <p>ذرات <strong>PM10</strong> (کوچک‌تر از ۱۰ میکرون) می‌توانند وارد ریه شوند. ذرات <strong>PM2.5</strong> (کوچک‌تر از ۲.۵ میکرون) می‌توانند از ریه وارد <strong>جریان خون</strong> شوند و به قلب، مغز و سایر اندام‌ها برسند! این ذرات با <strong>بیماری‌های قلبی-عروقی، سرطان ریه و حتی آلزایمر</strong> مرتبط هستند.</p>
+    <div class="golden-box"><p>💡 <strong>حقیقت تکان‌دهنده:</strong> یک تشک ۱۰ ساله می‌تواند <strong>تا ۱۰٪ وزن خود</strong> از مایت‌های مرده، مدفوع مایت‌ها و پوست مرده تشکیل شده باشد! به همین دلیل توصیه می‌شود تشک خود را <strong>هر ۸-۱۰ سال</strong> تعویض کنید.</p></div>
+</div>
+
+<div class="full-card">
+    <h2>🦠 مایت‌های گرد و غبار (هیره) — دشمن نامرئی</h2>
+    <p><strong>مایت‌ها</strong> (Dust Mites) موجودات <strong>میکروسکوپی ۸ پا</strong> از خانواده <strong>عنکبوتیان</strong> هستند که با چشم غیرمسلح دیده نمی‌شوند (اندازه: ۰.۲-۰.۳ میلی‌متر). آنها <strong>نیش نمی‌زنند، گاز نمی‌گیرند و بیماری منتقل نمی‌کنند</strong> — اما <strong>مدفوع آنها</strong> (هر مایت روزانه ۲۰ بار مدفوع می‌کند!) حاوی <strong>پروتئین‌های آلرژی‌زا</strong> (Der p1 و Der f1) است که عامل اصلی <strong>آلرژی به گرد و غبار</strong> محسوب می‌شود.</p>
+    <p><strong>شرایط ایده‌آل برای رشد مایت‌ها:</strong> دمای <strong>۲۰-۲۵ درجه</strong> سانتی‌گراد و <strong>رطوبت بالای ۷۰٪</strong>. آنها در <strong>رطوبت زیر ۵۰٪ نمی‌توانند زنده بمانند</strong>! به همین دلیل در مناطق خشک (مثل تهران و اصفهان) جمعیت مایت‌ها کمتر از مناطق مرطوب (مثل رشت و بندرعباس) است. مایت‌ها عاشق <strong>تاریکی، گرما و رطوبت</strong> هستند — دقیقاً همان شرایطی که در <strong>تشک، بالشت و لحاف</strong> شما وجود دارد!</p>
+    <div class="red-box"><p>⚠️ <strong>آیا می‌دانستید؟</strong> یک گرم گرد و غبار می‌تواند حاوی <strong>۱۰۰۰ مایت</strong> باشد! و هر مایت <strong>روزانه ۲۰ بار</strong> مدفوع می‌کند. پس در یک گرم گرد و غبار، <strong>۲۰,۰۰۰ ذره مدفوع مایت</strong> وجود دارد که همگی آلرژی‌زا هستند!</p></div>
+</div>
+
+<div class="full-card">
+    <h2>🤧 حساسیت به گرد و غبار (Dust Allergy)</h2>
+    <p>حساسیت به گرد و غبار <strong>دومین آلرژی شایع</strong> در جهان (بعد از گرده گیاهان) است. برخلاف تصور عموم، آلرژی به <strong>خود گرد و غبار</strong> نیست، بلکه به <strong>پروتئین‌های موجود در مدفوع مایت‌ها</strong> است. این پروتئین‌ها آنقدر کوچک هستند (حدود ۱۰ میکرون) که می‌توانند <strong>ساعت‌ها در هوا معلق بمانند</strong> و با کوچک‌ترین جریان هوا (راه رفتن روی فرش، نشستن روی مبل) دوباره در هوا پخش شوند.</p>
+    
+    <h3>🤧 علائم آلرژی به گرد و غبار</h3>
+    <ul><li>🤧 <strong>عطسه‌های مکرر</strong> (مخصوصاً صبح‌ها بعد از بیدار شدن)</li><li>👃 <strong>آبریزش یا گرفتگی بینی</strong> (رینیت آلرژیک)</li><li>👁️ <strong>خارش، قرمزی و آبریزش چشم</strong> (کنژنکتیویت آلرژیک)</li><li>😮‍💨 <strong>سرفه خشک، خس‌خس سینه، تنگی نفس</strong> (مخصوصاً در شب)</li><li>🤒 <strong>احساس خستگی و کسالت</strong> (به دلیل اختلال خواب)</li><li>🤕 <strong>سردرد و فشار در ناحیه سینوس‌ها</strong></li></ul>
+    
+    <h3>💊 درمان‌های دارویی</h3>
+    <p><strong>آنتی‌هیستامین‌ها:</strong> لوراتادین، ستیریزین، فکسوفنادین (بدون خواب‌آلودگی). <strong>اسپری بینی کورتیکواستروئید:</strong> فلوتیکازون، مومتازون (کاهش التهاب). <strong>قطره چشم:</strong> کتوتیفن، اولوپاتادین. <strong>ایمونوتراپی:</strong> "واکسن آلرژی" — تزریق تدریجی ماده حساسیت‌زا برای ایجاد تحمل (درمان ریشه‌ای).</p>
+    <div class="blue-box"><p>💊 <strong>تشخیص:</strong> آزمایش خون (RAST یا ImmunoCAP) برای اندازه‌گیری IgE اختصاصی علیه مایت. یا <strong>تست پوستی پریک</strong> (Prick Test) — یک قطره از عصاره مایت روی ساعد ریخته و با سوزن خراش داده می‌شود. اگر قرمز و متورم شد = آلرژی دارید.</p></div>
+</div>
+
+<div class="full-card">
+    <h2>🧹 روش‌های صحیح تمیزکاری (Scientific Cleaning)</h2>
+    <p><strong>❌ اشتباه رایج شماره ۱: گردگیری با دستمال خشک!</strong> این کار گرد را <strong>در هوا پخش می‌کند</strong> و ذرات آلرژی‌زا را برای ساعت‌ها معلق نگه می‌دارد. <strong>همیشه از دستمال میکروفایبر نمدار</strong> استفاده کنید. میکروفایبر به دلیل ساختار الکترواستاتیک، ذرات را <strong>به دام می‌اندازد</strong>، نه اینکه پخش کند.</p>
+    <p><strong>❌ اشتباه رایج شماره ۲: اول جارو کشیدن، بعد گردگیری!</strong> ترتیب صحیح: <strong>۱) گردگیری (از بالا به پایین) ۲) جاروبرقی ۳) تی مرطوب</strong>. اگر اول جارو بکشید، گرد روی سطوح بالا دست‌نخورده می‌ماند و بعداً پایین می‌ریزد.</p>
+    <p><strong>✅ جاروبرقی مناسب:</strong> باید حتماً دارای <strong>فیلتر HEPA</strong> (High Efficiency Particulate Air) باشد. فیلتر HEPA واقعی (HEPA-13 یا HEPA-14) می‌تواند <strong>۹۹.۹۷٪ ذرات ۰.۳ میکرونی</strong> را جذب کند. جاروبرقی‌های بدون HEPA ذرات ریز را از پشت دستگاه <strong>دوباره به هوا</strong> برمی‌گردانند — در واقع شما با آنها <strong>هوا را آلوده‌تر</strong> می‌کنید!</p>
+    <p><strong>✅ تی مرطوب:</strong> بعد از جاروبرقی حتماً تی بکشید. از محلول <strong>سرکه سفید + آب گرم</strong> (نسبت ۱:۱۰) استفاده کنید. سرکه <strong>مایت‌ها را می‌کشد</strong> و <strong>مدفوع آنها را تجزیه</strong> می‌کند (پروتئین‌های آلرژی‌زا را غیرفعال می‌کند).</p>
+    <div class="golden-box"><p>💡 <strong>ترتیب طلایی تمیزکاری:</strong> ۱) گردگیری با دستمال میکروفایبر نمدار (از لوستر و پرده شروع کنید، به سمت پایین بیایید) ۲) جاروبرقی با فیلتر HEPA (فرش، موکت، مبل، تشک) ۳) تی مرطوب با محلول سرکه (کفپوش). <strong>پنجره‌ها را باز بگذارید</strong> تا تهویه انجام شود.</p></div>
+</div>
+
+<div class="full-card">
+    <h2>🌬️ دستگاه‌های تصفیه هوا (Air Purifier)</h2>
+    <table><tr><th>فناوری</th><th>مکانیسم</th><th>مزایا</th><th>معایب</th></tr>
+    <tr><td>🅷 <strong>HEPA</strong></td><td>فیلتر فیزیکی الیاف شیشه‌ای</td><td>۹۹.۹۷٪ ذرات ۰.۳ میکرون. استاندارد طلایی.</td><td>فیلتر باید تعویض شود (هر ۶-۱۲ ماه)</td></tr>
+    <tr><td>🅲 <strong>کربن فعال</strong></td><td>جذب شیمیایی گازها</td><td>حذف بو، VOC، فرمالدهید</td><td>ذرات را حذف نمی‌کند</td></tr>
+    <tr><td>⚡ <strong>یونیزه‌کننده</strong></td><td>باردار کردن ذرات</td><td>بی‌صدا</td><td>تولید ازن (مضر برای ریه!)</td></tr>
+    <tr><td>💡 <strong>UV-C</strong></td><td>اشعه فرابنفش</td><td>کشتن باکتری و ویروس</td><td>تأثیر محدود روی ذرات</td></tr></table>
+    <p><strong>برندهای معتبر:</strong> <strong>شیائومی</strong> Mi Air Purifier (اقتصادی، CADR بالا، قیمت ۵-۱۵ میلیون)، <strong>دایسون</strong> Pure Cool (لوکس، طراحی زیبا، ۲۰-۵۰ میلیون)، <strong>فیلیپس</strong> AC系列 (هلندی، باکیفیت)، <strong>Blueair</strong> (سوئدی، فیلتراسیون الکترواستاتیک).</p>
+    <div class="blue-box"><p>🌬️ <strong>محاسبه سریع:</strong> CADR (نرخ تحویل هوای پاک) باید حداقل <strong>۲/۳ مساحت اتاق</strong> باشد. مثال: اتاق ۲۰ متری = CADR حداقل ۱۳۰. یا اینکه دستگاه بتواند <strong>حجم هوای اتاق را ۴-۵ بار در ساعت</strong> تصفیه کند.</p></div>
+</div>
+
+<div class="full-card">
+    <h2>🛏️ کاهش مایت‌ها در اتاق خواب (۸ قدم طلایی)</h2>
+    <ol><li>🛏️ از <strong>روتختی و روبالشی ضد مایت</strong> (Allergy-Proof با منافذ زیر ۱۰ میکرون) استفاده کنید. این کاورها مثل <strong>زیپ قفلی</strong> دور تشک و بالشت را می‌بندند.</li><li>🧼 ملحفه، روتختی و روبالشی را <strong>هفته‌ای یکبار</strong> با آب داغ (حداقل <strong>۶۰ درجه سانتی‌گراد</strong>) بشویید. آب ۶۰ درجه مایت‌ها را <strong>می‌کشد</strong> و مدفوع آنها را <strong>حل می‌کند</strong>.</li><li>🧸 عروسک‌های پولیشی (خرس، عروسک پارچه‌ای) را هر ماه یکبار در <strong>فریزر</strong> بگذارید (<strong>۲۴ ساعت در دمای -۱۸ درجه</strong>). سرما مایت‌ها را می‌کشد.</li><li>🌡️ <strong>رطوبت اتاق خواب</strong> را <strong>زیر ۵۰٪</strong> نگه دارید. از <strong>دستگاه رطوبت‌گیر (Dehumidifier)</strong> یا <strong>کولر گازی</strong> (در حالت Dry) استفاده کنید.</li><li>🧹 فرش و موکت اتاق خواب را <strong>حذف کنید</strong>! کفپوش چوبی یا سرامیک بهتر است. اگر نمی‌توانید، هفته‌ای ۲ بار با <strong>جاروبرقی HEPA</strong> تمیز کنید.</li><li>☀️ تشک، بالشت و لحاف را <strong>هر ۳ ماه یکبار</strong> در <strong>آفتاب مستقیم</strong> به مدت ۳-۴ ساعت پهن کنید. اشعه UV خورشید <strong>مایت‌ها را می‌کشد</strong>.</li><li>🪟 هر روز صبح <strong>پنجره اتاق خواب را باز کنید</strong> و ۱۵-۲۰ دقیقه تهویه دهید. هوای تازه و نور خورشید = دشمن مایت.</li><li>🧹 <strong>تشک خود را جارو بکشید!</strong> ماهی یکبار با جاروبرقی HEPA و سری مخصوص تشک (Mattress Tool) تمام سطح تشک را جارو کنید.</li></ol>
+    <div class="green-box"><p>💚 <strong>نتیجه:</strong> با رعایت این ۸ قدم، می‌توانید <strong>جمعیت مایت‌های اتاق خواب را تا ۹۰٪ کاهش دهید</strong> و علائم آلرژی را به طور چشمگیری بهبود بخشید!</p></div>
+</div>
+
+<div class="full-card">
+    <h2>🪴 گیاهان تصفیه‌کننده هوا (مطالعه NASA)</h2>
+    <table><tr><th>گیاه</th><th>نور</th><th>آب</th><th>تصفیه</th></tr>
+    <tr><td>🌿 <strong>سانسوریا</strong></td><td>کم</td><td>کم</td><td>اکسیژن شبانه، بنزن، فرمالدهید</td></tr>
+    <tr><td>🌿 <strong>پتوس</strong></td><td>کم</td><td>متوسط</td><td>فرمالدهید، زایلن</td></tr>
+    <tr><td>🌿 <strong>اسپاتی فیلوم</strong></td><td>کم</td><td>زیاد</td><td>بنزن، تری‌کلرواتیلن، استون</td></tr>
+    <tr><td>🌿 <strong>فیکوس</strong></td><td>متوسط</td><td>متوسط</td><td>فرمالدهید، گرد و غبار</td></tr>
+    <tr><td>🌿 <strong>نخل اریکا</strong></td><td>متوسط</td><td>زیاد</td><td>مرطوب‌کننده طبیعی هوا</td></tr></table>
+    <div class="purple-box"><p>🪴 <strong>مطالعه NASA (1989):</strong> دانشمندان ناسا این گیاهان را به عنوان <strong>بهترین تصفیه‌کننده‌های طبیعی هوا</strong> برای ایستگاه‌های فضایی معرفی کردند. ۲-۳ گلدان متوسط برای یک اتاق ۲۰ متری کافی است.</p></div>
+</div>
+
+<a href="index.html" class="back-btn">🔙 بازگشت به خانه</a>
+<div class="footer"><p>🌟 rahilanab.com | <a href="index.html">🏠 خانه</a></p></div>
+</body>
+</html>
