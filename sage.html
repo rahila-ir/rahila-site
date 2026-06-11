@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sage - مریم‌گلی | راهیلا</title>
+    <meta name="description" content="همه چیز درباره گیاه مریم‌گلی، خواص دارویی، کاربردها و تاریخچه این گیاه مقدس">
+    <style>
+        :root {
+            --blue-primary: #1a73e8;
+            --blue-dark: #1557b0;
+            --blue-light: #e8f0fe;
+            --blue-accent: #4285f4;
+            --white: #ffffff;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-300: #cbd5e1;
+            --gray-400: #94a3b8;
+            --gray-500: #64748b;
+            --gray-600: #475569;
+            --gray-700: #334155;
+            --gray-800: #1e293b;
+            --gray-900: #0f172a;
+            --shadow-sm: 0 1px 2px 0 rgba(0,0,0,0.05);
+            --shadow: 0 1px 3px 0 rgba(0,0,0,0.1),0 1px 2px -1px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1),0 2px 4px -2px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1),0 4px 6px -4px rgba(0,0,0,0.1);
+            --radius: 12px;
+            --radius-sm: 8px;
+        }
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{
+            font-family:'Vazirmatn','Segoe UI',Tahoma,sans-serif;
+            background:linear-gradient(135deg,#f0f4ff 0%,#e8f0fe 30%,#ffffff 70%,#f0f7ff 100%);
+            color:var(--gray-800);line-height:1.7;min-height:100vh;
+            display:flex;flex-direction:column;background-attachment:fixed;
+        }
+        .site-header{
+            background:linear-gradient(135deg,var(--blue-primary) 0%,var(--blue-dark) 100%);
+            color:var(--white);padding:1.2rem 2rem;box-shadow:var(--shadow-lg);
+            position:sticky;top:0;z-index:100;
+        }
+        .header-inner{
+            max-width:1200px;margin:0 auto;display:flex;align-items:center;
+            justify-content:space-between;flex-wrap:wrap;gap:1rem;
+        }
+        .logo{font-size:28px;font-weight:800;color:var(--white);text-decoration:none;display:flex;align-items:center;gap:0.5rem;}
+        .logo-icon{font-size:32px;}
+        .nav-links{display:flex;gap:1.5rem;align-items:center;flex-wrap:wrap;}
+        .nav-links a{
+            color:rgba(255,255,255,0.9);text-decoration:none;font-size:16px;
+            font-weight:500;transition:all 0.3s ease;padding:0.5rem 0.8rem;border-radius:var(--radius-sm);
+        }
+        .nav-links a:hover{color:var(--white);background:rgba(255,255,255,0.15);transform:translateY(-1px);}
+        .main-container{max-width:1100px;margin:0 auto;padding:2rem 1.5rem;flex:1;width:100%;}
+        .breadcrumb{display:flex;gap:0.5rem;align-items:center;font-size:14px;color:var(--gray-500);margin-bottom:1.5rem;flex-wrap:wrap;}
+        .breadcrumb a{color:var(--blue-primary);text-decoration:none;transition:color 0.2s;}
+        .breadcrumb a:hover{color:var(--blue-dark);text-decoration:underline;}
+        .breadcrumb .separator{color:var(--gray-400);}
+        .page-title{
+            font-size:28px;font-weight:800;color:var(--gray-900);margin-bottom:0.5rem;
+            position:relative;display:inline-block;
+        }
+        .page-title::after{
+            content:'';position:absolute;bottom:-6px;right:0;width:60%;height:4px;
+            background:linear-gradient(90deg,var(--blue-primary),var(--blue-accent));border-radius:2px;
+        }
+        .english-title{font-size:16px;color:var(--gray-500);margin-bottom:2rem;font-style:italic;}
+        .section-title{
+            font-size:22px;font-weight:700;color:var(--gray-900);margin:2rem 0 1rem;
+            padding-bottom:0.5rem;border-bottom:2px solid var(--blue-light);
+        }
+        .card{
+            background:var(--white);border-radius:var(--radius);padding:2rem;
+            margin-bottom:1.5rem;box-shadow:var(--shadow-md);border:1px solid var(--gray-100);
+            transition:all 0.3s ease;
+        }
+        .card:hover{box-shadow:var(--shadow-lg);transform:translateY(-2px);border-color:var(--blue-light);}
+        .card p,.card li{font-size:17px;color:var(--gray-700);}
+        .info-table{
+            width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:16px;
+            background:var(--white);border-radius:var(--radius-sm);overflow:hidden;box-shadow:var(--shadow);
+        }
+        .info-table thead{background:linear-gradient(135deg,var(--blue-primary),var(--blue-dark));color:var(--white);}
+        .info-table th{padding:1rem 1.2rem;font-weight:600;font-size:16px;text-align:right;}
+        .info-table td{padding:0.9rem 1.2rem;font-size:16px;border-bottom:1px solid var(--gray-100);color:var(--gray-700);}
+        .info-table tbody tr:hover{background:var(--blue-light);}
+        .info-table tbody tr:last-child td{border-bottom:none;}
+        .btn{
+            display:inline-block;padding:0.75rem 1.8rem;font-size:17px;font-weight:600;
+            border:none;border-radius:var(--radius-sm);cursor:pointer;text-decoration:none;
+            transition:all 0.3s ease;text-align:center;font-family:inherit;
+        }
+        .btn-primary{
+            background:linear-gradient(135deg,var(--blue-primary),var(--blue-accent));
+            color:var(--white);box-shadow:var(--shadow-md);
+        }
+        .btn-primary:hover{background:linear-gradient(135deg,var(--blue-dark),var(--blue-primary));transform:translateY(-2px);box-shadow:var(--shadow-lg);}
+        .btn-outline{background:var(--white);color:var(--blue-primary);border:2px solid var(--blue-primary);}
+        .btn-outline:hover{background:var(--blue-light);transform:translateY(-2px);}
+        .fact-box{
+            background:linear-gradient(135deg,var(--blue-light),#dbeafe);
+            border-right:4px solid var(--blue-primary);border-radius:var(--radius-sm);
+            padding:1.2rem 1.5rem;margin:1.5rem 0;font-size:17px;color:var(--gray-800);
+        }
+        .fact-box strong{color:var(--blue-dark);}
+        .image-placeholder{
+            background:linear-gradient(135deg,#e8f0fe,#dbeafe);border-radius:var(--radius);
+            padding:3rem;text-align:center;color:var(--blue-primary);font-size:17px;
+            margin:1.5rem 0;border:2px dashed var(--blue-accent);font-weight:500;
+        }
+        .image-placeholder .large-icon{font-size:64px;display:block;margin-bottom:1rem;}
+        .grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin:1.5rem 0;}
+        .styled-list{list-style:none;padding:0;}
+        .styled-list li{
+            padding:0.8rem 1rem;margin-bottom:0.5rem;background:var(--white);
+            border-radius:var(--radius-sm);font-size:17px;border-right:3px solid var(--blue-accent);
+            box-shadow:var(--shadow-sm);transition:all 0.2s;
+        }
+        .styled-list li:hover{border-right-color:var(--blue-dark);background:var(--blue-light);transform:translateX(-4px);}
+        .site-footer{
+            background:var(--gray-900);color:var(--gray-300);text-align:center;
+            padding:1.5rem;font-size:14px;margin-top:3rem;border-top:4px solid var(--blue-primary);
+        }
+        .site-footer a{color:var(--blue-accent);text-decoration:none;font-size:14px;}
+        .site-footer a:hover{text-decoration:underline;color:var(--blue-light);}
+        @media(max-width:768px){
+            .header-inner{flex-direction:column;text-align:center;}
+            .page-title{font-size:24px;}.section-title{font-size:20px;}
+            .card{padding:1.2rem;}.info-table th,.info-table td{padding:0.6rem 0.8rem;font-size:14px;}
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="logo"><span class="logo-icon">🌊</span> راهیلا</a>
+            <nav class="nav-links">
+                <a href="index.html">خانه</a>
+                <a href="saffron.html">زعفران</a>
+                <a href="safety.html">ایمنی</a>
+                <a href="sailing.html">قایقرانی</a>
+                <a href="sage.html" style="background:rgba(255,255,255,0.2);">مریم‌گلی</a>
+                <a href="contact.html">تماس</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <nav class="breadcrumb">
+            <a href="index.html">خانه</a><span class="separator">›</span>
+            <a href="s.html">حرف S</a><span class="separator">›</span>
+            <span>مریم‌گلی</span>
+        </nav>
+
+        <h1 class="page-title">مریم‌گلی</h1>
+        <p class="english-title">Sage — Salvia officinalis</p>
+
+        <div class="card">
+            <p>مریم‌گلی (<strong>Salvia officinalis</strong>) گیاهی چندساله از خانواده نعناعیان است که هزاران سال در طب سنتی و آشپزی کاربرد داشته است. نام علمی "Salvia" از کلمه لاتین "salvare" به معنی "نجات دادن" یا "شفا بخشیدن" گرفته شده که نشان‌دهنده جایگاه والای این گیاه در پزشکی باستانی است. برگ‌های نقره‌ای-سبز و گل‌های بنفش این گیاه، عطری قوی و خاکی با ته‌مایه کافور دارند.</p>
+            <div class="image-placeholder">
+                <span class="large-icon">🌿</span>
+                تصویر: برگ‌های نقره‌ای مریم‌گلی با گل‌های بنفش — گیاه مقدس شفابخش
+            </div>
+        </div>
+
+        <h2 class="section-title">📋 مشخصات گیاه‌شناسی</h2>
+        <div class="card" style="padding:0;overflow:hidden;">
+            <table class="info-table">
+                <thead><tr><th>ویژگی</th><th>جزئیات</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>نام علمی</strong></td><td>Salvia officinalis L.</td></tr>
+                    <tr><td><strong>خانواده</strong></td><td>نعناعیان (Lamiaceae)</td></tr>
+                    <tr><td><strong>بخش قابل استفاده</strong></td><td>برگ‌ها و سرشاخه‌های گلدار</td></tr>
+                    <tr><td><strong>ارتفاع گیاه</strong></td><td>۳۰ تا ۷۰ سانتی‌متر</td></tr>
+                    <tr><td><strong>رنگ برگ</strong></td><td>سبز مایل به خاکستری با پوشش کرکی نقره‌ای</td></tr>
+                    <tr><td><strong>رنگ گل</strong></td><td>بنفش، آبی-بنفش، گاهی سفید یا صورتی</td></tr>
+                    <tr><td><strong>نیاز آبی</strong></td><td>کم تا متوسط — مقاوم به خشکی</td></tr>
+                    <tr><td><strong>خاک مناسب</strong></td><td>خاک سبک با زهکشی عالی، pH خنثی تا کمی قلیایی</td></tr>
+                    <tr><td><strong>مقاومت به سرما</strong></td><td>بالا — تا دمای ۱۵- درجه سانتی‌گراد</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2 class="section-title">🌍 گونه‌های مهم مریم‌گلی</h2>
+        <div class="grid-2">
+            <div class="card">
+                <h3 style="font-size:20px;color:var(--blue-dark);margin-bottom:0.8rem;">مریم‌گلی معمولی</h3>
+                <p style="font-size:17px;"><em>Salvia officinalis</em> — رایج‌ترین گونه با برگ‌های پهن و عطر قوی. پرکاربرد در آشپزی و دمنوش.</p>
+            </div>
+            <div class="card">
+                <h3 style="font-size:20px;color:var(--blue-dark);margin-bottom:0.8rem;">مریم‌گلی سه‌لوب</h3>
+                <p style="font-size:17px;"><em>Salvia fruticosa</em> — بومی شرق مدیترانه، برگ‌های سه‌قسمتی با عطر ملایم‌تر. در ایران به نام «مریم‌گلی یونانی» شناخته می‌شود.</p>
+            </div>
+            <div class="card">
+                <h3 style="font-size:20px;color:var(--blue-dark);margin-bottom:0.8rem;">مریم‌گلی آناناسی</h3>
+                <p style="font-size:17px;"><em>Salvia elegans</em> — برگ‌های معطر با بوی آناناس، گل‌های قرمز جذاب. مناسب دسر و نوشیدنی.</p>
+            </div>
+            <div class="card">
+                <h3 style="font-size:20px;color:var(--blue-dark);margin-bottom:0.8rem;">مریم‌گلی اسپانیایی</h3>
+                <p style="font-size:17px;"><em>Salvia lavandulifolia</em> — بومی اسپانیا، برگ‌های باریک با عطر ملایم اسطوخودوس. بهترین گزینه برای اسانس‌گیری.</p>
+            </div>
+        </div>
+
+        <h2 class="section-title">💊 خواص دارویی اثبات‌شده</h2>
+        <div class="card">
+            <ul class="styled-list">
+                <li><strong>🧠 تقویت حافظه و تمرکز:</strong> ترکیبات فعال مریم‌گلی از تجزیه استیل‌کولین جلوگیری کرده و عملکرد شناختی را بهبود می‌بخشد. در مطالعات بالینی، مصرف عصاره آن با کاهش علائم آلزایمر خفیف همراه بوده است.</li>
+                <li><strong>👩‍🦰 تنظیم هورمونی زنان:</strong> کاهش تعریق شبانه و گرگرفتگی در دوران یائسگی. فیتواستروژن‌های موجود در آن به تعادل هورمونی کمک می‌کنند.</li>
+                <li><strong>🦷 ضدعفونی‌کننده دهان:</strong> خاصیت ضدباکتریایی قوی علیه استرپتوکوک موتانس (عامل پوسیدگی دندان). غرغره دمنوش آن برای گلودرد و التهاب لثه مؤثر است.</li>
+                <li><strong>🤧 ضد التهاب و ضد حساسیت:</strong> رزمارینیک اسید موجود در مریم‌گلی، التهاب مجاری تنفسی را کاهش داده و در درمان آسم و آلرژی فصلی مفید است.</li>
+                <li><strong>🍽️ کمک به هضم:</strong> افزایش ترشح صفرا و آنزیم‌های گوارشی، کاهش نفخ و سوءهاضمه. در طب سنتی برای درمان اسهال نیز کاربرد دارد.</li>
+                <li><strong>💪 آنتی‌اکسیدان قوی:</strong> حاوی فلاونوئیدها، اسید فنولیک و ترپن‌ها که رادیکال‌های آزاد را خنثی کرده و از پیری زودرس جلوگیری می‌کنند.</li>
+                <li><strong>🩸 کنترل قند خون:</strong> برخی مطالعات نشان داده‌اند که دمنوش مریم‌گلی می‌تواند سطح گلوکز ناشتا را در افراد مبتلا به دیابت نوع ۲ کاهش دهد.</li>
+            </ul>
+            <div class="fact-box">
+                <strong>⚠️ هشدار و منع مصرف:</strong> مصرف بیش از حد (بیش از ۱۵ گرم برگ خشک در روز) به دلیل وجود تویون (Thujone) می‌تواند سمی و تشنج‌آور باشد. در بارداری و شیردهی ممنوع است (خطر سقط جنین و کاهش شیر). افراد مبتلا به صرع و فشار خون بالا با احتیاط مصرف کنند. حداکثر دوره مصرف مداوم: ۴ هفته.
+            </div>
+        </div>
+
+        <h2 class="section-title">🧪 ترکیبات شیمیایی فعال</h2>
+        <div class="card" style="padding:0;overflow:hidden;">
+            <table class="info-table">
+                <thead><tr><th>ترکیب</th><th>خاصیت اصلی</th><th>غلظت در اسانس</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>تویون (Thujone)</strong></td><td>ضد میکروب قوی، محرک عصبی (در دوز بالا سمی)</td><td>۲۰-۵۰٪</td></tr>
+                    <tr><td><strong>کامفور (Camphor)</strong></td><td>ضد التهاب، خنک‌کننده، ضد خارش</td><td>۱۰-۲۵٪</td></tr>
+                    <tr><td><strong>سینئول (1,8-Cineole)</strong></td><td>خلط‌آور، ضد سرفه، بهبود تنفس</td><td>۱۰-۱۵٪</td></tr>
+                    <tr><td><strong>رزمارینیک اسید</strong></td><td>ضد التهاب قوی، ضد حساسیت، آنتی‌اکسیدان</td><td>۲-۵٪ (در برگ)</td></tr>
+                    <tr><td><strong>کارنوسول (Carnosol)</strong></td><td>ضد سرطان (پروستات، سینه)، محافظ کبد</td><td>مقادیر کم</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2 class="section-title">🍳 کاربردهای مریم‌گلی</h2>
+        <div class="grid-2">
+            <div class="card">
+                <h3 style="font-size:20px;color:var(--blue-dark);">آشپزی</h3>
+                <p style="font-size:17px;">چاشنی گوشت (بوقلمون، مرغ، خوک)، سوسیس و کالباس، سوپ و خورش، کره طعم‌دار، پاستا و ریزوتو. در ایتالیا، برگ‌های تازه را در کره سرخ کرده و روی پاستا می‌ریزند (Burro e Salvia).</p>
+            </div>
+            <div class="card">
+                <h3 style="font-size:20px;color:var(--blue-dark);">دمنوش و نوشیدنی</h3>
+                <p style="font-size:17px;">دم‌کرده برگ‌ها برای مشکلات گوارشی و گلودرد. چای ترکیبی مریم‌گلی و عسل یک درمان کلاسیک سرماخوردگی است.</p>
+            </div>
+            <div class="card">
+                <h3 style="font-size:20px;color:var(--blue-dark);">آرایشی و بهداشتی</h3>
+                <p style="font-size:17px;">شامپوهای ضد شوره، خوشبوکننده‌های طبیعی، کرم‌های ضد تعریق (کاهش ۵۰٪ تعریق در مطالعات)، تونر پوست چرب.</p>
+            </div>
+            <div class="card">
+                <h3 style="font-size:20px;color:var(--blue-dark);">دود پاکسازی (Smudging)</h3>
+                <p style="font-size:17px;">سنت باستانی سرخپوستان آمریکا: سوزاندن دسته‌های خشک مریم‌گلی سفید (White Sage) برای پاکسازی انرژی منفی از محیط و افراد.</p>
+            </div>
+        </div>
+
+        <h2 class="section-title">🌱 کاشت و نگهداری در خانه</h2>
+        <div class="card">
+            <ul class="styled-list">
+                <li><strong>☀️ نور:</strong> به آفتاب کامل (حداقل ۶ ساعت نور مستقیم) نیاز دارد. در سایه، عطر و خواص آن کاهش می‌یابد.</li>
+                <li><strong>💧 آبیاری:</strong> بین دو آبیاری اجازه دهید خاک کاملاً خشک شود. آبیاری زیاد باعث پوسیدگی ریشه می‌شود.</li>
+                <li><strong>🌡️ دما:</strong> بهترین رشد در ۱۵-۲۵ درجه سانتی‌گراد. در زمستان‌های سخت، گلدان را به داخل منتقل کنید.</li>
+                <li><strong>🪴 خاک:</strong> ترکیب ماسه، پرلیت و خاک باغچه با زهکشی عالی. هرگز از خاک سنگین و رسی استفاده نکنید.</li>
+                <li><strong>✂️ هرس:</strong> پس از گلدهی، ساقه‌ها را تا یک‌سوم کوتاه کنید تا گیاه پرپشت بماند.</li>
+                <li><strong>🐛 آفات:</strong> نسبتاً مقاوم است اما شته، کنه تارعنکبوتی و سفیدک پودری ممکن است در رطوبت بالا مشکل‌ساز شوند.</li>
+            </ul>
+        </div>
+
+        <div style="text-align:center;margin:2.5rem 0;">
+            <a href="safety.html" class="btn btn-primary" style="margin:0.5rem;">⬅️ مقاله بعدی: ایمنی (Safety)</a>
+            <a href="s.html" class="btn btn-outline" style="margin:0.5rem;">📚 همه مقالات S</a>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>🌐 <a href="https://rahilanab.com">rahilanab.com</a> — پروژه دانشنامه راهیلا | حرف S: مریم‌گلی</p>
+        <p style="margin-top:0.3rem;">📧 <a href="mailto:mahniush.binazir@gmail.com">mahniush.binazir@gmail.com</a> | 🐙 <a href="https://github.com/rahila-ir/rahila-site" target="_blank" rel="noopener">GitHub</a></p>
+        <p style="margin-top:0.5rem;font-size:13px;color:var(--gray-500);">تم آبی-سفید | ۲۰۰ فایل HTML | ادامه S بعد از sailing.html — تابستان ۲۰۲۶</p>
+    </footer>
+</body>
+                  </html>
