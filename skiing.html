@@ -1,1 +1,244 @@
-<!DOCTYPE html><html lang="fa"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>⛷️ اسکی | رهیلا</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial;background:radial-gradient(circle at center,#0a1a1a,#1a4a4a,#66ccaa);color:#fff;text-align:center;padding:15px;min-height:100vh}.header{background:rgba(255,255,255,.08);backdrop-filter:blur(20px);border-radius:25px;padding:20px;margin-bottom:15px}.header h1{color:#ffd700;font-size:22px}.back-btn{display:inline-block;background:rgba(255,255,255,.15);color:#fff;padding:8px 20px;border-radius:20px;text-decoration:none;margin:10px 0;font-size:14px}.section-title{color:#ffd700;font-size:18px;margin:20px 0 10px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.card{background:rgba(255,255,255,.05);border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,.1);text-align:right}.card h3{font-size:15px;color:#ffd700}</style></head><body><div class="header"><h1>⛷️ اسکی</h1></div><a href="index.html" class="back-btn">🔙 برگشت</a><div class="section-title">⛷️ اطلاعات</div><div class="grid"><div class="card"><h3>پیست اسکی</h3></div><div class="card"><h3>تجهیزات</h3></div><div class="card"><h3>آموزش</h3></div><div class="card"><h3>قیمت</h3></div></div><p style="margin-top:15px"><a href="index.html" style="color:#ffd700">🔙 برگشت</a></p></body></html>
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>skiing - اسکی | راهیلا</title>
+    <meta name="description" content="همه چیز درباره ورزش اسکی، تاریخچه، انواع اسکی، پیست‌های ایران و جهان، تجهیزات و قهرمانان المپیک">
+    <style>
+        :root {
+            --blue-primary: #1a73e8;
+            --blue-dark: #1557b0;
+            --blue-light: #e8f0fe;
+            --blue-accent: #4285f4;
+            --white: #ffffff;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-300: #cbd5e1;
+            --gray-400: #94a3b8;
+            --gray-500: #64748b;
+            --gray-600: #475569;
+            --gray-700: #334155;
+            --gray-800: #1e293b;
+            --gray-900: #0f172a;
+            --gold: #f59e0b;
+            --gold-light: #fef3c7;
+            --gold-border: #d97706;
+            --red: #ef4444;
+            --red-light: #fee2e2;
+            --red-border: #dc2626;
+            --green: #10b981;
+            --green-light: #d1fae5;
+            --green-border: #059669;
+            --purple: #8b5cf6;
+            --purple-light: #ede9fe;
+            --purple-border: #7c3aed;
+            --shadow-sm: 0 1px 2px 0 rgba(0,0,0,0.05);
+            --shadow: 0 1px 3px 0 rgba(0,0,0,0.1),0 1px 2px -1px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1),0 2px 4px -2px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1),0 4px 6px -4px rgba(0,0,0,0.1);
+            --radius: 12px;
+            --radius-sm: 8px;
+        }
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{
+            font-family:'Vazirmatn','Segoe UI',Tahoma,sans-serif;
+            background:linear-gradient(135deg,#f0f4ff 0%,#e8f0fe 30%,#ffffff 70%,#f0f7ff 100%);
+            color:var(--gray-800);line-height:1.7;min-height:100vh;
+            display:flex;flex-direction:column;background-attachment:fixed;
+        }
+        .site-header{background:linear-gradient(135deg,var(--blue-primary) 0%,var(--blue-dark) 100%);color:var(--white);padding:1.2rem 2rem;box-shadow:var(--shadow-lg);position:sticky;top:0;z-index:100;}
+        .header-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
+        .logo{font-size:28px;font-weight:800;color:var(--white);text-decoration:none;display:flex;align-items:center;gap:0.5rem;}
+        .logo-icon{font-size:32px;}
+        .nav-links{display:flex;gap:1.5rem;align-items:center;flex-wrap:wrap;}
+        .nav-links a{color:rgba(255,255,255,0.9);text-decoration:none;font-size:16px;font-weight:500;transition:all 0.3s ease;padding:0.5rem 0.8rem;border-radius:var(--radius-sm);}
+        .nav-links a:hover{color:var(--white);background:rgba(255,255,255,0.15);transform:translateY(-1px);}
+        .main-container{max-width:1100px;margin:0 auto;padding:2rem 1.5rem;flex:1;width:100%;}
+        .breadcrumb{display:flex;gap:0.5rem;align-items:center;font-size:14px;color:var(--gray-500);margin-bottom:1.5rem;flex-wrap:wrap;}
+        .breadcrumb a{color:var(--blue-primary);text-decoration:none;}
+        .breadcrumb a:hover{color:var(--blue-dark);text-decoration:underline;}
+        .breadcrumb .separator{color:var(--gray-400);}
+        .page-title{font-size:28px;font-weight:800;color:var(--gray-900);margin-bottom:0.5rem;position:relative;display:inline-block;}
+        .page-title::after{content:'';position:absolute;bottom:-6px;right:0;width:60%;height:4px;background:linear-gradient(90deg,var(--blue-primary),var(--blue-accent));border-radius:2px;}
+        .english-title{font-size:16px;color:var(--gray-500);margin-bottom:2rem;font-style:italic;}
+        .section-title{font-size:22px;font-weight:700;color:var(--gray-900);margin:2rem 0 1rem;padding-bottom:0.5rem;border-bottom:2px solid var(--blue-light);}
+        .card{background:var(--white);border-radius:var(--radius);padding:2rem;margin-bottom:1.5rem;box-shadow:var(--shadow-md);border:1px solid var(--gray-100);transition:all 0.3s ease;}
+        .card:hover{box-shadow:var(--shadow-lg);transform:translateY(-2px);border-color:var(--blue-light);}
+        .card p,.card li{font-size:17px;color:var(--gray-700);}
+        .info-table{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:16px;background:var(--white);border-radius:var(--radius-sm);overflow:hidden;box-shadow:var(--shadow);}
+        .info-table thead{background:linear-gradient(135deg,var(--blue-primary),var(--blue-dark));color:var(--white);}
+        .info-table th{padding:1rem 1.2rem;font-weight:600;font-size:16px;text-align:right;}
+        .info-table td{padding:0.9rem 1.2rem;font-size:16px;border-bottom:1px solid var(--gray-100);color:var(--gray-700);}
+        .info-table tbody tr:hover{background:var(--blue-light);}
+        .info-table tbody tr:last-child td{border-bottom:none;}
+        .btn{display:inline-block;padding:0.75rem 1.8rem;font-size:17px;font-weight:600;border:none;border-radius:var(--radius-sm);cursor:pointer;text-decoration:none;transition:all 0.3s ease;text-align:center;font-family:inherit;}
+        .btn-primary{background:linear-gradient(135deg,var(--blue-primary),var(--blue-accent));color:var(--white);box-shadow:var(--shadow-md);}
+        .btn-primary:hover{background:linear-gradient(135deg,var(--blue-dark),var(--blue-primary));transform:translateY(-2px);box-shadow:var(--shadow-lg);}
+        .btn-outline{background:var(--white);color:var(--blue-primary);border:2px solid var(--blue-primary);}
+        .btn-outline:hover{background:var(--blue-light);transform:translateY(-2px);}
+        .box-gold{background:linear-gradient(135deg,var(--gold-light),#fffbeb);border-right:4px solid var(--gold-border);border-radius:var(--radius-sm);padding:1.2rem 1.5rem;margin:1.5rem 0;font-size:17px;color:var(--gray-800);}
+        .box-blue{background:linear-gradient(135deg,var(--blue-light),#dbeafe);border-right:4px solid var(--blue-primary);border-radius:var(--radius-sm);padding:1.2rem 1.5rem;margin:1.5rem 0;font-size:17px;color:var(--gray-800);}
+        .box-green{background:linear-gradient(135deg,var(--green-light),#ecfdf5);border-right:4px solid var(--green-border);border-radius:var(--radius-sm);padding:1.2rem 1.5rem;margin:1.5rem 0;font-size:17px;color:var(--gray-800);}
+        .box-red{background:linear-gradient(135deg,var(--red-light),#fef2f2);border-right:4px solid var(--red-border);border-radius:var(--radius-sm);padding:1.2rem 1.5rem;margin:1.5rem 0;font-size:17px;color:var(--gray-800);}
+        .box-purple{background:linear-gradient(135deg,var(--purple-light),#f5f3ff);border-right:4px solid var(--purple-border);border-radius:var(--radius-sm);padding:1.2rem 1.5rem;margin:1.5rem 0;font-size:17px;color:var(--gray-800);}
+        .image-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin:1.5rem 0;}
+        .image-card{background:linear-gradient(135deg,#e8f0fe,#dbeafe);border-radius:var(--radius);padding:2.5rem 1rem;text-align:center;color:var(--blue-primary);font-size:14px;border:2px dashed var(--blue-accent);font-weight:500;transition:all 0.3s ease;min-height:180px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.8rem;}
+        .image-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--blue-dark);}
+        .image-card .img-icon{font-size:48px;}
+        .image-card .img-source{font-size:11px;color:var(--gray-500);margin-top:0.3rem;}
+        .grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin:1.5rem 0;}
+        .grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem;margin:1.5rem 0;}
+        .styled-list{list-style:none;padding:0;}
+        .styled-list li{padding:0.8rem 1rem;margin-bottom:0.5rem;background:var(--white);border-radius:var(--radius-sm);font-size:17px;border-right:3px solid var(--blue-accent);box-shadow:var(--shadow-sm);transition:all 0.2s;}
+        .styled-list li:hover{border-right-color:var(--blue-dark);background:var(--blue-light);transform:translateX(-4px);}
+        .highlight-num{font-size:42px;font-weight:900;color:var(--blue-primary);line-height:1;}
+        .stat-card{text-align:center;padding:1.5rem;background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);border-top:4px solid var(--blue-accent);}
+        .stat-card .stat-label{font-size:15px;color:var(--gray-500);margin-top:0.3rem;}
+        .imdb-link{display:inline-flex;align-items:center;gap:0.4rem;background:#f5c518;color:#000;padding:0.4rem 0.9rem;border-radius:20px;text-decoration:none;font-size:14px;font-weight:700;transition:all 0.3s;}
+        .imdb-link:hover{background:#e5b500;transform:scale(1.05);box-shadow:var(--shadow-md);}
+        .movie-card{background:linear-gradient(135deg,#fffbe6,#fff3cc);border:2px solid #f5c518;border-radius:var(--radius);padding:1.5rem;text-align:center;margin:1rem 0;}
+        .movie-card h4{font-size:19px;color:#000;margin-bottom:0.5rem;}
+        .movie-card p{font-size:15px;color:var(--gray-700);}
+        .site-footer{background:var(--gray-900);color:var(--gray-300);text-align:center;padding:1.5rem;font-size:14px;margin-top:3rem;border-top:4px solid var(--blue-primary);}
+        .site-footer a{color:var(--blue-accent);text-decoration:none;font-size:14px;}
+        .site-footer a:hover{text-decoration:underline;color:var(--blue-light);}
+        @media(max-width:768px){
+            .header-inner{flex-direction:column;text-align:center;}
+            .page-title{font-size:24px;}.section-title{font-size:20px;}
+            .card{padding:1.2rem;}.info-table th,.info-table td{padding:0.6rem 0.8rem;font-size:14px;}
+            .image-gallery{grid-template-columns:repeat(auto-fit,minmax(150px,1fr));}
+            .highlight-num{font-size:32px;}
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="logo"><span class="logo-icon">🌊</span> راهیلا</a>
+            <nav class="nav-links">
+                <a href="index.html">خانه</a>
+                <a href="skiing.html" style="background:rgba(255,255,255,0.2);">اسکی</a>
+                <a href="skeleton.html">اسکلت</a>
+                <a href="skateboard.html">اسکیت‌بورد</a>
+                <a href="singers.html">خوانندگان</a>
+                <a href="contact.html">تماس</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <nav class="breadcrumb">
+            <a href="index.html">خانه</a><span class="separator">›</span>
+            <a href="s.html">حرف S</a><span class="separator">›</span>
+            <span>اسکی</span>
+        </nav>
+
+        <h1 class="page-title">اسکی</h1>
+        <p class="english-title">Skiing — Winter Sports & Mountain Adventure</p>
+
+        <div class="grid-3">
+            <div class="stat-card"><div class="highlight-num">۵۰۰۰+</div><div class="stat-label">سال سابقه اسکی</div></div>
+            <div class="stat-card"><div class="highlight-num">۲۵۰</div><div class="stat-label">کیلومتر سرعت رکورد جهانی</div></div>
+            <div class="stat-card"><div class="highlight-num">۲۰+</div><div class="stat-label">پیست اسکی در ایران</div></div>
+        </div>
+
+        <div class="image-gallery">
+            <div class="image-card"><span class="img-icon">⛷️</span><span>اسکی آلپاین</span><span class="img-source">📸 Unsplash: alpine skiing</span></div>
+            <div class="image-card"><span class="img-icon">🏔️</span><span>پیست اسکی کوهستانی</span><span class="img-source">📸 Unsplash: ski resort</span></div>
+            <div class="image-card"><span class="img-icon">🎿</span><span>اسکی صحرانوردی</span><span class="img-source">📸 Unsplash: cross country skiing</span></div>
+            <div class="image-card"><span class="img-icon">🏂</span><span>اسنوبرد</span><span class="img-source">📸 Unsplash: snowboarding</span></div>
+            <div class="image-card"><span class="img-icon">🚠</span><span>تله‌کابین</span><span class="img-source">📸 Unsplash: ski lift</span></div>
+            <div class="image-card"><span class="img-icon">🏅</span><span>مدال المپیک زمستانی</span><span class="img-source">📸 Wikimedia: winter olympics medal</span></div>
+        </div>
+
+        <div class="card">
+            <p><strong>اسکی</strong> یکی از قدیمی‌ترین ورزش‌های بشر با بیش از ۵۰۰۰ سال سابقه است. نقاشی‌های صخره‌ای در نروژ (۴۰۰۰ ق.م) انسان‌هایی را روی تخته‌های چوبی بلند نشان می‌دهد. اسکی مدرن در نروژ قرن ۱۹ متولد شد و امروزه شامل رشته‌های متنوع آلپاین، صحرانوردی، پرش، آزاد و اسنوبرد است. ایران با داشتن پیست‌های برف‌گیر در دامنه‌های البرز و زاگرس، یکی از مقاصد مهم اسکی خاورمیانه است.</p>
+        </div>
+
+        <div class="box-gold">
+            <strong>💡 ریشه تاریخی:</strong> واژه «اسکی» از کلمه نروژی باستان «skíð» به معنی «تکه چوب شکافته» گرفته شده. در ایران باستان، اسکی روی برف در مناطق کوهستانی البرز رواج داشته و شواهد تاریخی از استفاده تخته‌های چوبی برای جابجایی در برف در دوره هخامنشیان وجود دارد.
+        </div>
+
+        <h2 class="section-title">🎿 انواع رشته‌های اسکی</h2>
+        <div class="grid-3">
+            <div class="card">
+                <h3 style="font-size:19px;color:var(--blue-dark);">🏔️ آلپاین (سرعت)</h3>
+                <p style="font-size:16px;">معروف‌ترین نوع اسکی. ۴ ماده المپیکی: مارپیچ کوچک، مارپیچ بزرگ، سوپر جی، دانهیل. سرعت تا ۱۵۰ کیلومتر.</p>
+            </div>
+            <div class="card">
+                <h3 style="font-size:19px;color:var(--blue-dark);">🌲 صحرانوردی</h3>
+                <p style="font-size:16px;">اسکی در مسیرهای طولانی و هموار. نیاز به استقامت بالا. مسافت مسابقات ۱۰ تا ۵۰ کیلومتر.</p>
+            </div>
+            <div class="card">
+                <h3 style="font-size:19px;color:var(--blue-dark);">🦘 پرش اسکی</h3>
+                <p style="font-size:16px;">پرش از سکوی بلند (تا ۱۴۰ متر) و فرود روی برف. ورزش ملی نروژ و فنلاند. رکورد پرش: ۲۵۳.۵ متر!</p>
+            </div>
+        </div>
+
+        <h2 class="section-title">🇮🇷 پیست‌های اسکی ایران</h2>
+        <div class="styled-list">
+            <li><strong>🏙️ تهران — دیزین:</strong> بزرگترین پیست اسکی ایران و خاورمیانه. ارتفاع ۲۶۵۰ تا ۳۶۰۰ متر. ۲۳ کیلومتر مسیر. تله‌کابین، تله‌سیژ و هتل.</li>
+            <li><strong>🏙️ تهران — شمشک:</strong> دومین پیست بزرگ ایران. ارتفاع ۲۵۵۰ تا ۳۰۵۰ متر. پیست شبانه با نورافکن.</li>
+            <li><strong>🏙️ تهران — توچال:</strong> نزدیک‌ترین پیست به پایتخت. هفتمین تله‌کابین طولانی جهان (۷.۵ کیلومتر).</li>
+            <li><strong>🏔️ تبریز — سهند:</strong> پیست اسکی در دامنه کوه سهند با برف طبیعی عالی.</li>
+            <li><strong>🏛️ اصفهان — فریدون‌شهر:</strong> پیست اسکی زاگرس با ارتفاع ۲۷۰۰ متر.</li>
+            <li><strong>🌿 رشت — ماسوله:</strong> پیست اسکی در منطقه ییلاقی ماسوله با چشم‌انداز جنگل‌های هیرکانی.</li>
+        </div>
+
+        <div class="box-blue">
+            <strong>🇮🇷 اسکی‌بازان ایرانی:</strong> ایران در اسکی آلپاین سابقه درخشان دارد. حسین ساوه‌شمشکی در المپیک ۲۰۱۴ سوچی پرچمدار ایران بود. پوریا ساوه‌شمشکی و محمد کیادربندسری از اسکی‌بازان المپیکی ایران هستند. زنان اسکی‌باز ایرانی مانند فروغ عباسی و صدیقه ورمقانی نیز در مسابقات جهانی حضور داشته‌اند.
+        </div>
+
+        <h2 class="section-title">🎬 اسکی در سینما</h2>
+        <div class="grid-2">
+            <div class="movie-card">
+                <h4>🎬 Eddie the Eagle (۲۰۱۶)</h4>
+                <p><strong>کارگردان:</strong> دکستر فلچر | <strong>بازیگران:</strong> تارون اگرتون، هیو جکمن</p>
+                <p>داستان واقعی ادی ادواردز، اولین اسکی‌باز پرش بریتانیا در المپیک ۱۹۸۸ کلگری. داستانی الهام‌بخش از اراده و پشتکار.</p>
+                <a href="https://www.imdb.com/title/tt1083452/" target="_blank" rel="noopener" class="imdb-link">🎥 IMDb: tt1083452</a>
+            </div>
+            <div class="movie-card">
+                <h4>🎬 Downhill Racer (۱۹۶۹)</h4>
+                <p><strong>کارگردان:</strong> مایکل ریچی | <strong>بازیگران:</strong> رابرت ردفورد</p>
+                <p>اولین فیلم جدی درباره اسکی آلپاین و مسابقات جام جهانی. نمایشی واقع‌گرایانه از زندگی یک قهرمان اسکی.</p>
+                <a href="https://www.imdb.com/title/tt0064253/" target="_blank" rel="noopener" class="imdb-link">🎥 IMDb: tt0064253</a>
+            </div>
+        </div>
+
+        <h2 class="section-title">⚙️ تجهیزات اسکی</h2>
+        <div class="card" style="padding:0;overflow:hidden;">
+            <table class="info-table">
+                <thead><tr><th>تجهیزات</th><th>کاربرد</th><th>قیمت تقریبی (تومان)</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>چوب اسکی</strong></td><td>تخته‌های فایبرگلاس با لبه فلزی</td><td>۱۵-۵۰ میلیون</td></tr>
+                    <tr><td><strong>بوت اسکی</strong></td><td>کفش مخصوص با قفل شونده</td><td>۱۰-۳۰ میلیون</td></tr>
+                    <tr><td><strong>باتوم</strong></td><td>میله‌های آلومینیومی برای تعادل</td><td>۲-۸ میلیون</td></tr>
+                    <tr><td><strong>عینک اسکی</strong></td><td>محافظت از برف‌کوری و UV</td><td>۱-۵ میلیون</td></tr>
+                    <tr><td><strong>کلاه ایمنی</strong></td><td>محافظت از سر — اجباری در مسابقات</td><td>۲-۶ میلیون</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="box-red">
+            <strong>⚠️ خطرات اسکی:</strong> سالانه حدود ۶۰۰,۰۰۰ آسیب اسکی در جهان ثبت می‌شود. شایع‌ترین: پارگی رباط صلیبی زانو (ACL)، شکستگی مچ دست و ضربه مغزی. مایکل شوماخر، قهرمان افسانه‌ای فرمول یک، در سال ۲۰۱۳ در حین اسکی در آلپ فرانسه دچار سانحه شدید مغزی شد و از آن زمان در حالت کما و نقاهت طولانی است.
+        </div>
+
+        <div class="box-green">
+            <strong>✅ فواید اسکی:</strong> ۱) سوزاندن ۴۰۰-۶۰۰ کالری در ساعت، ۲) تقویت عضلات پا، core و تعادل، ۳) بهبود سلامت قلب و عروق، ۴) افزایش ویتامین D از نور خورشید کوهستان، ۵) کاهش استرس با بودن در طبیعت. اسکی یکی از کامل‌ترین ورزش‌های هوازی-قدرتی است.
+        </div>
+
+        <div style="text-align:center;margin:2.5rem 0;">
+            <a href="skin-full.html" class="btn btn-primary" style="margin:0.5rem;">🧴 مقاله بعدی: پوست جامع</a>
+            <a href="s.html" class="btn btn-outline" style="margin:0.5rem;">📚 همه مقالات S</a>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>🌐 <a href="https://rahilanab.com">rahilanab.com</a> — پروژه دانشنامه راهیلا | حرف S: اسکی</p>
+        <p style="margin-top:0.3rem;">📧 <a href="mailto:mahniush.binazir@gmail.com">mahniush.binazir@gmail.com</a> | 🐙 <a href="https://github.com/rahila-ir/rahila-site" target="_blank" rel="noopener">GitHub</a></p>
+        <p style="margin-top:0.5rem;font-size:13px;color:var(--gray-500);">🎥 IMDb: tt1083452, tt0064253 | فایل بعدی: skin-full.html | تابستان ۲۰۲۶</p>
+    </footer>
+</body>
+  </html>
