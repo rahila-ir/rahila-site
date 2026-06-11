@@ -1,1 +1,229 @@
-<!DOCTYPE html><html lang="fa"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>🏂 اسنوبرد | رهیلا</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial;background:radial-gradient(circle at center,#0a1a1a,#1a4a4a,#66ccaa);color:#fff;text-align:center;padding:15px;min-height:100vh}.header{background:rgba(255,255,255,.08);backdrop-filter:blur(20px);border-radius:25px;padding:20px;margin-bottom:15px}.header h1{color:#ffd700;font-size:22px}.back-btn{display:inline-block;background:rgba(255,255,255,.15);color:#fff;padding:8px 20px;border-radius:20px;text-decoration:none;margin:10px 0;font-size:14px}.section-title{color:#ffd700;font-size:18px;margin:20px 0 10px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.card{background:rgba(255,255,255,.05);border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,.1);text-align:right}.card h3{font-size:15px;color:#ffd700}</style></head><body><div class="header"><h1>🏂 اسنوبرد</h1></div><a href="index.html" class="back-btn">🔙 برگشت</a><div class="section-title">🏂 اطلاعات</div><div class="grid"><div class="card"><h3>اسنوبرد چیست</h3></div><div class="card"><h3>تجهیزات</h3></div><div class="card"><h3>پیست‌ها</h3></div><div class="card"><h3>آموزش</h3></div></div><p style="margin-top:15px"><a href="index.html" style="color:#ffd700">🔙 برگشت</a></p></body></html>
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>snowboarding - اسنوبرد | راهیلا</title>
+    <meta name="description" content="همه چیز درباره اسنوبرد، تاریخچه، سبک‌ها، ترفندها، تجهیزات، پیست‌های ایران و قهرمانان المپیک">
+    <style>
+        :root {
+            --blue-primary: #1a73e8;
+            --blue-dark: #1557b0;
+            --blue-light: #e8f0fe;
+            --blue-accent: #4285f4;
+            --white: #ffffff;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-300: #cbd5e1;
+            --gray-400: #94a3b8;
+            --gray-500: #64748b;
+            --gray-600: #475569;
+            --gray-700: #334155;
+            --gray-800: #1e293b;
+            --gray-900: #0f172a;
+            --gold: #f59e0b;
+            --gold-light: #fef3c7;
+            --gold-border: #d97706;
+            --red: #ef4444;
+            --red-light: #fee2e2;
+            --red-border: #dc2626;
+            --green: #10b981;
+            --green-light: #d1fae5;
+            --green-border: #059669;
+            --purple: #8b5cf6;
+            --purple-light: #ede9fe;
+            --purple-border: #7c3aed;
+            --shadow-sm: 0 1px 2px 0 rgba(0,0,0,0.05);
+            --shadow: 0 1px 3px 0 rgba(0,0,0,0.1),0 1px 2px -1px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1),0 2px 4px -2px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1),0 4px 6px -4px rgba(0,0,0,0.1);
+            --radius: 12px;
+            --radius-sm: 8px;
+        }
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{
+            font-family:'Vazirmatn','Segoe UI',Tahoma,sans-serif;
+            background:linear-gradient(135deg,#f0f4ff 0%,#e8f0fe 30%,#ffffff 70%,#f0f7ff 100%);
+            color:var(--gray-800);line-height:1.7;min-height:100vh;
+            display:flex;flex-direction:column;background-attachment:fixed;
+        }
+        .site-header{background:linear-gradient(135deg,var(--blue-primary) 0%,var(--blue-dark) 100%);color:var(--white);padding:1.2rem 2rem;box-shadow:var(--shadow-lg);position:sticky;top:0;z-index:100;}
+        .header-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
+        .logo{font-size:28px;font-weight:800;color:var(--white);text-decoration:none;display:flex;align-items:center;gap:0.5rem;}
+        .logo-icon{font-size:32px;}
+        .nav-links{display:flex;gap:1.5rem;align-items:center;flex-wrap:wrap;}
+        .nav-links a{color:rgba(255,255,255,0.9);text-decoration:none;font-size:16px;font-weight:500;transition:all 0.3s ease;padding:0.5rem 0.8rem;border-radius:var(--radius-sm);}
+        .nav-links a:hover{color:var(--white);background:rgba(255,255,255,0.15);transform:translateY(-1px);}
+        .main-container{max-width:1100px;margin:0 auto;padding:2rem 1.5rem;flex:1;width:100%;}
+        .breadcrumb{display:flex;gap:0.5rem;align-items:center;font-size:14px;color:var(--gray-500);margin-bottom:1.5rem;flex-wrap:wrap;}
+        .breadcrumb a{color:var(--blue-primary);text-decoration:none;}
+        .breadcrumb a:hover{color:var(--blue-dark);text-decoration:underline;}
+        .breadcrumb .separator{color:var(--gray-400);}
+        .page-title{font-size:28px;font-weight:800;color:var(--gray-900);margin-bottom:0.5rem;position:relative;display:inline-block;}
+        .page-title::after{content:'';position:absolute;bottom:-6px;right:0;width:60%;height:4px;background:linear-gradient(90deg,var(--blue-primary),var(--blue-accent));border-radius:2px;}
+        .english-title{font-size:16px;color:var(--gray-500);margin-bottom:2rem;font-style:italic;}
+        .section-title{font-size:22px;font-weight:700;color:var(--gray-900);margin:2rem 0 1rem;padding-bottom:0.5rem;border-bottom:2px solid var(--blue-light);}
+        .card{background:var(--white);border-radius:var(--radius);padding:2rem;margin-bottom:1.5rem;box-shadow:var(--shadow-md);border:1px solid var(--gray-100);transition:all 0.3s ease;}
+        .card:hover{box-shadow:var(--shadow-lg);transform:translateY(-2px);border-color:var(--blue-light);}
+        .card p,.card li{font-size:17px;color:var(--gray-700);}
+        .info-table{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:16px;background:var(--white);border-radius:var(--radius-sm);overflow:hidden;box-shadow:var(--shadow);}
+        .info-table thead{background:linear-gradient(135deg,var(--blue-primary),var(--blue-dark));color:var(--white);}
+        .info-table th{padding:1rem 1.2rem;font-weight:600;font-size:16px;text-align:right;}
+        .info-table td{padding:0.9rem 1.2rem;font-size:16px;border-bottom:1px solid var(--gray-100);color:var(--gray-700);}
+        .info-table tbody tr:hover{background:var(--blue-light);}
+        .info-table tbody tr:last-child td{border-bottom:none;}
+        .btn{display:inline-block;padding:0.75rem 1.8rem;font-size:17px;font-weight:600;border:none;border-radius:var(--radius-sm);cursor:pointer;text-decoration:none;transition:all 0.3s ease;text-align:center;font-family:inherit;}
+        .btn-primary{background:linear-gradient(135deg,var(--blue-primary),var(--blue-accent));color:var(--white);box-shadow:var(--shadow-md);}
+        .btn-primary:hover{background:linear-gradient(135deg,var(--blue-dark),var(--blue-primary));transform:translateY(-2px);box-shadow:var(--shadow-lg);}
+        .btn-outline{background:var(--white);color:var(--blue-primary);border:2px solid var(--blue-primary);}
+        .btn-outline:hover{background:var(--blue-light);transform:translateY(-2px);}
+        .box-gold{background:linear-gradient(135deg,var(--gold-light),#fffbeb);border-right:4px solid var(--gold-border);border-radius:var(--radius-sm);padding:1.2rem 1.5rem;margin:1.5rem 0;font-size:17px;color:var(--gray-800);}
+        .box-blue{background:linear-gradient(135deg,var(--blue-light),#dbeafe);border-right:4px solid var(--blue-primary);border-radius:var(--radius-sm);padding:1.2rem 1.5rem;margin:1.5rem 0;font-size:17px;color:var(--gray-800);}
+        .box-green{background:linear-gradient(135deg,var(--green-light),#ecfdf5);border-right:4px solid var(--green-border);border-radius:var(--radius-sm);padding:1.2rem 1.5rem;margin:1.5rem 0;font-size:17px;color:var(--gray-800);}
+        .box-red{background:linear-gradient(135deg,var(--red-light),#fef2f2);border-right:4px solid var(--red-border);border-radius:var(--radius-sm);padding:1.2rem 1.5rem;margin:1.5rem 0;font-size:17px;color:var(--gray-800);}
+        .box-purple{background:linear-gradient(135deg,var(--purple-light),#f5f3ff);border-right:4px solid var(--purple-border);border-radius:var(--radius-sm);padding:1.2rem 1.5rem;margin:1.5rem 0;font-size:17px;color:var(--gray-800);}
+        .image-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin:1.5rem 0;}
+        .image-card{background:linear-gradient(135deg,#e8f0fe,#dbeafe);border-radius:var(--radius);padding:2.5rem 1rem;text-align:center;color:var(--blue-primary);font-size:14px;border:2px dashed var(--blue-accent);font-weight:500;transition:all 0.3s ease;min-height:180px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.8rem;}
+        .image-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--blue-dark);}
+        .image-card .img-icon{font-size:48px;}
+        .image-card .img-source{font-size:11px;color:var(--gray-500);margin-top:0.3rem;}
+        .grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin:1.5rem 0;}
+        .grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem;margin:1.5rem 0;}
+        .styled-list{list-style:none;padding:0;}
+        .styled-list li{padding:0.8rem 1rem;margin-bottom:0.5rem;background:var(--white);border-radius:var(--radius-sm);font-size:17px;border-right:3px solid var(--blue-accent);box-shadow:var(--shadow-sm);transition:all 0.2s;}
+        .styled-list li:hover{border-right-color:var(--blue-dark);background:var(--blue-light);transform:translateX(-4px);}
+        .highlight-num{font-size:42px;font-weight:900;color:var(--blue-primary);line-height:1;}
+        .stat-card{text-align:center;padding:1.5rem;background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);border-top:4px solid var(--blue-accent);}
+        .stat-card .stat-label{font-size:15px;color:var(--gray-500);margin-top:0.3rem;}
+        .site-footer{background:var(--gray-900);color:var(--gray-300);text-align:center;padding:1.5rem;font-size:14px;margin-top:3rem;border-top:4px solid var(--blue-primary);}
+        .site-footer a{color:var(--blue-accent);text-decoration:none;font-size:14px;}
+        .site-footer a:hover{text-decoration:underline;color:var(--blue-light);}
+        @media(max-width:768px){
+            .header-inner{flex-direction:column;text-align:center;}
+            .page-title{font-size:24px;}.section-title{font-size:20px;}
+            .card{padding:1.2rem;}.info-table th,.info-table td{padding:0.6rem 0.8rem;font-size:14px;}
+            .image-gallery{grid-template-columns:repeat(auto-fit,minmax(150px,1fr));}
+            .highlight-num{font-size:32px;}
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="logo"><span class="logo-icon">🌊</span> راهیلا</a>
+            <nav class="nav-links">
+                <a href="index.html">خانه</a>
+                <a href="snowboarding.html" style="background:rgba(255,255,255,0.2);">اسنوبرد</a>
+                <a href="skydiving.html">چتربازی</a>
+                <a href="skin.html">پوست</a>
+                <a href="skiing.html">اسکی</a>
+                <a href="contact.html">تماس</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <nav class="breadcrumb">
+            <a href="index.html">خانه</a><span class="separator">›</span>
+            <a href="s.html">حرف S</a><span class="separator">›</span>
+            <span>اسنوبرد</span>
+        </nav>
+
+        <h1 class="page-title">اسنوبرد</h1>
+        <p class="english-title">Snowboarding — Surfing on Snow</p>
+
+        <div class="grid-3">
+            <div class="stat-card"><div class="highlight-num">۱۹۶۵</div><div class="stat-label">سال اختراع</div></div>
+            <div class="stat-card"><div class="highlight-num">۱۹۹۸</div><div class="stat-label">ورود به المپیک</div></div>
+            <div class="stat-card"><div class="highlight-num">۲۰M+</div><div class="stat-label">اسنوبردباز در جهان</div></div>
+        </div>
+
+        <div class="image-gallery">
+            <div class="image-card"><span class="img-icon">🏂</span><span>اسنوبرد در برف تازه</span><span class="img-source">📸 Unsplash: snowboarding powder</span></div>
+            <div class="image-card"><span class="img-icon">🦘</span><span>پرش از روی مانع</span><span class="img-source">📸 Unsplash: snowboard jump</span></div>
+            <div class="image-card"><span class="img-icon">🏔️</span><span>اسنوبرد کوهستان</span><span class="img-source">📸 Unsplash: backcountry snowboarding</span></div>
+            <div class="image-card"><span class="img-icon">🏟️</span><span>هاف‌پایپ</span><span class="img-source">📸 Unsplash: halfpipe snowboarding</span></div>
+            <div class="image-card"><span class="img-icon">🏅</span><span>المپیک زمستانی</span><span class="img-source">📸 Wikimedia: olympic snowboarding</span></div>
+            <div class="image-card"><span class="img-icon">🎿</span><span>تجهیزات اسنوبرد</span><span class="img-source">📸 Unsplash: snowboard gear</span></div>
+        </div>
+
+        <div class="card">
+            <p><strong>اسنوبرد</strong> ورزشی زمستانی است که در آن فرد روی یک تخته صاف و عریض (اسنوبرد) می‌ایستد و از دامنه‌های برفی پایین می‌آید. این ورزش در دهه ۱۹۶۰ در آمریکا از ترکیب اسکی، موج‌سواری و اسکیت‌بورد متولد شد و در سال ۱۹۹۸ به المپیک زمستانی ناگانو راه یافت. امروزه بیش از ۲۰ میلیون اسنوبردباز در جهان فعالیت می‌کنند.</p>
+        </div>
+
+        <div class="box-gold">
+            <strong>💡 داستان اختراع:</strong> شرمن پاپن، مهندس اهل میشیگان، در کریسمس ۱۹۶۵ با بستن دو چوب اسکی به هم و اضافه کردن یک طناب برای کنترل، «Snurfer» را برای دخترانش ساخت. این وسیله ساده چنان محبوب شد که پاپن یک میلیون عدد فروخت و الهام‌بخش نسل اول اسنوبردسازها از جمله جیک برتون (مؤسس Burton Snowboards) شد.
+        </div>
+
+        <h2 class="section-title">🏂 سبک‌های اسنوبرد</h2>
+        <div class="grid-2">
+            <div class="card">
+                <h3 style="font-size:20px;color:var(--blue-dark);">🏔️ آلپاین (سرعت)</h3>
+                <p style="font-size:17px;">حرکت سریع روی پیست‌های شیب‌دار با تخته‌های بلند و باریک. شبیه اسکی آلپاین. چکمه‌های سخت (hard boots) استفاده می‌شود.</p>
+            </div>
+            <div class="card">
+                <h3 style="font-size:20px;color:var(--blue-dark);">🛹 فری‌استایل (Freestyle)</h3>
+                <p style="font-size:17px;">ترفند، پرش، چرخش و حرکت روی موانع. شامل هاف‌پایپ (U شکل) و اسلوپ‌استایل (پرش از روی کیکرها و ریل‌ها). المپیکی است.</p>
+            </div>
+            <div class="card">
+                <h3 style="font-size:20px;color:var(--blue-dark);">🌲 فری‌راید (Freeride)</h3>
+                <p style="font-size:17px;">اسنوبرد در برف تازه و عمیق خارج از پیست (backcountry). نیاز به تجهیزات ایمنی بهمن و تجربه بالا دارد.</p>
+            </div>
+            <div class="card">
+                <h3 style="font-size:20px;color:var(--blue-dark);">🎿 اسنوبردکراس (Boardercross)</h3>
+                <p style="font-size:17px;">مسابقه ۴-۶ نفره همزمان در مسیری با پیچ، پرش و مانع. برخوردها دیدنی است! از ۲۰۰۶ المپیکی شد.</p>
+            </div>
+        </div>
+
+        <h2 class="section-title">🏆 قهرمانان افسانه‌ای</h2>
+        <div class="grid-2">
+            <div class="card">
+                <h3 style="font-size:20px;color:var(--blue-dark);">🇺🇸 شان وایت (Shaun White)</h3>
+                <p style="font-size:17px;">مشهورترین اسنوبردباز تاریخ. ۳ طلای المپیک در هاف‌پایپ (۲۰۰۶، ۲۰۱۰، ۲۰۱۸). لقب «توماتوی پرنده» به خاطر موهای قرمزش. ۱۵ مدال طلای X Games.</p>
+            </div>
+            <div class="card">
+                <h3 style="font-size:20px;color:var(--blue-dark);">🇺🇸 کلویی کیم (Chloe Kim)</h3>
+                <p style="font-size:17px;">نابغه اسنوبرد زنان. طلای المپیک ۲۰۱۸ پیونگ‌چانگ در ۱۷ سالگی. اولین زنی که ۱۰۸۰ (سه دور کامل) را در هاف‌پایپ اجرا کرد.</p>
+            </div>
+        </div>
+
+        <div class="box-blue">
+            <strong>🇮🇷 اسنوبرد در ایران:</strong> اسنوبرد در ایران از اوایل دهه ۱۳۸۰ رواج یافت. پیست‌های دیزین، شمشک و توچال تهران میزبان اسنوبردبازان هستند. هر ساله مسابقات آزاد اسنوبرد در دیزین برگزار می‌شود. تجهیزات اسنوبرد در ایران گران است — یک تخته خوب ۲۰-۵۰ میلیون تومان قیمت دارد.
+        </div>
+
+        <h2 class="section-title">⚙️ تجهیزات اسنوبرد</h2>
+        <div class="card" style="padding:0;overflow:hidden;">
+            <table class="info-table">
+                <thead><tr><th>تجهیزات</th><th>ویژگی</th><th>قیمت تقریبی (تومان)</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>تخته اسنوبرد</strong></td><td>چوب + فایبرگلاس — طول ۱۴۰-۱۷۰cm</td><td>۲۰-۵۰ میلیون</td></tr>
+                    <tr><td><strong>بایندینگ (Bindings)</strong></td><td>اتصال چکمه به تخته</td><td>۸-۲۰ میلیون</td></tr>
+                    <tr><td><strong>چکمه اسنوبرد</strong></td><td>نرمتر از چکمه اسکی — راحتی بیشتر</td><td>۱۰-۲۵ میلیون</td></tr>
+                    <tr><td><strong>عینک مخصوص</strong></td><td>ضد بخار + UV400</td><td>۱-۵ میلیون</td></tr>
+                    <tr><td><strong>کلاه ایمنی</strong></td><td>محافظت از سر — اجباری</td><td>۲-۶ میلیون</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="box-red">
+            <strong>⚠️ آسیب‌های رایج:</strong> مچ دست (شایع‌ترین — ۲۵٪ کل آسیب‌ها)، شانه و ترقوه، مچ پا و زانو. استفاده از محافظ مچ دست (wrist guard) ۵۰٪ خطر شکستگی را کاهش می‌دهد. همیشه با کلاه ایمنی برانید — ۸۸٪ مرگ‌های اسنوبرد به دلیل ضربه به سر است.
+        </div>
+
+        <div class="box-green">
+            <strong>✅ چرا اسنوبرد؟</strong> ۱) یادگیری سریع‌تر از اسکی در روزهای اول، ۲) حس موج‌سواری روی برف، ۳) جامعه جوان و پرانرژی اسنوبردبازها، ۴) تنوع ترفندها بی‌نهایت است، ۵) برف تازه (powder) با اسنوبرد لذتی وصف‌ناپذیر دارد.
+        </div>
+
+        <div style="text-align:center;margin:2.5rem 0;">
+            <a href="speaker.html" class="btn btn-primary" style="margin:0.5rem;">🔊 مقاله بعدی: اسپیکر</a>
+            <a href="s.html" class="btn btn-outline" style="margin:0.5rem;">📚 همه مقالات S</a>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>🌐 <a href="https://rahilanab.com">rahilanab.com</a> — پروژه دانشنامه راهیلا | حرف S: اسنوبرد</p>
+        <p style="margin-top:0.3rem;">📧 <a href="mailto:mahniush.binazir@gmail.com">mahniush.binazir@gmail.com</a> | 🐙 <a href="https://github.com/rahila-ir/rahila-site" target="_blank" rel="noopener">GitHub</a></p>
+        <p style="margin-top:0.5rem;font-size:13px;color:var(--gray-500);">فایل بعدی: speaker.html | تابستان ۲۰۲۶</p>
+    </footer>
+</body>
+                              </html>
