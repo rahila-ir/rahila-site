@@ -1,33 +1,71 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🕋 حج و کربلا | رهیلا</title>
+    <title>🕋 حج | راهنمای کامل + اعمال + مناسک | rahilanab.com</title>
+    <meta name="description" content="راهنمای حج: اعمال حج تمتع، مناسک، احرام، عرفات، منا، طواف، سعی، قربانی، حج عمره">
+    <meta name="keywords" content="حج, حج تمتع, مناسک حج, احرام, عرفات, مکه, rahilanab">
     <style>
-        *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:Arial;background:radial-gradient(circle at center,#0a1a1a,#1a4a4a,#66ccaa);color:#fff;text-align:center;padding:15px;min-height:100vh}
-        .header{background:rgba(255,255,255,.08);backdrop-filter:blur(20px);border-radius:25px;padding:20px;margin-bottom:15px}
-        .header h1{color:#ffd700;font-size:22px}
-        .back-btn{display:inline-block;background:rgba(255,255,255,.15);color:#fff;padding:8px 20px;border-radius:20px;text-decoration:none;margin:10px 0;font-size:14px}
-        .section-title{color:#ffd700;font-size:18px;margin:20px 0 10px}
-        .grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-        .card{background:rgba(255,255,255,.05);border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,.1);text-align:right}
-        .card:active{background:rgba(255,215,0,.2)}
-        .card h3{font-size:15px;color:#ffd700}
-    </style>
+        *{margin:0;padding:0;box-sizing:border-box}body{font-family:'Arial';background:linear-gradient(135deg,#e3f2fd,#bbdefb,#90caf9,#a5d6a7);color:#000;text-align:center;padding:10px;min-height:100vh}.header{background:#fff;border-radius:20px;padding:20px;margin-bottom:12px;box-shadow:0 4px 15px rgba(0,0,0,.1)}.header h1{color:#0d47a1;font-size:28px}.header p{color:#000;font-size:18px;font-weight:bold}.full-card{background:#fff;border-radius:15px;padding:22px;margin:14px 0;box-shadow:0 2px 10px rgba(0,0,0,.08);text-align:right;line-height:2.4}.full-card h2{color:#0d47a1;font-size:22px;margin-bottom:12px;text-align:center;border-bottom:2px solid #e3f2fd;padding-bottom:10px}.full-card h3{color:#0d47a1;font-size:19px;margin:14px 0 8px}.full-card p{color:#000;font-size:17px;font-weight:bold;margin:10px 0}.full-card img{width:100%;max-width:100%;border-radius:12px;margin:10px 0}table{width:100%;border-collapse:collapse;margin:12px 0}th{background:#0d47a1;color:#fff;padding:14px;font-size:16px}td{padding:12px;border:1px solid #ddd;font-size:16px;font-weight:bold}.golden-box{background:linear-gradient(135deg,#fff8e1,#ffe082,#ffd54f);border-right:5px solid #ff8f00;padding:18px;border-radius:12px;margin:18px 0}.golden-box p{color:#000;font-size:17px;font-weight:bold}.blue-box{background:linear-gradient(135deg,#e3f2fd,#bbdefb,#90caf9);border-right:5px solid #0d47a1;padding:18px;border-radius:12px;margin:18px 0}.blue-box p{color:#000;font-size:17px;font-weight:bold}.green-box{background:linear-gradient(135deg,#e8f5e9,#c8e6c9,#a5d6a7);border-right:5px solid #2e7d32;padding:18px;border-radius:12px;margin:18px 0}.green-box p{color:#000;font-size:17px;font-weight:bold}.back-btn{display:inline-block;background:#0d47a1;color:#fff;padding:12px 26px;border-radius:22px;text-decoration:none;margin:12px 0;font-weight:bold;font-size:17px}.footer{background:#fff;padding:14px;margin-top:14px;font-size:14px;color:#000;border-radius:15px;font-weight:bold}.footer a{color:#0d47a1}</style>
 </head>
 <body>
-    <div class="header"><h1>🕋 حج و کربلا</h1></div>
-    <a href="index.html" class="back-btn">🔙 برگشت</a>
-    <div class="section-title">🕋 حج</div>
-    <div class="grid"><div class="card"><h3>حج تمتع</h3></div><div class="card"><h3>حج عمره</h3></div><div class="card"><h3>آداب حج</h3></div><div class="card"><h3>خرید و فروش فیش حج</h3></div><div class="card"><h3>ثبت نام حج</h3></div><div class="card"><h3>هزینه حج</h3></div></div>
-    <div class="section-title">🕌 کربلا</div>
-    <div class="grid"><div class="card"><h3>سفر به کربلا</h3></div><div class="card"><h3>پیاده‌روی اربعین</h3></div><div class="card"><h3>حرم امام حسین</h3></div><div class="card"><h3>حرم حضرت عباس</h3></div></div>
-    <div class="section-title">🕌 امام زمان</div>
-    <div class="grid"><div class="card"><h3>ظهور امام زمان</h3></div><div class="card"><h3>غیبت صغری و کبری</h3></div><div class="card"><h3>دعای فرج</h3></div><div class="card"><h3>علائم ظهور</h3></div></div>
-    <div class="section-title">🙏 روضه‌ها</div>
-    <div class="grid"><div class="card"><h3>روضه امام حسین</h3></div><div class="card"><h3>روضه حضرت رقیه</h3></div><div class="card"><h3>روضه علی اصغر</h3></div><div class="card"><h3>روضه مسلم بن عقیل</h3></div><div class="card"><h3>روضه پنج تن</h3></div><div class="card"><h3>روضه موسی بن جعفر</h3></div></div>
-    <p style="margin-top:15px"><a href="index.html" style="color:#ffd700">🔙 برگشت</a></p>
-</body>
-</html>
+<div class="header"><h1>🕋 حج</h1><p>راهنمای کامل + اعمال + مناسک | rahilanab.com</p></div>
+
+<div class="full-card">
+    <h2>🕋 حج چیست؟</h2>
+    <p>حج از <strong>ارکان پنجگانه اسلام</strong> و فریضه‌ای الهی است. هر مسلمان بالغ، عاقل و توانمند باید یک بار در عمر خود این واجب الهی را به جا آورد. حج در ماه <strong>ذی‌الحجه</strong> آخرین ماه قمری برگزار می‌شود.</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Kaaba_Masjid_Haram.jpg/800px-Kaaba_Masjid_Haram.jpg" alt="کعبه" loading="lazy">
+    <div class="blue-box"><p>🔵 حج بزرگترین اجتماع مسلمانان جهان با بیش از ۲.۵ میلیون زائر از ۱۸۰ کشور است.</p></div>
+</div>
+
+<div class="full-card">
+    <h2>📿 اعمال اصلی حج تمتع</h2>
+    <table><tr><th>عمل</th><th>مکان</th><th>روز</th></tr>
+    <tr><td>👕 <strong>احرام</strong></td><td>مکه (مسجدالحرام)</td><td>۸ ذی‌الحجه</td></tr>
+    <tr><td>🏔️ <strong>وقوف عرفات</strong></td><td>عرفات</td><td>۹ ذی‌الحجه (مهم‌ترین رکن)</td></tr>
+    <tr><td>🌙 <strong>وقوف مشعر</strong></td><td>مشعرالحرام</td><td>شب ۱۰ ذی‌الحجه</td></tr>
+    <tr><td>🪨 <strong>رمی جمرات</strong></td><td>منا</td><td>۱۰-۱۲ ذی‌الحجه</td></tr>
+    <tr><td>🐑 <strong>قربانی</strong></td><td>منا</td><td>۱۰ ذی‌الحجه</td></tr>
+    <tr><td>✂️ <strong>حلق / تقصیر</strong></td><td>منا</td><td>۱۰ ذی‌الحجه</td></tr>
+    <tr><td>🔄 <strong>طواف زیارت + نماز</strong></td><td>مسجدالحرام</td><td>بعد از اعمال منا</td></tr>
+    <tr><td>🏃 <strong>سعی صفا و مروه</strong></td><td>مسجدالحرام</td><td>بعد از طواف</td></tr>
+</table>
+    <div class="golden-box"><p>🟡 «الحج عرفه» — مهم‌ترین رکن حج، وقوف در عرفات است. بدون عرفات، حج باطل است.</p></div>
+</div>
+
+<div class="full-card">
+    <h2>👕 محرمات احرام</h2>
+    <table><tr><th>عمل ممنوع</th><th>کفاره</th></tr>
+    <tr><td>✂️ ناخن و مو</td><td>قربانی یا روزه</td></tr>
+    <tr><td>🌸 عطر</td><td>کفاره</td></tr>
+    <tr><td>🧣 لباس دوخته (مردان)</td><td>کفاره</td></tr>
+    <tr><td>💍 ازدواج</td><td>باطل</td></tr>
+    <tr><td>🦌 شکار</td><td>کفاره مشخص</td></tr>
+</table>
+</div>
+
+<div class="full-card">
+    <h2>🏨 اماکن مقدس</h2>
+    <table><tr><th>مکان</th><th>عمل</th></tr>
+    <tr><td>🕋 <strong>مسجدالحرام</strong></td><td>طواف، نماز، سعی</td></tr>
+    <tr><td>🏔️ <strong>عرفات</strong></td><td>وقوف، دعا، استغفار</td></tr>
+    <tr><td>🌙 <strong>مشعرالحرام</strong></td><td>شب‌مانی</td></tr>
+    <tr><td>⛺ <strong>منا</strong></td><td>رمی جمرات، قربانی</td></tr>
+    <tr><td>🕌 <strong>مدینه منوره</strong></td><td>زیارت پیامبر (ص)</td></tr>
+</table>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Mount_Arafat.jpg/800px-Mount_Arafat.jpg" alt="عرفات" loading="lazy">
+</div>
+
+<div class="full-card">
+    <h2>🇮🇷 حج ایرانیان</h2>
+    <table><tr><th>موضوع</th><th>جزئیات</th></tr>
+    <tr><td>👥 سهمیه</td><td>حدود ۸۰,۰۰۰ نفر در سال</td></tr>
+    <tr><td>💰 هزینه</td><td>۲۰۰-۴۰۰ میلیون تومان</td></tr>
+    <tr><td>📝 ثبت‌نام</td><td>سازمان حج و زیارت</td></tr>
+</table>
+    <div class="green-box"><p>🟢 هرچه زودتر ثبت‌نام کنید — نوبت‌ها طولانی است!</p></div>
+</div>
+
+<a href="index.html" class="back-btn">🔙 خانه</a>
+<div class="footer"><p>🌟 rahilanab.com</p></div></body></html>
