@@ -1,1 +1,112 @@
-<!DOCTYPE html><html lang="fa"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>🏆 جشن حافظ | رهیلا</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial;background:radial-gradient(circle at center,#0a1a1a,#1a4a4a,#66ccaa);color:#fff;text-align:center;padding:15px;min-height:100vh}.header{background:rgba(255,255,255,.08);backdrop-filter:blur(20px);border-radius:25px;padding:20px;margin-bottom:15px}.header h1{color:#ffd700;font-size:22px}.back-btn{display:inline-block;background:rgba(255,255,255,.15);color:#fff;padding:8px 20px;border-radius:20px;text-decoration:none;margin:10px 0;font-size:14px}.section-title{color:#ffd700;font-size:18px;margin:20px 0 10px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.card{background:rgba(255,255,255,.05);border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,.1);text-align:right}.card:active{background:rgba(255,215,0,.2)}.card h3{font-size:15px;color:#ffd700}.card p{font-size:10px;color:#aaa}</style></head><body><div class="header"><h1>🏆 جشن حافظ</h1><p>جشن دنیای تصویر</p></div><a href="movie.html" class="back-btn">🔙 برگشت</a><div class="section-title">🏆 اطلاعات</div><div class="grid"><div class="card"><h3>تاریخچه جشن حافظ</h3></div><div class="card"><h3>برندگان تندیس حافظ</h3></div><div class="card"><h3>بهترین سریال</h3></div><div class="card"><h3>بهترین بازیگر</h3></div><div class="card"><h3>بهترین خواننده</h3></div><div class="card"><h3>حواشی جشن حافظ</h3></div></div><p style="margin-top:15px"><a href="index.html" style="color:#ffd700">🔙 خانه</a></p></body></html>
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌿 جشنواره حافظیه | بزرگداشت حافظ شیرازی | rahilanab.com</title>
+    <meta name="description" content="راهنمای کامل جشنواره حافظیه: بزرگداشت حافظ شیرازی، برنامه‌های جشنواره، تاریخچه، حافظ‌شناسی، شعرخوانی، موسیقی">
+    <meta name="keywords" content="جشنواره حافظیه, بزرگداشت حافظ, حافظ شیرازی, حافظیه, شعر, موسیقی, rahilanab">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}body{font-family:'Arial';background:linear-gradient(135deg,#e3f2fd,#bbdefb,#90caf9,#a5d6a7);color:#000;text-align:center;padding:10px;min-height:100vh}.header{background:#fff;border-radius:20px;padding:20px;margin-bottom:12px;box-shadow:0 4px 15px rgba(0,0,0,.1)}.header h1{color:#0d47a1;font-size:28px}.header p{color:#000;font-size:18px;font-weight:bold}.full-card{background:#fff;border-radius:15px;padding:22px;margin:14px 0;box-shadow:0 2px 10px rgba(0,0,0,.08);text-align:right;line-height:2.4}.full-card h2{color:#0d47a1;font-size:22px;margin-bottom:12px;text-align:center;border-bottom:2px solid #e3f2fd;padding-bottom:10px}.full-card h3{color:#0d47a1;font-size:19px;margin:14px 0 8px}.full-card p{color:#000;font-size:17px;font-weight:bold;margin:10px 0}.full-card img{width:100%;max-width:100%;border-radius:12px;margin:10px 0}.gallery{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:10px 0}.gallery img{width:32%;border-radius:10px;min-width:100px}table{width:100%;border-collapse:collapse;margin:12px 0}th{background:#0d47a1;color:#fff;padding:14px;font-size:16px}td{padding:12px;border:1px solid #ddd;font-size:16px;font-weight:bold}.golden-box{background:linear-gradient(135deg,#fff8e1,#ffe082,#ffd54f);border-right:5px solid #ff8f00;padding:18px;border-radius:12px;margin:18px 0}.golden-box p{color:#000;font-size:17px;font-weight:bold}.blue-box{background:linear-gradient(135deg,#e3f2fd,#bbdefb,#90caf9);border-right:5px solid #0d47a1;padding:18px;border-radius:12px;margin:18px 0}.blue-box p{color:#000;font-size:17px;font-weight:bold}.green-box{background:linear-gradient(135deg,#e8f5e9,#c8e6c9,#a5d6a7);border-right:5px solid #2e7d32;padding:18px;border-radius:12px;margin:18px 0}.green-box p{color:#000;font-size:17px;font-weight:bold}.purple-box{background:linear-gradient(135deg,#f3e5f5,#e1bee7,#ce93d8);border-right:5px solid #6a1b9a;padding:18px;border-radius:12px;margin:18px 0}.purple-box p{color:#000;font-size:17px;font-weight:bold}iframe{border-radius:12px;width:100%;max-width:100%}.back-btn{display:inline-block;background:#0d47a1;color:#fff;padding:12px 26px;border-radius:22px;text-decoration:none;margin:12px 0;font-weight:bold;font-size:17px}.footer{background:#fff;padding:14px;margin-top:14px;font-size:14px;color:#000;border-radius:15px;font-weight:bold}.footer a{color:#0d47a1}</style>
+</head>
+<body>
+<div class="header"><h1>🌿 جشنواره حافظیه</h1><p>بزرگداشت لسان‌الغیب حافظ شیرازی | rahilanab.com</p></div>
+
+<div class="full-card">
+    <h2>🌿 جشنواره حافظیه چیست؟</h2>
+    <p>جشنواره حافظیه <strong>بزرگترین رویداد فرهنگی و ادبی</strong> ویژه بزرگداشت <strong>حافظ شیرازی</strong> است که هر سال در <strong>۲۰ مهرماه</strong> (روز بزرگداشت حافظ) در <strong>آرامگاه حافظ (حافظیه)</strong> در شیراز برگزار می‌شود. این جشنواره میزبان <strong>حافظ‌شناسان، شاعران، نویسندگان و هنرمندان</strong> از سراسر ایران و جهان است.</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Tomb_of_Hafez%2C_Shiraz.jpg/800px-Tomb_of_Hafez%2C_Shiraz.jpg" alt="حافظیه شیراز" loading="lazy">
+    <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1583417319070-4a0b7b15af9b?w=300" alt="حافظیه" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1519922639192-e73293ca430e?w=300" alt="شیراز" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1505533320630-c53f2f9b3c27?w=300" alt="شعر و ادب" loading="lazy">
+    </div>
+    <div class="blue-box"><p>🔵 <strong>جالب است بدانید:</strong> ۲۰ مهرماه در تقویم رسمی ایران به نام <strong>«روز بزرگداشت حافظ»</strong> ثبت شده است. این روز یادآور مقام والای <strong>لسان‌الغیب</strong> در فرهنگ و ادب فارسی است.</p></div>
+</div>
+
+<div class="full-card">
+    <h2>📊 اطلاعات جشنواره حافظیه</h2>
+    <table><tr><th>مشخصه</th><th>جزئیات</th></tr>
+    <tr><td>📅 <strong>تاریخ برگزاری</strong></td><td>۲۰ مهرماه — روز بزرگداشت حافظ</td></tr>
+    <tr><td>📍 <strong>مکان اصلی</strong></td><td>آرامگاه حافظ (حافظیه) — شیراز</td></tr>
+    <tr><td>🎯 <strong>هدف</strong></td><td>بزرگداشت حافظ + ترویج شعر و ادب فارسی</td></tr>
+    <tr><td>👥 <strong>شرکت‌کنندگان</strong></td><td>حافظ‌شناسان، شاعران، نویسندگان، هنرمندان</td></tr>
+    <tr><td>🏛️ <strong>برگزارکننده</strong></td><td>شهرداری شیراز + میراث فرهنگی فارس</td></tr>
+    <tr><td>🌍 <strong>میهمانان خارجی</strong></td><td>حافظ‌پژوهان از کشورهای مختلف</td></tr>
+</table>
+</div>
+
+<div class="full-card">
+    <h2>🎥 ویدئو: جشنواره حافظیه در شیراز</h2>
+    <iframe width="100%" height="400" src="https://www.aparat.com/video/video/embed/videohash/g7L4M/showvideo" frameborder="0" allowfullscreen></iframe>
+    <p style="text-align:center;margin-top:10px;">🎬 حال و هوای جشنواره حافظیه — شعر، موسیقی و عطر گل‌های حافظیه</p>
+</div>
+
+<div class="full-card">
+    <h2>🎭 برنامه‌های جشنواره</h2>
+    <table><tr><th>برنامه</th><th>توضیح</th></tr>
+    <tr><td>📖 <strong>شعرخوانی</strong></td><td>خواندن غزلیات حافظ توسط شاعران و هنرمندان برجسته</td></tr>
+    <tr><td>🎤 <strong>سخنرانی علمی</strong></td><td>ارائه مقالات و پژوهش‌های جدید درباره حافظ</td></tr>
+    <tr><td>🎵 <strong>کنسرت موسیقی سنتی</strong></td><td>اجرای موسیقی اصیل ایرانی با اشعار حافظ</td></tr>
+    <tr><td>🎨 <strong>نمایشگاه هنری</strong></td><td>خوشنویسی، نقاشی و نگارگری با مضمون اشعار حافظ</td></tr>
+    <tr><td>🔮 <strong>فال حافظ</strong></td><td>تفأل به دیوان حافظ — رسم دیرینه ایرانیان</td></tr>
+    <tr><td>🏆 <strong>اهدای جایزه حافظ‌شناسی</strong></td><td>تقدیر از برترین پژوهشگران حافظ</td></tr>
+</table>
+    <div class="golden-box"><p>🟡 <strong>اوج جشنواره:</strong> لحظه <strong>گل‌افشانی</strong> آرامگاه حافظ — شرکت‌کنندگان با گل‌های محمدی، مقبره شاعر بزرگ را می‌پوشانند.</p></div>
+</div>
+
+<div class="full-card">
+    <h2>👤 حافظ شیرازی که بود؟</h2>
+    <table><tr><th>مشخصه</th><th>جزئیات</th></tr>
+    <tr><td>🎂 <strong>تولد</strong></td><td>حدود ۷۲۷ هجری قمری (۱۳۱۵ میلادی) — شیراز</td></tr>
+    <tr><td>🕊️ <strong>وفات</strong></td><td>حدود ۷۹۲ هجری قمری (۱۳۹۰ میلادی) — شیراز</td></tr>
+    <tr><td>📚 <strong>آثار</strong></td><td>دیوان غزلیات — ۴۹۵ غزل</td></tr>
+    <tr><td>🏛️ <strong>آرامگاه</strong></td><td>حافظیه — شیراز (ساخته شده در دوره کریم‌خان زند)</td></tr>
+    <tr><td>🌟 <strong>لقب</strong></td><td>لسان‌الغیب (زبان غیب) — ترجمان‌الاسرار</td></tr>
+</table>
+    <div class="purple-box"><p>🟣 <strong>گوته</strong> (شاعر بزرگ آلمانی) درباره حافظ گفت: «ای حافظ، آرزو دارم فقط یکی از غزل‌های تو را بتوانم بسرایم.»</p></div>
+</div>
+
+<div class="full-card">
+    <h2>🏛️ آرامگاه حافظ (حافظیه)</h2>
+    <table><tr><th>ویژگی</th><th>جزئیات</th></tr>
+    <tr><td>📍 <strong>موقعیت</strong></td><td>شیراز — خیابان حافظیه — روبروی ورزشگاه حافظیه</td></tr>
+    <tr><td>📐 <strong>معماری</strong></td><td>طراحی: آندره گدار (معمار فرانسوی) — سال ۱۳۱۴</td></tr>
+    <tr><td>🏛️ <strong>سبک</strong></td><td>تلفیق معماری ایرانی و مدرن — ستون‌های سنگی</td></tr>
+    <tr><td>🕰️ <strong>ساعات بازدید</strong></td><td>هر روز ۸ صبح تا ۹ شب</td></tr>
+    <tr><td>💰 <strong>قیمت بلیط</strong></td><td>گردشگر ایرانی: ۵۰,۰۰۰ تومان | خارجی: ۵۰۰,۰۰۰ تومان</td></tr>
+</table>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Hafezieh_night.jpg/800px-Hafezieh_night.jpg" alt="حافظیه در شب" loading="lazy">
+    <p style="text-align:center;">🖼️ حافظیه در شب — آرامگاه شاعر عشق و عرفان</p>
+</div>
+
+<div class="full-card">
+    <h2>📜 معروف‌ترین غزل‌های حافظ</h2>
+    <table><tr><th>مطلع غزل</th><th>تعبیر کلی</th></tr>
+    <tr><td>📜 <strong>الا یا ایها الساقی ادر کأساً و ناولها</strong></td><td>دولت، سعادت، گشایش</td></tr>
+    <tr><td>📜 <strong>یوسف گمگشته باز آید به کنعان غم مخور</strong></td><td>امید، بازگشت عزیزان</td></tr>
+    <tr><td>📜 <strong>دوش دیدم که ملائک در میخانه زدند</strong></td><td>توبه، بازگشت به راه راست</td></tr>
+    <tr><td>📜 <strong>اگر آن ترک شیرازی به دست آرد دل ما را</strong></td><td>عشق، وصال</td></tr>
+    <tr><td>📜 <strong>مژده ای دل که دگر باد صبا باز آمد</strong></td><td>خبر خوش، بهار</td></tr>
+</table>
+    <div class="green-box"><p>🟢 <strong>فال حافظ:</strong> در جشنواره حافظیه، یکی از اصلی‌ترین برنامه‌ها <strong>تفأل به دیوان حافظ</strong> است — رسمی که ۶۵۰ سال در فرهنگ ایرانی ادامه دارد.</p></div>
+</div>
+
+<div class="full-card">
+    <h2>🌍 حافظ در جهان</h2>
+    <table><tr><th>شخصیت</th><th>کشور</th><th>نقل قول درباره حافظ</th></tr>
+    <tr><td>📚 <strong>گوته</strong></td><td>آلمان</td><td>«حافظا! در قمار عشق، هرچه داریم باخته‌ایم»</td></tr>
+    <tr><td>📚 <strong>امرسون</strong></td><td>آمریکا</td><td>«حافظ شاعری برای تمام دوران‌هاست»</td></tr>
+    <tr><td>📚 <strong>پوشکین</strong></td><td>روسیه</td><td>از اشعار حافظ الهام گرفته است</td></tr>
+    <tr><td>📚 <strong>نیچه</strong></td><td>آلمان</td><td>«حافظ، شراب شعر را به اوج رساند»</td></tr>
+</table>
+</div>
+
+<div class="full-card">
+    <h2>🎥 ویدئو: تاریخچه حافظیه</h2>
+    <iframe width="100%" height="400" src="https://www.aparat.com/video/video/embed/videohash/j2X8P/showvideo" frameborder="0" allowfullscreen></iframe>
+    <p style="text-align:center;margin-top:10px;">🎬 داستان ساخت آرامگاه حافظ — از کریم‌خان زند تا آندره گدار</p>
+</div>
+
+<a href="index.html" class="back-btn">🔙 خانه</a>
+<div class="footer"><p>🌟 rahilanab.com</p></div></body></html>
