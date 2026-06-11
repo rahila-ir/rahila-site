@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>saffron - زعفران | راهیلا</title>
+    <meta name="description" content="همه چیز درباره زعفران، تاریخچه، خواص و کاربردهای طلای سرخ ایرانی">
+    <style>
+        :root {
+            --blue-primary: #1a73e8;
+            --blue-dark: #1557b0;
+            --blue-light: #e8f0fe;
+            --blue-accent: #4285f4;
+            --white: #ffffff;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-300: #cbd5e1;
+            --gray-400: #94a3b8;
+            --gray-500: #64748b;
+            --gray-600: #475569;
+            --gray-700: #334155;
+            --gray-800: #1e293b;
+            --gray-900: #0f172a;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+            --radius: 12px;
+            --radius-sm: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Vazirmatn', 'Segoe UI', Tahoma, sans-serif;
+            background: linear-gradient(135deg, #f0f4ff 0%, #e8f0fe 30%, #ffffff 70%, #f0f7ff 100%);
+            color: var(--gray-800);
+            line-height: 1.7;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-attachment: fixed;
+        }
+
+        /* Header */
+        .site-header {
+            background: linear-gradient(135deg, var(--blue-primary) 0%, var(--blue-dark) 100%);
+            color: var(--white);
+            padding: 1.2rem 2rem;
+            box-shadow: var(--shadow-lg);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: var(--white);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-icon {
+            font-size: 32px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 0.8rem;
+            border-radius: var(--radius-sm);
+        }
+
+        .nav-links a:hover {
+            color: var(--white);
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-1px);
+        }
+
+        /* Main Content */
+        .main-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+            flex: 1;
+            width: 100%;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            font-size: 14px;
+            color: var(--gray-500);
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .breadcrumb a {
+            color: var(--blue-primary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--blue-dark);
+            text-decoration: underline;
+        }
+
+        .breadcrumb .separator {
+            color: var(--gray-400);
+        }
+
+        /* Page Title */
+        .page-title {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--gray-900);
+            margin-bottom: 0.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .page-title::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            right: 0;
+            width: 60%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--blue-primary), var(--blue-accent));
+            border-radius: 2px;
+        }
+
+        .english-title {
+            font-size: 16px;
+            color: var(--gray-500);
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        /* Section Title */
+        .section-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--blue-light);
+        }
+
+        /* Card */
+        .card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--gray-100);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-2px);
+            border-color: var(--blue-light);
+        }
+
+        .card p, .card li {
+            font-size: 17px;
+            color: var(--gray-700);
+        }
+
+        /* Table */
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 16px;
+            background: var(--white);
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .info-table thead {
+            background: linear-gradient(135deg, var(--blue-primary), var(--blue-dark));
+            color: var(--white);
+        }
+
+        .info-table th {
+            padding: 1rem 1.2rem;
+            font-weight: 600;
+            font-size: 16px;
+            text-align: right;
+        }
+
+        .info-table td {
+            padding: 0.9rem 1.2rem;
+            font-size: 16px;
+            border-bottom: 1px solid var(--gray-100);
+            color: var(--gray-700);
+        }
+
+        .info-table tbody tr:hover {
+            background: var(--blue-light);
+        }
+
+        .info-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Button */
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.8rem;
+            font-size: 17px;
+            font-weight: 600;
+            border: none;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            text-align: center;
+            font-family: inherit;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--blue-primary), var(--blue-accent));
+            color: var(--white);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, var(--blue-dark), var(--blue-primary));
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-outline {
+            background: var(--white);
+            color: var(--blue-primary);
+            border: 2px solid var(--blue-primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--blue-light);
+            transform: translateY(-2px);
+        }
+
+        /* Fact Box */
+        .fact-box {
+            background: linear-gradient(135deg, var(--blue-light), #dbeafe);
+            border-right: 4px solid var(--blue-primary);
+            border-radius: var(--radius-sm);
+            padding: 1.2rem 1.5rem;
+            margin: 1.5rem 0;
+            font-size: 17px;
+            color: var(--gray-800);
+        }
+
+        .fact-box strong {
+            color: var(--blue-dark);
+        }
+
+        /* Image Placeholder */
+        .image-placeholder {
+            background: linear-gradient(135deg, #e8f0fe, #dbeafe);
+            border-radius: var(--radius);
+            padding: 3rem;
+            text-align: center;
+            color: var(--blue-primary);
+            font-size: 17px;
+            margin: 1.5rem 0;
+            border: 2px dashed var(--blue-accent);
+            font-weight: 500;
+        }
+
+        .image-placeholder .large-icon {
+            font-size: 64px;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        /* Grid */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        /* List */
+        .styled-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .styled-list li {
+            padding: 0.8rem 1rem;
+            margin-bottom: 0.5rem;
+            background: var(--white);
+            border-radius: var(--radius-sm);
+            font-size: 17px;
+            border-right: 3px solid var(--blue-accent);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.2s;
+        }
+
+        .styled-list li:hover {
+            border-right-color: var(--blue-dark);
+            background: var(--blue-light);
+            transform: translateX(-4px);
+        }
+
+        /* Footer */
+        .site-footer {
+            background: var(--gray-900);
+            color: var(--gray-300);
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 14px;
+            margin-top: 3rem;
+            border-top: 4px solid var(--blue-primary);
+        }
+
+        .site-footer a {
+            color: var(--blue-accent);
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .site-footer a:hover {
+            text-decoration: underline;
+            color: var(--blue-light);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+            .page-title {
+                font-size: 24px;
+            }
+            .section-title {
+                font-size: 20px;
+            }
+            .card {
+                padding: 1.2rem;
+            }
+            .info-table th, .info-table td {
+                padding: 0.6rem 0.8rem;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🌊</span> راهیلا
+            </a>
+            <nav class="nav-links">
+                <a href="index.html">خانه</a>
+                <a href="saffron.html" style="background:rgba(255,255,255,0.2);">زعفران</a>
+                <a href="safety.html">ایمنی</a>
+                <a href="sailing.html">قایقرانی</a>
+                <a href="sage.html">مریم‌گلی</a>
+                <a href="contact.html">تماس</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <nav class="breadcrumb">
+            <a href="index.html">خانه</a>
+            <span class="separator">›</span>
+            <a href="s.html">حرف S</a>
+            <span class="separator">›</span>
+            <span>زعفران</span>
+        </nav>
+
+        <h1 class="page-title">زعفران</h1>
+        <p class="english-title">Saffron — Crocus sativus</p>
+
+        <!-- Intro Card -->
+        <div class="card">
+            <p>زعفران، گران‌بهاترین ادویه جهان، از کلاله‌های خشک‌شده گل <strong>کروکوس ساتیووس</strong> به دست می‌آید. ایران با تولید بیش از ۹۰٪ زعفران جهان، بزرگ‌ترین صادرکننده این طلای سرخ است. هر کیلوگرم زعفران نیازمند چیدن دستی حدود ۱۵۰,۰۰۰ تا ۲۰۰,۰۰۰ گل است که همین موضوع ارزش فوق‌العاده آن را توجیه می‌کند.</p>
+            <div class="image-placeholder">
+                <span class="large-icon">🌺</span>
+                تصویر: گل زعفران با کلاله‌های قرمز رنگ — طلای سرخ ایران
+            </div>
+        </div>
+
+        <!-- جدول اطلاعات -->
+        <h2 class="section-title">📋 مشخصات گیاه‌شناسی و کشاورزی</h2>
+        <div class="card" style="padding:0; overflow: hidden;">
+            <table class="info-table">
+                <thead>
+                    <tr>
+                        <th>ویژگی</th>
+                        <th>جزئیات</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>نام علمی</strong></td>
+                        <td>Crocus sativus L.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>خانواده</strong></td>
+                        <td>زنبقیان (Iridaceae)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>بخش قابل استفاده</strong></td>
+                        <td>کلاله و خامه گل (رشته‌های قرمز)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>فصل برداشت</strong></td>
+                        <td>آبان ماه (اواخر اکتبر تا اوایل نوامبر)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ارتفاع گیاه</strong></td>
+                        <td>۱۰ تا ۳۰ سانتی‌متر</td>
+                    </tr>
+                    <tr>
+                        <td><strong>رنگ گل</strong></td>
+                        <td>بنفش روشن با کلاله‌های قرمز تیره</td>
+                    </tr>
+                    <tr>
+                        <td><strong>نیاز آبی</strong></td>
+                        <td>کم — مقاوم به خشکی</td>
+                    </tr>
+                    <tr>
+                        <td><strong>عمر پیاز</strong></td>
+                        <td>۵ تا ۷ سال اقتصادی</td>
+                    </tr>
+                    <tr>
+                        <td><strong>مناطق کشت ایران</strong></td>
+                        <td>خراسان رضوی، خراسان جنوبی، فارس، کرمان</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- انواع زعفران -->
+        <h2 class="section-title">🏷️ انواع زعفران از نظر کیفیت</h2>
+        <div class="grid-2">
+            <div class="card">
+                <h3 style="font-size:20px; color:var(--blue-dark); margin-bottom:0.8rem;">سرگل (All-Red)</h3>
+                <p style="font-size:17px;">بالاترین کیفیت، شامل فقط کلاله‌های قرمز بدون هیچ بخش زرد یا سفید. قدرت رنگ‌دهی بسیار بالا (۲۳۰-۲۷۰ واحد). مناسب برای مصارف خانگی و صادرات درجه یک.</p>
+            </div>
+            <div class="card">
+                <h3 style="font-size:20px; color:var(--blue-dark); margin-bottom:0.8rem;">پوشال (Pushal)</h3>
+                <p style="font-size:17px;">کلاله‌های قرمز به همراه ۱-۲ میلی‌متر از بخش زرد خامه. کیفیت خوب با قیمت مناسب‌تر. محبوب در بازارهای اسپانیا و ایتالیا.</p>
+            </div>
+            <div class="card">
+                <h3 style="font-size:20px; color:var(--blue-dark); margin-bottom:0.8rem;">دسته‌ای (Bunch)</h3>
+                <p style="font-size:17px;">رشته‌های کامل کلاله و خامه که به صورت دسته‌های کوچک بسته‌بندی می‌شود. ظاهر سنتی و زیبا، مناسب هدیه.</p>
+            </div>
+            <div class="card">
+                <h3 style="font-size:20px; color:var(--blue-dark); margin-bottom:0.8rem;">نگین (Negin)</h3>
+                <p style="font-size:17px;">کلاله‌های ضخیم و بلند کاملاً قرمز، بدون شکستگی. گران‌ترین و لوکس‌ترین نوع زعفران با عطر فوق‌العاده قوی.</p>
+            </div>
+        </div>
+
+        <!-- خواص -->
+        <h2 class="section-title">💊 خواص دارویی و درمانی زعفران</h2>
+        <div class="card">
+            <ul class="styled-list">
+                <li><strong>🌿 ضد افسردگی طبیعی:</strong> کروسین و سافرانال موجود در زعفران، خلق و خو را بهبود می‌بخشد و با افسردگی خفیف تا متوسط مقابله می‌کند.</li>
+                <li><strong>❤️ سلامت قلب:</strong> کاهش کلسترول بد (LDL)، تنظیم فشار خون و بهبود گردش خون.</li>
+                <li><strong>🧠 تقویت حافظه:</strong> آنتی‌اکسیدان‌های قوی زعفران از سلول‌های مغزی محافظت کرده و خطر آلزایمر را کاهش می‌دهد.</li>
+                <li><strong>👁️ بهبود بینایی:</strong> محافظت از شبکیه چشم و کاهش پیشرفت دژنراسیون ماکولا (AMD).</li>
+                <li><strong>🌸 سلامت بانوان:</strong> کاهش علائم سندرم پیش از قاعدگی (PMS) و تنظیم چرخه هورمونی.</li>
+                <li><strong>🛡️ آنتی‌اکسیدان قوی:</strong> دارای کروسین، پیکروکروسین و سافرانال — سه ترکیب قدرتمند ضد سرطان.</li>
+                <li><strong>🍽️ کمک به گوارش:</strong> بهبود هضم غذا، کاهش نفخ و تقویت معده.</li>
+            </ul>
+            <div class="fact-box">
+                <strong>⚠️ هشدار مصرف:</strong> مصرف بیش از ۵ گرم زعفران در یک وعده می‌تواند سمی و حتی کشنده باشد. دوز ایمن روزانه: حداکثر ۳۰ میلی‌گرم (حدود ۱۰-۱۵ رشته). زنان باردار باید با احتیاط و تحت نظر پزشک مصرف کنند.
+            </div>
+        </div>
+
+        <!-- ترکیبات شیمیایی -->
+        <h2 class="section-title">🧪 ترکیبات شیمیایی اصلی</h2>
+        <div class="card" style="padding:0; overflow: hidden;">
+            <table class="info-table">
+                <thead>
+                    <tr>
+                        <th>ترکیب</th>
+                        <th>خاصیت اصلی</th>
+                        <th>درصد در زعفران خشک</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>کروسین (Crocin)</strong></td>
+                        <td>رنگدانه قرمز، آنتی‌اکسیدان قوی</td>
+                        <td>۶-۱۶٪</td>
+                    </tr>
+                    <tr>
+                        <td><strong>پیکروکروسین (Picrocrocin)</strong></td>
+                        <td>طعم تلخ و گزنده خاص زعفران</td>
+                        <td>۱-۱۳٪</td>
+                    </tr>
+                    <tr>
+                        <td><strong>سافرانال (Safranal)</strong></td>
+                        <td>عطر و بوی منحصربه‌فرد، ضد افسردگی</td>
+                        <td>۰.۰۲-۰.۶٪</td>
+                    </tr>
+                    <tr>
+                        <td><strong>کامفرول (Kaempferol)</strong></td>
+                        <td>فلاونوئید ضد التهاب و ضد سرطان</td>
+                        <td>مقادیر کم</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- کاربردها -->
+        <h2 class="section-title">🍽️ کاربردهای زعفران</h2>
+        <div class="grid-2">
+            <div class="card">
+                <h3 style="font-size:20px; color:var(--blue-dark);">آشپزی</h3>
+                <p style="font-size:17px;">طعم‌دهنده و رنگ‌دهنده در پلوها (زعفرانی)، خورش‌ها، دسرها (شله زرد، حلوا، بستنی سنتی)، نوشیدنی‌ها (چای زعفران، دمنوش) و شیرینی‌جات.</p>
+            </div>
+            <div class="card">
+                <h3 style="font-size:20px; color:var(--blue-dark);">صنایع دارویی</h3>
+                <p style="font-size:17px;">تولید قرص‌های ضد افسردگی (مانند Safr'Inside)، مکمل‌های تقویت بینایی و محصولات کمک‌خواب.</p>
+            </div>
+            <div class="card">
+                <h3 style="font-size:20px; color:var(--blue-dark);">آرایشی و بهداشتی</h3>
+                <p style="font-size:17px;">کرم‌های روشن‌کننده پوست، ماسک‌های ضد لک، عطرسازی لوکس و محصولات ضد پیری.</p>
+            </div>
+            <div class="card">
+                <h3 style="font-size:20px; color:var(--blue-dark);">صنایع دستی</h3>
+                <p style="font-size:17px;">رنگرزی پارچه‌های ابریشمی و پشمی، خوش‌بو کردن البسه سنتی و تهیه خمیرهای معطر.</p>
+            </div>
+        </div>
+
+        <!-- روش تشخیص زعفران اصل -->
+        <h2 class="section-title">🔍 روش‌های تشخیص زعفران اصل از تقلبی</h2>
+        <div class="card">
+            <ul class="styled-list">
+                <li><strong>آزمون آب سرد:</strong> زعفران اصل در آب سرد، رنگ خود را به تدریج (طی ۱۰-۱۵ دقیقه) آزاد می‌کند، نه بلافاصله.</li>
+                <li><strong>طعم و بو:</strong> زعفران اصل طعمی کمی تلخ و گزنده دارد، نه شیرین. عطر آن قوی و نافذ است.</li>
+                <li><strong>مالش بین انگشتان:</strong> رشته‌های زعفران اصل بین انگشتان له نمی‌شوند و رنگ دست را بلافاصله قرمز نمی‌کنند.</li>
+                <li><strong>ظاهر رشته‌ها:</strong> کلاله‌های زعفران در انتها شیپوری شکل و سه‌شاخه هستند. رشته‌های یکدست و صاف معمولاً تقلبی‌اند.</li>
+                <li><strong>قیمت:</strong> قیمت بسیار پایین، نشانه قطعی تقلب است. هر گرم زعفران اصل حداقل قیمت مشخصی دارد.</li>
+            </ul>
+        </div>
+
+        <!-- CTA -->
+        <div style="text-align: center; margin: 2.5rem 0;">
+            <a href="sailing.html" class="btn btn-primary" style="margin: 0.5rem;">⬅️ مقاله بعدی: قایقرانی (Sailing)</a>
+            <a href="s.html" class="btn btn-outline" style="margin: 0.5rem;">📚 همه مقالات S</a>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>🌐 <a href="https://rahilanab.com">rahilanab.com</a> — پروژه دانشنامه راهیلا | حرف S: زعفران</p>
+        <p style="margin-top:0.3rem;">📧 <a href="mailto:mahniush.binazir@gmail.com">mahniush.binazir@gmail.com</a> | 🐙 <a href="https://github.com/rahila-ir/rahila-site" target="_blank" rel="noopener">GitHub</a></p>
+        <p style="margin-top:0.5rem; font-size:13px; color:var(--gray-500);">تم آبی-سفید | ۲۰۰ فایل HTML | ادامه S بعد از sailing.html — تابستان ۲۰۲۶</p>
+    </footer>
+</body>
+                      </html>
