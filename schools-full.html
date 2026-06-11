@@ -1,1 +1,314 @@
-<!DOCTYPE html><html lang="fa"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>🏫 مدارس کامل | رهیلا</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial;background:radial-gradient(circle at center,#0a1a1a,#1a4a4a,#66ccaa);color:#fff;text-align:center;padding:15px;min-height:100vh}.header{background:rgba(255,255,255,.08);backdrop-filter:blur(20px);border-radius:25px;padding:20px;margin-bottom:15px}.header h1{color:#ffd700;font-size:22px}.back-btn{display:inline-block;background:rgba(255,255,255,.15);color:#fff;padding:8px 20px;border-radius:20px;text-decoration:none;margin:10px 0;font-size:14px}.section-title{color:#ffd700;font-size:18px;margin:20px 0 10px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.card{background:rgba(255,255,255,.05);border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,.1);text-align:right}.card h3{font-size:15px;color:#ffd700}</style></head><body><div class="header"><h1>🏫 مدارس کامل</h1></div><a href="schools.html" class="back-btn">🔙 برگشت</a><div class="section-title">🧒 تهران</div><div class="grid"><div class="card"><h3>پیش‌دبستانی</h3></div><div class="card"><h3>ابتدایی دخترانه</h3></div><div class="card"><h3>ابتدایی پسرانه</h3></div><div class="card"><h3>تیزهوشان</h3></div></div><div class="section-title">👧 متوسطه</div><div class="grid"><div class="card"><h3>دوره اول دخترانه</h3></div><div class="card"><h3>دوره اول پسرانه</h3></div><div class="card"><h3>دوره دوم دخترانه</h3></div><div class="card"><h3>دوره دوم پسرانه</h3></div></div><p style="margin-top:15px"><a href="index.html" style="color:#ffd700">🔙 برگشت</a></p></body></html>
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>schools-full - مدارس جامع | راهیلا</title>
+    <meta name="description" content="دانشنامه جامع مدارس - تاریخچه آموزش، سیستم‌های آموزشی جهان، معماری مدارس، روانشناسی یادگیری و آینده آموزش">
+    <style>
+        :root {
+            --blue-primary: #1a73e8;
+            --blue-dark: #1557b0;
+            --blue-light: #e8f0fe;
+            --blue-accent: #4285f4;
+            --white: #ffffff;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-300: #cbd5e1;
+            --gray-400: #94a3b8;
+            --gray-500: #64748b;
+            --gray-600: #475569;
+            --gray-700: #334155;
+            --gray-800: #1e293b;
+            --gray-900: #0f172a;
+            --gold: #f59e0b;
+            --gold-light: #fef3c7;
+            --gold-border: #d97706;
+            --red: #ef4444;
+            --red-light: #fee2e2;
+            --red-border: #dc2626;
+            --green: #10b981;
+            --green-light: #d1fae5;
+            --green-border: #059669;
+            --purple: #8b5cf6;
+            --purple-light: #ede9fe;
+            --purple-border: #7c3aed;
+            --shadow-sm: 0 1px 2px 0 rgba(0,0,0,0.05);
+            --shadow: 0 1px 3px 0 rgba(0,0,0,0.1),0 1px 2px -1px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1),0 2px 4px -2px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1),0 4px 6px -4px rgba(0,0,0,0.1);
+            --radius: 12px;
+            --radius-sm: 8px;
+        }
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{
+            font-family:'Vazirmatn','Segoe UI',Tahoma,sans-serif;
+            background:linear-gradient(135deg,#f0f4ff 0%,#e8f0fe 30%,#ffffff 70%,#f0f7ff 100%);
+            color:var(--gray-800);line-height:1.7;min-height:100vh;
+            display:flex;flex-direction:column;background-attachment:fixed;
+        }
+        .site-header{
+            background:linear-gradient(135deg,var(--blue-primary) 0%,var(--blue-dark) 100%);
+            color:var(--white);padding:1.2rem 2rem;box-shadow:var(--shadow-lg);
+            position:sticky;top:0;z-index:100;
+        }
+        .header-inner{
+            max-width:1200px;margin:0 auto;display:flex;align-items:center;
+            justify-content:space-between;flex-wrap:wrap;gap:1rem;
+        }
+        .logo{font-size:28px;font-weight:800;color:var(--white);text-decoration:none;display:flex;align-items:center;gap:0.5rem;}
+        .logo-icon{font-size:32px;}
+        .nav-links{display:flex;gap:1.5rem;align-items:center;flex-wrap:wrap;}
+        .nav-links a{color:rgba(255,255,255,0.9);text-decoration:none;font-size:16px;font-weight:500;transition:all 0.3s ease;padding:0.5rem 0.8rem;border-radius:var(--radius-sm);}
+        .nav-links a:hover{color:var(--white);background:rgba(255,255,255,0.15);transform:translateY(-1px);}
+        .main-container{max-width:1100px;margin:0 auto;padding:2rem 1.5rem;flex:1;width:100%;}
+        .breadcrumb{display:flex;gap:0.5rem;align-items:center;font-size:14px;color:var(--gray-500);margin-bottom:1.5rem;flex-wrap:wrap;}
+        .breadcrumb a{color:var(--blue-primary);text-decoration:none;transition:color 0.2s;}
+        .breadcrumb a:hover{color:var(--blue-dark);text-decoration:underline;}
+        .breadcrumb .separator{color:var(--gray-400);}
+        .page-title{font-size:28px;font-weight:800;color:var(--gray-900);margin-bottom:0.5rem;position:relative;display:inline-block;}
+        .page-title::after{content:'';position:absolute;bottom:-6px;right:0;width:60%;height:4px;background:linear-gradient(90deg,var(--blue-primary),var(--blue-accent));border-radius:2px;}
+        .english-title{font-size:16px;color:var(--gray-500);margin-bottom:2rem;font-style:italic;}
+        .section-title{font-size:22px;font-weight:700;color:var(--gray-900);margin:2rem 0 1rem;padding-bottom:0.5rem;border-bottom:2px solid var(--blue-light);}
+        .card{background:var(--white);border-radius:var(--radius);padding:2rem;margin-bottom:1.5rem;box-shadow:var(--shadow-md);border:1px solid var(--gray-100);transition:all 0.3s ease;}
+        .card:hover{box-shadow:var(--shadow-lg);transform:translateY(-2px);border-color:var(--blue-light);}
+        .card p,.card li{font-size:17px;color:var(--gray-700);}
+        .info-table{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:16px;background:var(--white);border-radius:var(--radius-sm);overflow:hidden;box-shadow:var(--shadow);}
+        .info-table thead{background:linear-gradient(135deg,var(--blue-primary),var(--blue-dark));color:var(--white);}
+        .info-table th{padding:1rem 1.2rem;font-weight:600;font-size:16px;text-align:right;}
+        .info-table td{padding:0.9rem 1.2rem;font-size:16px;border-bottom:1px solid var(--gray-100);color:var(--gray-700);}
+        .info-table tbody tr:hover{background:var(--blue-light);}
+        .info-table tbody tr:last-child td{border-bottom:none;}
+        .btn{display:inline-block;padding:0.75rem 1.8rem;font-size:17px;font-weight:600;border:none;border-radius:var(--radius-sm);cursor:pointer;text-decoration:none;transition:all 0.3s ease;text-align:center;font-family:inherit;}
+        .btn-primary{background:linear-gradient(135deg,var(--blue-primary),var(--blue-accent));color:var(--white);box-shadow:var(--shadow-md);}
+        .btn-primary:hover{background:linear-gradient(135deg,var(--blue-dark),var(--blue-primary));transform:translateY(-2px);box-shadow:var(--shadow-lg);}
+        .btn-outline{background:var(--white);color:var(--blue-primary);border:2px solid var(--blue-primary);}
+        .btn-outline:hover{background:var(--blue-light);transform:translateY(-2px);}
+
+        .box-gold{background:linear-gradient(135deg,var(--gold-light),#fffbeb);border-right:4px solid var(--gold-border);border-radius:var(--radius-sm);padding:1.2rem 1.5rem;margin:1.5rem 0;font-size:17px;color:var(--gray-800);}
+        .box-blue{background:linear-gradient(135deg,var(--blue-light),#dbeafe);border-right:4px solid var(--blue-primary);border-radius:var(--radius-sm);padding:1.2rem 1.5rem;margin:1.5rem 0;font-size:17px;color:var(--gray-800);}
+        .box-green{background:linear-gradient(135deg,var(--green-light),#ecfdf5);border-right:4px solid var(--green-border);border-radius:var(--radius-sm);padding:1.2rem 1.5rem;margin:1.5rem 0;font-size:17px;color:var(--gray-800);}
+        .box-red{background:linear-gradient(135deg,var(--red-light),#fef2f2);border-right:4px solid var(--red-border);border-radius:var(--radius-sm);padding:1.2rem 1.5rem;margin:1.5rem 0;font-size:17px;color:var(--gray-800);}
+        .box-purple{background:linear-gradient(135deg,var(--purple-light),#f5f3ff);border-right:4px solid var(--purple-border);border-radius:var(--radius-sm);padding:1.2rem 1.5rem;margin:1.5rem 0;font-size:17px;color:var(--gray-800);}
+
+        .image-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin:1.5rem 0;}
+        .image-card{background:linear-gradient(135deg,#e8f0fe,#dbeafe);border-radius:var(--radius);padding:2.5rem 1rem;text-align:center;color:var(--blue-primary);font-size:14px;border:2px dashed var(--blue-accent);font-weight:500;transition:all 0.3s ease;min-height:180px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.8rem;}
+        .image-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--blue-dark);}
+        .image-card .img-icon{font-size:48px;}
+        .image-card .img-source{font-size:11px;color:var(--gray-500);margin-top:0.3rem;}
+
+        .grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin:1.5rem 0;}
+        .grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem;margin:1.5rem 0;}
+        .styled-list{list-style:none;padding:0;}
+        .styled-list li{padding:0.8rem 1rem;margin-bottom:0.5rem;background:var(--white);border-radius:var(--radius-sm);font-size:17px;border-right:3px solid var(--blue-accent);box-shadow:var(--shadow-sm);transition:all 0.2s;}
+        .styled-list li:hover{border-right-color:var(--blue-dark);background:var(--blue-light);transform:translateX(-4px);}
+        .highlight-num{font-size:42px;font-weight:900;color:var(--blue-primary);line-height:1;}
+        .stat-card{text-align:center;padding:1.5rem;background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);border-top:4px solid var(--blue-accent);}
+        .stat-card .stat-label{font-size:15px;color:var(--gray-500);margin-top:0.3rem;}
+        .timeline{position:relative;padding-right:2rem;margin:1.5rem 0;}
+        .timeline::before{content:'';position:absolute;right:0;top:0;bottom:0;width:3px;background:linear-gradient(to bottom,var(--blue-primary),var(--blue-accent),var(--purple));border-radius:2px;}
+        .timeline-item{position:relative;margin-bottom:2rem;padding-right:1.5rem;}
+        .timeline-item::before{content:'';position:absolute;right:-2.45rem;top:0.5rem;width:14px;height:14px;background:var(--blue-primary);border-radius:50%;border:3px solid var(--white);box-shadow:var(--shadow-md);}
+        .timeline-year{font-size:15px;font-weight:700;color:var(--blue-primary);margin-bottom:0.3rem;}
+        .timeline-text{font-size:16px;color:var(--gray-700);}
+        .site-footer{background:var(--gray-900);color:var(--gray-300);text-align:center;padding:1.5rem;font-size:14px;margin-top:3rem;border-top:4px solid var(--blue-primary);}
+        .site-footer a{color:var(--blue-accent);text-decoration:none;font-size:14px;}
+        .site-footer a:hover{text-decoration:underline;color:var(--blue-light);}
+        @media(max-width:768px){
+            .header-inner{flex-direction:column;text-align:center;}
+            .page-title{font-size:24px;}.section-title{font-size:20px;}
+            .card{padding:1.2rem;}.info-table th,.info-table td{padding:0.6rem 0.8rem;font-size:14px;}
+            .image-gallery{grid-template-columns:repeat(auto-fit,minmax(150px,1fr));}
+            .highlight-num{font-size:32px;}
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="logo"><span class="logo-icon">🌊</span> راهیلا</a>
+            <nav class="nav-links">
+                <a href="index.html">خانه</a>
+                <a href="schools-full.html" style="background:rgba(255,255,255,0.2);">مدارس جامع</a>
+                <a href="salad.html">سالاد</a>
+                <a href="salt.html">نمک</a>
+                <a href="saffron.html">زعفران</a>
+                <a href="contact.html">تماس</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <nav class="breadcrumb">
+            <a href="index.html">خانه</a><span class="separator">›</span>
+            <a href="s.html">حرف S</a><span class="separator">›</span>
+            <span>مدارس جامع</span>
+        </nav>
+
+        <h1 class="page-title">مدارس — دانشنامه جامع آموزش</h1>
+        <p class="english-title">Schools — Complete Encyclopedia of Education</p>
+
+        <div class="grid-3">
+            <div class="stat-card"><div class="highlight-num">۱.۵B</div><div class="stat-label">دانش‌آموز در جهان</div></div>
+            <div class="stat-card"><div class="highlight-num">۶۳M</div><div class="stat-label">معلم در جهان</div></div>
+            <div class="stat-card"><div class="highlight-num">۵۰۰۰+</div><div class="stat-label">سال سابقه آموزش رسمی</div></div>
+        </div>
+
+        <div class="image-gallery">
+            <div class="image-card"><span class="img-icon">🏫</span><span>مدرسه مدرن</span><span class="img-source">📸 Unsplash: modern school building</span></div>
+            <div class="image-card"><span class="img-icon">📚</span><span>کلاس درس سنتی</span><span class="img-source">📸 Unsplash: classroom</span></div>
+            <div class="image-card"><span class="img-icon">🎓</span><span>فارغ‌التحصیلی</span><span class="img-source">📸 Unsplash: graduation ceremony</span></div>
+            <div class="image-card"><span class="img-icon">💻</span><span>آموزش آنلاین</span><span class="img-source">📸 Unsplash: online learning</span></div>
+            <div class="image-card"><span class="img-icon">🏛️</span><span>مدرسه باستانی یونان</span><span class="img-source">📸 Wikimedia: ancient Greek school</span></div>
+            <div class="image-card"><span class="img-icon">🧒</span><span>کودکان در مدرسه</span><span class="img-source">📸 Unsplash: children at school</span></div>
+        </div>
+
+        <div class="card">
+            <p><strong>مدرسه</strong> نهادی اجتماعی است که فرآیند سیستماتیک آموزش و یادگیری را برای کودکان و نوجوانان فراهم می‌کند. از نخستین مدارس در تمدن‌های باستانی بین‌النهرین و مصر باستان (حدود ۳۰۰۰ سال پیش از میلاد) تا کلاس‌های درس هوشمند امروزی، مدرسه همواره ستون فقرات توسعه تمدن بشری بوده است. امروزه بیش از ۱.۵ میلیارد دانش‌آموز در سراسر جهان مشغول به تحصیل هستند و آموزش به عنوان حق بنیادین بشر در اعلامیه جهانی حقوق بشر (ماده ۲۶) به رسمیت شناخته شده است.</p>
+        </div>
+
+        <div class="box-gold">
+            <strong>💡 حقیقت تاریخی:</strong> قدیمی‌ترین مدرسه شناخته‌شده جهان، «مدرسه سومری» در شهر اور (عراق امروزی) با قدمت ۴۵۰۰ سال است. لوح‌های گلی کشف‌شده نشان می‌دهند که دانش‌آموزان سومری ریاضیات، نوشتن میخی و ادبیات می‌آموختند و تنبیه بدنی نیز در آن رواج داشت!
+        </div>
+
+        <h2 class="section-title">📜 تاریخچه آموزش و مدرسه در تمدن بشری</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-year">۳۰۰۰ سال پیش از میلاد — سومر و مصر باستان</div>
+                <div class="timeline-text">اولین مدارس رسمی در معابد بین‌النهرین و مصر شکل گرفتند. کاتبان آموزش خط میخی و هیروگلیف می‌دیدند. تحصیل مختص پسران طبقات بالا بود.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">۴۰۰ سال پیش از میلاد — یونان باستان</div>
+                <div class="timeline-text">افلاطون آکادمی را در آتن تأسیس کرد (۳۸۷ ق.م) — اولین دانشگاه اروپا. ارسطو نیز لوکیوم را بنا نهاد. آموزش شامل فلسفه، ریاضیات، موسیقی و ورزش بود.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">قرن ۷ میلادی — ظهور اسلام</div>
+                <div class="timeline-text">مکتب‌خانه‌ها در سراسر جهان اسلام گسترش یافتند. بیت‌الحکمه بغداد (قرن ۹ میلادی) بزرگترین مرکز علمی جهان شد. نظامیه‌ها در ایران مدارس شبانه‌روزی رایگان تأسیس کردند.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">۱۸۷۳ میلادی — دارالفنون ایران</div>
+                <div class="timeline-text">امیرکبیر دارالفنون را در تهران تأسیس کرد — اولین مدرسه به سبک مدرن اروپایی در ایران با آموزش علوم، مهندسی، پزشکی و زبان‌های خارجی.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">۱۹۴۸ میلادی — اعلامیه حقوق بشر</div>
+                <div class="timeline-text">سازمان ملل آموزش ابتدایی رایگان و اجباری را به عنوان حق مسلم بشری اعلام کرد. تا سال ۲۰۲۰، نرخ باسوادی جهانی به ۸۶٪ رسید.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">۲۰۲۰ — انقلاب آموزش آنلاین</div>
+                <div class="timeline-text">پاندمی کرونا، ۱.۶ میلیارد دانش‌آموز را به آموزش آنلاین سوق داد — بزرگ‌ترین جهش تاریخ آموزش که مدارس هوشمند و پلتفرم‌های دیجیتال را به جریان اصلی تبدیل کرد.</div>
+            </div>
+        </div>
+
+        <h2 class="section-title">🌍 سیستم‌های آموزشی برتر جهان</h2>
+        <div class="card" style="padding:0;overflow:hidden;">
+            <table class="info-table">
+                <thead><tr><th>کشور</th><th>ویژگی برجسته</th><th>رتبه PISA (۲۰۲۲)</th><th>مدت آموزش اجباری</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>🇫🇮 فنلاند</strong></td><td>بدون تکلیف شب، بدون امتحان تا ۱۶ سالگی، معلمان با مدرک فوق‌لیسانس</td><td>۱-۵</td><td>۹ سال (۷ تا ۱۶)</td></tr>
+                    <tr><td><strong>🇸🇬 سنگاپور</strong></td><td>تمرکز بر ریاضیات و علوم، سیستم نخبه‌گزینی، آموزش دو زبانه</td><td>۱-۳</td><td>۱۰ سال</td></tr>
+                    <tr><td><strong>🇯🇵 ژاپن</strong></td><td>انضباط سخت، نظافت مدرسه توسط دانش‌آموزان، احترام به معلم</td><td>۵-۱۰</td><td>۹ سال (۶ تا ۱۵)</td></tr>
+                    <tr><td><strong>🇮🇷 ایران</strong></td><td>۱۲ سال تحصیلی (۶-۳-۳)، کنکور سراسری، مدارس سمپاد (تیزهوشان)</td><td>۵۰-۶۰</td><td>۹ سال (پایه ۱ تا ۹)</td></tr>
+                    <tr><td><strong>🇨🇦 کانادا</strong></td><td>سیستم فدرال (هر استان مستقل)، تأکید بر خلاقیت و ورزش</td><td>۵-۱۵</td><td>۱۰-۱۲ سال</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="box-blue">
+            <strong>🇫🇮 راز موفقیت فنلاند:</strong> دانش‌آموزان فنلاندی کمترین ساعت آموزشی در جهان (حدود ۲۰ ساعت در هفته) را دارند، اما بالاترین نمرات PISA را کسب می‌کنند. رمز کار: معلمان فوق‌لیسانس با حقوق بالا (۴۰۰۰-۶۰۰۰ یورو)، کلاس‌های ۱۵-۲۰ نفره، بدون رقابت و استرس، و تأکید بر بازی و خلاقیت تا ۷ سالگی.
+        </div>
+
+        <h2 class="section-title">🇮🇷 تاریخ آموزش و پرورش در ایران</h2>
+        <div class="grid-2">
+            <div class="card">
+                <h3 style="font-size:20px;color:var(--blue-dark);">دوران باستان — مکتب‌خانه‌ها</h3>
+                <p style="font-size:17px;">در ایران باستان، آموزش در آتشکده‌ها و مکتب‌خانه‌ها انجام می‌شد. پسران زرتشتی خواندن، نوشتن، سوارکاری، تیراندازی و راستگویی می‌آموختند. دانشگاه گندی‌شاپور (قرن ۳ میلادی) اولین مرکز آموزش عالی جهان بود.</p>
+            </div>
+            <div class="card">
+                <h3 style="font-size:20px;color:var(--blue-dark);">دوران اسلامی — نظامیه‌ها</h3>
+                <p style="font-size:17px;">خواجه نظام‌الملک طوسی در قرن ۱۱ میلادی مدارس شبانه‌روزی رایگان (نظامیه) را در بغداد، نیشابور، اصفهان و سایر شهرها تأسیس کرد. دانشجویان حقوق، شهریه و خوابگاه رایگان دریافت می‌کردند — الگویی که ۸۰۰ سال بعد اروپا از آن تقلید کرد.</p>
+            </div>
+        </div>
+
+        <div class="box-purple">
+            <strong>🏛️ دارالفنون (۱۸۵۱):</strong> امیرکبیر دارالفنون را با ۷ معلم اتریشی، فرانسوی و ایتالیایی در تهران تأسیس کرد. رشته‌ها شامل مهندسی نظامی، پزشکی، معدن‌شناسی، داروسازی و زبان فرانسه بود. دارالفنون نخستین چاپخانه، اولین روزنامه (وقایع اتفاقیه) و اولین تئاتر ایران را نیز راه‌اندازی کرد.
+        </div>
+
+        <h2 class="section-title">🏗️ معماری و طراحی مدارس</h2>
+        <div class="image-gallery">
+            <div class="image-card"><span class="img-icon">🏛️</span><span>مدرسه سنتی ایرانی</span><span class="img-source">📸 Wikimedia: traditional Iranian school</span></div>
+            <div class="image-card"><span class="img-icon">🏢</span><span>مدرسه مدرن اسکاندیناوی</span><span class="img-source">📸 Unsplash: Scandinavian school</span></div>
+            <div class="image-card"><span class="img-icon">🌿</span><span>مدرسه سبز (طبیعت‌محور)</span><span class="img-source">📸 Unsplash: green school design</span></div>
+        </div>
+        <div class="card">
+            <ul class="styled-list">
+                <li><strong>🏛️ مدارس سنتی ایران:</strong> حیاط مرکزی با حوض و باغچه، چهار ایوان، حجره‌های طلاب در اطراف — نمونه عالی: مدرسه چهارباغ اصفهان (دوره صفویه)</li>
+                <li><strong>🌿 مدارس سبز (Green Schools):</strong> دیوارهای سبز، پنل‌های خورشیدی، تهویه طبیعی، مبلمان از مواد بازیافتی — کاهش ۴۰٪ مصرف انرژی</li>
+                <li><strong>💻 مدارس هوشمند:</strong> تخته‌های هوشمند، تبلت برای هر دانش‌آموز، واقعیت مجازی (VR) برای آموزش تاریخ و علوم، پلتفرم‌های LMS</li>
+                <li><strong>🏢 مدارس بدون دیوار (Open Plan):</strong> فضاهای باز و منعطف بدون کلاس‌های سنتی — دانش‌آموزان گروه‌بندی شده و آزادانه حرکت می‌کنند</li>
+            </ul>
+        </div>
+
+        <h2 class="section-title">🧠 روانشناسی یادگیری و روش‌های نوین تدریس</h2>
+        <div class="grid-3">
+            <div class="card">
+                <h3 style="font-size:19px;color:var(--blue-dark);">یادگیری مشارکتی</h3>
+                <p style="font-size:16px;">دانش‌آموزان در گروه‌های ۴-۵ نفره کار می‌کنند. هر عضو مسئول بخشی از یادگیری است. نتایج تحقیقات: افزایش ۳۰٪ ماندگاری مطالب نسبت به سخنرانی.</p>
+            </div>
+            <div class="card">
+                <h3 style="font-size:19px;color:var(--blue-dark);">کلاس معکوس (Flipped)</h3>
+                <p style="font-size:16px;">درس در خانه (ویدیو آنلاین) → تمرین در کلاس. معلم نقش راهنما دارد، نه سخنران. محبوب در مدارس هلند و استونی.</p>
+            </div>
+            <div class="card">
+                <h3 style="font-size:19px;color:var(--blue-dark);">گیمیفیکیشن</h3>
+                <p style="font-size:16px;">بازی‌سازی آموزش با امتیاز، نشان، سطح‌بندی و رقابت گروهی. پلتفرم‌هایی مثل Classcraft و Kahoot انگیزه را تا ۸۰٪ افزایش می‌دهند.</p>
+            </div>
+        </div>
+
+        <div class="box-green">
+            <strong>✅ پژوهش جالب:</strong> مطالعه ۱۵ ساله در نیوزیلند نشان داد دانش‌آموزانی که حداقل ۳۰ دقیقه در روز در فضای باز (مدرسه طبیعت) آموزش می‌بینند، ۴۰٪ کمتر دچار اضطراب امتحان می‌شوند و نمرات ریاضی‌شان ۱۵٪ بالاتر از گروه کنترل است.
+        </div>
+
+        <h2 class="section-title">📊 آمار آموزش در جهان و ایران</h2>
+        <div class="card" style="padding:0;overflow:hidden;">
+            <table class="info-table">
+                <thead><tr><th>شاخص</th><th>جهان</th><th>ایران</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>تعداد دانش‌آموزان</strong></td><td>۱.۵ میلیارد</td><td>۱۴ میلیون</td></tr>
+                    <tr><td><strong>تعداد معلمان</strong></td><td>۶۳ میلیون</td><td>۹۵۰,۰۰۰</td></tr>
+                    <tr><td><strong>تعداد مدارس</strong></td><td>۷ میلیون</td><td>۱۱۰,۰۰۰</td></tr>
+                    <tr><td><strong>نرخ باسوادی بزرگسالان</strong></td><td>۸۶٪</td><td>۸۸٪</td></tr>
+                    <tr><td><strong>نرخ باسوادی زنان</strong></td><td>۸۳٪</td><td>۸۵٪</td></tr>
+                    <tr><td><strong>میانگین سال‌های تحصیل</strong></td><td>۸.۵ سال</td><td>۹.۵ سال</td></tr>
+                    <tr><td><strong>بودجه آموزش از GDP</strong></td><td>۴.۵٪</td><td>۳.۵٪</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="box-red">
+            <strong>⚠️ چالش‌های آموزش ایران:</strong> تراکم بالای کلاس‌ها (۳۵-۴۰ نفره در شهرهای بزرگ)، کمبود معلم (نیاز به ۲۰۰,۰۰۰ معلم جدید)، فرسودگی ۳۰٪ مدارس، افت تحصیلی ناشی از کرونا (۲ سال وقفه آموزشی)، و نابرابری شدید بین مدارس دولتی و خصوصی (مدارس سمپاد و غیرانتفاعی در برابر مدارس روستایی).
+        </div>
+
+        <h2 class="section-title">🚀 آینده آموزش — مدارس ۲۰۵۰</h2>
+        <div class="card">
+            <ul class="styled-list">
+                <li><strong>🤖 معلم هوش مصنوعی:</strong> دستیار AI شخصی برای هر دانش‌آموز — تشخیص نقاط ضعف، تنظیم سرعت تدریس، ارائه تمرین اختصاصی. آزمایش موفق در چین: بهبود ۲۰٪ نمرات ریاضی.</li>
+                <li><strong>🥽 متاورس آموزشی:</strong> کلاس‌های درس مجازی سه‌بعدی — دانش‌آموزان از سراسر جهان همزمان در یک کلاس حضور دارند. آموزش تاریخ با قدم زدن در روم باستان!</li>
+                <li><strong>🧬 آموزش شخصی‌سازی‌شده ژنتیکی:</strong> برنامه درسی بر اساس استعدادهای ژنتیکی و سبک یادگیری منحصربه‌فرد هر کودک.</li>
+                <li><strong>🌍 مدارس جهانی:</strong> یک برنامه درسی واحد جهانی با اعتبار مدرک در تمام کشورها. دانش‌آموز می‌تواند هر ترم در کشور متفاوتی تحصیل کند.</li>
+            </ul>
+        </div>
+
+        <div style="text-align:center;margin:2.5rem 0;">
+            <a href="shahrbani.html" class="btn btn-primary" style="margin:0.5rem;">🏛️ مقاله بعدی: شهربانی</a>
+            <a href="s.html" class="btn btn-outline" style="margin:0.5rem;">📚 همه مقالات S</a>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>🌐 <a href="https://rahilanab.com">rahilanab.com</a> — پروژه دانشنامه راهیلا | حرف S: مدارس جامع</p>
+        <p style="margin-top:0.3rem;">📧 <a href="mailto:mahniush.binazir@gmail.com">mahniush.binazir@gmail.com</a> | 🐙 <a href="https://github.com/rahila-ir/rahila-site" target="_blank" rel="noopener">GitHub</a></p>
+        <p style="margin-top:0.5rem;font-size:13px;color:var(--gray-500);">تم آبی-سفید | ۲۰۰ فایل HTML | فایل بعدی: shahrbani.html | تابستان ۲۰۲۶</p>
+    </footer>
+</body>
+  </html>
