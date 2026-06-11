@@ -1,1 +1,368 @@
-<!DOCTYPE html><html lang="fa"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>🧂 کاربردهای نمک | رهیلا</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial;background:radial-gradient(circle at center,#0a1a1a,#1a4a4a,#66ccaa);color:#fff;text-align:center;padding:15px;min-height:100vh}.header{background:rgba(255,255,255,.08);backdrop-filter:blur(20px);border-radius:25px;padding:20px;margin-bottom:15px}.header h1{color:#ffd700;font-size:22px}.back-btn{display:inline-block;background:rgba(255,255,255,.15);color:#fff;padding:8px 20px;border-radius:20px;text-decoration:none;margin:10px 0;font-size:14px}.section-title{color:#ffd700;font-size:18px;margin:20px 0 10px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.card{background:rgba(255,255,255,.05);border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,.1);text-align:right}.card:active{background:rgba(255,215,0,.2)}.card h3{font-size:15px;color:#ffd700}</style></head><body><div class="header"><h1>🧂 کاربردهای نمک</h1></div><a href="index.html" class="back-btn">🔙 برگشت</a><div class="section-title">🧹 نظافت با نمک</div><div class="grid"><div class="card"><h3>تمیز کردن فرش</h3></div><div class="card"><h3>پاک کردن لکه</h3></div><div class="card"><h3>برق انداختن ظروف</h3></div><div class="card"><h3>رفع بوی بد</h3></div><div class="card"><h3>نمک و سرکه</h3></div><div class="card"><h3>تمیز کردن سینک</h3></div><div class="card"><h3>پاک کردن زنگ زدگی</h3></div><div class="card"><h3>رفع گرفتگی لوله</h3></div></div><div class="section-title">🔮 دفع طلسم</div><div class="grid"><div class="card"><h3>دفع انرژی منفی</h3></div><div class="card"><h3>نمک زیر فرش</h3></div><div class="card"><h3>نمک در حمام</h3></div><div class="card"><h3>نمک و اسپند</h3></div></div><div class="section-title">🦶 سلامت</div><div class="grid"><div class="card"><h3>فواید سنگ پا</h3></div><div class="card"><h3>نمک دریا</h3></div></div><p style="margin-top:15px"><a href="index.html" style="color:#ffd700">🔙 برگشت</a></p></body></html>
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>salt - نمک | راهیلا</title>
+    <meta name="description" content="همه چیز درباره نمک، تاریخچه، انواع، خواص و کاربردهای این ماده حیاتی در زندگی بشر">
+    <style>
+        :root {
+            --blue-primary: #1a73e8;
+            --blue-dark: #1557b0;
+            --blue-light: #e8f0fe;
+            --blue-accent: #4285f4;
+            --white: #ffffff;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-300: #cbd5e1;
+            --gray-400: #94a3b8;
+            --gray-500: #64748b;
+            --gray-600: #475569;
+            --gray-700: #334155;
+            --gray-800: #1e293b;
+            --gray-900: #0f172a;
+            --gold: #f59e0b;
+            --gold-light: #fef3c7;
+            --gold-border: #d97706;
+            --red: #ef4444;
+            --red-light: #fee2e2;
+            --red-border: #dc2626;
+            --green: #10b981;
+            --green-light: #d1fae5;
+            --green-border: #059669;
+            --purple: #8b5cf6;
+            --purple-light: #ede9fe;
+            --purple-border: #7c3aed;
+            --shadow-sm: 0 1px 2px 0 rgba(0,0,0,0.05);
+            --shadow: 0 1px 3px 0 rgba(0,0,0,0.1),0 1px 2px -1px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1),0 2px 4px -2px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1),0 4px 6px -4px rgba(0,0,0,0.1);
+            --radius: 12px;
+            --radius-sm: 8px;
+        }
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{
+            font-family:'Vazirmatn','Segoe UI',Tahoma,sans-serif;
+            background:linear-gradient(135deg,#f0f4ff 0%,#e8f0fe 30%,#ffffff 70%,#f0f7ff 100%);
+            color:var(--gray-800);line-height:1.7;min-height:100vh;
+            display:flex;flex-direction:column;background-attachment:fixed;
+        }
+        .site-header{
+            background:linear-gradient(135deg,var(--blue-primary) 0%,var(--blue-dark) 100%);
+            color:var(--white);padding:1.2rem 2rem;box-shadow:var(--shadow-lg);
+            position:sticky;top:0;z-index:100;
+        }
+        .header-inner{
+            max-width:1200px;margin:0 auto;display:flex;align-items:center;
+            justify-content:space-between;flex-wrap:wrap;gap:1rem;
+        }
+        .logo{font-size:28px;font-weight:800;color:var(--white);text-decoration:none;display:flex;align-items:center;gap:0.5rem;}
+        .logo-icon{font-size:32px;}
+        .nav-links{display:flex;gap:1.5rem;align-items:center;flex-wrap:wrap;}
+        .nav-links a{
+            color:rgba(255,255,255,0.9);text-decoration:none;font-size:16px;
+            font-weight:500;transition:all 0.3s ease;padding:0.5rem 0.8rem;border-radius:var(--radius-sm);
+        }
+        .nav-links a:hover{color:var(--white);background:rgba(255,255,255,0.15);transform:translateY(-1px);}
+        .main-container{max-width:1100px;margin:0 auto;padding:2rem 1.5rem;flex:1;width:100%;}
+        .breadcrumb{display:flex;gap:0.5rem;align-items:center;font-size:14px;color:var(--gray-500);margin-bottom:1.5rem;flex-wrap:wrap;}
+        .breadcrumb a{color:var(--blue-primary);text-decoration:none;transition:color 0.2s;}
+        .breadcrumb a:hover{color:var(--blue-dark);text-decoration:underline;}
+        .breadcrumb .separator{color:var(--gray-400);}
+        .page-title{
+            font-size:28px;font-weight:800;color:var(--gray-900);margin-bottom:0.5rem;
+            position:relative;display:inline-block;
+        }
+        .page-title::after{
+            content:'';position:absolute;bottom:-6px;right:0;width:60%;height:4px;
+            background:linear-gradient(90deg,var(--blue-primary),var(--blue-accent));border-radius:2px;
+        }
+        .english-title{font-size:16px;color:var(--gray-500);margin-bottom:2rem;font-style:italic;}
+        .section-title{
+            font-size:22px;font-weight:700;color:var(--gray-900);margin:2rem 0 1rem;
+            padding-bottom:0.5rem;border-bottom:2px solid var(--blue-light);
+        }
+        .card{
+            background:var(--white);border-radius:var(--radius);padding:2rem;
+            margin-bottom:1.5rem;box-shadow:var(--shadow-md);border:1px solid var(--gray-100);
+            transition:all 0.3s ease;
+        }
+        .card:hover{box-shadow:var(--shadow-lg);transform:translateY(-2px);border-color:var(--blue-light);}
+        .card p,.card li{font-size:17px;color:var(--gray-700);}
+        .info-table{
+            width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:16px;
+            background:var(--white);border-radius:var(--radius-sm);overflow:hidden;box-shadow:var(--shadow);
+        }
+        .info-table thead{background:linear-gradient(135deg,var(--blue-primary),var(--blue-dark));color:var(--white);}
+        .info-table th{padding:1rem 1.2rem;font-weight:600;font-size:16px;text-align:right;}
+        .info-table td{padding:0.9rem 1.2rem;font-size:16px;border-bottom:1px solid var(--gray-100);color:var(--gray-700);}
+        .info-table tbody tr:hover{background:var(--blue-light);}
+        .info-table tbody tr:last-child td{border-bottom:none;}
+        .btn{
+            display:inline-block;padding:0.75rem 1.8rem;font-size:17px;font-weight:600;
+            border:none;border-radius:var(--radius-sm);cursor:pointer;text-decoration:none;
+            transition:all 0.3s ease;text-align:center;font-family:inherit;
+        }
+        .btn-primary{
+            background:linear-gradient(135deg,var(--blue-primary),var(--blue-accent));
+            color:var(--white);box-shadow:var(--shadow-md);
+        }
+        .btn-primary:hover{background:linear-gradient(135deg,var(--blue-dark),var(--blue-primary));transform:translateY(-2px);box-shadow:var(--shadow-lg);}
+        .btn-outline{background:var(--white);color:var(--blue-primary);border:2px solid var(--blue-primary);}
+        .btn-outline:hover{background:var(--blue-light);transform:translateY(-2px);}
+
+        /* Color Box Variants */
+        .box-gold{
+            background:linear-gradient(135deg,var(--gold-light),#fffbeb);
+            border-right:4px solid var(--gold-border);border-radius:var(--radius-sm);
+            padding:1.2rem 1.5rem;margin:1.5rem 0;font-size:17px;color:var(--gray-800);
+        }
+        .box-blue{
+            background:linear-gradient(135deg,var(--blue-light),#dbeafe);
+            border-right:4px solid var(--blue-primary);border-radius:var(--radius-sm);
+            padding:1.2rem 1.5rem;margin:1.5rem 0;font-size:17px;color:var(--gray-800);
+        }
+        .box-green{
+            background:linear-gradient(135deg,var(--green-light),#ecfdf5);
+            border-right:4px solid var(--green-border);border-radius:var(--radius-sm);
+            padding:1.2rem 1.5rem;margin:1.5rem 0;font-size:17px;color:var(--gray-800);
+        }
+        .box-red{
+            background:linear-gradient(135deg,var(--red-light),#fef2f2);
+            border-right:4px solid var(--red-border);border-radius:var(--radius-sm);
+            padding:1.2rem 1.5rem;margin:1.5rem 0;font-size:17px;color:var(--gray-800);
+        }
+        .box-purple{
+            background:linear-gradient(135deg,var(--purple-light),#f5f3ff);
+            border-right:4px solid var(--purple-border);border-radius:var(--radius-sm);
+            padding:1.2rem 1.5rem;margin:1.5rem 0;font-size:17px;color:var(--gray-800);
+        }
+        .box-gold strong,.box-blue strong,.box-green strong,.box-red strong,.box-purple strong{color:var(--gray-900);}
+
+        .image-gallery{
+            display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;
+            margin:1.5rem 0;
+        }
+        .image-card{
+            background:linear-gradient(135deg,#e8f0fe,#dbeafe);border-radius:var(--radius);
+            padding:2.5rem 1rem;text-align:center;color:var(--blue-primary);
+            font-size:14px;border:2px dashed var(--blue-accent);font-weight:500;
+            transition:all 0.3s ease;min-height:180px;display:flex;
+            flex-direction:column;align-items:center;justify-content:center;gap:0.8rem;
+        }
+        .image-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--blue-dark);}
+        .image-card .img-icon{font-size:48px;}
+        .image-card .img-source{font-size:11px;color:var(--gray-500);margin-top:0.3rem;}
+
+        .grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin:1.5rem 0;}
+        .styled-list{list-style:none;padding:0;}
+        .styled-list li{
+            padding:0.8rem 1rem;margin-bottom:0.5rem;background:var(--white);
+            border-radius:var(--radius-sm);font-size:17px;border-right:3px solid var(--blue-accent);
+            box-shadow:var(--shadow-sm);transition:all 0.2s;
+        }
+        .styled-list li:hover{border-right-color:var(--blue-dark);background:var(--blue-light);transform:translateX(-4px);}
+        .site-footer{
+            background:var(--gray-900);color:var(--gray-300);text-align:center;
+            padding:1.5rem;font-size:14px;margin-top:3rem;border-top:4px solid var(--blue-primary);
+        }
+        .site-footer a{color:var(--blue-accent);text-decoration:none;font-size:14px;}
+        .site-footer a:hover{text-decoration:underline;color:var(--blue-light);}
+        @media(max-width:768px){
+            .header-inner{flex-direction:column;text-align:center;}
+            .page-title{font-size:24px;}.section-title{font-size:20px;}
+            .card{padding:1.2rem;}.info-table th,.info-table td{padding:0.6rem 0.8rem;font-size:14px;}
+            .image-gallery{grid-template-columns:repeat(auto-fit,minmax(150px,1fr));}
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="logo"><span class="logo-icon">🌊</span> راهیلا</a>
+            <nav class="nav-links">
+                <a href="index.html">خانه</a>
+                <a href="salt-full.html" style="background:rgba(255,255,255,0.2);">نمک</a>
+                <a href="saffron.html">زعفران</a>
+                <a href="sage.html">مریم‌گلی</a>
+                <a href="sailing.html">قایقرانی</a>
+                <a href="contact.html">تماس</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <nav class="breadcrumb">
+            <a href="index.html">خانه</a><span class="separator">›</span>
+            <a href="s.html">حرف S</a><span class="separator">›</span>
+            <span>نمک</span>
+        </nav>
+
+        <h1 class="page-title">نمک</h1>
+        <p class="english-title">Salt — Sodium Chloride (NaCl)</p>
+
+        <!-- گالری عکس -->
+        <div class="image-gallery">
+            <div class="image-card">
+                <span class="img-icon">🧂</span>
+                <span>کریستال‌های نمک</span>
+                <span class="img-source">📸 Unsplash: salt crystals</span>
+            </div>
+            <div class="image-card">
+                <span class="img-icon">🏔️</span>
+                <span>معدن نمک</span>
+                <span class="img-source">📸 Wikimedia: salt mine</span>
+            </div>
+            <div class="image-card">
+                <span class="img-icon">🌊</span>
+                <span>حوضچه تبخیر نمک</span>
+                <span class="img-source">📸 Unsplash: salt evaporation pond</span>
+            </div>
+            <div class="image-card">
+                <span class="img-icon">🍽️</span>
+                <span>نمک دریایی خوراکی</span>
+                <span class="img-source">📸 Unsplash: sea salt food</span>
+            </div>
+            <div class="image-card">
+                <span class="img-icon">🪨</span>
+                <span>سنگ نمک هیمالیا</span>
+                <span class="img-source">📸 Wikimedia: himalayan salt</span>
+            </div>
+            <div class="image-card">
+                <span class="img-icon">🏺</span>
+                <span>نمکدان سنتی ایرانی</span>
+                <span class="img-source">📸 Wikimedia: persian salt shaker</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <p>نمک (<strong>سدیم کلرید - NaCl</strong>) یکی از قدیمی‌ترین و حیاتی‌ترین مواد معدنی در تاریخ تمدن بشری است. این ماده بلوری سفیدرنگ، نه‌تنها طعم‌دهنده اصلی غذاهاست، بلکه نقشی اساسی در فیزیولوژی بدن انسان، نگهداری مواد غذایی، صنایع شیمیایی و حتی اقتصاد و سیاست ملل در طول تاریخ ایفا کرده است. واژه انگلیسی "Salary" از کلمه لاتین "Salarium" به معنای "پول نمک" گرفته شده، چرا که سربازان رومی حقوق خود را به صورت نمک دریافت می‌کردند.</p>
+        </div>
+
+        <h2 class="section-title">📋 مشخصات شیمیایی و فیزیکی</h2>
+        <div class="card" style="padding:0;overflow:hidden;">
+            <table class="info-table">
+                <thead><tr><th>ویژگی</th><th>جزئیات</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>فرمول شیمیایی</strong></td><td>NaCl (سدیم کلرید)</td></tr>
+                    <tr><td><strong>جرم مولی</strong></td><td>۵۸.۴۴ گرم بر مول</td></tr>
+                    <tr><td><strong>شکل ظاهری</strong></td><td>کریستال‌های مکعبی سفید یا بی‌رنگ</td></tr>
+                    <tr><td><strong>نقطه ذوب</strong></td><td>۸۰۱ درجه سانتی‌گراد</td></tr>
+                    <tr><td><strong>نقطه جوش</strong></td><td>۱۴۱۳ درجه سانتی‌گراد</td></tr>
+                    <tr><td><strong>حلالیت در آب</strong></td><td>۳۵.۹ گرم در ۱۰۰ میلی‌لیتر (۲۵ درجه سانتی‌گراد)</td></tr>
+                    <tr><td><strong>چگالی</strong></td><td>۲.۱۶ گرم بر سانتی‌متر مکعب</td></tr>
+                    <tr><td><strong>طعم</strong></td><td>شور — یکی از ۵ طعم اصلی انسان</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- باکس طلایی -->
+        <div class="box-gold">
+            <strong>💡 حقیقت تاریخی:</strong> جاده نمک (Via Salaria) یکی از قدیمی‌ترین راه‌های تجاری روم باستان بود که از دهانه تیبر تا سواحل آدریاتیک امتداد داشت و نمک مورد نیاز پایتخت را تأمین می‌کرد. نمک در تاریخ آنچنان ارزشمند بود که گاه به عنوان ارز رایج مورد استفاده قرار می‌گرفت.
+        </div>
+
+        <h2 class="section-title">🌍 انواع نمک از نظر منبع و فرآوری</h2>
+        <div class="grid-2">
+            <div class="card">
+                <h3 style="font-size:20px;color:var(--blue-dark);margin-bottom:0.8rem;">🧂 نمک طعام (تصفیه‌شده)</h3>
+                <p style="font-size:17px;">نمک استخراج‌شده از معادن که کاملاً تصفیه و یددار می‌شود. فاقد ناخالصی و مواد معدنی فرعی. رایج‌ترین نوع مصرفی در ایران با افزودن یدات پتاسیم برای پیشگیری از گواتر.</p>
+            </div>
+            <div class="card">
+                <h3 style="font-size:20px;color:var(--blue-dark);margin-bottom:0.8rem;">🌊 نمک دریایی</h3>
+                <p style="font-size:17px;">از تبخیر آب دریا به‌دست می‌آید. حاوی مواد معدنی کمیاب مانند منیزیم، کلسیم و پتاسیم. بافت درشت‌تر و طعم پیچیده‌تری نسبت به نمک طعام دارد.</p>
+            </div>
+            <div class="card">
+                <h3 style="font-size:20px;color:var(--blue-dark);margin-bottom:0.8rem;">🪨 نمک هیمالیا (سنگ نمک صورتی)</h3>
+                <p style="font-size:17px;">استخراج شده از معادن پنجاب پاکستان. رنگ صورتی آن ناشی از اکسید آهن است. حاوی ۸۴ ماده معدنی و عنصر کمیاب است و در آشپزی و لامپ‌های تزئینی کاربرد دارد.</p>
+            </div>
+            <div class="card">
+                <h3 style="font-size:20px;color:var(--blue-dark);margin-bottom:0.8rem;">⚫ نمک سیاه هاوایی</h3>
+                <p style="font-size:17px;">نمک دریایی تبخیرشده با افزودن زغال فعال یا خاک آتشفشانی. رنگ سیاه دارد و در آشپزی مدرن برای تزئین غذاهای لوکس استفاده می‌شود.</p>
+            </div>
+        </div>
+
+        <!-- باکس آبی -->
+        <div class="box-blue">
+            <strong>🧪 نکته علمی:</strong> یددار کردن نمک یکی از موفق‌ترین برنامه‌های بهداشت عمومی تاریخ است. کمبود ید باعث گواتر (بزرگی غده تیروئید)، کرتینیسم و عقب‌ماندگی ذهنی می‌شود. ایران از دهه ۱۳۷۰ نمک یددار را اجباری کرد.
+        </div>
+
+        <h2 class="section-title">💊 نقش نمک در بدن انسان</h2>
+        <div class="card">
+            <ul class="styled-list">
+                <li><strong>⚡ تعادل الکترولیت‌ها:</strong> سدیم موجود در نمک، اصلی‌ترین کاتیون خارج سلولی است که تعادل آب، انتقال پیام‌های عصبی و انقباض عضلانی را تنظیم می‌کند.</li>
+                <li><strong>🧠 عملکرد عصبی:</strong> پمپ سدیم-پتاسیم در غشای سلول‌های عصبی، اساس انتقال ایمپالس‌های الکتریکی در مغز و اعصاب است.</li>
+                <li><strong>💪 انقباض عضلات:</strong> بدون سدیم کافی، عضلات (از جمله عضله قلب) قادر به انقباض مؤثر نیستند.</li>
+                <li><strong>🩸 تنظیم فشار خون:</strong> مصرف متعادل نمک برای حفظ حجم خون و فشار خون ضروری است، اما مصرف بیش از حد آن عامل اصلی پرفشاری خون می‌شود.</li>
+                <li><strong>🦴 سلامت استخوان‌ها:</strong> مصرف زیاد نمک باعث دفع کلسیم از طریق ادرار شده و خطر پوکی استخوان را افزایش می‌دهد.</li>
+            </ul>
+        </div>
+
+        <!-- باکس قرمز -->
+        <div class="box-red">
+            <strong>⚠️ هشدار بهداشتی — سازمان جهانی بهداشت (WHO):</strong> حداکثر مصرف روزانه نمک برای بزرگسالان: <strong>کمتر از ۵ گرم</strong> (معادل حدود یک قاشق چای‌خوری). مصرف بیش از حد، خطر سکته قلبی، سکته مغزی و سرطان معده را افزایش می‌دهد. در ایران، میانگین مصرف روزانه نمک حدود ۱۰-۱۲ گرم است — بیش از دو برابر حد مجاز!
+        </div>
+
+        <!-- باکس سبز -->
+        <div class="box-green">
+            <strong>✅ راهکار کاهش مصرف نمک:</strong> نان‌های کم‌نمک مصرف کنید، از نمکدان سر سفره استفاده نکنید، غذاهای فرآوری‌شده (سوسیس، چیپس، کنسروها) را محدود کنید، به جای نمک از سبزیجات معطر و ادویه‌های بدون نمک استفاده کنید و برچسب مواد غذایی را برای میزان سدیم بررسی کنید.
+        </div>
+
+        <h2 class="section-title">🏭 کاربردهای صنعتی و اقتصادی</h2>
+        <div class="card" style="padding:0;overflow:hidden;">
+            <table class="info-table">
+                <thead><tr><th>صنعت</th><th>کاربرد</th><th>درصد مصرف جهانی</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>صنایع شیمیایی</strong></td><td>تولید کلر، سود سوزآور (NaOH)، کربنات سدیم</td><td>۶۰٪</td></tr>
+                    <tr><td><strong>یخ‌زدایی جاده‌ها</strong></td><td>پایین آوردن نقطه انجماد آب و ذوب یخ</td><td>۱۵٪</td></tr>
+                    <tr><td><strong>صنایع غذایی</strong></td><td>طعم‌دهی، نگهدارنده، فرآوری گوشت و لبنیات</td><td>۱۵٪</td></tr>
+                    <tr><td><strong>کشاورزی</strong></td><td>مکمل خوراک دام، کودهای شیمیایی</td><td>۵٪</td></tr>
+                    <tr><td><strong>تصفیه آب</strong></td><td>احیا رزین‌های سختی‌گیر در سیستم‌های خانگی</td><td>۳٪</td></tr>
+                    <tr><td><strong>سایر مصارف</strong></td><td>سرامیک، چرم‌سازی، حفاری نفت، داروسازی</td><td>۲٪</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- باکس بنفش -->
+        <div class="box-purple">
+            <strong>🏛️ نمک در فرهنگ و تاریخ ایران:</strong> در ایران باستان، نمک نماد پاکی، خلوص و دوستی بود. سوگند خوردن به نمک ("نمک‌شناس باش") نشانه وفاداری و حق‌شناسی است. کویر نمک ایران (دشت کویر و دریاچه نمک قم) از بزرگ‌ترین منابع نمک طبیعی جهان هستند. دریاچه ارومیه نیز پیش از خشک شدن، یکی از شورترین دریاچه‌های دنیا بود.
+        </div>
+
+        <h2 class="section-title">🏔️ بزرگ‌ترین معادن نمک جهان</h2>
+        <div class="grid-2">
+            <div class="card">
+                <h3 style="font-size:20px;color:var(--blue-dark);">معدن نمک خدا (Khewra) — پاکستان</h3>
+                <p style="font-size:17px;">دومین معدن بزرگ نمک جهان با قدمت استخراج از ۳۲۰ سال پیش از میلاد. سالانه ۳۵۰,۰۰۰ تن نمک صورتی هیمالیا تولید می‌کند و شامل مسجد، اداره پست و بیمارستان در عمق زمین است.</p>
+            </div>
+            <div class="card">
+                <h3 style="font-size:20px;color:var(--blue-dark);">معدن نمک وایلیچکا — لهستان</h3>
+                <p style="font-size:17px;">میراث جهانی یونسکو با کلیساهای زیرزمینی، مجسمه‌های نمکی و لوسترهای کریستال نمک. از قرن ۱۳ میلادی فعال بوده و اکنون یک جاذبه گردشگری درمانی است.</p>
+            </div>
+        </div>
+
+        <div class="image-gallery">
+            <div class="image-card">
+                <span class="img-icon">⛏️</span>
+                <span>معدن نمک وایلیچکا</span>
+                <span class="img-source">📸 Wikimedia: Wieliczka salt mine</span>
+            </div>
+            <div class="image-card">
+                <span class="img-icon">🏜️</span>
+                <span>کویر نمک ایران</span>
+                <span class="img-source">📸 Unsplash: Iran salt desert</span>
+            </div>
+        </div>
+
+        <div style="text-align:center;margin:2.5rem 0;">
+            <a href="salt-full.html" class="btn btn-primary" style="margin:0.5rem;">📖 نسخه کامل نمک (Salt Full)</a>
+            <a href="s.html" class="btn btn-outline" style="margin:0.5rem;">📚 همه مقالات S</a>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>🌐 <a href="https://rahilanab.com">rahilanab.com</a> — پروژه دانشنامه راهیلا | حرف S: نمک</p>
+        <p style="margin-top:0.3rem;">📧 <a href="mailto:mahniush.binazir@gmail.com">mahniush.binazir@gmail.com</a> | 🐙 <a href="https://github.com/rahila-ir/rahila-site" target="_blank" rel="noopener">GitHub</a></p>
+        <p style="margin-top:0.5rem;font-size:13px;color:var(--gray-500);">تم آبی-سفید | ۲۰۰ فایل HTML | فایل بعدی: salt-full.html | تابستان ۲۰۲۶</p>
+    </footer>
+</body>
+                                                                                       </html>
