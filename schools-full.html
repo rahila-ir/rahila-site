@@ -85,19 +85,16 @@
         .btn-primary:hover{background:linear-gradient(135deg,var(--blue-dark),var(--blue-primary));transform:translateY(-2px);box-shadow:var(--shadow-lg);}
         .btn-outline{background:var(--white);color:var(--blue-primary);border:2px solid var(--blue-primary);}
         .btn-outline:hover{background:var(--blue-light);transform:translateY(-2px);}
-
         .box-gold{background:linear-gradient(135deg,var(--gold-light),#fffbeb);border-right:4px solid var(--gold-border);border-radius:var(--radius-sm);padding:1.2rem 1.5rem;margin:1.5rem 0;font-size:17px;color:var(--gray-800);}
         .box-blue{background:linear-gradient(135deg,var(--blue-light),#dbeafe);border-right:4px solid var(--blue-primary);border-radius:var(--radius-sm);padding:1.2rem 1.5rem;margin:1.5rem 0;font-size:17px;color:var(--gray-800);}
         .box-green{background:linear-gradient(135deg,var(--green-light),#ecfdf5);border-right:4px solid var(--green-border);border-radius:var(--radius-sm);padding:1.2rem 1.5rem;margin:1.5rem 0;font-size:17px;color:var(--gray-800);}
         .box-red{background:linear-gradient(135deg,var(--red-light),#fef2f2);border-right:4px solid var(--red-border);border-radius:var(--radius-sm);padding:1.2rem 1.5rem;margin:1.5rem 0;font-size:17px;color:var(--gray-800);}
         .box-purple{background:linear-gradient(135deg,var(--purple-light),#f5f3ff);border-right:4px solid var(--purple-border);border-radius:var(--radius-sm);padding:1.2rem 1.5rem;margin:1.5rem 0;font-size:17px;color:var(--gray-800);}
-
         .image-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin:1.5rem 0;}
         .image-card{background:linear-gradient(135deg,#e8f0fe,#dbeafe);border-radius:var(--radius);padding:2.5rem 1rem;text-align:center;color:var(--blue-primary);font-size:14px;border:2px dashed var(--blue-accent);font-weight:500;transition:all 0.3s ease;min-height:180px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.8rem;}
         .image-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--blue-dark);}
         .image-card .img-icon{font-size:48px;}
         .image-card .img-source{font-size:11px;color:var(--gray-500);margin-top:0.3rem;}
-
         .grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin:1.5rem 0;}
         .grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem;margin:1.5rem 0;}
         .styled-list{list-style:none;padding:0;}
@@ -112,6 +109,11 @@
         .timeline-item::before{content:'';position:absolute;right:-2.45rem;top:0.5rem;width:14px;height:14px;background:var(--blue-primary);border-radius:50%;border:3px solid var(--white);box-shadow:var(--shadow-md);}
         .timeline-year{font-size:15px;font-weight:700;color:var(--blue-primary);margin-bottom:0.3rem;}
         .timeline-text{font-size:16px;color:var(--gray-700);}
+        .imdb-link{display:inline-flex;align-items:center;gap:0.4rem;background:#f5c518;color:#000;padding:0.4rem 0.9rem;border-radius:20px;text-decoration:none;font-size:14px;font-weight:700;transition:all 0.3s;}
+        .imdb-link:hover{background:#e5b500;transform:scale(1.05);box-shadow:var(--shadow-md);}
+        .movie-card{background:linear-gradient(135deg,#fffbe6,#fff3cc);border:2px solid #f5c518;border-radius:var(--radius);padding:1.5rem;text-align:center;margin:1rem 0;}
+        .movie-card h4{font-size:19px;color:#000;margin-bottom:0.5rem;}
+        .movie-card p{font-size:15px;color:var(--gray-700);}
         .site-footer{background:var(--gray-900);color:var(--gray-300);text-align:center;padding:1.5rem;font-size:14px;margin-top:3rem;border-top:4px solid var(--blue-primary);}
         .site-footer a{color:var(--blue-accent);text-decoration:none;font-size:14px;}
         .site-footer a:hover{text-decoration:underline;color:var(--blue-light);}
@@ -170,6 +172,34 @@
 
         <div class="box-gold">
             <strong>💡 حقیقت تاریخی:</strong> قدیمی‌ترین مدرسه شناخته‌شده جهان، «مدرسه سومری» در شهر اور (عراق امروزی) با قدمت ۴۵۰۰ سال است. لوح‌های گلی کشف‌شده نشان می‌دهند که دانش‌آموزان سومری ریاضیات، نوشتن میخی و ادبیات می‌آموختند و تنبیه بدنی نیز در آن رواج داشت!
+        </div>
+
+        <h2 class="section-title">🎬 مدرسه در سینما — فیلم‌های ماندگار</h2>
+        <div class="grid-2">
+            <div class="movie-card">
+                <h4>🎬 Dead Poets Society (۱۹۸۹)</h4>
+                <p><strong>کارگردان:</strong> پیتر ویر | <strong>بازیگران:</strong> رابین ویلیامز، ایثن هاک</p>
+                <p>داستان معلم ادبیات انگلیسی که با روش‌های خلاقانه، دانش‌آموزان یک مدرسه شبانه‌روزی سختگیر را به عشق زندگی و شعر دعوت می‌کند. برنده اسکار بهترین فیلمنامه.</p>
+                <a href="https://www.imdb.com/title/tt0097165/" target="_blank" rel="noopener" class="imdb-link">🎥 IMDb: tt0097165</a>
+            </div>
+            <div class="movie-card">
+                <h4>🎬 Taare Zameen Par (۲۰۰۷)</h4>
+                <p><strong>کارگردان:</strong> عامر خان | <strong>بازیگران:</strong> دارشیل صفاری، عامر خان</p>
+                <p>داستان تأثیرگذار کودکی با نارساخوانی (دیسلکسیا) که در مدرسه طرد شده تا اینکه یک معلم هنر وارد زندگی‌اش می‌شود. شاهکار سینمای هند درباره اهمیت درک تفاوت‌های یادگیری.</p>
+                <a href="https://www.imdb.com/title/tt0986264/" target="_blank" rel="noopener" class="imdb-link">🎥 IMDb: tt0986264</a>
+            </div>
+            <div class="movie-card">
+                <h4>🎬 Entre les murs (۲۰۰۸)</h4>
+                <p><strong>کارگردان:</strong> لوران کانته | برنده نخل طلای کن</p>
+                <p>فیلمی واقع‌گرایانه بر اساس تجربیات واقعی یک معلم در مدرسه‌ای در حومه پاریس. نمایش چالش‌های نژادی، فرهنگی و آموزشی در کلاس درس مدرن.</p>
+                <a href="https://www.imdb.com/title/tt1068646/" target="_blank" rel="noopener" class="imdb-link">🎥 IMDb: tt1068646</a>
+            </div>
+            <div class="movie-card">
+                <h4>🎬 Freedom Writers (۲۰۰۷)</h4>
+                <p><strong>کارگردان:</strong> ریچارد لاگراونیس | <strong>بازیگران:</strong> هیلاری سوانک</p>
+                <p>بر اساس داستان واقعی معلمی که با روش نوشتن خاطرات، دانش‌آموزان خشن و ناامید یک دبیرستان بحران‌زده را متحول کرد.</p>
+                <a href="https://www.imdb.com/title/tt0463998/" target="_blank" rel="noopener" class="imdb-link">🎥 IMDb: tt0463998</a>
+            </div>
         </div>
 
         <h2 class="section-title">📜 تاریخچه آموزش و مدرسه در تمدن بشری</h2>
@@ -239,6 +269,7 @@
             <div class="image-card"><span class="img-icon">🏛️</span><span>مدرسه سنتی ایرانی</span><span class="img-source">📸 Wikimedia: traditional Iranian school</span></div>
             <div class="image-card"><span class="img-icon">🏢</span><span>مدرسه مدرن اسکاندیناوی</span><span class="img-source">📸 Unsplash: Scandinavian school</span></div>
             <div class="image-card"><span class="img-icon">🌿</span><span>مدرسه سبز (طبیعت‌محور)</span><span class="img-source">📸 Unsplash: green school design</span></div>
+            <div class="image-card"><span class="img-icon">🕌</span><span>مدرسه چهارباغ اصفهان</span><span class="img-source">📸 Wikimedia: Chaharbagh school</span></div>
         </div>
         <div class="card">
             <ul class="styled-list">
@@ -308,7 +339,7 @@
     <footer class="site-footer">
         <p>🌐 <a href="https://rahilanab.com">rahilanab.com</a> — پروژه دانشنامه راهیلا | حرف S: مدارس جامع</p>
         <p style="margin-top:0.3rem;">📧 <a href="mailto:mahniush.binazir@gmail.com">mahniush.binazir@gmail.com</a> | 🐙 <a href="https://github.com/rahila-ir/rahila-site" target="_blank" rel="noopener">GitHub</a></p>
-        <p style="margin-top:0.5rem;font-size:13px;color:var(--gray-500);">تم آبی-سفید | ۲۰۰ فایل HTML | فایل بعدی: shahrbani.html | تابستان ۲۰۲۶</p>
+        <p style="margin-top:0.5rem;font-size:13px;color:var(--gray-500);">🎥 IMDb: tt0097165, tt0986264, tt1068646, tt0463998 | فایل بعدی: shahrbani.html | تابستان ۲۰۲۶</p>
     </footer>
 </body>
-  </html>
+                    </html>
