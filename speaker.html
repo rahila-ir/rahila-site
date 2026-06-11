@@ -1,1 +1,225 @@
-<!DOCTYPE html><html lang="fa"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>🔈 اسپیکر | رهیلا</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial;background:radial-gradient(circle at center,#0a1a1a,#1a4a4a,#66ccaa);color:#fff;text-align:center;padding:15px;min-height:100vh}.header{background:rgba(255,255,255,.08);backdrop-filter:blur(20px);border-radius:25px;padding:20px;margin-bottom:15px}.header h1{color:#ffd700;font-size:22px}.back-btn{display:inline-block;background:rgba(255,255,255,.15);color:#fff;padding:8px 20px;border-radius:20px;text-decoration:none;margin:10px 0;font-size:14px}.section-title{color:#ffd700;font-size:18px;margin:20px 0 10px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.card{background:rgba(255,255,255,.05);border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,.1);text-align:right}.card h3{font-size:15px;color:#ffd700}</style></head><body><div class="header"><h1>🔈 اسپیکر</h1></div><a href="index.html" class="back-btn">🔙 برگشت</a><div class="section-title">🔈 برندها</div><div class="grid"><div class="card"><h3>جی بی ال</h3></div><div class="card"><h3>هارمن کاردن</h3></div><div class="card"><h3>بوز</h3></div><div class="card"><h3>سونی</h3></div></div><p style="margin-top:15px"><a href="index.html" style="color:#ffd700">🔙 برگشت</a></p></body></html>
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>speaker - اسپیکر | راهیلا</title>
+    <meta name="description" content="همه چیز درباره اسپیکر، تاریخچه بلندگو، انواع اسپیکر، فناوری‌های صوتی، برندهای برتر و راهنمای خرید">
+    <style>
+        :root {
+            --blue-primary: #1a73e8;
+            --blue-dark: #1557b0;
+            --blue-light: #e8f0fe;
+            --blue-accent: #4285f4;
+            --white: #ffffff;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-300: #cbd5e1;
+            --gray-400: #94a3b8;
+            --gray-500: #64748b;
+            --gray-600: #475569;
+            --gray-700: #334155;
+            --gray-800: #1e293b;
+            --gray-900: #0f172a;
+            --gold: #f59e0b;
+            --gold-light: #fef3c7;
+            --gold-border: #d97706;
+            --red: #ef4444;
+            --red-light: #fee2e2;
+            --red-border: #dc2626;
+            --green: #10b981;
+            --green-light: #d1fae5;
+            --green-border: #059669;
+            --purple: #8b5cf6;
+            --purple-light: #ede9fe;
+            --purple-border: #7c3aed;
+            --shadow-sm: 0 1px 2px 0 rgba(0,0,0,0.05);
+            --shadow: 0 1px 3px 0 rgba(0,0,0,0.1),0 1px 2px -1px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1),0 2px 4px -2px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1),0 4px 6px -4px rgba(0,0,0,0.1);
+            --radius: 12px;
+            --radius-sm: 8px;
+        }
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{
+            font-family:'Vazirmatn','Segoe UI',Tahoma,sans-serif;
+            background:linear-gradient(135deg,#f0f4ff 0%,#e8f0fe 30%,#ffffff 70%,#f0f7ff 100%);
+            color:var(--gray-800);line-height:1.7;min-height:100vh;
+            display:flex;flex-direction:column;background-attachment:fixed;
+        }
+        .site-header{background:linear-gradient(135deg,var(--blue-primary) 0%,var(--blue-dark) 100%);color:var(--white);padding:1.2rem 2rem;box-shadow:var(--shadow-lg);position:sticky;top:0;z-index:100;}
+        .header-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
+        .logo{font-size:28px;font-weight:800;color:var(--white);text-decoration:none;display:flex;align-items:center;gap:0.5rem;}
+        .logo-icon{font-size:32px;}
+        .nav-links{display:flex;gap:1.5rem;align-items:center;flex-wrap:wrap;}
+        .nav-links a{color:rgba(255,255,255,0.9);text-decoration:none;font-size:16px;font-weight:500;transition:all 0.3s ease;padding:0.5rem 0.8rem;border-radius:var(--radius-sm);}
+        .nav-links a:hover{color:var(--white);background:rgba(255,255,255,0.15);transform:translateY(-1px);}
+        .main-container{max-width:1100px;margin:0 auto;padding:2rem 1.5rem;flex:1;width:100%;}
+        .breadcrumb{display:flex;gap:0.5rem;align-items:center;font-size:14px;color:var(--gray-500);margin-bottom:1.5rem;flex-wrap:wrap;}
+        .breadcrumb a{color:var(--blue-primary);text-decoration:none;}
+        .breadcrumb a:hover{color:var(--blue-dark);text-decoration:underline;}
+        .breadcrumb .separator{color:var(--gray-400);}
+        .page-title{font-size:28px;font-weight:800;color:var(--gray-900);margin-bottom:0.5rem;position:relative;display:inline-block;}
+        .page-title::after{content:'';position:absolute;bottom:-6px;right:0;width:60%;height:4px;background:linear-gradient(90deg,var(--blue-primary),var(--blue-accent));border-radius:2px;}
+        .english-title{font-size:16px;color:var(--gray-500);margin-bottom:2rem;font-style:italic;}
+        .section-title{font-size:22px;font-weight:700;color:var(--gray-900);margin:2rem 0 1rem;padding-bottom:0.5rem;border-bottom:2px solid var(--blue-light);}
+        .card{background:var(--white);border-radius:var(--radius);padding:2rem;margin-bottom:1.5rem;box-shadow:var(--shadow-md);border:1px solid var(--gray-100);transition:all 0.3s ease;}
+        .card:hover{box-shadow:var(--shadow-lg);transform:translateY(-2px);border-color:var(--blue-light);}
+        .card p,.card li{font-size:17px;color:var(--gray-700);}
+        .info-table{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:16px;background:var(--white);border-radius:var(--radius-sm);overflow:hidden;box-shadow:var(--shadow);}
+        .info-table thead{background:linear-gradient(135deg,var(--blue-primary),var(--blue-dark));color:var(--white);}
+        .info-table th{padding:1rem 1.2rem;font-weight:600;font-size:16px;text-align:right;}
+        .info-table td{padding:0.9rem 1.2rem;font-size:16px;border-bottom:1px solid var(--gray-100);color:var(--gray-700);}
+        .info-table tbody tr:hover{background:var(--blue-light);}
+        .info-table tbody tr:last-child td{border-bottom:none;}
+        .btn{display:inline-block;padding:0.75rem 1.8rem;font-size:17px;font-weight:600;border:none;border-radius:var(--radius-sm);cursor:pointer;text-decoration:none;transition:all 0.3s ease;text-align:center;font-family:inherit;}
+        .btn-primary{background:linear-gradient(135deg,var(--blue-primary),var(--blue-accent));color:var(--white);box-shadow:var(--shadow-md);}
+        .btn-primary:hover{background:linear-gradient(135deg,var(--blue-dark),var(--blue-primary));transform:translateY(-2px);box-shadow:var(--shadow-lg);}
+        .btn-outline{background:var(--white);color:var(--blue-primary);border:2px solid var(--blue-primary);}
+        .btn-outline:hover{background:var(--blue-light);transform:translateY(-2px);}
+        .box-gold{background:linear-gradient(135deg,var(--gold-light),#fffbeb);border-right:4px solid var(--gold-border);border-radius:var(--radius-sm);padding:1.2rem 1.5rem;margin:1.5rem 0;font-size:17px;color:var(--gray-800);}
+        .box-blue{background:linear-gradient(135deg,var(--blue-light),#dbeafe);border-right:4px solid var(--blue-primary);border-radius:var(--radius-sm);padding:1.2rem 1.5rem;margin:1.5rem 0;font-size:17px;color:var(--gray-800);}
+        .box-green{background:linear-gradient(135deg,var(--green-light),#ecfdf5);border-right:4px solid var(--green-border);border-radius:var(--radius-sm);padding:1.2rem 1.5rem;margin:1.5rem 0;font-size:17px;color:var(--gray-800);}
+        .box-red{background:linear-gradient(135deg,var(--red-light),#fef2f2);border-right:4px solid var(--red-border);border-radius:var(--radius-sm);padding:1.2rem 1.5rem;margin:1.5rem 0;font-size:17px;color:var(--gray-800);}
+        .box-purple{background:linear-gradient(135deg,var(--purple-light),#f5f3ff);border-right:4px solid var(--purple-border);border-radius:var(--radius-sm);padding:1.2rem 1.5rem;margin:1.5rem 0;font-size:17px;color:var(--gray-800);}
+        .image-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin:1.5rem 0;}
+        .image-card{background:linear-gradient(135deg,#e8f0fe,#dbeafe);border-radius:var(--radius);padding:2.5rem 1rem;text-align:center;color:var(--blue-primary);font-size:14px;border:2px dashed var(--blue-accent);font-weight:500;transition:all 0.3s ease;min-height:180px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.8rem;}
+        .image-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--blue-dark);}
+        .image-card .img-icon{font-size:48px;}
+        .image-card .img-source{font-size:11px;color:var(--gray-500);margin-top:0.3rem;}
+        .grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin:1.5rem 0;}
+        .grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem;margin:1.5rem 0;}
+        .styled-list{list-style:none;padding:0;}
+        .styled-list li{padding:0.8rem 1rem;margin-bottom:0.5rem;background:var(--white);border-radius:var(--radius-sm);font-size:17px;border-right:3px solid var(--blue-accent);box-shadow:var(--shadow-sm);transition:all 0.2s;}
+        .styled-list li:hover{border-right-color:var(--blue-dark);background:var(--blue-light);transform:translateX(-4px);}
+        .highlight-num{font-size:42px;font-weight:900;color:var(--blue-primary);line-height:1;}
+        .stat-card{text-align:center;padding:1.5rem;background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);border-top:4px solid var(--blue-accent);}
+        .stat-card .stat-label{font-size:15px;color:var(--gray-500);margin-top:0.3rem;}
+        .site-footer{background:var(--gray-900);color:var(--gray-300);text-align:center;padding:1.5rem;font-size:14px;margin-top:3rem;border-top:4px solid var(--blue-primary);}
+        .site-footer a{color:var(--blue-accent);text-decoration:none;font-size:14px;}
+        .site-footer a:hover{text-decoration:underline;color:var(--blue-light);}
+        @media(max-width:768px){
+            .header-inner{flex-direction:column;text-align:center;}
+            .page-title{font-size:24px;}.section-title{font-size:20px;}
+            .card{padding:1.2rem;}.info-table th,.info-table td{padding:0.6rem 0.8rem;font-size:14px;}
+            .image-gallery{grid-template-columns:repeat(auto-fit,minmax(150px,1fr));}
+            .highlight-num{font-size:32px;}
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="logo"><span class="logo-icon">🌊</span> راهیلا</a>
+            <nav class="nav-links">
+                <a href="index.html">خانه</a>
+                <a href="speaker.html" style="background:rgba(255,255,255,0.2);">اسپیکر</a>
+                <a href="snowboarding.html">اسنوبرد</a>
+                <a href="skydiving.html">چتربازی</a>
+                <a href="skin.html">پوست</a>
+                <a href="contact.html">تماس</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <nav class="breadcrumb">
+            <a href="index.html">خانه</a><span class="separator">›</span>
+            <a href="s.html">حرف S</a><span class="separator">›</span>
+            <span>اسپیکر</span>
+        </nav>
+
+        <h1 class="page-title">اسپیکر</h1>
+        <p class="english-title">Speaker — Loudspeakers & Audio Technology</p>
+
+        <div class="grid-3">
+            <div class="stat-card"><div class="highlight-num">۱۸۷۶</div><div class="stat-label">اولین بلندگو</div></div>
+            <div class="stat-card"><div class="highlight-num">۲۰-۲۰K</div><div class="stat-label">بازه شنوایی (هرتز)</div></div>
+            <div class="stat-card"><div class="highlight-num">۱۰۰B$</div><div class="stat-label">بازار جهانی اسپیکر</div></div>
+        </div>
+
+        <div class="image-gallery">
+            <div class="image-card"><span class="img-icon">🔊</span><span>اسپیکر خانگی</span><span class="img-source">📸 Unsplash: home speaker</span></div>
+            <div class="image-card"><span class="img-icon">🎧</span><span>هدفون</span><span class="img-source">📸 Unsplash: headphones</span></div>
+            <div class="image-card"><span class="img-icon">📻</span><span>اسپیکر بلوتوثی</span><span class="img-source">📸 Unsplash: bluetooth speaker</span></div>
+            <div class="image-card"><span class="img-icon">🎸</span><span>آمپلی‌فایر گیتار</span><span class="img-source">📸 Unsplash: guitar amplifier</span></div>
+            <div class="image-card"><span class="img-icon">🏟️</span><span>سیستم صوتی کنسرت</span><span class="img-source">📸 Unsplash: concert speakers</span></div>
+            <div class="image-card"><span class="img-icon">🔬</span><span>درایور اسپیکر</span><span class="img-source">📸 Wikimedia: speaker driver</span></div>
+        </div>
+
+        <div class="card">
+            <p><strong>اسپیکر</strong> (بلندگو) دستگاهی الکترومکانیکی است که سیگنال الکتریکی را به امواج صوتی تبدیل می‌کند. اولین بلندگوی دینامیکی در سال ۱۹۲۵ توسط چستر رایس و ادوارد کلوگ در آمریکا اختراع شد. امروزه اسپیکرها در انواع مختلف از هدفون‌های کوچک داخل گوش تا سیستم‌های عظیم کنسرت با توان ۱۰۰,۰۰۰ وات وجود دارند و بازار جهانی آنها بیش از ۱۰۰ میلیارد دلار ارزش دارد.</p>
+        </div>
+
+        <div class="box-gold">
+            <strong>💡 اصل فیزیکی:</strong> اسپیکر بر اساس قانون الکترومغناطیس کار می‌کند: یک سیم‌پیچ (کویل) در میدان مغناطیسی آهنربا حرکت می‌کند و دیافراگم مخروطی را به لرزش درمی‌آورد. این لرزش‌ها هوای اطراف را فشرده و منبسط کرده و امواج صوتی ایجاد می‌کنند.
+        </div>
+
+        <h2 class="section-title">🔊 انواع اسپیکر</h2>
+        <div class="card" style="padding:0;overflow:hidden;">
+            <table class="info-table">
+                <thead><tr><th>نوع</th><th>اندازه درایور</th><th>کاربرد</th><th>محدوده قیمت</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>اسپیکر قفسه‌ای (Bookshelf)</strong></td><td>۴-۶ اینچ</td><td>موسیقی خانگی</td><td>۲۰۰-۲۰۰۰ دلار</td></tr>
+                    <tr><td><strong>اسپیکر ایستاده (Tower)</strong></td><td>۶-۱۲ اینچ</td><td>سینمای خانگی</td><td>۵۰۰-۵۰,۰۰۰ دلار</td></tr>
+                    <tr><td><strong>ساب‌ووفر (Subwoofer)</strong></td><td>۱۰-۱۸ اینچ</td><td>فرکانس‌های بم (باس)</td><td>۲۰۰-۵,۰۰۰ دلار</td></tr>
+                    <tr><td><strong>اسپیکر بلوتوثی</strong></td><td>۱-۳ اینچ</td><td>قابل حمل و سفر</td><td>۲۰-۵۰۰ دلار</td></tr>
+                    <tr><td><strong>مانیتور استودیویی</strong></td><td>۵-۸ اینچ</td><td>ضبط و میکس حرفه‌ای</td><td>۳۰۰-۵,۰۰۰ دلار</td></tr>
+                    <tr><td><strong>هدفون (Headphone)</strong></td><td>۲۰-۵۰mm</td><td>شنیدن شخصی</td><td>۱۰-۵,۰۰۰ دلار</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2 class="section-title">🎵 برندهای برتر اسپیکر</h2>
+        <div class="grid-2">
+            <div class="card">
+                <h3 style="font-size:20px;color:var(--blue-dark);">🇺🇸 JBL</h3>
+                <p style="font-size:17px;">شرکت آمریکایی با ۷۵ سال سابقه. اسپیکرهای بلوتوثی Flip و Charge پرفروش‌ترین اسپیکرهای قابل حمل جهان. قیمت مناسب و کیفیت خوب.</p>
+            </div>
+            <div class="card">
+                <h3 style="font-size:20px;color:var(--blue-dark);">🇩🇪 Sennheiser</h3>
+                <p style="font-size:17px;">غول آلمانی هدفون و میکروفون. هدفون‌های HD 600 و HD 800 استاندارد طلایی صنعت صدا هستند. کیفیت استثنایی با قیمت بالا.</p>
+            </div>
+            <div class="card">
+                <h3 style="font-size:20px;color:var(--blue-dark);">🇺🇸 Bose</h3>
+                <p style="font-size:17px;">پیشگام نویز کنسلینگ. هدفون QuietComfort و اسپیکرهای SoundLink محبوب مسافران حرفه‌ای. کیفیت صدای متعادل.</p>
+            </div>
+            <div class="card">
+                <h3 style="font-size:20px;color:var(--blue-dark);">🇯🇵 Sony</h3>
+                <p style="font-size:17px;">هدفون WH-1000XM5 بهترین نویز کنسلینگ جهان. اسپیکرهای SRS-XB با بیس قوی. نوآوری در صدای ۳۶۰ درجه.</p>
+            </div>
+        </div>
+
+        <div class="box-blue">
+            <strong>🇮🇷 اسپیکر در ایران:</strong> بازار اسپیکر ایران تحت سلطه برندهای JBL، سونی، هارمن کاردن و بوز است. اسپیکرهای بلوتوثی JBL (به خصوص Flip و Go) بسیار محبوب‌اند. قیمت اسپیکر در ایران به دلیل نوسانات ارز، ۲-۳ برابر قیمت جهانی است. برندهای ایرانی مانند افرا و نوآوران نیز در زمینه اسپیکرهای حرفه‌ای فعالیت می‌کنند.
+        </div>
+
+        <h2 class="section-title">📊 مشخصات فنی مهم</h2>
+        <div class="card">
+            <ul class="styled-list">
+                <li><strong>📊 پاسخ فرکانسی (Frequency Response):</strong> محدوده فرکانس‌های قابل پخش — استاندارد طلایی: ۲۰Hz-20KHz. هرچه گسترده‌تر، صدای کامل‌تر.</li>
+                <li><strong>🔌 امپدانس (Impedance):</strong> مقاومت الکتریکی بر حسب اهم. معمولاً ۴، ۶ یا ۸ اهم. باید با آمپلی‌فایر هماهنگ باشد.</li>
+                <li><strong>🔊 حساسیت (Sensitivity):</strong> بلندی صدا با ۱ وات توان — بر حسب دسی‌بل. ۸۵dB معمولی، ۹۰dB+ عالی است.</li>
+                <li><strong>⚡ توان (Power):</strong> حداکثر وات قابل تحمل. اسپیکر خانگی: ۵۰-۲۰۰ وات. کنسرت: ۱۰,۰۰۰-۱۰۰,۰۰۰ وات.</li>
+                <li><strong>📡 کدک‌های بلوتوث:</strong> SBC (پایه)، AAC (اپل)، aptX (کوالکام)، LDAC (سونی — بهترین کیفیت بی‌سیم).</li>
+            </ul>
+        </div>
+
+        <div class="box-green">
+            <strong>✅ راهنمای خرید اسپیکر:</strong> ۱) ابتدا کاربرد را مشخص کن: موسیقی، فیلم، gaming یا مهمانی، ۲) فضای اتاق را در نظر بگیر — اتاق ۱۲ متری نیاز به اسپیکر بزرگ ندارد، ۳) سیم‌دار بهتر از بلوتوث است (کیفیت بالاتر)، ۴) قبل از خرید حتماً گوش کن (هر گوشی سلیقه شنیداری متفاوتی دارد)، ۵) بودجه را تقسیم کن: ۵۰٪ اسپیکر + ۳۰٪ آمپلی‌فایر + ۲۰٪ کابل و اتصالات.
+        </div>
+
+        <div style="text-align:center;margin:2.5rem 0;">
+            <a href="speech-therapy.html" class="btn btn-primary" style="margin:0.5rem;">🗣️ مقاله بعدی: گفتاردرمانی</a>
+            <a href="s.html" class="btn btn-outline" style="margin:0.5rem;">📚 همه مقالات S</a>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>🌐 <a href="https://rahilanab.com">rahilanab.com</a> — پروژه دانشنامه راهیلا | حرف S: اسپیکر</p>
+        <p style="margin-top:0.3rem;">📧 <a href="mailto:mahniush.binazir@gmail.com">mahniush.binazir@gmail.com</a> | 🐙 <a href="https://github.com/rahila-ir/rahila-site" target="_blank" rel="noopener">GitHub</a></p>
+        <p style="margin-top:0.5rem;font-size:13px;color:var(--gray-500);">فایل بعدی: speech-therapy.html | تابستان ۲۰۲۶</p>
+    </footer>
+</body>
+          </html>
