@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>salad - سالاد | راهیلا</title>
+    <meta name="description" content="همه چیز درباره سالاد، تاریخچه، انواع، ارزش غذایی و طرز تهیه محبوب‌ترین سالادهای جهان">
+    <style>
+        :root {
+            --blue-primary: #1a73e8;
+            --blue-dark: #1557b0;
+            --blue-light: #e8f0fe;
+            --blue-accent: #4285f4;
+            --white: #ffffff;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-300: #cbd5e1;
+            --gray-400: #94a3b8;
+            --gray-500: #64748b;
+            --gray-600: #475569;
+            --gray-700: #334155;
+            --gray-800: #1e293b;
+            --gray-900: #0f172a;
+            --gold: #f59e0b;
+            --gold-light: #fef3c7;
+            --gold-border: #d97706;
+            --red: #ef4444;
+            --red-light: #fee2e2;
+            --red-border: #dc2626;
+            --green: #10b981;
+            --green-light: #d1fae5;
+            --green-border: #059669;
+            --purple: #8b5cf6;
+            --purple-light: #ede9fe;
+            --purple-border: #7c3aed;
+            --shadow-sm: 0 1px 2px 0 rgba(0,0,0,0.05);
+            --shadow: 0 1px 3px 0 rgba(0,0,0,0.1),0 1px 2px -1px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1),0 2px 4px -2px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1),0 4px 6px -4px rgba(0,0,0,0.1);
+            --radius: 12px;
+            --radius-sm: 8px;
+        }
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{
+            font-family:'Vazirmatn','Segoe UI',Tahoma,sans-serif;
+            background:linear-gradient(135deg,#f0f4ff 0%,#e8f0fe 30%,#ffffff 70%,#f0f7ff 100%);
+            color:var(--gray-800);line-height:1.7;min-height:100vh;
+            display:flex;flex-direction:column;background-attachment:fixed;
+        }
+        .site-header{
+            background:linear-gradient(135deg,var(--blue-primary) 0%,var(--blue-dark) 100%);
+            color:var(--white);padding:1.2rem 2rem;box-shadow:var(--shadow-lg);
+            position:sticky;top:0;z-index:100;
+        }
+        .header-inner{
+            max-width:1200px;margin:0 auto;display:flex;align-items:center;
+            justify-content:space-between;flex-wrap:wrap;gap:1rem;
+        }
+        .logo{font-size:28px;font-weight:800;color:var(--white);text-decoration:none;display:flex;align-items:center;gap:0.5rem;}
+        .logo-icon{font-size:32px;}
+        .nav-links{display:flex;gap:1.5rem;align-items:center;flex-wrap:wrap;}
+        .nav-links a{
+            color:rgba(255,255,255,0.9);text-decoration:none;font-size:16px;
+            font-weight:500;transition:all 0.3s ease;padding:0.5rem 0.8rem;border-radius:var(--radius-sm);
+        }
+        .nav-links a:hover{color:var(--white);background:rgba(255,255,255,0.15);transform:translateY(-1px);}
+        .main-container{max-width:1100px;margin:0 auto;padding:2rem 1.5rem;flex:1;width:100%;}
+        .breadcrumb{display:flex;gap:0.5rem;align-items:center;font-size:14px;color:var(--gray-500);margin-bottom:1.5rem;flex-wrap:wrap;}
+        .breadcrumb a{color:var(--blue-primary);text-decoration:none;transition:color 0.2s;}
+        .breadcrumb a:hover{color:var(--blue-dark);text-decoration:underline;}
+        .breadcrumb .separator{color:var(--gray-400);}
+        .page-title{
+            font-size:28px;font-weight:800;color:var(--gray-900);margin-bottom:0.5rem;
+            position:relative;display:inline-block;
+        }
+        .page-title::after{
+            content:'';position:absolute;bottom:-6px;right:0;width:60%;height:4px;
+            background:linear-gradient(90deg,var(--blue-primary),var(--blue-accent));border-radius:2px;
+        }
+        .english-title{font-size:16px;color:var(--gray-500);margin-bottom:2rem;font-style:italic;}
+        .section-title{
+            font-size:22px;font-weight:700;color:var(--gray-900);margin:2rem 0 1rem;
+            padding-bottom:0.5rem;border-bottom:2px solid var(--blue-light);
+        }
+        .card{
+            background:var(--white);border-radius:var(--radius);padding:2rem;
+            margin-bottom:1.5rem;box-shadow:var(--shadow-md);border:1px solid var(--gray-100);
+            transition:all 0.3s ease;
+        }
+        .card:hover{box-shadow:var(--shadow-lg);transform:translateY(-2px);border-color:var(--blue-light);}
+        .card p,.card li{font-size:17px;color:var(--gray-700);}
+        .info-table{
+            width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:16px;
+            background:var(--white);border-radius:var(--radius-sm);overflow:hidden;box-shadow:var(--shadow);
+        }
+        .info-table thead{background:linear-gradient(135deg,var(--blue-primary),var(--blue-dark));color:var(--white);}
+        .info-table th{padding:1rem 1.2rem;font-weight:600;font-size:16px;text-align:right;}
+        .info-table td{padding:0.9rem 1.2rem;font-size:16px;border-bottom:1px solid var(--gray-100);color:var(--gray-700);}
+        .info-table tbody tr:hover{background:var(--blue-light);}
+        .info-table tbody tr:last-child td{border-bottom:none;}
+        .btn{
+            display:inline-block;padding:0.75rem 1.8rem;font-size:17px;font-weight:600;
+            border:none;border-radius:var(--radius-sm);cursor:pointer;text-decoration:none;
+            transition:all 0.3s ease;text-align:center;font-family:inherit;
+        }
+        .btn-primary{
+            background:linear-gradient(135deg,var(--blue-primary),var(--blue-accent));
+            color:var(--white);box-shadow:var(--shadow-md);
+        }
+        .btn-primary:hover{background:linear-gradient(135deg,var(--blue-dark),var(--blue-primary));transform:translateY(-2px);box-shadow:var(--shadow-lg);}
+        .btn-outline{background:var(--white);color:var(--blue-primary);border:2px solid var(--blue-primary);}
+        .btn-outline:hover{background:var(--blue-light);transform:translateY(-2px);}
+
+        .box-gold{
+            background:linear-gradient(135deg,var(--gold-light),#fffbeb);
+            border-right:4px solid var(--gold-border);border-radius:var(--radius-sm);
+            padding:1.2rem 1.5rem;margin:1.5rem 0;font-size:17px;color:var(--gray-800);
+        }
+        .box-blue{
+            background:linear-gradient(135deg,var(--blue-light),#dbeafe);
+            border-right:4px solid var(--blue-primary);border-radius:var(--radius-sm);
+            padding:1.2rem 1.5rem;margin:1.5rem 0;font-size:17px;color:var(--gray-800);
+        }
+        .box-green{
+            background:linear-gradient(135deg,var(--green-light),#ecfdf5);
+            border-right:4px solid var(--green-border);border-radius:var(--radius-sm);
+            padding:1.2rem 1.5rem;margin:1.5rem 0;font-size:17px;color:var(--gray-800);
+        }
+        .box-red{
+            background:linear-gradient(135deg,var(--red-light),#fef2f2);
+            border-right:4px solid var(--red-border);border-radius:var(--radius-sm);
+            padding:1.2rem 1.5rem;margin:1.5rem 0;font-size:17px;color:var(--gray-800);
+        }
+        .box-purple{
+            background:linear-gradient(135deg,var(--purple-light),#f5f3ff);
+            border-right:4px solid var(--purple-border);border-radius:var(--radius-sm);
+            padding:1.2rem 1.5rem;margin:1.5rem 0;font-size:17px;color:var(--gray-800);
+        }
+
+        .image-gallery{
+            display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;
+            margin:1.5rem 0;
+        }
+        .image-card{
+            background:linear-gradient(135deg,#e8f0fe,#dbeafe);border-radius:var(--radius);
+            padding:2.5rem 1rem;text-align:center;color:var(--blue-primary);
+            font-size:14px;border:2px dashed var(--blue-accent);font-weight:500;
+            transition:all 0.3s ease;min-height:180px;display:flex;
+            flex-direction:column;align-items:center;justify-content:center;gap:0.8rem;
+        }
+        .image-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--blue-dark);}
+        .image-card .img-icon{font-size:48px;}
+        .image-card .img-source{font-size:11px;color:var(--gray-500);margin-top:0.3rem;}
+
+        .grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin:1.5rem 0;}
+        .grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem;margin:1.5rem 0;}
+        .styled-list{list-style:none;padding:0;}
+        .styled-list li{
+            padding:0.8rem 1rem;margin-bottom:0.5rem;background:var(--white);
+            border-radius:var(--radius-sm);font-size:17px;border-right:3px solid var(--blue-accent);
+            box-shadow:var(--shadow-sm);transition:all 0.2s;
+        }
+        .styled-list li:hover{border-right-color:var(--blue-dark);background:var(--blue-light);transform:translateX(-4px);}
+
+        .recipe-card{
+            background:linear-gradient(135deg,#fffdf7,#fefce8);
+            border:2px solid var(--gold-light);border-radius:var(--radius);
+            padding:1.5rem;text-align:center;
+        }
+        .recipe-card h4{font-size:19px;color:var(--gold-border);margin-bottom:0.8rem;}
+        .recipe-card p{font-size:15px;color:var(--gray-600);}
+
+        .site-footer{
+            background:var(--gray-900);color:var(--gray-300);text-align:center;
+            padding:1.5rem;font-size:14px;margin-top:3rem;border-top:4px solid var(--blue-primary);
+        }
+        .site-footer a{color:var(--blue-accent);text-decoration:none;font-size:14px;}
+        .site-footer a:hover{text-decoration:underline;color:var(--blue-light);}
+        @media(max-width:768px){
+            .header-inner{flex-direction:column;text-align:center;}
+            .page-title{font-size:24px;}.section-title{font-size:20px;}
+            .card{padding:1.2rem;}.info-table th,.info-table td{padding:0.6rem 0.8rem;font-size:14px;}
+            .image-gallery{grid-template-columns:repeat(auto-fit,minmax(150px,1fr));}
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="logo"><span class="logo-icon">🌊</span> راهیلا</a>
+            <nav class="nav-links">
+                <a href="index.html">خانه</a>
+                <a href="salad.html" style="background:rgba(255,255,255,0.2);">سالاد</a>
+                <a href="salt.html">نمک</a>
+                <a href="saffron.html">زعفران</a>
+                <a href="sage.html">مریم‌گلی</a>
+                <a href="contact.html">تماس</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <nav class="breadcrumb">
+            <a href="index.html">خانه</a><span class="separator">›</span>
+            <a href="s.html">حرف S</a><span class="separator">›</span>
+            <span>سالاد</span>
+        </nav>
+
+        <h1 class="page-title">سالاد</h1>
+        <p class="english-title">Salad — The Art of Fresh Eating</p>
+
+        <div class="image-gallery">
+            <div class="image-card"><span class="img-icon">🥗</span><span>سالاد سبز کلاسیک</span><span class="img-source">📸 Unsplash: green salad</span></div>
+            <div class="image-card"><span class="img-icon">🥬</span><span>سالاد کاهو و سبزیجات</span><span class="img-source">📸 Unsplash: lettuce salad</span></div>
+            <div class="image-card"><span class="img-icon">🍅</span><span>سالاد یونانی</span><span class="img-source">📸 Unsplash: greek salad</span></div>
+            <div class="image-card"><span class="img-icon">🥑</span><span>سالاد آووکادو</span><span class="img-source">📸 Unsplash: avocado salad</span></div>
+            <div class="image-card"><span class="img-icon">🍜</span><span>سالاد ماکارونی</span><span class="img-source">📸 Unsplash: pasta salad</span></div>
+            <div class="image-card"><span class="img-icon">🥒</span><span>سالاد شیرازی</span><span class="img-source">📸 Wikimedia: Shirazi salad</span></div>
+        </div>
+
+        <div class="card">
+            <p><strong>سالاد</strong> (از ریشه لاتین "Salata" به معنی «نمک‌زده») به طیف وسیعی از غذاهای سرد یا گرم گفته می‌شود که پایه اصلی آن‌ها سبزیجات خام یا پخته است و معمولاً با نوعی سس طعم‌دار می‌شوند. تاریخ سالاد به بیش از ۲۵۰۰ سال پیش بازمی‌گردد — یونانیان و رومیان باستان سبزیجات خام را با نمک، روغن زیتون و سرکه مصرف می‌کردند. امروزه سالادها از پیش‌غذاهای ساده تا وعده‌های غذایی کامل و پیچیده تنوع دارند.</p>
+        </div>
+
+        <div class="box-gold">
+            <strong>💡 ریشه تاریخی:</strong> واژه "Salad" از کلمه لاتین "Herba Salata" (سبزیجات نمک‌زده) گرفته شده است. رومیان باستان سبزیجات را با آب نمک (brine) طعم‌دار می‌کردند — این سنت بعدها به استفاده از سس‌های روغن و سرکه تکامل یافت.
+        </div>
+
+        <h2 class="section-title">🥗 انواع سالاد بر اساس ترکیبات</h2>
+        <div class="grid-2">
+            <div class="card">
+                <h3 style="font-size:20px;color:var(--blue-dark);margin-bottom:0.8rem;">سالاد سبز (Green Salad)</h3>
+                <p style="font-size:17px;">پایه‌ای‌ترین نوع سالاد با کاهو، اسفناج، روکولا و سایر سبزیجات برگ‌دار. معمولاً با وینگرت (سرکه و روغن زیتون) سرو می‌شود. کمکالری و سرشار از فیبر.</p>
+            </div>
+            <div class="card">
+                <h3 style="font-size:20px;color:var(--blue-dark);margin-bottom:0.8rem;">سالاد سبزیجات (Vegetable Salad)</h3>
+                <p style="font-size:17px;">ترکیبی از سبزیجات غیربرگی: گوجه، خیار، فلفل دلمه‌ای، هویج، کلم. سالاد شیرازی ایرانی و سالاد یونانی در این دسته قرار می‌گیرند.</p>
+            </div>
+            <div class="card">
+                <h3 style="font-size:20px;color:var(--blue-dark);margin-bottom:0.8rem;">سالاد پروتئینی (Protein Salad)</h3>
+                <p style="font-size:17px;">حاوی مرغ گریل‌شده، ماهی تن، تخم‌مرغ آب‌پز، میگو، حبوبات (نخود، لوبیا) یا پنیر. به عنوان وعده اصلی غذایی استفاده می‌شود. سالاد سزار و نیکوآز فرانسوی معروف‌ترین نمونه‌ها هستند.</p>
+            </div>
+            <div class="card">
+                <h3 style="font-size:20px;color:var(--blue-dark);margin-bottom:0.8rem;">سالاد میوه (Fruit Salad)</h3>
+                <p style="font-size:17px;">ترکیبی از میوه‌های تازه فصل — اغلب با آبلیمو، عسل، ماست یا خامه طعم‌دار می‌شود. دسر محبوب در سراسر جهان از آسیا تا آمریکای لاتین.</p>
+            </div>
+        </div>
+
+        <h2 class="section-title">🌍 سالادهای معروف جهان</h2>
+        <div class="grid-3">
+            <div class="recipe-card">
+                <h4>🥗 سالاد سزار (Caesar)</h4>
+                <p><strong>خاستگاه:</strong> تیخوانا، مکزیک (۱۹۲۴)<br>کاهوی رومی، کروتون، پارمزان، سس سزار (تخم‌مرغ، آنچوی، سیر، لیمو)</p>
+            </div>
+            <div class="recipe-card">
+                <h4>🥒 سالاد شیرازی</h4>
+                <p><strong>خاستگاه:</strong> ایران (شیراز)<br>خیار، گوجه، پیاز، آبغوره یا آبلیمو، نعناع خشک — ساده، تازه و پرطرفدار</p>
+            </div>
+            <div class="recipe-card">
+                <h4>🇬🇷 سالاد یونانی (Horiatiki)</h4>
+                <p><strong>خاستگاه:</strong> یونان<br>گوجه، خیار، پیاز قرمز، زیتون کالاماتا، پنیر فتا، روغن زیتون، ارگانو</p>
+            </div>
+            <div class="recipe-card">
+                <h4>🇫🇷 سالاد نیکوآز (Niçoise)</h4>
+                <p><strong>خاستگاه:</strong> نیس، فرانسه<br>ماهی تن، تخم‌مرغ آب‌پز، زیتون، لوبیا سبز، سیب‌زمینی، گوجه</p>
+            </div>
+            <div class="recipe-card">
+                <h4>🇩🇪 سالاد سیب‌زمینی آلمانی</h4>
+                <p><strong>خاستگاه:</strong> آلمان<br>سیب‌زمینی آب‌پز، پیاز، خیارشور، مایونز یا وینگرت گرم با بیکن</p>
+            </div>
+            <div class="recipe-card">
+                <h4>🥬 سالاد تبوله (Tabbouleh)</h4>
+                <p><strong>خاستگاه:</strong> لبنان / شامات<br>بلغور گندم، جعفری فراوان، نعناع، گوجه، پیاز، آبلیمو، روغن زیتون</p>
+            </div>
+        </div>
+
+        <div class="box-blue">
+            <strong>🇮🇷 سالاد در سفره ایرانی:</strong> سالاد شیرازی همراه همیشگی قرمه‌سبزی و کباب است. سالاد فصل (کاهو، گوجه، خیار، هویج با آبلیمو و روغن زیتون) استاندارد رستوران‌های ایرانی است. سالاد الویه (سیب‌زمینی، تخم‌مرغ، نخود سبز، خیارشور با مایونز) نیز از دوران قاجار به سفره ایرانی راه یافته و اکنون جزء جدایی‌ناپذیر مهمانی‌هاست.
+        </div>
+
+        <h2 class="section-title">🧪 ارزش غذایی و فواید سلامتی</h2>
+        <div class="card" style="padding:0;overflow:hidden;">
+            <table class="info-table">
+                <thead><tr><th>ماده مغذی</th><th>منبع در سالاد</th><th>فایده برای بدن</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>فیبر</strong></td><td>سبزیجات برگ‌دار، کلم، هویج</td><td>سلامت گوارش، کاهش کلسترول</td></tr>
+                    <tr><td><strong>ویتامین C</strong></td><td>فلفل دلمه‌ای، گوجه، مرکبات</td><td>تقویت سیستم ایمنی</td></tr>
+                    <tr><td><strong>ویتامین K</strong></td><td>اسفناج، کاهو، کلم پیچ</td><td>انعقاد خون، سلامت استخوان</td></tr>
+                    <tr><td><strong>فولات (B9)</strong></td><td>اسفناج، مارچوبه، آووکادو</td><td>تولید گلبول قرمز، سلامت جنین</td></tr>
+                    <tr><td><strong>پتاسیم</strong></td><td>گوجه، خیار، آووکادو</td><td>تنظیم فشار خون</td></tr>
+                    <tr><td><strong>آنتی‌اکسیدان‌ها</strong></td><td>سبزیجات رنگی، روغن زیتون</td><td>ضد التهاب، ضد پیری</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="box-green">
+            <strong>✅ نکته سلامتی:</strong> مصرف روزانه یک کاسه سالاد سبز همراه با وعده غذایی، خطر بیماری‌های قلبی را ۱۵٪ کاهش می‌دهد. اما مراقب سس‌های پرکالری باشید — یک قاشق مایونز ۹۰ کالری دارد! سس وینگرت خانگی (روغن زیتون + سرکه بالزامیک + کمی نمک و فلفل) سالم‌ترین گزینه است.
+        </div>
+
+        <h2 class="section-title">👩‍🍳 اصول تهیه سالاد حرفه‌ای</h2>
+        <div class="card">
+            <ul class="styled-list">
+                <li><strong>۱. تازگی مواد اولیه:</strong> مهم‌ترین اصل — سبزیجات باید کاملاً تازه، شسته و کاملاً خشک شده باشند. سبزی خیس، سس را رقیق و بی‌مزه می‌کند.</li>
+                <li><strong>۲. تعادل طعم‌ها:</strong> ترکیب طعم‌های شیرین (میوه، عسل)، شور (نمک، پنیر)، ترش (لیمو، سرکه)، تلخ (سبزیجات برگ‌دار) و اومامی (گوجه، قارچ).</li>
+                <li><strong>۳. بافت متنوع:</strong> ترکیب بافت‌های ترد (کروتون، آجیل)، نرم (آووکادو، پنیر)، آبدار (گوجه، خیار) و جویدنی (گوشت، حبوبات).</li>
+                <li><strong>۴. سس در لحظه آخر:</strong> سس را درست قبل از سرو اضافه کنید تا سبزیجات پلاسیده و آبکی نشوند. قانون طلایی: «سالاد را با سس غرق نکنید — فقط آن را بپوشانید».</li>
+                <li><strong>۵. رنگ و زیبایی:</strong> از سبزیجات با رنگ‌های متنوع استفاده کنید — قرمز (گوجه، فلفل)، سبز (کاهو، آووکادو)، نارنجی (هویج)، بنفش (کلم قرمز، پیاز).</li>
+            </ul>
+        </div>
+
+        <div class="box-purple">
+            <strong>👩‍🍳 نقل قول از سرآشپزهای بزرگ:</strong> «تهیه سالاد خوب نیازمند هنر، ذوق و دقت است. یک سالاد عالی مانند یک سمفونی است — همه اجزا باید با هم هماهنگ باشند، بدون اینکه هیچ‌یک بر دیگری غلبه کند.» — جولیا چایلد، سرآشپز افسانه‌ای آمریکایی
+        </div>
+
+        <h2 class="section-title">🍽️ سس‌های سالاد — قلب طعم</h2>
+        <div class="grid-2">
+            <div class="card">
+                <h3 style="font-size:20px;color:var(--blue-dark);">وینگرت کلاسیک (Vinaigrette)</h3>
+                <p style="font-size:17px;"><strong>فرمول طلایی:</strong> ۳ قسمت روغن زیتون + ۱ قسمت سرکه (بالزامیک، سیب، انگور) + نمک، فلفل، کمی خردل دیژون به عنوان امولسیفایر. قابل افزودن سیر، عسل یا سبزیجات معطر.</p>
+            </div>
+            <div class="card">
+                <h3 style="font-size:20px;color:var(--blue-dark);">سس مایونز (Mayonnaise)</h3>
+                <p style="font-size:17px;">پایه بسیاری از سس‌های خامه‌ای: سس هزار جزیره (کچاپ + مایونز + خیارشور)، سس رنچ (مایونز + دوغ + سیر + شوید)، سس بلو چیز (مایونز + پنیر آبی).</p>
+            </div>
+        </div>
+
+        <div class="box-red">
+            <strong>⚠️ هشدار غذایی:</strong> سالادهای آماده فروشگاهی که در کیسه‌های پلاستیکی عرضه می‌شوند، می‌توانند منبع باکتری‌های خطرناک مانند <em>E. coli</em> و <em>Listeria</em> باشند. در سال ۲۰۱۸، شیوع لیستریا در سالادهای بسته‌بندی‌شده در آمریکا منجر به مرگ ۵ نفر شد. همیشه سالادهای بسته‌بندی را مجدداً بشویید، حتی اگر روی آن نوشته «شسته شده و آماده مصرف».
+        </div>
+
+        <div style="text-align:center;margin:2.5rem 0;">
+            <a href="salt.html" class="btn btn-primary" style="margin:0.5rem;">🧂 مقاله نمک</a>
+            <a href="s.html" class="btn btn-outline" style="margin:0.5rem;">📚 همه مقالات S</a>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>🌐 <a href="https://rahilanab.com">rahilanab.com</a> — پروژه دانشنامه راهیلا | حرف S: سالاد</p>
+        <p style="margin-top:0.3rem;">📧 <a href="mailto:mahniush.binazir@gmail.com">mahniush.binazir@gmail.com</a> | 🐙 <a href="https://github.com/rahila-ir/rahila-site" target="_blank" rel="noopener">GitHub</a></p>
+        <p style="margin-top:0.5rem;font-size:13px;color:var(--gray-500);">تم آبی-سفید | ۲۰۰ فایل HTML | ادامه حرف S | تابستان ۲۰۲۶</p>
+    </footer>
+</body>
+</html>
