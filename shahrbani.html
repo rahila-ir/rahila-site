@@ -1,1 +1,279 @@
-<!DOCTYPE html><html lang="fa"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>🏛️ مجلس و شورا | رهیلا</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial;background:radial-gradient(circle at center,#0a1a1a,#1a4a4a,#66ccaa);color:#fff;text-align:center;padding:15px;min-height:100vh}.header{background:rgba(255,255,255,.08);backdrop-filter:blur(20px);border-radius:25px;padding:20px;margin-bottom:15px}.header h1{color:#ffd700;font-size:22px}.back-btn{display:inline-block;background:rgba(255,255,255,.15);color:#fff;padding:8px 20px;border-radius:20px;text-decoration:none;margin:10px 0;font-size:14px}.section-title{color:#ffd700;font-size:18px;margin:20px 0 10px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.card{background:rgba(255,255,255,.05);border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,.1);text-align:right}.card:active{background:rgba(255,215,0,.2)}.card h3{font-size:15px;color:#ffd700}</style></head><body><div class="header"><h1>🏛️ مجلس و شورا</h1></div><a href="index.html" class="back-btn">🔙 برگشت</a><div class="section-title">🏛️ حکومت</div><div class="grid"><div class="card"><h3>قوه مقننه</h3></div><div class="card"><h3>قوه مجریه</h3></div><div class="card"><h3>قوه قضائیه</h3></div><div class="card"><h3>مجلس شورای اسلامی</h3></div><div class="card"><h3>مجلس خبرگان</h3></div><div class="card"><h3>شورای شهر</h3></div></div><div class="section-title">📝 اداری</div><div class="grid"><div class="card"><h3>ثبت احوال</h3></div><div class="card"><h3>تغییر نام و نام خانوادگی</h3></div><div class="card"><h3>سند مالکیت</h3></div><div class="card"><h3>شهرداری‌ها</h3></div><div class="card"><h3>راه‌های شکایت</h3></div><div class="card"><h3>شورای دانش‌آموزی</h3></div></div><p style="margin-top:15px"><a href="index.html" style="color:#ffd700">🔙 برگشت</a></p></body></html>
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shahrbani - شهربانی | راهیلا</title>
+    <meta name="description" content="همه چیز درباره شهربانی، تاریخچه نیروی انتظامی در ایران، وظایف، ساختار و نقش پلیس در جامعه">
+    <style>
+        :root {
+            --blue-primary: #1a73e8;
+            --blue-dark: #1557b0;
+            --blue-light: #e8f0fe;
+            --blue-accent: #4285f4;
+            --white: #ffffff;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-300: #cbd5e1;
+            --gray-400: #94a3b8;
+            --gray-500: #64748b;
+            --gray-600: #475569;
+            --gray-700: #334155;
+            --gray-800: #1e293b;
+            --gray-900: #0f172a;
+            --gold: #f59e0b;
+            --gold-light: #fef3c7;
+            --gold-border: #d97706;
+            --red: #ef4444;
+            --red-light: #fee2e2;
+            --red-border: #dc2626;
+            --green: #10b981;
+            --green-light: #d1fae5;
+            --green-border: #059669;
+            --purple: #8b5cf6;
+            --purple-light: #ede9fe;
+            --purple-border: #7c3aed;
+            --shadow-sm: 0 1px 2px 0 rgba(0,0,0,0.05);
+            --shadow: 0 1px 3px 0 rgba(0,0,0,0.1),0 1px 2px -1px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1),0 2px 4px -2px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1),0 4px 6px -4px rgba(0,0,0,0.1);
+            --radius: 12px;
+            --radius-sm: 8px;
+        }
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{
+            font-family:'Vazirmatn','Segoe UI',Tahoma,sans-serif;
+            background:linear-gradient(135deg,#f0f4ff 0%,#e8f0fe 30%,#ffffff 70%,#f0f7ff 100%);
+            color:var(--gray-800);line-height:1.7;min-height:100vh;
+            display:flex;flex-direction:column;background-attachment:fixed;
+        }
+        .site-header{
+            background:linear-gradient(135deg,var(--blue-primary) 0%,var(--blue-dark) 100%);
+            color:var(--white);padding:1.2rem 2rem;box-shadow:var(--shadow-lg);
+            position:sticky;top:0;z-index:100;
+        }
+        .header-inner{
+            max-width:1200px;margin:0 auto;display:flex;align-items:center;
+            justify-content:space-between;flex-wrap:wrap;gap:1rem;
+        }
+        .logo{font-size:28px;font-weight:800;color:var(--white);text-decoration:none;display:flex;align-items:center;gap:0.5rem;}
+        .logo-icon{font-size:32px;}
+        .nav-links{display:flex;gap:1.5rem;align-items:center;flex-wrap:wrap;}
+        .nav-links a{color:rgba(255,255,255,0.9);text-decoration:none;font-size:16px;font-weight:500;transition:all 0.3s ease;padding:0.5rem 0.8rem;border-radius:var(--radius-sm);}
+        .nav-links a:hover{color:var(--white);background:rgba(255,255,255,0.15);transform:translateY(-1px);}
+        .main-container{max-width:1100px;margin:0 auto;padding:2rem 1.5rem;flex:1;width:100%;}
+        .breadcrumb{display:flex;gap:0.5rem;align-items:center;font-size:14px;color:var(--gray-500);margin-bottom:1.5rem;flex-wrap:wrap;}
+        .breadcrumb a{color:var(--blue-primary);text-decoration:none;transition:color 0.2s;}
+        .breadcrumb a:hover{color:var(--blue-dark);text-decoration:underline;}
+        .breadcrumb .separator{color:var(--gray-400);}
+        .page-title{font-size:28px;font-weight:800;color:var(--gray-900);margin-bottom:0.5rem;position:relative;display:inline-block;}
+        .page-title::after{content:'';position:absolute;bottom:-6px;right:0;width:60%;height:4px;background:linear-gradient(90deg,var(--blue-primary),var(--blue-accent));border-radius:2px;}
+        .english-title{font-size:16px;color:var(--gray-500);margin-bottom:2rem;font-style:italic;}
+        .section-title{font-size:22px;font-weight:700;color:var(--gray-900);margin:2rem 0 1rem;padding-bottom:0.5rem;border-bottom:2px solid var(--blue-light);}
+        .card{background:var(--white);border-radius:var(--radius);padding:2rem;margin-bottom:1.5rem;box-shadow:var(--shadow-md);border:1px solid var(--gray-100);transition:all 0.3s ease;}
+        .card:hover{box-shadow:var(--shadow-lg);transform:translateY(-2px);border-color:var(--blue-light);}
+        .card p,.card li{font-size:17px;color:var(--gray-700);}
+        .info-table{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:16px;background:var(--white);border-radius:var(--radius-sm);overflow:hidden;box-shadow:var(--shadow);}
+        .info-table thead{background:linear-gradient(135deg,var(--blue-primary),var(--blue-dark));color:var(--white);}
+        .info-table th{padding:1rem 1.2rem;font-weight:600;font-size:16px;text-align:right;}
+        .info-table td{padding:0.9rem 1.2rem;font-size:16px;border-bottom:1px solid var(--gray-100);color:var(--gray-700);}
+        .info-table tbody tr:hover{background:var(--blue-light);}
+        .info-table tbody tr:last-child td{border-bottom:none;}
+        .btn{display:inline-block;padding:0.75rem 1.8rem;font-size:17px;font-weight:600;border:none;border-radius:var(--radius-sm);cursor:pointer;text-decoration:none;transition:all 0.3s ease;text-align:center;font-family:inherit;}
+        .btn-primary{background:linear-gradient(135deg,var(--blue-primary),var(--blue-accent));color:var(--white);box-shadow:var(--shadow-md);}
+        .btn-primary:hover{background:linear-gradient(135deg,var(--blue-dark),var(--blue-primary));transform:translateY(-2px);box-shadow:var(--shadow-lg);}
+        .btn-outline{background:var(--white);color:var(--blue-primary);border:2px solid var(--blue-primary);}
+        .btn-outline:hover{background:var(--blue-light);transform:translateY(-2px);}
+        .box-gold{background:linear-gradient(135deg,var(--gold-light),#fffbeb);border-right:4px solid var(--gold-border);border-radius:var(--radius-sm);padding:1.2rem 1.5rem;margin:1.5rem 0;font-size:17px;color:var(--gray-800);}
+        .box-blue{background:linear-gradient(135deg,var(--blue-light),#dbeafe);border-right:4px solid var(--blue-primary);border-radius:var(--radius-sm);padding:1.2rem 1.5rem;margin:1.5rem 0;font-size:17px;color:var(--gray-800);}
+        .box-green{background:linear-gradient(135deg,var(--green-light),#ecfdf5);border-right:4px solid var(--green-border);border-radius:var(--radius-sm);padding:1.2rem 1.5rem;margin:1.5rem 0;font-size:17px;color:var(--gray-800);}
+        .box-red{background:linear-gradient(135deg,var(--red-light),#fef2f2);border-right:4px solid var(--red-border);border-radius:var(--radius-sm);padding:1.2rem 1.5rem;margin:1.5rem 0;font-size:17px;color:var(--gray-800);}
+        .box-purple{background:linear-gradient(135deg,var(--purple-light),#f5f3ff);border-right:4px solid var(--purple-border);border-radius:var(--radius-sm);padding:1.2rem 1.5rem;margin:1.5rem 0;font-size:17px;color:var(--gray-800);}
+        .image-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin:1.5rem 0;}
+        .image-card{background:linear-gradient(135deg,#e8f0fe,#dbeafe);border-radius:var(--radius);padding:2.5rem 1rem;text-align:center;color:var(--blue-primary);font-size:14px;border:2px dashed var(--blue-accent);font-weight:500;transition:all 0.3s ease;min-height:180px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.8rem;}
+        .image-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--blue-dark);}
+        .image-card .img-icon{font-size:48px;}
+        .image-card .img-source{font-size:11px;color:var(--gray-500);margin-top:0.3rem;}
+        .grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin:1.5rem 0;}
+        .grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem;margin:1.5rem 0;}
+        .styled-list{list-style:none;padding:0;}
+        .styled-list li{padding:0.8rem 1rem;margin-bottom:0.5rem;background:var(--white);border-radius:var(--radius-sm);font-size:17px;border-right:3px solid var(--blue-accent);box-shadow:var(--shadow-sm);transition:all 0.2s;}
+        .styled-list li:hover{border-right-color:var(--blue-dark);background:var(--blue-light);transform:translateX(-4px);}
+        .highlight-num{font-size:42px;font-weight:900;color:var(--blue-primary);line-height:1;}
+        .stat-card{text-align:center;padding:1.5rem;background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);border-top:4px solid var(--blue-accent);}
+        .stat-card .stat-label{font-size:15px;color:var(--gray-500);margin-top:0.3rem;}
+        .timeline{position:relative;padding-right:2rem;margin:1.5rem 0;}
+        .timeline::before{content:'';position:absolute;right:0;top:0;bottom:0;width:3px;background:linear-gradient(to bottom,var(--blue-primary),var(--blue-accent),var(--purple));border-radius:2px;}
+        .timeline-item{position:relative;margin-bottom:2rem;padding-right:1.5rem;}
+        .timeline-item::before{content:'';position:absolute;right:-2.45rem;top:0.5rem;width:14px;height:14px;background:var(--blue-primary);border-radius:50%;border:3px solid var(--white);box-shadow:var(--shadow-md);}
+        .timeline-year{font-size:15px;font-weight:700;color:var(--blue-primary);margin-bottom:0.3rem;}
+        .timeline-text{font-size:16px;color:var(--gray-700);}
+        .imdb-link{display:inline-flex;align-items:center;gap:0.4rem;background:#f5c518;color:#000;padding:0.4rem 0.9rem;border-radius:20px;text-decoration:none;font-size:14px;font-weight:700;transition:all 0.3s;}
+        .imdb-link:hover{background:#e5b500;transform:scale(1.05);box-shadow:var(--shadow-md);}
+        .movie-card{background:linear-gradient(135deg,#fffbe6,#fff3cc);border:2px solid #f5c518;border-radius:var(--radius);padding:1.5rem;text-align:center;margin:1rem 0;}
+        .movie-card h4{font-size:19px;color:#000;margin-bottom:0.5rem;}
+        .movie-card p{font-size:15px;color:var(--gray-700);}
+        .site-footer{background:var(--gray-900);color:var(--gray-300);text-align:center;padding:1.5rem;font-size:14px;margin-top:3rem;border-top:4px solid var(--blue-primary);}
+        .site-footer a{color:var(--blue-accent);text-decoration:none;font-size:14px;}
+        .site-footer a:hover{text-decoration:underline;color:var(--blue-light);}
+        @media(max-width:768px){
+            .header-inner{flex-direction:column;text-align:center;}
+            .page-title{font-size:24px;}.section-title{font-size:20px;}
+            .card{padding:1.2rem;}.info-table th,.info-table td{padding:0.6rem 0.8rem;font-size:14px;}
+            .image-gallery{grid-template-columns:repeat(auto-fit,minmax(150px,1fr));}
+            .highlight-num{font-size:32px;}
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="logo"><span class="logo-icon">🌊</span> راهیلا</a>
+            <nav class="nav-links">
+                <a href="index.html">خانه</a>
+                <a href="shahrbani.html" style="background:rgba(255,255,255,0.2);">شهربانی</a>
+                <a href="schools-full.html">مدارس</a>
+                <a href="salt.html">نمک</a>
+                <a href="saffron.html">زعفران</a>
+                <a href="contact.html">تماس</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <nav class="breadcrumb">
+            <a href="index.html">خانه</a><span class="separator">›</span>
+            <a href="s.html">حرف S</a><span class="separator">›</span>
+            <span>شهربانی</span>
+        </nav>
+
+        <h1 class="page-title">شهربانی</h1>
+        <p class="english-title">Shahrbani — Police & Law Enforcement in Iran</p>
+
+        <div class="grid-3">
+            <div class="stat-card"><div class="highlight-num">۱۹۱۳</div><div class="stat-label">سال تأسیس شهربانی ایران</div></div>
+            <div class="stat-card"><div class="highlight-num">۲۵۰K+</div><div class="stat-label">نیروی فعال فراجا</div></div>
+            <div class="stat-card"><div class="highlight-num">۱۱۰</div><div class="stat-label">شماره اضطراری پلیس ایران</div></div>
+        </div>
+
+        <div class="image-gallery">
+            <div class="image-card"><span class="img-icon">👮</span><span>پلیس راهنمایی و رانندگی</span><span class="img-source">📸 Unsplash: traffic police</span></div>
+            <div class="image-card"><span class="img-icon">🚔</span><span>خودروی پلیس ایران</span><span class="img-source">📸 Wikimedia: Iranian police car</span></div>
+            <div class="image-card"><span class="img-icon">🏛️</span><span>ساختمان شهربانی کل کشور</span><span class="img-source">📸 Wikimedia: Shahrbani building</span></div>
+            <div class="image-card"><span class="img-icon">🪖</span><span>یونیفرم تاریخی شهربانی</span><span class="img-source">📸 Wikimedia: old police uniform</span></div>
+            <div class="image-card"><span class="img-icon">🚨</span><span>چراغ گردون پلیس</span><span class="img-source">📸 Unsplash: police lights</span></div>
+            <div class="image-card"><span class="img-icon">👮‍♀️</span><span>پلیس زن در ایران</span><span class="img-source">📸 Wikimedia: Iranian female police</span></div>
+        </div>
+
+        <div class="card">
+            <p><strong>شهربانی</strong> نام تاریخی نیروی پلیس در ایران است که از سال ۱۲۹۲ شمسی (۱۹۱۳ میلادی) با کمک مستشاران سوئدی تأسیس شد. این سازمان در طول بیش از یک قرن، وظیفه حفظ نظم، امنیت و اجرای قانون در شهرهای ایران را بر عهده داشت. پس از انقلاب ۱۳۵۷، شهربانی با کمیته انقلاب اسلامی و ژاندارمری ادغام شد و در نهایت در سال ۱۳۷۰ «نیروی انتظامی جمهوری اسلامی ایران» (فراجا) شکل گرفت.</p>
+        </div>
+
+        <div class="box-gold">
+            <strong>💡 ریشه واژه:</strong> «شهربانی» از دو بخش «شهر» + «بانی» (نگهبان) تشکیل شده — به معنای نگهبان شهر. این واژه در دوران قاجار جایگزین اصطلاح قدیمی‌تر «پلیس» (برگرفته از Police فرانسوی) شد.
+        </div>
+
+        <h2 class="section-title">📜 تاریخچه شهربانی و نیروی انتظامی ایران</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-year">۱۲۹۲ شمسی — تأسیس شهربانی</div>
+                <div class="timeline-text">دولت ایران از سوئد درخواست کمک برای تشکیل پلیس مدرن کرد. کلنل هارالد یالمارسن به عنوان اولین رئیس شهربانی ایران منصوب شد. افسران سوئدی ساختار پلیس تهران را پایه‌گذاری کردند.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">۱۳۰۰ شمسی — نظمیه</div>
+                <div class="timeline-text">نام سازمان به «نظمیه» تغییر یافت. کلانتری‌ها در محلات تهران تأسیس شدند. نیروهای پیاده و سواره پلیس در خیابان‌ها گشت می‌زدند.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">۱۳۲۰ شمسی — گسترش به سراسر کشور</div>
+                <div class="timeline-text">شهربانی از تهران فراتر رفت و در تمام شهرهای بزرگ ایران کلانتری و پاسگاه تأسیس کرد. اداره آگاهی (پلیس جنایی) نیز در این دوره شکل گرفت.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">۱۳۵۷ — انقلاب اسلامی</div>
+                <div class="timeline-text">پس از انقلاب، ساختار شهربانی دستخوش تغییرات اساسی شد. کمیته‌های انقلاب اسلامی به موازات شهربانی فعالیت می‌کردند. بسیاری از افسران عالی‌رتبه برکنار یا بازنشسته شدند.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">۱۳۷۰ — تشکیل نیروی انتظامی (ناجا)</div>
+                <div class="timeline-text">قانون ادغام شهربانی، ژاندارمری و کمیته انقلاب اسلامی تصویب شد و «نیروی انتظامی جمهوری اسلامی ایران» شکل گرفت. سردار محمد سهرابی اولین فرمانده ناجا شد.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">۱۴۰۰ — فراجا</div>
+                <div class="timeline-text">با ارتقای درجه سازمانی، نام به «فرماندهی انتظامی جمهوری اسلامی ایران» (فراجا) تغییر یافت و ساختار آن مدرن‌تر شد.</div>
+            </div>
+        </div>
+
+        <div class="box-blue">
+            <strong>🇸🇪 مستشاران سوئدی:</strong> بین سال‌های ۱۹۱۳ تا ۱۹۳۵، افسران سوئدی نقش کلیدی در شکل‌گیری پلیس مدرن ایران داشتند. آن‌ها سیستم درجه‌بندی، آموزش پلیس، پلیس سواره، اداره کارآگاهی و حتی موسیقی نظامی را در شهربانی ایران بنیان نهادند.
+        </div>
+
+        <h2 class="section-title">🏛️ ساختار و بخش‌های مختلف فراجا</h2>
+        <div class="grid-2">
+            <div class="card">
+                <h3 style="font-size:20px;color:var(--blue-dark);">🚔 پلیس راهور</h3>
+                <p style="font-size:17px;">مسئول کنترل ترافیک، صدور گواهینامه، شماره‌گذاری خودرو، رسیدگی به تصادفات و آموزش قوانین رانندگی. سالانه بیش از ۱.۵ میلیون گواهینامه جدید صادر می‌کند.</p>
+            </div>
+            <div class="card">
+                <h3 style="font-size:20px;color:var(--blue-dark);">🔍 پلیس آگاهی</h3>
+                <p style="font-size:17px;">واحد کارآگاهی و جنایی — مسئول کشف جرایم پیچیده مانند قتل، سرقت مسلحانه، کلاهبرداری، جعل و جرایم سازمان‌یافته. مجهز به آزمایشگاه‌های تشخیص هویت و بانک اطلاعات مجرمان.</p>
+            </div>
+            <div class="card">
+                <h3 style="font-size:20px;color:var(--blue-dark);">🌐 پلیس فتا</h3>
+                <p style="font-size:17px;">پلیس فضای تولید و تبادل اطلاعات — مقابله با جرایم سایبری، کلاهبرداری اینترنتی، هک، سرقت اطلاعات و جرایم اخلاقی در فضای مجازی. تأسیس: ۱۳۸۹.</p>
+            </div>
+            <div class="card">
+                <h3 style="font-size:20px;color:var(--blue-dark);">🛂 پلیس مهاجرت و گذرنامه</h3>
+                <p style="font-size:17px;">صدور گذرنامه، کنترل مبادی ورودی و خروجی کشور، نظارت بر اتباع خارجی و پناهندگان در ایران.</p>
+            </div>
+        </div>
+
+        <h2 class="section-title">🎬 شهربانی و پلیس در سینما</h2>
+        <div class="grid-2">
+            <div class="movie-card">
+                <h4>🎬 The Departed (۲۰۰۶)</h4>
+                <p><strong>کارگردان:</strong> مارتین اسکورسیزی | <strong>بازیگران:</strong> لئوناردو دی‌کاپریو، مت دیمون، جک نیکلسون</p>
+                <p>داستان پیچیده نفوذ یک پلیس مخفی در مافیا و یک جاسوس مافیا در پلیس بوستون. برنده ۴ اسکار از جمله بهترین فیلم.</p>
+                <a href="https://www.imdb.com/title/tt0407887/" target="_blank" rel="noopener" class="imdb-link">🎥 IMDb: tt0407887</a>
+            </div>
+            <div class="movie-card">
+                <h4>🎬 Hot Fuzz (۲۰۰۷)</h4>
+                <p><strong>کارگردان:</strong> ادگار رایت | <strong>بازیگران:</strong> سایمون پگ، نیک فراست</p>
+                <p>کمدی-اکشن درباره یک افسر پلیس نخبه لندن که به یک دهکده آرام تبعید می‌شود و با توطئه‌ای مرگبار روبرو می‌شود.</p>
+                <a href="https://www.imdb.com/title/tt0425112/" target="_blank" rel="noopener" class="imdb-link">🎥 IMDb: tt0425112</a>
+            </div>
+        </div>
+
+        <h2 class="section-title">📊 آمار و اطلاعات پلیس ایران و جهان</h2>
+        <div class="card" style="padding:0;overflow:hidden;">
+            <table class="info-table">
+                <thead><tr><th>شاخص</th><th>ایران</th><th>جهان</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>تعداد نیروی پلیس</strong></td><td>حدود ۲۵۰,۰۰۰</td><td>حدود ۲۰ میلیون</td></tr>
+                    <tr><td><strong>نسبت پلیس به جمعیت</strong></td><td>۱ به ۳۴۰</td><td>میانگین ۱ به ۴۰۰</td></tr>
+                    <tr><td><strong>شماره اضطراری</strong></td><td>۱۱۰</td><td>متفاوت (۹۱۱ آمریکا، ۱۱۲ اروپا)</td></tr>
+                    <tr><td><strong>تعداد کلانتری‌ها</strong></td><td>حدود ۲,۵۰۰</td><td>—</td></tr>
+                    <tr><td><strong>پلیس زن</strong></td><td>حدود ۱۰٪</td><td>متوسط ۱۵-۲۰٪</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="box-red">
+            <strong>⚠️ چالش‌های پلیس ایران:</strong> کمبود نیروی انسانی نسبت به جمعیت، فرسودگی تجهیزات، حقوق و مزایای نامتناسب با خطرات شغلی، مداخلات سیاسی در امور تخصصی پلیس، و چالش اعتماد عمومی از مهم‌ترین مسائل فراجا هستند. در سال‌های اخیر، طرح «پلیس هوشمند» برای مدرن‌سازی تجهیزات آغاز شده است.
+        </div>
+
+        <div class="box-green">
+            <strong>✅ دستاوردها:</strong> کاهش ۴۰٪ تلفات جاده‌ای در دهه اخیر با نصب دوربین‌های هوشمند و سخت‌گیری در صدور گواهینامه. پلیس فتا موفق به کشف ۹۵٪ پرونده‌های کلاهبرداری اینترنتی شده است. پلیس مبارزه با مواد مخدر ایران سالانه بیش از ۵۰۰ تن انواع مواد مخدر را کشف می‌کند.
+        </div>
+
+        <div style="text-align:center;margin:2.5rem 0;">
+            <a href="ship.html" class="btn btn-primary" style="margin:0.5rem;">🚢 مقاله بعدی: کشتی</a>
+            <a href="s.html" class="btn btn-outline" style="margin:0.5rem;">📚 همه مقالات S</a>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>🌐 <a href="https://rahilanab.com">rahilanab.com</a> — پروژه دانشنامه راهیلا | حرف S: شهربانی</p>
+        <p style="margin-top:0.3rem;">📧 <a href="mailto:mahniush.binazir@gmail.com">mahniush.binazir@gmail.com</a> | 🐙 <a href="https://github.com/rahila-ir/rahila-site" target="_blank" rel="noopener">GitHub</a></p>
+        <p style="margin-top:0.5rem;font-size:13px;color:var(--gray-500);">🎥 IMDb: tt0407887, tt0425112 | فایل بعدی: ship.html | تابستان ۲۰۲۶</p>
+    </footer>
+</body>
+</html>
