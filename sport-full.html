@@ -1,1 +1,227 @@
-<!DOCTYPE html><html lang="fa"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>🏃 ورزش کامل | رهیلا</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial;background:radial-gradient(circle at center,#0a1a1a,#1a4a4a,#66ccaa);color:#fff;text-align:center;padding:15px;min-height:100vh}.header{background:rgba(255,255,255,.08);backdrop-filter:blur(20px);border-radius:25px;padding:20px;margin-bottom:15px}.header h1{color:#ffd700;font-size:22px}.back-btn{display:inline-block;background:rgba(255,255,255,.15);color:#fff;padding:8px 20px;border-radius:20px;text-decoration:none;margin:10px 0;font-size:14px}.section-title{color:#ffd700;font-size:18px;margin:20px 0 10px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.card{background:rgba(255,255,255,.05);border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,.1);text-align:right}.card h3{font-size:15px;color:#ffd700}</style></head><body><div class="header"><h1>🏃 ورزش کامل</h1></div><a href="sport.html" class="back-btn">🔙 برگشت</a><div class="section-title">💪 بدنسازی</div><div class="grid"><div class="card"><h3>تمرین سینه</h3></div><div class="card"><h3>تمرین پا</h3></div><div class="card"><h3>تمرین بازو</h3></div><div class="card"><h3>تمرین شکم</h3></div></div><div class="section-title">🏃 هوازی</div><div class="grid"><div class="card"><h3>دویدن</h3></div><div class="card"><h3>طناب زدن</h3></div><div class="card"><h3>دوچرخه</h3></div><div class="card"><h3>شنا</h3></div></div><div class="section-title">🧘 آرامش</div><div class="grid"><div class="card"><h3>یوگا</h3></div><div class="card"><h3>مدیتیشن</h3></div></div><p style="margin-top:15px"><a href="index.html" style="color:#ffd700">🔙 برگشت</a></p></body></html>
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- سئو: تگ عنوان و توضیحات -->
+    <title>راهنمای کامل ورزش: انواع، فواید و بهترین باشگاه‌ها در ۱۳ شهر | راهیلا</title>
+    <meta name="description" content="دانشنامه جامع ورزش؛ از فواید جسمی و روحی ورزش کردن تا معرفی انواع رشته‌های ورزشی و بهترین باشگاه‌های ورزشی در تهران، مشهد، اصفهان و ۱۰ شهر دیگر.">
+    
+    <style>
+        :root {
+            --blue-primary: #1a73e8;
+            --blue-light: #e8f0fe;
+            --blue-dark: #0d47a1;
+            --white: #ffffff;
+            --gold: #f9a825;
+            --green: #0f9d58;
+            --red: #db4437;
+            --purple: #7b1fa2;
+            --text-dark: #202124;
+            --text-gray: #5f6368;
+            --shadow: 0 2px 8px rgba(0,0,0,0.08);
+            --radius: 16px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background: linear-gradient(135deg, #e8f0fe, #ffffff);
+            color: var(--text-dark);
+            line-height: 1.8;
+            font-size: 17px; /* فونت متن */
+        }
+
+        /* هدر */
+        .header {
+            background: linear-gradient(135deg, var(--blue-dark), var(--blue-primary));
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 0 0 40px 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(26,115,232,0.3);
+        }
+        .header h1 { font-size: 28px; margin-bottom: 8px; } /* فونت هدر */
+        .header .breadcrumb { font-size: 14px; opacity: 0.85; }
+        .header .breadcrumb a { color: #ffd54f; text-decoration: none; }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+        /* کارت‌ها */
+        .card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 28px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow);
+            border-right: 5px solid var(--blue-primary);
+            transition: transform 0.2s;
+        }
+        .card:hover { transform: translateY(-3px); }
+        .card h2 { font-size: 22px; color: var(--blue-dark); margin-bottom: 14px; } /* فونت عنوان */
+        .card h3 { font-size: 19px; color: var(--blue-primary); margin: 16px 0 10px; }
+
+        /* باکس‌های رنگی */
+        .box { padding: 20px; border-radius: 12px; margin: 16px 0; color: white; font-weight: 500; }
+        .box-blue { background: #1a73e8; }
+        .box-gold { background: #f9a825; color: #333; }
+        .box-green { background: #0f9d58; }
+        .box-red { background: #db4437; }
+        .box-purple { background: #7b1fa2; }
+
+        /* جدول */
+        table { width: 100%; border-collapse: collapse; margin: 18px 0; font-size: 16px; /* فونت جدول */ }
+        th { background: var(--blue-primary); color: white; padding: 14px 12px; text-align: center; }
+        td { padding: 12px; text-align: center; border-bottom: 1px solid #e0e0e0; }
+        tr:hover td { background: #f5f9ff; }
+        .city-emoji { font-size: 22px; }
+
+        /* عکس‌ها */
+        .img-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+            margin: 20px 0;
+        }
+        .img-grid img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+        .img-grid img:hover { transform: scale(1.03); }
+
+        /* دکمه */
+        .btn {
+            display: inline-block;
+            background: var(--blue-primary);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 17px; /* فونت دکمه */
+            font-weight: 600;
+            transition: 0.3s;
+            box-shadow: 0 4px 12px rgba(26,115,232,0.3);
+        }
+        .btn:hover { background: #0d47a1; transform: translateY(-2px); }
+
+        /* فوتر */
+        .footer {
+            text-align: center;
+            padding: 30px;
+            font-size: 14px; /* فونت فوتر */
+            color: var(--text-gray);
+            margin-top: 40px;
+            border-top: 2px solid #e0e0e0;
+        }
+        .footer a { color: var(--blue-primary); text-decoration: none; }
+
+        @media (max-width: 600px) {
+            .header h1 { font-size: 22px; }
+            .card h2 { font-size: 19px; }
+            body { font-size: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- هدر -->
+<div class="header">
+    <div class="breadcrumb">🏠 <a href="/">راهیلا</a> » ⚽ ورزش</div>
+    <h1>⚽ ورزش جامع — Comprehensive Guide to Sports</h1>
+    <p>از فواید سلامت جسم و روان تا معرفی رشته‌ها و بهترین مکان‌های ورزشی در ایران</p>
+</div>
+
+<div class="container">
+
+<!-- معرفی -->
+<div class="card">
+    <h2>🏃‍♂️ ورزش چیست و چرا اهمیت دارد؟</h2>
+    <p>ورزش به هرگونه فعالیت بدنی که باعث مصرف انرژی و تقویت عضلات شود گفته می‌شود. ورزش نه تنها برای سلامت جسمانی (مانند جلوگیری از بیماری‌های قلبی و دیابت) حیاتی است، بلکه نقش فوق‌العاده‌ای در سلامت روان، کاهش استرس و افزایش اعتماد به نفس دارد.</p>
+    <div class="box box-blue">💡 سازمان جهانی بهداشت (WHO) توصیه می‌کند بزرگسالان هفته‌ای حداقل ۱۵۰ دقیقه فعالیت بدنی با شدت متوسط داشته باشند.</div>
+</div>
+
+<!-- عکس‌ها -->
+<div class="card">
+    <h2>📸 گالری تصاویر ورزشی</h2>
+    <div class="img-grid">
+        <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=500" alt="ورزشکاران در حال دویدن روی پیست" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=500" alt="تمرینات بدنسازی در باشگاه" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=500" alt="بازی فوتبال و ورزش‌های گروهی" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1530549387789-4c1017266635?w=500" alt="شنا کردن در استخر" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?w=500" alt="تمرینات فیتنس و تناسب اندام" loading="lazy">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/2018_Winter_Olympics_mens_halfpipe_snowboarding.jpg/640px-2018_Winter_Olympics_mens_halfpipe_snowboarding.jpg" alt="ورزش‌های زمستانی و اسنوبرد" loading="lazy">
+    </div>
+</div>
+
+<!-- انواع ورزش‌ها -->
+<div class="card">
+    <h2>🏆 دسته‌بندی انواع ورزش‌ها</h2>
+    <div class="box box-green">✅ <strong>ورزش‌های تیمی:</strong> فوتبال، والیبال، بسکتبال، هندبال (تقویت روحیه کار تیمی).</div>
+    <div class="box box-gold">🏅 <strong>ورزش‌های انفرادی:</strong> دوومیدانی، شنا، بدنسازی، تنیس (تمرکز بر خودسازی و رقابت فردی).</div>
+    <div class="box box-purple">🌊 <strong>ورزش‌های آبی:</strong> شنا، واترپلو، موج‌سواری، قایقرانی (کم‌فشار برای مفاصل).</div>
+    <div class="box box-red">⚠️ <strong>ورزش‌های رزمی و رکوردی:</strong> کشتی، کاراته، بوکس، اسکیت سرعت (نیازمند آمادگی بدنی بالا و تجهیزات ایمنی).</div>
+</div>
+
+<!-- جدول باشگاه‌های ورزشی در ۱۳ شهر -->
+<div class="card">
+    <h2>📍 بهترین مجموعه‌های ورزشی در ۱۳ شهر ایران</h2>
+    <p>دسترسی به امکانات ورزشی مناسب، اولین قدم برای شروع است. در اینجا بهترین مجموعه‌ها را در شهرهای مختلف معرفی کرده‌ایم:</p>
+    <table>
+        <thead>
+            <tr><th>#</th><th>شهر</th><th>نام مجموعه ورزشی</th><th>امکانات ویژه</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>۱</td><td><span class="city-emoji">🏙️</span> تهران</td><td>مجموعه ورزشی آزادی</td><td>استخر، پیست دوومیدانی، زمین‌های تخصصی</td></tr>
+            <tr><td>۲</td><td><span class="city-emoji">🕌</span> مشهد</td><td>مجموعه ورزشی ثامن</td><td>سالن بدنسازی، استخر، زمین فوتبال</td></tr>
+            <tr><td>۳</td><td><span class="city-emoji">🏛️</span> اصفهان</td><td>مجموعه ورزشی نقش جهان</td><td>زمین چمن، سالن والیبال و بسکتبال</td></tr>
+            <tr><td>۴</td><td><span class="city-emoji">🌸</span> شیراز</td><td>مجموعه ورزشی حافظیه</td><td>استخر سرپوشیده، سالن‌های رزمی</td></tr>
+            <tr><td>۵</td><td><span class="city-emoji">🏔️</span> تبریز</td><td>مجموعه ورزشی شهید پور شریفی</td><td>پیست دوچرخه‌سواری، سالن بدنسازی</td></tr>
+            <tr><td>۶</td><td><span class="city-emoji">🕌</span> قم</td><td>مجموعه ورزشی حیدریان</td><td>استخر قهرمانی، سالن‌های چندمنظوره</td></tr>
+            <tr><td>۷</td><td><span class="city-emoji">🌿</span> رشت</td><td>مجموعه ورزشی یادگار امام</td><td>زمین فوتبال، سالن والیبال</td></tr>
+            <tr><td>۸</td><td><span class="city-emoji">🌴</span> اهواز</td><td>مجموعه ورزشی تختی</td><td>استخر، سالن بدنسازی، زمین‌های روباز</td></tr>
+            <tr><td>۹</td><td><span class="city-emoji">🏗️</span> کرج</td><td>مجموعه ورزشی انقلاب</td><td>پیست اسکیت، سالن‌های ورزشی</td></tr>
+            <tr><td>۱۰</td><td><span class="city-emoji">🏜️</span> یزد</td><td>مجموعه ورزشی شهید پاکنژاد</td><td>سالن فوتسال، استخر</td></tr>
+            <tr><td>۱۱</td><td><span class="city-emoji">🏰</span> کرمان</td><td>مجموعه ورزشی شهید باهنر</td><td>زمین چمن، سالن کشتی</td></tr>
+            <tr><td>۱۲</td><td><span class="city-emoji">🏝️</span> کیش</td><td>مجموعه ورزشی المپیک</td><td>ورزش‌های ساحلی، استخر</td></tr>
+            <tr><td>۱۳</td><td><span class="city-emoji">🏝️</span> قشم</td><td>مجموعه ورزشی خلیج فارس</td><td>زمین‌های ساحلی، بدنسازی</td></tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- فواید ورزش -->
+<div class="card">
+    <h2>💎 فواید شگفت‌انگیز ورزش کردن</h2>
+    <p>۱. <strong>سلامت قلب:</strong> ورزش منظم باعث تقویت عضله قلب و بهبود گردش خون می‌شود.</p>
+    <p>۲. <strong>کنترل وزن:</strong> سوزاندن کالری‌های اضافی و افزایش متابولیسم بدن.</p>
+    <p>۳. <strong>کاهش استرس:</strong> ترشح هورمون‌های اندورفین (هورمون شادی) در حین ورزش.</p>
+    <p>۴. <strong>تقویت استخوان‌ها:</strong> ورزش‌های تحمل وزن (مثل پیاده‌روی) از پوکی استخوان جلوگیری می‌کنند.</p>
+    <p>۵. <strong>بهبود خواب:</strong> افرادی که ورزش می‌کنند، خواب عمیق‌تر و باکیفیت‌تری دارند.</p>
+</div>
+
+<!-- لینک به فایل‌های مرتبط -->
+<div class="card" style="text-align: center;">
+    <h2>🔗 رشته‌های ورزشی مرتبط</h2>
+    <p>
+        <a href="speed-skating.html" class="btn" style="margin: 6px;">⛸️ اسکیت سرعت</a>
+        <a href="skiing.html" class="btn" style="margin: 6px;">⛷️ اسکی</a>
+        <a href="sport2.html" class="btn" style="margin: 6px;">🏋️ ورزش ۲</a>
+    </p>
+</div>
+
+</div>
+
+<!-- فوتر -->
+<div class="footer">
+    <p>🌐 <strong>دانشنامه راهیلا</strong> — <a href="https://rahilanab.com">rahilanab.com</a></p>
+    <p>📧 تماس: mahniush.binazir@gmail.com</p>
+    <p>⚽ تن سالم، ذهن سالم | © ۲۰۲۶ راهیلا</p>
+</div>
+
+</body>
+</html>
