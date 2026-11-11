@@ -1,1 +1,242 @@
-<!DOCTYPE html><html lang="fa"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>⛸️ اسکیت سرعت | رهیلا</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial;background:radial-gradient(circle at center,#0a1a1a,#1a4a4a,#66ccaa);color:#fff;text-align:center;padding:15px;min-height:100vh}.header{background:rgba(255,255,255,.08);backdrop-filter:blur(20px);border-radius:25px;padding:20px;margin-bottom:15px}.header h1{color:#ffd700;font-size:22px}.back-btn{display:inline-block;background:rgba(255,255,255,.15);color:#fff;padding:8px 20px;border-radius:20px;text-decoration:none;margin:10px 0;font-size:14px}.section-title{color:#ffd700;font-size:18px;margin:20px 0 10px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.card{background:rgba(255,255,255,.05);border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,.1);text-align:right}.card h3{font-size:15px;color:#ffd700}</style></head><body><div class="header"><h1>⛸️ اسکیت سرعت</h1></div><a href="index.html" class="back-btn">🔙 برگشت</a><div class="section-title">⛸️ اطلاعات</div><div class="grid"><div class="card"><h3>اسکیت سرعت چیست</h3></div><div class="card"><h3>تجهیزات</h3></div><div class="card"><h3>قهرمانان</h3></div><div class="card"><h3>مسابقات</h3></div></div><p style="margin-top:15px"><a href="index.html" style="color:#ffd700">🔙 برگشت</a></p></body></html>
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- سئو: تگ عنوان و توضیحات -->
+    <title>اسکیت سرعت: قوانین، تجهیزات و پیست‌های معروف ایران | راهیلا</title>
+    <meta name="description" content="همه چیز درباره ورزش هیجان‌انگیز اسکیت سرعت؛ از تاریخچه و قوانین مسابقات تا تجهیزات حرفه‌ای و معرفی بهترین پیست‌های اسکیت در ۱۳ شهر ایران. راهنمای کامل در راهیلا.">
+    
+    <style>
+        :root {
+            --blue-primary: #1a73e8;
+            --blue-light: #e8f0fe;
+            --blue-dark: #0d47a1;
+            --white: #ffffff;
+            --gold: #f9a825;
+            --green: #0f9d58;
+            --red: #db4437;
+            --purple: #7b1fa2;
+            --text-dark: #202124;
+            --text-gray: #5f6368;
+            --shadow: 0 2px 8px rgba(0,0,0,0.08);
+            --radius: 16px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background: linear-gradient(135deg, #e8f0fe, #ffffff);
+            color: var(--text-dark);
+            line-height: 1.8;
+            font-size: 17px; /* فونت متن */
+        }
+
+        /* هدر */
+        .header {
+            background: linear-gradient(135deg, var(--blue-dark), var(--blue-primary));
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 0 0 40px 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(26,115,232,0.3);
+        }
+        .header h1 { font-size: 28px; margin-bottom: 8px; } /* فونت هدر */
+        .header .breadcrumb { font-size: 14px; opacity: 0.85; }
+        .header .breadcrumb a { color: #ffd54f; text-decoration: none; }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+        /* کارت‌ها */
+        .card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 28px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow);
+            border-right: 5px solid var(--blue-primary);
+            transition: transform 0.2s;
+        }
+        .card:hover { transform: translateY(-3px); }
+        .card h2 { font-size: 22px; color: var(--blue-dark); margin-bottom: 14px; } /* فونت عنوان */
+        .card h3 { font-size: 19px; color: var(--blue-primary); margin: 16px 0 10px; }
+
+        /* باکس‌های رنگی */
+        .box { padding: 20px; border-radius: 12px; margin: 16px 0; color: white; font-weight: 500; }
+        .box-blue { background: #1a73e8; }
+        .box-gold { background: #f9a825; color: #333; }
+        .box-green { background: #0f9d58; }
+        .box-red { background: #db4437; }
+        .box-purple { background: #7b1fa2; }
+
+        /* جدول */
+        table { width: 100%; border-collapse: collapse; margin: 18px 0; font-size: 16px; /* فونت جدول */ }
+        th { background: var(--blue-primary); color: white; padding: 14px 12px; text-align: center; }
+        td { padding: 12px; text-align: center; border-bottom: 1px solid #e0e0e0; }
+        tr:hover td { background: #f5f9ff; }
+        .city-emoji { font-size: 22px; }
+
+        /* عکس‌ها */
+        .img-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+            margin: 20px 0;
+        }
+        .img-grid img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+        .img-grid img:hover { transform: scale(1.03); }
+
+        /* دکمه */
+        .btn {
+            display: inline-block;
+            background: var(--blue-primary);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 17px; /* فونت دکمه */
+            font-weight: 600;
+            transition: 0.3s;
+            box-shadow: 0 4px 12px rgba(26,115,232,0.3);
+        }
+        .btn:hover { background: #0d47a1; transform: translateY(-2px); }
+
+        /* فوتر */
+        .footer {
+            text-align: center;
+            padding: 30px;
+            font-size: 14px; /* فونت فوتر */
+            color: var(--text-gray);
+            margin-top: 40px;
+            border-top: 2px solid #e0e0e0;
+        }
+        .footer a { color: var(--blue-primary); text-decoration: none; }
+
+        @media (max-width: 600px) {
+            .header h1 { font-size: 22px; }
+            .card h2 { font-size: 19px; }
+            body { font-size: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- هدر -->
+<div class="header">
+    <div class="breadcrumb">🏠 <a href="/">راهیلا</a> » ⚽ ورزش » ⛸️ اسکیت سرعت</div>
+    <h1>⛸️ اسکیت سرعت — Speed Skating</h1>
+    <p>سرعت، تعادل و هیجان روی یخ | راهنمای جامع و معرفی پیست‌های ایران</p>
+</div>
+
+<div class="container">
+
+<!-- معرفی -->
+<div class="card">
+    <h2>⛸️ اسکیت سرعت چیست؟</h2>
+    <p>اسکیت سرعت (Speed Skating) یکی از هیجان‌انگیزترین ورزش‌های زمستانی است که در آن ورزشکاران با استفاده از کفش‌های مخصوص (تیغه‌های بلند) روی یخ مسابقه می‌دهند. هدف، طی کردن مسافت مشخص در کمترین زمان ممکن است. این ورزش نیازمند قدرت بدنی بالا، تمرکز فوق‌العاده و تکنیک دقیق است.</p>
+    <div class="box box-blue">🥇 در المپیک زمستانی، اسکیت سرعت یکی از پرطرفدارترین و پرمدال‌ترین رشته‌هاست.</div>
+</div>
+
+<!-- عکس‌ها -->
+<div class="card">
+    <h2>📸 گالری تصاویر</h2>
+    <div class="img-grid">
+        <img src="https://images.unsplash.com/photo-1515523110800-9415d13b84a8?w=500" alt="اسکیت‌باز سرعت در حال مسابقه روی یخ" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1547928576-b822bc410bdf?w=500" alt="اسکیت سرعت پیست کوتاه" loading="lazy">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Speed_Skating_at_the_2018_Winter_Olympics.jpg/640px-Speed_Skating_at_the_2018_Winter_Olympics.jpg" alt="مسابقات المپیک زمستانی اسکیت سرعت" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1580654712603-eb43273aff33?w=500" alt="کفش و تیغه اسکیت سرعت" loading="lazy">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Speed_skating_short_track.jpg/640px-Speed_skating_short_track.jpg" alt="پیست اسکیت سرعت پیست کوتاه" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1533560904424-a0c61dc306fc?w=500" alt="ورزشکار اسکیت سرعت در حال تمرین" loading="lazy">
+    </div>
+</div>
+
+<!-- انواع رشته -->
+<div class="card">
+    <h2>🏁 انواع رشته‌های اسکیت سرعت</h2>
+    <div class="box box-green">✅ <strong>پیست بلند (Long Track):</strong> مسابقات روی پیست بیضی ۴۰۰ متری برگزار می‌شود. سرعت‌ها بسیار بالا (تا ۶۰ کیلومتر بر ساعت) و مسابقات معمولاً دو نفره هستند.</div>
+    <div class="box box-gold">⚡ <strong>پیست کوتاه (Short Track):</strong> روی پیست ۱۱۱ متری و به صورت گروهی (۴ تا ۶ نفر) برگزار می‌شود. در این رشته تاکتیک و سبقت‌گیری بسیار حائز اهمیت است.</div>
+    <div class="box box-purple">🛼 <strong>اسکیت سرعت اینلاین (Inline):</strong> مشابه اسکیت روی یخ است اما روی آسفالت انجام می‌شود و بیشتر برای تمرینات تابستانی استفاده می‌گردد.</div>
+</div>
+
+<!-- تجهیزات -->
+<div class="card">
+    <h2>🎒 تجهیزات ضروری</h2>
+    <table>
+        <thead>
+            <tr><th>تجهیز</th><th>توضیحات</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>کفش اسکیت (Clap Skate)</td><td>تیغه‌های بلند و مخصوص که به پاشنه کفش لولا دارند و برای افزایش گام برداری طراحی شده‌اند.</td></tr>
+            <tr><td>کلاه ایمنی</td><td>مجبوری برای محافظت از سر در صورت زمین خوردن (مخصوصاً در پیست کوتاه).</td></tr>
+            <tr><td>لباس مسابقه (Skin Suit)</td><td>لباس چسبان برای کاهش مقاومت هوا (آیرودینامیک).</td></tr>
+            <tr><td>دستکش و محافظ زانو</td><td>برای جلوگیری از خراشیدگی و آسیب در برخوردها.</td></tr>
+            <tr><td>عینک محافظ</td><td>برای جلوگیری از ورود گرد و غبار یخ و باد شدید به چشم.</td></tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- جدول پیست‌ها در ۱۳ شهر -->
+<div class="card">
+    <h2>🏟️ پیست‌های اسکیت سرعت و یخ (ایس رینک) در ۱۳ شهر ایران</h2>
+    <p>در ایران، اسکیت سرعت بیشتر در پیست‌های یخ (Ice Rink) و پیست‌های تخصصی اسکیت دنبال می‌شود. بهترین مکان‌ها برای تمرین در شهرهای بزرگ:</p>
+    <table>
+        <thead>
+            <tr><th>#</th><th>شهر</th><th>نام مجموعه</th><th>امکانات</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>۱</td><td><span class="city-emoji">🏙️</span> تهران</td><td>پیست یخ مجموعه ورزشی آزادی</td><td>پیست یخ، پیست اینلاین</td></tr>
+            <tr><td>۲</td><td><span class="city-emoji">🕌</span> مشهد</td><td>پیست یخ شهید بهشتی</td><td>پیست یخ استاندارد</td></tr>
+            <tr><td>۳</td><td><span class="city-emoji">🏛️</span> اصفهان</td><td>مجموعه ورزشی نقش جهان</td><td>پیست اسکیت اینلاین</td></tr>
+            <tr><td>۴</td><td><span class="city-emoji">🌸</span> شیراز</td><td>پیست اسکیت پارک جنت</td><td>پیست اینلاین</td></tr>
+            <tr><td>۵</td><td><span class="city-emoji">🏔️</span> تبریز</td><td>پیست یخ ائل‌گلی</td><td>پیست یخ و اسکیت روی یخ</td></tr>
+            <tr><td>۶</td><td><span class="city-emoji">🕌</span> قم</td><td>مجموعه ورزشی حیدریان</td><td>پیست اسکیت اینلاین</td></tr>
+            <tr><td>۷</td><td><span class="city-emoji">🌿</span> رشت</td><td>پیست اسکیت پارک قدس</td><td>پیست اینلاین روباز</td></tr>
+            <tr><td>۸</td><td><span class="city-emoji">🌴</span> اهواز</td><td>مجموعه ورزشی کیانپارس</td><td>پیست اینلاین سرپوشیده</td></tr>
+            <tr><td>۹</td><td><span class="city-emoji">🏗️</span> کرج</td><td>پارک اسکیت مهرشهر</td><td>پیست اینلاین</td></tr>
+            <tr><td>۱۰</td><td><span class="city-emoji">🏜️</span> یزد</td><td>مجموعه ورزشی شهید پاکنژاد</td><td>پیست اسکیت اینلاین</td></tr>
+            <tr><td>۱۱</td><td><span class="city-emoji">🏰</span> کرمان</td><td>پارک ورزشی مادر</td><td>پیست اینلاین روباز</td></tr>
+            <tr><td>۱۲</td><td><span class="city-emoji">🏝️</span> کیش</td><td>پارک ساحلی مرجان</td><td>اسکیت اینلاین ساحلی</td></tr>
+            <tr><td>۱۳</td><td><span class="city-emoji">🏝️</span> قشم</td><td>پارک زیتون</td><td>اسکیت اینلاین روباز</td></tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- نکات طلایی -->
+<div class="card">
+    <h2>💎 نکات طلایی برای شروع اسکیت سرعت</h2>
+    <p>۱. <strong>از اسکیت اینلاین شروع کنید:</strong> چون دسترسی به پیست یخ در همه شهرها آسان نیست، تمرین با اسکیت اینلاین در پارک‌ها می‌تواند تعادل شما را برای یخ تقویت کند.</p>
+    <p>۲. <strong>تجهیزات ایمنی جدی بگیرید:</strong> سرعت بالا یعنی زمین خوردن‌های سخت. هرگز بدون کلاه و محافظ زانو وارد پیست نشوید.</p>
+    <p>۳. <strong>تمرینات قدرتی:</strong> اسکیت سرعت نیاز به عضلات پای بسیار قوی دارد. تمرینات اسکات و لانژ را به برنامه روزانه اضافه کنید.</p>
+    <p>۴. <strong>تکنیک مهم‌تر از زور است:</strong> در این ورزش، گام‌های بلند و فشار صحیح روی تیغه، شما را سریع‌تر از دویدن‌های بی‌هدف می‌کند.</p>
+</div>
+
+<!-- لینک به فایل‌های مرتبط -->
+<div class="card" style="text-align: center;">
+    <h2>🔗 صفحات مرتبط</h2>
+    <p>
+        <a href="sport-full.html" class="btn" style="margin: 6px;">⚽ ورزش جامع</a>
+        <a href="skiing.html" class="btn" style="margin: 6px;">⛷️ اسکی</a>
+        <a href="skateboard.html" class="btn" style="margin: 6px;">🛹 اسکیت‌بورد</a>
+    </p>
+</div>
+
+</div>
+
+<!-- فوتر -->
+<div class="footer">
+    <p>🌐 <strong>دانشنامه راهیلا</strong> — <a href="https://rahilanab.com">rahilanab.com</a></p>
+    <p>📧 تماس: mahniush.binazir@gmail.com</p>
+    <p>⛸️ سرعت را تجربه کن، ایمنی را فراموش نکن | © ۲۰۲۶ راهیلا</p>
+</div>
+
+</body>
+      </html>
