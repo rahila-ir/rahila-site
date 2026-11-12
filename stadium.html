@@ -1,1 +1,199 @@
-<!DOCTYPE html><html lang="fa"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>🏟️ ورزشگاه | رهیلا</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial;background:radial-gradient(circle at center,#0a1a1a,#1a4a4a,#66ccaa);color:#fff;text-align:center;padding:15px;min-height:100vh}.header{background:rgba(255,255,255,.08);backdrop-filter:blur(20px);border-radius:25px;padding:20px;margin-bottom:15px}.header h1{color:#ffd700;font-size:22px}.back-btn{display:inline-block;background:rgba(255,255,255,.15);color:#fff;padding:8px 20px;border-radius:20px;text-decoration:none;margin:10px 0;font-size:14px}.section-title{color:#ffd700;font-size:18px;margin:20px 0 10px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.card{background:rgba(255,255,255,.05);border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,.1);text-align:right}.card h3{font-size:15px;color:#ffd700}</style></head><body><div class="header"><h1>🏟️ ورزشگاه</h1></div><a href="index.html" class="back-btn">🔙 برگشت</a><div class="section-title">🏟️ شهرها</div><div class="grid"><div class="card"><h3>آزادی تهران</h3></div><div class="card"><h3>ورزشگاه مشهد</h3></div><div class="card"><h3>ورزشگاه شیراز</h3></div><div class="card"><h3>ورزشگاه تبریز</h3></div></div><p style="margin-top:15px"><a href="index.html" style="color:#ffd700">🔙 برگشت</a></p></body></html>
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>راهنمای استادیوم و ورزشگاه‌های معروف ایران و جهان | رهیلاناب</title>
+    <meta name="description" content="معرفی بزرگترین و بهترین استادیوم‌های ایران در ۱۳ شهر (آزادی، نقش جهان، یادگار امام) و ویژگی‌های یک ورزشگاه مدرن. نکات حضور در استادیوم.">
+    
+    <style>
+        :root {
+            --blue-primary: #1a73e8;
+            --blue-dark: #0d47a1;
+            --white: #ffffff;
+            --gold: #f9a825;
+            --green: #0f9d58;
+            --red: #db4437;
+            --purple: #7b1fa2;
+            --text-dark: #202124;
+            --shadow: 0 2px 8px rgba(0,0,0,0.08);
+            --radius: 16px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background: linear-gradient(135deg, #e8f0fe, #ffffff);
+            color: var(--text-dark);
+            line-height: 1.8;
+            font-size: 17px;
+        }
+        .header {
+            background: linear-gradient(135deg, var(--blue-dark), var(--blue-primary));
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 0 0 40px 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(26,115,232,0.3);
+        }
+        .header h1 { font-size: 28px; margin-bottom: 8px; }
+        .header .breadcrumb { font-size: 14px; opacity: 0.85; margin-bottom: 10px; }
+        .header .breadcrumb a { color: #ffd54f; text-decoration: none; }
+        
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+        
+        .card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 28px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow);
+            border-right: 5px solid var(--blue-primary);
+        }
+        .card h2 { font-size: 22px; color: var(--blue-dark); margin-bottom: 14px; }
+        
+        /* باکس جواب سریع (BLUF) */
+        .box-bluf {
+            background: #fff3e0; 
+            border: 2px solid var(--gold); 
+            border-radius: 12px; 
+            padding: 20px; 
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(249, 168, 37, 0.2);
+        }
+        .box-bluf h3 { color: #e65100; font-size: 20px; margin-bottom: 10px; }
+        .box-bluf p { font-weight: bold; font-size: 16px; line-height: 1.8; }
+        
+        .box { padding: 18px; border-radius: 12px; margin: 16px 0; color: white; font-weight: 500; }
+        .box-blue { background: var(--blue-primary); }
+        .box-green { background: var(--green); }
+        .box-red { background: var(--red); }
+        .box-purple { background: var(--purple); }
+        
+        table { width: 100%; border-collapse: collapse; margin: 18px 0; font-size: 16px; }
+        th { background: var(--blue-primary); color: white; padding: 14px 12px; text-align: center; }
+        td { padding: 12px; text-align: center; border-bottom: 1px solid #e0e0e0; }
+        tr:hover td { background: #f5f9ff; }
+        .city-emoji { font-size: 22px; }
+        
+        .img-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 20px 0; }
+        .img-grid img { width: 100%; height: 200px; object-fit: cover; border-radius: 12px; }
+        
+        .btn {
+            display: inline-block;
+            background: var(--blue-primary);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: 600;
+            margin-top: 10px;
+            transition: 0.3s;
+        }
+        .btn:hover { background: var(--blue-dark); transform: translateY(-2px); }
+        
+        .footer { text-align: center; padding: 30px; font-size: 14px; color: #5f6368; margin-top: 40px; border-top: 2px solid #e0e0e0; }
+        .footer a { color: var(--blue-primary); text-decoration: none; }
+        
+        @media (max-width: 600px) { .header h1 { font-size: 22px; } body { font-size: 15px; } }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <div class="breadcrumb">🏠 <a href="index.html">رهیلاناب</a> » ⚽ ورزش » 🏟️ استادیوم</div>
+    <h1>راهنمای استادیوم و ورزشگاه‌ها</h1>
+    <p>معرفی بزرگترین ورزشگاه‌های ایران و ویژگی‌های یک استادیوم مدرن</p>
+</div>
+
+<div class="container">
+
+    <!-- BLUF -->
+    <div class="box-bluf">
+        <h3>⚡ جواب سریع در ۳ خط:</h3>
+        <p>
+            ۱. بزرگترین و معروف‌ترین استادیوم ایران، <strong>ورزشگاه آزادی تهران</strong> با ظرفیت ۷۸,۰۰۰ نفر است.<br>
+            ۲. برای تجربه حضور در استادیوم، حتماً بلیت را از سامانه‌های رسمی تهیه کنید و از آوردن اشیای ممنوعه خودداری کنید.<br>
+            ۳. یک ورزشگاه مدرن باید دارای چمن باکیفیت، سیستم روشنایی استاندارد، صندلی‌های راحت و دسترسی امن باشد (جدول ۱۳ شهر در ادامه).
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>🏟️ تاریخچه و اهمیت استادیوم‌ها</h2>
+        <p>استادیوم‌ها فقط مکان‌هایی برای برگزاری مسابقات نیستند؛ آن‌ها نمادهای فرهنگی و ورزشی هر شهر و کشور هستند. در ایران، ورزشگاه آزادی (که قبلاً آریامهر نام داشت) میزبان مهم‌ترین مسابقات ملی و بین‌المللی بوده است. در جهان نیز ورزشگاه‌هایی مثل «نیوکمپ» و «ومبلی» به عنوان کعبه آمال فوتبالدوستان شناخته می‌شوند.</p>
+        <div class="box box-blue">💡 <strong>جالب است بدانید:</strong> ورزشگاه آزادی تهران در زمان ساخت، یکی از مدرن‌ترین ورزشگاه‌های خاورمیانه بود.</div>
+    </div>
+
+    <div class="card">
+        <h2>📸 گالری تصاویر ورزشگاه‌ها</h2>
+        <div class="img-grid">
+            <img src="https://images.unsplash.com/photo-1518609878373-06d740f60d8b?w=500" alt="نمای داخلی استادیوم" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1489944440615-453fc2b6a9a9?w=500" alt="ورزشگاه فوتبال پر از تماشاگر" loading="lazy">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Azadi_Stadium_in_Tehran.jpg/640px-Azadi_Stadium_in_Tehran.jpg" alt="ورزشگاه آزادی تهران" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=500" alt="چمن سبز و باکیفیت استادیوم" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1577223625816-7546f13df25d?w=500" alt="سیستم روشنایی ورزشگاه در شب" loading="lazy">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Naghsh-e_Jahan_Stadium.jpg/640px-Naghsh-e_Jahan_Stadium.jpg" alt="ورزشگاه نقش جهان اصفهان" loading="lazy">
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>🏆 ویژگی‌های یک استادیوم استاندارد</h2>
+        <div class="box box-green">✅ <strong>چمن باکیفیت:</strong> مهم‌ترین بخش یک استادیوم که باید زهکشی مناسب داشته باشد.</div>
+        <div class="box box-gold" style="color: #333;">💡 <strong>سیستم روشنایی:</strong> نورپردازی استاندارد برای بازی‌های شب و پخش تلویزیونی.</div>
+        <div class="box box-purple">🪑 <strong>صندلی‌های شماره‌دار:</strong> برای راحتی و نظم تماشاگران (استانداردهای فیفا).</div>
+        <div class="box box-red">📺 <strong>صفحه نمایش بزرگ (اسکوربورد):</strong> برای نمایش نتایج، آمار و لحظات حساس بازی.</div>
+    </div>
+
+    <div class="card">
+        <h2>🏟️ استادیوم‌های معروف در ۱۳ شهر ایران</h2>
+        <p>جدول زیر بزرگترین و معروف‌ترین استادیوم‌های ایران را در شهرهای مختلف نشان می‌دهد:</p>
+        <table>
+            <thead>
+                <tr><th>#</th><th>شهر</th><th>نام ورزشگاه</th><th>ظرفیت تقریبی</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>۱</td><td><span class="city-emoji">🏙️</span> تهران</td><td>ورزشگاه آزادی</td><td>۷۸,۰۰۰ نفر</td></tr>
+                <tr><td>۲</td><td><span class="city-emoji">🕌</span> مشهد</td><td>ورزشگاه امام رضا</td><td>۲۵,۰۰۰ نفر</td></tr>
+                <tr><td>۳</td><td><span class="city-emoji">🏛️</span> اصفهان</td><td>ورزشگاه نقش جهان</td><td>۷۵,۰۰۰ نفر</td></tr>
+                <tr><td>۴</td><td><span class="city-emoji">🌸</span> شیراز</td><td>ورزشگاه حافظیه</td><td>۲۰,۰۰۰ نفر</td></tr>
+                <tr><td>۵</td><td><span class="city-emoji">🏔️</span> تبریز</td><td>ورزشگاه یادگار امام</td><td>۶۶,۰۰۰ نفر</td></tr>
+                <tr><td>۶</td><td><span class="city-emoji">🕌</span> قم</td><td>ورزشگاه یادگار امام قم</td><td>۱۰,۰۰۰ نفر</td></tr>
+                <tr><td>۷</td><td><span class="city-emoji">🌿</span> رشت</td><td>ورزشگاه سردار جنگل</td><td>۱۵,۰۰۰ نفر</td></tr>
+                <tr><td>۸</td><td><span class="city-emoji">🌴</span> اهواز</td><td>ورزشگاه فولاد آرنا</td><td>۳۰,۰۰۰ نفر</td></tr>
+                <tr><td>۹</td><td><span class="city-emoji">🏗️</span> کرج</td><td>ورزشگاه انقلاب</td><td>۱۵,۰۰۰ نفر</td></tr>
+                <tr><td>۱۰</td><td><span class="city-emoji">🏜️</span> یزد</td><td>ورزشگاه شهید نصیری</td><td>۱۵,۰۰۰ نفر</td></tr>
+                <tr><td>۱۱</td><td><span class="city-emoji">🏰</span> کرمان</td><td>ورزشگاه شهید باهنر</td><td>۲۰,۰۰۰ نفر</td></tr>
+                <tr><td>۱۲</td><td><span class="city-emoji">🏝️</span> کیش</td><td>ورزشگاه المپیک کیش</td><td>۱۰,۰۰۰ نفر</td></tr>
+                <tr><td>۱۳</td><td><span class="city-emoji">🏝️</span> قشم</td><td>ورزشگاه خلیج فارس</td><td>۵,۰۰۰ نفر</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card">
+        <h2>💡 نکات مهم برای حضور در استادیوم</h2>
+        <p>۱. <strong>خرید بلیت:</strong> فقط از سامانه‌های رسمی بلیت تهیه کنید تا دچار مشکل نشوید.</p>
+        <p>۲. <strong>ورود به موقع:</strong> حداقل ۱ ساعت قبل از شروع بازی در استادیوم باشید تا در صف‌های طولانی گیر نکنید.</p>
+        <p>۳. <strong>اشیای ممنوعه:</strong> از آوردن مواد محترقه، اشیای نوک‌تیز و بطری‌های شیشه‌ای خودداری کنید.</p>
+        <p>۴. <strong>احترام به قوانین:</strong> به دستورالعمل‌های نیروهای امنیتی و انتظامی احترام بگذارید.</p>
+        <p>۵. <strong>تشویق سالم:</strong> فضای استادیوم باید پر از هیجان و انرژی مثبت باشد. از فحاشی و رفتارهای خشونت‌آمیز بپرهیزید.</p>
+    </div>
+
+    <div class="card" style="text-align: center;">
+        <h2>🔗 صفحات مرتبط</h2>
+        <p>
+            <a href="sport-full.html" class="btn" style="margin: 6px;">⚽ ورزش جامع</a>
+            <a href="sport2.html" class="btn" style="margin: 6px;">🏐 ورزش‌های توپی</a>
+            <a href="squash.html" class="btn" style="margin: 6px;">🎾 اسکواش</a>
+        </p>
+    </div>
+
+</div>
+
+<div class="footer">
+    <p>🌟 <strong>رهیلاناب</strong> - <a href="index.html">خانه</a> | <a href="sport-full.html">ورزش</a></p>
+    <p>© ۲۰۲۶ rahilanab.com | با ورزش، شاد و سالم بمانید.</p>
+</div>
+
+</body>
+  </html>
