@@ -1,1 +1,200 @@
-<!DOCTYPE html><html lang="fa"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>🎾 اسکواش | رهیلا</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial;background:radial-gradient(circle at center,#0a1a1a,#1a4a4a,#66ccaa);color:#fff;text-align:center;padding:15px;min-height:100vh}.header{background:rgba(255,255,255,.08);backdrop-filter:blur(20px);border-radius:25px;padding:20px;margin-bottom:15px}.header h1{color:#ffd700;font-size:22px}.back-btn{display:inline-block;background:rgba(255,255,255,.15);color:#fff;padding:8px 20px;border-radius:20px;text-decoration:none;margin:10px 0;font-size:14px}.section-title{color:#ffd700;font-size:18px;margin:20px 0 10px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.card{background:rgba(255,255,255,.05);border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,.1);text-align:right}.card h3{font-size:15px;color:#ffd700}</style></head><body><div class="header"><h1>🎾 اسکواش</h1></div><a href="index.html" class="back-btn">🔙 برگشت</a><div class="section-title">🎾 اطلاعات</div><div class="grid"><div class="card"><h3>اسکواش چیست</h3></div><div class="card"><h3>قوانین</h3></div><div class="card"><h3>تجهیزات</h3></div><div class="card"><h3>باشگاه‌ها</h3></div></div><p style="margin-top:15px"><a href="index.html" style="color:#ffd700">🔙 برگشت</a></p></body></html>
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>راهنمای کامل ورزش اسکواش: قوانین، تجهیزات و بهترین باشگاه‌ها | رهیلاناب</title>
+    <meta name="description" content="معرفی ورزش اسکواش، قوانین بازی، تجهیزات لازم (راکت، توپ) و معرفی بهترین سالن‌های اسکواش در ۱۳ شهر ایران. آموزش اسکواش برای مبتدیان.">
+    
+    <style>
+        :root {
+            --blue-primary: #1a73e8;
+            --blue-dark: #0d47a1;
+            --white: #ffffff;
+            --gold: #f9a825;
+            --green: #0f9d58;
+            --red: #db4437;
+            --purple: #7b1fa2;
+            --text-dark: #202124;
+            --shadow: 0 2px 8px rgba(0,0,0,0.08);
+            --radius: 16px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background: linear-gradient(135deg, #e8f0fe, #ffffff);
+            color: var(--text-dark);
+            line-height: 1.8;
+            font-size: 17px;
+        }
+        .header {
+            background: linear-gradient(135deg, var(--blue-dark), var(--blue-primary));
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 0 0 40px 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(26,115,232,0.3);
+        }
+        .header h1 { font-size: 28px; margin-bottom: 8px; }
+        .header .breadcrumb { font-size: 14px; opacity: 0.85; margin-bottom: 10px; }
+        .header .breadcrumb a { color: #ffd54f; text-decoration: none; }
+        
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+        
+        .card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 28px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow);
+            border-right: 5px solid var(--blue-primary);
+        }
+        .card h2 { font-size: 22px; color: var(--blue-dark); margin-bottom: 14px; }
+        
+        /* باکس جواب سریع (BLUF) */
+        .box-bluf {
+            background: #e8f5e9; 
+            border: 2px solid var(--green); 
+            border-radius: 12px; 
+            padding: 20px; 
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(15, 157, 88, 0.2);
+        }
+        .box-bluf h3 { color: #1b5e20; font-size: 20px; margin-bottom: 10px; }
+        .box-bluf p { font-weight: bold; font-size: 16px; line-height: 1.8; }
+        
+        .box { padding: 18px; border-radius: 12px; margin: 16px 0; color: white; font-weight: 500; }
+        .box-blue { background: var(--blue-primary); }
+        .box-gold { background: var(--gold); color: #333; }
+        .box-green { background: var(--green); }
+        .box-red { background: var(--red); }
+        .box-purple { background: var(--purple); }
+        
+        table { width: 100%; border-collapse: collapse; margin: 18px 0; font-size: 16px; }
+        th { background: var(--blue-primary); color: white; padding: 14px 12px; text-align: center; }
+        td { padding: 12px; text-align: center; border-bottom: 1px solid #e0e0e0; }
+        tr:hover td { background: #f5f9ff; }
+        .city-emoji { font-size: 22px; }
+        
+        .img-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 20px 0; }
+        .img-grid img { width: 100%; height: 200px; object-fit: cover; border-radius: 12px; }
+        
+        .btn {
+            display: inline-block;
+            background: var(--blue-primary);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: 600;
+            margin-top: 10px;
+            transition: 0.3s;
+        }
+        .btn:hover { background: var(--blue-dark); transform: translateY(-2px); }
+        
+        .footer { text-align: center; padding: 30px; font-size: 14px; color: #5f6368; margin-top: 40px; border-top: 2px solid #e0e0e0; }
+        .footer a { color: var(--blue-primary); text-decoration: none; }
+        
+        @media (max-width: 600px) { .header h1 { font-size: 22px; } body { font-size: 15px; } }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <div class="breadcrumb">🏠 <a href="index.html">رهیلاناب</a> » ⚽ ورزش » 🎾 اسکواش</div>
+    <h1>راهنمای کامل ورزش اسکواش</h1>
+    <p>قوانین، تجهیزات و بهترین باشگاه‌های اسکواش در ایران</p>
+</div>
+
+<div class="container">
+
+    <!-- BLUF -->
+    <div class="box-bluf">
+        <h3>⚡ جواب سریع در ۳ خط:</h3>
+        <p>
+            ۱. اسکواش یکی از پرکالری‌ترین و سریع‌ترین ورزش‌های دنیاست که به شدت برای سلامت قلب، چابکی و کاهش وزن عالی است.<br>
+            ۲. برای شروع به یک راکت اسکواش، توپ مخصوص (با نقطه آبی یا قرمز برای مبتدیان) و کفش سالنی با کف غیرچسبنده نیاز دارید.<br>
+            ۳. بهترین مکان‌ها برای یادگیری، سالن‌های تخصصی اسکواش در شهرهای بزرگ هستند (جدول ۱۳ شهر در ادامه).
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>🎾 اسکواش چیست و چرا محبوب است؟</h2>
+        <p>اسکواش (Squash) یک ورزش راکتی است که در یک زمین سرپوشیده و بسته (چهار دیوار) انجام می‌شود. بازیکنان با استفاده از راکت، توپ لاستیکی را به دیوار جلویی می‌زنند و باید طوری بازی کنند که حریف نتواند به توپ برسد. این ورزش به دلیل سرعت بالا و نیاز به تمرکز شدید، به «شطرنج با عرق» معروف است.</p>
+        <div class="box box-blue">💡 <strong>فایده شگفت‌انگیز:</strong> در یک ساعت بازی اسکواش، بین <strong>۶۰۰ تا ۱۰۰۰ کالری</strong> می‌سوزانید که آن را در صدر ورزش‌های چربی‌سوز قرار می‌دهد.</div>
+    </div>
+
+    <div class="card">
+        <h2>📸 گالری تصاویر اسکواش</h2>
+        <div class="img-grid">
+            <img src="https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?w=500" alt="بازیکن اسکواش در حال ضربه زدن به توپ" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1615111784767-4d7c22f1e7c1?w=500" alt="راکت و توپ اسکواش" loading="lazy">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Squash_ball_and_racket.jpg/640px-Squash_ball_and_racket.jpg" alt="تجهیزات اسکواش" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1590239926044-4109eb5a7065?w=500" alt="حرکات سریع در اسکواش" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1533558701576-23c65e0272fb?w=500" alt="زمین بازی اسکواش" loading="lazy">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Squash_court.jpg/640px-Squash_court.jpg" alt="سالن اسکواش" loading="lazy">
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>🎒 تجهیزات ضروری برای شروع</h2>
+        <div class="box box-green">✅ <strong>راکت اسکواش:</strong> برای مبتدیان راکت‌های سبک‌تر و با سربزرگ‌تر مناسب‌ترند.</div>
+        <div class="box box-gold">🟡 <strong>توپ اسکواش:</strong> توپ‌های با نقطه آبی (Blue Dot) یا قرمز (Red Dot) برای مبتدیان و تمرین طراحی شده‌اند (کندتر و راحت‌تر).</div>
+        <div class="box box-blue">👟 <strong>کفش مناسب:</strong> حتماً از کفش‌های سالنی با کف لاستیکی غیرچسبنده (Non-marking) استفاده کنید تا هم به کف زمین آسیب نزنید، هم راحت‌تر سُر بخورید.</div>
+        <div class="box box-purple">🛡️ <strong>عینک محافظ:</strong> در مسابقات رسمی اجباری است. برای مبتدیان هم به شدت توصیه می‌شود تا از آسیب به چشم جلوگیری شود.</div>
+    </div>
+
+    <div class="card">
+        <h2>🏟️ بهترین سالن‌ها و باشگاه‌های اسکواش در ۱۳ شهر ایران</h2>
+        <p>دسترسی به سالن استاندارد، اولین قدم برای یادگیری اسکواش است. جدول زیر بهترین مجموعه‌ها را در شهرهای مختلف نشان می‌دهد:</p>
+        <table>
+            <thead>
+                <tr><th>#</th><th>شهر</th><th>مجموعه ورزشی</th><th>امکانات</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>۱</td><td><span class="city-emoji">🏙️</span> تهران</td><td>مجموعه ورزشی آزادی</td><td>سالن‌های استاندارد اسکواش</td></tr>
+                <tr><td>۲</td><td><span class="city-emoji">🕌</span> مشهد</td><td>مجموعه ورزشی ثامن</td><td>سالن اسکواش سرپوشیده</td></tr>
+                <tr><td>۳</td><td><span class="city-emoji">🏛️</span> اصفهان</td><td>مجموعه نقش جهان</td><td>سالن تخصصی اسکواش</td></tr>
+                <tr><td>۴</td><td><span class="city-emoji">🌸</span> شیراز</td><td>سالن شهید آوینی</td><td>سالن اسکواش</td></tr>
+                <tr><td>۵</td><td><span class="city-emoji">🏔️</span> تبریز</td><td>مجموعه پورشریفی</td><td>زمین اسکواش</td></tr>
+                <tr><td>۶</td><td><span class="city-emoji">🕌</span> قم</td><td>مجموعه حیدریان</td><td>سالن اسکواش</td></tr>
+                <tr><td>۷</td><td><span class="city-emoji">🌿</span> رشت</td><td>مجموعه یادگار امام</td><td>زمین اسکواش</td></tr>
+                <tr><td>۸</td><td><span class="city-emoji">🌴</span> اهواز</td><td>مجموعه تختی</td><td>سالن اسکواش</td></tr>
+                <tr><td>۹</td><td><span class="city-emoji">🏗️</span> کرج</td><td>مجموعه انقلاب</td><td>زمین اسکواش</td></tr>
+                <tr><td>۱۰</td><td><span class="city-emoji">🏜️</span> یزد</td><td>سالن پاکنژاد</td><td>سالن اسکواش</td></tr>
+                <tr><td>۱۱</td><td><span class="city-emoji">🏰</span> کرمان</td><td>مجموعه شهید باهنر</td><td>سالن اسکواش</td></tr>
+                <tr><td>۱۲</td><td><span class="city-emoji">🏝️</span> کیش</td><td>مجموعه المپیک</td><td>سالن اسکواش</td></tr>
+                <tr><td>۱۳</td><td><span class="city-emoji">🏝️</span> قشم</td><td>مجموعه خلیج فارس</td><td>سالن اسکواش</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card">
+        <h2>💡 ۵ نکته طلایی برای مبتدیان</h2>
+        <p>۱. <strong>مرکز زمین بایست:</strong> بعد از هر ضربه، به مرکز زمین (T) برگرد تا آماده دریافت ضربه بعدی باشی.</p>
+        <p>۲. <strong>از مچ دست استفاده کن:</strong> بیشتر نیروی ضربه از مچ و ساعد می‌آید، نه از بازو.</p>
+        <p>۳. <strong>به دیوار جلویی نگاه کن:</strong> توپ همیشه به دیوار جلویی برمی‌گردد، پس چشمت به آنجا باشد.</p>
+        <p>۴. <strong>گرم کردن:</strong> اسکواش فشار زیادی به زانو و مچ پا وارد می‌کند. حتماً قبل از شروع، حرکات کششی انجام دهید.</p>
+        <p>۵. <strong>صبر داشته باش:</strong> اسکواش در ابتدا سخت به نظر می‌رسد، اما با تمرین، هماهنگی چشم و دست شما فوق‌العاده می‌شود.</p>
+    </div>
+
+    <div class="card" style="text-align: center;">
+        <h2>🔗 صفحات مرتبط</h2>
+        <p>
+            <a href="sport-full.html" class="btn" style="margin: 6px;">⚽ ورزش جامع</a>
+            <a href="sport2.html" class="btn" style="margin: 6px;">🏐 ورزش‌های توپی</a>
+            <a href="tennis2.html" class="btn" style="margin: 6px;">🎾 تنیس</a>
+        </p>
+    </div>
+
+</div>
+
+<div class="footer">
+    <p>🌟 <strong>رهیلاناب</strong> - <a href="index.html">خانه</a> | <a href="sport-full.html">ورزش</a></p>
+    <p>© ۲۰۲۶ rahilanab.com | با ورزش، شاد و سالم بمانید.</p>
+</div>
+
+</body>
+</html>
