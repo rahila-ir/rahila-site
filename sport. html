@@ -1,55 +1,288 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🏃 ورزش | رهیلا</title>
+    <!-- سئو: تگ عنوان و توضیحات -->
+    <title>راهنمای کامل ورزش در منزل و باشگاه: کالری‌سوزی و تجهیزات | رهیلاناب</title>
+    <meta name="description" content="چطور ورزش را شروع کنیم؟ معرفی بهترین ورزش‌ها برای لاغری و عضله‌سازی، جدول کالری‌سوزی رشته‌های مختلف، تجهیزات ضروری مبتدی‌ها و حرکات ورزش در منزل.">
+    
     <style>
-        *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:'Arial';background:linear-gradient(135deg,#e3f2fd,#bbdefb,#90caf9,#a5d6a7);color:#111;padding:15px;min-height:100vh}
-        .header{background:#fff;border-radius:20px;padding:18px;margin-bottom:15px;text-align:center;box-shadow:0 4px 15px rgba(0,0,0,.1)}
-        .header h1{color:#0d47a1;font-size:22px}
-        .back-btn{display:inline-block;background:#0d47a1;color:#fff;padding:10px 25px;border-radius:20px;text-decoration:none;margin:10px 0}
-        .card{background:#fff;border-radius:15px;padding:15px;margin:12px 0;box-shadow:0 2px 10px rgba(0,0,0,.08);text-align:right}
-        .card h2{color:#0d47a1;font-size:18px;text-align:center;margin-bottom:8px}
-        .card p{color:#333;font-size:13px;line-height:2}
+        :root {
+            --blue-primary: #1a73e8;
+            --blue-light: #e8f0fe;
+            --blue-dark: #0d47a1;
+            --white: #ffffff;
+            --gold: #f9a825;
+            --green: #0f9d58;
+            --red: #db4437;
+            --purple: #7b1fa2;
+            --text-dark: #202124;
+            --text-gray: #5f6368;
+            --shadow: 0 2px 8px rgba(0,0,0,0.08);
+            --radius: 16px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background: linear-gradient(135deg, #e8f0fe, #ffffff);
+            color: var(--text-dark);
+            line-height: 1.8;
+            font-size: 17px; /* فونت متن */
+        }
+
+        /* هدر */
+        .header {
+            background: linear-gradient(135deg, var(--blue-dark), var(--blue-primary));
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 0 0 40px 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(26,115,232,0.3);
+        }
+        .header h1 { font-size: 28px; margin-bottom: 8px; } /* فونت هدر */
+        .header .breadcrumb { font-size: 14px; opacity: 0.85; margin-bottom: 10px; }
+        .header .breadcrumb a { color: #ffd54f; text-decoration: none; }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+        /* کارت‌ها */
+        .card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 28px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow);
+            border-right: 5px solid var(--blue-primary);
+            transition: transform 0.2s;
+        }
+        .card:hover { transform: translateY(-3px); }
+        .card h2 { font-size: 22px; color: var(--blue-dark); margin-bottom: 14px; } /* فونت عنوان */
+        .card h3 { font-size: 19px; color: var(--blue-primary); margin: 16px 0 10px; }
+
+        /* باکس جواب سریع (BLUF) */
+        .box-bluf {
+            background: #fff3e0; 
+            border: 2px solid var(--gold); 
+            border-radius: 12px; 
+            padding: 20px; 
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(249, 168, 37, 0.2);
+        }
+        .box-bluf h3 { color: #e65100; font-size: 20px; margin-bottom: 10px; }
+        .box-bluf p { font-weight: bold; font-size: 16px; line-height: 1.8; }
+
+        /* باکس‌های رنگی */
+        .box { padding: 18px; border-radius: 12px; margin: 16px 0; color: white; font-weight: 500; }
+        .box-blue { background: #1a73e8; }
+        .box-gold { background: #f9a825; color: #333; }
+        .box-green { background: #0f9d58; }
+        .box-red { background: #db4437; }
+        .box-purple { background: #7b1fa2; }
+
+        /* جدول */
+        table { width: 100%; border-collapse: collapse; margin: 18px 0; font-size: 16px; /* فونت جدول */ }
+        th { background: var(--blue-primary); color: white; padding: 14px 12px; text-align: center; }
+        td { padding: 12px; text-align: center; border-bottom: 1px solid #e0e0e0; }
+        tr:hover td { background: #f5f9ff; }
+        .city-emoji { font-size: 22px; }
+
+        /* عکس‌ها */
+        .img-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+            margin: 20px 0;
+        }
+        .img-grid img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+        .img-grid img:hover { transform: scale(1.03); }
+
+        /* دکمه */
+        .btn {
+            display: inline-block;
+            background: var(--blue-primary);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 17px; /* فونت دکمه */
+            font-weight: 600;
+            transition: 0.3s;
+            box-shadow: 0 4px 12px rgba(26,115,232,0.3);
+        }
+        .btn:hover { background: #0d47a1; transform: translateY(-2px); }
+
+        /* فوتر */
+        .footer {
+            text-align: center;
+            padding: 30px;
+            font-size: 14px; /* فونت فوتر */
+            color: var(--text-gray);
+            margin-top: 40px;
+            border-top: 2px solid #e0e0e0;
+        }
+        .footer a { color: var(--blue-primary); text-decoration: none; }
+
+        @media (max-width: 600px) {
+            .header h1 { font-size: 22px; }
+            .card h2 { font-size: 19px; }
+            body { font-size: 15px; }
+        }
     </style>
 </head>
 <body>
-    <div class="header"><h1>🏃 ورزش و تناسب اندام</h1><p>rahilanab.com</p></div>
-    <a href="index.html" class="back-btn">🔙 خانه</a>
 
-<div class="card"><h2>۱. 💪 بدنسازی</h2><p>برنامه مبتدی: ۳ روز در هفته. تمرینات: اسکات، پرس سینه، ددلیفت. تغذیه: پروتئین کافی.</p></div>
-<div class="card"><h2>۲. 🏋️ تمرین سینه</h2><p>پرس سینه با هالتر، پرس بالا، قفسه سینه، شنا سوئدی.</p></div>
-<div class="card"><h2>۳. 🦵 تمرین پا</h2><p>اسکات، لانج، پرس پا، ددلیفت رومانیایی.</p></div>
-<div class="card"><h2>۴. 💪 تمرین بازو</h2><p>جلو بازو هالتر، پشت بازو سیم‌کش، چکشی.</p></div>
-<div class="card"><h2>۵. 🏋️ تمرین سرشانه</h2><p>پرس سرشانه، نشر از جانب، نشر از جلو.</p></div>
-<div class="card"><h2>۶. 🏋️ تمرین زیربغل</h2><p>بارفیکس، پارویی، لت سیم‌کش.</p></div>
-<div class="card"><h2>۷. 🏋️ تمرین شکم</h2><p>کرانچ، پلانک، زیرشکم، چرخش روسی.</p></div>
-<div class="card"><h2>۸. 🏃 دویدن</h2><p>برنامه مبتدی: ۲۰ دقیقه. کفش مناسب. تنفس صحیح.</p></div>
-<div class="card"><h2>۹. 🏊 شنا</h2><p>بهترین ورزش برای کل بدن. کرال سینه، قورباغه.</p></div>
-<div class="card"><h2>۱۰. 🚴 دوچرخه‌سواری</h2><p>کالری‌سوزی بالا. تقویت پاها. دوچرخه ثابت برای خانه.</p></div>
-<div class="card"><h2>۱۱. 🧘 یوگا</h2><p>انعطاف‌پذیری، آرامش، کاهش استرس. حرکات مبتدی.</p></div>
-<div class="card"><h2>۱۲. 🧘 مدیتیشن</h2><p>تمرکز، آرامش ذهن، کاهش اضطراب. روزی ۱۰ دقیقه.</p></div>
-<div class="card"><h2>۱۳. 🏋️ پیلاتس</h2><p>تقویت عضلات مرکزی، بهبود posture.</p></div>
-<div class="card"><h2>۱۴. 🏃 کراسفیت</h2><p>تمرینات با شدت بالا. ترکیبی از وزنه و هوازی.</p></div>
-<div class="card"><h2>۱۵. ⚽ فوتبال</h2><p>محبوب‌ترین ورزش دنیا. قوانین، تکنیک‌ها، فوتبالیست‌های معروف.</p></div>
-<div class="card"><h2>۱۶. 🏀 بسکتبال</h2><p>قوانین، NBA، بازیکنان معروف.</p></div>
-<div class="card"><h2>۱۷. 🏐 والیبال</h2><p>قوانین، تکنیک‌ها، لیگ ایران.</p></div>
-<div class="card"><h2>۱۸. 🎾 تنیس</h2><p>قوانین، تکنیک‌ها، گرند اسلم.</p></div>
-<div class="card"><h2>۱۹. 🥊 بوکس</h2><p>تکنیک‌ها، مسابقات حرفه‌ای.</p></div>
-<div class="card"><h2>۲۰. 🥋 کاراته</h2><p>سبک‌ها، کمربندها، مسابقات.</p></div>
-<div class="card"><h2>۲۱. 🤼 کشتی</h2><p>آزاد و فرنگی. قهرمانان ایرانی.</p></div>
-<div class="card"><h2>۲۲. ⚽ فوتبال دستی</h2><p>قوانین، تکنیک‌ها.</p></div>
-<div class="card"><h2>۲۳. 🏓 پینگ پنگ</h2><p>تکنیک‌ها، قوانین.</p></div>
-<div class="card"><h2>۲۴. 🏸 بدمینتون</h2><p>قوانین، تکنیک‌ها.</p></div>
-<div class="card"><h2>۲۵. 🎳 بولینگ</h2><p>قوانین، تکنیک پرتاب.</p></div>
-<div class="card"><h2>۲۶. 🥗 تغذیه ورزشی</h2><p>پروتئین، کربوهیدرات، چربی سالم. وعده قبل و بعد تمرین.</p></div>
-<div class="card"><h2>۲۷. 💊 مکمل‌ها</h2><p>پروتئین وی، کراتین، BCAA، گلوتامین.</p></div>
-<div class="card"><h2>۲۸. ⚖️ کاهش وزن</h2><p>کمبود کالری، ورزش هوازی، رژیم غذایی.</p></div>
-<div class="card"><h2>۲۹. 💪 افزایش وزن</h2><p>مازاد کالری، بدنسازی سنگین، تغذیه مناسب.</p></div>
-<div class="card"><h2>۳۰. 🏃 برنامه تمرینی</h2><p>برنامه ۴ هفته‌ای مبتدی تا حرفه‌ای.</p></div>
+<!-- هدر -->
+<div class="header">
+    <div class="breadcrumb">🏠 <a href="index.html">رهیلاناب</a> » 🏃 ورزش</div>
+    <h1>🏃 ورزش و تناسب اندام — Fitness & Sports</h1>
+    <p>راهنمای جامع برای شروع، انتخاب رشته مناسب و ورزش در منزل</p>
+</div>
 
-    <p style="text-align:center;margin:20px 0"><a href="index.html" style="color:#0d47a1">🔙 خانه</a></p>
+<div class="container">
+
+<!-- جواب سریع (BLUF) -->
+<div class="box-bluf">
+    <h3>⚡ جواب سریع در ۳ خط:</h3>
+    <p>
+        ۱. برای شروع ورزش، بهترین کار <strong>پیاده‌روی سریع و حرکات ساده در منزل</strong> است تا بدن سازگار شود.<br>
+        ۲. برای لاغری، تمرینات هوازی (دویدن، شنا، طناب) و برای عضله‌سازی، تمرین با وزنه بهترین گزینه‌ها هستند.<br>
+        ۳. نیازی به تجهیزات گران‌قیمت نیست؛ یک کفش مناسب و یک بطری آب کافی است (جدول کالری‌سوزی و ورزش در منزل در ادامه).
+    </p>
+</div>
+
+<!-- عکس‌ها -->
+<div class="card">
+    <h2>📸 انگیزه‌بخش‌ترین تصاویر ورزشی</h2>
+    <div class="img-grid">
+        <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=500" alt="دویدن در فضای باز برای تناسب اندام" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=500" alt="تمرین با وزنه در باشگاه" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=500" alt="تمرینات کششی و یوگا" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=500" alt="یوگا و مدیتیشن برای آرامش" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1538805060514-97d9cc17730c?w=500" alt="دویدن روی تردمیل" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=500" alt="تمرینات فانکشنال و کراسفیت" loading="lazy">
+    </div>
+</div>
+
+<!-- جدول کالری سوزی -->
+<div class="card">
+    <h2>🔥 جدول کالری‌سوزی رشته‌های مختلف (به ازای هر ۳۰ دقیقه)</h2>
+    <p>میزان کالری‌سوزی به وزن بدن و شدت تمرین بستگی دارد، اما این اعداد میانگین برای یک فرد ۷۰ کیلوگرمی است:</p>
+    <table>
+        <thead>
+            <tr><th>رشته ورزشی</th><th>کالری سوزانده شده (تقریبی)</th><th>مزیت اصلی</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>طناب زدن (با سرعت متوسط)</td><td>۳۰۰ - ۴۰۰ کالری</td><td>چربی‌سوزی فوق‌العاده و تقویت قلب</td></tr>
+            <tr><td>شنا (کرال سینه)</td><td>۲۵۰ - ۳۵۰ کالری</td><td>درگیر کردن تمام عضلات بدون فشار به مفاصل</td></tr>
+            <tr><td>دویدن (با سرعت ۸ کیلومتر بر ساعت)</td><td>۲۵۰ - ۳۰۰ کالری</td><td>تقویت استخوان‌ها و سیستم قلبی</td></tr>
+            <tr><td>دوچرخه‌سواری</td><td>۲۰۰ - ۲۵۰ کالری</td><td>تقویت عضلات پا و تناسب اندام</td></tr>
+            <tr><td>بدنسازی با وزنه</td><td>۱۵۰ - ۲۰۰ کالری</td><td>عضله‌سازی و افزایش متابولیسم پایه</td></tr>
+            <tr><td>یوگا</td><td>۱۰۰ - ۱۵۰ کالری</td><td>انعطاف‌پذیری، تعادل و آرامش ذهن</td></tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- بهترین ورزش‌ها برای اهداف مختلف -->
+<div class="card">
+    <h2>🏆 بهترین ورزش‌ها برای هر هدف</h2>
+    
+    <h3>🔥 برای لاغری و چربی‌سوزی:</h3>
+    <div class="box box-red">دویدن، شنا، طناب زدن، دوچرخه‌سواری، کلاس‌های ایروبیک و HIIT.</div>
+    
+    <h3>💪 برای عضله‌سازی و فرم‌دهی:</h3>
+    <div class="box box-blue">بدنسازی با وزنه، کراسفیت، پیلاتس (برای فرم‌دهی و انعطاف)، کالیستنیکس (تمرین با وزن بدن).</div>
+    
+    <h3>🧘‍♂️ برای آرامش ذهن و کاهش استرس:</h3>
+    <div class="box box-green">یوگا، تای‌چی، پیاده‌روی در طبیعت، شنا.</div>
+    
+    <h3>❤️ برای سلامت قلب و عروق:</h3>
+    <div class="box box-purple">پیاده‌روی سریع، دوچرخه‌سواری، شنا، تمرینات هوازی با شدت متوسط.</div>
+</div>
+
+<!-- تجهیزات ضروری برای شروع -->
+<div class="card">
+    <h2>🎒 تجهیزات ضروری برای ورزشکاران مبتدی</h2>
+    <p>برای شروع نیازی به خرید تجهیزات گران‌قیمت ندارید. این ۴ مورد کافی است:</p>
+    <p>۱. <strong>کفش ورزشی مناسب:</strong> مهم‌ترین وسیله! برای دویدن کفش رانینگ و برای باشگاه کفش سالنی تهیه کنید.</p>
+    <p>۲. <strong>لباس ورزشی راحت:</strong> لباس‌هایی که جنس آن‌ها عرق‌گیر باشد (مثل پارچه‌های پلی‌استر) به شما کمک می‌کند خشک بمانید.</p>
+    <p>۳. <strong>بطری آب:</strong> در طول تمرین حتماً آب بنوشید. کم‌آبی باعث افت انرژی می‌شود.</p>
+    <p>۴. <strong>حوله کوچک:</strong> برای خشک کردن عرق و بهداشت شخصی.</p>
+</div>
+
+<!-- ورزش در منزل -->
+<div class="card">
+    <h2>🏠 ورزش در منزل (بدون نیاز به تجهیزات)</h2>
+    <p>اگر وقت رفتن به باشگاه را ندارید، این ۴ حرکت را ۳ بار در هفته انجام دهید:</p>
+    <div class="box box-blue">۱. <strong>اسکات (Squat):</strong> ۳ ست ۱۵ تایی (برای تقویت پا و باسن).</div>
+    <div class="box box-green">۲. <strong>شنا سوئدی (Push-up):</strong> ۳ ست ۱۰ تایی (برای تقویت سینه و بازو).</div>
+    <div class="box box-gold">۳. <strong>پلانک (Plank):</strong> ۳ ست ۳۰ ثانیه‌ای (برای تقویت عضلات شکم و کمر).</div>
+    <div class="box box-purple">۴. <strong>لانژ (Lunge):</strong> ۳ ست ۱۲ تایی برای هر پا (برای تعادل و تقویت ران).</div>
+</div>
+
+<!-- جدول باشگاه‌ها در ۱۳ شهر (خلاصه) -->
+<div class="card">
+    <h2>📍 معرفی باشگاه‌های ورزشی در ۱۳ شهر</h2>
+    <table>
+        <thead>
+            <tr><th>#</th><th>شهر</th><th>مجموعه ورزشی پیشنهادی</th><th>مناسب برای</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>۱</td><td><span class="city-emoji">🏙️</span> تهران</td><td>مجموعه ورزشی آزادی</td><td>تمام رشته‌ها</td></tr>
+            <tr><td>۲</td><td><span class="city-emoji">🕌</span> مشهد</td><td>مجموعه ورزشی ثامن</td><td>بدنسازی، شنا</td></tr>
+            <tr><td>۳</td><td><span class="city-emoji">🏛️</span> اصفهان</td><td>مجموعه ورزشی نقش جهان</td><td>توپ و میدانی</td></tr>
+            <tr><td>۴</td><td><span class="city-emoji">🌸</span> شیراز</td><td>مجموعه ورزشی حافظیه</td><td>شنا، رزمی</td></tr>
+            <tr><td>۵</td><td><span class="city-emoji">🏔️</span> تبریز</td><td>مجموعه ورزشی پورشریفی</td><td>دوچرخه، بدنسازی</td></tr>
+            <tr><td>۶</td><td><span class="city-emoji">🕌</span> قم</td><td>مجموعه ورزشی حیدریان</td><td>شنا، والیبال</td></tr>
+            <tr><td>۷</td><td><span class="city-emoji">🌿</span> رشت</td><td>مجموعه یادگار امام</td><td>فوتبال، هوازی</td></tr>
+            <tr><td>۸</td><td><span class="city-emoji">🌴</span> اهواز</td><td>مجموعه تختی</td><td>بدنسازی، کشتی</td></tr>
+            <tr><td>۹</td><td><span class="city-emoji">🏗️</span> کرج</td><td>مجموعه انقلاب</td><td>اسکیت، فیتنس</td></tr>
+            <tr><td>۱۰</td><td><span class="city-emoji">🏜️</span> یزد</td><td>مجموعه پاکنژاد</td><td>فوتسال، شنا</td></tr>
+            <tr><td>۱۱</td><td><span class="city-emoji">🏰</span> کرمان</td><td>مجموعه شهید باهنر</td><td>چمن، کشتی</td></tr>
+            <tr><td>۱۲</td><td><span class="city-emoji">🏝️</span> کیش</td><td>مجموعه المپیک</td><td>ورزش‌های ساحلی</td></tr>
+            <tr><td>۱۳</td><td><span class="city-emoji">🏝️</span> قشم</td><td>مجموعه خلیج فارس</td><td>ساحلی، بدنسازی</td></tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- نکات مهم -->
+<div class="card">
+    <h2>💡 ۵ نکته کلیدی برای ورزشکاران مبتدی</h2>
+    <p>۱. <strong>گرم کردن:</strong> هرگز با بدن سرد ورزش را شروع نکنید. ۵ تا ۱۰ دقیقه حرکات کششی و نرمشی انجام دهید.</p>
+    <p>۲. <strong>آب کافی بنوشید:</strong> قبل، در حین و بعد از ورزش آب بنوشید تا از کم‌آبی بدن جلوگیری کنید.</p>
+    <p>۳. <strong>به بدنتان گوش دهید:</strong> درد عضلانی طبیعی است، اما درد مفاصل یا درد شدید را نادیده نگیرید.</p>
+    <p>۴. <strong>خواب کافی:</strong> عضلات در زمان خواب ترمیم می‌شوند. حداقل ۷ ساعت خواب شبانه داشته باشید.</p>
+    <p>۵. <strong>تغذیه مناسب:</strong> مصرف پروتئین کافی و کربوهیدرات‌های پیچیده برای تأمین انرژی ضروری است.</p>
+</div>
+
+<!-- لینک به فایل‌های مرتبط -->
+<div class="card" style="text-align: center;">
+    <h2>🔗 صفحات مرتبط</h2>
+    <p>
+        <a href="sport-full.html" class="btn" style="margin: 6px;">⚽ ورزش جامع</a>
+        <a href="sport2.html" class="btn" style="margin: 6px;">🏋️ ورزش ۲</a>
+        <a href="gym.html" class="btn" style="margin: 6px;">🏋️‍♂️ باشگاه</a>
+    </p>
+</div>
+
+</div>
+
+<!-- فوتر -->
+<div class="footer">
+    <p>🌟 <strong>رهیلاناب</strong> — <a href="https://rahilanab.com">rahilanab.com</a></p>
+    <p>📧 تماس: mahniush.binazir@gmail.com</p>
+    <p>🏃 امروز شروع کن، فردا از خودت تشکر کن | © ۲۰۲۶ رهیلاناب</p>
+</div>
+
 </body>
 </html>
