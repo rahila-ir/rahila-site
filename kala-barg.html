@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- سئو انفجاری: دقیقا کلماتی که الان ترند شده -->
+    <title>آموزش ثبت نام کالابرگ در دولت من (my.gov.ir) + راهنمای خوداظهاری و حل مشکل | رهیلاناب</title>
+    <meta name="description" content="راهنمای گام به گام ثبت نام کالابرگ الکترونیکی در سامانه دولت من (my.gov.ir). آموزش خوداظهاری، حل مشکل قطعی سایت، خطای عدم احراز هویت و سوالات متداول.">
+    <meta name="keywords" content="کالابرگ, سامانه دولت من, my.gov.ir, خوداظهاری کالابرگ, ثبت نام کالابرگ, خطای دولت من, کالابرگ الکترونیکی">
+    
+    <style>
+        :root {
+            --blue-primary: #1a73e8;
+            --blue-dark: #0d47a1;
+            --white: #ffffff;
+            --gold: #f9a825;
+            --green: #0f9d58;
+            --red: #db4437;
+            --purple: #7b1fa2;
+            --text-dark: #202124;
+            --shadow: 0 2px 8px rgba(0,0,0,0.08);
+            --radius: 16px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background: linear-gradient(135deg, #e8f0fe, #ffffff);
+            color: var(--text-dark);
+            line-height: 1.8;
+            font-size: 17px; /* فونت متن */
+        }
+        .header {
+            background: linear-gradient(135deg, var(--blue-dark), var(--blue-primary));
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 0 0 40px 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(26,115,232,0.3);
+        }
+        .header h1 { font-size: 28px; margin-bottom: 8px; } /* فونت هدر */
+        .header .breadcrumb { font-size: 14px; opacity: 0.85; margin-bottom: 10px; }
+        .header .breadcrumb a { color: #ffd54f; text-decoration: none; }
+        
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+        
+        .card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 28px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow);
+            border-right: 5px solid var(--blue-primary);
+        }
+        .card h2 { font-size: 22px; color: var(--blue-dark); margin-bottom: 14px; } /* فونت عنوان */
+        .card h3 { font-size: 19px; color: var(--blue-primary); margin: 16px 0 10px; }
+        
+        /* باکس جواب سریع (BLUF) */
+        .box-bluf {
+            background: #fff3e0; 
+            border: 2px solid var(--gold); 
+            border-radius: 12px; 
+            padding: 20px; 
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(249, 168, 37, 0.2);
+        }
+        .box-bluf h3 { color: #e65100; font-size: 20px; margin-bottom: 10px; }
+        .box-bluf p { font-weight: bold; font-size: 16px; line-height: 1.8; }
+        
+        /* باکس‌های رنگی */
+        .box { padding: 18px; border-radius: 12px; margin: 16px 0; color: white; font-weight: 500; }
+        .box-blue { background: var(--blue-primary); }
+        .box-green { background: var(--green); }
+        .box-red { background: var(--red); }
+        .box-purple { background: var(--purple); }
+        
+        table { width: 100%; border-collapse: collapse; margin: 18px 0; font-size: 16px; /* فونت جدول */ }
+        th { background: var(--blue-primary); color: white; padding: 14px 12px; text-align: center; }
+        td { padding: 12px; text-align: center; border-bottom: 1px solid #e0e0e0; }
+        tr:hover td { background: #f5f9ff; }
+        
+        .img-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 20px 0; }
+        .img-grid img { width: 100%; height: 200px; object-fit: cover; border-radius: 12px; }
+        
+        .btn {
+            display: inline-block;
+            background: var(--blue-primary);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 17px; /* فونت دکمه */
+            font-weight: 600;
+            margin-top: 10px;
+            transition: 0.3s;
+        }
+        .btn:hover { background: var(--blue-dark); transform: translateY(-2px); }
+        
+        .footer { text-align: center; padding: 30px; font-size: 14px; color: #5f6368; margin-top: 40px; border-top: 2px solid #e0e0e0; } /* فونت فوتر */
+        .footer a { color: var(--blue-primary); text-decoration: none; }
+        
+        @media (max-width: 600px) { .header h1 { font-size: 22px; } body { font-size: 15px; } }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <div class="breadcrumb">🏠 <a href="index.html">رهیلاناب</a> » 💵 اقتصاد » 🛒 کالابرگ</div>
+    <h1>راهنمای کامل ثبت‌نام کالابرگ و سامانه دولت من</h1>
+    <p>آموزش خوداظهاری، حل خطاها و پاسخ به سوالات (به‌روزرسانی: امروز)</p>
+</div>
+
+<div class="container">
+
+    <!-- جواب سریع (BLUF) -->
+    <div class="box-bluf">
+        <h3>⚡ جواب سریع در ۳ خط (برای عجله‌ای‌ها):</h3>
+        <p>
+            ۱. وارد سایت <strong>my.gov.ir</strong> شوید.<br>
+            ۲. با <strong>کد ملی سرپرست خانوار</strong> و رمز عبور وارد شوید و فرم «خوداظهاری کالابرگ» را تکمیل کنید.<br>
+            ۳. اگر سایت باز نمی‌شود یا ارور می‌دهد، به دلیل ترافیک سنگین است. <strong>ساعت ۲ تا ۵ بامداد</strong> دوباره امتحان کنید.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>🛒 کالابرگ جدید چیست و چه کسانی باید ثبت‌نام کنند؟</h2>
+        <p>طرح کالابرگ الکترونیکی مرحله جدید، با هدف حمایت معیشتی از خانوارها اجرا شده است. در این مرحله، <strong>سرپرست تمام خانوارهایی که پیامک دعوت (یا پیامک تشخیص دهک) برایشان ارسال شده است</strong>، باید برای تکمیل اطلاعات و خوداظهاری در سامانه «دولت من» اقدام کنند.</p>
+        <div class="box box-blue">
+            💡 نکته مهم: اگر پیامک دعوت برای شما نیامده است، نیازی به ثبت‌نام ندارید و منتظر مرحله بعدی باشید.
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>📝 آموزش گام‌به‌گام ثبت‌نام و خوداظهاری</h2>
+        <p>فرآیند ثبت‌نام خیلی ساده است، فقط کافی است این مراحل را به ترتیب انجام دهید:</p>
+        
+        <div class="box box-green">
+            <strong>گام اول:</strong> مرورگر گوشی را باز کنید و به آدرس <code>my.gov.ir</code> بروید. (بهتر است از کروم یا سافاری استفاده کنید).
+        </div>
+        
+        <div class="box box-green">
+            <strong>گام دوم:</strong> روی دکمه «ورود» کلیک کنید. کد ملی سرپرست خانوار و رمز عبور خود را وارد کنید. (اگر رمز ندارید، گزینه دریافت رمز یکبار مصرف را بزنید).
+        </div>
+        
+        <div class="box box-green">
+            <strong>گام سوم:</strong> بعد از ورود، در صفحه اصلی روی بخش «کالابرگ الکترونیکی» کلیک کنید.
+        </div>
+
+        <div class="box box-green">
+            <strong>گام چهارم (مهم‌ترین بخش):</strong> لیست اعضای خانواده نمایش داده می‌شود. اطلاعات را چک کنید. اگر درست بود، تیک تایید را بزنید. این همان <strong>«خوداظهاری»</strong> است.
+        </div>
+        
+        <div class="box box-green">
+            <strong>گام پنجم:</strong> دکمه ثبت نهایی را بزنید و کد رهگیری را حتماً ذخیره کنید.
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>🛠️ جدول خطاهای رایج و راه‌حل فوری</h2>
+        <p>به دلیل مراجعه بیش از ۴۰ میلیون نفر، سامانه با اختلالاتی مواجه است. اگر با خطای زیر مواجه شدید، نگران نباشید:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>متن خطا / مشکل</th>
+                    <th>علت</th>
+                    <th>راه‌حل</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>سایت بالا نمی‌آید</strong></td>
+                    <td>ترافیک سنگین (سرور قطع است)</td>
+                    <td>ساعت ۲ بامداد تا ۵ صبح امتحان کنید.</td>
+                </tr>
+                <tr>
+                    <td><strong>عدم احراز هویت</strong></td>
+                    <td>شماره موبایل به نام سرپرست نیست</td>
+                    <td>باید شماره موبایل حتماً به نام سرپرست خانوار باشد.</td>
+                </tr>
+                <tr>
+                    <td><strong>اطلاعات خانوار ناقص است</strong></td>
+                    <td>عدم تطابق با ثبت احوال</td>
+                    <td>به دفاتر پیشخوان دولت یا سایت sabteahval.ir مراجعه کنید.</td>
+                </tr>
+                <tr>
+                    <td><strong>رمز عبور اشتباه است</strong></td>
+                    <td>فراموشی رمز یا قفل شدن حساب</td>
+                    <td>گزینه «فراموشی رمز» را بزنید یا ساعات غیر اوج تماس بگیرید.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card">
+        <h2>❓ سوالات متداول (FAQ)</h2>
+        
+        <h3>۱. آیا مستاجرها هم کالابرگ می‌گیرند؟</h3>
+        <p>بله، ملاک دریافت کالابرگ، کد ملی و درآمد است، نه داشتن سند ملک. مستاجرها هم جزو خانوار محسوب می‌شوند.</p>
+        
+        <h3>۲. برای نوزاد تازه متولد شده چه کنیم؟</h3>
+        <p>اگر نوزاد در لیست اعضای خانواده در سامانه دولت من نبود، یعنی هنوز در ثبت احوال ثبت نشده است. ابتدا باید در ثبت احوال ثبت شود تا در سامانه دولت من نمایش داده شود.</p>
+        
+        <h3>۳. آیا باید کارت بانکی خاصی معرفی کنیم؟</h3>
+        <p>خیر، نیازی به معرفی کارت نیست. مبلغ یارانه به کارت یارانه‌ای که قبلاً ثبت کرده‌اید واریز می‌شود.</p>
+    </div>
+
+    <div class="card">
+        <h2>📸 تصاویر مرتبط</h2>
+        <div class="img-grid">
+            <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=500" alt="ثبت نام اینترنتی کالابرگ" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=500" alt="خرید اقلام اساسی با کالابرگ" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1586880244406-556ebe35f282?w=500" alt="گوشی هوشمند و سامانه دولتی" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=500" alt="کار با لپ تاپ و اینترنت" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=500" alt="اوراق و قبض" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1607083206968-13611e3d76db?w=500" alt="خرید از فروشگاه" loading="lazy">
+        </div>
+    </div>
+
+    <!-- لینک به صفحات مرتبط (سئو داخلی) -->
+    <div class="card" style="text-align: center;">
+        <h2>🔗 صفحات پیشنهادی</h2>
+        <p>
+            <a href="economy.html" class="btn" style="margin: 6px;">💵 قیمت‌های لحظه‌ای</a>
+            <a href="index.html" class="btn" style="margin: 6px;">🏠 صفحه اصلی رهیلاناب</a>
+        </p>
+    </div>
+
+</div>
+
+<div class="footer">
+    <p>🌟 <strong>رهیلاناب</strong> - <a href="index.html">خانه</a> | <a href="economy.html">اقتصاد</a></p>
+    <p>© ۲۰۲۶ rahilanab.com | این محتوا صرفاً جنبه اطلاع‌رسانی دارد و جایگزین سامانه رسمی نیست.</p>
+</div>
+
+</body>
+</html>
