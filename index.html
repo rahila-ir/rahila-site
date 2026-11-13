@@ -41,34 +41,62 @@
 
 <div class="header"><h1>🌟 رهیلاناب</h1><p>🌍 دنیایی از همه چی | rahilanab.com</p></div>
 
-<!-- 🔥 هاب ترافیک: داغ‌ترین‌های امروز -->
-<div style="background: linear-gradient(135deg, #db4437, #f9a825); padding: 20px; border-radius: 15px; margin: 15px 0; color: white; box-shadow: 0 4px 15px rgba(219,68,55,0.3); text-align: right;">
-    <h2 style="font-size: 20px; margin-bottom: 12px; text-shadow: 1px 1px 2px rgba(0,0,0,0.2); text-align: center;">🔥 داغ‌ترین‌های امروز</h2>
+<!-- 🔥 هاب ترافیک: اخبار داغ روز (آکاردئون + تاریخ خودکار) -->
+<div style="background: linear-gradient(135deg, #db4437, #f9a825); border-radius: 15px; margin: 15px 0; color: white; box-shadow: 0 4px 15px rgba(219,68,55,0.3); overflow: hidden;">
     
-    <a href="kala-barg.html" style="display: block; background: rgba(255,255,255,0.2); color: white; text-decoration: none; padding: 12px; border-radius: 10px; margin-bottom: 8px; font-weight: bold; border: 1px solid rgba(255,255,255,0.4);">
-        🛒 راهنمای ثبت‌نام کالابرگ و سامانه دولت من (کلیک کنید)
-    </a>
-    
-    <a href="gold.html" style="display: block; background: rgba(255,255,255,0.2); color: white; text-decoration: none; padding: 12px; border-radius: 10px; margin-bottom: 8px; font-weight: bold; border: 1px solid rgba(255,255,255,0.4);">
-        💰 قیمت لحظه‌ای طلا، سکه و دلار (آپدیت زنده)
-    </a>
-    
-    <a href="ai-tools.html" style="display: block; background: rgba(255,255,255,0.2); color: white; text-decoration: none; padding: 12px; border-radius: 10px; margin-bottom: 8px; font-weight: bold; border: 1px solid rgba(255,255,255,0.4);">
-        🤖 بهترین ابزارهای هوش مصنوعی در ایران (بدون فیلتر)
-    </a>
+    <!-- هدر آکاردئون (قابل کلیک) -->
+    <button onclick="toggleHotNews()" id="hot-news-btn" style="width: 100%; background: transparent; border: none; padding: 20px; color: white; font-family: inherit; font-size: 18px; font-weight: bold; cursor: pointer; display: flex; justify-content: space-between; align-items: center; text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">
+        <span>🔥 اخبار و ترندهای داغ <span id="hot-date" style="font-size: 13px; opacity: 0.9; font-weight: normal;"></span></span>
+        <span id="hot-arrow" style="font-size: 14px; transition: transform 0.3s;">▼</span>
+    </button>
 
-    <!-- لینک بازی گنج یا بمب -->
-    <a href="ganj-ya-bomb.html" style="display: block; background: linear-gradient(135deg, #ffd700, #ff8c00); color: #000; text-decoration: none; padding: 12px; border-radius: 10px; font-weight: bold; border: 1px solid rgba(255,255,255,0.4); text-align: center;">
-        🎮 بازی جدید: گنج یا بمب! (رایگان بازی کن و رکورد بزن)
-    </a>
+    <!-- محتوای آکاردئون (لیست اخبار) -->
+    <div id="hot-news-content" style="max-height: 0; overflow: hidden; transition: max-height 0.5s ease-in-out; padding: 0 20px;">
+        <div style="padding-bottom: 20px; text-align: right;">
+            
+            <a href="kala-barg.html" style="display: block; background: rgba(255,255,255,0.15); color: white; text-decoration: none; padding: 12px; border-radius: 10px; margin-bottom: 8px; font-weight: bold; border: 1px solid rgba(255,255,255,0.3); transition: 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.3)'" onmouseout="this.style.background='rgba(255,255,255,0.15)'">
+                🛒 راهنمای ثبت‌نام کالابرگ و سامانه دولت من (کلیک کنید)
+            </a>
+            
+            <a href="gold.html" style="display: block; background: rgba(255,255,255,0.15); color: white; text-decoration: none; padding: 12px; border-radius: 10px; margin-bottom: 8px; font-weight: bold; border: 1px solid rgba(255,255,255,0.3); transition: 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.3)'" onmouseout="this.style.background='rgba(255,255,255,0.15)'">
+                💰 قیمت لحظه‌ای طلا، سکه و دلار (آپدیت زنده)
+            </a>
+            
+            <a href="ai-tools.html" style="display: block; background: rgba(255,255,255,0.15); color: white; text-decoration: none; padding: 12px; border-radius: 10px; margin-bottom: 8px; font-weight: bold; border: 1px solid rgba(255,255,255,0.3); transition: 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.3)'" onmouseout="this.style.background='rgba(255,255,255,0.15)'">
+                🤖 بهترین ابزارهای هوش مصنوعی در ایران (بدون فیلتر)
+            </a>
+
+            <a href="ganj-ya-bomb.html" style="display: block; background: linear-gradient(135deg, #ffd700, #ff8c00); color: #000; text-decoration: none; padding: 12px; border-radius: 10px; font-weight: bold; border: 1px solid rgba(255,255,255,0.4); text-align: center; transition: 0.2s; box-shadow: 0 4px 10px rgba(0,0,0,0.2);" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+                🎮 بازی جدید: گنج یا بمب! (رایگان بازی کن و رکورد بزن)
+            </a>
+
+        </div>
+    </div>
 </div>
 
-<!-- Monetag Native Banner -->
-<div class="ad-box">
-    <script async="async" data-cfasync="false" src="https://pl29908816.effectivecpmnetwork.com/edc48af6e46e85297013e1f55a5ddc77/invoke.js"></script>
-    <div id="container-edc48af6e46e85297013e1f55a5ddc77"></div>
-</div>
+<script>
+    // ۱. تنظیم تاریخ خودکار (شمسی)
+    function setPersianDate() {
+        const now = new Date();
+        const persianDate = now.toLocaleDateString('fa-IR', { weekday: 'long', day: 'numeric', month: 'long' });
+        document.getElementById('hot-date').innerText = `(${persianDate})`;
+    }
+    setPersianDate(); // اجرای فوری
 
+    // ۲. تابع باز و بسته کردن باکس اخبار
+    function toggleHotNews() {
+        const content = document.getElementById('hot-news-content');
+        const arrow = document.getElementById('hot-arrow');
+        
+        if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+            content.style.maxHeight = '0px';
+            arrow.style.transform = 'rotate(0deg)';
+        } else {
+            content.style.maxHeight = content.scrollHeight + 'px';
+            arrow.style.transform = 'rotate(180deg)';
+        }
+    }
+</script>
 <!-- 🍳 آشپزی -->
 <div class="section-title">🍳 آشپزی</div>
 <div class="grid">
