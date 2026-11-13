@@ -1,1 +1,394 @@
-<!DOCTYPE html><html lang="fa"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>🏗️ کاشی و سرامیک | رهیلا</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial;background:radial-gradient(circle at center,#0a1a1a,#1a4a4a,#66ccaa);color:#fff;text-align:center;padding:15px;min-height:100vh}.header{background:rgba(255,255,255,.08);backdrop-filter:blur(20px);border-radius:25px;padding:20px;margin-bottom:15px}.header h1{color:#ffd700;font-size:22px}.back-btn{display:inline-block;background:rgba(255,255,255,.15);color:#fff;padding:8px 20px;border-radius:20px;text-decoration:none;margin:10px 0;font-size:14px}.section-title{color:#ffd700;font-size:18px;margin:20px 0 10px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.card{background:rgba(255,255,255,.05);border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,.1);text-align:right}.card:active{background:rgba(255,215,0,.2)}.card h3{font-size:15px;color:#ffd700}</style></head><body><div class="header"><h1>🏗️ کاشی و سرامیک</h1></div><a href="index.html" class="back-btn">🔙 برگشت</a><div class="section-title">🏗️ مصالح</div><div class="grid"><div class="card"><h3>کاشی</h3></div><div class="card"><h3>سرامیک</h3></div><div class="card"><h3>کفپوش</h3></div><div class="card"><h3>موکت</h3></div><div class="card"><h3>پنجره دوجداره</h3></div><div class="card"><h3>در و کرکره برقی</h3></div></div><div class="section-title">🏠 بازسازی</div><div class="grid"><div class="card"><h3>بازسازی خانه مدرن</h3></div><div class="card"><h3>معماری نوین</h3></div><div class="card"><h3>مدل کابینت</h3></div><div class="card"><h3>چیدمان خانه</h3></div></div><p style="margin-top:15px"><a href="index.html" style="color:#ffd700">🔙 برگشت</a></p></body></html>
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 عناوین برتر سینمای جهان: معرفی و نقد بهترین فیلم‌ها | رهیلاناب</title>
+    <meta name="description" content="معرفی بهترین فیلم‌های تاریخ سینما با امتیاز IMDb؛ از پدرخوانده و اینتراستلار تا فیلم‌های جنایی و اکشن. همراه با مشاور هوشمند فیلم و کارت‌های تعاملی.">
+    
+    <style>
+        /* ============== تم سینمایی ============== */
+        :root {
+            --bg-main: #0a0a0a; /* مشکی سینمایی */
+            --bg-card: rgba(20, 20, 20, 0.9);
+            --text-main: #f5f5f5;
+            --text-muted: #a3a3a3;
+            --primary: #e50914; /* قرمز نتفلیکس */
+            --primary-dark: #b80710;
+            --accent: #fbbf24; /* طلایی اسکار */
+            --border: rgba(229, 9, 20, 0.3);
+            --shadow: 0 10px 30px rgba(229, 9, 20, 0.2);
+            --gradient: linear-gradient(135deg, #e50914, #7c0006);
+        }
+
+        body.light-mode {
+            --bg-main: #f8fafc;
+            --bg-card: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; transition: background-color 0.3s, color 0.3s; }
+        
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.9;
+            font-size: 17px;
+            overflow-x: hidden;
+        }
+
+        /* ============== نوار پیشرفت ============== */
+        #progress-bar {
+            position: fixed; top: 0; left: 0; height: 4px; width: 0%;
+            background: var(--gradient); z-index: 9999;
+            box-shadow: 0 0 10px var(--primary); transition: width 0.1s;
+        }
+
+        /* ============== دکمه‌های شناور ============== */
+        .floating-controls {
+            position: fixed; top: 15px; left: 15px; z-index: 999;
+            display: flex; flex-direction: column; gap: 10px;
+        }
+        
+        .control-btn {
+            background: var(--bg-card); border: 1px solid var(--border);
+            color: var(--text-main); width: 50px; height: 50px;
+            border-radius: 50%; cursor: pointer; font-size: 20px;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: var(--shadow); backdrop-filter: blur(10px); transition: 0.3s;
+        }
+        .control-btn:hover { transform: scale(1.1); color: var(--primary); }
+        .control-btn.playing { background: var(--primary); color: white; }
+
+        /* ============== هدر ============== */
+        .header {
+            background: var(--gradient); color: white; padding: 80px 20px 60px;
+            text-align: center; border-radius: 0 0 40px 40px;
+            position: relative; overflow: hidden;
+        }
+        .header h1 { font-size: clamp(26px, 5vw, 38px); margin-bottom: 10px; position: relative; z-index: 1; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
+        .header p { font-size: 16px; opacity: 0.9; position: relative; z-index: 1; }
+        
+        /* انیمیشن ذرت بوداده */
+        .popcorn { position: absolute; font-size: 30px; animation: pop 3s infinite ease-in-out; opacity: 0.3; }
+        .popcorn:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+        .popcorn:nth-child(2) { top: 50%; right: 15%; animation-delay: 0.5s; }
+        .popcorn:nth-child(3) { top: 10%; right: 30%; animation-delay: 1s; }
+        @keyframes pop { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-20px) scale(1.2) rotate(15deg); } }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; margin-top: -30px; }
+
+        /* ============== کارت‌ها ============== */
+        .card {
+            background: var(--bg-card); border-radius: 24px; padding: 30px;
+            margin-bottom: 30px; box-shadow: var(--shadow); border: 1px solid var(--border);
+        }
+        .card h2 { font-size: 22px; color: var(--primary); margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+
+        /* ============== باکس BLUF ============== */
+        .box-bluf {
+            background: linear-gradient(135deg, rgba(251, 191, 36, 0.1), rgba(251, 191, 36, 0.05));
+            border: 2px solid var(--accent); border-radius: 16px; padding: 25px; margin-bottom: 30px;
+        }
+        .box-bluf h3 { color: var(--accent); font-size: 20px; margin-bottom: 10px; }
+        .box-bluf p { font-weight: bold; font-size: 16px; }
+
+        /* ============== ۱. مشاور فیلم ============== */
+        .advisor-box { background: rgba(0,0,0,0.3); padding: 20px; border-radius: 15px; border: 1px dashed var(--primary); }
+        .advisor-box p { text-align: center; font-weight: bold; margin-bottom: 15px; }
+        .options-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 20px; }
+        .opt-btn { background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: var(--text-main); padding: 10px 20px; border-radius: 30px; cursor: pointer; font-family: inherit; font-size: 15px; font-weight: bold; }
+        .opt-btn:hover, .opt-btn.selected { background: var(--primary); color: white; border-color: var(--primary); transform: scale(1.05); }
+        
+        #movie-result { display: none; padding: 20px; background: rgba(229, 9, 20, 0.1); border-right: 5px solid var(--primary); border-radius: 10px; animation: slideUp 0.5s ease; }
+        #movie-result h3 { color: var(--primary); margin-bottom: 10px; font-size: 20px; }
+        #movie-result .imdb { background: #f5c518; color: #000; padding: 2px 8px; border-radius: 4px; font-weight: bold; font-family: monospace; font-size: 14px; }
+
+        /* ============== ۲. کارت‌های سه‌بعدی ============== */
+        .movie-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; perspective: 1000px; margin-top: 20px; }
+        .flip-card { background-color: transparent; width: 100%; height: 320px; perspective: 1000px; cursor: pointer; }
+        .flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.6s; transform-style: preserve-3d; }
+        .flip-card:hover .flip-card-inner { transform: rotateY(180deg); }
+        
+        .flip-card-front, .flip-card-back { position: absolute; width: 100%; height: 100%; -webkit-backface-visibility: hidden; backface-visibility: hidden; border-radius: 15px; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 20px; box-shadow: var(--shadow); }
+        
+        .flip-card-front { background: linear-gradient(135deg, #1f1f1f, #0a0a0a); color: white; border: 2px solid var(--border); }
+        .flip-card-front .poster-emoji { font-size: 60px; margin-bottom: 15px; }
+        .flip-card-front h3 { font-size: 18px; color: var(--accent); margin-bottom: 5px; }
+        .flip-card-front p { font-size: 13px; color: var(--text-muted); }
+
+        .flip-card-back { background: var(--bg-card); color: var(--text-main); transform: rotateY(180deg); border: 2px solid var(--primary); }
+        .flip-card-back h4 { font-size: 16px; color: var(--primary); margin-bottom: 10px; }
+        .flip-card-back p { font-size: 13px; line-height: 1.6; color: var(--text-muted); }
+        .flip-card-back a { display: inline-block; margin-top: 15px; background: var(--accent); color: #000; padding: 5px 15px; border-radius: 20px; text-decoration: none; font-size: 12px; font-weight: bold; }
+
+        /* ============== جدول ============== */
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 15px; border-radius: 12px; overflow: hidden; }
+        th { background: var(--primary); color: white; padding: 15px; text-align: center; }
+        td { padding: 12px; text-align: center; border-bottom: 1px solid var(--border); background: rgba(0,0,0,0.2); }
+        
+        .footer { text-align: center; padding: 30px; color: var(--text-muted); font-size: 14px; border-top: 1px solid var(--border); margin-top: 40px; }
+        
+        .btn { display: inline-block; background: var(--primary); color: white; padding: 12px 25px; border-radius: 30px; text-decoration: none; font-weight: bold; margin: 5px; transition: 0.3s; }
+        .btn:hover { background: var(--primary-dark); }
+        
+        @keyframes slideUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+
+<!-- نوار پیشرفت -->
+<div id="progress-bar"></div>
+
+<!-- دکمه‌های شناور -->
+<div class="floating-controls">
+    <button class="control-btn" id="tts-btn" onclick="toggleSpeech()" title="گوش دادن">
+        <span id="tts-icon">🔊</span>
+    </button>
+    <button class="control-btn" onclick="toggleTheme()" title="تاریک/روشن">
+        <span id="theme-icon">🌙</span>
+    </button>
+</div>
+
+<div class="header">
+    <div class="popcorn">🍿</div>
+    <div class="popcorn">🍿</div>
+    <div class="popcorn">🎬</div>
+    <h1>🎬 عناوین برتر سینمای جهان</h1>
+    <p>بهترین فیلم‌های تاریخ که باید حتماً ببینید</p>
+</div>
+
+<div class="container" id="main-content">
+
+    <!-- BLUF -->
+    <div class="card box-bluf reveal">
+        <h3>⚡ جواب سریع در ۳ خط:</h3>
+        <p>
+            ۱. در صدر جدول IMDb، فیلم <strong>«رستگاری در شاوشنک» (The Shawshank Redemption)</strong> قرار دارد.<br>
+            ۲. برای شروع، فیلم‌های <strong>«پدرخوانده»، «اینتراستلار» و «تلقین»</strong> بهترین انتخاب‌ها هستند.<br>
+            ۳. اگر ژانر خاصی رو دوست دارید، از مشاور هوشمند فیلم در پایین استفاده کنید.
+        </p>
+    </div>
+
+    <!-- ۱. مشاور هوشمند فیلم -->
+    <div class="card reveal">
+        <h2>🍿 مشاور هوشمند فیلم</h2>
+        <div class="advisor-box">
+            <p>چه ژانری دوست دارید؟ روی آن کلیک کنید:</p>
+            <div class="options-grid">
+                <button class="opt-btn" onclick="recommendMovie('drama', this)">🎭 درام</button>
+                <button class="opt-btn" onclick="recommendMovie('action', this)">💥 اکشن</button>
+                <button class="opt-btn" onclick="recommendMovie('scifi', this)">🚀 علمی-تخیلی</button>
+                <button class="opt-btn" onclick="recommendMovie('crime', this)">🕵️ جنایی</button>
+            </div>
+            <div id="movie-result">
+                <h3 id="rec-title">عنوان فیلم</h3>
+                <p id="rec-desc">توضیحات...</p>
+                <div style="margin-top: 10px; display: flex; justify-content: space-between; align-items: center;">
+                    <span class="imdb" id="rec-imdb">IMDb: 0.0</span>
+                    <a href="#" id="rec-link" target="_blank" style="color: var(--accent); font-size: 14px;">مشاهده در IMDb ↗</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ۲. کارت‌های سه‌بعدی فیلم‌ها -->
+    <div class="card reveal">
+        <h2>🎬 برترین فیلم‌های تاریخ (روی کارت‌ها کلیک کنید)</h2>
+        <div class="movie-grid">
+            
+            <!-- فیلم ۱ -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="poster-emoji">🔓</div>
+                        <h3>The Shawshank Redemption</h3>
+                        <p>رستگاری در شاوشنک (۱۹۹۴)</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <h4>درباره فیلم</h4>
+                        <p>داستان امید و دوستی در زندان. اثری فراموش‌نشدنی با بازی تیم رابینز و مورگان فریمن.</p>
+                        <a href="https://www.imdb.com/title/tt0111161/" target="_blank">IMDb 9.3</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- فیلم ۲ -->
+            <div class="flip-card">
+                <div class="flip-card-front">
+                    <div class="poster-emoji">🍊</div>
+                    <h3>The Godfather</h3>
+                    <p>پدرخوانده (۱۹۷۲)</p>
+                </div>
+                <div class="flip-card-back">
+                    <h4>درباره فیلم</h4>
+                    <p>حماسه خانوادگی مافیا به کارگردانی فرانسیس فورد کاپولا. یکی از تأثیرگذارترین فیلم‌های تاریخ.</p>
+                    <a href="https://www.imdb.com/title/tt0068646/" target="_blank">IMDb 9.2</a>
+                </div>
+            </div>
+
+            <!-- فیلم ۳ -->
+            <div class="flip-card">
+                <div class="flip-card-front">
+                    <div class="poster-emoji">🪐</div>
+                    <h3>Interstellar</h3>
+                    <p>اینتراستلار (۲۰۱۴)</p>
+                </div>
+                <div class="flip-card-back">
+                    <h4>درباره فیلم</h4>
+                    <p>سفری حماسی به اعماق فضا برای نجات بشریت. کارگردانی کریستوفر نولان با موسیقی هانس زیمر.</p>
+                    <a href="https://www.imdb.com/title/tt0816692/" target="_blank">IMDb 8.7</a>
+                </div>
+            </div>
+
+            <!-- فیلم ۴ -->
+            <div class="flip-card">
+                <div class="flip-card-front">
+                    <div class="poster-emoji">🌀</div>
+                    <h3>Inception</h3>
+                    <p>تلقین (۲۰۱۰)</p>
+                </div>
+                <div class="flip-card-back">
+                    <h4>درباره فیلم</h4>
+                    <p>دزدی در رویاها! فیلمی پیچیده و ذهن‌نواز از کریستوفر نولان با بازی لئوناردو دی‌کاپریو.</p>
+                    <a href="https://www.imdb.com/title/tt1375666/" target="_blank">IMDb 8.8</a>
+                </div>
+            </div>
+
+            <!-- فیلم ۵ -->
+            <div class="flip-card">
+                <div class="flip-card-front">
+                    <div class="poster-emoji">💰</div>
+                    <h3>Pulp Fiction</h3>
+                    <p>پالپ فیکشن (۱۹۹۴)</p>
+                </div>
+                <div class="flip-card-back">
+                    <h4>درباره فیلم</h4>
+                    <p>روایت‌های در هم تنیده از خلافکاران لس‌آنجلس. شاهکار کوئنتین تارانتینو با دیالوگ‌های بی‌نظیر.</p>
+                    <a href="https://www.imdb.com/title/tt0110912/" target="_blank">IMDb 8.9</a>
+                </div>
+            </div>
+
+            <!-- فیلم ۶ -->
+            <div class="flip-card">
+                <div class="flip-card-front">
+                    <div class="poster-emoji">🃏</div>
+                    <h3>The Dark Knight</h3>
+                    <p>شوالیه تاریکی (۲۰۰۸)</p>
+                </div>
+                <div class="flip-card-back">
+                    <h4>درباره فیلم</h4>
+                    <p>بهترین فیلم ابرقهرمانی تاریخ. بازی خیره‌کننده هیث لجر در نقش جوکر، این فیلم را جاودانه کرد.</p>
+                    <a href="https://www.imdb.com/title/tt0468569/" target="_blank">IMDb 9.0</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ۳. جدول خلاصه -->
+    <div class="card reveal">
+        <h2>📊 جدول برترین‌ها بر اساس IMDb</h2>
+        <table>
+            <thead>
+                <tr><th>رتبه</th><th>نام فیلم</th><th>سال ساخت</th><th>امتیاز IMDb</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>۱</td><td>رستگاری در شاوشنک</td><td>۱۹۹۴</td><td>۹.۳</td></tr>
+                <tr><td>۲</td><td>پدرخوانده</td><td>۱۹۷۲</td><td>۹.۲</td></tr>
+                <tr><td>۳</td><td>شوالیه تاریکی</td><td>۲۰۰۸</td><td>۹.۰</td></tr>
+                <tr><td>۴</td><td>پالپ فیکشن</td><td>۱۹۹۴</td><td>۸.۹</td></tr>
+                <tr><td>۵</td><td>تلقین</td><td>۲۰۱۰</td><td>۸.۸</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card reveal" style="text-align: center;">
+        <h2>🔗 صفحات مرتبط</h2>
+        <p>
+            <a href="movie.html" class="btn" style="margin: 5px;">🎥 فیلم‌ها</a>
+            <a href="movie-new.html" class="btn" style="margin: 5px;">🍿 فیلم جدید</a>
+            <a href="index.html" class="btn" style="margin: 5px;">🏠 خانه</a>
+        </p>
+    </div>
+
+</div>
+
+<div class="footer">
+    <p>🌟 <strong>رهیلاناب</strong> - <a href="index.html" style="color: var(--primary);">خانه</a></p>
+    <p>© ۲۰۲۶ rahilanab.com | سینما، پنجره‌ای به دنیای رویاها.</p>
+</div>
+
+<script>
+    // =============== ۱. نوار پیشرفت ===============
+    window.onscroll = function() {
+        var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var scrolled = (winScroll / height) * 100;
+        document.getElementById("progress-bar").style.width = scrolled + "%";
+    };
+
+    // =============== ۲. تم ===============
+    function toggleTheme() {
+        document.body.classList.toggle('light-mode');
+        const isLight = document.body.classList.contains('light-mode');
+        document.getElementById('theme-icon').innerText = isLight ? '🌙' : '☀️';
+    }
+
+    // =============== ۳. مشاور فیلم ===============
+    const moviesDB = {
+        drama: { title: "رستگاری در شاوشنک", desc: "داستان امید و دوستی در زندان. اثری فراموش‌نشدنی با بازی تیم رابینز و مورگان فریمن.", imdb: "9.3", link: "https://www.imdb.com/title/tt0111161/" },
+        action: { title: "شوالیه تاریکی (The Dark Knight)", desc: "بهترین فیلم ابرقهرمانی تاریخ. بازی خیره‌کننده هیث لجر در نقش جوکر، این فیلم را جاودانه کرد.", imdb: "9.0", link: "https://www.imdb.com/title/tt0468569/" },
+        scifi: { title: "اینتراستلار (Interstellar)", desc: "سفری حماسی به اعماق فضا برای نجات بشریت. کارگردانی کریستوفر نولان با موسیقی هانس زیمر.", imdb: "8.7", link: "https://www.imdb.com/title/tt0816692/" },
+        crime: { title: "پدرخوانده (The Godfather)", desc: "حماسه خانوادگی مافیا به کارگردانی فرانسیس فورد کاپولا. یکی از تأثیرگذارترین فیلم‌های تاریخ.", imdb: "9.2", link: "https://www.imdb.com/title/tt0068646/" }
+    };
+
+    function recommendMovie(genre, btn) {
+        document.querySelectorAll('.opt-btn').forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+
+        const data = moviesDB[genre];
+        const resultDiv = document.getElementById('movie-result');
+
+        document.getElementById('rec-title').innerText = data.title;
+        document.getElementById('rec-desc').innerText = data.desc;
+        document.getElementById('rec-imdb').innerText = "IMDb: " + data.imdb;
+        document.getElementById('rec-link').href = data.link;
+
+        resultDiv.style.display = 'block';
+        resultDiv.style.animation = 'none';
+        resultDiv.offsetHeight;
+        resultDiv.style.animation = 'slideUp 0.5s ease';
+    }
+
+    // =============== ۴. پخش صوتی ===============
+    let isSpeaking = false;
+    function toggleSpeech() {
+        if (isSpeaking) {
+            window.speechSynthesis.cancel();
+            isSpeaking = false;
+            document.getElementById('tts-icon').innerText = '🔊';
+            document.getElementById('tts-btn').classList.remove('playing');
+            return;
+        }
+        const mainText = document.getElementById('main-content').innerText;
+        const speech = new SpeechSynthesisUtterance(mainText);
+        speech.lang = 'fa-IR';
+        speech.onend = function() {
+            isSpeaking = false;
+            document.getElementById('tts-icon').innerText = '🔊';
+            document.getElementById('tts-btn').classList.remove('playing');
+        };
+        window.speechSynthesis.speak(speech);
+        isSpeaking = true;
+        document.getElementById('tts-icon').innerText = '⏹️';
+        document.getElementById('tts-btn').classList.add('playing');
+    }
+</script>
+
+</body>
+  </html>
