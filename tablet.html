@@ -1,1 +1,387 @@
-<!DOCTYPE html><html lang="fa"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>📱 تبلت | رهیلا</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial;background:radial-gradient(circle at center,#0a1a1a,#1a4a4a,#66ccaa);color:#fff;text-align:center;padding:15px;min-height:100vh}.header{background:rgba(255,255,255,.08);backdrop-filter:blur(20px);border-radius:25px;padding:20px;margin-bottom:15px}.header h1{color:#ffd700;font-size:22px}.back-btn{display:inline-block;background:rgba(255,255,255,.15);color:#fff;padding:8px 20px;border-radius:20px;text-decoration:none;margin:10px 0;font-size:14px}.section-title{color:#ffd700;font-size:18px;margin:20px 0 10px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.card{background:rgba(255,255,255,.05);border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,.1);text-align:right}.card h3{font-size:15px;color:#ffd700}</style></head><body><div class="header"><h1>📱 تبلت</h1></div><a href="index.html" class="back-btn">🔙 برگشت</a><div class="section-title">📱 برندها</div><div class="grid"><div class="card"><h3>آیپد</h3></div><div class="card"><h3>سامسونگ</h3></div><div class="card"><h3>لنوو</h3></div><div class="card"><h3>هواوی</h3></div></div><div class="section-title">💰 خرید</div><div class="grid"><div class="card"><h3>قیمت تبلت</h3></div><div class="card"><h3>تبلت دانشجویی</h3></div><div class="card"><h3>تبلت گیمینگ</h3></div><div class="card"><h3>تبلت کودکان</h3></div></div><p style="margin-top:15px"><a href="index.html" style="color:#ffd700">🔙 برگشت</a></p></body></html>
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>راهنمای جامع خرید تبلت: مشاور هوشمند و مقایسه برترین‌ها | رهیلاناب</title>
+    <meta name="description" content="همه چیز درباره تبلت؛ از انتخاب تبلت مناسب برای درس و طراحی تا مقایسه بهترین تبلت‌های ۲۰۲۶ (آیپد، سامسونگ، شیائومی). همراه با مشاور هوشمند خرید.">
+    
+    <style>
+        /* ============== تم‌ها ============== */
+        :root {
+            --bg-main: #f1f5f9;
+            --bg-card: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --primary: #0ea5e9; /* آبی روشن */
+            --primary-dark: #0284c7;
+            --accent: #8b5cf6; /* بنفش */
+            --border: #cbd5e1;
+            --shadow: 0 10px 30px rgba(14, 165, 233, 0.15);
+            --gradient: linear-gradient(135deg, #0ea5e9, #8b5cf6);
+        }
+
+        body.dark-mode {
+            --bg-main: #0f172a;
+            --bg-card: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --shadow: 0 10px 30px rgba(0,0,0,0.5);
+            --gradient: linear-gradient(135deg, #0369a1, #4c1d95);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; transition: background-color 0.3s, color 0.3s; }
+        
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.9;
+            font-size: 17px;
+            overflow-x: hidden;
+        }
+
+        /* ============== نوار پیشرفت ============== */
+        #progress-bar {
+            position: fixed; top: 0; left: 0; height: 4px; width: 0%;
+            background: var(--gradient); z-index: 9999;
+            box-shadow: 0 0 10px var(--primary); transition: width 0.1s;
+        }
+
+        /* ============== دکمه‌های شناور ============== */
+        .floating-controls {
+            position: fixed; top: 15px; left: 15px; z-index: 999;
+            display: flex; flex-direction: column; gap: 10px;
+        }
+        
+        .control-btn {
+            background: var(--bg-card); border: 1px solid var(--border);
+            color: var(--text-main); width: 50px; height: 50px;
+            border-radius: 50%; cursor: pointer; font-size: 20px;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: var(--shadow); backdrop-filter: blur(10px); transition: 0.3s;
+        }
+        .control-btn:hover { transform: scale(1.1); color: var(--primary); }
+        .control-btn.playing { background: var(--primary); color: white; }
+
+        /* ============== هدر ============== */
+        .header {
+            background: var(--gradient); color: white; padding: 80px 20px 60px;
+            text-align: center; border-radius: 0 0 40px 40px;
+            position: relative; overflow: hidden;
+        }
+        .header h1 { font-size: clamp(24px, 5vw, 36px); margin-bottom: 10px; position: relative; z-index: 1; }
+        .header p { font-size: 16px; opacity: 0.9; position: relative; z-index: 1; }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; margin-top: -30px; }
+
+        /* ============== کارت‌ها ============== */
+        .card {
+            background: var(--bg-card); border-radius: 24px; padding: 30px;
+            margin-bottom: 30px; box-shadow: var(--shadow); border: 1px solid var(--border);
+        }
+        .card h2 { font-size: 22px; color: var(--primary); margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+
+        /* ============== باکس BLUF ============== */
+        .box-bluf {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(139, 92, 246, 0.05));
+            border: 2px solid var(--accent); border-radius: 16px; padding: 25px; margin-bottom: 30px;
+        }
+        .box-bluf h3 { color: var(--accent); font-size: 20px; margin-bottom: 10px; }
+        .box-bluf p { font-weight: bold; font-size: 16px; }
+
+        /* ============== ۱. تبلت سه‌بعدی ============== */
+        .tablet-container { display: flex; justify-content: center; align-items: center; height: 280px; perspective: 1200px; margin: 20px 0; }
+        .tablet-3d {
+            width: 300px; height: 200px; background: #111; border-radius: 15px;
+            border: 3px solid #333; position: relative; transform-style: preserve-3d;
+            animation: rotateTablet 10s infinite linear;
+            box-shadow: 0 0 40px rgba(139, 92, 246, 0.4);
+        }
+        .tablet-3d .screen {
+            position: absolute; top: 5px; left: 5px; right: 5px; bottom: 5px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 10px; display: flex; justify-content: center; align-items: center;
+            color: white; font-weight: bold; font-size: 20px; overflow: hidden;
+        }
+        .tablet-3d .camera { position: absolute; top: 50%; right: -6px; width: 6px; height: 6px; background: #555; border-radius: 50%; transform: translateY(-50%); }
+        @keyframes rotateTablet {
+            0% { transform: rotateY(-20deg) rotateX(10deg); }
+            50% { transform: rotateY(20deg) rotateX(-10deg); }
+            100% { transform: rotateY(-20deg) rotateX(10deg); }
+        }
+
+        /* ============== ۲. مشاور هوشمند خرید ============== */
+        .smart-advisor { background: var(--bg-main); padding: 25px; border-radius: 20px; border: 1px dashed var(--primary); }
+        .advisor-step { margin-bottom: 20px; text-align: center; }
+        .advisor-step p { font-weight: bold; margin-bottom: 10px; font-size: 16px; }
+        .options-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+        .opt-btn { background: var(--bg-card); border: 2px solid var(--border); padding: 10px 20px; border-radius: 30px; cursor: pointer; font-family: inherit; font-weight: bold; transition: 0.3s; font-size: 15px; }
+        .opt-btn:hover, .opt-btn.selected { background: var(--primary); color: white; border-color: var(--primary); transform: scale(1.05); }
+        
+        #advisor-result { display: none; margin-top: 20px; padding: 20px; background: rgba(14, 165, 233, 0.1); border-right: 5px solid var(--primary); border-radius: 10px; animation: slideUp 0.5s ease; }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* ============== جدول ============== */
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 15px; border-radius: 12px; overflow: hidden; }
+        th { background: var(--primary); color: white; padding: 15px; text-align: center; }
+        td { padding: 12px; text-align: center; border-bottom: 1px solid var(--border); background: var(--bg-card); font-weight: 500; }
+        tr:hover td { background: var(--bg-main); }
+
+        /* ============== آکاردئون ============== */
+        .accordion { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 12px; overflow: hidden; }
+        .accordion-btn { background: none; border: none; width: 100%; padding: 18px; text-align: right; font-family: inherit; font-size: 16px; font-weight: bold; color: var(--text-main); cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .accordion-btn:hover { color: var(--primary); }
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; padding: 0 18px; color: var(--text-muted); font-size: 15px; }
+        .accordion.active .accordion-content { max-height: 500px; padding-bottom: 18px; }
+        .arrow { transition: transform 0.3s; }
+        .accordion.active .arrow { transform: rotate(180deg); }
+
+        .btn { display: inline-block; background: var(--primary); color: white; padding: 12px 25px; border-radius: 30px; text-decoration: none; font-weight: bold; margin: 5px; transition: 0.3s; }
+        .btn:hover { background: var(--primary-dark); }
+        .footer { text-align: center; padding: 30px; color: var(--text-muted); font-size: 14px; border-top: 1px solid var(--border); margin-top: 40px; }
+    </style>
+</head>
+<body>
+
+<!-- نوار پیشرفت -->
+<div id="progress-bar"></div>
+
+<!-- دکمه‌های شناور -->
+<div class="floating-controls">
+    <button class="control-btn" id="tts-btn" onclick="toggleSpeech()" title="گوش دادن">
+        <span id="tts-icon">🔊</span>
+    </button>
+    <button class="control-btn" onclick="toggleDarkMode()" title="تاریک/روشن">
+        <span id="theme-icon">🌙</span>
+    </button>
+</div>
+
+<div class="header">
+    <h1>📟 راهنمای جامع تبلت</h1>
+    <p>انتخاب هوشمندانه برای کار، درس و سرگرمی</p>
+</div>
+
+<div class="container" id="main-content">
+
+    <!-- BLUF -->
+    <div class="card box-bluf reveal">
+        <h3>⚡ جواب سریع در ۳ خط:</h3>
+        <p>
+            ۱. برای <strong>درس و یادداشت‌برداری</strong>، آیپد (iPad) با قلم Apple Pencil بهترین گزینه است.<br>
+            ۲. برای <strong>فیلم دیدن و سرگرمی</strong>، تبلت‌های سامسونگ با صفحه نمایش AMOLED عالی هستند.<br>
+            ۳. اگه به دنبال <strong>جایگزین لپ‌تاپ</strong> هستید، مایکروسافت سرفیس با ویندوز کامل انتخاب مناسبی است.
+        </p>
+    </div>
+
+    <!-- ۱. تبلت سه‌بعدی -->
+    <div class="card reveal">
+        <h2>📱 نسل جدید تبلت‌ها</h2>
+        <div class="tablet-container">
+            <div class="tablet-3d">
+                <div class="screen">RAHILA TAB</div>
+                <div class="camera"></div>
+            </div>
+        </div>
+        <p style="text-align:center; font-size: 14px; color: var(--text-muted); margin-top: 10px;">
+            طراحی مفهومی تبلت‌های آینده با نمایشگر لبه‌به‌لبه
+        </p>
+    </div>
+
+    <!-- ۲. مشاور هوشمند خرید -->
+    <div class="card reveal">
+        <h2>🔍 مشاور هوشمند خرید تبلت</h2>
+        <p style="margin-bottom: 20px;">به دو سوال زیر پاسخ دهید تا بهترین تبلت به شما معرفی شود:</p>
+        
+        <div class="smart-advisor">
+            <div class="advisor-step">
+                <p>۱. هدف اصلی شما از خرید تبلت چیست؟</p>
+                <div class="options-grid">
+                    <button class="opt-btn" onclick="selectOpt('use', 'study', this)">📚 درس و یادداشت</button>
+                    <button class="opt-btn" onclick="selectOpt('use', 'art', this)">🎨 طراحی و نقاشی</button>
+                    <button class="opt-btn" onclick="selectOpt('use', 'game', this)">🎮 بازی و سرگرمی</button>
+                    <button class="opt-btn" onclick="selectOpt('use', 'work', this)">💼 کار اداری و جایگزین لپ‌تاپ</button>
+                </div>
+            </div>
+
+            <div class="advisor-step">
+                <p>۲. بودجه شما چقدر است؟</p>
+                <div class="options-grid">
+                    <button class="opt-btn" onclick="selectOpt('budget', 'low', this)">💰 اقتصادی (زیر ۱۵ میلیون)</button>
+                    <button class="opt-btn" onclick="selectOpt('budget', 'mid', this)">💵 متوسط (۱۵ تا ۳۰ میلیون)</button>
+                    <button class="opt-btn" onclick="selectOpt('budget', 'high', this)">💎 بالا (بالای ۳۰ میلیون)</button>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 10px;">
+                <button class="btn" onclick="showAdvisorResult()" style="background: var(--accent);">مشاهده پیشنهاد</button>
+            </div>
+
+            <div id="advisor-result"></div>
+        </div>
+    </div>
+
+    <!-- ۳. جدول مقایسه -->
+    <div class="card reveal">
+        <h2>📊 مقایسه برترین تبلت‌های ۲۰۲۶</h2>
+        <table>
+            <thead>
+                <tr><th>نام تبلت</th><th>سیستم‌عامل</th><th>مناسب برای</th><th>نقطه قوت</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>آیپد پرو M4 (iPad Pro)</td><td>iPadOS</td><td>طراحی، ادیت ویدیو</td><td>پردازنده M4، نمایشگر OLED</td></tr>
+                <tr><td>سامسونگ گلکسی تب S9 اولترا</td><td>Android</td><td>فیلم، بازی، کار</td><td>نمایشگر غول‌پیکر ۱۴.۶ اینچی</td></tr>
+                <tr><td>شیائومی پد ۶ (Xiaomi Pad 6)</td><td>Android</td><td>استفاده روزمره</td><td>ارزش خرید فوق‌العاده، ۱۴۴ هرتز</td></tr>
+                <tr><td>مایکروسافت سرفیس پرو ۱۰</td><td>Windows</td><td>جایگزین لپ‌تاپ</td><td>اجرای نرم‌افزارهای کامل ویندوز</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- ۴. آکاردئون -->
+    <div class="card reveal">
+        <h2>❓ سوالات متداول (FAQ)</h2>
+        
+        <div class="accordion">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+                آیا تبلت جایگزین لپ‌تاپ می‌شود؟
+                <span class="arrow">▼</span>
+            </button>
+            <div class="accordion-content">
+                بستگی به کار شما دارد. اگر کارهای سبک مثل وب‌گردی، ایمیل و یادداشت‌برداری انجام می‌دهید، تبلت کافی است. اما برای برنامه‌نویسی سنگین، رندر سه‌بعدی یا اجرای نرم‌افزارهای خاص ویندوز، هنوز به لپ‌تاپ نیاز دارید. مایکروسافت سرفیس به دلیل داشتن ویندوز، نزدیک‌ترین گزینه به لپ‌تاپ است.
+            </div>
+        </div>
+
+        <div class="accordion">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+                برای هک نشدن تبلت چه کنیم؟
+                <span class="arrow">▼</span>
+            </button>
+            <div class="accordion-content">
+                همیشه سیستم‌عامل تبلت خود را آپدیت نگه دارید. از نصب برنامه‌ها از منابع ناشناس (خارج از گوگل پلی یا اپ استور) خودداری کنید. احراز هویت دو مرحله‌ای (2FA) را فعال کنید و از رمز عبور قوی استفاده نمایید.
+            </div>
+        </div>
+    </div>
+
+    <div class="card reveal" style="text-align: center;">
+        <h2>🔗 صفحات مرتبط</h2>
+        <p>
+            <a href="phone-full.html" class="btn">📱 گوشی جامع</a>
+            <a href="laptop.html" class="btn">💻 لپ‌تاپ</a>
+            <a href="tech.html" class="btn">📱 تکنولوژی</a>
+        </p>
+    </div>
+
+</div>
+
+<div class="footer">
+    <p>🌟 <strong>رهیلاناب</strong> - <a href="index.html" style="color: var(--primary);">خانه</a> | <a href="tech.html" style="color: var(--primary);">تکنولوژی</a></p>
+    <p>© ۲۰۲۶ rahilanab.com | با تکنولوژی، آینده را بساز.</p>
+</div>
+
+<script>
+    // =============== ۱. نوار پیشرفت ===============
+    window.onscroll = function() {
+        var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var scrolled = (winScroll / height) * 100;
+        document.getElementById("progress-bar").style.width = scrolled + "%";
+    };
+
+    // =============== ۲. تم تاریک ===============
+    function toggleDarkMode() {
+        document.body.classList.toggle('dark-mode');
+        const isDark = document.body.classList.contains('dark-mode');
+        document.getElementById('theme-icon').innerText = isDark ? '☀️' : '🌙';
+        localStorage.setItem('darkMode', isDark);
+    }
+    if (localStorage.getItem('darkMode') === 'true') { toggleDarkMode(); }
+
+    // =============== ۳. پخش صوتی (TTS) ===============
+    let isSpeaking = false;
+    let voices = [];
+    function loadVoices() { voices = window.speechSynthesis.getVoices(); }
+    if (typeof speechSynthesis !== 'undefined' && speechSynthesis.onvoiceschanged !== undefined) { speechSynthesis.onvoiceschanged = loadVoices; }
+
+    function toggleSpeech() {
+        if (isSpeaking) {
+            window.speechSynthesis.cancel();
+            isSpeaking = false;
+            document.getElementById('tts-icon').innerText = '🔊';
+            document.getElementById('tts-btn').classList.remove('playing');
+            return;
+        }
+        const mainText = document.getElementById('main-content').innerText;
+        const speech = new SpeechSynthesisUtterance(mainText);
+        speech.lang = 'fa-IR';
+        const persianVoice = voices.find(v => v.lang.includes('fa') || v.lang === 'fa-IR');
+        if (persianVoice) speech.voice = persianVoice;
+        speech.onend = function() {
+            isSpeaking = false;
+            document.getElementById('tts-icon').innerText = '🔊';
+            document.getElementById('tts-btn').classList.remove('playing');
+        };
+        window.speechSynthesis.speak(speech);
+        isSpeaking = true;
+        document.getElementById('tts-icon').innerText = '⏹️';
+        document.getElementById('tts-btn').classList.add('playing');
+    }
+
+    // =============== ۴. آکاردئون ===============
+    function toggleAccordion(btn) { btn.parentElement.classList.toggle('active'); }
+
+    // =============== ۵. مشاور هوشمند خرید ===============
+    let userChoices = { use: null, budget: null };
+
+    function selectOpt(type, value, btn) {
+        // حذف حالت انتخاب شده از بقیه دکمه‌های هم‌گروه
+        const parent = btn.parentElement;
+        parent.querySelectorAll('.opt-btn').forEach(b => b.classList.remove('selected'));
+        // اضافه کردن به دکمه فعلی
+        btn.classList.add('selected');
+        
+        // ذخیره انتخاب
+        userChoices[type] = value;
+    }
+
+    function showAdvisorResult() {
+        if (!userChoices.use || !userChoices.budget) {
+            alert('⚠️ لطفاً به هر دو سوال پاسخ دهید.');
+            return;
+        }
+
+        const resultDiv = document.getElementById('advisor-result');
+        let recommendation = '';
+
+        if (userChoices.use === 'study') {
+            if (userChoices.budget === 'low') recommendation = "📚 <strong>شیائومی پد ۶ (Xiaomi Pad 6)</strong> با قلم هوشمند. برای یادداشت‌برداری سبک و روزمره عالیه و قیمت مناسبی داره.";
+            else if (userChoices.budget === 'mid') recommendation = "📚 <strong>آیپد ایر (iPad Air)</strong> با قلم Apple Pencil (نسل ۲). ترکیب عالی از قدرت و وزن سبک برای دانشجوها.";
+            else recommendation = "📚 <strong>آیپد پرو M4 (iPad Pro)</strong>. قدرتمندترین تبلت برای کارهای سنگین دانشگاهی و طراحی حرفه‌ای با قلم.";
+        } 
+        else if (userChoices.use === 'art') {
+            if (userChoices.budget === 'low') recommendation = "🎨 <strong>سامسونگ گلکسی تب A9+</strong> با قلم S-Pen رایگان. برای شروع طراحی دیجیتال گزینه خوبیه.";
+            else if (userChoices.budget === 'mid') recommendation = "🎨 <strong>سامسونگ گلکسی تب S9 FE</strong> با قلم S-Pen. نمایشگر باکیفیت و دقت بالای قلم برای طراحان.";
+            else recommendation = "🎨 <strong>آیپد پرو M4</strong> با نمایشگر Tandem OLED و قلم Apple Pencil Pro. استاندارد طلایی طراحی دیجیتال در جهان.";
+        }
+        else if (userChoices.use === 'game') {
+            if (userChoices.budget === 'low') recommendation = "🎮 <strong>شیائومی پد ۶</strong> با پردازنده اسنپدراگون ۸۷۰. برای بازی‌های موبایلی عملکرد بسیار خوبی داره.";
+            else if (userChoices.budget === 'mid') recommendation = "🎮 <strong>آیپد مینی ۶ (iPad Mini 6)</strong>. اندازه جمع‌وجور و پردازنده A15 که برای گیمینگ فوق‌العاده است.";
+            else recommendation = "🎮 <strong>سامسونگ گلکسی تب S9 اولترا</strong> با نمایشگر ۱۴.۶ اینچی AMOLED و نرخ ۱۲۰ هرتز. غول گیمینگ در دنیای تبلت.";
+        }
+        else if (userChoices.use === 'work') {
+            if (userChoices.budget === 'low' || userChoices.budget === 'mid') recommendation = "💼 <strong>مایکروسافت سرفیس گو ۳ (Surface Go 3)</strong>. ویندوز کامل داره و برای کارهای اداری سبک عالیه.";
+            else recommendation = "💼 <strong>مایکروسافت سرفیس پرو ۱۰ (Surface Pro 10)</strong> با کیبورد اختصاصی. بهترین جایگزین لپ‌تاپ با قدرت پردازش بالا.";
+        }
+
+        resultDiv.innerHTML = `<h3 style="color: var(--primary); margin-bottom: 10px;">💡 پیشنهاد ویژه رهیلاناب:</h3><p style="font-size: 16px; line-height: 1.8;">${recommendation}</p>`;
+        resultDiv.style.display = 'block';
+        
+        // اسکرول به پایین
+        resultDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    loadVoices();
+</script>
+
+</body>
+  </html>
