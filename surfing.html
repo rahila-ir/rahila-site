@@ -1,1 +1,449 @@
-<!DOCTYPE html><html lang="fa"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>🏄 موج‌سواری | رهیلا</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial;background:radial-gradient(circle at center,#0a1a1a,#1a4a4a,#66ccaa);color:#fff;text-align:center;padding:15px;min-height:100vh}.header{background:rgba(255,255,255,.08);backdrop-filter:blur(20px);border-radius:25px;padding:20px;margin-bottom:15px}.header h1{color:#ffd700;font-size:22px}.back-btn{display:inline-block;background:rgba(255,255,255,.15);color:#fff;padding:8px 20px;border-radius:20px;text-decoration:none;margin:10px 0;font-size:14px}.section-title{color:#ffd700;font-size:18px;margin:20px 0 10px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.card{background:rgba(255,255,255,.05);border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,.1);text-align:right}.card h3{font-size:15px;color:#ffd700}</style></head><body><div class="header"><h1>🏄 موج‌سواری</h1></div><a href="index.html" class="back-btn">🔙 برگشت</a><div class="section-title">🏄 اطلاعات</div><div class="grid"><div class="card"><h3>موج‌سواری چیست</h3></div><div class="card"><h3>تجهیزات</h3></div><div class="card"><h3>بهترین سواحل</h3></div><div class="card"><h3>آموزش</h3></div></div><p style="margin-top:15px"><a href="index.html" style="color:#ffd700">🔙 برگشت</a></p></body></html>
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>راهنمای جامع موج‌سواری (Surfing): آموزش، تجهیزات و بهترین سواحل ایران | رهیلاناب</title>
+    <meta name="description" content="همه چیز درباره ورزش موج‌سواری؛ از انتخاب تخته مناسب و آموزش مبتدی تا معرفی بهترین سواحل ایران برای سرفینگ. همراه با دکمه پخش صوتی و تست هوشمند.">
+    <meta name="keywords" content="موج سواری, سرفینگ, آموزش موج سواری, تخته موج سواری, بهترین سواحل ایران, ورزش های آبی">
+    
+    <style>
+        /* ============== تم‌ها ============== */
+        :root {
+            --bg-main: #f0f9ff; /* آبی خیلی روشن */
+            --bg-card: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --primary: #0284c7; /* آبی اقیانوس */
+            --primary-dark: #0369a1;
+            --accent: #f59e0b; /* نارنجی خورشید */
+            --border: #e0f2fe;
+            --shadow: 0 10px 30px rgba(2, 132, 199, 0.1);
+            --gradient: linear-gradient(135deg, #0284c7, #38bdf8);
+        }
+
+        body.dark-mode {
+            --bg-main: #082f49;
+            --bg-card: #0c4a6e;
+            --text-main: #f0f9ff;
+            --text-muted: #bae6fd;
+            --border: #075985;
+            --shadow: 0 10px 30px rgba(0,0,0,0.4);
+            --gradient: linear-gradient(135deg, #0369a1, #082f49);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; transition: background-color 0.3s, color 0.3s; }
+        
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.9;
+            font-size: 17px;
+            overflow-x: hidden;
+        }
+
+        /* ============== نوار پیشرفت ============== */
+        #progress-bar {
+            position: fixed; top: 0; left: 0; height: 4px; width: 0%;
+            background: var(--gradient); z-index: 9999;
+            box-shadow: 0 0 10px var(--primary); transition: width 0.1s;
+        }
+
+        /* ============== دکمه‌های شناور ============== */
+        .floating-controls {
+            position: fixed; top: 15px; left: 15px; z-index: 999;
+            display: flex; flex-direction: column; gap: 10px;
+        }
+        
+        .control-btn {
+            background: var(--bg-card); border: 1px solid var(--border);
+            color: var(--text-main); width: 50px; height: 50px;
+            border-radius: 50%; cursor: pointer; font-size: 20px;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: var(--shadow); backdrop-filter: blur(10px); transition: 0.3s;
+        }
+        .control-btn:hover { transform: scale(1.1); color: var(--primary); }
+        .control-btn.playing { background: var(--primary); color: white; }
+
+        /* ============== فهرست شناور (TOC) ============== */
+        .toc-container { position: fixed; top: 15px; right: 15px; z-index: 999; }
+        .toc-btn { background: var(--bg-card); border: 1px solid var(--border); color: var(--text-main); padding: 10px 15px; border-radius: 30px; cursor: pointer; font-family: inherit; font-weight: bold; box-shadow: var(--shadow); display: flex; align-items: center; gap: 8px; }
+        .toc-menu { position: absolute; top: 60px; right: 0; background: var(--bg-card); border: 1px solid var(--border); border-radius: 15px; padding: 15px; min-width: 220px; box-shadow: var(--shadow); display: none; flex-direction: column; gap: 10px; }
+        .toc-menu.active { display: flex; }
+        .toc-menu a { color: var(--text-main); text-decoration: none; font-size: 14px; padding: 5px 10px; border-radius: 8px; }
+        .toc-menu a:hover { background: var(--bg-main); color: var(--primary); }
+
+        /* ============== هدر با موج متحرک ============== */
+        .header {
+            background: var(--gradient); color: white; padding: 80px 20px 100px;
+            text-align: center; border-radius: 0 0 40px 40px;
+            position: relative; overflow: hidden;
+        }
+        
+        /* انیمیشن موج CSS */
+        .wave {
+            position: absolute; bottom: 0; left: 0; width: 200%;
+            height: 120px; background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.2" d="M0,160L48,170.7C96,181,192,203,288,208C384,213,480,203,576,181.3C672,160,768,128,864,133.3C960,139,1056,181,1152,197.3C1248,213,1344,203,1392,197.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            background-size: 50% 100%;
+            animation: waveMove 10s linear infinite;
+        }
+        .wave:nth-child(2) { bottom: 10px; opacity: 0.5; animation-duration: 15s; animation-direction: reverse; }
+        
+        @keyframes waveMove {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .header h1 { font-size: clamp(24px, 5vw, 36px); margin-bottom: 10px; position: relative; z-index: 1; text-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+        .header p { font-size: 16px; opacity: 0.9; position: relative; z-index: 1; }
+
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; margin-top: -30px; }
+
+        /* ============== انیمیشن ============== */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* ============== کارت‌ها ============== */
+        .card {
+            background: var(--bg-card); border-radius: 20px; padding: 30px;
+            margin-bottom: 30px; box-shadow: var(--shadow); border: 1px solid var(--border);
+        }
+        .card h2 { font-size: 22px; color: var(--primary); margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+        .card h3 { font-size: 19px; color: var(--text-main); margin: 20px 0 10px; }
+
+        /* ============== باکس BLUF ============== */
+        .box-bluf {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(245, 158, 11, 0.05));
+            border: 2px solid var(--accent); border-radius: 16px; padding: 25px; margin-bottom: 30px;
+        }
+        .box-bluf h3 { color: var(--accent); font-size: 20px; margin-bottom: 10px; }
+        .box-bluf p { font-weight: bold; font-size: 16px; line-height: 1.8; }
+
+        /* ============== گالری ============== */
+        .img-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 15px; margin: 20px 0; }
+        .img-grid img {
+            width: 100%; height: 200px; object-fit: cover; border-radius: 15px;
+            box-shadow: var(--shadow); transition: transform 0.3s; cursor: pointer;
+        }
+        .img-grid img:hover { transform: scale(1.03); }
+
+        /* ============== تست انتخاب تخته ============== */
+        .surf-test { background: var(--bg-main); padding: 20px; border-radius: 15px; margin-top: 15px; border: 1px dashed var(--border); }
+        .test-group { margin-bottom: 15px; }
+        .test-group label { display: block; margin-bottom: 5px; font-weight: bold; font-size: 14px; }
+        .test-group select { width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--border); font-family: inherit; background: var(--bg-card); color: var(--text-main); font-size: 15px; outline: none; }
+        .test-btn { background: var(--primary); color: white; border: none; padding: 12px 20px; border-radius: 8px; font-family: inherit; font-weight: bold; cursor: pointer; width: 100%; transition: 0.3s; }
+        .test-btn:hover { background: var(--primary-dark); }
+        #surf-result { display: none; margin-top: 15px; padding: 15px; background: rgba(2, 132, 199, 0.1); border-right: 4px solid var(--primary); border-radius: 8px; font-weight: bold; animation: slideUp 0.5s ease; }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* ============== جدول ============== */
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 15px; border-radius: 12px; overflow: hidden; }
+        th { background: var(--primary); color: white; padding: 15px; text-align: center; }
+        td { padding: 12px; text-align: center; border-bottom: 1px solid var(--border); background: var(--bg-card); }
+        tr:hover td { background: var(--bg-main); }
+
+        /* ============== آکاردئون ============== */
+        .accordion { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 12px; overflow: hidden; }
+        .accordion-btn { background: none; border: none; width: 100%; padding: 18px; text-align: right; font-family: inherit; font-size: 16px; font-weight: bold; color: var(--text-main); cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .accordion-btn:hover { color: var(--primary); }
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; padding: 0 18px; color: var(--text-muted); }
+        .accordion.active .accordion-content { max-height: 500px; padding-bottom: 18px; }
+        .arrow { transition: transform 0.3s; }
+        .accordion.active .arrow { transform: rotate(180deg); }
+
+        .btn { display: inline-block; background: var(--primary); color: white; padding: 12px 25px; border-radius: 30px; text-decoration: none; font-weight: bold; margin: 5px; transition: 0.3s; }
+        .btn:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 5px 15px rgba(2,132,199,0.4); }
+
+        .footer { text-align: center; padding: 30px; color: var(--text-muted); font-size: 14px; border-top: 1px solid var(--border); margin-top: 40px; }
+        
+        #back-to-top { position: fixed; bottom: 20px; right: 20px; width: 50px; height: 50px; border-radius: 50%; background: var(--primary); color: white; border: none; font-size: 20px; cursor: pointer; box-shadow: var(--shadow); display: none; z-index: 999; }
+        
+        /* لایت‌باکس */
+        #lightbox { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.9); z-index: 99999; display: none; align-items: center; justify-content: center; padding: 20px; }
+        #lightbox img { max-width: 90%; max-height: 90%; border-radius: 10px; }
+        #lightbox .close-lb { position: absolute; top: 20px; right: 20px; color: white; font-size: 30px; cursor: pointer; background: none; border: none; }
+    </style>
+</head>
+<body>
+
+<!-- نوار پیشرفت -->
+<div id="progress-bar"></div>
+
+<!-- دکمه‌های شناور -->
+<div class="floating-controls">
+    <button class="control-btn" id="tts-btn" onclick="toggleSpeech()" title="گوش دادن">
+        <span id="tts-icon">🔊</span>
+    </button>
+    <button class="control-btn" onclick="toggleDarkMode()" title="تاریک/روشن">
+        <span id="theme-icon">🌙</span>
+    </button>
+</div>
+
+<!-- فهرست شناور -->
+<div class="toc-container">
+    <button class="toc-btn" onclick="document.getElementById('toc-menu').classList.toggle('active')">
+        📌 فهرست مطالب
+    </button>
+    <div class="toc-menu" id="toc-menu">
+        <a href="#intro" onclick="closeToc()">🔹 موج‌سواری چیست؟</a>
+        <a href="#equipment" onclick="closeToc()">🔹 تجهیزات لازم</a>
+        <a href="#surf-test" onclick="closeToc()">🔹 تست انتخاب تخته</a>
+        <a href="#locations" onclick="closeToc()">🔹 بهترین سواحل ایران</a>
+        <a href="#faq" onclick="closeToc()">🔹 سوالات متداول</a>
+    </div>
+</div>
+
+<div class="header">
+    <h1>🏄‍♂️ راهنمای جامع موج‌سواری</h1>
+    <p>از انتخاب تخته تا تسخیر امواج ایران و جهان</p>
+    <div class="wave"></div>
+    <div class="wave"></div>
+</div>
+
+<div class="container" id="main-content">
+
+    <!-- BLUF -->
+    <div class="card box-bluf reveal">
+        <h3>⚡ جواب سریع در ۳ خط:</h3>
+        <p>
+            ۱. برای شروع، بهترین گزینه <strong>تخته‌های فوم (Foam Board)</strong> هستند چون شناورند و ضربه‌گیری خوبی دارند.<br>
+            ۲. قبل از سوار شدن روی تخته، حتماً <strong>قوانین ایمنی</strong> (مثل بند مچ پا) را یاد بگیرید.<br>
+            ۳. بهترین مکان‌ها برای یادگیری در ایران، سواحل <strong>کیش، قشم و چابهار</strong> هستند (در ادامه جدول کامل).
+        </p>
+    </div>
+
+    <div class="card reveal" id="intro">
+        <h2>🌊 موج‌سواری (Surfing) چیست؟</h2>
+        <p>موج‌سواری یک ورزش هیجان‌انگیز است که در آن سوار بر تخته مخصوص، روی موج‌های دریا حرکت می‌کنید. این ورزش فقط یک فعالیت بدنی نیست، بلکه یک سبک زندگی است که به شما یاد می‌دهد چگونه با طبیعت هماهنگ شوید و با صبر و تعادل، بر امواج غلبه کنید.</p>
+        <div class="img-grid">
+            <img src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?w=500" alt="موج سواری در اقیانوس" loading="lazy" onclick="openLightbox(this.src)">
+            <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=500" alt="سرفینگ در ساحل" loading="lazy" onclick="openLightbox(this.src)">
+            <img src="https://images.unsplash.com/photo-1520528655-84e4f24360e0?w=500" alt="تخته موج سواری" loading="lazy" onclick="openLightbox(this.src)">
+            <img src="https://images.unsplash.com/photo-1530696308796-45a5f777adc3?w=500" alt="موج سواری در غروب" loading="lazy" onclick="openLightbox(this.src)">
+        </div>
+    </div>
+
+    <div class="card reveal" id="equipment">
+        <h2>🎒 تجهیزات ضروری برای موج‌سواری</h2>
+        <p>برای شروع این ورزش، به ۴ وسیله اصلی نیاز دارید:</p>
+        <h3>۱. تخته موج‌سواری (Surfboard):</h3>
+        <p>مبتدی‌ها باید از تخته‌های بلند (Longboard) یا تخته‌های فوم (Foam) استفاده کنند که تعادل بسیار بالایی دارند.</p>
+        
+        <h3>۲. بند مچ پا (Leash):</h3>
+        <p>بندی که مچ پای شما را به تخته متصل می‌کند تا پس از سقوط در آب، تخته از شما دور نشود.</p>
+        
+        <h3>۳. وکس (Wax):</h3>
+        <p>ماده‌ای چسبناک که روی تخته می‌زنید تا از لیز خوردن پای شما جلوگیری کند.</p>
+
+        <h3>۴. لباس سرفینگ (Wetsuit یا Rash Guard):</h3>
+        <p>برای محافظت از پوست در برابر آفتاب و آب سرد دریا.</p>
+    </div>
+
+    <!-- تست انتخاب تخته -->
+    <div class="card reveal" id="surf-test">
+        <h2>🏄 کدام تخته برای شما مناسب است؟</h2>
+        <p>با پاسخ به دو سوال، بهترین تخته را برای شروع پیدا کنید:</p>
+        
+        <div class="surf-test">
+            <div class="test-group">
+                <label>۱. سطح مهارت شما:</label>
+                <select id="skill-level">
+                    <option value="beginner">تازه‌کار (هنوز نایستادم)</option>
+                    <option value="intermediate">متوسط (می‌توانم روی تخته بایستم)</option>
+                    <option value="advanced">حرفه‌ای (سوار بر امواج می‌شوم)</option>
+                </select>
+            </div>
+            <div class="test-group">
+                <label>۲. وزن شما (تقریبی):</label>
+                <select id="weight">
+                    <option value="light">زیر ۶۰ کیلوگرم</option>
+                    <option value="medium">۶۰ تا ۸۰ کیلوگرم</option>
+                    <option value="heavy">بالای ۸۰ کیلوگرم</option>
+                </select>
+            </div>
+            <button class="test-btn" onclick="findSurfboard()">مشاهده پیشنهاد هوشمند</button>
+            <div id="surf-result"></div>
+        </div>
+    </div>
+
+    <div class="card reveal" id="locations">
+        <h2>📍 بهترین سواحل ایران برای موج‌سواری</h2>
+        <p>دسترسی به موج‌های مناسب، اولین قدم برای یادگیری است. این جدول بهترین مکان‌های ایران را نشان می‌دهد:</p>
+        <table>
+            <thead>
+                <tr><th>#</th><th>مکان</th><th>سطح امواج</th><th>مناسب برای</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>۱</td><td>🏝️ کیش (ساحل مرجان)</td><td>آرام تا متوسط</td><td>مبتدیان و دوره‌های آموزشی</td></tr>
+                <tr><td>۲</td><td>🏝️ قشم (ساحل سیلک)</td><td>متوسط</td><td>سرفینگ تفریحی و آموزش</td></tr>
+                <tr><td>۳</td><td>🌊 چابهار (تیس)</td><td>قوی و حرفه‌ای</td><td>سرفرهای حرفه‌ای</td></tr>
+                <tr><td>۴</td><td>🌊 بوشهر (ساحل گناوه)</td><td>متوسط تا قوی</td><td>سرفینگ در فصول خاص</td></tr>
+                <tr><td>۵</td><td>🌴 اهواز (ساحل اروند)</td><td>آرام</td><td>پدل‌بورد و تمرین</td></tr>
+            </tbody>
+        </table>
+        <div style="margin-top: 15px; padding: 15px; background: rgba(245, 158, 11, 0.1); border-right: 4px solid var(--accent); border-radius: 8px; color: var(--text-main);">
+            ⚠️ <strong>هشدار:</strong> در سواحل ایران حتماً قبل از ورود به آب، وضعیت جزر و مد، جهت باد و وجود نجات‌غریق را بررسی کنید. هرگز تنها سرف نکنید.
+        </div>
+    </div>
+
+    <div class="card reveal" id="faq">
+        <h2>❓ سوالات متداول (FAQ)</h2>
+        
+        <div class="accordion">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+                آیا موج‌سواری خطرناک است؟
+                <span class="arrow">▼</span>
+            </button>
+            <div class="accordion-content">
+                هر ورزش آبی کمی خطر دارد، اما اگر قوانین ایمنی (مثل استفاده از بند و شنا در مناطق مجاز) را رعایت کنید و با مربی شروع کنید، خطر آن بسیار پایین می‌آید.
+            </div>
+        </div>
+
+        <div class="accordion">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+                آیا باید شنا بلد باشم؟
+                <span class="arrow">▼</span>
+            </button>
+            <div class="accordion-content">
+                بله! شنا کردن یکی از پیش‌نیازهای اصلی موج‌سواری است. شما باید بتوانید در آب‌های عمیق بدون ترس شنا کنید.
+            </div>
+        </div>
+    </div>
+
+    <div class="card reveal" style="text-align: center;">
+        <h2>🔗 صفحات مرتبط</h2>
+        <p>
+            <a href="standup-paddle.html" class="btn">🏄 پارو ایستاده</a>
+            <a href="sport-full.html" class="btn">⚽ ورزش جامع</a>
+            <a href="surfing.html" class="btn">🌊 اسکی روی آب</a>
+        </p>
+    </div>
+
+</div>
+
+<div class="footer">
+    <p>🌟 <strong>رهیلاناب</strong> - <a href="index.html" style="color: var(--primary);">خانه</a> | <a href="sport-full.html" style="color: var(--primary);">ورزش</a></p>
+    <p>© ۲۰۲۶ rahilanab.com | با ورزش، شاد و سالم بمانید.</p>
+</div>
+
+<!-- دکمه برگشت به بالا -->
+<button id="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+
+<!-- لایت‌باکس -->
+<div id="lightbox">
+    <button class="close-lb" onclick="closeLightbox()">✖</button>
+    <img id="lightbox-img" src="" alt="عکس بزرگ">
+</div>
+
+<script>
+    // ۱. اسکریپت پیشرفت
+    window.onscroll = function() {
+        var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var scrolled = (winScroll / height) * 100;
+        document.getElementById("progress-bar").style.width = scrolled + "%";
+        
+        if (winScroll > 300) {
+            document.getElementById("back-to-top").style.display = "block";
+        } else {
+            document.getElementById("back-to-top").style.display = "none";
+        }
+    };
+
+    // ۲. حالت تاریک
+    function toggleDarkMode() {
+        document.body.classList.toggle('dark-mode');
+        const isDark = document.body.classList.contains('dark-mode');
+        document.getElementById('theme-icon').innerText = isDark ? '☀️' : '🌙';
+        localStorage.setItem('darkMode', isDark);
+    }
+    if (localStorage.getItem('darkMode') === 'true') { toggleDarkMode(); }
+
+    // ۳. پخش صوتی
+    let isSpeaking = false;
+    let voices = [];
+    function loadVoices() { voices = window.speechSynthesis.getVoices(); }
+    if (typeof speechSynthesis !== 'undefined' && speechSynthesis.onvoiceschanged !== undefined) {
+        speechSynthesis.onvoiceschanged = loadVoices;
+    }
+
+    function toggleSpeech() {
+        if (isSpeaking) {
+            window.speechSynthesis.cancel();
+            isSpeaking = false;
+            document.getElementById('tts-icon').innerText = '🔊';
+            document.getElementById('tts-btn').classList.remove('playing');
+            return;
+        }
+
+        const mainText = document.getElementById('main-content').innerText;
+        const speech = new SpeechSynthesisUtterance(mainText);
+        speech.lang = 'fa-IR';
+
+        const persianVoice = voices.find(v => v.lang.includes('fa') || v.lang === 'fa-IR');
+        if (persianVoice) speech.voice = persianVoice;
+
+        speech.onend = function() {
+            isSpeaking = false;
+            document.getElementById('tts-icon').innerText = '🔊';
+            document.getElementById('tts-btn').classList.remove('playing');
+        };
+
+        window.speechSynthesis.speak(speech);
+        isSpeaking = true;
+        document.getElementById('tts-icon').innerText = '⏹️';
+        document.getElementById('tts-btn').classList.add('playing');
+    }
+
+    // ۴. انیمیشن اسکرول
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('active');
+        });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // ۵. آکاردئون
+    function toggleAccordion(btn) { btn.parentElement.classList.toggle('active'); }
+
+    // ۶. لایت‌باکس
+    function openLightbox(src) {
+        document.getElementById('lightbox-img').src = src;
+        document.getElementById('lightbox').style.display = 'flex';
+    }
+    function closeLightbox() { document.getElementById('lightbox').style.display = 'none'; }
+
+    // ۷. فهرست شناور
+    function closeToc() { document.getElementById('toc-menu').classList.remove('active'); }
+
+    // ۸. تست انتخاب تخته
+    function findSurfboard() {
+        const skill = document.getElementById('skill-level').value;
+        const weight = document.getElementById('weight').value;
+        const resultDiv = document.getElementById('surf-result');
+        let text = '';
+
+        if (skill === 'beginner') {
+            if (weight === 'heavy') {
+                text = "🏄 برای شما **تخته فوم بلند (۸ تا ۹ فوت)** با ضخامت بالا پیشنهاد می‌شود. این تخته شناوری بسیار بالایی دارد و به راحتی وزن شما را تحمل می‌کند.";
+            } else {
+                text = "🏄 برای شما **تخته فوم (Foam Board) با سایز ۷ تا ۸ فوت** پیشنهاد می‌شود. این تخته بهترین گزینه برای یادگیری تعادل و ایستادن است.";
+            }
+        } else if (skill === 'intermediate') {
+            text = "🏄 برای شما **تخته مینی‌مالیبو (Mini Malibu)** یا **فان‌بورد (Funboard)** پیشنهاد می‌شود. این تخته‌ها تعادل خوبی دارند و برای پیشرفت در تکنیک عالی هستند.";
+        } else {
+            text = "🏄 برای شما **تخته شورت‌بورد (Shortboard)** پیشنهاد می‌شود. این تخته برای مانورهای سریع و سرعت بالا طراحی شده است.";
+        }
+
+        resultDiv.innerHTML = text;
+        resultDiv.style.display = 'block';
+    }
+
+    // لود اولیه صداها
+    loadVoices();
+</script>
+
+</body>
+</html>
