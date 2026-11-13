@@ -1,1 +1,443 @@
-<!DOCTYPE html><html lang="fa"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>🕶️ عینک آفتابی | رهیلا</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial;background:radial-gradient(circle at center,#0a1a1a,#1a4a4a,#66ccaa);color:#fff;text-align:center;padding:15px;min-height:100vh}.header{background:rgba(255,255,255,.08);backdrop-filter:blur(20px);border-radius:25px;padding:20px;margin-bottom:15px}.header h1{color:#ffd700;font-size:22px}.back-btn{display:inline-block;background:rgba(255,255,255,.15);color:#fff;padding:8px 20px;border-radius:20px;text-decoration:none;margin:10px 0;font-size:14px}.section-title{color:#ffd700;font-size:18px;margin:20px 0 10px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.card{background:rgba(255,255,255,.05);border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,.1);text-align:right}.card h3{font-size:15px;color:#ffd700}</style></head><body><div class="header"><h1>🕶️ عینک آفتابی</h1></div><a href="index.html" class="back-btn">🔙 برگشت</a><div class="section-title">🕶️ اطلاعات</div><div class="grid"><div class="card"><h3>عینک آفتابی زنانه</h3></div><div class="card"><h3>عینک آفتابی مردانه</h3></div><div class="card"><h3>برندهای معروف</h3></div><div class="card"><h3>قیمت</h3></div></div><p style="margin-top:15px"><a href="index.html" style="color:#ffd700">🔙 برگشت</a></p></body></html>
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>راهنمای جامع عینک آفتابی: انتخاب، محافظت و بهترین برندها | رهیلاناب</title>
+    <meta name="description" content="چطور عینک آفتابی مناسب بخریم؟ راهنمای انتخاب عینک بر اساس فرم صورت، محافظت در برابر UV، معرفی بهترین برندها و نکات خرید.">
+    <meta name="keywords" content="عینک آفتابی, عینک آفتابی مردانه, عینک آفتابی زنانه, محافظت از چشم, UV, فرم صورت, برند عینک">
+    
+    <style>
+        /* ============== تم‌ها ============== */
+        :root {
+            --bg-main: #f8fafc;
+            --bg-card: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --primary: #1a73e8;
+            --primary-dark: #0d47a1;
+            --accent: #f9a825;
+            --border: #e2e8f0;
+            --shadow: 0 10px 30px rgba(0,0,0,0.08);
+            --gradient: linear-gradient(135deg, #1a73e8, #0d47a1);
+        }
+
+        body.dark-mode {
+            --bg-main: #0f172a;
+            --bg-card: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --shadow: 0 10px 30px rgba(0,0,0,0.4);
+            --gradient: linear-gradient(135deg, #1e3a8a, #0f172a);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; transition: background-color 0.3s, color 0.3s; }
+        
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.9;
+            font-size: 17px;
+            overflow-x: hidden;
+        }
+
+        /* ============== نوار پیشرفت ============== */
+        #progress-bar {
+            position: fixed; top: 0; left: 0; height: 4px; width: 0%;
+            background: var(--gradient); z-index: 9999;
+            box-shadow: 0 0 10px var(--primary); transition: width 0.1s;
+        }
+
+        /* ============== دکمه‌های شناور ============== */
+        .floating-controls {
+            position: fixed; top: 15px; left: 15px; z-index: 999;
+            display: flex; flex-direction: column; gap: 10px;
+        }
+        
+        .control-btn {
+            background: var(--bg-card); border: 1px solid var(--border);
+            color: var(--text-main); width: 50px; height: 50px;
+            border-radius: 50%; cursor: pointer; font-size: 20px;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: var(--shadow); backdrop-filter: blur(10px); transition: 0.3s;
+        }
+        .control-btn:hover { transform: scale(1.1); color: var(--primary); }
+        .control-btn.playing { background: var(--primary); color: white; }
+
+        /* ============== فهرست شناور (TOC) ============== */
+        .toc-container { position: fixed; top: 15px; right: 15px; z-index: 999; }
+        .toc-btn { background: var(--bg-card); border: 1px solid var(--border); color: var(--text-main); padding: 10px 15px; border-radius: 30px; cursor: pointer; font-family: inherit; font-weight: bold; box-shadow: var(--shadow); display: flex; align-items: center; gap: 8px; }
+        .toc-menu { position: absolute; top: 60px; right: 0; background: var(--bg-card); border: 1px solid var(--border); border-radius: 15px; padding: 15px; min-width: 200px; box-shadow: var(--shadow); display: none; flex-direction: column; gap: 10px; }
+        .toc-menu.active { display: flex; }
+        .toc-menu a { color: var(--text-main); text-decoration: none; font-size: 14px; padding: 5px 10px; border-radius: 8px; }
+        .toc-menu a:hover { background: var(--bg-main); color: var(--primary); }
+
+        /* ============== هدر ============== */
+        .header {
+            background: var(--gradient); color: white; padding: 80px 20px 50px;
+            text-align: center; border-radius: 0 0 40px 40px;
+            position: relative; overflow: hidden;
+        }
+        .header::before {
+            content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 60%);
+            animation: rotate 20s linear infinite;
+        }
+        @keyframes rotate { 100% { transform: rotate(360deg); } }
+        .header h1 { font-size: clamp(24px, 5vw, 36px); margin-bottom: 10px; position: relative; z-index: 1; text-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+        .header p { font-size: 16px; opacity: 0.9; position: relative; z-index: 1; }
+
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+
+        /* ============== انیمیشن ============== */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* ============== کارت‌ها ============== */
+        .card {
+            background: var(--bg-card); border-radius: 20px; padding: 30px;
+            margin-bottom: 30px; box-shadow: var(--shadow); border: 1px solid var(--border);
+        }
+        .card h2 { font-size: 22px; color: var(--primary); margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+        .card h3 { font-size: 19px; color: var(--text-main); margin: 20px 0 10px; }
+
+        /* ============== باکس BLUF ============== */
+        .box-bluf {
+            background: linear-gradient(135deg, rgba(249, 168, 37, 0.1), rgba(249, 168, 37, 0.05));
+            border: 2px solid var(--accent); border-radius: 16px; padding: 25px; margin-bottom: 30px;
+        }
+        .box-bluf h3 { color: var(--accent); font-size: 20px; margin-bottom: 10px; }
+        .box-bluf p { font-weight: bold; font-size: 16px; line-height: 1.8; }
+
+        /* ============== گالری ============== */
+        .img-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 15px; margin: 20px 0; }
+        .img-grid img {
+            width: 100%; height: 200px; object-fit: cover; border-radius: 15px;
+            box-shadow: var(--shadow); transition: transform 0.3s; cursor: pointer;
+        }
+        .img-grid img:hover { transform: scale(1.03); }
+
+        /* ============== لایت‌باکس ============== */
+        #lightbox {
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0,0,0,0.9); z-index: 99999; display: none;
+            align-items: center; justify-content: center; padding: 20px;
+        }
+        #lightbox img { max-width: 90%; max-height: 90%; border-radius: 10px; box-shadow: 0 0 30px rgba(255,255,255,0.2); }
+        #lightbox .close-lb { position: absolute; top: 20px; right: 20px; color: white; font-size: 30px; cursor: pointer; background: none; border: none; }
+
+        /* ============== تست فرم صورت ============== */
+        .face-shape-test { background: var(--bg-main); padding: 20px; border-radius: 15px; margin-top: 15px; border: 1px dashed var(--border); }
+        .shape-options { display: flex; flex-wrap: wrap; gap: 10px; margin: 15px 0; }
+        .shape-btn { background: var(--bg-card); border: 1px solid var(--border); padding: 10px 20px; border-radius: 30px; cursor: pointer; font-family: inherit; font-size: 14px; font-weight: bold; transition: 0.3s; }
+        .shape-btn:hover, .shape-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
+        #shape-result { display: none; margin-top: 15px; padding: 15px; background: rgba(26, 115, 232, 0.1); border-right: 4px solid var(--primary); border-radius: 8px; font-weight: bold; animation: slideUp 0.5s ease; }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* ============== جدول ============== */
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 15px; border-radius: 12px; overflow: hidden; }
+        th { background: var(--primary); color: white; padding: 15px; text-align: center; }
+        td { padding: 12px; text-align: center; border-bottom: 1px solid var(--border); background: var(--bg-card); }
+        tr:hover td { background: var(--bg-main); }
+
+        /* ============== آکاردئون ============== */
+        .accordion { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 12px; overflow: hidden; }
+        .accordion-btn { background: none; border: none; width: 100%; padding: 18px; text-align: right; font-family: inherit; font-size: 16px; font-weight: bold; color: var(--text-main); cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .accordion-btn:hover { color: var(--primary); }
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; padding: 0 18px; color: var(--text-muted); }
+        .accordion.active .accordion-content { max-height: 500px; padding-bottom: 18px; }
+        .arrow { transition: transform 0.3s; }
+        .accordion.active .arrow { transform: rotate(180deg); }
+
+        .btn { display: inline-block; background: var(--primary); color: white; padding: 12px 25px; border-radius: 30px; text-decoration: none; font-weight: bold; margin: 5px; transition: 0.3s; }
+        .btn:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 5px 15px rgba(14,165,233,0.4); }
+
+        .footer { text-align: center; padding: 30px; color: var(--text-muted); font-size: 14px; border-top: 1px solid var(--border); margin-top: 40px; }
+        
+        /* دکمه برگشت به بالا */
+        #back-to-top { position: fixed; bottom: 20px; right: 20px; width: 50px; height: 50px; border-radius: 50%; background: var(--primary); color: white; border: none; font-size: 20px; cursor: pointer; box-shadow: var(--shadow); display: none; z-index: 999; }
+    </style>
+</head>
+<body>
+
+<!-- نوار پیشرفت -->
+<div id="progress-bar"></div>
+
+<!-- دکمه‌های شناور -->
+<div class="floating-controls">
+    <button class="control-btn" id="tts-btn" onclick="toggleSpeech()" title="گوش دادن">
+        <span id="tts-icon">🔊</span>
+    </button>
+    <button class="control-btn" onclick="toggleDarkMode()" title="تاریک/روشن">
+        <span id="theme-icon">🌙</span>
+    </button>
+</div>
+
+<!-- فهرست شناور -->
+<div class="toc-container">
+    <button class="toc-btn" onclick="document.getElementById('toc-menu').classList.toggle('active')">
+        📌 فهرست مطالب
+    </button>
+    <div class="toc-menu" id="toc-menu">
+        <a href="#intro" onclick="closeToc()">🔹 عینک آفتابی چیست؟</a>
+        <a href="#uv" onclick="closeToc()">🔹 محافظت در برابر UV</a>
+        <a href="#face-shape" onclick="closeToc()">🔹 تست فرم صورت</a>
+        <a href="#lenses" onclick="closeToc()">🔹 انواع لنز</a>
+        <a href="#faq" onclick="closeToc()">🔹 سوالات متداول</a>
+    </div>
+</div>
+
+<div class="header">
+    <h1>🕶️ راهنمای جامع عینک آفتابی</h1>
+    <p>انتخاب هوشمندانه، محافظت کامل و بهترین استایل</p>
+</div>
+
+<div class="container" id="main-content">
+
+    <!-- BLUF -->
+    <div class="card box-bluf reveal">
+        <h3>⚡ جواب سریع در ۳ خط:</h3>
+        <p>
+            ۱. برای انتخاب عینک، ابتدا <strong>فرم صورت</strong> خود را تشخیص دهید و مدل مناسب آن را انتخاب کنید.<br>
+            ۲. حتماً عینکی بخرید که <strong>محافظت ۱۰۰٪ در برابر UV (ماوراء بنفش)</strong> داشته باشد (استاندارد CE یا UV400).<br>
+            ۳. رنگ لنز مهم است؛ لنزهای <strong>خاکستری</strong> برای رانندگی و لنزهای <strong>قهوه‌ای</strong> برای وضوح بیشتر در محیط‌های روشن بهترین هستند.
+        </p>
+    </div>
+
+    <div class="card reveal" id="intro">
+        <h2>🕶️ چرا عینک آفتابی ضروری است؟</h2>
+        <p>عینک آفتابی فقط یک اکسسوری مد نیست؛ بلکه یک وسیله حفاظتی حیاتی برای چشم‌های شماست. اشعه ماوراء بنفش (UV) خورشید می‌تواند به شبکیه چشم آسیب جدی بزند و خطر ابتلا به آب مروارید (کاتاراکت) و دژنراسیون ماکولا (از دست دادن بینایی) را افزایش دهد.</p>
+        <div class="img-grid">
+            <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=500" alt="عینک آفتابی مردانه" loading="lazy" onclick="openLightbox(this.src)">
+            <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=500" alt="عینک آفتابی زنانه" loading="lazy" onclick="openLightbox(this.src)">
+            <img src="https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?w=500" alt="عینک ریبن" loading="lazy" onclick="openLightbox(this.src)">
+            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=500" alt="فرد با عینک آفتابی" loading="lazy" onclick="openLightbox(this.src)">
+        </div>
+    </div>
+
+    <div class="card reveal" id="uv">
+        <h2>🛡️ محافظت در برابر UV (مهم‌ترین فاکتور)</h2>
+        <p>وقتی عینک می‌خرید، حتماً به برچسب آن دقت کنید:</p>
+        <ul style="padding-right: 20px; margin-top: 10px; color: var(--text-muted);">
+            <li style="margin-bottom: 8px;"><strong>UV400:</strong> بهترین گزینه. تمام اشعه‌های UVA و UVB تا طول موج ۴۰۰ نانومتر را مسدود می‌کند.</li>
+            <li style="margin-bottom: 8px;"><strong>استاندارد CE:</strong> نشان می‌دهد عینک با استانداردهای اتحادیه اروپا مطابقت دارد.</li>
+        </ul>
+        <div style="margin-top: 15px; padding: 15px; background: rgba(219,68,55,0.1); border-right: 4px solid #db4437; border-radius: 8px; color: var(--text-main);">
+            ⚠️ <strong>هشدار:</strong> عینک‌های آفتابی ارزان و بدون استاندارد، نه تنها محافظت نمی‌کنند، بلکه چون مردمک چشم را بازتر می‌کنند، آسیب UV را بیشتر می‌کنند!
+        </div>
+    </div>
+
+    <!-- تست فرم صورت -->
+    <div class="card reveal" id="face-shape">
+        <h2>📐 کدام عینک به فرم صورت شما می‌آید؟</h2>
+        <p>انتخاب عینک باید بر اساس فرم صورت باشد تا تناسب زیبایی حفظ شود. فرم صورت خود را انتخاب کنید:</p>
+        
+        <div class="face-shape-test">
+            <div class="shape-options">
+                <button class="shape-btn" onclick="findGlasses('oval')">🥚 بیضی</button>
+                <button class="shape-btn" onclick="findGlasses('round')">⭕ گرد</button>
+                <button class="shape-btn" onclick="findGlasses('square')">🟦 مربعی</button>
+                <button class="shape-btn" onclick="findGlasses('heart')">💛 قلبی</button>
+                <button class="shape-btn" onclick="findGlasses('diamond')">💎 الماسی</button>
+            </div>
+            <div id="shape-result">
+                <!-- نتیجه اینجا نمایش داده می‌شود -->
+            </div>
+        </div>
+    </div>
+
+    <div class="card reveal" id="lenses">
+        <h2>🎨 راهنمای انتخاب رنگ لنز</h2>
+        <table>
+            <thead>
+                <tr><th>رنگ لنز</th><th>بهترین کاربرد</th><th>ویژگی</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>خاکستری (Gray)</td><td>رانندگی و نور روز</td><td>تشخیص رنگ‌ها را تغییر نمی‌دهد</td></tr>
+                <tr><td>قهوه‌ای (Brown)</td><td>ورزش و فضای باز</td><td>کنتراست و وضوح را بالا می‌برد</td></tr>
+                <tr><td>سبز (Green)</td><td>استفاده روزمره</td><td>کاهش خیرگی چشم، آرامش‌بخش</td></tr>
+                <tr><td>زرد/نارنجی (Yellow)</td><td>شب، مه، اسکی</td><td>افزایش دید در شرایط کم‌نور</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card reveal" id="faq">
+        <h2>❓ سوالات متداول (FAQ)</h2>
+        
+        <div class="accordion">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+                آیا عینک آفتابی ارزان خوب است؟
+                <span class="arrow">▼</span>
+            </button>
+            <div class="accordion-content">
+                اگر استاندارد UV400 داشته باشد، بله! قیمت بالا معمولاً به برند و فریم برمی‌گردد، نه لزوماً به کیفیت محافظت از چشم.
+            </div>
+        </div>
+
+        <div class="accordion">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+                آیا باید عینک آفتابی را در زمستان هم بزنیم؟
+                <span class="arrow">▼</span>
+            </button>
+            <div class="accordion-content">
+                بله، اشعه UV در زمستان هم وجود دارد (مخصوصاً در ارتفاعات و برف). در روزهای آفتابی زمستان هم از عینک استفاده کنید.
+            </div>
+        </div>
+    </div>
+
+    <div class="card reveal" style="text-align: center;">
+        <h2>🔗 صفحات مرتبط</h2>
+        <p>
+            <a href="health.html" class="btn">🩺 سلامت چشم</a>
+            <a href="optician.html" class="btn">👁️ چشم‌پزشکی</a>
+            <a href="skin-full.html" class="btn">🧴 پوست</a>
+        </p>
+    </div>
+
+</div>
+
+<div class="footer">
+    <p>🌟 <strong>رهیلاناب</strong> - <a href="index.html" style="color: var(--primary);">خانه</a> | <a href="health.html" style="color: var(--primary);">سلامت</a></p>
+    <p>© ۲۰۲۶ rahilanab.com | با سلامت چشم، دنیا را شفاف‌تر ببینید.</p>
+</div>
+
+<!-- دکمه برگشت به بالا -->
+<button id="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+
+<!-- لایت‌باکس -->
+<div id="lightbox">
+    <button class="close-lb" onclick="closeLightbox()">✖</button>
+    <img id="lightbox-img" src="" alt="عکس بزرگ">
+</div>
+
+<script>
+    // ۱. اسکریپت پیشرفت
+    window.onscroll = function() {
+        var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var scrolled = (winScroll / height) * 100;
+        document.getElementById("progress-bar").style.width = scrolled + "%";
+        
+        // دکمه برگشت به بالا
+        if (winScroll > 300) {
+            document.getElementById("back-to-top").style.display = "block";
+        } else {
+            document.getElementById("back-to-top").style.display = "none";
+        }
+    };
+
+    // ۲. حالت تاریک
+    function toggleDarkMode() {
+        document.body.classList.toggle('dark-mode');
+        const isDark = document.body.classList.contains('dark-mode');
+        document.getElementById('theme-icon').innerText = isDark ? '☀️' : '🌙';
+        localStorage.setItem('darkMode', isDark);
+    }
+    if (localStorage.getItem('darkMode') === 'true') { toggleDarkMode(); }
+
+    // ۳. پخش صوتی (اصلاح‌شده با پیدا کردن صدای فارسی)
+    let isSpeaking = false;
+    let voices = [];
+    
+    function loadVoices() {
+        voices = window.speechSynthesis.getVoices();
+    }
+    if (typeof speechSynthesis !== 'undefined' && speechSynthesis.onvoiceschanged !== undefined) {
+        speechSynthesis.onvoiceschanged = loadVoices;
+    }
+
+    function toggleSpeech() {
+        if (isSpeaking) {
+            window.speechSynthesis.cancel();
+            isSpeaking = false;
+            document.getElementById('tts-icon').innerText = '🔊';
+            document.getElementById('tts-btn').classList.remove('playing');
+            return;
+        }
+
+        // پیدا کردن متن فقط از بخش اصلی (بدون منوها)
+        const mainText = document.getElementById('main-content').innerText;
+        const speech = new SpeechSynthesisUtterance(mainText);
+        speech.lang = 'fa-IR';
+
+        // جستجوی صدای فارسی
+        const persianVoice = voices.find(v => v.lang.includes('fa') || v.lang === 'fa-IR');
+        if (persianVoice) {
+            speech.voice = persianVoice;
+        } else {
+            // اگر صدای فارسی پیدا نشد، هشدار بده
+            console.warn("صدای فارسی در مرورگر یافت نشد. از زبان پیش‌فرض استفاده می‌شود.");
+        }
+
+        speech.onend = function() {
+            isSpeaking = false;
+            document.getElementById('tts-icon').innerText = '🔊';
+            document.getElementById('tts-btn').classList.remove('playing');
+        };
+
+        window.speechSynthesis.speak(speech);
+        isSpeaking = true;
+        document.getElementById('tts-icon').innerText = '⏹️';
+        document.getElementById('tts-btn').classList.add('playing');
+    }
+
+    // ۴. انیمیشن اسکرول
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('active');
+        });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // ۵. آکاردئون
+    function toggleAccordion(btn) {
+        btn.parentElement.classList.toggle('active');
+    }
+
+    // ۶. لایت‌باکس
+    function openLightbox(src) {
+        document.getElementById('lightbox-img').src = src;
+        document.getElementById('lightbox').style.display = 'flex';
+    }
+    function closeLightbox() {
+        document.getElementById('lightbox').style.display = 'none';
+    }
+
+    // ۷. فهرست شناور
+    function closeToc() {
+        document.getElementById('toc-menu').classList.remove('active');
+    }
+
+    // ۸. تست فرم صورت
+    function findGlasses(shape) {
+        // غیرفعال کردن بقیه دکمه‌ها
+        document.querySelectorAll('.shape-btn').forEach(b => b.classList.remove('active'));
+        event.target.classList.add('active');
+
+        const resultDiv = document.getElementById('shape-result');
+        let text = '';
+
+        if (shape === 'oval') {
+            text = "🥚 صورت بیضی: خوش‌شانس‌ترین فرم! تقریباً <strong>همه مدل عینکی</strong> به شما می‌آید. مدل‌های مربعی و خلبانی (Aviator) بهترین انتخاب هستند.";
+        } else if (shape === 'round') {
+            text = "⭕ صورت گرد: به دنبال عینک‌های <strong>مستطیلی و زاویه‌دار</strong> باشید. عینک‌های بزرگ و مربعی صورت شما را کشیده‌تر نشان می‌دهند. از عینک‌های گرد خودداری کنید.";
+        } else if (shape === 'square') {
+            text = "🟦 صورت مربعی: عینک‌های <strong>گرد یا بیضی</strong> بهترین انتخاب هستند. این مدل‌ها زوایای تیز صورت شما را نرم‌تر می‌کنند. عینک‌های خلبانی و گرد عالی هستند.";
+        } else if (shape === 'heart') {
+            text = "💛 صورت قلبی (پیشانی پهن، چانه باریک): عینک‌های <strong>بدون فریم یا فریم نازک</strong> و مدل‌های <strong>اشکی شکل</strong> بهترین گزینه‌ها هستند.";
+        } else if (shape === 'diamond') {
+            text = "💎 صورت الماسی: عینک‌هایی با <strong>فریم‌های برجسته</strong> (مثل کت‌آی یا گرد) که به عرض پیشانی و چانه شما اضافه کنند، مناسب هستند.";
+        }
+
+        resultDiv.innerHTML = text;
+        resultDiv.style.display = 'block';
+    }
+
+    // لود اولیه صداها
+    loadVoices();
+</script>
+
+</body>
+  </html>
