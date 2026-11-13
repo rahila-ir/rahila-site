@@ -1,1 +1,380 @@
-<!DOCTYPE html><html lang="fa"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>🔭 ستاره‌شناسی | رهیلا</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial;background:radial-gradient(circle at center,#0a1a1a,#1a4a4a,#66ccaa);color:#fff;text-align:center;padding:15px;min-height:100vh}.header{background:rgba(255,255,255,.08);backdrop-filter:blur(20px);border-radius:25px;padding:20px;margin-bottom:15px}.header h1{color:#ffd700;font-size:22px}.back-btn{display:inline-block;background:rgba(255,255,255,.15);color:#fff;padding:8px 20px;border-radius:20px;text-decoration:none;margin:10px 0;font-size:14px}.section-title{color:#ffd700;font-size:18px;margin:20px 0 10px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.card{background:rgba(255,255,255,.05);border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,.1);text-align:right}.card:active{background:rgba(255,215,0,.2)}.card h3{font-size:15px;color:#ffd700}</style></head><body><div class="header"><h1>🔭 ستاره‌شناسی</h1></div><a href="index.html" class="back-btn">🔙 برگشت</a><div class="section-title">⭐ آسمان</div><div class="grid"><div class="card"><h3>ستاره‌شناسی</h3></div><div class="card"><h3>تلسکوپ</h3></div><div class="card"><h3>خورشید</h3></div><div class="card"><h3>ماه</h3></div><div class="card"><h3>ستاره‌ها</h3></div><div class="card"><h3>سفر به فضا</h3></div></div><div class="section-title">🌑 پدیده‌ها</div><div class="grid"><div class="card"><h3>کسوف و خسوف</h3></div><div class="card"><h3>جزر و مد</h3></div><div class="card"><h3>خلیج فارس</h3></div><div class="card"><h3>رودخانه‌ها و دریاها</h3></div></div><p style="margin-top:15px"><a href="index.html" style="color:#ffd700">🔙 برگشت</a></p></body></html>
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔭 رصدخانه شخصی: راهنمای عکاسی نجومی و رصد ماه | رهیلاناب</title>
+    <meta name="description" content="ابزارهای هوشمند نجوم؛ مشاهده فاز زنده ماه، تنظیمات دوربین برای عکاسی از راه شیری و معرفی صور فلکی. راهنمای رصد آسمان شب.">
+    
+    <style>
+        /* ============== تم رصدخانه (بنفش تیره) ============== */
+        :root {
+            --bg-main: #0a0514; /* بنفش خیلی تیره */
+            --bg-card: rgba(25, 15, 45, 0.8);
+            --text-main: #f8fafc;
+            --text-muted: #a78bfa;
+            --primary: #8b5cf6; /* بنفش نئون */
+            --secondary: #fbbf24; /* طلایی */
+            --accent: #38bdf8; /* آبی آسمانی */
+            --border: rgba(139, 92, 246, 0.3);
+            --shadow: 0 10px 30px rgba(139, 92, 246, 0.2);
+            --gradient: linear-gradient(135deg, #4c1d95, #8b5cf6);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; transition: background-color 0.3s, color 0.3s; }
+        
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.9;
+            font-size: 17px;
+            overflow-x: hidden;
+        }
+
+        /* ============== پس‌زمینه ستاره‌ای ============== */
+        .stars-bg {
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1;
+            background: radial-gradient(circle at 50% 10%, rgba(139, 92, 246, 0.15) 0%, transparent 60%);
+        }
+        .stars-bg::after {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background-image: radial-gradient(1px 1px at 20% 30%, white, transparent),
+                              radial-gradient(1px 1px at 40% 70%, white, transparent),
+                              radial-gradient(2px 2px at 80% 20%, white, transparent),
+                              radial-gradient(1px 1px at 10% 80%, white, transparent),
+                              radial-gradient(1.5px 1.5px at 90% 60%, white, transparent);
+            background-size: 200px 200px;
+            opacity: 0.3;
+            animation: twinkle 5s infinite alternate;
+        }
+        @keyframes twinkle { 0% { opacity: 0.2; } 100% { opacity: 0.6; } }
+
+        /* ============== نوار پیشرفت ============== */
+        #progress-bar {
+            position: fixed; top: 0; left: 0; height: 4px; width: 0%;
+            background: var(--gradient); z-index: 9999;
+            box-shadow: 0 0 10px var(--primary);
+        }
+
+        /* ============== دکمه‌های شناور ============== */
+        .floating-controls {
+            position: fixed; top: 15px; left: 15px; z-index: 999;
+            display: flex; flex-direction: column; gap: 10px;
+        }
+        .control-btn {
+            background: var(--bg-card); border: 1px solid var(--border);
+            color: var(--text-main); width: 50px; height: 50px;
+            border-radius: 50%; cursor: pointer; font-size: 20px;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: var(--shadow); backdrop-filter: blur(10px);
+        }
+        .control-btn:hover { transform: scale(1.1); color: var(--primary); }
+        .control-btn.playing { background: var(--primary); color: white; }
+
+        /* ============== هدر ============== */
+        .header {
+            background: var(--gradient); color: white; padding: 80px 20px 60px;
+            text-align: center; border-radius: 0 0 40px 40px;
+            position: relative; overflow: hidden;
+        }
+        .header h1 { font-size: clamp(26px, 5vw, 38px); margin-bottom: 10px; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
+        .header p { font-size: 16px; opacity: 0.9; }
+
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; margin-top: -30px; }
+
+        /* ============== کارت‌ها ============== */
+        .card {
+            background: var(--bg-card); border-radius: 24px; padding: 30px;
+            margin-bottom: 30px; box-shadow: var(--shadow); border: 1px solid var(--border);
+            backdrop-filter: blur(15px);
+        }
+        .card h2 { font-size: 22px; color: var(--primary); margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+
+        /* ============== باکس BLUF ============== */
+        .box-bluf {
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.1), rgba(56, 189, 248, 0.05));
+            border: 2px solid var(--accent); border-radius: 16px; padding: 25px; margin-bottom: 30px;
+        }
+        .box-bluf h3 { color: var(--accent); font-size: 20px; margin-bottom: 10px; }
+        .box-bluf p { font-weight: bold; font-size: 16px; }
+
+        /* ============== ۱. شبیه‌ساز ماه ============== */
+        .moon-sim { display: flex; flex-direction: column; align-items: center; background: rgba(0,0,0,0.3); padding: 20px; border-radius: 15px; border: 1px dashed var(--primary); }
+        .moon-graphic {
+            width: 150px; height: 150px; border-radius: 50%; margin: 20px 0;
+            background: #222; box-shadow: 0 0 30px rgba(255,255,255,0.1);
+            position: relative; overflow: hidden;
+        }
+        .moon-shadow {
+            position: absolute; top: 0; bottom: 0; background: #000;
+            transition: all 1s ease;
+        }
+        #moon-phase-text { font-size: 18px; font-weight: bold; color: var(--secondary); margin-bottom: 10px; }
+        #moon-date { font-size: 14px; color: var(--text-muted); }
+
+        /* ============== ۲. تنظیمات عکاسی ============== */
+        .photo-calc { background: rgba(0,0,0,0.3); padding: 20px; border-radius: 15px; border: 1px dashed var(--primary); }
+        .options-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 20px; }
+        .opt-btn { background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: var(--text-main); padding: 10px 20px; border-radius: 30px; cursor: pointer; font-family: inherit; font-size: 14px; }
+        .opt-btn:hover, .opt-btn.selected { background: var(--primary); color: white; border-color: var(--primary); }
+        
+        #photo-result { display: none; background: rgba(139, 92, 246, 0.1); padding: 20px; border-radius: 10px; border-right: 5px solid var(--primary); text-align: center; animation: slideUp 0.5s ease; }
+        .setting-item { display: inline-block; background: rgba(0,0,0,0.5); padding: 10px 20px; border-radius: 10px; margin: 5px; font-family: monospace; font-size: 18px; color: var(--accent); border: 1px solid var(--accent); }
+
+        /* ============== ۳. صور فلکی ============== */
+        .constellations { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 15px; }
+        @media (max-width: 600px) { .constellations { grid-template-columns: 1fr; } }
+        #const-info { display: none; padding: 15px; background: rgba(0,0,0,0.4); border-radius: 10px; border-left: 4px solid var(--secondary); font-size: 15px; animation: slideUp 0.5s ease; }
+
+        /* ============== آکاردئون ============== */
+        .accordion { background: rgba(0,0,0,0.2); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 12px; overflow: hidden; }
+        .accordion-btn { background: none; border: none; width: 100%; padding: 18px; text-align: right; font-family: inherit; font-size: 16px; font-weight: bold; color: var(--text-main); cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .accordion-btn:hover { color: var(--primary); }
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; padding: 0 18px; color: var(--text-muted); font-size: 15px; }
+        .accordion.active .accordion-content { max-height: 500px; padding-bottom: 18px; }
+        .arrow { transition: transform 0.3s; }
+        .accordion.active .arrow { transform: rotate(180deg); }
+
+        .btn { display: inline-block; background: var(--primary); color: white; padding: 12px 25px; border-radius: 30px; text-decoration: none; font-weight: bold; margin: 5px; transition: 0.3s; border: none; cursor: pointer; font-family: inherit; }
+        .btn:hover { background: #7c3aed; }
+        .footer { text-align: center; padding: 30px; color: var(--text-muted); font-size: 14px; border-top: 1px solid var(--border); margin-top: 40px; }
+        
+        @keyframes slideUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+
+<div class="stars-bg"></div>
+
+<div id="progress-bar"></div>
+
+<div class="floating-controls">
+    <button class="control-btn" id="tts-btn" onclick="toggleSpeech()" title="گوش دادن">
+        <span id="tts-icon">🔊</span>
+    </button>
+</div>
+
+<div class="header">
+    <h1>🔭 رصدخانه شخصی رهیلاناب</h1>
+    <p>ابزارهای هوشمند برای کاوش در آسمان شب</p>
+</div>
+
+<div class="container" id="main-content">
+
+    <!-- BLUF -->
+    <div class="card box-bluf reveal">
+        <h3>⚡ جواب سریع در ۳ خط:</h3>
+        <p>
+            ۱. برای عکاسی از <strong>راه شیری</strong>، به ISO بالا (۳۲۰۰)، دیافراگم باز (f/2.8) و سرعت شاتر ۲۰ ثانیه نیاز دارید.<br>
+            ۲. بهترین زمان برای رصد ماه، <strong>نیمه اول ماه قمری</strong> است (هلال ماه).<br>
+            ۳. در آسمان ایران، صورت فلکی <strong>جبار (شکارچی)</strong> در زمستان و <strong>دب اکبر</strong> در تمام سال قابل مشاهده است.
+        </p>
+    </div>
+
+    <!-- ۱. شبیه‌ساز زنده ماه -->
+    <div class="card reveal">
+        <h2>🌕 وضعیت ماه در همین لحظه</h2>
+        <div class="moon-sim">
+            <div class="moon-graphic" id="moon-graphic">
+                <div class="moon-shadow" id="moon-shadow"></div>
+            </div>
+            <div id="moon-phase-text">در حال محاسبه...</div>
+            <div id="moon-date"></div>
+        </div>
+    </div>
+
+    <!-- ۲. تنظیمات عکاسی از آسمان -->
+    <div class="card reveal">
+        <h2>📸 تنظیمات دوربین برای عکاسی نجومی</h2>
+        <p style="margin-bottom: 15px; font-size: 14px; color: var(--text-muted);">می‌خواهید از چه چیزی عکس بگیرید؟</p>
+        <div class="photo-calc">
+            <div class="options-grid">
+                <button class="opt-btn" onclick="setPhoto('milkyway', this)">🌌 راه شیری</button>
+                <button class="opt-btn" onclick="setPhoto('moon', this)">🌕 ماه</button>
+                <button class="opt-btn" onclick="setPhoto('startrail', this)">✨ رد ستارگان</button>
+            </div>
+            
+            <div id="photo-result">
+                <h3 style="color: var(--secondary); margin-bottom: 10px;">تنظیمات پیشنهادی برای دوربین:</h3>
+                <div class="setting-item" id="set-iso">ISO: ---</div>
+                <div class="setting-item" id="set-aperture">f/---</div>
+                <div class="setting-item" id="set-shutter">Shutter: ---</div>
+                <p style="margin-top: 15px; font-size: 13px; color: var(--text-muted);" id="photo-tip"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ۳. صور فلکی -->
+    <div class="card reveal">
+        <h2>🌠 معرفی صور فلکی معروف</h2>
+        <p style="margin-bottom: 15px; font-size: 14px; color: var(--text-muted);">روی هر صورت فلکی کلیک کنید تا داستان و شکل آن را ببینید:</p>
+        <div class="constellations">
+            <button class="opt-btn" onclick="showConst('orion', this)">🏹 جبار (شکارچی)</button>
+            <button class="opt-btn" onclick="showConst('bigdipper', this)">🥄 دب اکبر</button>
+        </div>
+        <div id="const-info"></div>
+    </div>
+
+    <!-- ۴. سوالات متداول -->
+    <div class="card reveal">
+        <h2>❓ سوالات متداول نجوم</h2>
+        
+        <div class="accordion">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+                چرا آلودگی نوری برای رصد ستارگان مضر است؟
+                <span class="arrow">▼</span>
+            </button>
+            <div class="accordion-content">
+                آلودگی نوری (نورهای شهر) باعث می‌شود آسمان به جای مشکی، خاکستری به نظر برسد. این نورها اجرام کم‌نور مثل سحابی‌ها و کهکشان راه شیری را کاملاً محو می‌کنند. برای رصد، باید حداقل ۵۰ کیلومتر از شهرهای بزرگ فاصله بگیرید.
+            </div>
+        </div>
+        <div class="accordion">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+                آیا با گوشی هم می‌شود از ماه عکس گرفت؟
+                <span class="arrow">▼</span>
+            </button>
+            <div class="accordion-content">
+                بله! با گذاشتن گوشی روی سه‌پایه و استفاده از حالت "Pro" یا "Manual"، ISO را روی ۱۰۰، سرعت شاتر را روی ۱/۱۲۵ و فوکوس را روی بی‌نهایت تنظیم کنید. برای نتیجه بهتر می‌توانید گوشی را به چشمی تلسکوپ هم وصل کنید.
+            </div>
+        </div>
+    </div>
+
+    <div class="card reveal" style="text-align: center;">
+        <h2>🔗 صفحات مرتبط</h2>
+        <p>
+            <a href="telescope-full.html" class="btn">🔭 تلسکوپ جامع</a>
+            <a href="tech.html" class="btn">📱 تکنولوژی</a>
+            <a href="index.html" class="btn">🏠 خانه</a>
+        </p>
+    </div>
+
+</div>
+
+<div class="footer">
+    <p>🌟 <strong>رهیلاناب</strong> - <a href="index.html" style="color: var(--primary);">خانه</a></p>
+    <p>© ۲۰۲۶ rahilanab.com | آسمان شب، زیباترین نمایش دنیاست.</p>
+</div>
+
+<script>
+    // =============== ۱. نوار پیشرفت ===============
+    window.onscroll = function() {
+        var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var scrolled = (winScroll / height) * 100;
+        document.getElementById("progress-bar").style.width = scrolled + "%";
+    };
+
+    // =============== ۲. شبیه‌ساز زنده ماه ===============
+    function calculateMoonPhase() {
+        const date = new Date();
+        // محاسبه ساده روزهای گذشته از ماه نو
+        let year = date.getFullYear();
+        let month = date.getMonth() + 1;
+        let day = date.getDate();
+        
+        let c = Math.floor(365.25 * (year + 4716)) + Math.floor(30.6001 * (month + 1)) + day - 1524.5;
+        let daysSinceNew = c - 2451549.5;
+        let newMoons = daysSinceNew / 29.530588853;
+        let phase = newMoons - Math.floor(newMoons); // بین 0 تا 1
+
+        // نمایش تاریخ
+        document.getElementById('moon-date').innerText = `تاریخ امروز: ${date.toLocaleDateString('fa-IR')}`;
+
+        const shadow = document.getElementById('moon-shadow');
+        const text = document.getElementById('moon-phase-text');
+
+        // تنظیم سایه برای شبیه‌سازی فاز ماه
+        if (phase < 0.03 || phase > 0.97) {
+            shadow.style.width = '100%'; shadow.style.left = '0'; text.innerText = "🌑 ماه نو (در آسمان دیده نمی‌شود)";
+        } else if (phase < 0.22) {
+            shadow.style.width = '50%'; shadow.style.left = '50%'; text.innerText = "🌒 هلال ماه (رو به افزایش)";
+        } else if (phase < 0.28) {
+            shadow.style.width = '0%'; text.innerText = "🌓 تربیع اول (نیمه ماه)";
+        } else if (phase < 0.47) {
+            shadow.style.width = '30%'; shadow.style.left = '70%'; text.innerText = "🌔 ماه کوژ (رو به افزایش)";
+        } else if (phase < 0.53) {
+            shadow.style.width = '0%'; text.innerText = "🌕 ماه کامل (بدر)";
+        } else if (phase < 0.72) {
+            shadow.style.width = '30%'; shadow.style.left = '0'; text.innerText = "🌖 ماه کوژ (رو به کاهش)";
+        } else if (phase < 0.78) {
+            shadow.style.width = '0%'; text.innerText = "🌗 تربیع آخر (نیمه ماه)";
+        } else {
+            shadow.style.width = '50%'; shadow.style.left = '0'; text.innerText = "🌘 هلال ماه (رو به کاهش)";
+        }
+    }
+    calculateMoonPhase();
+
+    // =============== ۳. تنظیمات عکاسی ===============
+    const photoSettings = {
+        milkyway: { iso: "3200", aperture: "2.8", shutter: "20s", tip: "حتماً از سه‌پایه استفاده کنید و روی فوکوس دستی بینهایت تنظیم کنید." },
+        moon: { iso: "100", aperture: "8.0", shutter: "1/125s", tip: "چون ماه خیلی نورانی است، از ISO پایین استفاده کنید تا جزئیات دهانه‌ها حفظ شود." },
+        startrail: { iso: "400", aperture: "4.0", shutter: "15 دقیقه", tip: "برای ثبت حرکت ستارگان به دور زمین، از حالت Bulb در دوربین استفاده کنید." }
+    };
+
+    function setPhoto(type, btn) {
+        document.querySelectorAll('.opt-btn').forEach(b => {
+            if(b.parentElement.parentElement.classList.contains('photo-calc')) b.classList.remove('selected');
+        });
+        btn.classList.add('selected');
+
+        const data = photoSettings[type];
+        document.getElementById('set-iso').innerText = `ISO: ${data.iso}`;
+        document.getElementById('set-aperture').innerText = `f/${data.aperture}`;
+        document.getElementById('set-shutter').innerText = `Shutter: ${data.shutter}`;
+        document.getElementById('photo-tip').innerText = `💡 ${data.tip}`;
+        
+        document.getElementById('photo-result').style.display = 'block';
+        document.getElementById('photo-result').style.animation = 'none';
+        document.getElementById('photo-result').offsetHeight;
+        document.getElementById('photo-result').style.animation = 'slideUp 0.5s ease';
+    }
+
+    // =============== ۴. صور فلکی ===============
+    const constData = {
+        orion: "<strong>🏹 جبار (شکارچی):</strong> معروف‌ترین صورت فلکی زمستانی. شامل سه ستاره درخشان در کمربند است (شکارچی). در اساطیر یونان، جبار یک شکارچی بزرگ بود که توسط عقرب کشته شد.",
+        bigdipper: "<strong>🥄 دب اکبر:</strong> این صورت فلکی در واقع بخشی از خرس بزرگ است. با پیدا کردن دو ستاره لبه کاسه آن و ادامه دادن مسیر، می‌توانید ستاره قطبی (شمال) را پیدا کنید."
+    };
+
+    function showConst(type, btn) {
+        document.querySelectorAll('.constellations .opt-btn').forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+        
+        const infoDiv = document.getElementById('const-info');
+        infoDiv.innerHTML = constData[type];
+        infoDiv.style.display = 'block';
+        infoDiv.style.animation = 'none';
+        infoDiv.offsetHeight;
+        infoDiv.style.animation = 'slideUp 0.5s ease';
+    }
+
+    // =============== ۵. آکاردئون ===============
+    function toggleAccordion(btn) { btn.parentElement.classList.toggle('active'); }
+
+    // =============== ۶. پخش صوتی ===============
+    let isSpeaking = false;
+    function toggleSpeech() {
+        if (isSpeaking) {
+            window.speechSynthesis.cancel();
+            isSpeaking = false;
+            document.getElementById('tts-icon').innerText = '🔊';
+            document.getElementById('tts-btn').classList.remove('playing');
+            return;
+        }
+        const mainText = document.getElementById('main-content').innerText;
+        const speech = new SpeechSynthesisUtterance(mainText);
+        speech.lang = 'fa-IR';
+        speech.onend = function() {
+            isSpeaking = false;
+            document.getElementById('tts-icon').innerText = '🔊';
+            document.getElementById('tts-btn').classList.remove('playing');
+        };
+        window.speechSynthesis.speak(speech);
+        isSpeaking = true;
+        document.getElementById('tts-icon').innerText = '⏹️';
+        document.getElementById('tts-btn').classList.add('playing');
+    }
+</script>
+
+</body>
+  </html>
