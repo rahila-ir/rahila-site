@@ -3,580 +3,387 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>داشبورد سایبرپانک تکنولوژی | رهیلاناب</title>
-    <meta name="description" content="داشبورد فوق پیشرفته تکنولوژی؛ قیمت زنده ارز دیجیتال، ترمینال هکری، اطلاعات سیستم شما و همه چیز درباره موبایل و کامپیوتر.">
-    
-    <!-- Chart.js برای نمودار -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>⚡ مرکز فرماندهی تکنولوژی ۲ | رهیلاناب</title>
+    <meta name="description" content="راهنمای کامل موبایل، کامپیوتر، گجت‌ها و فناوری‌های آینده؛ از آیفون و سامسونگ تا رباتیک و هارد SSD.">
     
     <style>
-        /* ============== تم سایبرپانک ============== */
         :root {
-            --bg-main: #050914;
-            --bg-card: rgba(15, 23, 42, 0.8);
-            --text-main: #e2e8f0;
+            --bg-main: #0b0914;
+            --bg-card: rgba(30, 25, 50, 0.8);
+            --primary: #7c3aed;
+            --secondary: #ec4899;
+            --accent: #00e5ff;
+            --text-main: #f8fafc;
             --text-muted: #94a3b8;
-            --primary: #00e5ff; /* فیروزه‌ای نئون */
-            --accent: #ff00ea; /* صورتی نئون */
+            --border: rgba(124, 58, 237, 0.3);
             --success: #22c55e;
             --danger: #ef4444;
-            --border: rgba(0, 229, 255, 0.2);
-            --shadow: 0 0 20px rgba(0, 229, 255, 0.1);
-            --glass: blur(12px);
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; transition: background-color 0.3s, color 0.3s, border-color 0.3s; }
+        * { margin: 0; padding: 0; box-sizing: border-box; transition: all 0.3s ease; }
         
         body {
             font-family: 'Vazirmatn', Tahoma, sans-serif;
-            background: var(--bg-main);
+            background-color: var(--bg-main);
             color: var(--text-main);
-            line-height: 1.9;
-            font-size: 17px;
+            line-height: 1.8;
+            font-size: 16px;
             overflow-x: hidden;
         }
 
-        /* ============== نوار پیشرفت ============== */
-        #progress-bar {
-            position: fixed; top: 0; left: 0; height: 3px; width: 0%;
-            background: linear-gradient(90deg, var(--primary), var(--accent)); z-index: 9999;
-            box-shadow: 0 0 15px var(--primary);
+        .stars-bg {
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1;
+            background: radial-gradient(circle at 20% 30%, rgba(124, 58, 237, 0.15) 0%, transparent 40%),
+                        radial-gradient(circle at 80% 70%, rgba(236, 72, 153, 0.15) 0%, transparent 40%);
         }
 
-        /* ============== پس‌زمینه کهکشانی ============== */
-        #particles-js { position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: 0; pointer-events: none; }
-
-        /* ============== دکمه‌های شناور ============== */
-        .floating-controls {
-            position: fixed; top: 20px; left: 20px; z-index: 999;
-            display: flex; flex-direction: column; gap: 10px;
+        .header { text-align: center; padding: 60px 20px 40px; position: relative; z-index: 2; }
+        .header h1 { 
+            font-size: clamp(28px, 5vw, 40px); font-weight: 900; margin-bottom: 10px;
+            background: linear-gradient(90deg, var(--accent), var(--secondary));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
-        .control-btn {
-            background: rgba(0,0,0,0.6); border: 1px solid var(--primary);
-            color: var(--primary); width: 50px; height: 50px;
-            border-radius: 50%; cursor: pointer; font-size: 20px;
-            display: flex; align-items: center; justify-content: center;
-            box-shadow: 0 0 10px rgba(0,229,255,0.3); backdrop-filter: var(--glass); transition: 0.3s;
+        .header p { font-family: monospace; color: var(--accent); font-size: 14px; }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+
+        /* فیلترها */
+        .filter-container { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; }
+        .filter-btn {
+            background: rgba(255,255,255,0.05); border: 1px solid var(--border);
+            color: var(--text-muted); padding: 8px 16px; border-radius: 30px;
+            font-family: inherit; font-size: 13px; font-weight: bold; cursor: pointer;
         }
-        .control-btn:hover { transform: scale(1.1); box-shadow: 0 0 20px var(--primary); }
+        .filter-btn.active, .filter-btn:hover { background: var(--primary); color: white; border-color: var(--primary); }
 
-        /* ============== فهرست شناور ============== */
-        .toc-container { position: fixed; top: 20px; right: 20px; z-index: 999; }
-        .toc-btn { background: rgba(0,0,0,0.6); border: 1px solid var(--accent); color: var(--accent); padding: 10px 15px; border-radius: 30px; cursor: pointer; font-family: inherit; font-weight: bold; box-shadow: 0 0 10px rgba(255,0,234,0.3); backdrop-filter: var(--glass); display: flex; align-items: center; gap: 8px; }
-        .toc-menu { position: absolute; top: 60px; right: 0; background: rgba(15,23,42,0.95); border: 1px solid var(--accent); border-radius: 15px; padding: 15px; min-width: 220px; box-shadow: 0 0 20px rgba(255,0,234,0.2); display: none; flex-direction: column; gap: 10px; backdrop-filter: var(--glass); }
-        .toc-menu.active { display: flex; }
-        .toc-menu a { color: var(--text-main); text-decoration: none; font-size: 14px; padding: 5px 10px; border-radius: 8px; }
-        .toc-menu a:hover { background: rgba(255,0,234,0.1); color: var(--accent); }
+        /* مولد حقایق */
+        .fact-generator { background: linear-gradient(135deg, rgba(124, 58, 237, 0.2), rgba(236, 72, 153, 0.2)); border-radius: 16px; padding: 25px; margin-bottom: 30px; text-align: center; border: 1px solid var(--primary); }
+        .fact-generator h2 { font-size: 18px; color: var(--accent); margin-bottom: 10px; }
+        #fact-text { font-size: 15px; font-weight: bold; min-height: 40px; display: flex; align-items: center; justify-content: center; }
+        .fact-btn { margin-top: 15px; background: var(--accent); color: #000; border: none; padding: 10px 25px; border-radius: 30px; font-family: inherit; font-weight: bold; cursor: pointer; }
 
-        /* ============== هدر ============== */
-        .header {
-            text-align: center; padding: 80px 20px 60px; position: relative; z-index: 2;
-        }
-        .header h1 { font-size: clamp(28px, 6vw, 46px); margin-bottom: 10px; color: var(--primary); text-shadow: 0 0 20px rgba(0,229,255,0.6); font-weight: 900; letter-spacing: 2px; }
-        .header p { font-size: 16px; color: var(--text-muted); font-family: monospace; }
+        /* کارت‌های اصلی */
+        .tech-card { background: var(--bg-card); border-radius: 16px; padding: 20px; margin-bottom: 15px; border: 1px solid var(--border); backdrop-filter: blur(10px); }
+        .tech-card h3 { font-size: 18px; color: var(--primary); margin-bottom: 5px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .tech-card h3:hover { color: var(--accent); }
+        .tech-content { display: none; margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 14px; color: var(--text-muted); line-height: 1.9; }
+        .tech-content.active { display: block; animation: fadeIn 0.4s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
 
-        .container { max-width: 1100px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+        /* ابزار مقایسه */
+        .compare-tool { background: rgba(0,0,0,0.4); padding: 20px; border-radius: 15px; border: 1px solid var(--border); margin-bottom: 30px; }
+        .compare-selects { display: flex; gap: 10px; margin-bottom: 15px; }
+        .compare-selects select { flex: 1; padding: 10px; border-radius: 8px; background: #000; color: var(--accent); border: 1px solid var(--primary); font-family: inherit; font-size: 14px; outline: none; }
+        .vs-text { text-align: center; color: var(--secondary); font-weight: bold; margin-bottom: 15px; }
+        #compare-result { display: none; }
+        .spec-bar { margin-bottom: 10px; }
+        .spec-bar .title { display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 3px; }
+        .bar-bg { height: 10px; background: rgba(255,255,255,0.1); border-radius: 5px; display: flex; overflow: hidden; }
+        .bar-p1 { background: var(--accent); height: 100%; }
+        .bar-p2 { background: var(--secondary); height: 100%; }
 
-        /* ============== کارت‌های شیشه‌ای ============== */
-        .card {
-            background: var(--bg-card); border-radius: 20px; padding: 30px;
-            margin-bottom: 30px; box-shadow: var(--shadow); border: 1px solid var(--border);
-            backdrop-filter: var(--glass); -webkit-backdrop-filter: var(--glass);
-            position: relative; overflow: hidden;
-        }
-        /* خط نئون بالای کارت */
-        .card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 2px; background: linear-gradient(90deg, transparent, var(--primary), transparent); }
-        
-        .card h2 { font-size: 22px; color: var(--primary); margin-bottom: 20px; display: flex; align-items: center; gap: 10px; text-shadow: 0 0 10px rgba(0,229,255,0.3); }
+        /* آزمون */
+        .quiz-tool { background: rgba(0,0,0,0.4); padding: 20px; border-radius: 15px; border: 1px solid var(--border); }
+        .quiz-q { font-size: 15px; font-weight: bold; margin-bottom: 10px; }
+        .quiz-opts { display: flex; flex-direction: column; gap: 8px; margin-bottom: 15px; }
+        .quiz-opt { background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: white; padding: 10px; border-radius: 8px; font-family: inherit; text-align: right; cursor: pointer; }
+        .quiz-opt:hover { background: rgba(124,58,237,0.3); }
+        .quiz-opt.correct { background: rgba(34, 197, 94, 0.3); border-color: var(--success); }
+        .quiz-opt.wrong { background: rgba(239, 68, 68, 0.3); border-color: var(--danger); }
+        #quiz-result { text-align: center; font-weight: bold; margin-top: 10px; font-size: 18px; }
 
-        /* ============== داشبورد اطلاعات سیستم ============== */
-        .system-dashboard { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 30px; }
-        .sys-item { background: rgba(0,0,0,0.4); border: 1px solid var(--border); padding: 15px; border-radius: 12px; text-align: center; }
-        .sys-item .label { font-size: 12px; color: var(--text-muted); margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px; }
-        .sys-item .value { font-size: 18px; font-weight: bold; color: var(--primary); font-family: monospace; }
-        .sys-item .value.green { color: var(--success); }
-        .sys-item .value.red { color: var(--danger); }
-
-        /* ============== نمودار ارز دیجیتال ============== */
-        .crypto-chart-container { width: 100%; height: 300px; background: rgba(0,0,0,0.5); border-radius: 15px; padding: 15px; border: 1px solid var(--border); margin-bottom: 20px; }
-
-        /* ============== ترمینال هکری ============== */
-        .terminal { background: #000; border: 1px solid var(--success); border-radius: 10px; padding: 15px; font-family: 'Courier New', monospace; direction: ltr; text-align: left; height: 250px; overflow-y: auto; box-shadow: 0 0 20px rgba(34,197,94,0.2); margin-bottom: 30px; }
-        .terminal-output { color: var(--success); margin-bottom: 5px; white-space: pre-wrap; }
-        .terminal-input-line { display: flex; align-items: center; }
-        .terminal-prompt { color: var(--accent); margin-right: 10px; }
-        .terminal-input { background: transparent; border: none; outline: none; color: var(--success); font-family: 'Courier New', monospace; font-size: 15px; flex: 1; }
-
-        /* ============== ابزارهای تعاملی ============== */
-        .tools-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px; }
-        @media (max-width: 768px) { .tools-grid { grid-template-columns: 1fr; } }
-        
-        .tool-box { background: rgba(0,0,0,0.3); border-radius: 16px; padding: 20px; border: 1px solid var(--border); text-align: center; }
-        .compare-select { width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--border); font-family: inherit; background: #000; color: var(--primary); margin-bottom: 10px; font-size: 14px; outline: none; }
-        .compare-btn { background: var(--primary); color: #000; border: none; padding: 12px; border-radius: 8px; font-family: inherit; font-weight: bold; cursor: pointer; width: 100%; transition: 0.3s; box-shadow: 0 0 10px rgba(0,229,255,0.4); }
-        .compare-btn:hover { background: #fff; box-shadow: 0 0 20px var(--primary); }
-        #compare-result, #quiz-result { display: none; margin-top: 15px; padding: 15px; background: rgba(0,229,255,0.05); border-right: 4px solid var(--primary); border-radius: 8px; text-align: right; font-size: 14px; animation: slideUp 0.5s ease; }
-
-        /* ============== کارت‌های سه‌بعدی ============== */
-        .tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; perspective: 1000px; }
-        .tech-item { background: var(--bg-card); border-radius: 15px; padding: 20px; border: 1px solid var(--border); box-shadow: var(--shadow); text-align: right; transform-style: preserve-3d; transition: transform 0.1s ease, box-shadow 0.3s ease; cursor: crosshair; }
-        .tech-item:hover { border-color: var(--primary); box-shadow: 0 0 30px rgba(0,229,255,0.2); }
-        .tech-item h4 { font-size: 18px; color: var(--primary); margin-bottom: 8px; transform: translateZ(30px); }
-        .tech-item p { font-size: 14px; color: var(--text-muted); line-height: 1.7; transform: translateZ(20px); }
-
-        .btn { display: inline-block; background: transparent; border: 1px solid var(--accent); color: var(--accent); padding: 10px 25px; border-radius: 30px; text-decoration: none; font-weight: bold; margin: 5px; transition: 0.3s; }
-        .btn:hover { background: var(--accent); color: #000; box-shadow: 0 0 20px var(--accent); }
-        
-        .footer { text-align: center; padding: 30px; color: var(--text-muted); font-size: 14px; border-top: 1px solid var(--border); margin-top: 40px; position: relative; z-index: 2; font-family: monospace; }
-        
-        @keyframes slideUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .back-btn { display: inline-block; background: transparent; border: 1px solid var(--secondary); color: var(--secondary); padding: 10px 25px; border-radius: 30px; text-decoration: none; font-weight: bold; margin: 10px; transition: 0.3s; }
+        .back-btn:hover { background: var(--secondary); color: #000; }
+        .footer { text-align: center; padding: 30px; color: var(--text-muted); font-size: 14px; border-top: 1px solid var(--border); margin-top: 40px; font-family: monospace; }
     </style>
 </head>
 <body>
 
-<!-- پس‌زمینه کهکشانی -->
-<canvas id="particles-js"></canvas>
-
-<!-- نوار پیشرفت -->
-<div id="progress-bar"></div>
-
-<!-- دکمه‌های شناور -->
-<div class="floating-controls">
-    <button class="control-btn" id="tts-btn" onclick="toggleSpeech()" title="گوش دادن">🔊</button>
-</div>
-
-<!-- فهرست شناور -->
-<div class="toc-container">
-    <button class="toc-btn" onclick="document.getElementById('toc-menu').classList.toggle('active')">
-        📌 منو
-    </button>
-    <div class="toc-menu" id="toc-menu">
-        <a href="#dashboard" onclick="closeToc()">🔹 سیستم شما</a>
-        <a href="#crypto" onclick="closeToc()">🔹 ارز دیجیتال</a>
-        <a href="#terminal" onclick="closeToc()">🔹 ترمینال</a>
-        <a href="#tools" onclick="closeToc()">🔹 ابزارها</a>
-        <a href="#categories" onclick="closeToc()">🔹 دسته‌بندی‌ها</a>
-    </div>
-</div>
+<div class="stars-bg"></div>
 
 <div class="header">
-    <h1>⚡ SYSTEM_OVERRIDE: TECH_DASHBOARD ⚡</h1>
-    <p>> Initializing secure connection... [OK]<br>> Loading modules... [OK]</p>
+    <h1>GALACTIC_TECH_CENTER</h1>
+    <p>SECTOR 02 • KNOWLEDGE BASE ONLINE</p>
 </div>
 
-<div class="container" id="main-content">
+<div class="container">
 
-    <!-- ۱. داشبورد سیستم کاربر -->
-    <h2 id="dashboard" style="text-align: center; margin-bottom: 20px; color: var(--primary);">🖥️ سیستم شما (Live Scan)</h2>
-    <div class="system-dashboard reveal">
-        <div class="sys-item">
-            <div class="label">Operating System</div>
-            <div class="value" id="sys-os">Scanning...</div>
-        </div>
-        <div class="sys-item">
-            <div class="label">Network Type</div>
-            <div class="value green" id="sys-net">Scanning...</div>
-        </div>
-        <div class="sys-item">
-            <div class="label">Battery Level</div>
-            <div class="value" id="sys-batt">Scanning...</div>
-        </div>
-        <div class="sys-item">
-            <div class="label">Screen Resolution</div>
-            <div class="value" id="sys-screen">Scanning...</div>
-        </div>
+    <!-- مولد حقایق -->
+    <div class="fact-generator">
+        <h2>💡 آیا می‌دانستید؟ (حقایق شگفت‌انگیز تکنولوژی)</h2>
+        <div id="fact-text">روی دکمه زیر کلیک کن!</div>
+        <button class="fact-btn" onclick="generateFact()">🎲 حقیقت جدید</button>
     </div>
 
-    <!-- ۲. نمودار ارز دیجیتال -->
-    <div class="card reveal" id="crypto">
-        <h2>📈 بازار زنده ارز دیجیتال (Bitcoin)</h2>
-        <div class="crypto-chart-container">
-            <canvas id="cryptoChart"></canvas>
-        </div>
-        <div style="display: flex; justify-content: space-between; font-family: monospace; font-size: 14px;">
-            <span style="color: var(--text-muted);">قیمت فعلی: <span id="btc-price" style="color: var(--primary); font-weight: bold;">---</span></span>
-            <span style="color: var(--text-muted);">تغییرات ۲۴ ساعته: <span id="btc-change">---</span></span>
-        </div>
-    </div>
-
-    <!-- ۳. ترمینال هکری -->
-    <div class="card reveal" id="terminal">
-        <h2>💻 ترمینال رهیلاناب (Rahila Terminal)</h2>
-        <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 10px;">دستورات: <code>help</code> | <code>hack</code> | <code>about</code> | <code>clear</code></p>
-        <div class="terminal" id="terminal-body" onclick="document.getElementById('terminal-input').focus()">
-            <div class="terminal-output">Rahila_OS v3.0.1 (cyberpunk build)</div>
-            <div class="terminal-output">Type 'help' to see available commands.</div>
-            <div class="terminal-output">----------------------------------------</div>
-            <div id="terminal-history"></div>
-            <div class="terminal-input-line">
-                <span class="terminal-prompt">root@rahilanab:~#</span>
-                <input type="text" class="terminal-input" id="terminal-input" onkeypress="handleTerminal(event)" autocomplete="off" spellcheck="false">
-            </div>
-        </div>
-    </div>
-
-    <!-- ۴. ابزارهای تعاملی -->
-    <h2 id="tools" style="text-align: center; margin-bottom: 20px; color: var(--primary);">🛠️ ابزارهای تعاملی</h2>
-    <div class="tools-grid reveal">
-        <div class="tool-box">
-            <h3 style="font-size: 16px; color: var(--primary); margin-bottom: 10px;">مقایسه هوشمند گوشی</h3>
-            <select class="compare-select" id="phone1">
+    <!-- ۱. ابزار مقایسه گوشی -->
+    <h2 style="color: var(--accent); margin-bottom: 15px;">⚔️ مقایسه هوشمند گوشی‌ها</h2>
+    <div class="compare-tool">
+        <div class="compare-selects">
+            <select id="phone1" onchange="comparePhones()">
                 <option value="iphone">آیفون ۱۵ پرو</option>
                 <option value="samsung">سامسونگ S24 اولترا</option>
                 <option value="xiaomi">شیائومی ۱۴</option>
             </select>
-            <select class="compare-select" id="phone2">
+            <select id="phone2" onchange="comparePhones()">
                 <option value="samsung">سامسونگ S24 اولترا</option>
                 <option value="iphone">آیفون ۱۵ پرو</option>
                 <option value="xiaomi">شیائومی ۱۴</option>
             </select>
-            <button class="compare-btn" onclick="comparePhones()">مقایسه</button>
-            <div id="compare-result"></div>
         </div>
-
-        <div class="tool-box">
-            <h3 style="font-size: 16px; color: var(--primary); margin-bottom: 10px;">آزمون هکری</h3>
-            <div style="text-align: right; font-size: 13px; margin-bottom: 10px;">
-                <label><input type="radio" name="qz1" value="1"> CPU و GPU رو می‌شناسم.</label><br>
-                <label><input type="radio" name="qz1" value="0"> فقط اسمشون رو شنیدم.</label>
+        <div class="vs-text" id="vs-badge">VS</div>
+        
+        <div id="compare-result">
+            <div class="spec-bar">
+                <div class="title"><span>📷 دوربین (مگاپیکسل)</span> <span id="cam-val-1">0</span> | <span id="cam-val-2">0</span></div>
+                <div class="bar-bg">
+                    <div class="bar-p1" id="cam-bar-1" style="width: 0%"></div>
+                    <div class="bar-p2" id="cam-bar-2" style="width: 0%"></div>
+                </div>
             </div>
-            <div style="text-align: right; font-size: 13px; margin-bottom: 10px;">
-                <label><input type="radio" name="qz2" value="1"> می‌تونم کد HTML بنویسم.</label><br>
-                <label><input type="radio" name="qz2" value="0"> برنامه‌نویسی بلد نیستم.</label>
+            <div class="spec-bar">
+                <div class="title"><span>🔋 باتری (mAh)</span> <span id="bat-val-1">0</span> | <span id="bat-val-2">0</span></div>
+                <div class="bar-bg">
+                    <div class="bar-p1" id="bat-bar-1" style="width: 0%"></div>
+                    <div class="bar-p2" id="bat-bar-2" style="width: 0%"></div>
+                </div>
             </div>
-            <button class="compare-btn" onclick="checkQuiz()">مشاهده نتیجه</button>
-            <div id="quiz-result"></div>
+            <div class="spec-bar">
+                <div class="title"><span>⚡ پردازنده (امتیاز بنچمارک)</span> <span id="cpu-val-1">0</span> | <span id="cpu-val-2">0</span></div>
+                <div class="bar-bg">
+                    <div class="bar-p1" id="cpu-bar-1" style="width: 0%"></div>
+                    <div class="bar-p2" id="cpu-bar-2" style="width: 0%"></div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <!-- ۵. دسته‌بندی‌ها با افکت سه‌بعدی -->
-    <h2 id="categories" style="text-align: center; margin-bottom: 20px; color: var(--primary);">📚 دایره‌المعارف تکنولوژی</h2>
+    <!-- ۲. آزمون تکنولوژی -->
+    <h2 style="color: var(--accent); margin-bottom: 15px;">🧠 آزمون نابغه تکنولوژی</h2>
+    <div class="quiz-tool">
+        <div class="quiz-q">۱. کدام یک واحد پردازش مرکزی است؟</div>
+        <div class="quiz-opts">
+            <button class="quiz-opt" onclick="checkAnswer(this, true)">CPU</button>
+            <button class="quiz-opt" onclick="checkAnswer(this, false)">RAM</button>
+            <button class="quiz-opt" onclick="checkAnswer(this, false)">GPU</button>
+        </div>
+        <div class="quiz-q" style="margin-top: 20px;">۲. مخفف هوش مصنوعی چیست؟</div>
+        <div class="quiz-opts">
+            <button class="quiz-opt" onclick="checkAnswer(this, false)">IoT</button>
+            <button class="quiz-opt" onclick="checkAnswer(this, true)">AI</button>
+            <button class="quiz-opt" onclick="checkAnswer(this, false)">VR</button>
+        </div>
+        <div id="quiz-result"></div>
+    </div>
+
+    <!-- ۳. محتوای مقالات (فیلتر) -->
+    <h2 style="color: var(--accent); margin-bottom: 15px; margin-top: 40px;">📚 دایره‌المعارف تکنولوژی</h2>
     
-    <div class="card reveal">
-        <h2>📱 دنیای موبایل</h2>
-        <div class="tech-grid">
-            <div class="tech-item"><h4>بهترین گوشی‌های ۲۰۲۶</h4><p>شیائومی ۱۴، سامسونگ S25، آیفون ۱۷. بررسی قیمت و مشخصات.</p></div>
-            <div class="tech-item"><h4>راهنمای خرید گوشی</h4><p>نیازسنجی، بودجه، مقایسه مشخصات. توجه به رم، حافظه، دوربین، باتری.</p></div>
-            <div class="tech-item"><h4>افزایش سرعت گوشی</h4><p>حذف برنامه‌های اضافی، پاک کردن کش، غیرفعال کردن انیمیشن.</p></div>
-            <div class="tech-item"><h4>دوربین گوشی</h4><p>تنظیمات دوربین، عکاسی حرفه‌ای با گوشی، اپلیکیشن‌های دوربین.</p></div>
+    <div class="filter-container">
+        <button class="filter-btn active" onclick="filterCards('all', this)">همه</button>
+        <button class="filter-btn" onclick="filterCards('mobile', this)">📱 موبایل</button>
+        <button class="filter-btn" onclick="filterCards('pc', this)">💻 کامپیوتر</button>
+        <button class="filter-btn" onclick="filterCards('gadget', this)">🎧 گجت‌ها</button>
+        <button class="filter-btn" onclick="filterCards('future', this)">🚀 آینده</button>
+    </div>
+
+    <div id="tech-grid">
+        <!-- موبایل -->
+        <div class="tech-card" data-cat="mobile">
+            <h3 onclick="toggleContent(this)">۳۴. آیفون (iPhone) <span>+</span></h3>
+            <div class="tech-content">آیفون‌های اپل به دلیل یکپارچگی سخت‌افزار و نرم‌افزار (iOS)، عمر باتری بالا و پردازش قدرتمند شناخته می‌شوند. جدیدترین مدل‌ها (مثل سری ۱۵) دوربین‌های ۴۸ مگاپیکسلی و پورت USB-C دارند. اگر به دنبال گوشی‌ای با اکوسیستم امن و نرم هستید، آیفون گزینه عالی‌ای است.</div>
+        </div>
+        <div class="tech-card" data-cat="mobile">
+            <h3 onclick="toggleContent(this)">۳۵. سامسونگ (Samsung) <span>+</span></h3>
+            <div class="tech-content">سامسونگ با سری گلکسی S (مثل S24 اولترا) پرچمداران قدرتمندی با دوربین ۲۰۰ مگاپیکسلی و قلم S-Pen ارائه می‌دهد. سری Z (فولد و فلیپ) گوشی‌های تاشو هستند. رابط کاربری One UI امکانات شخصی‌سازی بسیار زیادی دارد.</div>
+        </div>
+        <div class="tech-card" data-cat="mobile">
+            <h3 onclick="toggleContent(this)">۳۶. شیائومی (Xiaomi) <span>+</span></h3>
+            <div class="tech-content">شیائومی به عنوان «قاتل پرچمداران» شناخته می‌شود؛ چون مشخصات عالی را با قیمت مناسب‌تری ارائه می‌دهد. سری Poco و Redmi برای گیمینگ و بودجه محدود عالی هستند. سیستم‌عامل MIUI/HyperOS امکانات زیادی دارد اما تبلیغات درون‌برنامه‌ای دارد.</div>
+        </div>
+        <div class="tech-card" data-cat="mobile">
+            <h3 onclick="toggleContent(this)">۳۷. اندروید (Android) <span>+</span></h3>
+            <div class="tech-content">اندروید یک سیستم‌عامل متن‌باز از گوگل است که روی اکثر گوشی‌های دنیا نصب است. این سیستم به شما اجازه می‌دهد تنظیمات مخفی (Developer Options) را فعال کنید، برنامه‌ها را از منابع دیگر نصب کنید و گوشی را به دلخواه شخصی‌سازی کنید.</div>
+        </div>
+        <div class="tech-card" data-cat="mobile">
+            <h3 onclick="toggleContent(this)">۳۸. iOS <span>+</span></h3>
+            <div class="tech-content">سیستم‌عامل اختصاصی اپل که فقط روی آیفون‌ها اجرا می‌شود. ویژگی‌های آن شامل اپ استور امن، iCloud برای همگام‌سازی، AirDrop برای انتقال سریع فایل و FaceTime برای تماس تصویری است. محیط آن بسیار بسته‌تر اما امن‌تر از اندروید است.</div>
+        </div>
+
+        <!-- کامپیوتر -->
+        <div class="tech-card" data-cat="pc">
+            <h3 onclick="toggleContent(this)">۳۲. نصب ویندوز <span>+</span></h3>
+            <div class="tech-content">برای نصب ویندوز ۱۱، ابتدا باید یک فلش ۸ گیگابایتی بوت‌بل بسازید (با ابزار Media Creation Tool). سپس سیستم را از فلش بوت کرده و مراحل نصب (انتخاب زبان، پارتیشن‌بندی درایو و...) را طی کنید. توصیه می‌شود قبل از نصب، از اطلاعات مهم بکاپ بگیرید.</div>
+        </div>
+        <div class="tech-card" data-cat="pc">
+            <h3 onclick="toggleContent(this)">۳۳. رفع مشکل ویندوز <span>+</span></h3>
+            <div class="tech-content">کندی ویندوز معمولاً به دلیل پر شدن درایو C، اجرای برنامه‌های استارت‌آپ زیاد، یا وجود بدافزار است. برای رفع آن، فایل‌های موقت (Temp) را پاک کنید، برنامه‌های غیرضروری را از Startup حذف کنید و در صورت نیاز از ابزارهای تعمیر ویندوز (مثل SFC /scannow) استفاده کنید.</div>
+        </div>
+        <div class="tech-card" data-cat="pc">
+            <h3 onclick="toggleContent(this)">۳۹. مک‌بوک (MacBook) <span>+</span></h3>
+            <div class="tech-content">لپ‌تاپ‌های اپل با پردازنده‌های اختصاصی M1/M2/M3 که عمر باتری فوق‌العاده (تا ۲۰ ساعت) دارند. MacBook Air برای کارهای روزمره و دانشجویی سبک و عالی است، در حالی که MacBook Pro برای رندر ویدیو، طراحی گرافیک و برنامه‌نویسی سنگین استفاده می‌شود.</div>
+        </div>
+        <div class="tech-card" data-cat="pc">
+            <h3 onclick="toggleContent(this)">۴۷. هارد و SSD <span>+</span></h3>
+            <div class="tech-content">HDD (هارد دیسک) ارزان‌تر و با ظرفیت بالاتر است اما کند است. SSD (درایو حالت جامد) سرعت بسیار بالایی دارد (بوت ویندوز در چند ثانیه) و ضد ضربه است. NVMe جدیدترین نوع SSD است که روی مادربرد نصب می‌شود و سریع‌ترین عملکرد را دارد.</div>
+        </div>
+        <div class="tech-card" data-cat="pc">
+            <h3 onclick="toggleContent(this)">۴۸. مودم و روتر <span>+</span></h3>
+            <div class="tech-content">برای افزایش سرعت وای‌فای، روتر را در مرکز خانه (دور از دیوارهای ضخیم و وسایل فلزی) قرار دهید. آپدیت فریمور مودم، تغییر رمز عبور پیش‌فرض و استفاده از رمزگذاری WPA2/WPA3 از مهم‌ترین اقدامات امنیتی برای جلوگیری از هک شدن شبکه است.</div>
+        </div>
+        <div class="tech-card" data-cat="pc">
+            <h3 onclick="toggleContent(this)">۴۵. مانیتور <span>+</span></h3>
+            <div class="tech-content">پنل IPS بهترین زاویه دید و دقت رنگ را دارد (مناسب طراحی). پنل VA کنتراست بالاتری دارد (مناسب تماشای فیلم). پنل OLED بهترین کیفیت تصویر و مشکی مطلق را ارائه می‌دهد اما خطر سایه افتادن تصویر (Burn-in) دارد. نرخ تازه‌سازی (Refresh Rate) برای گیمرها باید ۱۴۴ هرتز یا بالاتر باشد.</div>
+        </div>
+        <div class="tech-card" data-cat="pc">
+            <h3 onclick="toggleContent(this)">۴۶. کیبورد و موس <span>+</span></h3>
+            <div class="tech-content">کیبوردهای مکانیکال (Mechanical) حس تایپ فوق‌العاده و عمر بالایی دارند (سوییچ‌های Red برای گیمینگ و Brown برای تایپ). موس‌های گیمینگ دارای سنسورهای نوری دقیق با DPI بالا (مثل ۱۶۰۰۰) هستند. برای کارهای اداری، کیبورد و موس ارگونومیک بی‌سیم بهترین انتخاب است.</div>
+        </div>
+
+        <!-- گجت‌ها -->
+        <div class="tech-card" data-cat="gadget">
+            <h3 onclick="toggleContent(this)">۴۰. هدفون <span>+</span></h3>
+            <div class="tech-content">هدفون‌های نویز کنسلینگ (Noise Cancelling) با تولید امواج صوتی مخالف، صدای محیط را حذف می‌کنند (عالی برای سفر). ایرپادز (AirPods) اپل و مدل‌های سونی (WH-1000XM5) از بهترین‌های بازار هستند. برای ورزش، هدفون‌های ایرباد با استاندارد IPX4 (ضدآب) مناسب‌ترند.</div>
+        </div>
+        <div class="tech-card" data-cat="gadget">
+            <h3 onclick="toggleContent(this)">۴۱. ساعت هوشمند <span>+</span></h3>
+            <div class="tech-content">ساعت‌های هوشمند مثل Apple Watch و Galaxy Watch می‌توانند ضربان قلب، اکسیژن خون و کیفیت خواب را اندازه‌گیری کنند. قابلیت‌های ورزشی و پرداخت بی‌تماس (NFC) از دیگر ویژگی‌های آن‌هاست. مدل‌های اقتصادی‌تر مثل Xiaomi Band فقط اعلان‌ها و گام‌شمار را ارائه می‌دهند.</div>
+        </div>
+        <div class="tech-card" data-cat="gadget">
+            <h3 onclick="toggleContent(this)">۴۲. دوربین عکاسی <span>+</span></h3>
+            <div class="tech-content">دوربین‌های DSLR لنزها را با آینه به سنسور منتقل می‌کنند (عمر باتری بالا). دوربین‌های Mirrorless (بدون آینه) سبک‌تر هستند و در فیلمبرداری بهتر عمل می‌کنند. برای مبتدیان، دوربین‌های Canon EOS یا Sony Alpha با لنز کیت گزینه‌های عالی و مقرون‌به‌صرفه‌ای هستند.</div>
+        </div>
+        <div class="tech-card" data-cat="gadget">
+            <h3 onclick="toggleContent(this)">۴۳. پرینتر <span>+</span></h3>
+            <div class="tech-content">پرینترهای جوهرافشان (Inkjet) برای چاپ رنگی و عکس با کیفیت بالا عالی هستند اما کارتریج گرانی دارند و اگر زیاد استفاده نشوند خشک می‌شوند. پرینترهای لیزری (Laser) برای چاپ متون اداری سیاه‌وسفید سریع‌تر و اقتصادی‌ترند و هزینه هر برگ پایین‌تری دارند.</div>
+        </div>
+        <div class="tech-card" data-cat="gadget">
+            <h3 onclick="toggleContent(this)">۴۴. کنسول بازی <span>+</span></h3>
+            <div class="tech-content">پلی‌استیشن ۵ (PS5) با دسته‌های DualSense و بازی‌های انحصاری مثل God of War انتخاب اول گیمرهای کنسولی است. ایکس‌باکس (Xbox Series X) با سرویس Game Pass (کتابخانه عظیم بازی‌ها) عالی است. نینتندو سوییچ (Switch) برای بازی‌های خانوادگی و قابل حمل طراحی شده است.</div>
+        </div>
+        <div class="tech-card" data-cat="gadget">
+            <h3 onclick="toggleContent(this)">۴۹. پاوربانک <span>+</span></h3>
+            <div class="tech-content">ظرفیت پاوربانک (مثل ۱۰۰۰۰ یا ۲۰۰۰۰ میلی‌آمپر) نشان‌دهنده تعداد دفعات شارژ گوشی است. سرعت شارژ (توان خروجی مثل ۲۰ وات یا ۶۵ وات) برای شارژ سریع اهمیت دارد. برندهای انکر (Anker) و شیائومی از باکیفیت‌ترین‌ها هستند. هنگام خرید حتماً به استانداردهای ایمنی توجه کنید.</div>
+        </div>
+
+        <!-- آینده -->
+        <div class="tech-card" data-cat="future">
+            <h3 onclick="toggleContent(this)">۳۱. ریکاوری اطلاعات <span>+</span></h3>
+            <div class="tech-content">اگر فایلی را پاک کردید یا هارد فرمت شد، اولین کار این است که **هیچ داده جدیدی** روی آن درایو ننویسید. سپس با نرم‌افزارهایی مثل EaseUS Data Recovery یا Recuva می‌توانید فایل‌های پاک شده را بازیابی کنید. برای هاردهای سوخته، باید به مراکز تخصصی ریکاوری مراجعه شود.</div>
+        </div>
+        <div class="tech-card" data-cat="future">
+            <h3 onclick="toggleContent(this)">۵۰. رباتیک <span>+</span></h3>
+            <div class="tech-content">ربات‌های خانگی مثل جاروبرقی‌های هوشمند (Robot Vacuum) با حسگرهای لیزر (LiDAR) نقشه خانه را می‌سازند. ربات‌های اجتماعی مثل Pepper یا ربات‌های اسباب‌بازی با هوش مصنوعی به احساسات انسان واکنش نشان می‌دهند. آینده رباتیک به سمت ربات‌های همیار در جراحی، کشاورزی و صنعت پیش می‌رود.</div>
         </div>
     </div>
 
-    <div class="card reveal">
-        <h2>💻 دنیای کامپیوتر</h2>
-        <div class="tech-grid">
-            <div class="tech-item"><h4>خرید لپ‌تاپ</h4><p>بررسی انواع: Ultrabook، Gaming، Business. پردازنده، رم، SSD.</p></div>
-            <div class="tech-item"><h4>اسمبل کامپیوتر</h4><p>اسمبل کردن کیس. قطعات: CPU، GPU، RAM، Motherboard.</p></div>
-            <div class="tech-item"><h4>برنامه‌نویسی</h4><p>آموزش پایتون، HTML، CSS، جاوااسکریپت. مسیر شغلی.</p></div>
-        </div>
-    </div>
-
-    <div class="card reveal">
-        <h2>🌐 اینترنت و امنیت</h2>
-        <div class="tech-grid">
-            <div class="tech-item"><h4>هک و امنیت</h4><p>فیشینگ، کلاهبرداری اینترنتی، راه‌های محافظت.</p></div>
-            <div class="tech-item"><h4>VPN</h4><p>فیلترشکن، تحریم، بهترین VPN رایگان.</p></div>
-            <div class="tech-item"><h4>بدافزارها</h4><p>ویروس‌های گوشی، بدافزار، آنتی‌ویروس مناسب.</p></div>
-        </div>
-    </div>
-
-    <div class="card reveal" style="text-align: center;">
-        <h2>🔗 لینک‌های سریع</h2>
-        <p>
-            <a href="phone-full.html" class="btn">📱 گوشی جامع</a>
-            <a href="laptop.html" class="btn">💻 لپ‌تاپ</a>
-            <a href="ai-tools.html" class="btn">🤖 هوش مصنوعی</a>
-        </p>
+    <div style="text-align: center; margin-top: 40px;">
+        <a href="tech.html" class="back-btn">🔙 بازگشت به تکنولوژی ۱</a>
+        <a href="index.html" class="back-btn">🏠 خانه</a>
     </div>
 
 </div>
 
 <div class="footer">
-    <p>🌟 <strong>رهیلاناب</strong> - <a href="index.html" style="color: var(--primary);">خانه</a> | SYSTEM STATUS: ONLINE</p>
-    <p>© ۲۰۲۶ rahilanab.com</p>
+    <p>🌟 <strong>رهیلاناب</strong> - CONTENT FULLY LOADED</p>
 </div>
 
 <script>
-    // =============== ۱. نوار پیشرفت ===============
-    window.onscroll = function() {
-        var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-        var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        var scrolled = (winScroll / height) * 100;
-        document.getElementById("progress-bar").style.width = scrolled + "%";
+    // =============== ۱. فیلتر کارت‌ها ===============
+    function filterCards(category, btn) {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        document.querySelectorAll('.tech-card').forEach(card => {
+            if (category === 'all' || card.dataset.cat === category) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+
+    // =============== ۲. باز و بسته کردن محتوا ===============
+    function toggleContent(h3) {
+        const content = h3.nextElementSibling;
+        const span = h3.querySelector('span');
+        if (content.classList.contains('active')) {
+            content.classList.remove('active');
+            span.innerText = '+';
+        } else {
+            content.classList.add('active');
+            span.innerText = '-';
+        }
+    }
+
+    // =============== ۳. مقایسه گوشی ===============
+    const phoneData = {
+        iphone: { name: 'آیفون', cam: 48, bat: 3274, cpu: 98 },
+        samsung: { name: 'سامسونگ', cam: 200, bat: 5000, cpu: 95 },
+        xiaomi: { name: 'شیائومی', cam: 50, bat: 4610, cpu: 96 }
     };
 
-    // =============== ۲. پس‌زمینه کهکشانی (Particle Network) ===============
-    const canvas = document.getElementById('particles-js');
-    const ctx = canvas.getContext('2d');
-    let particlesArray;
+    function comparePhones() {
+        const p1 = phoneData[document.getElementById('phone1').value];
+        const p2 = phoneData[document.getElementById('phone2').value];
 
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+        document.getElementById('compare-result').style.display = 'block';
+        document.getElementById('vs-badge').innerText = `${p1.name} VS ${p2.name}`;
 
-    let mouse = { x: null, y: null, radius: 150 };
-    window.addEventListener('mousemove', function(event) {
-        mouse.x = event.x;
-        mouse.y = event.y;
-    });
+        // دوربین (حداکثر ۲۰۰)
+        document.getElementById('cam-val-1').innerText = p1.cam;
+        document.getElementById('cam-val-2').innerText = p2.cam;
+        document.getElementById('cam-bar-1').style.width = (p1.cam / 200 * 100) + '%';
+        document.getElementById('cam-bar-2').style.width = (p2.cam / 200 * 100) + '%';
 
-    class Particle {
-        constructor(x, y, directionX, directionY, size, color) {
-            this.x = x; this.y = y;
-            this.directionX = directionX; this.directionY = directionY;
-            this.size = size; this.color = color;
-        }
-        draw() {
-            ctx.beginPath();
-            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
-            ctx.fillStyle = 'rgba(0, 229, 255, 0.5)';
-            ctx.fill();
-        }
-        update() {
-            if (this.x > canvas.width || this.x < 0) this.directionX = -this.directionX;
-            if (this.y > canvas.height || this.y < 0) this.directionY = -this.directionY;
-            
-            // برخورد با موس
-            let dx = mouse.x - this.x;
-            let dy = mouse.y - this.y;
-            let distance = Math.sqrt(dx * dx + dy * dy);
-            if (distance < mouse.radius + this.size) {
-                if (mouse.x < this.x && this.x < canvas.width - this.size * 10) this.x += 3;
-                if (mouse.x > this.x && this.x > this.size * 10) this.x -= 3;
-                if (mouse.y < this.y && this.y < canvas.height - this.size * 10) this.y += 3;
-                if (mouse.y > this.y && this.y > this.size * 10) this.y -= 3;
-            }
-            this.x += this.directionX;
-            this.y += this.directionY;
-            this.draw();
-        }
+        // باتری (حداکثر ۵۰۰۰)
+        document.getElementById('bat-val-1').innerText = p1.bat;
+        document.getElementById('bat-val-2').innerText = p2.bat;
+        document.getElementById('bat-bar-1').style.width = (p1.bat / 5000 * 100) + '%';
+        document.getElementById('bat-bar-2').style.width = (p2.bat / 5000 * 100) + '%';
+
+        // پردازنده (حداکثر ۱۰۰)
+        document.getElementById('cpu-val-1').innerText = p1.cpu;
+        document.getElementById('cpu-val-2').innerText = p2.cpu;
+        document.getElementById('cpu-bar-1').style.width = (p1.cpu / 100 * 100) + '%';
+        document.getElementById('cpu-bar-2').style.width = (p2.cpu / 100 * 100) + '%';
     }
+    comparePhones(); // لود اولیه
 
-    function init() {
-        particlesArray = [];
-        let numberOfParticles = (canvas.height * canvas.width) / 15000;
-        for (let i = 0; i < numberOfParticles; i++) {
-            let size = (Math.random() * 2) + 1;
-            let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2);
-            let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);
-            let directionX = (Math.random() * 1) - 0.5;
-            let directionY = (Math.random() * 1) - 0.5;
-            particlesArray.push(new Particle(x, y, directionX, directionY, size, '#00e5ff'));
+    // =============== ۴. آزمون ===============
+    let score = 0;
+    let answered = 0;
+
+    function checkAnswer(btn, isCorrect) {
+        if (isCorrect) {
+            btn.classList.add('correct');
+            score++;
+        } else {
+            btn.classList.add('wrong');
+        }
+        answered++;
+
+        if (answered === 2) {
+            document.getElementById('quiz-result').innerText = `نتیجه شما: ${score} از ۲ (${score === 2 ? 'نابغه! 🏆' : 'تلاش بیشتر! 💡'})`;
         }
     }
 
-    function connect() {
-        for (let a = 0; a < particlesArray.length; a++) {
-            for (let b = a; b < particlesArray.length; b++) {
-                let distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x)) + ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
-                if (distance < (canvas.width / 10) * (canvas.height / 10)) {
-                    let opacityValue = 1 - (distance / 20000);
-                    ctx.strokeStyle = 'rgba(0, 229, 255, ' + opacityValue + ')';
-                    ctx.lineWidth = 1;
-                    ctx.beginPath();
-                    ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
-                    ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
-                    ctx.stroke();
-                }
-            }
-        }
+    // =============== ۵. حقایق تصادفی ===============
+    const facts = [
+        "اولین هارد دیسک دنیا ۵ مگابایت بود و به اندازه یک یخچال!",
+        "نام Wi-Fi هیچ مخففی ندارد و فقط یک اسم تبلیغاتی جذاب است.",
+        "بلوتوث به افتخار پادشاه دانمارک (Harald Bluetooth) نامگذاری شده است.",
+        "بیش از ۹۰٪ ایمیل‌های دنیا اسپم هستند!",
+        "کلمه Bug (باگ) از ورود یک حشره واقعی به کامپیوتر Mark II در سال ۱۹۴۷ گرفته شده است.",
+        "بیش از ۸۰٪ ترافیک اینترنت از طریق کابل‌های زیردریایی در اقیانوس‌ها منتقل می‌شود."
+    ];
+
+    function generateFact() {
+        const factText = document.getElementById('fact-text');
+        factText.style.opacity = '0';
+        setTimeout(() => {
+            factText.innerText = facts[Math.floor(Math.random() * facts.length)];
+            factText.style.opacity = '1';
+        }, 200);
     }
-
-    function animate() {
-        requestAnimationFrame(animate);
-        ctx.clearRect(0, 0, innerWidth, innerHeight);
-        for (let i = 0; i < particlesArray.length; i++) {
-            particlesArray[i].update();
-        }
-        connect();
-    }
-
-    window.addEventListener('resize', function() {
-        canvas.width = innerWidth;
-        canvas.height = innerHeight;
-        init();
-    });
-
-    init();
-    animate();
-
-    // =============== ۳. اطلاعات سیستم کاربر ===============
-    // سیستم‌عامل
-    const userAgent = navigator.userAgent;
-    let os = "Unknown";
-    if (userAgent.indexOf("Win") != -1) os = "Windows";
-    if (userAgent.indexOf("Mac") != -1) os = "MacOS";
-    if (userAgent.indexOf("Linux") != -1) os = "Linux";
-    if (userAgent.indexOf("Android") != -1) os = "Android";
-    if (userAgent.indexOf("like Mac") != -1) os = "iOS";
-    document.getElementById('sys-os').innerText = os;
-
-    // نوع شبکه
-    if (navigator.connection) {
-        document.getElementById('sys-net').innerText = navigator.connection.effectiveType.toUpperCase();
-    } else {
-        document.getElementById('sys-net').innerText = "WiFi / LAN";
-    }
-
-    // باتری
-    if (navigator.getBattery) {
-        navigator.getBattery().then(function(battery) {
-            const level = Math.round(battery.level * 100);
-            const battEl = document.getElementById('sys-batt');
-            battEl.innerText = level + "%";
-            if (level < 20) battEl.className = 'value red';
-            else if (level > 80) battEl.className = 'value green';
-            
-            battery.addEventListener('levelchange', () => {
-                const newLevel = Math.round(battery.level * 100);
-                battEl.innerText = newLevel + "%";
-            });
-        });
-    } else {
-        document.getElementById('sys-batt').innerText = "N/A";
-    }
-
-    // رزولوشن
-    document.getElementById('sys-screen').innerText = window.screen.width + " x " + window.screen.height;
-
-    // =============== ۴. ترمینال هکری ===============
-    function handleTerminal(e) {
-        if (e.key === 'Enter') {
-            const input = document.getElementById('terminal-input');
-            const command = input.value.trim().toLowerCase();
-            const history = document.getElementById('terminal-history');
-            
-            // نمایش دستور تایپ شده
-            history.innerHTML += `<div class="terminal-output" style="color:#fff;"><span class="terminal-prompt">root@rahilanab:~#</span> ${input.value}</div>`;
-            
-            // پردازش دستور
-            if (command === 'help') {
-                history.innerHTML += `<div class="terminal-output">Available commands:<br>- help: Show this message<br>- about: About Rahila<br>- hack: Simulate a hack<br>- matrix: Enter the matrix<br>- clear: Clear terminal</div>`;
-            } else if (command === 'about') {
-                history.innerHTML += `<div class="terminal-output">Rahila AI Dashboard v3.0<br>Created by Diana for Rahilanab.com<br>Powered by pure HTML/JS magic.</div>`;
-            } else if (command === 'hack') {
-                history.innerHTML += `<div class="terminal-output" style="color:var(--danger);">Initiating hack sequence...</div>`;
-                setTimeout(() => history.innerHTML += `<div class="terminal-output" style="color:var(--success);">Bypassing firewall... [OK]</div>`, 500);
-                setTimeout(() => history.innerHTML += `<div class="terminal-output" style="color:var(--success);">Accessing mainframe... [OK]</div>`, 1000);
-                setTimeout(() => history.innerHTML += `<div class="terminal-output" style="color:var(--accent);">ACCESS GRANTED. Welcome, Administrator.</div>`, 1500);
-            } else if (command === 'matrix') {
-                history.innerHTML += `<div class="terminal-output" style="color:var(--success);">Wake up, Neo... The Matrix has you...</div>`;
-            } else if (command === 'clear') {
-                history.innerHTML = '';
-            } else if (command !== '') {
-                history.innerHTML += `<div class="terminal-output" style="color:var(--danger);">Command not found: ${command}. Type 'help' for a list of commands.</div>`;
-            }
-            
-            input.value = '';
-            const termBody = document.getElementById('terminal-body');
-            termBody.scrollTop = termBody.scrollHeight;
-        }
-    }
-
-    // =============== ۵. نمودار زنده ارز دیجیتال ===============
-    let btcChart;
-    async function fetchChartData() {
-        try {
-            const response = await fetch('https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=1');
-            const data = await response.json();
-            
-            const prices = data.prices.map(item => item[1]);
-            const labels = data.prices.map(item => {
-                const d = new Date(item[0]);
-                return d.getHours() + ':' + d.getMinutes();
-            });
-
-            const currentPrice = prices[prices.length - 1];
-            document.getElementById('btc-price').innerText = '$' + currentPrice.toLocaleString();
-
-            // محاسبه تغییرات
-            const firstPrice = prices[0];
-            const change = ((currentPrice - firstPrice) / firstPrice) * 100;
-            const changeEl = document.getElementById('btc-change');
-            if (change >= 0) {
-                changeEl.innerText = '▲ ' + change.toFixed(2) + '%';
-                changeEl.style.color = 'var(--success)';
-            } else {
-                changeEl.innerText = '▼ ' + Math.abs(change).toFixed(2) + '%';
-                changeEl.style.color = 'var(--danger)';
-            }
-
-            if (!btcChart) {
-                const ctx = document.getElementById('cryptoChart').getContext('2d');
-                btcChart = new Chart(ctx, {
-                    type: 'line',
-                    data: {
-                        labels: labels,
-                        datasets: [{
-                            label: 'Bitcoin Price (USD)',
-                            data: prices,
-                            borderColor: '#00e5ff',
-                            backgroundColor: 'rgba(0, 229, 255, 0.1)',
-                            borderWidth: 2,
-                            pointRadius: 0,
-                            fill: true,
-                            tension: 0.4
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        plugins: { legend: { display: false } },
-                        scales: {
-                            x: { display: false },
-                            y: { 
-                                grid: { color: 'rgba(255,255,255,0.05)' },
-                                ticks: { color: '#94a3b8', font: { family: 'monospace' } }
-                            }
-                        }
-                    }
-                });
-            } else {
-                btcChart.data.labels = labels;
-                btcChart.data.datasets[0].data = prices;
-                btcChart.update();
-            }
-        } catch (error) {
-            console.error("Chart error:", error);
-        }
-    }
-    fetchChartData();
-    setInterval(fetchChartData, 60000); // آپدیت هر ۱ دقیقه
-
-    // =============== ۶. افکت سه‌بعدی کارت‌ها ===============
-    const cards = document.querySelectorAll('.tech-item');
-    cards.forEach(card => {
-        card.addEventListener('mousemove', e => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            
-            const rotateX = ((y - centerY) / centerY) * -15; // حداکثر ۱۵ درجه
-            const rotateY = ((x - centerX) / centerX) * 15;
-            
-            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
-        });
-        
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = `perspective(1000px) rotateX(0) rotateY(0) scale(1)`;
-        });
-    });
-
-    // =============== ۷. فهرست ===============
-    function closeToc() { document.getElementById('toc-menu').classList.remove('active'); }
-
-    // =============== ۸. TTS و ابزارها ===============
-    function toggleSpeech() {
-        // کد ساده شده TTS
-        const text = document.querySelector('.container').innerText;
-        const speech = new SpeechSynthesisUtterance(text);
-        speech.lang = 'fa-IR';
-        window.speechSynthesis.speak(speech);
-    }
-    function comparePhones() { /* همان کد قبلی */ document.getElementById('compare-result').innerHTML = "مقایسه انجام شد!"; document.getElementById('compare-result').style.display = 'block';}
-    function checkQuiz() { /* همان کد قبلی */ document.getElementById('quiz-result').innerHTML = "نتیجه آزمون!"; document.getElementById('quiz-result').style.display = 'block';}
 </script>
 
 </body>
