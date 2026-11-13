@@ -1,1 +1,395 @@
-<!DOCTYPE html><html lang="fa"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>🏄 پدل‌بورد | رهیلا</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial;background:radial-gradient(circle at center,#0a1a1a,#1a4a4a,#66ccaa);color:#fff;text-align:center;padding:15px;min-height:100vh}.header{background:rgba(255,255,255,.08);backdrop-filter:blur(20px);border-radius:25px;padding:20px;margin-bottom:15px}.header h1{color:#ffd700;font-size:22px}.back-btn{display:inline-block;background:rgba(255,255,255,.15);color:#fff;padding:8px 20px;border-radius:20px;text-decoration:none;margin:10px 0;font-size:14px}.section-title{color:#ffd700;font-size:18px;margin:20px 0 10px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.card{background:rgba(255,255,255,.05);border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,.1);text-align:right}.card h3{font-size:15px;color:#ffd700}</style></head><body><div class="header"><h1>🏄 پدل‌بورد</h1></div><a href="index.html" class="back-btn">🔙 برگشت</a><div class="section-title">🏄 اطلاعات</div><div class="grid"><div class="card"><h3>پدل‌بورد چیست</h3></div><div class="card"><h3>تجهیزات</h3></div><div class="card"><h3>مسابقات</h3></div><div class="card"><h3>قهرمانان</h3></div></div><p style="margin-top:15px"><a href="index.html" style="color:#ffd700">🔙 برگشت</a></p></body></html>
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>راهنمای جامع پارو ایستاده (پدل‌بورد): آموزش، تجهیزات و بهترین مکان‌ها | رهیلاناب</title>
+    <meta name="description" content="همه چیز درباره ورزش پارو ایستاده (SUP)؛ از نحوه ایستادن و تجهیزات لازم تا معرفی بهترین دریاچه‌ها و سواحل ایران برای پدل‌بورد. همراه با دکمه پخش صوتی مقاله.">
+    
+    <style>
+        /* تم اصلی (روشن) */
+        :root {
+            --bg-main: #f8fafc;
+            --bg-card: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --primary: #0ea5e9; /* آبی فیروزه‌ای */
+            --primary-dark: #0284c7;
+            --accent: #f59e0b; /* طلایی */
+            --border: #e2e8f0;
+            --shadow: 0 4px 20px rgba(0,0,0,0.05);
+            --gradient: linear-gradient(135deg, #0ea5e9, #3b82f6);
+        }
+
+        /* تم تاریک */
+        body.dark-mode {
+            --bg-main: #0f172a;
+            --bg-card: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --shadow: 0 4px 20px rgba(0,0,0,0.4);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; transition: background-color 0.3s, color 0.3s; }
+        
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.9;
+            font-size: 17px;
+            overflow-x: hidden;
+        }
+
+        /* ۱. نوار پیشرفت مطالعه */
+        #progress-bar {
+            position: fixed; top: 0; left: 0;
+            height: 4px; width: 0%;
+            background: var(--gradient);
+            z-index: 9999;
+            box-shadow: 0 0 10px var(--primary);
+            transition: width 0.1s;
+        }
+
+        /* هدر و دکمه‌های کنترلی */
+        .top-bar {
+            position: fixed; top: 10px; right: 10px; left: 10px;
+            display: flex; justify-content: space-between; align-items: center;
+            z-index: 999;
+        }
+        
+        .control-btn {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            padding: 10px 15px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: bold;
+            display: flex; align-items: center; gap: 8px;
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(10px);
+        }
+        .control-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 15px rgba(14, 165, 233, 0.3); }
+        .control-btn.playing { background: var(--primary); color: white; }
+
+        .header {
+            background: var(--gradient);
+            color: white;
+            padding: 80px 20px 50px;
+            text-align: center;
+            border-radius: 0 0 40px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        .header::before {
+            content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 60%);
+            animation: rotate 20s linear infinite;
+        }
+        @keyframes rotate { 100% { transform: rotate(360deg); } }
+        
+        .header h1 { font-size: clamp(24px, 5vw, 36px); margin-bottom: 10px; position: relative; z-index: 1; text-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+        .header p { font-size: 16px; opacity: 0.9; position: relative; z-index: 1; }
+
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+
+        /* ۲. انیمیشن ظاهر شدن با اسکرول */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        .card {
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+        }
+        .card h2 { font-size: 22px; color: var(--primary); margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+        .card h3 { font-size: 19px; color: var(--text-main); margin: 20px 0 10px; }
+
+        /* باکس BLUF (جواب سریع) */
+        .box-bluf {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(245, 158, 11, 0.05));
+            border: 2px solid var(--accent);
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+        .box-bluf h3 { color: var(--accent); font-size: 20px; margin-bottom: 10px; }
+        .box-bluf p { font-weight: bold; font-size: 16px; line-height: 1.8; }
+
+        /* تصاویر */
+        .img-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 15px; margin: 20px 0; }
+        .img-grid img {
+            width: 100%; height: 200px; object-fit: cover; border-radius: 15px;
+            box-shadow: var(--shadow); transition: transform 0.3s;
+        }
+        .img-grid img:hover { transform: scale(1.03); }
+
+        /* جدول */
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 15px; border-radius: 12px; overflow: hidden; }
+        th { background: var(--primary); color: white; padding: 15px; text-align: center; }
+        td { padding: 12px; text-align: center; border-bottom: 1px solid var(--border); background: var(--bg-card); }
+        tr:hover td { background: var(--bg-main); }
+
+        /* ۳. آکاردئون (سوالات متداول) */
+        .accordion {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            margin-bottom: 12px;
+            overflow: hidden;
+        }
+        .accordion-btn {
+            background: none; border: none; width: 100%; padding: 18px;
+            text-align: right; font-family: inherit; font-size: 16px; font-weight: bold;
+            color: var(--text-main); cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+        }
+        .accordion-btn:hover { color: var(--primary); }
+        .accordion-content {
+            max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out;
+            padding: 0 18px; color: var(--text-muted);
+        }
+        .accordion.active .accordion-content { max-height: 500px; padding-bottom: 18px; }
+        .accordion.active .accordion-btn { color: var(--primary); }
+        .arrow { transition: transform 0.3s; }
+        .accordion.active .arrow { transform: rotate(180deg); }
+
+        /* دکمه‌های لینک داخلی */
+        .btn {
+            display: inline-block; background: var(--primary); color: white;
+            padding: 12px 25px; border-radius: 30px; text-decoration: none;
+            font-weight: bold; margin: 5px; transition: 0.3s;
+        }
+        .btn:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 5px 15px rgba(14,165,233,0.4); }
+
+        .footer { text-align: center; padding: 30px; color: var(--text-muted); font-size: 14px; border-top: 1px solid var(--border); margin-top: 40px; }
+    </style>
+</head>
+<body>
+
+<!-- نوار پیشرفت -->
+<div id="progress-bar"></div>
+
+<!-- دکمه‌های کنترلی بالا -->
+<div class="top-bar">
+    <button class="control-btn" id="tts-btn" onclick="toggleSpeech()">
+        <span id="tts-icon">🔊</span> <span id="tts-text">گوش دادن</span>
+    </button>
+    <button class="control-btn" onclick="toggleDarkMode()">
+        <span id="theme-icon">🌙</span>
+    </button>
+</div>
+
+<div class="header">
+    <h1>🏄‍♂️ راهنمای جامع پارو ایستاده (پدل‌بورد)</h1>
+    <p>آموزش، تجهیزات، و بهترین مکان‌های ایران برای SUP</p>
+</div>
+
+<div class="container">
+
+    <!-- باکس BLUF -->
+    <div class="card box-bluf reveal">
+        <h3>⚡ جواب سریع در ۳ خط:</h3>
+        <p>
+            ۱. پارو ایستاده (Stand Up Paddle) ترکیبی از تعادل، قدرت بدنی و آرامش روی آب است.<br>
+            ۲. برای شروع به یک تخته پدل‌بورد، پارو، جلیقه نجات و بند مچ پا نیاز دارید.<br>
+            ۳. بهترین مکان‌ها برای شروع، دریاچه‌های آرام یا سواحل کم‌موج هستند (جدول ۱۳ شهر در ادامه).
+        </p>
+    </div>
+
+    <div class="card reveal">
+        <h2>🏄 پدل‌بورد چیست و چرا محبوب شده؟</h2>
+        <p>پارو ایستاده یا SUP (مخفف Stand Up Paddle) یکی از سریع‌ترین ورزش‌های در حال رشد در جهان است. در این ورزش، فرد روی یک تخته بزرگ می‌ایستد و با یک پارو در آب حرکت می‌کند. برخلاف تصور عموم، این ورزش اصلاً سخت نیست و افراد مبتدی می‌توانند در همان جلسه اول روی تخته بایستند و لذت ببرند.</p>
+        <div style="margin-top: 15px; padding: 15px; background: rgba(14,165,233,0.1); border-right: 4px solid var(--primary); border-radius: 8px;">
+            💡 <strong>فایده شگفت‌انگیز:</strong> پدل‌بورد کل عضلات مرکزی بدن (Core) را درگیر می‌کند و برای اصلاح فرم بدن و کاهش استرس فوق‌العاده است.
+        </div>
+    </div>
+
+    <div class="card reveal">
+        <h2>📸 گالری تصاویر پدل‌بورد</h2>
+        <div class="img-grid">
+            <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=500" alt="پدل بورد در دریاچه آرام" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?w=500" alt="پارو ایستاده در ساحل" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1520528655-84e4f24360e0?w=500" alt="آموزش ایستادن روی پدل بورد" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1530696308796-45a5f777adc3?w=500" alt="پدل بورد در غروب خورشید" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1621926093396-24bb1a6aac34?w=500" alt="مسابقات پدل بورد" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1599818886111-6a576fb7e280?w=500" alt="تجهیزات پدل بورد" loading="lazy">
+        </div>
+    </div>
+
+    <div class="card reveal">
+        <h2>🎒 تجهیزات ضروری برای شروع</h2>
+        <p>برای شروع، به ۴ وسیله اصلی نیاز دارید:</p>
+        <h3>۱. تخته پدل‌بورد (Board):</h3>
+        <p>تخته‌های بادی (iSUP) برای مبتدیان و حمل‌ونقل راحت‌ترند. تخته‌های سخت (Hardboard) برای سرعت و حرفه‌ای‌ها مناسب‌ترند.</p>
+        
+        <h3>۲. پارو (Paddle):</h3>
+        <p>پاروها معمولاً از جنس آلومینیوم (اقتصادی)، فایبرگلاس (متوسط) یا کربن (سبک و گران) هستند.</p>
+        
+        <h3>۳. جلیقه نجات (PFD):</h3>
+        <p>در بسیاری از کشورها و مکان‌ها استفاده از جلیقه نجات اجباری است. برای مبتدیان به شدت توصیه می‌شود.</p>
+
+        <h3>۴. بند مچ پا (Leash):</h3>
+        <p>بندی که مچ پای شما را به تخته وصل می‌کند تا اگر افتادید، تخته از شما دور نشود.</p>
+    </div>
+
+    <div class="card reveal">
+        <h2>🗺️ بهترین مکان‌های پدل‌بورد در ۱۳ شهر ایران</h2>
+        <p>دسترسی به آب آرام، اولین قدم برای یادگیری است. این جدول بهترین مکان‌ها را نشان می‌دهد:</p>
+        <table>
+            <thead>
+                <tr><th>#</th><th>شهر</th><th>مکان پیشنهادی</th><th>ویژگی</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>۱</td><td>🏙️ تهران</td><td>دریاچه چیتگر</td><td>دسترسی آسان، آب آرام</td></tr>
+                <tr><td>۲</td><td>🕌 مشهد</td><td>دریاچه چالیدره</td><td>منظره کوهستانی</td></tr>
+                <tr><td>۳</td><td>🏛️ اصفهان</td><td>زاینده‌رود (فصول پرآب)</td><td>پارک‌های ساحلی</td></tr>
+                <tr><td>۴</td><td>🌸 شیراز</td><td>دریاچه مهارلو (با احتیاط)</td><td>طبیعت بکر</td></tr>
+                <tr><td>۵</td><td>🏔️ تبریز</td><td>دریاچه قوری‌گل</td><td>آب بسیار آرام</td></tr>
+                <tr><td>۶</td><td>🕌 قم</td><td>دریاچه حوض سلطان</td><td>فضای باز و وسیع</td></tr>
+                <tr><td>۷</td><td>🌿 رشت</td><td>تالاب انزلی (بخش‌های امن)</td><td>طبیعت سبز</td></tr>
+                <tr><td>۸</td><td>🌴 اهواز</td><td>رودخانه کارون</td><td>نیاز به تخصص بالا</td></tr>
+                <tr><td>۹</td><td>🏗️ کرج</td><td>دریاچه سد کرج (با مجوز)</td><td>منظره کوه</td></tr>
+                <tr><td>۱۰</td><td>🏜️ یزد</td><td>دریاچه بافق</td><td>آب شور و آرام</td></tr>
+                <tr><td>۱۱</td><td>🏰 کرمان</td><td>دریاچه سد جیرفت</td><td>بزرگترین دریاچه مصنوعی</td></tr>
+                <tr><td>۱۲</td><td>🏝️ کیش</td><td>ساحل مرجان</td><td>آب گرم و شفاف</td></tr>
+                <tr><td>۱۳</td><td>🏝️ قشم</td><td>ساحل سیلک</td><td>پدل‌بورد در آب‌های کریستالی</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- آکاردئون سوالات متداول -->
+    <div class="card reveal">
+        <h2>❓ سوالات متداول (FAQ)</h2>
+        
+        <div class="accordion">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+                آیا پدل‌بورد سخت است؟
+                <span class="arrow">▼</span>
+            </button>
+            <div class="accordion-content">
+                خیر، برای مبتدیان بسیار آسان است. با یک تخته پهن و پایدار (مثل تخته‌های بادی) می‌توانید در ۱۰-۱۵ دقیقه اول بایستید.
+            </div>
+        </div>
+
+        <div class="accordion">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+                اگر از تخته بیفتم چه کار کنم؟
+                <span class="arrow">▼</span>
+            </button>
+            <div class="accordion-content">
+                نگران نباشید! چون بند مچ پا (Leash) به تخته وصل است، تخته از شما دور نمی‌شود. به آرامی از آب بیرون بیایید و دوباره سوار شوید.
+            </div>
+        </div>
+
+        <div class="accordion">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+                آیا پدل‌بورد برای لاغری مفید است؟
+                <span class="arrow">▼</span>
+            </button>
+            <div class="accordion-content">
+                بله! پدل‌بورد در هر ساعت حدود ۳۰۰ تا ۵۰۰ کالری می‌سوزاند و به تقویت عضلات مرکزی بدن، تعادل و استقامت کمک زیادی می‌کند.
+            </div>
+        </div>
+    </div>
+
+    <!-- لینک به صفحات مرتبط -->
+    <div class="card reveal" style="text-align: center;">
+        <h2>🔗 صفحات مرتبط</h2>
+        <p>
+            <a href="sport-full.html" class="btn">⚽ ورزش جامع</a>
+            <a href="surfing.html" class="btn">🏄 موج‌سواری</a>
+            <a href="kayaking.html" class="btn">🛶 کایاک</a>
+        </p>
+    </div>
+
+</div>
+
+<div class="footer">
+    <p>🌟 <strong>رهیلاناب</strong> - <a href="index.html" style="color: var(--primary);">خانه</a> | <a href="sport-full.html" style="color: var(--primary);">ورزش</a></p>
+    <p>© ۲۰۲۶ rahilanab.com | با ورزش، شاد و سالم بمانید.</p>
+</div>
+
+<script>
+    // ۱. اسکریپت نوار پیشرفت
+    window.onscroll = function() {
+        var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var scrolled = (winScroll / height) * 100;
+        document.getElementById("progress-bar").style.width = scrolled + "%";
+    };
+
+    // ۲. اسکریپت حالت تاریک
+    function toggleDarkMode() {
+        document.body.classList.toggle('dark-mode');
+        const isDark = document.body.classList.contains('dark-mode');
+        document.getElementById('theme-icon').innerText = isDark ? '☀️' : '🌙';
+        localStorage.setItem('darkMode', isDark);
+    }
+    if (localStorage.getItem('darkMode') === 'true') {
+        toggleDarkMode();
+    }
+
+    // ۳. اسکریپت پخش صوتی (TTS)
+    let isSpeaking = false;
+    let speech = null;
+
+    function toggleSpeech() {
+        if (isSpeaking) {
+            window.speechSynthesis.cancel();
+            isSpeaking = false;
+            document.getElementById('tts-icon').innerText = '🔊';
+            document.getElementById('tts-text').innerText = 'گوش دادن';
+            document.getElementById('tts-btn').classList.remove('playing');
+            return;
+        }
+
+        const textToRead = document.querySelector('.container').innerText;
+        
+        speech = new SpeechSynthesisUtterance(textToRead);
+        speech.lang = 'fa-IR';
+        speech.rate = 1;
+        
+        speech.onend = function() {
+            isSpeaking = false;
+            document.getElementById('tts-icon').innerText = '🔊';
+            document.getElementById('tts-text').innerText = 'گوش دادن';
+            document.getElementById('tts-btn').classList.remove('playing');
+        };
+
+        window.speechSynthesis.speak(speech);
+        isSpeaking = true;
+        document.getElementById('tts-icon').innerText = '⏹️';
+        document.getElementById('tts-text').innerText = 'توقف';
+        document.getElementById('tts-btn').classList.add('playing');
+    }
+
+    // ۴. اسکریپت انیمیشن اسکرول
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // ۵. اسکریپت آکاردئون
+    function toggleAccordion(btn) {
+        const accordion = btn.parentElement;
+        accordion.classList.toggle('active');
+    }
+</script>
+
+</body>
+</html>
