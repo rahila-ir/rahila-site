@@ -1,1 +1,416 @@
-<!DOCTYPE html><html lang="fa"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>🏓 تنیس روی میز | رهیلا</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial;background:radial-gradient(circle at center,#0a1a1a,#1a4a4a,#66ccaa);color:#fff;text-align:center;padding:15px;min-height:100vh}.header{background:rgba(255,255,255,.08);backdrop-filter:blur(20px);border-radius:25px;padding:20px;margin-bottom:15px}.header h1{color:#ffd700;font-size:22px}.back-btn{display:inline-block;background:rgba(255,255,255,.15);color:#fff;padding:8px 20px;border-radius:20px;text-decoration:none;margin:10px 0;font-size:14px}.section-title{color:#ffd700;font-size:18px;margin:20px 0 10px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.card{background:rgba(255,255,255,.05);border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,.1);text-align:right}.card h3{font-size:15px;color:#ffd700}</style></head><body><div class="header"><h1>🏓 تنیس روی میز</h1></div><a href="index.html" class="back-btn">🔙 برگشت</a><div class="section-title">🏓 اطلاعات</div><div class="grid"><div class="card"><h3>پینگ‌پنگ چیست</h3></div><div class="card"><h3>قوانین</h3></div><div class="card"><h3>تجهیزات</h3></div><div class="card"><h3>باشگاه‌ها</h3></div></div><p style="margin-top:15px"><a href="index.html" style="color:#ffd700">🔙 برگشت</a></p></body></html>
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>راهنمای جامع تنیس روی میز (پینگ پنگ): انتخاب راکت و تکنیک‌ها | رهیلاناب</title>
+    <meta name="description" content="همه چیز درباره ورزش تنیس روی میز؛ از تست انتخاب راکت و لاستیک مناسب تا آموزش تکنیک‌های اسپین و معرفی بهترین باشگاه‌ها در ۱۳ شهر ایران.">
+    <meta name="keywords" content="تنیس روی میز, پینگ پنگ, انتخاب راکت پینگ پنگ, آموزش پینگ پنگ, تجهیزات تنیس روی میز, باشگاه پینگ پنگ">
+    
+    <style>
+        /* ============== تم‌ها ============== */
+        :root {
+            --bg-main: #fff7ed; /* نارنجی خیلی روشن */
+            --bg-card: #ffffff;
+            --text-main: #1c1917;
+            --text-muted: #57534e;
+            --primary: #ea580c; /* نارنجی تنیس */
+            --primary-dark: #c2410c;
+            --accent: #1e293b; /* سرمه‌ای تیره */
+            --border: #ffedd5;
+            --shadow: 0 10px 30px rgba(234, 88, 12, 0.1);
+            --gradient: linear-gradient(135deg, #ea580c, #f97316);
+        }
+
+        body.dark-mode {
+            --bg-main: #1c1917;
+            --bg-card: #292524;
+            --text-main: #f5f5f4;
+            --text-muted: #a8a29e;
+            --border: #44403c;
+            --shadow: 0 10px 30px rgba(0,0,0,0.5);
+            --gradient: linear-gradient(135deg, #c2410c, #7c2d12);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; transition: background-color 0.3s, color 0.3s; }
+        
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.9;
+            font-size: 17px;
+            overflow-x: hidden;
+        }
+
+        /* ============== نوار پیشرفت ============== */
+        #progress-bar {
+            position: fixed; top: 0; left: 0; height: 4px; width: 0%;
+            background: var(--gradient); z-index: 9999;
+            box-shadow: 0 0 10px var(--primary); transition: width 0.1s;
+        }
+
+        /* ============== دکمه‌های شناور ============== */
+        .floating-controls {
+            position: fixed; top: 15px; left: 15px; z-index: 999;
+            display: flex; flex-direction: column; gap: 10px;
+        }
+        
+        .control-btn {
+            background: var(--bg-card); border: 1px solid var(--border);
+            color: var(--text-main); width: 50px; height: 50px;
+            border-radius: 50%; cursor: pointer; font-size: 20px;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: var(--shadow); backdrop-filter: blur(10px); transition: 0.3s;
+        }
+        .control-btn:hover { transform: scale(1.1); color: var(--primary); }
+        .control-btn.playing { background: var(--primary); color: white; }
+
+        /* ============== فهرست شناور ============== */
+        .toc-container { position: fixed; top: 15px; right: 15px; z-index: 999; }
+        .toc-btn { background: var(--bg-card); border: 1px solid var(--border); color: var(--text-main); padding: 10px 15px; border-radius: 30px; cursor: pointer; font-family: inherit; font-weight: bold; box-shadow: var(--shadow); display: flex; align-items: center; gap: 8px; }
+        .toc-menu { position: absolute; top: 60px; right: 0; background: var(--bg-card); border: 1px solid var(--border); border-radius: 15px; padding: 15px; min-width: 220px; box-shadow: var(--shadow); display: none; flex-direction: column; gap: 10px; }
+        .toc-menu.active { display: flex; }
+        .toc-menu a { color: var(--text-main); text-decoration: none; font-size: 14px; padding: 5px 10px; border-radius: 8px; }
+        .toc-menu a:hover { background: var(--bg-main); color: var(--primary); }
+
+        /* ============== هدر با انیمیشن توپ ============== */
+        .header {
+            background: var(--gradient); color: white; padding: 80px 20px 60px;
+            text-align: center; border-radius: 0 0 40px 40px;
+            position: relative; overflow: hidden;
+        }
+        
+        .ping-pong-ball {
+            position: absolute; top: 20px; right: 20%; width: 30px; height: 30px;
+            background: #fff; border-radius: 50%; box-shadow: inset -5px -5px 10px rgba(0,0,0,0.2), 0 5px 15px rgba(0,0,0,0.3);
+            animation: bounceBall 3s infinite ease-in-out;
+        }
+        @keyframes bounceBall {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(60px) scale(0.9); }
+        }
+
+        .header h1 { font-size: clamp(24px, 5vw, 36px); margin-bottom: 10px; position: relative; z-index: 1; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+        .header p { font-size: 16px; opacity: 0.9; position: relative; z-index: 1; }
+
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; margin-top: -30px; }
+
+        /* ============== انیمیشن ============== */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* ============== کارت‌ها ============== */
+        .card {
+            background: var(--bg-card); border-radius: 20px; padding: 30px;
+            margin-bottom: 30px; box-shadow: var(--shadow); border: 1px solid var(--border);
+        }
+        .card h2 { font-size: 22px; color: var(--primary); margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+        .card h3 { font-size: 19px; color: var(--text-main); margin: 20px 0 10px; }
+
+        /* ============== باکس BLUF ============== */
+        .box-bluf {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.1), rgba(30, 41, 59, 0.05));
+            border: 2px solid var(--accent); border-radius: 16px; padding: 25px; margin-bottom: 30px;
+        }
+        .box-bluf h3 { color: var(--accent); font-size: 20px; margin-bottom: 10px; }
+        .box-bluf p { font-weight: bold; font-size: 16px; line-height: 1.8; }
+
+        /* ============== گالری ============== */
+        .img-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 15px; margin: 20px 0; }
+        .img-grid img {
+            width: 100%; height: 200px; object-fit: cover; border-radius: 15px;
+            box-shadow: var(--shadow); transition: transform 0.3s; cursor: pointer;
+        }
+        .img-grid img:hover { transform: scale(1.03); }
+
+        /* ============== تست انتخاب راکت ============== */
+        .racket-test { background: var(--bg-main); padding: 20px; border-radius: 15px; margin-top: 15px; border: 1px dashed var(--border); }
+        .racket-options { display: flex; flex-wrap: wrap; gap: 10px; margin: 15px 0; }
+        .racket-btn { background: var(--bg-card); border: 1px solid var(--border); padding: 10px 15px; border-radius: 8px; cursor: pointer; font-family: inherit; font-weight: bold; transition: 0.3s; }
+        .racket-btn:hover, .racket-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
+        #racket-result { display: none; margin-top: 15px; padding: 15px; background: rgba(234, 88, 12, 0.1); border-right: 4px solid var(--primary); border-radius: 8px; font-weight: bold; animation: slideUp 0.5s ease; }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* ============== جدول ============== */
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 15px; border-radius: 12px; overflow: hidden; }
+        th { background: var(--primary); color: white; padding: 15px; text-align: center; }
+        td { padding: 12px; text-align: center; border-bottom: 1px solid var(--border); background: var(--bg-card); }
+        tr:hover td { background: var(--bg-main); }
+
+        /* ============== آکاردئون ============== */
+        .accordion { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 12px; overflow: hidden; }
+        .accordion-btn { background: none; border: none; width: 100%; padding: 18px; text-align: right; font-family: inherit; font-size: 16px; font-weight: bold; color: var(--text-main); cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .accordion-btn:hover { color: var(--primary); }
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; padding: 0 18px; color: var(--text-muted); }
+        .accordion.active .accordion-content { max-height: 500px; padding-bottom: 18px; }
+        .arrow { transition: transform 0.3s; }
+        .accordion.active .arrow { transform: rotate(180deg); }
+
+        .btn { display: inline-block; background: var(--primary); color: white; padding: 12px 25px; border-radius: 30px; text-decoration: none; font-weight: bold; margin: 5px; transition: 0.3s; }
+        .btn:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 5px 15px rgba(234,88,12,0.4); }
+
+        .footer { text-align: center; padding: 30px; color: var(--text-muted); font-size: 14px; border-top: 1px solid var(--border); margin-top: 40px; }
+        
+        #back-to-top { position: fixed; bottom: 20px; right: 20px; width: 50px; height: 50px; border-radius: 50%; background: var(--primary); color: white; border: none; font-size: 20px; cursor: pointer; box-shadow: var(--shadow); display: none; z-index: 999; }
+        
+        /* لایت‌باکس */
+        #lightbox { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.9); z-index: 99999; display: none; align-items: center; justify-content: center; padding: 20px; }
+        #lightbox img { max-width: 90%; max-height: 90%; border-radius: 10px; }
+        #lightbox .close-lb { position: absolute; top: 20px; right: 20px; color: white; font-size: 30px; cursor: pointer; background: none; border: none; }
+    </style>
+</head>
+<body>
+
+<!-- نوار پیشرفت -->
+<div id="progress-bar"></div>
+
+<!-- دکمه‌های شناور -->
+<div class="floating-controls">
+    <button class="control-btn" id="tts-btn" onclick="toggleSpeech()" title="گوش دادن">
+        <span id="tts-icon">🔊</span>
+    </button>
+    <button class="control-btn" onclick="toggleDarkMode()" title="تاریک/روشن">
+        <span id="theme-icon">🌙</span>
+    </button>
+</div>
+
+<!-- فهرست شناور -->
+<div class="toc-container">
+    <button class="toc-btn" onclick="document.getElementById('toc-menu').classList.toggle('active')">
+        📌 فهرست مطالب
+    </button>
+    <div class="toc-menu" id="toc-menu">
+        <a href="#intro" onclick="closeToc()">🔹 پینگ پنگ چیست؟</a>
+        <a href="#racket-test" onclick="closeToc()">🔹 تست انتخاب راکت</a>
+        <a href="#techniques" onclick="closeToc()">🔹 تکنیک‌های پایه</a>
+        <a href="#clubs" onclick="closeToc()">🔹 باشگاه‌های ایران</a>
+        <a href="#faq" onclick="closeToc()">🔹 سوالات متداول</a>
+    </div>
+</div>
+
+<div class="header">
+    <div class="ping-pong-ball"></div>
+    <h1>🏓 راهنمای جامع تنیس روی میز</h1>
+    <p>انتخاب تجهیزات، آموزش تکنیک‌ها و تسلط بر میز</p>
+</div>
+
+<div class="container" id="main-content">
+
+    <!-- BLUF -->
+    <div class="card box-bluf reveal">
+        <h3>⚡ جواب سریع در ۳ خط:</h3>
+        <p>
+            ۱. برای شروع، یک <strong>راکت آماده (سطح مبتدی)</strong> با لاستیک چسبنده تهیه کنید.<br>
+            ۲. مهم‌ترین تکنیک در پینگ‌پنگ، <strong>یادگیری چرخش (اسپین)</strong> است که با مچ دست ایجاد می‌شود.<br>
+            ۳. بهترین مکان برای تمرین، باشگاه‌های تخصصی با میزهای استاندارد هستند (جدول ۱۳ شهر در ادامه).
+        </p>
+    </div>
+
+    <div class="card reveal" id="intro">
+        <h2>🏓 تنیس روی میز چیست؟</h2>
+        <p>تنیس روی میز یا پینگ‌پنگ، ورزشی است که روی یک میز مستطیلی با تور در وسط انجام می‌شود. بازیکنان با استفاده از راکت، توپ سبک و توخالی را بین خود رد و بدل می‌کنند. این ورزش سرعت واکنش فوق‌العاده‌ای می‌خواهد و برای سلامت مغز و تمرکز بسیار مفید است.</p>
+        <div class="img-grid">
+            <img src="https://images.unsplash.com/photo-1609710228159-0fa9bd7c0827?w=500" alt="راکت و توپ پینگ پنگ" loading="lazy" onclick="openLightbox(this.src)">
+            <img src="https://images.unsplash.com/photo-1534158914592-062992fbe900?w=500" alt="بازی پینگ پنگ" loading="lazy" onclick="openLightbox(this.src)">
+            <img src="https://images.unsplash.com/photo-1557344402-9e67cd5b37eb?w=500" alt="میز تنیس روی میز" loading="lazy" onclick="openLightbox(this.src)">
+            <img src="https://images.unsplash.com/photo-1511067007398-7e4b90cfa4bc?w=500" alt="مسابقه پینگ پنگ" loading="lazy" onclick="openLightbox(this.src)">
+        </div>
+    </div>
+
+    <!-- تست انتخاب راکت -->
+    <div class="card reveal" id="racket-test">
+        <h2>🏓 کدام راکت برای شما مناسب است؟</h2>
+        <p>راکت مناسب می‌تواند بازی شما را متحول کند. سبک بازی خود را انتخاب کنید:</p>
+        
+        <div class="racket-test">
+            <div class="racket-options">
+                <button class="racket-btn" onclick="findRacket('beginner')">👶 تازه‌کار</button>
+                <button class="racket-btn" onclick="findRacket('offensive')">⚡ تهاجمی (حمله)</button>
+                <button class="racket-btn" onclick="findRacket('defensive')">🛡️ دفاعی (کنترل)</button>
+            </div>
+            <div id="racket-result">
+                <!-- نتیجه اینجا نمایش داده می‌شود -->
+            </div>
+        </div>
+    </div>
+
+    <div class="card reveal" id="techniques">
+        <h2>🎯 تکنیک‌های پایه و کلیدی</h2>
+        
+        <h3>۱. چرخش توپ (اسپین - Spin):</h3>
+        <p>مهم‌ترین سلاح در پینگ‌پنگ. با حرکت مچ دست در لحظه ضربه، می‌توانید به توپ چرخش بدهید تا مسیر آن پس از برخورد با میز تغییر کند. دو نوع اصلی اسپین داریم: <strong>توپ‌اسپین (رو به جلو)</strong> و <strong>بک‌اسپین (رو به عقب)</strong>.</p>
+        
+        <h3>۲. سرویس (Serve):</h3>
+        <p>سرویس خوب، نیمی از برد است. بهترین سرویس‌ها آن‌هایی هستند که توپ را کوتاه (نزدیک تور) نگه دارند تا حریف نتواند حمله کند.</p>
+        
+        <h3>۳. گریپ (Grip):</h3>
+        <p>روش گرفتن راکت. دو نوع رایج وجود دارد: <strong>دست‌ده (Shakehand)</strong> که رایج‌ترین است و <strong>قلمی (Penhold)</strong> که بیشتر در آسیا استفاده می‌شود.</p>
+    </div>
+
+    <div class="card reveal" id="clubs">
+        <h2>📍 بهترین باشگاه‌های تنیس روی میز در ۱۳ شهر ایران</h2>
+        <table>
+            <thead>
+                <tr><th>#</th><th>شهر</th><th>مجموعه ورزشی</th><th>ویژگی</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>۱</td><td>🏙️ تهران</td><td>مجموعه ورزشی آزادی</td><td>میزهای استاندارد مسابقات</td></tr>
+                <tr><td>۲</td><td>🕌 مشهد</td><td>سالن ورزشی ثامن</td><td>فضای تمرین اختصاصی</td></tr>
+                <tr><td>۳</td><td>🏛️ اصفهان</td><td>مجموعه نقش جهان</td><td>میزهای حرفه‌ای</td></tr>
+                <tr><td>۴</td><td>🌸 شیراز</td><td>سالن شهید آوینی</td><td>مناسب برای لیگ‌های محلی</td></tr>
+                <tr><td>۵</td><td>🏔️ تبریز</td><td>مجموعه پورشریفی</td><td>تجهیزات به‌روز</td></tr>
+                <tr><td>۶</td><td>🕌 قم</td><td>مجموعه حیدریان</td><td>سالن چندمنظوره</td></tr>
+                <tr><td>۷</td><td>🌿 رشت</td><td>مجموعه یادگار امام</td><td>دسترسی آسان</td></tr>
+                <tr><td>۸</td><td>🌴 اهواز</td><td>مجموعه تختی</td><td>میزهای جدید</td></tr>
+                <tr><td>۹</td><td>🏗️ کرج</td><td>مجموعه انقلاب</td><td>محیط مناسب تمرین</td></tr>
+                <tr><td>۱۰</td><td>🏜️ یزد</td><td>سالن پاکنژاد</td><td>تجهیزات استاندارد</td></tr>
+                <tr><td>۱۱</td><td>🏰 کرمان</td><td>مجموعه شهید باهنر</td><td>محبوب بین جوانان</td></tr>
+                <tr><td>۱۲</td><td>🏝️ کیش</td><td>مجموعه المپیک</td><td>میزهای بین‌المللی</td></tr>
+                <tr><td>۱۳</td><td>🏝️ قشم</td><td>مجموعه خلیج فارس</td><td>فضای مدرن</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card reveal" id="faq">
+        <h2>❓ سوالات متداول (FAQ)</h2>
+        
+        <div class="accordion">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+                آیا پینگ پنگ برای لاغری مفید است؟
+                <span class="arrow">▼</span>
+            </button>
+            <div class="accordion-content">
+                بله، چون نیاز به حرکت سریع پاها و واکنش‌های آنی دارد، کالری‌سوزی خوبی دارد. در هر ساعت حدود ۳۰۰ تا ۴۰۰ کالری می‌سوزاند.
+            </div>
+        </div>
+
+        <div class="accordion">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+                آیا می‌توانم از راکت ارزان استفاده کنم؟
+                <span class="arrow">▼</span>
+            </button>
+            <div class="accordion-content">
+                اگر فقط برای تفریح و در حد مبتدی بازی می‌کنید، بله. اما اگر می‌خواهید حرفه‌ای شوید، حتماً باید راکت با لاستیک مناسب بخرید.
+            </div>
+        </div>
+    </div>
+
+    <div class="card reveal" style="text-align: center;">
+        <h2>🔗 صفحات مرتبط</h2>
+        <p>
+            <a href="sport-full.html" class="btn">🏆 ورزش جامع</a>
+            <a href="tennis2.html" class="btn">🎾 تنیس</a>
+            <a href="badminton.html" class="btn">🏸 بدمینتون</a>
+        </p>
+    </div>
+
+</div>
+
+<div class="footer">
+    <p>🌟 <strong>رهیلاناب</strong> - <a href="index.html" style="color: var(--primary);">خانه</a> | <a href="sport-full.html" style="color: var(--primary);">ورزش</a></p>
+    <p>© ۲۰۲۶ rahilanab.com | با ورزش، شاد و سالم بمانید.</p>
+</div>
+
+<button id="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+
+<div id="lightbox">
+    <button class="close-lb" onclick="closeLightbox()">✖</button>
+    <img id="lightbox-img" src="" alt="عکس بزرگ">
+</div>
+
+<script>
+    // ۱. نوار پیشرفت
+    window.onscroll = function() {
+        var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var scrolled = (winScroll / height) * 100;
+        document.getElementById("progress-bar").style.width = scrolled + "%";
+        if (winScroll > 300) { document.getElementById("back-to-top").style.display = "block"; } else { document.getElementById("back-to-top").style.display = "none"; }
+    };
+
+    // ۲. تم تاریک
+    function toggleDarkMode() {
+        document.body.classList.toggle('dark-mode');
+        const isDark = document.body.classList.contains('dark-mode');
+        document.getElementById('theme-icon').innerText = isDark ? '☀️' : '🌙';
+        localStorage.setItem('darkMode', isDark);
+    }
+    if (localStorage.getItem('darkMode') === 'true') { toggleDarkMode(); }
+
+    // ۳. پخش صوتی
+    let isSpeaking = false;
+    let voices = [];
+    function loadVoices() { voices = window.speechSynthesis.getVoices(); }
+    if (typeof speechSynthesis !== 'undefined' && speechSynthesis.onvoiceschanged !== undefined) { speechSynthesis.onvoiceschanged = loadVoices; }
+
+    function toggleSpeech() {
+        if (isSpeaking) {
+            window.speechSynthesis.cancel();
+            isSpeaking = false;
+            document.getElementById('tts-icon').innerText = '🔊';
+            document.getElementById('tts-btn').classList.remove('playing');
+            return;
+        }
+        const mainText = document.getElementById('main-content').innerText;
+        const speech = new SpeechSynthesisUtterance(mainText);
+        speech.lang = 'fa-IR';
+        const persianVoice = voices.find(v => v.lang.includes('fa') || v.lang === 'fa-IR');
+        if (persianVoice) speech.voice = persianVoice;
+        speech.onend = function() {
+            isSpeaking = false;
+            document.getElementById('tts-icon').innerText = '🔊';
+            document.getElementById('tts-btn').classList.remove('playing');
+        };
+        window.speechSynthesis.speak(speech);
+        isSpeaking = true;
+        document.getElementById('tts-icon').innerText = '⏹️';
+        document.getElementById('tts-btn').classList.add('playing');
+    }
+
+    // ۴. انیمیشن اسکرول
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('active');
+        });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // ۵. آکاردئون
+    function toggleAccordion(btn) { btn.parentElement.classList.toggle('active'); }
+
+    // ۶. لایت‌باکس
+    function openLightbox(src) {
+        document.getElementById('lightbox-img').src = src;
+        document.getElementById('lightbox').style.display = 'flex';
+    }
+    function closeLightbox() { document.getElementById('lightbox').style.display = 'none'; }
+
+    // ۷. فهرست
+    function closeToc() { document.getElementById('toc-menu').classList.remove('active'); }
+
+    // ۸. تست انتخاب راکت
+    function findRacket(style) {
+        document.querySelectorAll('.racket-btn').forEach(b => b.classList.remove('active'));
+        event.target.classList.add('active');
+
+        const resultDiv = document.getElementById('racket-result');
+        let text = '';
+
+        if (style === 'beginner') {
+            text = "👶 <strong>تازه‌کار:</strong> بهترین انتخاب برای شما یک <strong>راکت آماده (Ready-made)</strong> با لاستیک چسبنده (Tacky) است. این راکت‌ها کنترل بالایی دارند و به شما اجازه می‌دهند حس توپ را بهتر درک کنید. برندهای معتبر مثل Butterfly یا Yasaka گزینه‌های خوبی هستند.";
+        } else if (style === 'offensive') {
+            text = "⚡ <strong>تهاجمی:</strong> شما به یک <strong>راکت با چوب کربنی (Carbon)</strong> و <strong>لاستیک‌های اسپین بالا</strong> نیاز دارید. این ترکیب به شما سرعت و قدرت اسپین بالایی برای ضربات فورهند می‌دهد.";
+        } else if (style === 'defensive') {
+            text = "🛡️ <strong>دفاعی:</strong> بهترین گزینه برای شما <strong>چوب‌های کنترل‌محور (All-wood)</strong> و <strong>لاستیک‌های نرم و با کنترل بالا</strong> است. این ترکیب به شما اجازه می‌دهد تا توپ را دقیقاً در نقاط سخت برای حریف قرار دهید.";
+        }
+
+        resultDiv.innerHTML = text;
+        resultDiv.style.display = 'block';
+    }
+
+    loadVoices();
+</script>
+
+</body>
+                                                                                                      </html>
