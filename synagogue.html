@@ -1,1 +1,431 @@
-<!DOCTYPE html><html lang="fa"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>🕍 کنیسه | رهیلا</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial;background:radial-gradient(circle at center,#0a1a1a,#1a4a4a,#66ccaa);color:#fff;text-align:center;padding:15px;min-height:100vh}.header{background:rgba(255,255,255,.08);backdrop-filter:blur(20px);border-radius:25px;padding:20px;margin-bottom:15px}.header h1{color:#ffd700;font-size:22px}.back-btn{display:inline-block;background:rgba(255,255,255,.15);color:#fff;padding:8px 20px;border-radius:20px;text-decoration:none;margin:10px 0;font-size:14px}.section-title{color:#ffd700;font-size:18px;margin:20px 0 10px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.card{background:rgba(255,255,255,.05);border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,.1);text-align:right}.card h3{font-size:15px;color:#ffd700}</style></head><body><div class="header"><h1>🕍 کنیسه</h1></div><a href="index.html" class="back-btn">🔙 برگشت</a><div class="section-title">🕍 کنیسه‌های ایران</div><div class="grid"><div class="card"><h3>کنیسه ابریشمی</h3></div><div class="card"><h3>کنیسه یوسف‌آباد</h3></div><div class="card"><h3>کنیسه حییم</h3></div><div class="card"><h3>کنیسه عزرا یعقوب</h3></div></div><p style="margin-top:15px"><a href="index.html" style="color:#ffd700">🔙 برگشت</a></p></body></html>
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>راهنمای جامع کنیسه (Synagogue): تاریخچه، معماری و کنیسه‌های ایران | رهیلاناب</title>
+    <meta name="description" content="آشنایی کامل با کنیسه (عبادتگاه یهودیان)؛ بخش‌های معماری، تاریخ یهودیان در ایران و معرفی معروف‌ترین کنیسه‌های ایران در ۱۳ شهر. همراه با تور معماری تعاملی.">
+    <meta name="keywords" content="کنیسه, عبادتگاه یهودیان, کنیسه های ایران, تاریخ یهودیان, معماری کنیسه, یهودیان اصفهان">
+    
+    <style>
+        /* ============== تم‌ها ============== */
+        :root {
+            --bg-main: #f8fafc;
+            --bg-card: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --primary: #b45309; /* رنگ مسی/کهربایی برای فضای معنوی */
+            --primary-dark: #78350f;
+            --accent: #1a73e8;
+            --border: #e2e8f0;
+            --shadow: 0 10px 30px rgba(0,0,0,0.08);
+            --gradient: linear-gradient(135deg, #b45309, #d97706);
+        }
+
+        body.dark-mode {
+            --bg-main: #1c1917;
+            --bg-card: #292524;
+            --text-main: #f5f5f4;
+            --text-muted: #a8a29e;
+            --border: #44403c;
+            --shadow: 0 10px 30px rgba(0,0,0,0.5);
+            --gradient: linear-gradient(135deg, #78350f, #451a03);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; transition: background-color 0.3s, color 0.3s; }
+        
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.9;
+            font-size: 17px;
+            overflow-x: hidden;
+        }
+
+        /* ============== نوار پیشرفت ============== */
+        #progress-bar {
+            position: fixed; top: 0; left: 0; height: 4px; width: 0%;
+            background: var(--gradient); z-index: 9999;
+            box-shadow: 0 0 10px var(--primary); transition: width 0.1s;
+        }
+
+        /* ============== دکمه‌های شناور ============== */
+        .floating-controls {
+            position: fixed; top: 15px; left: 15px; z-index: 999;
+            display: flex; flex-direction: column; gap: 10px;
+        }
+        
+        .control-btn {
+            background: var(--bg-card); border: 1px solid var(--border);
+            color: var(--text-main); width: 50px; height: 50px;
+            border-radius: 50%; cursor: pointer; font-size: 20px;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: var(--shadow); backdrop-filter: blur(10px); transition: 0.3s;
+        }
+        .control-btn:hover { transform: scale(1.1); color: var(--primary); }
+        .control-btn.playing { background: var(--primary); color: white; }
+
+        /* ============== فهرست شناور ============== */
+        .toc-container { position: fixed; top: 15px; right: 15px; z-index: 999; }
+        .toc-btn { background: var(--bg-card); border: 1px solid var(--border); color: var(--text-main); padding: 10px 15px; border-radius: 30px; cursor: pointer; font-family: inherit; font-weight: bold; box-shadow: var(--shadow); display: flex; align-items: center; gap: 8px; }
+        .toc-menu { position: absolute; top: 60px; right: 0; background: var(--bg-card); border: 1px solid var(--border); border-radius: 15px; padding: 15px; min-width: 220px; box-shadow: var(--shadow); display: none; flex-direction: column; gap: 10px; }
+        .toc-menu.active { display: flex; }
+        .toc-menu a { color: var(--text-main); text-decoration: none; font-size: 14px; padding: 5px 10px; border-radius: 8px; }
+        .toc-menu a:hover { background: var(--bg-main); color: var(--primary); }
+
+        /* ============== هدر ============== */
+        .header {
+            background: var(--gradient); color: white; padding: 80px 20px 60px;
+            text-align: center; border-radius: 0 0 40px 40px;
+            position: relative; overflow: hidden;
+        }
+        .header::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M50 0 L100 50 L50 100 L0 50 Z" fill="%23ffffff" fill-opacity="0.05"/></svg>');
+            background-size: 60px 60px;
+        }
+        .header h1 { font-size: clamp(24px, 5vw, 36px); margin-bottom: 10px; position: relative; z-index: 1; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+        .header p { font-size: 16px; opacity: 0.9; position: relative; z-index: 1; }
+
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; margin-top: -30px; }
+
+        /* ============== انیمیشن ============== */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* ============== کارت‌ها ============== */
+        .card {
+            background: var(--bg-card); border-radius: 20px; padding: 30px;
+            margin-bottom: 30px; box-shadow: var(--shadow); border: 1px solid var(--border);
+        }
+        .card h2 { font-size: 22px; color: var(--primary); margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+        .card h3 { font-size: 19px; color: var(--text-main); margin: 20px 0 10px; }
+
+        /* ============== باکس BLUF ============== */
+        .box-bluf {
+            background: linear-gradient(135deg, rgba(26, 115, 232, 0.1), rgba(26, 115, 232, 0.05));
+            border: 2px solid var(--accent); border-radius: 16px; padding: 25px; margin-bottom: 30px;
+        }
+        .box-bluf h3 { color: var(--accent); font-size: 20px; margin-bottom: 10px; }
+        .box-bluf p { font-weight: bold; font-size: 16px; line-height: 1.8; }
+
+        /* ============== گالری ============== */
+        .img-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 15px; margin: 20px 0; }
+        .img-grid img {
+            width: 100%; height: 200px; object-fit: cover; border-radius: 15px;
+            box-shadow: var(--shadow); transition: transform 0.3s; cursor: pointer;
+        }
+        .img-grid img:hover { transform: scale(1.03); }
+
+        /* ============== تور معماری تعاملی ============== */
+        .arch-tour { background: var(--bg-main); padding: 20px; border-radius: 15px; margin-top: 15px; border: 1px dashed var(--border); }
+        .arch-buttons { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 15px; }
+        .arch-btn { background: var(--bg-card); border: 1px solid var(--border); padding: 10px 15px; border-radius: 8px; cursor: pointer; font-family: inherit; font-weight: bold; font-size: 14px; transition: 0.3s; }
+        .arch-btn:hover, .arch-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
+        #arch-result { display: none; padding: 15px; background: var(--bg-card); border-radius: 8px; border-right: 4px solid var(--primary); animation: slideUp 0.3s ease; font-size: 15px; }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* ============== خط زمان ============== */
+        .timeline { position: relative; max-width: 800px; margin: 30px auto; padding-right: 20px; border-right: 3px solid var(--primary); }
+        .timeline-item { position: relative; margin-bottom: 25px; padding-right: 20px; }
+        .timeline-item::before { content: ''; position: absolute; right: -29px; top: 5px; width: 15px; height: 15px; border-radius: 50%; background: var(--accent); border: 3px solid var(--bg-card); }
+        .timeline-date { font-weight: bold; color: var(--primary); font-size: 14px; margin-bottom: 5px; }
+        .timeline-text { color: var(--text-muted); font-size: 15px; }
+
+        /* ============== جدول ============== */
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 15px; border-radius: 12px; overflow: hidden; }
+        th { background: var(--primary); color: white; padding: 15px; text-align: center; }
+        td { padding: 12px; text-align: center; border-bottom: 1px solid var(--border); background: var(--bg-card); }
+        tr:hover td { background: var(--bg-main); }
+
+        /* ============== آکاردئون ============== */
+        .accordion { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 12px; overflow: hidden; }
+        .accordion-btn { background: none; border: none; width: 100%; padding: 18px; text-align: right; font-family: inherit; font-size: 16px; font-weight: bold; color: var(--text-main); cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .accordion-btn:hover { color: var(--primary); }
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; padding: 0 18px; color: var(--text-muted); }
+        .accordion.active .accordion-content { max-height: 500px; padding-bottom: 18px; }
+        .arrow { transition: transform 0.3s; }
+        .accordion.active .arrow { transform: rotate(180deg); }
+
+        .btn { display: inline-block; background: var(--primary); color: white; padding: 12px 25px; border-radius: 30px; text-decoration: none; font-weight: bold; margin: 5px; transition: 0.3s; }
+        .btn:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 5px 15px rgba(180,83,9,0.4); }
+
+        .footer { text-align: center; padding: 30px; color: var(--text-muted); font-size: 14px; border-top: 1px solid var(--border); margin-top: 40px; }
+        
+        #back-to-top { position: fixed; bottom: 20px; right: 20px; width: 50px; height: 50px; border-radius: 50%; background: var(--primary); color: white; border: none; font-size: 20px; cursor: pointer; box-shadow: var(--shadow); display: none; z-index: 999; }
+        
+        /* لایت‌باکس */
+        #lightbox { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.9); z-index: 99999; display: none; align-items: center; justify-content: center; padding: 20px; }
+        #lightbox img { max-width: 90%; max-height: 90%; border-radius: 10px; }
+        #lightbox .close-lb { position: absolute; top: 20px; right: 20px; color: white; font-size: 30px; cursor: pointer; background: none; border: none; }
+    </style>
+</head>
+<body>
+
+<!-- نوار پیشرفت -->
+<div id="progress-bar"></div>
+
+<!-- دکمه‌های شناور -->
+<div class="floating-controls">
+    <button class="control-btn" id="tts-btn" onclick="toggleSpeech()" title="گوش دادن">
+        <span id="tts-icon">🔊</span>
+    </button>
+    <button class="control-btn" onclick="toggleDarkMode()" title="تاریک/روشن">
+        <span id="theme-icon">🌙</span>
+    </button>
+</div>
+
+<!-- فهرست شناور -->
+<div class="toc-container">
+    <button class="toc-btn" onclick="document.getElementById('toc-menu').classList.toggle('active')">
+        📌 فهرست مطالب
+    </button>
+    <div class="toc-menu" id="toc-menu">
+        <a href="#intro" onclick="closeToc()">🔹 کنیسه چیست؟</a>
+        <a href="#architecture" onclick="closeToc()">🔹 تور معماری</a>
+        <a href="#history" onclick="closeToc()">🔹 تاریخ یهودیان ایران</a>
+        <a href="#locations" onclick="closeToc()">🔹 کنیسه‌های ایران</a>
+        <a href="#faq" onclick="closeToc()">🔹 سوالات متداول</a>
+    </div>
+</div>
+
+<div class="header">
+    <h1>🕍 راهنمای جامع کنیسه</h1>
+    <p>تاریخچه، معماری و جایگاه آن در ایران</p>
+</div>
+
+<div class="container" id="main-content">
+
+    <!-- BLUF -->
+    <div class="card box-bluf reveal">
+        <h3>⚡ جواب سریع در ۳ خط:</h3>
+        <p>
+            ۱. <strong>کنیسه (Synagogue)</strong> عبادتگاه و مرکز اجتماعی یهودیان است.<br>
+            ۲. مهم‌ترین بخش‌های آن <strong>هخال (صندوق تورات)</strong> و <strong>بایما (سکوی خواندن)</strong> هستند.<br>
+            ۳. ایران یکی از قدیمی‌ترین جوامع یهودی جهان را دارد و کنیسه‌های تاریخی در شهرهایی مثل <strong>اصفهان، شیراز و تهران</strong> از جاذبه‌های مهم هستند.
+        </p>
+    </div>
+
+    <div class="card reveal" id="intro">
+        <h2>🕍 کنیسه چیست و چه کاربردی دارد؟</h2>
+        <p>کلمه «کنیسه» معادل عبری «بیت کنست» به معنای «خانه اجتماع» است. کنیسه فقط یک مکان برای نیایش نیست، بلکه مرکز زندگی اجتماعی، آموزشی و فرهنگی یهودیان است. در کنیسه، مراسم عروسی، بر میت (میت‌ها)، کلاس‌های آموزش تورات و جلسات اجتماعی برگزار می‌شود.</p>
+        <div class="img-grid">
+            <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=500" alt="نمای داخلی کنیسه" loading="lazy" onclick="openLightbox(this.src)">
+            <img src="https://images.unsplash.com/photo-1621648291984-4088cee3a716?w=500" alt="معماری کنیسه" loading="lazy" onclick="openLightbox(this.src)">
+            <img src="https://images.unsplash.com/photo-1585218356057-dc7db62e5a65?w=500" alt="کنیسه در ایران" loading="lazy" onclick="openLightbox(this.src)">
+            <img src="https://images.unsplash.com/photo-1548625361-ec85331e5622?w=500" alt="نمای بیرونی کنیسه" loading="lazy" onclick="openLightbox(this.src)">
+        </div>
+    </div>
+
+    <!-- تور معماری تعاملی -->
+    <div class="card reveal" id="architecture">
+        <h2>🏛️ تور معماری: اجزای اصلی کنیسه</h2>
+        <p>روی هر کدام از بخش‌های زیر کلیک کنید تا با کارکرد آن آشنا شوید:</p>
+        
+        <div class="arch-tour">
+            <div class="arch-buttons">
+                <button class="arch-btn" onclick="showArch('hechal')">📜 هخال (Hekhal)</button>
+                <button class="arch-btn" onclick="showArch('bimah')">🗣️ بایما (Bimah)</button>
+                <button class="arch-btn" onclick="showArch('ner')">🕯️ نور ابدی (Ner Tamid)</button>
+                <button class="arch-btn" onclick="showArch('mizrah')">🧭 Mizrah (جهت اورشلیم)</button>
+            </div>
+            <div id="arch-result">
+                <!-- نتیجه اینجا نمایش داده می‌شود -->
+            </div>
+        </div>
+    </div>
+
+    <div class="card reveal" id="history">
+        <h2>📜 تاریخ یهودیان در ایران</h2>
+        <p>تاریخ حضور یهودیان در ایران به بیش از ۲۷۰۰ سال پیش بازمی‌گردد. این جامعه یکی از قدیمی‌ترین جوامع یهودی خارج از سرزمین مقدس است.</p>
+        
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">۵۳۹ پیش از میلاد</div>
+                <div class="timeline-text">کوروش بزرگ، پادشاه هخامنشی، فرمان آزادی یهودیان از بابل را صادر کرد و به آن‌ها اجازه داد به اورشلیم بازگردند.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">دوره ساسانیان</div>
+                <div class="timeline-text">جامعه یهودی ایران در این دوره رونق علمی و تجاری زیادی داشت.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">دوره صفویه</div>
+                <div class="timeline-text">بسیاری از یهودیان در اصفهان و شهرهای دیگر ساکن شدند و کنیسه‌های مهمی ساختند.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">دوره معاصر</div>
+                <div class="timeline-text">امروزه یهودیان ایران به عنوان یکی از اقلیت‌های رسمی شناخته می‌شوند و کنیسه‌های فعالی در تهران، شیراز و اصفهان دارند.</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card reveal" id="locations">
+        <h2>📍 معروف‌ترین کنیسه‌های ایران در ۱۳ شهر</h2>
+        <table>
+            <thead>
+                <tr><th>#</th><th>شهر</th><th>نام کنیسه</th><th>ویژگی</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>۱</td><td>🏙️ تهران</td><td>کنیسه یوسف‌آباد</td><td>بزرگترین کنیسه تهران</td></tr>
+                <tr><td>۲</td><td>🕌 مشهد</td><td>کنیسه قدیمی مشهد</td><td>یادگار دوره قاجار</td></tr>
+                <tr><td>۳</td><td>🏛️ اصفهان</td><td>کنیسه یوسف‌آباد</td><td>در محله جویباره (بافت تاریخی)</td></tr>
+                <tr><td>۴</td><td>🌸 شیراز</td><td>کنیسه ملا</td><td>یکی از قدیمی‌ترین کنیسه‌های شیراز</td></tr>
+                <tr><td>۵</td><td>🏔️ تبریز</td><td>کنیسه تبریز</td><td>در محله یهودی‌نشین سابق</td></tr>
+                <tr><td>۶</td><td>🕌 قم</td><td>کنیسه قم</td><td>جامعه کوچک یهودی</td></tr>
+                <tr><td>۷</td><td>🌿 رشت</td><td>کنیسه رشت</td><td>مربوط به دوره قاجار</td></tr>
+                <tr><td>۸</td><td>🌴 اهواز</td><td>کنیسه اهواز</td><td>فعال در جنوب کشور</td></tr>
+                <tr><td>۹</td><td>🏗️ کرج</td><td>کنیسه کرج</td><td>جدیدالاحداث برای جامعه کوچک</td></tr>
+                <tr><td>۱۰</td><td>🏜️ یزد</td><td>کنیسه یزد</td><td>در بافت تاریخی یزد</td></tr>
+                <tr><td>۱۱</td><td>🏰 کرمان</td><td>کنیسه کرمان</td><td>سابقه طولانی در تجارت</td></tr>
+                <tr><td>۱۲</td><td>🏝️ کیش</td><td>کنیسه کیش</td><td>برای گردشگران و ساکنان</td></tr>
+                <tr><td>۱۳</td><td>🏝️ قشم</td><td>کنیسه قشم</td><td>کوچک و محلی</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card reveal" id="faq">
+        <h2>❓ سوالات متداول (FAQ)</h2>
+        
+        <div class="accordion">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+                آیا گردشگران می‌توانند از کنیسه بازدید کنند؟
+                <span class="arrow">▼</span>
+            </button>
+            <div class="accordion-content">
+                بله، در بسیاری از کنیسه‌های تاریخی (مخصوصاً در اصفهان و شیراز) با هماهنگی قبلی می‌توان بازدید کرد. اما رعایت حجاب و آداب مذهبی الزامی است.
+            </div>
+        </div>
+
+        <div class="accordion">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+                تفاوت کنیسه و معبد (Temple) چیست؟
+                <span class="arrow">▼</span>
+            </button>
+            <div class="accordion-content">
+                در سنت یهودی، «معبد» به معبد اول و دوم اورشلیم اشاره دارد که فقط یکی بوده است. کنیسه مکان اجتماع محلی است و می‌تواند در هر شهری وجود داشته باشد.
+            </div>
+        </div>
+    </div>
+
+    <div class="card reveal" style="text-align: center;">
+        <h2>🔗 صفحات مرتبط</h2>
+        <p>
+            <a href="history-full.html" class="btn">📜 تاریخ جامع</a>
+            <a href="city.html" class="btn">🏙️ شهرهای ایران</a>
+            <a href="index.html" class="btn">🏠 صفحه اصلی</a>
+        </p>
+    </div>
+
+</div>
+
+<div class="footer">
+    <p>🌟 <strong>رهیلاناب</strong> - <a href="index.html" style="color: var(--primary);">خانه</a> | <a href="history-full.html" style="color: var(--primary);">تاریخ</a></p>
+    <p>© ۲۰۲۶ rahilanab.com | با احترام به تمام ادیان و فرهنگ‌ها.</p>
+</div>
+
+<button id="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+
+<div id="lightbox">
+    <button class="close-lb" onclick="closeLightbox()">✖</button>
+    <img id="lightbox-img" src="" alt="عکس بزرگ">
+</div>
+
+<script>
+    // ۱. نوار پیشرفت
+    window.onscroll = function() {
+        var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var scrolled = (winScroll / height) * 100;
+        document.getElementById("progress-bar").style.width = scrolled + "%";
+        if (winScroll > 300) { document.getElementById("back-to-top").style.display = "block"; } else { document.getElementById("back-to-top").style.display = "none"; }
+    };
+
+    // ۲. تم تاریک
+    function toggleDarkMode() {
+        document.body.classList.toggle('dark-mode');
+        const isDark = document.body.classList.contains('dark-mode');
+        document.getElementById('theme-icon').innerText = isDark ? '☀️' : '🌙';
+        localStorage.setItem('darkMode', isDark);
+    }
+    if (localStorage.getItem('darkMode') === 'true') { toggleDarkMode(); }
+
+    // ۳. پخش صوتی
+    let isSpeaking = false;
+    let voices = [];
+    function loadVoices() { voices = window.speechSynthesis.getVoices(); }
+    if (typeof speechSynthesis !== 'undefined' && speechSynthesis.onvoiceschanged !== undefined) { speechSynthesis.onvoiceschanged = loadVoices; }
+
+    function toggleSpeech() {
+        if (isSpeaking) {
+            window.speechSynthesis.cancel();
+            isSpeaking = false;
+            document.getElementById('tts-icon').innerText = '🔊';
+            document.getElementById('tts-btn').classList.remove('playing');
+            return;
+        }
+        const mainText = document.getElementById('main-content').innerText;
+        const speech = new SpeechSynthesisUtterance(mainText);
+        speech.lang = 'fa-IR';
+        const persianVoice = voices.find(v => v.lang.includes('fa') || v.lang === 'fa-IR');
+        if (persianVoice) speech.voice = persianVoice;
+        speech.onend = function() {
+            isSpeaking = false;
+            document.getElementById('tts-icon').innerText = '🔊';
+            document.getElementById('tts-btn').classList.remove('playing');
+        };
+        window.speechSynthesis.speak(speech);
+        isSpeaking = true;
+        document.getElementById('tts-icon').innerText = '⏹️';
+        document.getElementById('tts-btn').classList.add('playing');
+    }
+
+    // ۴. انیمیشن اسکرول
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('active');
+        });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // ۵. آکاردئون
+    function toggleAccordion(btn) { btn.parentElement.classList.toggle('active'); }
+
+    // ۶. لایت‌باکس
+    function openLightbox(src) {
+        document.getElementById('lightbox-img').src = src;
+        document.getElementById('lightbox').style.display = 'flex';
+    }
+    function closeLightbox() { document.getElementById('lightbox').style.display = 'none'; }
+
+    // ۷. فهرست
+    function closeToc() { document.getElementById('toc-menu').classList.remove('active'); }
+
+    // ۸. تور معماری تعاملی
+    function showArch(part) {
+        // غیرفعال کردن بقیه دکمه‌ها
+        document.querySelectorAll('.arch-btn').forEach(b => b.classList.remove('active'));
+        event.target.classList.add('active');
+
+        const resultDiv = document.getElementById('arch-result');
+        let text = '';
+
+        if (part === 'hechal') {
+            text = "📜 <strong>هخال (Hekhal):</strong> صندوقچه یا کابینت مقدسی است که طومارهای تورات (قانون یهود) در آن نگهداری می‌شود. این مکان مقدس‌ترین بخش کنیسه است و معمولاً در دیوار رو به اورشلیم قرار دارد.";
+        } else if (part === 'bimah') {
+            text = "🗣️ <strong>بایما (Bimah):</strong> سکوی برجسته‌ای در وسط یا جلوی کنیسه است که خواننده دعا یا فردی که از تورات می‌خواند، روی آن می‌ایستد. این سکو باعث می‌شود صدای خواننده در کل فضای کنیسه بپیچد.";
+        } else if (part === 'ner') {
+            text = "🕯️ <strong>نور ابدی (Ner Tamid):</strong> چراغی است که همیشه بالای هخال روشن است و نماد حضور دائمی خداوند و نور هدایت است. این چراغ هرگز خاموش نمی‌شود.";
+        } else if (part === 'mizrah') {
+            text = "🧭 <strong>Mizrah (مزراح):</strong> به معنای «شرق» است. در کنیسه‌ها، دیواری که هخال روی آن قرار دارد، به سمت اورشلیم (در سرزمین مقدس) است تا نمازگزاران رو به قبله یهودیان دعا کنند.";
+        }
+
+        resultDiv.innerHTML = text;
+        resultDiv.style.display = 'block';
+    }
+
+    loadVoices();
+</script>
+
+</body>
+</html>
