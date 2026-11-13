@@ -1,1 +1,441 @@
-<!DOCTYPE html><html lang="fa"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>🏊 شنای موزون | رهیلا</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial;background:radial-gradient(circle at center,#0a1a1a,#1a4a4a,#66ccaa);color:#fff;text-align:center;padding:15px;min-height:100vh}.header{background:rgba(255,255,255,.08);backdrop-filter:blur(20px);border-radius:25px;padding:20px;margin-bottom:15px}.header h1{color:#ffd700;font-size:22px}.back-btn{display:inline-block;background:rgba(255,255,255,.15);color:#fff;padding:8px 20px;border-radius:20px;text-decoration:none;margin:10px 0;font-size:14px}.section-title{color:#ffd700;font-size:18px;margin:20px 0 10px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.card{background:rgba(255,255,255,.05);border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,.1);text-align:right}.card h3{font-size:15px;color:#ffd700}</style></head><body><div class="header"><h1>🏊 شنای موزون</h1></div><a href="index.html" class="back-btn">🔙 برگشت</a><div class="section-title">🏊 اطلاعات</div><div class="grid"><div class="card"><h3>شنای موزون چیست</h3></div><div class="card"><h3>حرکات</h3></div><div class="card"><h3>مسابقات</h3></div><div class="card"><h3>قهرمانان</h3></div></div><p style="margin-top:15px"><a href="index.html" style="color:#ffd700">🔙 برگشت</a></p></body></html>
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>راهنمای جامع شنای موزون (سینکرونایزد سویمینگ): هنر، ورزش و داوری | رهیلاناب</title>
+    <meta name="description" content="آشنایی با ورزش شنای موزون (Artistic Swimming)؛ قوانین داوری، حرکات پایه، تجهیزات و معرفی استخرهای مناسب در ۱۳ شهر ایران. همراه با شبیه‌ساز داوری.">
+    <meta name="keywords" content="شنای موزون, سینکرونایزد سویمینگ, شنا هنری, قوانین شنای موزون, استخرهای ایران, ورزش های آبی">
+    
+    <style>
+        /* ============== تم‌ها ============== */
+        :root {
+            --bg-main: #f0f9ff; /* آبی خیلی روشن */
+            --bg-card: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --primary: #0ea5e9; /* آبی فیروزه‌ای */
+            --primary-dark: #0284c7;
+            --accent: #f43f5e; /* صورتی/قرمز برای جذابیت */
+            --border: #e0f2fe;
+            --shadow: 0 10px 30px rgba(14, 165, 233, 0.1);
+            --gradient: linear-gradient(135deg, #0ea5e9, #38bdf8);
+        }
+
+        body.dark-mode {
+            --bg-main: #082f49;
+            --bg-card: #0c4a6e;
+            --text-main: #f0f9ff;
+            --text-muted: #bae6fd;
+            --border: #075985;
+            --shadow: 0 10px 30px rgba(0,0,0,0.4);
+            --gradient: linear-gradient(135deg, #0284c7, #0f172a);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; transition: background-color 0.3s, color 0.3s; }
+        
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.9;
+            font-size: 17px;
+            overflow-x: hidden;
+        }
+
+        /* ============== نوار پیشرفت ============== */
+        #progress-bar {
+            position: fixed; top: 0; left: 0; height: 4px; width: 0%;
+            background: var(--gradient); z-index: 9999;
+            box-shadow: 0 0 10px var(--primary); transition: width 0.1s;
+        }
+
+        /* ============== دکمه‌های شناور ============== */
+        .floating-controls {
+            position: fixed; top: 15px; left: 15px; z-index: 999;
+            display: flex; flex-direction: column; gap: 10px;
+        }
+        
+        .control-btn {
+            background: var(--bg-card); border: 1px solid var(--border);
+            color: var(--text-main); width: 50px; height: 50px;
+            border-radius: 50%; cursor: pointer; font-size: 20px;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: var(--shadow); backdrop-filter: blur(10px); transition: 0.3s;
+        }
+        .control-btn:hover { transform: scale(1.1); color: var(--primary); }
+        .control-btn.playing { background: var(--primary); color: white; }
+
+        /* ============== فهرست شناور ============== */
+        .toc-container { position: fixed; top: 15px; right: 15px; z-index: 999; }
+        .toc-btn { background: var(--bg-card); border: 1px solid var(--border); color: var(--text-main); padding: 10px 15px; border-radius: 30px; cursor: pointer; font-family: inherit; font-weight: bold; box-shadow: var(--shadow); display: flex; align-items: center; gap: 8px; }
+        .toc-menu { position: absolute; top: 60px; right: 0; background: var(--bg-card); border: 1px solid var(--border); border-radius: 15px; padding: 15px; min-width: 220px; box-shadow: var(--shadow); display: none; flex-direction: column; gap: 10px; }
+        .toc-menu.active { display: flex; }
+        .toc-menu a { color: var(--text-main); text-decoration: none; font-size: 14px; padding: 5px 10px; border-radius: 8px; }
+        .toc-menu a:hover { background: var(--bg-main); color: var(--primary); }
+
+        /* ============== هدر با حباب‌های متحرک ============== */
+        .header {
+            background: var(--gradient); color: white; padding: 80px 20px 60px;
+            text-align: center; border-radius: 0 0 40px 40px;
+            position: relative; overflow: hidden;
+        }
+        
+        .bubbles { position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; overflow: hidden; z-index: 0; }
+        .bubble { position: absolute; bottom: -100px; background: rgba(255,255,255,0.2); border-radius: 50%; animation: floatUp 10s infinite ease-in; }
+        @keyframes floatUp {
+            0% { transform: translateY(0) scale(0.5); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateY(-1000px) scale(1.5); opacity: 0; }
+        }
+        .bubble:nth-child(1) { left: 10%; width: 20px; height: 20px; animation-duration: 8s; }
+        .bubble:nth-child(2) { left: 30%; width: 40px; height: 40px; animation-duration: 12s; }
+        .bubble:nth-child(3) { left: 50%; width: 15px; height: 15px; animation-duration: 6s; }
+        .bubble:nth-child(4) { left: 70%; width: 30px; height: 30px; animation-duration: 10s; }
+        .bubble:nth-child(5) { left: 90%; width: 25px; height: 25px; animation-duration: 9s; }
+
+        .header h1 { font-size: clamp(24px, 5vw, 36px); margin-bottom: 10px; position: relative; z-index: 1; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+        .header p { font-size: 16px; opacity: 0.9; position: relative; z-index: 1; }
+
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; margin-top: -30px; }
+
+        /* ============== انیمیشن ============== */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* ============== کارت‌ها ============== */
+        .card {
+            background: var(--bg-card); border-radius: 20px; padding: 30px;
+            margin-bottom: 30px; box-shadow: var(--shadow); border: 1px solid var(--border);
+        }
+        .card h2 { font-size: 22px; color: var(--primary); margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+        .card h3 { font-size: 19px; color: var(--text-main); margin: 20px 0 10px; }
+
+        /* ============== باکس BLUF ============== */
+        .box-bluf {
+            background: linear-gradient(135deg, rgba(244, 63, 94, 0.1), rgba(244, 63, 94, 0.05));
+            border: 2px solid var(--accent); border-radius: 16px; padding: 25px; margin-bottom: 30px;
+        }
+        .box-bluf h3 { color: var(--accent); font-size: 20px; margin-bottom: 10px; }
+        .box-bluf p { font-weight: bold; font-size: 16px; line-height: 1.8; }
+
+        /* ============== گالری ============== */
+        .img-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 15px; margin: 20px 0; }
+        .img-grid img {
+            width: 100%; height: 200px; object-fit: cover; border-radius: 15px;
+            box-shadow: var(--shadow); transition: transform 0.3s; cursor: pointer;
+        }
+        .img-grid img:hover { transform: scale(1.03); }
+
+        /* ============== شبیه‌ساز داوری ============== */
+        .judge-sim { background: var(--bg-main); padding: 20px; border-radius: 15px; margin-top: 15px; border: 1px dashed var(--border); }
+        .team-select { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 15px; }
+        .team-btn { background: var(--bg-card); border: 1px solid var(--border); padding: 10px 15px; border-radius: 8px; cursor: pointer; font-family: inherit; font-weight: bold; transition: 0.3s; }
+        .team-btn:hover, .team-btn.active { background: var(--primary); color: white; }
+        
+        #judge-result { display: none; margin-top: 15px; }
+        .score-row { display: flex; justify-content: space-between; padding: 10px; border-bottom: 1px solid var(--border); font-weight: bold; }
+        .score-row:last-child { border-bottom: none; font-size: 18px; color: var(--primary); background: rgba(14,165,233,0.1); border-radius: 8px; margin-top: 10px; padding: 15px; }
+        .score-bar { height: 8px; background: var(--border); border-radius: 4px; margin-top: 5px; overflow: hidden; }
+        .score-fill { height: 100%; background: var(--accent); border-radius: 4px; transition: width 1s ease-out; }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* ============== جدول ============== */
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 15px; border-radius: 12px; overflow: hidden; }
+        th { background: var(--primary); color: white; padding: 15px; text-align: center; }
+        td { padding: 12px; text-align: center; border-bottom: 1px solid var(--border); background: var(--bg-card); }
+        tr:hover td { background: var(--bg-main); }
+
+        /* ============== آکاردئون ============== */
+        .accordion { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 12px; overflow: hidden; }
+        .accordion-btn { background: none; border: none; width: 100%; padding: 18px; text-align: right; font-family: inherit; font-size: 16px; font-weight: bold; color: var(--text-main); cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .accordion-btn:hover { color: var(--primary); }
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; padding: 0 18px; color: var(--text-muted); }
+        .accordion.active .accordion-content { max-height: 500px; padding-bottom: 18px; }
+        .arrow { transition: transform 0.3s; }
+        .accordion.active .arrow { transform: rotate(180deg); }
+
+        .btn { display: inline-block; background: var(--primary); color: white; padding: 12px 25px; border-radius: 30px; text-decoration: none; font-weight: bold; margin: 5px; transition: 0.3s; }
+        .btn:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 5px 15px rgba(14,165,233,0.4); }
+
+        .footer { text-align: center; padding: 30px; color: var(--text-muted); font-size: 14px; border-top: 1px solid var(--border); margin-top: 40px; }
+        
+        #back-to-top { position: fixed; bottom: 20px; right: 20px; width: 50px; height: 50px; border-radius: 50%; background: var(--primary); color: white; border: none; font-size: 20px; cursor: pointer; box-shadow: var(--shadow); display: none; z-index: 999; }
+        
+        /* لایت‌باکس */
+        #lightbox { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.9); z-index: 99999; display: none; align-items: center; justify-content: center; padding: 20px; }
+        #lightbox img { max-width: 90%; max-height: 90%; border-radius: 10px; }
+        #lightbox .close-lb { position: absolute; top: 20px; right: 20px; color: white; font-size: 30px; cursor: pointer; background: none; border: none; }
+    </style>
+</head>
+<body>
+
+<!-- نوار پیشرفت -->
+<div id="progress-bar"></div>
+
+<!-- دکمه‌های شناور -->
+<div class="floating-controls">
+    <button class="control-btn" id="tts-btn" onclick="toggleSpeech()" title="گوش دادن">
+        <span id="tts-icon">🔊</span>
+    </button>
+    <button class="control-btn" onclick="toggleDarkMode()" title="تاریک/روشن">
+        <span id="theme-icon">🌙</span>
+    </button>
+</div>
+
+<!-- فهرست شناور -->
+<div class="toc-container">
+    <button class="toc-btn" onclick="document.getElementById('toc-menu').classList.toggle('active')">
+        📌 فهرست مطالب
+    </button>
+    <div class="toc-menu" id="toc-menu">
+        <a href="#intro" onclick="closeToc()">🔹 شنای موزون چیست؟</a>
+        <a href="#judge-sim" onclick="closeToc()">🔹 شبیه‌ساز داوری</a>
+        <a href="#pools" onclick="closeToc()">🔹 استخرهای ایران</a>
+        <a href="#faq" onclick="closeToc()">🔹 سوالات متداول</a>
+    </div>
+</div>
+
+<div class="header">
+    <div class="bubbles">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+    <h1>🏊‍♀️ راهنمای جامع شنای موزون</h1>
+    <p>هنر، ظرافت و قدرت در یک ورزش المپیکی</p>
+</div>
+
+<div class="container" id="main-content">
+
+    <!-- BLUF -->
+    <div class="card box-bluf reveal">
+        <h3>⚡ جواب سریع در ۳ خط:</h3>
+        <p>
+            ۱. شنای موزون ترکیبی از <strong>شنا، رقص و ژیمناستیک</strong> است که به صورت تیمی یا انفرادی در آب اجرا می‌شود.<br>
+            ۲. این ورزش نیازمند <strong>توانایی حبس نفس زیر آب</strong>، انعطاف‌پذیری بالا و هماهنگی دقیق با موسیقی است.<br>
+            ۳. برای شروع، بهترین مکان استخرهای عمیق با فضای کافی هستند (جدول ۱۳ شهر در ادامه).
+        </p>
+    </div>
+
+    <div class="card reveal" id="intro">
+        <h2>🏊‍♀️ شنای موزون (Artistic Swimming) چیست؟</h2>
+        <p>شنای موزون که قبلاً با نام «سینکرونایزد سویمینگ» شناخته می‌شد، یک ورزش المپیکی است که در آن ورزشکاران با اجرای حرکات موزون، دقیق و هماهنگ با موسیقی در آب، به رقابت می‌پردازند. این ورزش نیازمند قدرت بدنی فوق‌العاده، انعطاف‌پذیری، استقامت و حس ریتم قوی است.</p>
+        <div class="img-grid">
+            <img src="https://images.unsplash.com/photo-1560089000-7433a4ebbd64?w=500" alt="شنای موزون" loading="lazy" onclick="openLightbox(this.src)">
+            <img src="https://images.unsplash.com/photo-1530549387789-4c1017266635?w=500" alt="شناگران هماهنگ" loading="lazy" onclick="openLightbox(this.src)">
+            <img src="https://images.unsplash.com/photo-1519315901367-f34ff9154487?w=500" alt="حرکات هنری در آب" loading="lazy" onclick="openLightbox(this.src)">
+            <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=500" alt="استخر شنای موزون" loading="lazy" onclick="openLightbox(this.src)">
+        </div>
+    </div>
+
+    <!-- شبیه‌ساز داوری -->
+    <div class="card reveal" id="judge-sim">
+        <h2>🏅 شبیه‌ساز داوری المپیک</h2>
+        <p>در مسابقات رسمی، داوران بر اساس ۳ فاکتور اصلی امتیاز می‌دهند. یک تیم را انتخاب کنید تا امتیازات را ببینید:</p>
+        
+        <div class="judge-sim">
+            <div class="team-select">
+                <button class="team-btn" onclick="simulateScore('iran')">🇮🇷 تیم ایران</button>
+                <button class="team-btn" onclick="simulateScore('russia')">🇷🇺 تیم روسیه</button>
+                <button class="team-btn" onclick="simulateScore('china')">🇨🇳 تیم چین</button>
+            </div>
+            <div id="judge-result">
+                <div class="score-row"><span>🤸 اجرای فنی (Execution)</span> <span id="score-exec">0.0</span></div>
+                <div class="score-bar"><div class="score-fill" id="bar-exec" style="width: 0%"></div></div>
+
+                <div class="score-row" style="margin-top: 15px;"><span>🎨 تأثیر هنری (Artistic)</span> <span id="score-art">0.0</span></div>
+                <div class="score-bar"><div class="score-fill" id="bar-art" style="width: 0%"></div></div>
+
+                <div class="score-row" style="margin-top: 15px;"><span>🔥 سختی حرکات (Difficulty)</span> <span id="score-diff">0.0</span></div>
+                <div class="score-bar"><div class="score-fill" id="bar-diff" style="width: 0%"></div></div>
+
+                <div class="score-row"><span>🏆 امتیاز نهایی</span> <span id="score-total">0.0</span></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card reveal" id="pools">
+        <h2>📍 بهترین استخرها برای شنای موزون در ۱۳ شهر ایران</h2>
+        <p>این ورزش نیاز به استخرهای عمیق و استاندارد دارد:</p>
+        <table>
+            <thead>
+                <tr><th>#</th><th>شهر</th><th>مجموعه ورزشی</th><th>ویژگی</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>۱</td><td>🏙️ تهران</td><td>استخر قهرمانی آزادی</td><td>استاندارد المپیکی، عمق بالا</td></tr>
+                <tr><td>۲</td><td>🕌 مشهد</td><td>استخر ثامن</td><td>سالن مخصوص شنای هنری</td></tr>
+                <tr><td>۳</td><td>🏛️ اصفهان</td><td>استخر نقش جهان</td><td>عمق مناسب برای حرکات زیرآب</td></tr>
+                <tr><td>۴</td><td>🌸 شیراز</td><td>استخر حافظیه</td><td>فضای باز و استاندارد</td></tr>
+                <tr><td>۵</td><td>🏔️ تبریز</td><td>استخر پورشریفی</td><td>مجهز به سیستم نورپردازی</td></tr>
+                <tr><td>۶</td><td>🕌 قم</td><td>استخر حیدریان</td><td>سالن اختصاصی بانوان</td></tr>
+                <tr><td>۷</td><td>🌿 رشت</td><td>استخر یادگار امام</td><td>استانداردهای لازم</td></tr>
+                <tr><td>۸</td><td>🌴 اهواز</td><td>استخر تختی</td><td>عمق ۳ متر به بالا</td></tr>
+                <tr><td>۹</td><td>🏗️ کرج</td><td>استخر انقلاب</td><td>مناسب تمرینات تیمی</td></tr>
+                <tr><td>۱۰</td><td>🏜️ یزد</td><td>استخر پاکنژاد</td><td>سکوی داوری استاندارد</td></tr>
+                <tr><td>۱۱</td><td>🏰 کرمان</td><td>استخر باهنر</td><td>فضای تمرین اختصاصی</td></tr>
+                <tr><td>۱۲</td><td>🏝️ کیش</td><td>استخر المپیک</td><td>استاندارد بین‌المللی</td></tr>
+                <tr><td>۱۳</td><td>🏝️ قشم</td><td>استخر خلیج فارس</td><td>تجهیزات مدرن</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card reveal" id="faq">
+        <h2>❓ سوالات متداول (FAQ)</h2>
+        
+        <div class="accordion">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+                آیا شنای موزون فقط برای بانوان است؟
+                <span class="arrow">▼</span>
+            </button>
+            <div class="accordion-content">
+                در المپیک، این رشته سال‌ها فقط برای بانوان بود، اما اخیراً فدراسیون جهانی شنا (World Aquatics) قوانین را تغییر داده و آقایان هم می‌توانند در مسابقات تیمی شرکت کنند.
+            </div>
+        </div>
+
+        <div class="accordion">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+                آیا باید شناگر حرفه‌ای باشم؟
+                <span class="arrow">▼</span>
+            </button>
+            <div class="accordion-content">
+                بله، برای شروع شنای موزون باید حداقل در ۴ مهارت اصلی شنا (کرال سینه، قورباغه، پروانه و کرال پشت) تسلط داشته باشید و بتوانید مسافت‌های طولانی را شنا کنید.
+            </div>
+        </div>
+    </div>
+
+    <div class="card reveal" style="text-align: center;">
+        <h2>🔗 صفحات مرتبط</h2>
+        <p>
+            <a href="sport-full.html" class="btn">🏆 ورزش جامع</a>
+            <a href="diving.html" class="btn">🤿 غواصی</a>
+            <a href="swimming.html" class="btn">🏊 شنا</a>
+        </p>
+    </div>
+
+</div>
+
+<div class="footer">
+    <p>🌟 <strong>رهیلاناب</strong> - <a href="index.html" style="color: var(--primary);">خانه</a> | <a href="sport-full.html" style="color: var(--primary);">ورزش</a></p>
+    <p>© ۲۰۲۶ rahilanab.com | با ورزش، شاد و سالم بمانید.</p>
+</div>
+
+<button id="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+
+<div id="lightbox">
+    <button class="close-lb" onclick="closeLightbox()">✖</button>
+    <img id="lightbox-img" src="" alt="عکس بزرگ">
+</div>
+
+<script>
+    // ۱. نوار پیشرفت
+    window.onscroll = function() {
+        var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var scrolled = (winScroll / height) * 100;
+        document.getElementById("progress-bar").style.width = scrolled + "%";
+        if (winScroll > 300) { document.getElementById("back-to-top").style.display = "block"; } else { document.getElementById("back-to-top").style.display = "none"; }
+    };
+
+    // ۲. تم تاریک
+    function toggleDarkMode() {
+        document.body.classList.toggle('dark-mode');
+        const isDark = document.body.classList.contains('dark-mode');
+        document.getElementById('theme-icon').innerText = isDark ? '☀️' : '🌙';
+        localStorage.setItem('darkMode', isDark);
+    }
+    if (localStorage.getItem('darkMode') === 'true') { toggleDarkMode(); }
+
+    // ۳. پخش صوتی
+    let isSpeaking = false;
+    let voices = [];
+    function loadVoices() { voices = window.speechSynthesis.getVoices(); }
+    if (typeof speechSynthesis !== 'undefined' && speechSynthesis.onvoiceschanged !== undefined) { speechSynthesis.onvoiceschanged = loadVoices; }
+
+    function toggleSpeech() {
+        if (isSpeaking) {
+            window.speechSynthesis.cancel();
+            isSpeaking = false;
+            document.getElementById('tts-icon').innerText = '🔊';
+            document.getElementById('tts-btn').classList.remove('playing');
+            return;
+        }
+        const mainText = document.getElementById('main-content').innerText;
+        const speech = new SpeechSynthesisUtterance(mainText);
+        speech.lang = 'fa-IR';
+        const persianVoice = voices.find(v => v.lang.includes('fa') || v.lang === 'fa-IR');
+        if (persianVoice) speech.voice = persianVoice;
+        speech.onend = function() {
+            isSpeaking = false;
+            document.getElementById('tts-icon').innerText = '🔊';
+            document.getElementById('tts-btn').classList.remove('playing');
+        };
+        window.speechSynthesis.speak(speech);
+        isSpeaking = true;
+        document.getElementById('tts-icon').innerText = '⏹️';
+        document.getElementById('tts-btn').classList.add('playing');
+    }
+
+    // ۴. انیمیشن اسکرول
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('active');
+        });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // ۵. آکاردئون
+    function toggleAccordion(btn) { btn.parentElement.classList.toggle('active'); }
+
+    // ۶. لایت‌باکس
+    function openLightbox(src) {
+        document.getElementById('lightbox-img').src = src;
+        document.getElementById('lightbox').style.display = 'flex';
+    }
+    function closeLightbox() { document.getElementById('lightbox').style.display = 'none'; }
+
+    // ۷. فهرست
+    function closeToc() { document.getElementById('toc-menu').classList.remove('active'); }
+
+    // ۸. شبیه‌ساز داوری
+    function simulateScore(team) {
+        document.querySelectorAll('.team-btn').forEach(b => b.classList.remove('active'));
+        event.target.classList.add('active');
+
+        let exec, art, diff;
+        if (team === 'russia') {
+            exec = 9.8; art = 9.9; diff = 9.7;
+        } else if (team === 'china') {
+            exec = 9.7; art = 9.6; diff = 9.9;
+        } else { // iran
+            exec = 8.5; art = 9.0; diff = 8.2;
+        }
+
+        const total = (exec + art + diff).toFixed(1) * 3.333; // شبیه‌سازی فرمول امتیازدهی المپیک
+
+        // به‌روزرسانی متن‌ها
+        document.getElementById('score-exec').innerText = exec.toFixed(1);
+        document.getElementById('score-art').innerText = art.toFixed(1);
+        document.getElementById('score-diff').innerText = diff.toFixed(1);
+        document.getElementById('score-total').innerText = total.toFixed(2);
+
+        // به‌روزرسانی نوارها
+        document.getElementById('bar-exec').style.width = (exec * 10) + "%";
+        document.getElementById('bar-art').style.width = (art * 10) + "%";
+        document.getElementById('bar-diff').style.width = (diff * 10) + "%";
+
+        // نمایش باکس نتیجه
+        const resDiv = document.getElementById('judge-result');
+        resDiv.style.display = 'block';
+        resDiv.style.animation = 'none';
+        resDiv.offsetHeight; // trigger reflow
+        resDiv.style.animation = 'slideUp 0.5s ease';
+    }
+
+    loadVoices();
+</script>
+
+</body>
+                                         </html>
