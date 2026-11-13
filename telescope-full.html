@@ -1,1 +1,433 @@
-<!DOCTYPE html><html lang="fa"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>🔭 نجوم کامل | رهیلا</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial;background:radial-gradient(circle at center,#0a1a1a,#1a4a4a,#66ccaa);color:#fff;text-align:center;padding:15px;min-height:100vh}.header{background:rgba(255,255,255,.08);backdrop-filter:blur(20px);border-radius:25px;padding:20px;margin-bottom:15px}.header h1{color:#ffd700;font-size:22px}.back-btn{display:inline-block;background:rgba(255,255,255,.15);color:#fff;padding:8px 20px;border-radius:20px;text-decoration:none;margin:10px 0;font-size:14px}.section-title{color:#ffd700;font-size:18px;margin:20px 0 10px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.card{background:rgba(255,255,255,.05);border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,.1);text-align:right}.card h3{font-size:15px;color:#ffd700}</style></head><body><div class="header"><h1>🔭 نجوم کامل</h1></div><a href="telescope.html" class="back-btn">🔙 برگشت</a><div class="section-title">⭐ آسمان</div><div class="grid"><div class="card"><h3>خورشید</h3></div><div class="card"><h3>ماه</h3></div><div class="card"><h3>ستاره‌ها</h3></div><div class="card"><h3>تلسکوپ</h3></div></div><div class="section-title">🌑 پدیده</div><div class="grid"><div class="card"><h3>کسوف و خسوف</h3></div><div class="card"><h3>جزر و مد</h3></div><div class="card"><h3>سفر به فضا</h3></div><div class="card"><h3>کهکشان</h3></div></div><p style="margin-top:15px"><a href="index.html" style="color:#ffd700">🔙 برگشت</a></p></body></html>
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>راهنمای جامع تلسکوپ و نجوم: کاوشگر منظومه شمسی | رهیلاناب</title>
+    <meta name="description" content="همه چیز درباره تلسکوپ و نجوم؛ از انواع تلسکوپ (بازتابی، شکستی) تا کاوش تعاملی سیارات منظومه شمسی. مشاور هوشمند خرید تلسکوپ و راهنمای رصد ستارگان.">
+    
+    <style>
+        /* ============== تم نجومی (فضایی) ============== */
+        :root {
+            --bg-main: #030616; /* آبی خیلی تیره */
+            --bg-card: rgba(15, 23, 42, 0.85);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --primary: #00e5ff; /* فیروزه‌ای */
+            --secondary: #fbbf24; /* طلایی ستاره */
+            --accent: #8b5cf6; /* بنفش */
+            --border: rgba(0, 229, 255, 0.2);
+            --shadow: 0 0 30px rgba(0, 229, 255, 0.1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; transition: background-color 0.3s, color 0.3s; }
+        
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.9;
+            font-size: 17px;
+            overflow-x: hidden;
+        }
+
+        /* ============== پس‌زمینه کهکشانی (Canvas) ============== */
+        #starfield { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; }
+
+        /* ============== نوار پیشرفت ============== */
+        #progress-bar {
+            position: fixed; top: 0; left: 0; height: 3px; width: 0%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary)); z-index: 9999;
+            box-shadow: 0 0 10px var(--primary); transition: width 0.1s;
+        }
+
+        /* ============== دکمه‌های شناور ============== */
+        .floating-controls {
+            position: fixed; top: 20px; left: 20px; z-index: 999;
+            display: flex; flex-direction: column; gap: 10px;
+        }
+        .control-btn {
+            background: rgba(0,0,0,0.6); border: 1px solid var(--primary);
+            color: var(--primary); width: 50px; height: 50px;
+            border-radius: 50%; cursor: pointer; font-size: 20px;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 0 10px rgba(0,229,255,0.3); backdrop-filter: blur(10px);
+        }
+        .control-btn:hover { transform: scale(1.1); box-shadow: 0 0 20px var(--primary); }
+        .control-btn.playing { background: var(--primary); color: #000; }
+
+        /* ============== هدر ============== */
+        .header {
+            text-align: center; padding: 80px 20px 50px; position: relative; z-index: 2;
+        }
+        .header h1 { 
+            font-size: clamp(28px, 5vw, 42px); font-weight: 900; margin-bottom: 10px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 15px rgba(0, 229, 255, 0.5));
+        }
+        .header p { color: var(--text-muted); font-size: 16px; }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; }
+
+        /* ============== کارت‌ها ============== */
+        .card {
+            background: var(--bg-card); border-radius: 24px; padding: 30px;
+            margin-bottom: 30px; box-shadow: var(--shadow); border: 1px solid var(--border);
+            backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
+        }
+        .card h2 { font-size: 22px; color: var(--primary); margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+
+        /* ============== باکس BLUF ============== */
+        .box-bluf {
+            background: linear-gradient(135deg, rgba(251, 191, 36, 0.1), rgba(251, 191, 36, 0.05));
+            border: 2px solid var(--secondary); border-radius: 16px; padding: 25px; margin-bottom: 30px;
+        }
+        .box-bluf h3 { color: var(--secondary); font-size: 20px; margin-bottom: 10px; }
+        .box-bluf p { font-weight: bold; font-size: 16px; color: var(--text-main); }
+
+        /* ============== ۱. کاوشگر منظومه شمسی ============== */
+        .solar-system {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+            gap: 15px; margin-bottom: 20px; text-align: center;
+        }
+        .planet-btn {
+            background: rgba(255,255,255,0.05); border: 2px solid var(--border);
+            border-radius: 50%; width: 80px; height: 80px; margin: 0 auto;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            cursor: pointer; transition: all 0.3s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .planet-btn:hover, .planet-btn.active { transform: scale(1.15); border-color: var(--primary); box-shadow: 0 0 20px var(--primary); background: rgba(0,229,255,0.1); }
+        .planet-btn .emoji { font-size: 28px; }
+        .planet-btn .name { font-size: 11px; margin-top: 2px; font-weight: bold; color: var(--text-muted); }
+        
+        #planet-info {
+            display: none; background: rgba(0,0,0,0.4); padding: 20px; border-radius: 15px;
+            border-right: 5px solid var(--primary); animation: slideUp 0.5s ease; margin-top: 20px;
+        }
+        #planet-info h3 { color: var(--primary); margin-bottom: 10px; font-size: 20px; }
+        #planet-info p { font-size: 15px; color: var(--text-main); line-height: 1.8; }
+        .planet-stats { display: flex; gap: 15px; margin-top: 15px; flex-wrap: wrap; }
+        .stat-badge { background: rgba(255,255,255,0.1); padding: 5px 12px; border-radius: 8px; font-size: 13px; }
+
+        /* ============== ۲. مشاور تلسکوپ ============== */
+        .advisor-box { background: rgba(0,0,0,0.3); padding: 20px; border-radius: 15px; border: 1px dashed var(--accent); }
+        .advisor-step { margin-bottom: 20px; text-align: center; }
+        .advisor-step p { font-weight: bold; margin-bottom: 10px; color: var(--text-main); }
+        .options-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+        .opt-btn { background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: var(--text-main); padding: 10px 20px; border-radius: 30px; cursor: pointer; font-family: inherit; font-size: 14px; }
+        .opt-btn:hover, .opt-btn.selected { background: var(--accent); color: white; border-color: var(--accent); }
+        
+        #advisor-result { display: none; margin-top: 20px; padding: 20px; background: rgba(139, 92, 246, 0.15); border-right: 5px solid var(--accent); border-radius: 10px; animation: slideUp 0.5s ease; }
+        
+        /* ============== جدول و آکاردئون ============== */
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; border-radius: 12px; overflow: hidden; }
+        th { background: var(--primary); color: #000; padding: 12px; text-align: center; font-weight: bold; }
+        td { padding: 12px; text-align: center; border-bottom: 1px solid var(--border); background: rgba(0,0,0,0.2); }
+        
+        .accordion { background: rgba(0,0,0,0.2); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 12px; overflow: hidden; }
+        .accordion-btn { background: none; border: none; width: 100%; padding: 18px; text-align: right; font-family: inherit; font-size: 16px; font-weight: bold; color: var(--text-main); cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .accordion-btn:hover { color: var(--primary); }
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; padding: 0 18px; color: var(--text-muted); font-size: 15px; }
+        .accordion.active .accordion-content { max-height: 500px; padding-bottom: 18px; }
+        .arrow { transition: transform 0.3s; }
+        .accordion.active .arrow { transform: rotate(180deg); }
+
+        .btn { display: inline-block; background: var(--primary); color: #000; padding: 12px 25px; border-radius: 30px; text-decoration: none; font-weight: bold; margin: 5px; transition: 0.3s; border: none; font-family: inherit; cursor: pointer; font-size: 16px;}
+        .btn:hover { background: #fff; box-shadow: 0 0 20px var(--primary); }
+        .footer { text-align: center; padding: 30px; color: var(--text-muted); font-size: 14px; border-top: 1px solid var(--border); margin-top: 40px; }
+        
+        @keyframes slideUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+
+<!-- پس‌زمینه کهکشانی -->
+<canvas id="starfield"></canvas>
+
+<!-- نوار پیشرفت -->
+<div id="progress-bar"></div>
+
+<!-- دکمه‌های شناور -->
+<div class="floating-controls">
+    <button class="control-btn" id="tts-btn" onclick="toggleSpeech()" title="گوش دادن">🔊</button>
+</div>
+
+<div class="header">
+    <h1>🔭 مرکز کاوش کیهان</h1>
+    <p>از منظومه شمسی تا اعماق کهکشان راه شیری</p>
+</div>
+
+<div class="container" id="main-content">
+
+    <!-- BLUF -->
+    <div class="card box-bluf reveal">
+        <h3>⚡ جواب سریع در ۳ خط:</h3>
+        <p>
+            ۱. برای شروع نجوم، یک <strong>تلسکوپ شکستی (Refractor) با دهانه ۷۰ تا ۹۰ میلی‌متر</strong> بهترین انتخاب است.<br>
+            ۲. بزرگنمایی تلسکوپ به اندازه <strong>دهانه لنز (Aperture)</strong> آن مهم نیست؛ دهانه بزرگ‌تر یعنی نور بیشتر و تصویر واضح‌تر.<br>
+            ۳. برای دیدن حلقه‌های زحل و قمرهای مشتری، به بزرگنمایی حداقل ۵۰ برابر نیاز دارید.
+        </p>
+    </div>
+
+    <!-- ۱. کاوشگر منظومه شمسی -->
+    <div class="card reveal">
+        <h2>🪐 کاوشگر تعاملی منظومه شمسی</h2>
+        <p style="margin-bottom: 20px; font-size: 14px; color: var(--text-muted);">روی هر سیاره کلیک کنید تا اطلاعات کامل آن را ببینید:</p>
+        
+        <div class="solar-system">
+            <div class="planet-btn" onclick="showPlanet('mercury', this)"><span class="emoji">☿️</span><span class="name">عطارد</span></div>
+            <div class="planet-btn" onclick="showPlanet('venus', this)"><span class="emoji">♀️</span><span class="name">زهره</span></div>
+            <div class="planet-btn" onclick="showPlanet('earth', this)"><span class="emoji">🌍</span><span class="name">زمین</span></div>
+            <div class="planet-btn" onclick="showPlanet('mars', this)"><span class="emoji">🔴</span><span class="name">مریخ</span></div>
+            <div class="planet-btn" onclick="showPlanet('jupiter', this)"><span class="emoji">🟤</span><span class="name">مشتری</span></div>
+            <div class="planet-btn" onclick="showPlanet('saturn', this)"><span class="emoji">🪐</span><span class="name">زحل</span></div>
+            <div class="planet-btn" onclick="showPlanet('uranus', this)"><span class="emoji">🔵</span><span class="name">اورانوس</span></div>
+            <div class="planet-btn" onclick="showPlanet('neptune', this)"><span class="emoji">🌊</span><span class="name">نپتون</span></div>
+        </div>
+
+        <div id="planet-info">
+            <h3 id="p-title">عنوان سیاره</h3>
+            <p id="p-desc">توضیحات...</p>
+            <div class="planet-stats">
+                <div class="stat-badge" id="p-dist">فاصله از خورشید: ---</div>
+                <div class="stat-badge" id="p-day">طول روز: ---</div>
+                <div class="stat-badge" id="p-year">طول سال: ---</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ۲. مشاور تلسکوپ -->
+    <div class="card reveal">
+        <h2>🔭 مشاور هوشمند خرید تلسکوپ</h2>
+        <p style="margin-bottom: 20px;">به دو سوال زیر پاسخ دهید تا بهترین تلسکوپ برای شما پیشنهاد شود:</p>
+        
+        <div class="advisor-box">
+            <div class="advisor-step">
+                <p>۱. می‌خواهید بیشتر چه چیزی را رصد کنید؟</p>
+                <div class="options-grid">
+                    <button class="opt-btn" onclick="selectOpt('target', 'moon', this)">🌕 ماه و سیارات</button>
+                    <button class="opt-btn" onclick="selectOpt('target', 'deep', this)">🌌 سحابی‌ها و کهکشان‌ها</button>
+                    <button class="opt-btn" onclick="selectOpt('target', 'land', this)">🏔️ منظره و پرنده‌نگری</button>
+                </div>
+            </div>
+            <div class="advisor-step">
+                <p>۲. بودجه شما چقدر است؟</p>
+                <div class="options-grid">
+                    <button class="opt-btn" onclick="selectOpt('budget', 'low', this)">💰 زیر ۱۰ میلیون</button>
+                    <button class="opt-btn" onclick="selectOpt('budget', 'mid', this)">💵 ۱۰ تا ۲۵ میلیون</button>
+                    <button class="opt-btn" onclick="selectOpt('budget', 'high', this)">💎 بالای ۲۵ میلیون</button>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 10px;">
+                <button class="btn" onclick="showAdvisorResult()">مشاهده پیشنهاد تلسکوپ</button>
+            </div>
+            <div id="advisor-result"></div>
+        </div>
+    </div>
+
+    <!-- ۳. جدول مقایسه تلسکوپ‌ها -->
+    <div class="card reveal">
+        <h2>📊 مقایسه انواع تلسکوپ‌ها</h2>
+        <table>
+            <thead>
+                <tr><th>نوع تلسکوپ</th><th>مزیت</th><th>معایب</th><th>مناسب برای</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>شکستی (Refractor)</td><td>تصویر شارپ، نگهداری آسان</td><td>گران‌قیمت در دهانه‌های بالا</td><td>ماه و سیارات</td></tr>
+                <tr><td>بازتابی (Reflector)</td><td>ارزان‌تر در دهانه‌های بالا</td><td>نیاز به تنظیم آینه (کالیبراسیون)</td><td>سحابی‌ها و کهکشان‌ها</td></tr>
+                <tr><td>ترکیبی (Catadioptric)</td><td>جمع‌وجور و همه‌کاره</td><td>گران‌ترین نوع</td><td>عکاسی نجومی و همه کاربردها</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- ۴. سوالات متداول -->
+    <div class="card reveal">
+        <h2>❓ سوالات متداول (FAQ)</h2>
+        
+        <div class="accordion">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+                آیا می‌توانم با تلسکوپ ارزان، حلقه‌های زحل را ببینم؟
+                <span class="arrow">▼</span>
+            </button>
+            <div class="accordion-content">
+                بله! حتی با یک تلسکوپ شکستی ۷۰ میلی‌متری ارزان‌قیمت هم می‌توانید حلقه‌های زحل را (به صورت یک خط دور سیاره) و چهار قمر اصلی مشتری را ببینید. اما برای دیدن جزئیات بیشتر روی سطح سیارات، به دهانه ۱۵۰ میلی‌متر به بالا نیاز دارید.
+            </div>
+        </div>
+        <div class="accordion">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+                چرا تصویر تلسکوپ‌ها برعکس است؟
+                <span class="arrow">▼</span>
+            </button>
+            <div class="accordion-content">
+                این طبیعی است. در تلسکوپ‌های نجومی، تصویر به صورت وارونه (بالا-پایین و چپ-راست) دیده می‌شود. چون در آسمان جهت بالا و پایین معنی ندارد، ستاره‌شناسان مشکلی با آن ندارند. برای رصد زمینی (پرنده‌نگری)، از لنزهای اصلاح‌کننده (Erecting Prism) استفاده می‌شود.
+            </div>
+        </div>
+    </div>
+
+    <div class="card reveal" style="text-align: center;">
+        <h2>🔗 صفحات مرتبط</h2>
+        <p>
+            <a href="tech.html" class="btn">📱 تکنولوژی</a>
+            <a href="science.html" class="btn">🔬 علم</a>
+            <a href="index.html" class="btn">🏠 خانه</a>
+        </p>
+    </div>
+
+</div>
+
+<div class="footer">
+    <p>🌟 <strong>رهیلاناب</strong> - <a href="index.html" style="color: var(--primary);">خانه</a></p>
+    <p>© ۲۰۲۶ rahilanab.com | کاوش در کیهان، حق هر انسان است.</p>
+</div>
+
+<script>
+    // =============== ۱. نوار پیشرفت ===============
+    window.onscroll = function() {
+        var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var scrolled = (winScroll / height) * 100;
+        document.getElementById("progress-bar").style.width = scrolled + "%";
+    };
+
+    // =============== ۲. پس‌زمینه کهکشانی (Canvas) ===============
+    const canvas = document.getElementById('starfield');
+    const ctx = canvas.getContext('2d');
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    let stars = [];
+    for (let i = 0; i < 200; i++) {
+        stars.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            radius: Math.random() * 1.5,
+            alpha: Math.random(),
+            speed: Math.random() * 0.05
+        });
+    }
+
+    function drawStars() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        stars.forEach(star => {
+            ctx.beginPath();
+            ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(255, 255, 255, ${star.alpha})`;
+            ctx.fill();
+
+            // چشمک زدن
+            star.alpha += star.speed;
+            if (star.alpha > 1 || star.alpha < 0.1) star.speed = -star.speed;
+        });
+        requestAnimationFrame(drawStars);
+    }
+    drawStars();
+
+    window.addEventListener('resize', () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    });
+
+    // =============== ۳. کاوشگر منظومه شمسی ===============
+    const planetsData = {
+        mercury: { title: "☿️ عطارد (Mercury)", desc: "عطارد نزدیک‌ترین سیاره به خورشید و کوچک‌ترین سیاره منظومه شمسی است. سطح آن پر از دهانه‌های برخوردی (شهاب‌سنگ) است و جوی ندارد که از آن محافظت کند. دمای آن در روز به ۴۳۰ درجه و در شب به منفی ۱۸۰ درجه می‌رسد!", dist: "فاصله: ۵۸ میلیون کیلومتر", day: "طول روز: ۵۹ روز زمینی", year: "طول سال: ۸۸ روز زمینی" },
+        venus: { title: "♀️ زهره (Venus)", desc: "زهره داغ‌ترین سیاره منظومه شمسی است. جو غلیظ آن از دی‌اکسید کربن، باعث اثر گلخانه‌ای شدید و دمای ۴۶۵ درجه سانتی‌گراد شده است. زهره درخشان‌ترین سیاره در آسمان شب است و به آن «ستاره صبح» یا «ستاره شام» می‌گویند.", dist: "فاصله: ۱۰۸ میلیون کیلومتر", day: "طول روز: ۲۴۳ روز زمینی", year: "طول سال: ۲۲۵ روز زمینی" },
+        earth: { title: "🌍 زمین (Earth)", desc: "زمین تنها سیاره شناخته‌شده‌ای است که حیات در آن وجود دارد. وجود آب مایع، جو مناسب و میدان مغناطیسی محافظ، زمین را به یک سیاره منحصر به فرد تبدیل کرده است. حدود ۷۱٪ از سطح زمین را آب پوشانده است.", dist: "فاصله: ۱۵۰ میلیون کیلومتر", day: "طول روز: ۲۴ ساعت", year: "طول سال: ۳۶۵ روز" },
+        mars: { title: "🔴 مریخ (Mars)", desc: "مریخ به دلیل وجود اکسید آهن (زنگ‌آهن) در خاکش، به سیاره سرخ معروف است. این سیاره بلندترین آتشفشان منظومه شمسی (المپوس مونس) و بزرگترین دره (دره مارینر) را دارد. مریخ هدف اصلی اکتشافات فضایی و سفرهای آینده بشر است.", dist: "فاصله: ۲۲۸ میلیون کیلومتر", day: "طول روز: ۲۴.۶ ساعت", year: "طول سال: ۶۸۷ روز زمینی" },
+        jupiter: { title: "🟤 مشتری (Jupiter)", desc: "مشتری بزرگ‌ترین سیاره منظومه شمسی است. لکه سرخ بزرگ آن یک طوفان عظیم است که صدها سال در جریان بوده. مشتری بیش از ۹۵ قمر شناخته‌شده دارد و به عنوان یک «سپر محافظ» برای زمین عمل می‌کند و شهاب‌سنگ‌ها را جذب می‌کند.", dist: "فاصله: ۷۷۸ میلیون کیلومتر", day: "طول روز: ۱۰ ساعت", year: "طول سال: ۱۲ سال زمینی" },
+        saturn: { title: "🪐 زحل (Saturn)", desc: "زحل به خاطر حلقه‌های زیبا و باشکوهش معروف است. این حلقه‌ها از میلیاردها تکه یخ و سنگ ساخته شده‌اند. زحل چگالی کمی دارد و اگر در آب انداخته شود، شناور می‌ماند! بیش از ۱۴۶ قمر دارد که تیتان معروف‌ترین آن‌هاست.", dist: "فاصله: ۱.۴ میلیارد کیلومتر", day: "طول روز: ۱۰.۷ ساعت", year: "طول سال: ۲۹ سال زمینی" },
+        uranus: { title: "🔵 اورانوس (Uranus)", desc: "اورانوس یک غول یخی است که به دلیل وجود متان در جو، به رنگ آبی-سبز دیده می‌شود. این سیاره به صورت کاملاً کج (۹۸ درجه) می‌چرخد، یعنی عملاً به پهلو می‌چرخد. این ویژگی باعث می‌شود هر قطب آن ۴۲ سال در روشنایی و ۴۲ سال در تاریکی باشد.", dist: "فاصله: ۲.۹ میلیارد کیلومتر", day: "طول روز: ۱۷ ساعت", year: "طول سال: ۸۴ سال زمینی" },
+        neptune: { title: "🌊 نپتون (Neptune)", desc: "نپتون دورترین سیاره منظومه شمسی است و بادهایی با سرعت ۲۱۰۰ کیلومتر بر ساعت در آن می‌وزد (سریع‌ترین بادهای منظومه شمسی). این سیاره به رنگ آبی عمیق است و از روی زمین با تلسکوپ‌های آماتوری به سختی قابل مشاهده است.", dist: "فاصله: ۴.۵ میلیارد کیلومتر", day: "طول روز: ۱۶ ساعت", year: "طول سال: ۱۶۵ سال زمینی" }
+    };
+
+    function showPlanet(planetKey, btn) {
+        // تغییر حالت دکمه‌ها
+        document.querySelectorAll('.planet-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const data = planetsData[planetKey];
+        const infoDiv = document.getElementById('planet-info');
+        
+        document.getElementById('p-title').innerText = data.title;
+        document.getElementById('p-desc').innerText = data.desc;
+        document.getElementById('p-dist').innerText = data.dist;
+        document.getElementById('p-day').innerText = data.day;
+        document.getElementById('p-year').innerText = data.year;
+
+        infoDiv.style.display = 'block';
+        infoDiv.style.animation = 'none';
+        infoDiv.offsetHeight; 
+        infoDiv.style.animation = 'slideUp 0.5s ease';
+    }
+
+    // =============== ۴. مشاور تلسکوپ ===============
+    let userChoices = { target: null, budget: null };
+
+    function selectOpt(type, value, btn) {
+        const parent = btn.parentElement;
+        parent.querySelectorAll('.opt-btn').forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+        userChoices[type] = value;
+    }
+
+    function showAdvisorResult() {
+        if (!userChoices.target || !userChoices.budget) {
+            alert('⚠️ لطفاً به هر دو سوال پاسخ دهید.');
+            return;
+        }
+
+        const resultDiv = document.getElementById('advisor-result');
+        let recommendation = '';
+
+        if (userChoices.target === 'moon') {
+            if (userChoices.budget === 'low') recommendation = "🔭 <strong>تلسکوپ شکستی ۷۰ میلی‌متری (مثل Celestron PowerSeeker 70AZ)</strong>. برای دیدن دهانه‌های ماه و حلقه‌های زحل در حد مبتدی عالیه.";
+            else if (userChoices.budget === 'mid') recommendation = "🔭 <strong>تلسکوپ شکستی ۹۰ میلی‌متری (مثل Sky-Watcher 909EQ2)</strong>. تصویر شارپ‌تر و پایه استوایی برای ردیابی آسان‌تر سیارات.";
+            else recommendation = "🔭 <strong>تلسکوپ ترکیبی (ماکستوف-کاسگرین) ۱۰۲ میلی‌متری (مثل Celestron NexStar 4SE)</strong>. جمع‌وجور، با موتور ردیاب خودکار و کیفیت عالی برای سیارات.";
+        } 
+        else if (userChoices.target === 'deep') {
+            if (userChoices.budget === 'low') recommendation = "🌌 <strong>تلسکوپ بازتابی (دابسونی) ۶ اینچ (مثل Sky-Watcher Heritage 150P)</strong>. با این بودجه، بهترین دهانه برای دیدن سحابی‌ها و خوشه‌های ستاره‌ای.";
+            else if (userChoices.budget === 'mid') recommendation = "🌌 <strong>تلسکوپ بازتابی دابسونی ۸ اینچ (مثل GSO 8\\\" Dobsonian)</strong>. استاندارد طلایی رصد اجرام عمق آسمان با نورگیری فوق‌العاده.";
+            else recommendation = "🌌 <strong>تلسکوپ بازتابی دابسونی ۱۰ یا ۱۲ اینچ</strong>. غول‌های رصدی که می‌توانند هزاران کهکشان و سحابی را از آسمان تاریک نشان دهند.";
+        }
+        else if (userChoices.target === 'land') {
+            if (userChoices.budget === 'low') recommendation = "🏔️ <strong>تلسکوپ شکستی ۶۰-۷۰ میلی‌متری</strong> با لنز اصلاح‌کننده تصویر. برای پرنده‌نگری و رصد مناظر دور مناسب است.";
+            else recommendation = "🏔️ <strong>تلسکوپ اسپاتینگ (Spotting Scope) با دهانه ۸۰ میلی‌متری</strong>. این تلسکوپ‌ها برای رصد زمینی طراحی شده‌اند و ضدآب و قابل حمل هستند.";
+        }
+
+        resultDiv.innerHTML = `<h3 style="color: var(--secondary); margin-bottom: 10px;">💡 پیشنهاد ویژه:</h3><p style="font-size: 16px; line-height: 1.8; color: var(--text-main);">${recommendation}</p>`;
+        resultDiv.style.display = 'block';
+        resultDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    // =============== ۵. آکاردئون ===============
+    function toggleAccordion(btn) { btn.parentElement.classList.toggle('active'); }
+
+    // =============== ۶. پخش صوتی (TTS) ===============
+    let isSpeaking = false;
+    function toggleSpeech() {
+        const btn = document.getElementById('tts-btn');
+        if (isSpeaking) {
+            window.speechSynthesis.cancel();
+            isSpeaking = false;
+            btn.innerText = '🔊';
+            btn.classList.remove('playing');
+            return;
+        }
+        const mainText = document.getElementById('main-content').innerText;
+        const speech = new SpeechSynthesisUtterance(mainText);
+        speech.lang = 'fa-IR';
+        speech.onend = function() {
+            isSpeaking = false;
+            btn.innerText = '🔊';
+            btn.classList.remove('playing');
+        };
+        window.speechSynthesis.speak(speech);
+        isSpeaking = true;
+        btn.innerText = '⏹️';
+        btn.classList.add('playing');
+    }
+</script>
+
+</body>
+</html>
