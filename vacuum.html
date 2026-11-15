@@ -1,1 +1,407 @@
-<!DOCTYPE html><html lang="fa"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>🧹 جاروبرقی | رهیلا</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial;background:radial-gradient(circle at center,#0a1a1a,#1a4a4a,#66ccaa);color:#fff;text-align:center;padding:15px;min-height:100vh}.header{background:rgba(255,255,255,.08);backdrop-filter:blur(20px);border-radius:25px;padding:20px;margin-bottom:15px}.header h1{color:#ffd700;font-size:22px}.back-btn{display:inline-block;background:rgba(255,255,255,.15);color:#fff;padding:8px 20px;border-radius:20px;text-decoration:none;margin:10px 0;font-size:14px}.section-title{color:#ffd700;font-size:18px;margin:20px 0 10px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.card{background:rgba(255,255,255,.05);border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,.1);text-align:right}.card h3{font-size:15px;color:#ffd700}</style></head><body><div class="header"><h1>🧹 جاروبرقی</h1></div><a href="index.html" class="back-btn">🔙 برگشت</a><div class="section-title">🧹 برندها</div><div class="grid"><div class="card"><h3>سامسونگ</h3></div><div class="card"><h3>الجی</h3></div><div class="card"><h3>بوش</h3></div><div class="card"><h3>دایسون</h3></div></div><div class="section-title">💰 خرید</div><div class="grid"><div class="card"><h3>قیمت جاروبرقی</h3></div><div class="card"><h3>جاروبرقی رباتیک</h3></div><div class="card"><h3>جاروبرقی کیسه‌ای</h3></div><div class="card"><h3>جاروبرقی مخزنی</h3></div></div><p style="margin-top:15px"><a href="index.html" style="color:#ffd700">🔙 برگشت</a></p></body></html>
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>راهنمای جامع خرید جاروبرقی + مشاور هوشمند | رهیلاناب</title>
+    <meta name="description" content="همه چیز درباره جاروبرقی؛ از انتخاب بین شارژی، رباتیک و مخزن‌دار تا نکات مهم فیلتر HEPA. همراه با مشاور هوشمند خرید و راهنمای نگهداری.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧹</text></svg>">
+    
+    <!-- فونت وزیرمتن -->
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+    
+    <style>
+        /* ============== تم‌ها (سایبرپانک الکتریک) ============== */
+        :root {
+            --bg-main: #050a0f;
+            --bg-card: #0d1b2a;
+            --text-main: #e0f2fe;
+            --text-muted: #7dd3fc;
+            --primary: #0ea5e9; /* آبی برقی */
+            --accent: #10b981; /* سبز نئونی */
+            --warning: #f59e0b;
+            --border: #1e3a5f;
+            --shadow: 0 10px 30px rgba(14, 165, 233, 0.15);
+            --gradient: linear-gradient(135deg, #0ea5e9, #10b981);
+        }
+
+        body.light-mode {
+            --bg-main: #f0f9ff;
+            --bg-card: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --primary: #0284c7;
+            --accent: #059669;
+            --border: #bae6fd;
+            --shadow: 0 10px 30px rgba(2, 132, 199, 0.15);
+            --gradient: linear-gradient(135deg, #0284c7, #059669);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; transition: background-color 0.3s, color 0.3s; }
+        
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background: radial-gradient(circle at 80% 20%, var(--bg-card), var(--bg-main) 60%);
+            color: var(--text-main);
+            line-height: 1.9;
+            font-size: 17px;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* ============== نوار پیشرفت ============== */
+        #progress-bar {
+            position: fixed; top: 0; left: 0; height: 4px; width: 0%;
+            background: var(--gradient); z-index: 9999;
+            box-shadow: 0 0 15px var(--accent); transition: width 0.1s;
+        }
+
+        /* ============== دکمه‌های شناور ============== */
+        .floating-controls {
+            position: fixed; top: 15px; left: 15px; z-index: 999;
+            display: flex; flex-direction: column; gap: 10px;
+        }
+        
+        .control-btn {
+            background: var(--bg-card); border: 1px solid var(--border);
+            color: var(--text-main); width: 50px; height: 50px;
+            border-radius: 50%; cursor: pointer; font-size: 20px;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: var(--shadow); backdrop-filter: blur(10px); transition: 0.3s;
+        }
+        .control-btn:hover { transform: scale(1.1); color: var(--accent); border-color: var(--accent); }
+        .control-btn.playing { background: var(--primary); color: #fff; }
+
+        /* ============== هدر ============== */
+        .header {
+            background: var(--gradient); color: #fff; padding: 80px 20px 60px;
+            text-align: center; border-radius: 0 0 40px 40px;
+            position: relative; overflow: hidden;
+            box-shadow: 0 10px 40px rgba(14, 165, 233, 0.3);
+        }
+        .header h1 { font-size: clamp(24px, 5vw, 38px); margin-bottom: 10px; position: relative; z-index: 1; font-weight: 900; }
+        .header p { font-size: 16px; opacity: 0.9; position: relative; z-index: 1; font-weight: bold; }
+
+        /* ============== انیمیشن گردباد مکش ============== */
+        .vortex-container {
+            display: flex; justify-content: center; align-items: center; height: 120px; margin-bottom: 20px;
+        }
+        .vortex {
+            width: 80px; height: 80px; border-radius: 50%;
+            background: conic-gradient(from 0deg, transparent, var(--accent), transparent);
+            animation: spin 2s linear infinite; position: relative; display: flex; justify-content: center; align-items: center;
+            box-shadow: 0 0 30px var(--accent);
+        }
+        .vortex::after {
+            content: '🌪️'; font-size: 30px; animation: bounce 1s infinite alternate;
+        }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+        @keyframes bounce { 0% { transform: scale(0.8); } 100% { transform: scale(1.2); } }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; margin-top: -30px; }
+
+        /* ============== کارت‌ها ============== */
+        .card {
+            background: var(--bg-card); border-radius: 24px; padding: 30px;
+            margin-bottom: 30px; box-shadow: var(--shadow); border: 1px solid var(--border);
+        }
+        .card h2 { font-size: 22px; color: var(--primary); margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+
+        /* ============== باکس BLUF ============== */
+        .box-bluf {
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.1), rgba(16, 185, 129, 0.1));
+            border: 2px solid var(--accent); border-radius: 16px; padding: 25px; margin-bottom: 30px;
+        }
+        .box-bluf h3 { color: var(--accent); font-size: 20px; margin-bottom: 10px; }
+        .box-bluf p { font-weight: bold; font-size: 16px; }
+
+        /* ============== مشاور هوشمند ============== */
+        .advisor-box { background: rgba(255, 255, 255, 0.02); padding: 25px; border-radius: 20px; border: 1px dashed var(--primary); }
+        .advisor-step { margin-bottom: 20px; }
+        .advisor-step label { display: block; font-weight: bold; margin-bottom: 10px; color: var(--text-main); }
+        .advisor-step select {
+            width: 100%; padding: 12px 15px; border-radius: 12px; border: 1px solid var(--border);
+            background: var(--bg-main); color: var(--text-main); font-family: inherit; font-size: 16px; outline: none;
+            cursor: pointer; transition: 0.3s;
+        }
+        .advisor-step select:focus { border-color: var(--accent); box-shadow: 0 0 10px rgba(16,185,129,0.3); }
+        
+        #advisor-result { display: none; margin-top: 25px; padding: 25px; background: rgba(14, 165, 233, 0.08); border-right: 5px solid var(--accent); border-radius: 12px; animation: slideUp 0.5s ease; }
+        #advisor-result h3 { color: var(--accent); margin-bottom: 10px; font-size: 20px; }
+        #advisor-result p { font-size: 16px; margin-bottom: 10px; color: var(--text-main); }
+        #advisor-result strong { color: var(--warning); font-size: 18px; }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* ============== جدول ============== */
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 15px; border-radius: 12px; overflow: hidden; }
+        th { background: var(--primary); color: #fff; padding: 15px; text-align: center; font-weight: 900; }
+        td { padding: 12px; text-align: center; border-bottom: 1px solid var(--border); background: var(--bg-card); font-weight: 500; }
+        tr:hover td { background: var(--bg-main); color: var(--accent); }
+
+        /* ============== آکاردئون ============== */
+        .accordion { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 12px; overflow: hidden; }
+        .accordion-btn { background: none; border: none; width: 100%; padding: 18px; text-align: right; font-family: inherit; font-size: 16px; font-weight: bold; color: var(--text-main); cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .accordion-btn:hover { color: var(--primary); }
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; padding: 0 18px; color: var(--text-muted); font-size: 15px; }
+        .accordion.active .accordion-content { max-height: 500px; padding-bottom: 18px; }
+        .arrow { transition: transform 0.3s; color: var(--accent); }
+        .accordion.active .arrow { transform: rotate(180deg); }
+
+        .btn { display: inline-block; background: var(--gradient); color: #fff; padding: 14px 30px; border-radius: 12px; border: none; text-decoration: none; font-weight: 900; font-size: 16px; cursor: pointer; transition: 0.3s; width: 100%; text-align: center; box-shadow: 0 5px 20px rgba(14, 165, 233, 0.3); }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(16, 185, 129, 0.5); }
+        
+        .footer { text-align: center; padding: 30px; color: var(--text-muted); font-size: 14px; border-top: 1px solid var(--border); margin-top: 40px; }
+        .footer a { color: var(--primary); text-decoration: none; }
+
+        /* ============== انیمیشن اسکرول ============== */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<div class="floating-controls">
+    <button class="control-btn" id="tts-btn" onclick="toggleSpeech()" title="گوش دادن">
+        <span id="tts-icon">🔊</span>
+    </button>
+    <button class="control-btn" onclick="toggleTheme()" title="تاریک/روشن">
+        <span id="theme-icon">🌙</span>
+    </button>
+</div>
+
+<div class="header">
+    <div class="vortex-container">
+        <div class="vortex"></div>
+    </div>
+    <h1>🧹 راهنمای جامع جاروبرقی</h1>
+    <p>خانه‌ای تمیز و عاری از گرد و غبار با انتخابی هوشمندانه</p>
+</div>
+
+<div class="container" id="main-content">
+
+    <!-- BLUF -->
+    <div class="card box-bluf reveal">
+        <h3>⚡ جواب سریع در ۳ خط:</h3>
+        <p>
+            ۱. برای <strong>فرش و موکت</strong>، جاروبرقی‌های مخزن‌دار با توان مکش بالا (بالای ۲۰۰۰ وات) بهترین انتخاب هستند.<br>
+            ۲. برای <strong>خانه‌های کوچک و آپارتمان</strong>، جاروبرقی‌های شارژی (Cordless) راحتی بی‌نظیری دارند.<br>
+            ۳. اگر <strong>حیوان خانگی</strong> دارید، حتماً مدلی انتخاب کنید که فیلتر <strong>HEPA</strong> داشته باشد تا مو و آلرژی کنترل شود.
+        </p>
+    </div>
+
+    <!-- مشاور هوشمند -->
+    <div class="card reveal">
+        <h2>🔍 مشاور هوشمند انتخاب جاروبرقی</h2>
+        <p style="margin-bottom: 20px; color: var(--text-muted);">شرایط خانه‌تان را وارد کنید تا بهترین نوع جاروبرقی به شما پیشنهاد شود:</p>
+        
+        <div class="advisor-box">
+            <div class="advisor-step">
+                <label>۱. نوع کفپوش اصلی خانه شما چیست؟</label>
+                <select id="floor-type">
+                    <option value="carpet">🧶 بیشتر فرش و موکت</option>
+                    <option value="hard">🪵 بیشتر سرامیک، پارکت یا سنگ</option>
+                    <option value="mixed">🏠 ترکیبی (هم فرش، هم سرامیک)</option>
+                </select>
+            </div>
+
+            <div class="advisor-step">
+                <label>۲. آیا حیوان خانگی (سگ/گربه) دارید؟</label>
+                <select id="has-pet">
+                    <option value="no">❌ خیر</option>
+                    <option value="yes">🐾 بله (نیاز به مکش قوی و فیلتر مخصوص)</option>
+                </select>
+            </div>
+
+            <div class="advisor-step">
+                <label>۳. اولویت اصلی شما در خرید چیست؟</label>
+                <select id="priority">
+                    <option value="power">💪 قدرت مکش بالا و تمیزی عمیق</option>
+                    <option value="ease">🪶 سبکی و راحتی استفاده روزمره</option>
+                    <option value="smart">🤖 هوشمندی و تمیزکاری خودکار</option>
+                </select>
+            </div>
+
+            <button class="btn" onclick="showAdvisorResult()">🧹 مشاهده پیشنهاد</button>
+
+            <div id="advisor-result">
+                <h3>💡 پیشنهاد ویژه رهیلاناب:</h3>
+                <p id="result-text"></p>
+                <p style="margin-top: 10px; font-size: 14px; color: var(--text-muted);">
+                    <em>نکته: حتماً گارانتی معتبر و خدمات پس از فروش برند را قبل از خرید بررسی کنید.</em>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- جدول مقایسه -->
+    <div class="card reveal">
+        <h2>📊 مقایسه انواع جاروبرقی</h2>
+        <table>
+            <thead>
+                <tr><th>نوع جاروبرقی</th><th>نقطه قوت</th><th>نقطه ضعف</th><th>مناسب برای</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>مخزن‌دار (Cylinder)</strong></td><td>قدرت مکش بسیار بالا، ظرفیت زیاد</td><td>سنگین، سیم‌دار و جابه‌جایی سخت</td><td>فرش‌های ضخیم، نظافت عمیق</td></tr>
+                <tr><td><strong>شارژی (Cordless)</strong></td><td>سبک، بدون سیم، سریع</td><td>زمان شارژ محدود، مخزن کوچک</td><td>نظافت روزمره، آپارتمان</td></tr>
+                <tr><td><strong>رباتیک (Robot)</strong></td><td>تمیزکاری خودکار، بدون زحمت</td><td>قدرت مکش کمتر، قیمت بالا</td><td>خانه‌های بزرگ، افراد پرمشغله</td></tr>
+                <tr><td><strong>کیسه‌دار (Canister)</strong></td><td>بهداشتی، مناسب برای آلرژی</td><td>هزینه خرید کیسه، تعویض مکرر</td><td>افراد با حساسیت به گرد و غبار</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- آکاردئون -->
+    <div class="card reveal">
+        <h2>🛠️ نکات نگهداری و افزایش عمر جاروبرقی</h2>
+        
+        <div class="accordion">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+                فیلتر HEPA چیست و چرا مهم است؟
+                <span class="arrow">▼</span>
+            </button>
+            <div class="accordion-content">
+                فیلتر HEPA می‌تواند ذرات بسیار ریز (مثل گرده، مو و ذرات آلرژن) را تا ۹۹.۹۷٪ به دام بیندازد. اگر آلرژی دارید یا حیوان خانگی نگه می‌دارید، وجود این فیلتر در جاروبرقی الزامی است. این فیلترها باید هر چند ماه یک‌بار با آب شسته و خشک شوند (مدل‌های قابل شستشو).
+            </div>
+        </div>
+
+        <div class="accordion">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+                چه زمانی باید مخزن یا کیسه جاروبرقی را خالی کرد؟
+                <span class="arrow">▼</span>
+            </button>
+            <div class="accordion-content">
+                همیشه قبل از اینکه مخزن کاملاً پر شود (حدود ۲/۳ ظرفیت) آن را خالی کنید. پرشدن بیش از حد مخزن باعث افت شدید قدرت مکش، داغ شدن موتور و آسیب جدی به دستگاه می‌شود.
+            </div>
+        </div>
+
+        <div class="accordion">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+                آیا قدرت مکش به وات بستگی دارد؟
+                <span class="arrow">▼</span>
+            </button>
+            <div class="accordion-content">
+                وات (Watt) نشان‌دهنده‌ی مصرف برق است، نه لزوماً قدرت مکش! قدرت مکش واقعی با واحدی به نام «هواوات (AirWatts)» یا «کیلوپاسکال (kPa)» سنجیده می‌شود. جاروبرقی‌های مدرن با موتورهای بهینه، با وات کمتر مکش بسیار بیشتری تولید می‌کنند.
+            </div>
+        </div>
+    </div>
+
+    <div class="card reveal" style="text-align: center;">
+        <h2>🔗 صفحات مرتبط</h2>
+        <p>
+            <a href="home.html" class="btn" style="display:inline-block; width:auto; margin:5px;">🏠 خانه</a>
+            <a href="dust.html" class="btn" style="display:inline-block; width:auto; margin:5px;">🌪️ گرد و غبار</a>
+            <a href="washing.html" class="btn" style="display:inline-block; width:auto; margin:5px;">🧺 شستشو</a>
+        </p>
+    </div>
+
+</div>
+
+<div class="footer">
+    <p>🌟 <strong>رهیلاناب</strong> - <a href="index.html">خانه</a> | <a href="home.html">خانه و زندگی</a></p>
+    <p>© ۲۰۲۶ rahilanab.com | با نظافت، خانه را بهشت کن.</p>
+</div>
+
+<script>
+    // =============== ۱. نوار پیشرفت ===============
+    window.onscroll = function() {
+        var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var scrolled = (winScroll / height) * 100;
+        document.getElementById("progress-bar").style.width = scrolled + "%";
+    };
+
+    // =============== ۲. تم تاریک/روشن ===============
+    function toggleTheme() {
+        document.body.classList.toggle('light-mode');
+        const isLight = document.body.classList.contains('light-mode');
+        document.getElementById('theme-icon').innerText = isLight ? '☀️' : '🌙';
+        localStorage.setItem('vacThemeLight', isLight);
+    }
+    if (localStorage.getItem('vacThemeLight') === 'true') { toggleTheme(); }
+
+    // =============== ۳. پخش صوتی (TTS) ===============
+    let isSpeaking = false;
+    let voices = [];
+    function loadVoices() { voices = window.speechSynthesis.getVoices(); }
+    if (typeof speechSynthesis !== 'undefined' && speechSynthesis.onvoiceschanged !== undefined) { speechSynthesis.onvoiceschanged = loadVoices; }
+
+    function toggleSpeech() {
+        if (isSpeaking) {
+            window.speechSynthesis.cancel();
+            isSpeaking = false;
+            document.getElementById('tts-icon').innerText = '🔊';
+            document.getElementById('tts-btn').classList.remove('playing');
+            return;
+        }
+        const mainText = document.getElementById('main-content').innerText;
+        const speech = new SpeechSynthesisUtterance(mainText);
+        speech.lang = 'fa-IR';
+        const persianVoice = voices.find(v => v.lang.includes('fa') || v.lang === 'fa-IR');
+        if (persianVoice) speech.voice = persianVoice;
+        speech.onend = function() {
+            isSpeaking = false;
+            document.getElementById('tts-icon').innerText = '🔊';
+            document.getElementById('tts-btn').classList.remove('playing');
+        };
+        window.speechSynthesis.speak(speech);
+        isSpeaking = true;
+        document.getElementById('tts-icon').innerText = '⏹️';
+        document.getElementById('tts-btn').classList.add('playing');
+    }
+
+    // =============== ۴. آکاردئون ===============
+    function toggleAccordion(btn) { btn.parentElement.classList.toggle('active'); }
+
+    // =============== ۵. مشاور هوشمند جاروبرقی ===============
+    function showAdvisorResult() {
+        const floor = document.getElementById('floor-type').value;
+        const pet = document.getElementById('has-pet').value;
+        const priority = document.getElementById('priority').value;
+        const resultDiv = document.getElementById('advisor-result');
+        const resultText = document.getElementById('result-text');
+        let recommendation = '';
+
+        // منطق تصمیم‌گیری
+        if (priority === 'smart') {
+            recommendation = 'یک <strong>جاروبرقی رباتیک</strong> با قابلیت نقشه‌برداری (LiDAR) برای شما ایده‌آل است. ';
+            if (pet === 'yes') recommendation += 'حتماً مدلی انتخاب کنید که برس مخصوص موی حیوانات داشته باشد.';
+        } 
+        else if (priority === 'ease') {
+            recommendation = 'یک <strong>جاروبرقی شارژی (Cordless)</strong> برای نظافت روزمره و سریع بهترین گزینه است. ';
+            if (pet === 'yes') recommendation += 'مدل‌های با موتور قدرتمند و فیلتر HEPA برای جمع‌آوری موی حیوانات پیشنهاد می‌شود.';
+            else recommendation += 'مدل‌های سبک با زمان شارژ بالای ۴۰ دقیقه برای شما مناسب‌ترند.';
+        } 
+        else { // Power
+            if (floor === 'carpet') {
+                recommendation = 'یک <strong>جاروبرقی مخزن‌دار (Cylinder) با توان مکش بالای ۲۰۰۰ وات</strong> و برس مخصوص فرش، بهترین انتخاب برای تمیز کردن عمیق الیاف فرش شماست. ';
+            } else {
+                recommendation = 'یک <strong>جاروبرقی مخزن‌دار یا کیسه‌دار با قدرت مکش بالا</strong> برای جمع‌آوری کامل گرد و غبار از سطوح صاف بهترین گزینه است. ';
+            }
+            if (pet === 'yes') recommendation += 'داشتن فیلتر <strong>HEPA</strong> برای جلوگیری از پخش شدن مو و آلرژن در هوا کاملاً الزامی است.';
+        }
+
+        resultText.innerHTML = recommendation;
+        resultDiv.style.display = 'block';
+        resultDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    // =============== ۶. انیمیشن اسکرول ===============
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach(el => {
+        revealObserver.observe(el);
+    });
+
+    loadVoices();
+</script>
+
+</body>
+  </html>
