@@ -21,282 +21,240 @@
     <script>function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:'fa',includedLanguages:'en,de,ar,es,fr,it,tr,ru,zh,ja,ko,hi,pt,nl,sv,pl,ro,uk,th,vi,id,ms,ur',layout:google.translate.TranslateElement.InlineLayout.SIMPLE})}</script>
     
     <style>
-        /* ============== تم‌ها ============== */
+        /* ============== تم‌های پرمیوم (سایبرپانک مدرن) ============== */
         :root {
-            --bg-main: #020206;
-            --bg-card: rgba(10, 15, 30, 0.4);
-            --text-main: #f0f8ff;
-            --text-muted: #8ba3c7;
-            --primary: #00f5ff;
-            --accent: #ff00aa;
-            --gold: #ffcc00;
-            --border: rgba(0, 245, 255, 0.3);
-            --shadow: 0 15px 35px rgba(0, 0, 0, 0.8);
+            /* حالت شب (Dark Mode) - نئون و کهکشانی */
+            --bg-main: #05050a;
+            --bg-header: rgba(5, 5, 10, 0.85);
+            --bg-card: rgba(20, 20, 35, 0.5);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --primary: #00f5ff; /* فیروزه‌ای */
+            --accent: #ff00aa; /* صورتی */
+            --gold: #fbbf24;
+            --border: rgba(0, 245, 255, 0.2);
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             --gradient: linear-gradient(135deg, #00f5ff, #ff00aa);
-            --card-hover-bg: rgba(0, 245, 255, 0.15);
-            --glare-color: rgba(255, 255, 255, 0.3);
         }
 
         body.light-mode {
-            --bg-main: #eaf0f8;
-            --bg-card: rgba(255, 255, 255, 0.6);
-            --text-main: #0a192f;
+            /* حالت روز (Light Mode) - یخی و لوکس */
+            --bg-main: #f0f4f8;
+            --bg-header: rgba(240, 244, 248, 0.85);
+            --bg-card: rgba(255, 255, 255, 0.7);
+            --text-main: #0f172a;
             --text-muted: #475569;
-            --primary: #0055ff;
-            --accent: #ff0066;
-            --gold: #d97706;
-            --border: rgba(0, 85, 255, 0.2);
-            --shadow: 0 15px 35px rgba(0, 85, 255, 0.1);
-            --gradient: linear-gradient(135deg, #0055ff, #ff0066);
-            --card-hover-bg: rgba(0, 85, 255, 0.1);
-            --glare-color: rgba(255, 255, 255, 0.8);
+            --primary: #0284c7; /* آبی اقیانوسی */
+            --accent: #be185d; /* زرشکی */
+            --gold: #b45309;
+            --border: rgba(2, 132, 199, 0.15);
+            --shadow: 0 10px 30px rgba(2, 132, 199, 0.1);
+            --gradient: linear-gradient(135deg, #0284c7, #be185d);
         }
 
-        *{margin:0;padding:0;box-sizing:border-box;transition:background-color 0.4s, color 0.4s, border-color 0.4s}
+        * { margin: 0; padding: 0; box-sizing: border-box; transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease; }
         
-        ::-webkit-scrollbar { width: 10px; }
-        ::-webkit-scrollbar-track { background: var(--bg-main); }
-        ::-webkit-scrollbar-thumb { background: var(--gradient); border-radius: 10px; box-shadow: 0 0 10px var(--primary); }
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: 'Vazirmatn', Tahoma, sans-serif;
             background-color: var(--bg-main);
-            background-image: radial-gradient(circle at 50% 0%, rgba(255,255,255,0.05), transparent 70%);
             color: var(--text-main);
-            min-height: 100vh;
+            line-height: 1.7;
             overflow-x: hidden;
             padding-bottom: 50px;
+            -webkit-font-smoothing: antialiased;
+            position: relative;
         }
 
-        body.light-mode {
-            background: linear-gradient(45deg, #eaf0f8, #dbeafe, #f3e8ff, #eaf0f8);
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
+        /* افکت نورهای پس‌زمینه (بدون کندی) */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -20%; left: -10%; width: 50%; height: 50%;
+            background: radial-gradient(circle, var(--border) 0%, transparent 70%);
+            filter: blur(100px);
+            z-index: -1;
+            animation: floatOrb 15s ease-in-out infinite alternate;
+        }
+        body::after {
+            content: '';
+            position: fixed;
+            bottom: -20%; right: -10%; width: 60%; height: 60%;
+            background: radial-gradient(circle, var(--border) 0%, transparent 70%);
+            filter: blur(120px);
+            z-index: -1;
+            animation: floatOrb 20s ease-in-out infinite alternate-reverse;
         }
 
-        @keyframes gradientBG { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
-
-        /* ============== صفحه لودینگ ============== */
-        #loader {
-            position: fixed; inset: 0; background: #020206; z-index: 99999;
-            display: flex; flex-direction: column; justify-content: center; align-items: center;
-            transition: opacity 0.8s ease, visibility 0.8s ease;
-        }
-        .loader-text {
-            color: var(--primary); font-family: monospace; font-size: 20px; letter-spacing: 2px;
-            overflow: hidden; white-space: nowrap; border-right: 3px solid var(--primary);
-            animation: typing 2s steps(30, end), blink-caret .75s step-end infinite;
-        }
-        .loader-bar {
-            width: 200px; height: 3px; background: rgba(255,255,255,0.1); margin-top: 20px;
-            border-radius: 5px; overflow: hidden; position: relative;
-        }
-        .loader-bar::after {
-            content: ''; position: absolute; top: 0; left: 0; height: 100%; width: 0%;
-            background: var(--gradient); animation: loadBar 2s forwards ease-in-out;
-        }
-        @keyframes typing { from { width: 0 } to { width: 100% } }
-        @keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: var(--primary) } }
-        @keyframes loadBar { 0% { width: 0; } 100% { width: 100%; } }
-
-        /* ============== نوار پیشرفت اسکرول ============== */
-        #scroll-progress {
-            position: fixed; top: 0; left: 0; height: 4px; width: 0%;
-            background: var(--gradient); z-index: 9999;
-            box-shadow: 0 0 15px var(--primary);
+        @keyframes floatOrb {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(10%, 10%) scale(1.2); }
         }
 
-        /* ============== نشانگر موس ============== */
-        .cursor-glow {
-            position: fixed; width: 30px; height: 30px;
-            border: 2px solid var(--primary); border-radius: 50%;
-            pointer-events: none; transform: translate(-50%, -50%);
-            transition: width 0.2s, height 0.2s, background-color 0.2s;
-            z-index: 9999; mix-blend-mode: difference; opacity: 0;
-        }
-        body:hover .cursor-glow { opacity: 1; }
+        /* اسکرول بار */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-main); }
+        ::-webkit-scrollbar-thumb { background: var(--gradient); border-radius: 10px; }
 
-        #particleCanvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; }
-
-        /* ============== هدر ============== */
+        /* ============== هدر شیشه‌ای ============== */
         .header {
             position: sticky; top: 0; z-index: 1000;
-            background: rgba(2, 2, 6, 0.5); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px);
-            padding: 15px; border-bottom: 1px solid var(--border);
+            background: var(--bg-header); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            padding: 15px 20px; border-bottom: 1px solid var(--border);
             display: flex; flex-direction: column; align-items: center; gap: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
-        }
-        body.light-mode .header { background: rgba(255, 255, 255, 0.5); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); }
-        
-        .header h1 { 
-            font-size: 28px; font-weight: 900; color: transparent;
-            background: var(--gradient); -webkit-background-clip: text; background-clip: text;
-            position: relative; text-shadow: 0 0 20px rgba(0,245,255,0.4);
-            font-family: monospace; /* فونت هکری برای تیتر */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
         
-        .header p { font-size: 13px; color: var(--text-muted); font-weight: bold; letter-spacing: 1.5px; }
+        .header-title { 
+            font-size: 26px; font-weight: 900; 
+            background: var(--gradient); -webkit-background-clip: text; background-clip: text; color: transparent;
+            letter-spacing: -0.5px; text-shadow: 0 0 20px var(--border);
+        }
+        .header-subtitle { font-size: 12px; color: var(--text-muted); font-weight: 600; margin-top: -8px; }
 
+        /* جستجو */
         .search-container { width: 100%; max-width: 600px; position: relative; }
         .search-container input {
-            width: 100%; padding: 16px 50px 16px 20px; border-radius: 30px;
+            width: 100%; padding: 14px 20px 14px 45px; border-radius: 30px;
             border: 1px solid var(--border); background: var(--bg-card); color: var(--text-main);
             font-family: inherit; font-size: 15px; outline: none; 
-            box-shadow: inset 0 0 15px rgba(0,0,0,0.5), 0 0 15px rgba(0,245,255,0.1);
-            transition: 0.4s; backdrop-filter: blur(10px);
+            transition: all 0.3s ease; backdrop-filter: blur(10px);
         }
-        body.light-mode .search-container input { box-shadow: inset 0 0 15px rgba(0,0,0,0.05), 0 0 15px rgba(0,85,255,0.1); }
-        .search-container input:focus { border-color: var(--primary); box-shadow: 0 0 30px var(--border), inset 0 0 10px var(--border); }
-        .search-icon { position: absolute; right: 20px; top: 50%; transform: translateY(-50%); font-size: 20px; opacity: 0.9; filter: drop-shadow(0 0 5px var(--primary)); }
+        .search-container input:focus { 
+            border-color: var(--primary); 
+            box-shadow: 0 0 20px var(--border); 
+        }
+        .search-icon { position: absolute; right: 18px; top: 50%; transform: translateY(-50%); font-size: 18px; color: var(--text-muted); }
 
+        /* دکمه تم */
         .theme-btn {
-            position: absolute; top: 15px; left: 15px;
+            position: absolute; top: 20px; left: 20px;
             background: var(--bg-card); border: 1px solid var(--border); color: var(--text-main);
-            width: 45px; height: 45px; border-radius: 50%; font-size: 20px; cursor: pointer;
-            display: flex; justify-content: center; align-items: center; backdrop-filter: blur(10px);
-            box-shadow: 0 0 15px rgba(0,0,0,0.5); transition: 0.4s;
+            width: 42px; height: 42px; border-radius: 50%; font-size: 18px; cursor: pointer;
+            display: flex; justify-content: center; align-items: center;
+            transition: all 0.3s ease; box-shadow: var(--shadow);
         }
-        body.light-mode .theme-btn { box-shadow: 0 0 15px rgba(0,0,0,0.1); }
-        .theme-btn:hover { transform: scale(1.1) rotate(360deg); border-color: var(--primary); box-shadow: 0 0 20px var(--primary); }
+        .theme-btn:hover { transform: scale(1.1) rotate(15deg); border-color: var(--primary); }
 
         /* ============== محتوای اصلی ============== */
-        .container { max-width: 950px; margin: 0 auto; padding: 15px; position: relative; z-index: 1; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 30px 20px; position: relative; z-index: 1; }
 
         /* اخبار داغ */
         .hot-news-box {
-            background: linear-gradient(135deg, rgba(219,68,55,0.2), rgba(249,168,37,0.1));
-            backdrop-filter: blur(15px); border-radius: 20px; margin: 20px 0 30px; color: var(--text-main); 
-            overflow: hidden; box-shadow: 0 10px 30px rgba(219,68,55,0.2); 
-            border: 1px solid rgba(255,100,0,0.4);
+            background: linear-gradient(135deg, rgba(234, 88, 12, 0.8), rgba(219, 39, 119, 0.8));
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 20px; margin-bottom: 40px; color: #fff;
+            overflow: hidden; box-shadow: 0 10px 30px rgba(234, 88, 12, 0.2);
         }
-        body.light-mode .hot-news-box { color: #fff; background: linear-gradient(135deg, #db4437, #f9a825); }
         .hot-news-btn {
             width: 100%; background: transparent; border: none; padding: 20px 25px;
-            color: var(--text-main); font-family: inherit; font-size: 18px; font-weight: bold; cursor: pointer;
-            display: flex; justify-content: space-between; align-items: center; text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+            color: white; font-family: inherit; font-size: 17px; font-weight: 800; cursor: pointer;
+            display: flex; justify-content: space-between; align-items: center;
         }
-        body.light-mode .hot-news-btn { color: #fff; }
-        .hot-news-content { max-height: 0; overflow: hidden; transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1); padding: 0 20px; }
+        .hot-news-content { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; padding: 0 20px; }
         .hot-news-inner { padding-bottom: 20px; display: flex; flex-direction: column; gap: 10px; }
         .hot-link {
-            display: block; background: rgba(255,255,255,0.1); color: var(--text-main); text-decoration: none;
-            padding: 14px 18px; border-radius: 12px; font-weight: bold; font-size: 15px; transition: 0.3s;
-            border: 1px solid var(--border);
+            display: block; background: rgba(255,255,255,0.15); color: white; text-decoration: none;
+            padding: 14px 18px; border-radius: 12px; font-weight: 600; font-size: 14px; transition: 0.3s;
+            border: 1px solid rgba(255,255,255,0.1);
         }
-        body.light-mode .hot-link { color: #fff; background: rgba(0,0,0,0.15); border: none; }
-        .hot-link:hover { background: rgba(255,255,255,0.2); transform: translateX(-8px) scale(1.02); box-shadow: 0 0 20px rgba(255,255,255,0.2); }
-        .hot-link.special { background: linear-gradient(135deg, #ffd700, #ff8c00); color: #000; text-align: center; border: none; font-size: 16px; }
-        .hot-link.special:hover { transform: scale(1.05); box-shadow: 0 0 30px rgba(255,215,0,0.8); }
+        .hot-link:hover { background: rgba(255,255,255,0.3); transform: translateX(-5px); }
+        .hot-link.special { background: #fff; color: #db2777; text-align: center; border: none; font-weight: 800; }
+        .hot-link.special:hover { transform: scale(1.02); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
 
-        /* بخش داغ‌ترین‌ها */
-        .featured-title {
-            color: var(--gold); font-size: 22px; font-weight: 900; margin: 40px 0 20px;
-            display: flex; align-items: center; gap: 10px; text-shadow: 0 0 20px var(--border);
+        /* بخش محبوب‌ترین‌ها */
+        .section-header {
+            display: flex; align-items: center; justify-content: space-between;
+            margin: 40px 0 20px;
         }
-        .featured-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 40px; }
+        .section-header h2 { 
+            font-size: 20px; font-weight: 900; color: var(--text-main);
+            display: flex; align-items: center; gap: 8px;
+        }
+        .section-header .line { flex-grow: 1; height: 1px; background: var(--border); margin-right: 15px; }
+        
+        .featured-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 50px; }
         
         .featured-card {
             background: var(--bg-card); border: 1px solid var(--border); 
-            border-radius: 20px; padding: 20px; text-decoration: none; color: var(--text-main); 
-            display: flex; align-items: center; gap: 15px; transition: 0.4s; 
+            border-radius: 20px; padding: 20px 25px; text-decoration: none; color: var(--text-main); 
+            display: flex; align-items: center; gap: 20px; transition: 0.4s; 
             box-shadow: var(--shadow); backdrop-filter: blur(15px); position: relative; overflow: hidden;
         }
-        .featured-card:hover { transform: translateY(-5px) scale(1.02); border-color: var(--gold); box-shadow: 0 15px 40px rgba(255,215,0,0.3); }
-        .featured-card .icon { font-size: 45px; filter: drop-shadow(0 0 15px var(--gold)); transition: 0.3s; }
-        .featured-card:hover .icon { transform: scale(1.2) rotate(10deg); }
-        .featured-card h3 { font-size: 17px; font-weight: 900; color: var(--text-main); }
-        .featured-card p { font-size: 12px; color: var(--gold); margin-top: 4px; font-weight: bold; }
+        .featured-card::before {
+            content: ''; position: absolute; inset: 0;
+            background: linear-gradient(135deg, transparent, rgba(255,255,255,0.05), transparent);
+            transform: translateX(-100%); transition: 0.6s;
+        }
+        .featured-card:hover::before { transform: translateX(100%); }
+        .featured-card:hover { transform: translateY(-5px); border-color: var(--gold); box-shadow: 0 15px 35px rgba(251, 191, 36, 0.2); }
+        .featured-card .icon { font-size: 40px; filter: drop-shadow(0 0 10px var(--gold)); }
+        .featured-card h3 { font-size: 16px; font-weight: 800; }
+        .featured-card p { font-size: 12px; color: var(--gold); margin-top: 4px; font-weight: 700; }
 
         /* دسته‌بندی‌ها */
-        .section-title {
-            color: var(--primary); font-size: 22px; margin: 40px 0 20px; font-weight: 900;
-            display: flex; align-items: center; gap: 12px; text-shadow: 0 0 15px var(--border);
-        }
-        .section-title::after {
-            content: ''; flex-grow: 1; height: 2px;
-            background: linear-gradient(90deg, var(--primary), transparent);
-            border-radius: 2px; box-shadow: 0 0 15px var(--primary);
-        }
-        
         .grid {
-            display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 15px;
-            perspective: 1000px;
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(115px, 1fr)); gap: 15px;
         }
         
         .card {
-            background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px;
+            background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px;
             padding: 20px 10px; text-decoration: none; color: var(--text-main);
             display: flex; flex-direction: column; align-items: center; text-align: center;
-            transition: transform 0.1s ease, box-shadow 0.3s; box-shadow: var(--shadow);
-            backdrop-filter: blur(15px); position: relative; overflow: hidden;
-            transform-style: preserve-3d;
-            animation: borderPulse 4s infinite alternate; /* انیمیشن نفس‌کشیدن مرز */
-        }
-
-        @keyframes borderPulse {
-            0% { border-color: var(--border); box-shadow: var(--shadow); }
-            100% { border-color: var(--primary); box-shadow: 0 0 15px var(--border), inset 0 0 10px var(--border); }
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: var(--shadow);
+            backdrop-filter: blur(10px); position: relative;
         }
         
-        /* افکت مغناطیسی و درخشش */
-        .card:hover { border-color: var(--primary); box-shadow: 0 20px 40px var(--border), inset 0 0 20px var(--border); z-index: 10; animation: none; }
-        
-        /* افکت هولوگرافیک */
-        .card::after {
-            content: ''; position: absolute; inset: 0;
-            background: radial-gradient(circle at 50% 50%, var(--glare-color), transparent 60%);
-            opacity: 0; transition: opacity 0.3s; pointer-events: none;
-            z-index: 2; mix-blend-mode: overlay;
+        /* هاور فوق‌العاده نرم و لوکس */
+        .card:hover { 
+            transform: translateY(-6px) scale(1.02); 
+            border-color: var(--primary);
+            box-shadow: 0 15px 30px var(--border); 
+            z-index: 10; 
         }
-        .card:hover::after { opacity: 1; }
         
         .card .emoji { 
-            font-size: 32px; margin-bottom: 10px; z-index: 1; 
-            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.5)); 
-            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            transform: translateZ(30px);
+            font-size: 30px; margin-bottom: 12px; 
+            transition: transform 0.3s ease; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
         }
-        .card:hover .emoji { transform: translateZ(50px) scale(1.3) rotate(15deg); }
+        .card:hover .emoji { transform: scale(1.2) translateY(-2px); }
         
-        .card h3 { font-size: 13px; font-weight: 700; line-height: 1.5; z-index: 1; text-shadow: 0 2px 5px rgba(0,0,0,0.5); transform: translateZ(15px); }
+        .card h3 { font-size: 13px; font-weight: 700; line-height: 1.5; }
 
-        .card.gold-card { border-color: rgba(255,204,0,0.4); animation: goldPulse 4s infinite alternate; }
-        @keyframes goldPulse { 0% { border-color: rgba(255,204,0,0.4); } 100% { border-color: rgba(255,204,0,0.9); box-shadow: 0 0 15px rgba(255,204,0,0.3); } }
-        .card.gold-card:hover { box-shadow: 0 20px 40px rgba(255,204,0,0.3); border-color: var(--gold); animation: none; }
+        .card.gold-card { border-color: rgba(251, 191, 36, 0.3); background: linear-gradient(135deg, rgba(251, 191, 36, 0.05), var(--bg-card)); }
+        .card.gold-card:hover { border-color: var(--gold); box-shadow: 0 15px 30px rgba(251, 191, 36, 0.2); }
 
-        /* ============== انیمیشن ظاهر شدن (Reveal) ============== */
-        .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
+        /* انیمیشن ظاهر شدن (Fade Up) */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
         .reveal.active { opacity: 1; transform: translateY(0); }
 
-        /* بنر تبلیغاتی */
-        .ad-box { text-align: center; margin: 30px 0; padding: 10px; }
-
         /* فوتر */
-        .footer { text-align: center; padding: 50px 20px; color: var(--text-muted); font-size: 14px; border-top: 1px solid var(--border); margin-top: 50px; }
-        .footer a { color: var(--primary); text-decoration: none; font-weight: bold; transition: 0.3s; }
-        .footer a:hover { text-decoration: underline; text-shadow: 0 0 15px var(--primary); }
+        .footer { text-align: center; padding: 50px 20px 30px; color: var(--text-muted); font-size: 14px; border-top: 1px solid var(--border); margin-top: 60px; }
+        .footer a { color: var(--primary); text-decoration: none; font-weight: 700; margin: 0 8px; transition: 0.3s; }
+        .footer a:hover { color: var(--accent); }
 
         /* دکمه بازگشت به بالا */
         #backToTop {
             position: fixed; bottom: 30px; left: 30px;
-            width: 55px; height: 55px; border-radius: 50%;
-            background: var(--gradient); color: #fff; border: none; font-size: 24px;
+            width: 50px; height: 50px; border-radius: 50%;
+            background: var(--gradient); color: #fff; border: none; font-size: 22px;
             display: flex; justify-content: center; align-items: center;
-            cursor: pointer; box-shadow: 0 0 25px var(--border);
-            opacity: 0; visibility: hidden; transition: 0.4s; z-index: 9999;
+            cursor: pointer; box-shadow: 0 5px 20px var(--border);
+            opacity: 0; visibility: hidden; transition: all 0.4s ease; z-index: 9999;
         }
         #backToTop.show { opacity: 1; visibility: visible; }
-        #backToTop:hover { transform: translateY(-8px) scale(1.1); box-shadow: 0 0 40px var(--accent); }
+        #backToTop:hover { transform: translateY(-5px) scale(1.1); box-shadow: 0 10px 30px var(--accent); }
 
-        @media(max-width: 600px) {
+        @media(max-width: 768px) {
             .featured-grid { grid-template-columns: 1fr; }
-            .cursor-glow { display: none; }
         }
         @media(max-width: 400px) {
-            .grid { grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 10px; }
-            .card { padding: 15px 5px; border-radius: 16px; }
-            .card .emoji { font-size: 28px; }
-            .card h3 { font-size: 12px; }
+            .grid { grid-template-columns: repeat(auto-fill, minmax(95px, 1fr)); gap: 10px; }
+            .card { padding: 15px 5px; border-radius: 14px; }
+            .card .emoji { font-size: 26px; }
+            .card h3 { font-size: 11px; }
         }
         
         .goog-te-banner-frame{display:none!important} body{top:0!important}
@@ -304,29 +262,14 @@
 </head>
 <body>
 
-<!-- صفحه لودینگ -->
-<div id="loader">
-    <div class="loader-text">> SYSTEM INITIALIZING...</div>
-    <div class="loader-bar"></div>
-</div>
-
-<!-- نوار پیشرفت اسکرول -->
-<div id="scroll-progress"></div>
-
-<!-- نشانگر موس -->
-<div class="cursor-glow" id="cursorGlow"></div>
-
-<!-- پس‌زمینه زنده -->
-<canvas id="particleCanvas"></canvas>
-
-<!-- نوار بالا -->
+<!-- هدر -->
 <div class="header">
     <button class="theme-btn" onclick="toggleTheme()" id="theme-btn">🌙</button>
-    <h1 id="glitch-title">🌟 رهیلاناب</h1>
-    <p>🌍 دنیایی از همه چی | rahilanab.com</p>
+    <div class="header-title">🌟 رهیلاناب</div>
+    <div class="header-subtitle">دنیایی از همه چی | rahilanab.com</div>
     <div class="search-container">
         <span class="search-icon">🔍</span>
-        <input type="text" id="search-input" placeholder="جستجو کنید... (مثلاً: قطار، یوگا)" oninput="searchCards()">
+        <input type="text" id="search-input" placeholder="جستجو در بین ۲۰۰+ صفحه..." oninput="searchCards()">
     </div>
 </div>
 
@@ -335,21 +278,24 @@
     <!-- 🔥 اخبار داغ -->
     <div class="hot-news-box reveal">
         <button onclick="toggleHotNews()" class="hot-news-btn">
-            <span>🔥 اخبار و ترندهای داغ <span id="hot-date" style="font-size: 13px; opacity: 0.9; font-weight: normal;"></span></span>
+            <span>🔥 اخبار و ترندهای داغ <span id="hot-date" style="font-size: 13px; opacity: 0.8; font-weight: normal;"></span></span>
             <span id="hot-arrow" style="transition: transform 0.3s;">▼</span>
         </button>
         <div id="hot-news-content" class="hot-news-content">
             <div class="hot-news-inner">
-                <a href="kala-barg.html" class="hot-link">🛒 راهنمای ثبت‌نام کالابرگ</a>
-                <a href="gold.html" class="hot-link">💰 قیمت لحظه‌ای طلا و دلار</a>
-                <a href="ai-tools.html" class="hot-link">🤖 ابزارهای هوش مصنوعی</a>
-                <a href="ganj-ya-bomb.html" class="hot-link special">🎮 بازی گنج یا بمب!</a>
+                <a href="kala-barg.html" class="hot-link">راهنمای ثبت‌نام کالابرگ و سامانه دولت من</a>
+                <a href="gold.html" class="hot-link">قیمت لحظه‌ای طلا، سکه و دلار (آپدیت زنده)</a>
+                <a href="ai-tools.html" class="hot-link">بهترین ابزارهای هوش مصنوعی در ایران</a>
+                <a href="ganj-ya-bomb.html" class="hot-link special">🎮 بازی جدید: گنج یا بمب! (رایگان)</a>
             </div>
         </div>
     </div>
 
-    <!-- ⭐ بخش ویژه: داغ‌ترین‌ها -->
-    <div class="featured-title reveal">⭐ محبوب‌ترین‌های سایت</div>
+    <!-- ⭐ محبوب‌ترین‌ها -->
+    <div class="section-header reveal">
+        <h2>⭐ محبوب‌ترین‌های سایت</h2>
+        <div class="line"></div>
+    </div>
     <div class="featured-grid reveal">
         <a href="gold.html" class="featured-card">
             <div class="icon">💰</div>
@@ -369,8 +315,8 @@
         </a>
     </div>
 
-    <!-- بنر تبلیغاتی -->
-    <div class="ad-box reveal">
+    <!-- تبلیغات -->
+    <div style="text-align: center; margin: 30px 0;" class="reveal">
         <script>atOptions={'key':'939c6f3df75112fca8cc907d853dc8bb','format':'iframe','height':250,'width':300,'params':{}};</script>
         <script src="https://www.highperformanceformat.com/939c6f3df75112fca8cc907d853dc8bb/invoke.js"></script>
     </div>
@@ -378,7 +324,7 @@
     <!-- ================= دسته‌بندی‌ها ================= -->
 
     <!-- اقتصاد -->
-    <div class="section-title reveal">💰 اقتصاد و خرید</div>
+    <div class="section-header reveal"><h2>💰 اقتصاد و خرید</h2><div class="line"></div></div>
     <div class="grid">
         <a href="economy.html" class="card reveal"><div class="emoji">💵</div><h3>قیمت لحظه‌ای</h3></a>
         <a href="bank.html" class="card reveal"><div class="emoji">🏦</div><h3>بانکداری</h3></a>
@@ -389,7 +335,7 @@
     </div>
 
     <!-- آشپزی -->
-    <div class="section-title reveal">🍳 آشپزی</div>
+    <div class="section-header reveal"><h2>🍳 آشپزی</h2><div class="line"></div></div>
     <div class="grid">
         <a href="foods_1.html" class="card reveal"><div class="emoji">🍲</div><h3>غذاهای ۱-۳۰</h3></a>
         <a href="foods_2.html" class="card reveal"><div class="emoji">🍗</div><h3>غذاهای ۳۱-۶۰</h3></a>
@@ -400,7 +346,7 @@
     </div>
 
     <!-- ادعیه -->
-    <div class="section-title reveal">🤲 ادعیه و مذهب</div>
+    <div class="section-header reveal"><h2>🤲 ادعیه و مذهب</h2><div class="line"></div></div>
     <div class="grid">
         <a href="dua.html" class="card reveal"><div class="emoji">🤲</div><h3>ادعیه ۱</h3></a>
         <a href="dua2.html" class="card reveal"><div class="emoji">🕌</div><h3>ادعیه ۲</h3></a>
@@ -421,7 +367,7 @@
     </div>
 
     <!-- سلامت -->
-    <div class="section-title reveal">💊 سلامت و درمان</div>
+    <div class="section-header reveal"><h2>💊 سلامت و درمان</h2><div class="line"></div></div>
     <div class="grid">
         <a href="health.html" class="card reveal"><div class="emoji">💊</div><h3>سلامت ۱-۱۵</h3></a>
         <a href="health2.html" class="card reveal"><div class="emoji">🏥</div><h3>سلامت ۱۶-۳۰</h3></a>
@@ -455,7 +401,7 @@
     </div>
 
     <!-- زیبایی و مد -->
-    <div class="section-title reveal">💄 زیبایی، مد و زیورآلات</div>
+    <div class="section-header reveal"><h2>💄 زیبایی، مد و زیورآلات</h2><div class="line"></div></div>
     <div class="grid">
         <a href="beauty.html" class="card reveal"><div class="emoji">💄</div><h3>زیبایی ۱-۲۰</h3></a>
         <a href="beauty2.html" class="card reveal"><div class="emoji">💅</div><h3>زیبایی ۲۱-۴۰</h3></a>
@@ -478,7 +424,7 @@
     </div>
 
     <!-- ورزش -->
-    <div class="section-title reveal">🏃 ورزش (همه رشته‌ها)</div>
+    <div class="section-header reveal"><h2>🏃 ورزش (همه رشته‌ها)</h2><div class="line"></div></div>
     <div class="grid">
         <a href="sport.html" class="card reveal"><div class="emoji">🏃</div><h3>ورزش ۱-۳۰</h3></a>
         <a href="sport2.html" class="card reveal"><div class="emoji">🏋️</div><h3>ورزش ۳۱-۵۰</h3></a>
@@ -572,7 +518,7 @@
     </div>
 
     <!-- بازی‌ها -->
-    <div class="section-title reveal">🎮 بازی‌ها و سرگرمی</div>
+    <div class="section-header reveal"><h2>🎮 بازی‌ها و سرگرمی</h2><div class="line"></div></div>
     <div class="grid">
         <a href="ganj-ya-bomb.html" class="card gold-card reveal"><div class="emoji">💣</div><h3>گنج یا بمب</h3></a>
         <a href="games.html" class="card reveal"><div class="emoji">🎯</div><h3>بازی آنلاین</h3></a>
@@ -590,7 +536,7 @@
     </div>
 
     <!-- فیلم و موسیقی -->
-    <div class="section-title reveal">🎬 فیلم، کارتون و موسیقی</div>
+    <div class="section-header reveal"><h2>🎬 فیلم، کارتون و موسیقی</h2><div class="line"></div></div>
     <div class="grid">
         <a href="movie.html" class="card reveal"><div class="emoji">🎬</div><h3>فیلم‌ها</h3></a>
         <a href="movie-new.html" class="card reveal"><div class="emoji">🍿</div><h3>فیلم جدید</h3></a>
@@ -613,7 +559,7 @@
     </div>
 
     <!-- آموزش -->
-    <div class="section-title reveal">📚 آموزش، کتاب و فرهنگ</div>
+    <div class="section-header reveal"><h2>📚 آموزش، کتاب و فرهنگ</h2><div class="line"></div></div>
     <div class="grid">
         <a href="education-full.html" class="card reveal"><div class="emoji">🎓</div><h3>آموزش جامع</h3></a>
         <a href="education.html" class="card reveal"><div class="emoji">📖</div><h3>آموزش</h3></a>
@@ -635,7 +581,7 @@
     </div>
 
     <!-- مکان‌ها -->
-    <div class="section-title reveal">🏙️ مکان‌ها و سفر</div>
+    <div class="section-header reveal"><h2>🏙️ مکان‌ها و سفر</h2><div class="line"></div></div>
     <div class="grid">
         <a href="city.html" class="card reveal"><div class="emoji">🏙️</div><h3>شهرهای ایران</h3></a>
         <a href="city-full.html" class="card reveal"><div class="emoji">🌍</div><h3>شهرهای جهان</h3></a>
@@ -664,7 +610,7 @@
     </div>
 
     <!-- تکنولوژی -->
-    <div class="section-title reveal">📱 تکنولوژی و دیجیتال</div>
+    <div class="section-header reveal"><h2>📱 تکنولوژی و دیجیتال</h2><div class="line"></div></div>
     <div class="grid">
         <a href="tech.html" class="card reveal"><div class="emoji">📱</div><h3>تکنولوژی</h3></a>
         <a href="ai-tools.html" class="card reveal"><div class="emoji">🤖</div><h3>هوش مصنوعی</h3></a>
@@ -688,7 +634,7 @@
     </div>
 
     <!-- خانه -->
-    <div class="section-title reveal">🏠 خانه و زندگی</div>
+    <div class="section-header reveal"><h2>🏠 خانه و زندگی</h2><div class="line"></div></div>
     <div class="grid">
         <a href="home.html" class="card reveal"><div class="emoji">🏠</div><h3>خانه</h3></a>
         <a href="home-full.html" class="card reveal"><div class="emoji">🏡</div><h3>دنیای خانه</h3></a>
@@ -715,7 +661,7 @@
     </div>
 
     <!-- خودرو -->
-    <div class="section-title reveal">🚗 خودرو</div>
+    <div class="section-header reveal"><h2>🚗 خودرو</h2><div class="line"></div></div>
     <div class="grid">
         <a href="car.html" class="card reveal"><div class="emoji">🚗</div><h3>خودرو ۱-۲۵</h3></a>
         <a href="car2.html" class="card reveal"><div class="emoji">🔧</div><h3>خودرو ۲۶-۴۰</h3></a>
@@ -726,7 +672,7 @@
     </div>
 
     <!-- بیشتر -->
-    <div class="section-title reveal">📄 صفحات اصلی و اطلاعات</div>
+    <div class="section-header reveal"><h2>📄 صفحات اصلی و اطلاعات</h2><div class="line"></div></div>
     <div class="grid">
         <a href="main.html" class="card reveal"><div class="emoji">🏠</div><h3>صفحه اصلی (main)</h3></a>
         <a href="about.html" class="card reveal"><div class="emoji">📄</div><h3>درباره ما</h3></a>
@@ -742,102 +688,23 @@
 
     <div class="footer reveal">
         <p>🌟 <strong>رهیلاناب</strong> - rahilanab.com</p>
-        <p style="margin-top: 8px;">
-            <a href="index.html">🏠 خانه</a> | <a href="all.html">📋 همه لینک‌ها</a>
+        <p style="margin-top: 10px;">
+            <a href="index.html">خانه</a> | <a href="all.html">همه لینک‌ها</a> | <a href="contact.html">تماس با ما</a>
         </p>
     </div>
 </div>
 
 <!-- دکمه بازگشت به بالا -->
-<button id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">🚀</button>
+<button id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</button>
 
 <!-- Monetag Social Bar -->
 <script src="https://pl29908820.effectivecpmnetwork.com/66/05/a0/6605a0daa2f87af6ecfbed96472b36b9.js"></script>
 
 <script>
-    // ==========================================
-    // ۱. صفحه لودینگ هکری
-    // ==========================================
-    window.addEventListener('load', () => {
-        setTimeout(() => {
-            const loader = document.getElementById('loader');
-            loader.style.opacity = '0';
-            loader.style.visibility = 'hidden';
-            
-            // شروع افکت رمزگشایی متن بعد از لودینگ
-            startTextScramble();
-        }, 2200); // 2.2 ثانیه صبر می‌کند
-    });
+    // تاریخ خودکار
+    document.getElementById('hot-date').innerText = `(${new Date().toLocaleDateString('fa-IR', { weekday: 'long', day: 'numeric', month: 'long' })})`;
 
-    // ==========================================
-    // ۲. افکت رمزگشایی متن (Text Scramble)
-    // ==========================================
-    class TextScramble {
-        constructor(el) {
-            this.el = el;
-            this.chars = '!<>-_\\/[]{}—=+*^?#________';
-            this.update = this.update.bind(this);
-        }
-        setText(newText) {
-            const oldText = this.el.innerText;
-            const length = Math.max(oldText.length, newText.length);
-            const promise = new Promise((resolve) => this.resolve = resolve);
-            this.queue = [];
-            for (let i = 0; i < length; i++) {
-                const from = oldText[i] || '';
-                const to = newText[i] || '';
-                const start = Math.floor(Math.random() * 40);
-                const end = start + Math.floor(Math.random() * 40);
-                this.queue.push({ from, to, start, end });
-            }
-            cancelAnimationFrame(this.frameRequest);
-            this.frame = 0;
-            this.update();
-            return promise;
-        }
-        update() {
-            let output = '';
-            let complete = 0;
-            for (let i = 0, n = this.queue.length; i < n; i++) {
-                let { from, to, start, end, char } = this.queue[i];
-                if (this.frame >= end) {
-                    complete++;
-                    output += to;
-                } else if (this.frame >= start) {
-                    if (!char || Math.random() < 0.28) {
-                        char = this.randomChar();
-                        this.queue[i].char = char;
-                    }
-                    output += `<span style="color: var(--accent)">${char}</span>`;
-                } else {
-                    output += from;
-                }
-            }
-            this.el.innerHTML = output;
-            if (complete === this.queue.length) {
-                this.resolve();
-            } else {
-                this.frameRequest = requestAnimationFrame(this.update);
-                this.frame++;
-            }
-        }
-        randomChar() {
-            return this.chars[Math.floor(Math.random() * this.chars.length)];
-        }
-    }
-
-    function startTextScramble() {
-        const el = document.getElementById('glitch-title');
-        const fx = new TextScramble(el);
-        fx.setText('🌟 رهیلاناب');
-    }
-
-    // ==========================================
-    // ۳. تاریخ و تاگل اخبار
-    // ==========================================
-    const now = new Date();
-    document.getElementById('hot-date').innerText = `(${now.toLocaleDateString('fa-IR', { weekday: 'long', day: 'numeric', month: 'long' })})`;
-
+    // باز و بسته کردن اخبار
     function toggleHotNews() {
         const content = document.getElementById('hot-news-content');
         const arrow = document.getElementById('hot-arrow');
@@ -850,25 +717,30 @@
         }
     }
 
-    // ==========================================
-    // ۴. تم و جستجو و نوار پیشرفت
-    // ==========================================
+    // تغییر تم
     function toggleTheme() {
         document.body.classList.toggle('light-mode');
         const isLight = document.body.classList.contains('light-mode');
-        document.getElementById('theme-btn').innerText = isLight ? '☀️' : '🌙';
+        document.getElementById('theme-btn').innerText = isLight ? '🌙' : '☀️';
         localStorage.setItem('homeTheme', isLight);
-        updateParticleColors();
     }
-    if (localStorage.getItem('homeTheme') === 'true') { toggleTheme(); }
+    // ذخیره تم
+    if (localStorage.getItem('homeTheme') === 'true') {
+        document.body.classList.add('light-mode');
+        document.getElementById('theme-btn').innerText = '🌙';
+    }
 
+    // جستجوی هوشمند
     function searchCards() {
         const query = document.getElementById('search-input').value.toLowerCase().trim();
         const grids = document.querySelectorAll('.grid');
-        grids.forEach(grid => {
+        const headers = document.querySelectorAll('.section-header');
+
+        grids.forEach((grid, index) => {
             let hasMatch = false;
             const cards = grid.querySelectorAll('.card');
-            const title = grid.previousElementSibling; 
+            const header = headers[index + 1]; 
+
             cards.forEach(card => {
                 const text = card.innerText.toLowerCase();
                 if (text.includes(query)) {
@@ -878,78 +750,23 @@
                     card.style.display = 'none';
                 }
             });
+
             if (query === '') {
-                title.style.display = 'flex';
+                if(header) header.style.display = 'flex';
                 grid.style.display = 'grid';
             } else {
                 if (hasMatch) {
-                    title.style.display = 'flex';
+                    if(header) header.style.display = 'flex';
                     grid.style.display = 'grid';
                 } else {
-                    title.style.display = 'none';
+                    if(header) header.style.display = 'none';
                     grid.style.display = 'none';
                 }
             }
         });
     }
 
-    window.addEventListener('scroll', () => {
-        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        const scrolled = (winScroll / height) * 100;
-        document.getElementById("scroll-progress").style.width = scrolled + "%";
-    });
-
-    // ==========================================
-    // ۵. نشانگر موس
-    // ==========================================
-    const cursorGlow = document.getElementById('cursorGlow');
-    document.addEventListener('mousemove', (e) => {
-        cursorGlow.style.left = e.clientX + 'px';
-        cursorGlow.style.top = e.clientY + 'px';
-    });
-    document.querySelectorAll('.card, .featured-card, a').forEach(el => {
-        el.addEventListener('mouseenter', () => {
-            cursorGlow.style.width = '60px';
-            cursorGlow.style.height = '60px';
-            cursorGlow.style.backgroundColor = 'var(--border)';
-        });
-        el.addEventListener('mouseleave', () => {
-            cursorGlow.style.width = '30px';
-            cursorGlow.style.height = '30px';
-            cursorGlow.style.backgroundColor = 'transparent';
-        });
-    });
-
-    // ==========================================
-    // ۶. افکت 3D Tilt و هولوگرافیک
-    // ==========================================
-    const cards = document.querySelectorAll('.card');
-    cards.forEach(card => {
-        card.addEventListener('mousemove', e => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            const rotateX = ((y - centerY) / centerY) * -15; 
-            const rotateY = ((x - centerX) / centerX) * 15;
-            
-            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.08)`;
-            
-            // هدایت درخشش هولوگرافیک
-            card.style.setProperty('--mouse-x', `${x}px`);
-            card.style.setProperty('--mouse-y', `${y}px`);
-        });
-        
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = `perspective(1000px) rotateX(0) rotateY(0) scale(1)`;
-        });
-    });
-
-    // ==========================================
-    // ۷. دکمه بازگشت به بالا
-    // ==========================================
+    // دکمه بازگشت به بالا
     const backToTopBtn = document.getElementById('backToTop');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 400) {
@@ -959,116 +776,7 @@
         }
     });
 
-    // ==========================================
-    // ۸. موتور ذرات پس‌زمینه
-    // ==========================================
-    const canvas = document.getElementById('particleCanvas');
-    const ctx = canvas.getContext('2d');
-    let particlesArray;
-    let particleColor = 'rgba(0, 245, 255, 0.6)'; 
-    let lineColorBase = '0, 245, 255'; 
-
-    function updateParticleColors() {
-        if (document.body.classList.contains('light-mode')) {
-            particleColor = 'rgba(0, 85, 255, 0.4)'; 
-            lineColorBase = '0, 85, 255';
-        } else {
-            particleColor = 'rgba(0, 245, 255, 0.6)'; 
-            lineColorBase = '0, 245, 255';
-        }
-        init(); 
-    }
-
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    let mouse = { x: null, y: null, radius: 150 };
-    window.addEventListener('mousemove', (event) => { mouse.x = event.x; mouse.y = event.y; });
-    window.addEventListener('touchmove', (event) => { mouse.x = event.touches[0].clientX; mouse.y = event.touches[0].clientY; });
-
-    class Particle {
-        constructor(x, y, directionX, directionY, size, color) {
-            this.x = x; this.y = y; this.directionX = directionX; this.directionY = directionY;
-            this.size = size; this.color = color;
-        }
-        draw() {
-            ctx.beginPath();
-            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
-            ctx.fillStyle = this.color;
-            ctx.fill();
-        }
-        update() {
-            if (this.x > canvas.width || this.x < 0) this.directionX = -this.directionX;
-            if (this.y > canvas.height || this.y < 0) this.directionY = -this.directionY;
-
-            let dx = mouse.x - this.x;
-            let dy = mouse.y - this.y;
-            let distance = Math.sqrt(dx * dx + dy * dy);
-            if (distance < mouse.radius + this.size) {
-                if (mouse.x < this.x && this.x < canvas.width - this.size * 10) this.x += 10;
-                if (mouse.x > this.x && this.x > this.size * 10) this.x -= 10;
-                if (mouse.y < this.y && this.y < canvas.height - this.size * 10) this.y += 10;
-                if (mouse.y > this.y && this.y > this.size * 10) this.y -= 10;
-            }
-            this.x += this.directionX;
-            this.y += this.directionY;
-            this.draw();
-        }
-    }
-
-    function init() {
-        particlesArray = [];
-        let numberOfParticles = (canvas.height * canvas.width) / 12000;
-        for (let i = 0; i < numberOfParticles; i++) {
-            let size = (Math.random() * 2) + 1;
-            let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2);
-            let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);
-            let directionX = (Math.random() * 1) - 0.5;
-            let directionY = (Math.random() * 1) - 0.5;
-            particlesArray.push(new Particle(x, y, directionX, directionY, size, particleColor));
-        }
-    }
-
-    function connect() {
-        let opacityValue = 1;
-        for (let a = 0; a < particlesArray.length; a++) {
-            for (let b = a; b < particlesArray.length; b++) {
-                let distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x)) + ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
-                if (distance < (canvas.width / 10) * (canvas.height / 10)) {
-                    opacityValue = 1 - (distance / 20000);
-                    ctx.strokeStyle = `rgba(${lineColorBase}, ${opacityValue})`;
-                    ctx.lineWidth = 1;
-                    ctx.beginPath();
-                    ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
-                    ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
-                    ctx.stroke();
-                }
-            }
-        }
-    }
-
-    function animate() {
-        requestAnimationFrame(animate);
-        ctx.clearRect(0, 0, innerWidth, innerHeight);
-        for (let i = 0; i < particlesArray.length; i++) {
-            particlesArray[i].update();
-        }
-        connect();
-    }
-
-    window.addEventListener('resize', () => {
-        canvas.width = innerWidth;
-        canvas.height = innerHeight;
-        init();
-    });
-
-    updateParticleColors(); 
-    animate();
-
-    // ==========================================
-    // ۹. افکت Reveal (ظاهر شدن پلکانی)
-    // ==========================================
-    const revealElements = document.querySelectorAll('.reveal');
+    // انیمیشن ظاهر شدن ملایم
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -1076,9 +784,9 @@
                 revealObserver.unobserve(entry.target); 
             }
         });
-    }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+    }, { threshold: 0.1 });
 
-    revealElements.forEach(el => revealObserver.observe(el));
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 </script>
 </body>
-            </html>
+        </html>
