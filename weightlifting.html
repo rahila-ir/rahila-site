@@ -1,1 +1,446 @@
-<!DOCTYPE html><html lang="fa"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>🏋️ وزنه‌برداری | رهیلا</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial;background:radial-gradient(circle at center,#0a1a1a,#1a4a4a,#66ccaa);color:#fff;text-align:center;padding:15px;min-height:100vh}.header{background:rgba(255,255,255,.08);backdrop-filter:blur(20px);border-radius:25px;padding:20px;margin-bottom:15px}.header h1{color:#ffd700;font-size:22px}.back-btn{display:inline-block;background:rgba(255,255,255,.15);color:#fff;padding:8px 20px;border-radius:20px;text-decoration:none;margin:10px 0;font-size:14px}.section-title{color:#ffd700;font-size:18px;margin:20px 0 10px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.card{background:rgba(255,255,255,.05);border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,.1);text-align:right}.card h3{font-size:15px;color:#ffd700}</style></head><body><div class="header"><h1>🏋️ وزنه‌برداری</h1></div><a href="index.html" class="back-btn">🔙 برگشت</a><div class="section-title">🏋️ اطلاعات</div><div class="grid"><div class="card"><h3>وزنه‌برداری چیست</h3></div><div class="card"><h3>تکنیک‌ها</h3></div><div class="card"><h3>مسابقات</h3></div><div class="card"><h3>باشگاه‌ها</h3></div></div><p style="margin-top:15px"><a href="index.html" style="color:#ffd700">🔙 برگشت</a></p></body></html>
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>راهنمای جامع وزنه‌برداری + ماشین‌حساب 1RM | رهیلاناب</title>
+    <meta name="description" content="همه چیز درباره بدنسازی و وزنه‌برداری؛ از فرم صحیح حرکات تا محاسبه یک تکرار بیشینه (1RM) و برنامه‌ریزی تمرین. راهنمای کامل در رهیلاناب.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏋️‍♂️</text></svg>">
+    
+    <!-- فونت وزیرمتن -->
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+    
+    <style>
+        /* ============== تم‌ها (آهن و آتش) ============== */
+        :root {
+            --bg-main: #0a0a0a;
+            --bg-card: #141414;
+            --text-main: #f5f5f5;
+            --text-muted: #a3a3a3;
+            --primary: #ff4500; /* نارنجی قرمز */
+            --accent: #fbbf24; /* زرد طلایی */
+            --green: #22c55e;
+            --border: #2a2a2a;
+            --shadow: 0 10px 30px rgba(255, 69, 0, 0.15);
+            --gradient: linear-gradient(135deg, #ff4500, #b91c1c);
+        }
+
+        body.light-mode {
+            --bg-main: #f5f5f5;
+            --bg-card: #ffffff;
+            --text-main: #171717;
+            --text-muted: #525252;
+            --primary: #d97706;
+            --accent: #b45309;
+            --border: #e5e5e5;
+            --shadow: 0 10px 30px rgba(217, 119, 6, 0.15);
+            --gradient: linear-gradient(135deg, #d97706, #991b1b);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; transition: background-color 0.3s, color 0.3s; }
+        
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background: radial-gradient(circle at 50% 0%, var(--bg-card), var(--bg-main) 70%);
+            color: var(--text-main);
+            line-height: 1.9;
+            font-size: 17px;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* ============== نوار پیشرفت ============== */
+        #progress-bar {
+            position: fixed; top: 0; left: 0; height: 4px; width: 0%;
+            background: var(--gradient); z-index: 9999;
+            box-shadow: 0 0 15px var(--primary); transition: width 0.1s;
+        }
+
+        /* ============== دکمه‌های شناور ============== */
+        .floating-controls {
+            position: fixed; top: 15px; left: 15px; z-index: 999;
+            display: flex; flex-direction: column; gap: 10px;
+        }
+        
+        .control-btn {
+            background: var(--bg-card); border: 1px solid var(--border);
+            color: var(--text-main); width: 50px; height: 50px;
+            border-radius: 50%; cursor: pointer; font-size: 20px;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: var(--shadow); backdrop-filter: blur(10px); transition: 0.3s;
+        }
+        .control-btn:hover { transform: scale(1.1); color: var(--primary); border-color: var(--primary); }
+        .control-btn.playing { background: var(--primary); color: #fff; }
+
+        /* ============== هدر ============== */
+        .header {
+            background: var(--gradient); color: #fff; padding: 90px 20px 60px;
+            text-align: center; border-radius: 0 0 40px 40px;
+            position: relative; overflow: hidden;
+            box-shadow: 0 10px 40px rgba(255, 69, 0, 0.3);
+        }
+        .header h1 { font-size: clamp(24px, 5vw, 38px); margin-bottom: 10px; position: relative; z-index: 1; font-weight: 900; }
+        .header p { font-size: 16px; opacity: 0.9; position: relative; z-index: 1; font-weight: bold; }
+
+        /* ============== انیمیشن دمبل ============== */
+        .dumbbell-container {
+            height: 120px; display: flex; justify-content: center; align-items: flex-end;
+            margin-bottom: 20px; overflow: hidden;
+        }
+        .dumbbell {
+            font-size: 60px; position: relative; z-index: 2; margin-bottom: 10px;
+            animation: liftWeights 2.5s ease-in-out infinite;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+        }
+        @keyframes liftWeights {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-40px) scale(1.1); }
+        }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; margin-top: -30px; }
+
+        /* ============== کارت‌ها ============== */
+        .card {
+            background: var(--bg-card); border-radius: 24px; padding: 30px;
+            margin-bottom: 30px; box-shadow: var(--shadow); border: 1px solid var(--border);
+        }
+        .card h2 { font-size: 22px; color: var(--primary); margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+
+        /* ============== باکس BLUF ============== */
+        .box-bluf {
+            background: linear-gradient(135deg, rgba(255, 69, 0, 0.1), rgba(185, 28, 28, 0.1));
+            border: 2px solid var(--primary); border-radius: 16px; padding: 25px; margin-bottom: 30px;
+        }
+        .box-bluf h3 { color: var(--primary); font-size: 20px; margin-bottom: 10px; }
+        .box-bluf p { font-weight: bold; font-size: 16px; }
+
+        /* ============== ابزارها ============== */
+        .tool-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        @media (max-width: 768px) { .tool-grid { grid-template-columns: 1fr; } }
+        
+        .tool-box { background: var(--bg-main); padding: 25px; border-radius: 16px; border: 1px dashed var(--primary); }
+        .tool-box h3 { color: var(--accent); margin-bottom: 15px; font-size: 18px; text-align: center; }
+        
+        .input-group { margin-bottom: 15px; }
+        .input-group label { display: block; font-size: 14px; margin-bottom: 5px; color: var(--text-muted); font-weight: bold; }
+        .input-group input, .input-group select {
+            width: 100%; padding: 12px; border-radius: 10px; border: 1px solid var(--border);
+            background: var(--bg-card); color: var(--text-main); font-family: inherit; font-size: 16px; outline: none;
+        }
+        .input-group input:focus, .input-group select:focus { border-color: var(--primary); box-shadow: 0 0 10px rgba(255,69,0,0.3); }
+
+        .btn-calc {
+            width: 100%; background: var(--gradient); color: #fff; padding: 12px; border-radius: 10px; border: none;
+            font-weight: bold; font-family: inherit; font-size: 16px; cursor: pointer; transition: 0.3s; margin-top: 10px;
+        }
+        .btn-calc:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(255, 69, 0, 0.4); }
+
+        .result-box {
+            display: none; margin-top: 15px; padding: 15px; background: rgba(255, 69, 0, 0.05);
+            border-right: 4px solid var(--green); border-radius: 8px;
+            font-size: 15px; line-height: 1.8; color: var(--text-main); animation: fadeIn 0.5s;
+        }
+        .result-box strong { color: var(--primary); font-size: 20px; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        /* ============== جدول ============== */
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 15px; border-radius: 12px; overflow: hidden; }
+        th { background: var(--primary); color: #fff; padding: 15px; text-align: center; font-weight: 900; }
+        td { padding: 12px; text-align: center; border-bottom: 1px solid var(--border); background: var(--bg-card); font-weight: 500; }
+        tr:hover td { background: var(--bg-main); color: var(--primary); }
+
+        /* ============== آکاردئون ============== */
+        .accordion { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 12px; overflow: hidden; }
+        .accordion-btn { background: none; border: none; width: 100%; padding: 18px; text-align: right; font-family: inherit; font-size: 16px; font-weight: bold; color: var(--text-main); cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .accordion-btn:hover { color: var(--primary); }
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; padding: 0 18px; color: var(--text-muted); font-size: 15px; }
+        .accordion.active .accordion-content { max-height: 500px; padding-bottom: 18px; }
+        .arrow { transition: transform 0.3s; color: var(--accent); }
+        .accordion.active .arrow { transform: rotate(180deg); }
+
+        .footer { text-align: center; padding: 30px; color: var(--text-muted); font-size: 14px; border-top: 1px solid var(--border); margin-top: 40px; }
+        .footer a { color: var(--primary); text-decoration: none; }
+
+        /* ============== انیمیشن اسکرول ============== */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<div class="floating-controls">
+    <button class="control-btn" id="tts-btn" onclick="toggleSpeech()" title="گوش دادن">
+        <span id="tts-icon">🔊</span>
+    </button>
+    <button class="control-btn" onclick="toggleTheme()" title="تاریک/روشن">
+        <span id="theme-icon">🌙</span>
+    </button>
+</div>
+
+<div class="header">
+    <div class="dumbbell-container">
+        <div class="dumbbell">🏋️‍♂️</div>
+    </div>
+    <h1>🏋️‍♂️ قدرت آهن</h1>
+    <p>راهنمای جامع وزنه‌برداری، فیتنس و علم تمرین</p>
+</div>
+
+<div class="container" id="main-content">
+
+    <!-- BLUF -->
+    <div class="card box-bluf reveal">
+        <h3>⚡ جواب سریع در ۳ خط:</h3>
+        <p>
+            ۱. برای رشد عضلات (هایپرتروفی)، وزنه‌ای انتخاب کنید که در محدوده <strong>۸ تا ۱۲ تکرار</strong> خسته شوید.<br>
+            ۲. برای افزایش قدرت، از وزنه‌های سنگین‌تر و محدوده <strong>۳ تا ۵ تکرار</strong> استفاده کنید.<br>
+            ۳. مهم‌ترین اصل در وزنه‌برداری <strong>اضافه بار تدریجی (Progressive Overload)</strong> است؛ یعنی هر هفته باید وزنه، تکرار یا کیفیت تمرین را کمی بهبود دهید.
+        </p>
+    </div>
+
+    <!-- ابزارهای هوشمند -->
+    <div class="card reveal">
+        <h2>🧮 ابزارهای تمرینی</h2>
+        <div class="tool-grid">
+            
+            <!-- محاسبه 1RM -->
+            <div class="tool-box">
+                <h3>📊 ماشین‌حساب یک تکرار بیشینه (1RM)</h3>
+                <p style="font-size: 14px; margin-bottom: 15px; color: var(--text-muted); text-align: center;">حداکثر قدرت خود را بر اساس فرمول علمی Epley محاسبه کنید:</p>
+                <div class="input-group">
+                    <label>وزنه بلند شده (کیلوگرم):</label>
+                    <input type="number" id="lift-weight" placeholder="مثلاً 80" min="1" max="500">
+                </div>
+                <div class="input-group">
+                    <label>تعداد تکرار انجام شده:</label>
+                    <input type="number" id="lift-reps" placeholder="مثلاً 8" min="1" max="15">
+                </div>
+                <button class="btn-calc" onclick="calc1RM()">📊 محاسبه توان</button>
+                <div class="result-box" id="rm-result"></div>
+            </div>
+
+            <!-- برنامه‌ریز ست و تکرار -->
+            <div class="tool-box">
+                <h3>🎯 برنامه‌ریز ست و تکرار</h3>
+                <div class="input-group">
+                    <label>هدف اصلی شما:</label>
+                    <select id="goal">
+                        <option value="strength">💪 قدرت (قدرت‌های بالا)</option>
+                        <option value="hypertrophy">🔥 حجم عضلانی (بدنسازی)</option>
+                        <option value="endurance">🏃 استقامت و کات کردن</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>سطح تجربه:</label>
+                    <select id="experience">
+                        <option value="beginner">🌱 مبتدی (کمتر از ۱ سال)</option>
+                        <option value="intermediate">🌿 متوسط (۱ تا ۳ سال)</option>
+                        <option value="advanced">🌳 حرفه‌ای (بیش از ۳ سال)</option>
+                    </select>
+                </div>
+                <button class="btn-calc" onclick="calcProgram()">🎯 دریافت برنامه</button>
+                <div class="result-box" id="program-result"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- جدول مقایسه -->
+    <div class="card reveal">
+        <h2>⚖️ حرکات ترکیبی vs حرکات تک‌مفصلی</h2>
+        <table>
+            <thead>
+                <tr><th>ویژگی</th><th>ترکیبی (Compound)</th><th>تک‌مفصلی (Isolation)</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>تعداد عضلات درگیر</strong></td><td>چندین عضله (مثل اسکوات)</td><td>فقط یک عضله (مثل جلوبازو)</td></tr>
+                <tr><td><strong>مصرف کالری</strong></td><td style="color: var(--green); font-weight: bold;">بسیار بالا</td><td style="color: var(--warning); font-weight: bold;">کم</td></tr>
+                <tr><td><strong>مناسب برای</strong></td><td>افزایش قدرت و حجم کلی</td><td>اصلاح فرم و تقویت نقاط ضعف</td></tr>
+                <tr><td><strong>مثال</strong></td><td>اسکوات، ددلیفت، پرس سینه</td><td>جلو بازو، پشت بازو، نشر از جانب</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- آکاردئون -->
+    <div class="card reveal">
+        <h2>🛡️ نکات حیاتی فرم و ایمنی</h2>
+        
+        <div class="accordion">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+                چرا گرم کردن (Warm-up) الزامی است؟
+                <span class="arrow">▼</span>
+            </button>
+            <div class="accordion-content">
+                گرم کردن با وزنه‌های سبک و حرکات کششی دینامیک، جریان خون را به عضلات افزایش می‌دهد و مفاصل را برای تحمل فشار آماده می‌کند. هرگز با وزنه سنگین و بدن سرد شروع نکنید؛ این کار اصلی‌ترین دلیل آسیب‌های عضلانی و پارگی تاندون است.
+            </div>
+        </div>
+
+        <div class="accordion">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+                تنفس صحیح هنگام بلند کردن وزنه چگونه است؟
+                <span class="arrow">▼</span>
+            </button>
+            <div class="accordion-content">
+                قاعده کلی این است: هنگام <strong>تلاش اصلی (بالا بردن وزنه)</strong> عمل بازدم (نفس را بیرون بدهید) و هنگام <strong>پایین آوردن وزنه</strong> عمل دم (نفس بکشید). هرگز در حین اجرای سنگین‌ترین بخش حرکت، نفس خود را حبس نکنید (مگر برای ثانیه‌ای در حرکات قدرتی حرفه‌ای)، چون باعث افزایش شدید فشار خون می‌شود.
+            </div>
+        </div>
+    </div>
+
+    <div class="card reveal" style="text-align: center;">
+        <h2>🔗 صفحات مرتبط</h2>
+        <p>
+            <a href="sport.html" class="btn-calc" style="display:inline-block; width:auto; margin:5px; text-decoration:none;">🏅 ورزش</a>
+            <a href="gym.html" class="btn-calc" style="display:inline-block; width:auto; margin:5px; text-decoration:none;">🏋️ باشگاه</a>
+            <a href="bodybuilding.html" class="btn-calc" style="display:inline-block; width:auto; margin:5px; text-decoration:none;">💪 پرورش اندام</a>
+        </p>
+    </div>
+
+</div>
+
+<div class="footer">
+    <p>🌟 <strong>رهیلاناب</strong> - <a href="index.html">خانه</a> | <a href="sport.html">ورزش</a></p>
+    <p>© ۲۰۲۶ rahilanab.com | با قدرت، مرزها را جابجا کن.</p>
+</div>
+
+<script>
+    // =============== ۱. نوار پیشرفت ===============
+    window.onscroll = function() {
+        var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var scrolled = (winScroll / height) * 100;
+        document.getElementById("progress-bar").style.width = scrolled + "%";
+    };
+
+    // =============== ۲. تم تاریک/روشن ===============
+    function toggleTheme() {
+        document.body.classList.toggle('light-mode');
+        const isLight = document.body.classList.contains('light-mode');
+        document.getElementById('theme-icon').innerText = isLight ? '☀️' : '🌙';
+        localStorage.setItem('weightTheme', isLight);
+    }
+    if (localStorage.getItem('weightTheme') === 'true') { toggleTheme(); }
+
+    // =============== ۳. پخش صوتی (TTS) ===============
+    let isSpeaking = false;
+    let voices = [];
+    function loadVoices() { voices = window.speechSynthesis.getVoices(); }
+    if (typeof speechSynthesis !== 'undefined' && speechSynthesis.onvoiceschanged !== undefined) { speechSynthesis.onvoiceschanged = loadVoices; }
+
+    function toggleSpeech() {
+        if (isSpeaking) {
+            window.speechSynthesis.cancel();
+            isSpeaking = false;
+            document.getElementById('tts-icon').innerText = '🔊';
+            document.getElementById('tts-btn').classList.remove('playing');
+            return;
+        }
+        const mainText = document.getElementById('main-content').innerText;
+        const speech = new SpeechSynthesisUtterance(mainText);
+        speech.lang = 'fa-IR';
+        const persianVoice = voices.find(v => v.lang.includes('fa') || v.lang === 'fa-IR');
+        if (persianVoice) speech.voice = persianVoice;
+        speech.onend = function() {
+            isSpeaking = false;
+            document.getElementById('tts-icon').innerText = '🔊';
+            document.getElementById('tts-btn').classList.remove('playing');
+        };
+        window.speechSynthesis.speak(speech);
+        isSpeaking = true;
+        document.getElementById('tts-icon').innerText = '⏹️';
+        document.getElementById('tts-btn').classList.add('playing');
+    }
+
+    // =============== ۴. آکاردئون ===============
+    function toggleAccordion(btn) { btn.parentElement.classList.toggle('active'); }
+
+    // =============== ۵. محاسبه 1RM (فرمول Epley) ===============
+    function calc1RM() {
+        const weight = parseFloat(document.getElementById('lift-weight').value);
+        const reps = parseInt(document.getElementById('lift-reps').value);
+        const resultBox = document.getElementById('rm-result');
+
+        if (!weight || weight < 1) {
+            alert('لطفاً وزن وزنه را وارد کنید.');
+            return;
+        }
+        if (!reps || reps < 1 || reps > 15) {
+            alert('تعداد تکرار باید بین ۱ تا ۱۵ باشد (برای دقت بیشتر فرمول).');
+            return;
+        }
+
+        // فرمول Epley برای محاسبه 1RM
+        const max1RM = Math.round(weight * (1 + (reps / 30)));
+        
+        // محاسبه درصدهای تمرینی
+        const p90 = Math.round(max1RM * 0.9);
+        const p80 = Math.round(max1RM * 0.8);
+        const p70 = Math.round(max1RM * 0.7);
+
+        resultBox.innerHTML = `
+            یک تکرار بیشینه (1RM) شما: <strong>${max1RM} کیلوگرم</strong><br><br>
+            <strong>درصدهای پیشنهادی تمرین:</strong><br>
+            - برای قدرت (۳ تکرار): ${p90} کیلوگرم<br>
+            - برای حجم (۸ تکرار): ${p80} کیلوگرم<br>
+            - برای استقامت (۱۲ تکرار): ${p70} کیلوگرم
+        `;
+        resultBox.style.display = 'block';
+    }
+
+    // =============== ۶. برنامه‌ریز ست و تکرار ===============
+    function calcProgram() {
+        const goal = document.getElementById('goal').value;
+        const exp = document.getElementById('experience').value;
+        const resultBox = document.getElementById('program-result');
+        
+        let sets = '';
+        let reps = '';
+        let rest = '';
+        let note = '';
+
+        if (goal === 'strength') {
+            if (exp === 'beginner') { sets = '۳ ست'; reps = '۵ تکرار'; rest = '۲ تا ۳ دقیقه'; }
+            else if (exp === 'intermediate') { sets = '۴ ست'; reps = '۳ تا ۵ تکرار'; rest = '۳ دقیقه'; }
+            else { sets = '۵ ست'; reps = '۱ تا ۳ تکرار'; rest = '۳ تا ۵ دقیقه'; }
+            note = 'تمرکز روی وزنه‌های سنگین و فرم صحیح باشد.';
+        } else if (goal === 'hypertrophy') {
+            if (exp === 'beginner') { sets = '۳ ست'; reps = '۱۰ تا ۱۲ تکرار'; rest = '۱ دقیقه'; }
+            else if (exp === 'intermediate') { sets = '۴ ست'; reps = '۸ تا ۱۲ تکرار'; rest = '۱ تا ۱.۵ دقیقه'; }
+            else { sets = '۴ تا ۵ ست'; reps = '۸ تا ۱۲ تکرار'; rest = '۱ دقیقه'; }
+            note = 'تمرکز روی احساس سوزش عضله (تحریک مکانیکی) باشد.';
+        } else { // Endurance
+            if (exp === 'beginner') { sets = '۲ ست'; reps = '۱۵ تا ۲۰ تکرار'; rest = '۳۰ تا ۴۵ ثانیه'; }
+            else if (exp === 'intermediate') { sets = '۳ ست'; reps = '۱۵ تا ۲۰ تکرار'; rest = '۳۰ ثانیه'; }
+            else { sets = '۳ تا ۴ ست'; reps = '۲۰ تکرار به بالا'; rest = '۳۰ ثانیه'; }
+            note = 'تمرکز روی کاهش استراحت و ضربان قلب بالا باشد.';
+        }
+
+        resultBox.innerHTML = `
+            برنامه پیشنهادی برای <strong>${goal === 'strength' ? 'قدرت' : goal === 'hypertrophy' ? 'حجم' : 'استقامت'}</strong>:<br><br>
+            🔹 تعداد ست: ${sets}<br>
+            🔹 تعداد تکرار: ${reps}<br>
+            🔹 استراحت بین ست‌ها: ${rest}<br><br>
+            <em style="color: var(--accent);">${note}</em>
+        `;
+        resultBox.style.display = 'block';
+    }
+
+    // =============== ۷. انیمیشن اسکرول ===============
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach(el => {
+        revealObserver.observe(el);
+    });
+
+    loadVoices();
+</script>
+
+</body>
+  </html>
