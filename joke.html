@@ -3,50 +3,610 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>😄 جوک | لطیفه‌های خنده‌دار ایرانی | rahilanab.com</title>
-    <meta name="description" content="جوک و لطیفه خنده‌دار ایرانی — بهترین جوک‌های کوتاه و بلند">
-    <meta name="keywords" content="جوک, لطیفه, جوک خنده دار, rahilanab">
+    <title>😄 کلوپ خنده | جوک و لطیفه | رهیلاناب</title>
+    <meta name="description" content="بهترین و خنده‌دارترین جوک‌های ایرانی. با قابلیت پخش صوتی و کپی آسان. رهیلاناب، دنیایی از خنده!">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>😂</text></svg>">
+    
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+    
     <style>
-        *{margin:0;padding:0;box-sizing:border-box}body{font-family:'Arial';background:linear-gradient(135deg,#e3f2fd,#bbdefb,#90caf9,#a5d6a7);color:#000;text-align:center;padding:10px;min-height:100vh}.header{background:#fff;border-radius:20px;padding:20px;margin-bottom:12px;box-shadow:0 4px 15px rgba(0,0,0,.1)}.header h1{color:#0d47a1;font-size:28px}.header p{color:#000;font-size:18px;font-weight:bold}.full-card{background:#fff;border-radius:15px;padding:22px;margin:14px 0;box-shadow:0 2px 10px rgba(0,0,0,.08);text-align:right;line-height:2.4}.full-card h2{color:#0d47a1;font-size:22px;margin-bottom:12px;text-align:center;border-bottom:2px solid #e3f2fd;padding-bottom:10px}.full-card p{color:#000;font-size:17px;font-weight:bold;margin:10px 0}.joke-box{background:#f8fbff;border-right:4px solid #0d47a1;padding:12px;margin:8px 0;border-radius:8px;text-align:right}.joke-box p{color:#000;font-size:16px;font-weight:bold}.golden-box{background:linear-gradient(135deg,#fff8e1,#ffe082,#ffd54f);border-right:5px solid #ff8f00;padding:18px;border-radius:12px;margin:18px 0}.golden-box p{color:#000;font-size:17px;font-weight:bold}.back-btn{display:inline-block;background:#0d47a1;color:#fff;padding:12px 26px;border-radius:22px;text-decoration:none;margin:12px 0;font-weight:bold;font-size:17px}.footer{background:#fff;padding:14px;margin-top:14px;font-size:14px;color:#000;border-radius:15px;font-weight:bold}</style>
+        /* ============== تم‌ها ============== */
+        :root {
+            --bg-main: #0b0512;
+            --bg-card: rgba(30, 15, 45, 0.7);
+            --text-main: #f8fafc;
+            --text-muted: #d8b4fe;
+            --primary: #ff00aa;
+            --accent: #00f5ff;
+            --gold: #ffcc00;
+            --border: rgba(255, 0, 170, 0.3);
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            --gradient: linear-gradient(135deg, #ff00aa, #00f5ff);
+        }
+
+        body.light-mode {
+            --bg-main: #fdf2f8;
+            --bg-card: rgba(255, 255, 255, 0.9);
+            --text-main: #4c0519;
+            --text-muted: #9d174d;
+            --primary: #be185d;
+            --accent: #0891b2;
+            --gold: #b45309;
+            --border: rgba(190, 24, 93, 0.2);
+            --shadow: 0 10px 30px rgba(190, 24, 93, 0.1);
+            --gradient: linear-gradient(135deg, #be185d, #0891b2);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; transition: background-color 0.3s, color 0.3s; }
+        
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background: radial-gradient(circle at 50% 0%, var(--bg-card), var(--bg-main) 80%);
+            color: var(--text-main);
+            line-height: 1.9;
+            font-size: 17px;
+            min-height: 100vh;
+            padding-bottom: 50px;
+        }
+
+        .header {
+            position: sticky; top: 0; z-index: 1000;
+            background: rgba(11, 5, 18, 0.85); backdrop-filter: blur(15px);
+            padding: 15px 20px; border-bottom: 1px solid var(--border);
+            display: flex; justify-content: space-between; align-items: center;
+            box-shadow: var(--shadow);
+        }
+        body.light-mode .header { background: rgba(255, 255, 255, 0.85); }
+        
+        .header-title { display: flex; flex-direction: column; }
+        .header h1 { font-size: 22px; font-weight: 900; background: var(--gradient); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .header p { font-size: 12px; color: var(--text-muted); font-weight: bold; }
+        
+        .controls { display: flex; gap: 10px; }
+        .ctrl-btn {
+            background: var(--bg-card); border: 1px solid var(--border); color: var(--text-main);
+            width: 40px; height: 40px; border-radius: 50%; cursor: pointer; font-size: 18px;
+            display: flex; justify-content: center; align-items: center; transition: 0.3s;
+        }
+        .ctrl-btn:hover { transform: scale(1.1); border-color: var(--primary); }
+
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
+
+        .joke-card {
+            background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px;
+            padding: 25px; margin-bottom: 20px; box-shadow: var(--shadow);
+            backdrop-filter: blur(10px); position: relative;
+            display: flex; flex-direction: column; gap: 15px;
+            transform: translateY(20px); opacity: 0;
+            animation: fadeInUp 0.5s forwards;
+        }
+
+        @keyframes fadeInUp { to { transform: translateY(0); opacity: 1; } }
+
+        .joke-card:hover { border-color: var(--primary); box-shadow: 0 10px 30px var(--border); }
+
+        .joke-text {
+            font-size: 17px; font-weight: 600; line-height: 2.2; text-align: justify;
+        }
+
+        .joke-emojis {
+            position: absolute; top: -15px; right: 20px;
+            font-size: 30px; background: var(--bg-main); padding: 0 10px;
+            border-radius: 10px; filter: drop-shadow(0 0 10px var(--border));
+        }
+
+        .joke-actions {
+            display: flex; justify-content: flex-end; gap: 10px;
+            border-top: 1px dashed var(--border); padding-top: 15px; margin-top: 5px;
+        }
+
+        .action-btn {
+            background: rgba(255,255,255,0.05); border: 1px solid var(--border);
+            color: var(--text-main); padding: 8px 15px; border-radius: 10px;
+            font-family: inherit; font-size: 13px; font-weight: bold; cursor: pointer;
+            display: flex; align-items: center; gap: 5px; transition: 0.2s;
+        }
+        body.light-mode .action-btn { background: rgba(0,0,0,0.05); }
+        
+        .action-btn:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
+        .action-btn.speaking { background: var(--accent); color: #000; border-color: var(--accent); animation: pulse 1.5s infinite; }
+        
+        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.6; } 100% { opacity: 1; } }
+
+        .back-btn {
+            display: block; width: fit-content; margin: 30px auto;
+            background: var(--gradient); color: #fff; text-decoration: none;
+            padding: 12px 30px; border-radius: 30px; font-weight: bold; font-size: 16px;
+            box-shadow: 0 5px 20px var(--border); transition: 0.3s;
+        }
+        .back-btn:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 25px var(--primary); }
+
+        .footer { text-align: center; padding: 30px; color: var(--text-muted); font-size: 13px; }
+
+        #toast {
+            position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%) translateY(100px);
+            background: var(--primary); color: #fff; padding: 12px 25px; border-radius: 30px;
+            font-weight: bold; font-size: 14px; box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); z-index: 9999;
+        }
+        #toast.show { transform: translateX(-50%) translateY(0); }
+
+        @media(max-width: 600px) {
+            .joke-card { padding: 20px 15px; }
+            .joke-text { font-size: 15px; }
+        }
+    </style>
 </head>
 <body>
-<div class="header"><h1>😄 جوک</h1><p>لطیفه‌های خنده‌دار ایرانی | rahilanab.com</p></div>
 
-<div class="full-card">
-    <h2>🤣 جوک‌های با نمک</h2>
-
-    <div class="joke-box"><p>۱. 🧔 رفتم آرایشگاه، آرایشگر می‌گه: «موهات خیلی ریخته.» می‌گم: «راه حل داره؟» می‌گه: «آره، یه کلاه قشنگ بهت می‌فروشم!»</p></div>
-
-    <div class="joke-box"><p>۲. 🏪 یارو میره سوپرمارکت: «آقا این پنیره؟» فروشنده: «نه، این موشه که پنیر رو خورده و الان داره نگاهت می‌کنه!»</p></div>
-
-    <div class="joke-box"><p>۳. 📱 با مامانم تماس می‌گیرم: «مامان، غذا چی داریم؟» می‌گه: «هیچی، بیا خونه خودت ببین!» می‌گم: «من که خونه نیستم.» می‌گه: «پس چطوری می‌خوای غذا بخوری؟!»</p></div>
-
-    <div class="joke-box"><p>۴. 💰 به بابام می‌گم: «بابا ۲۰۰ تومن بده برم سینما.» می‌گه: «۲۰۰ تومن؟! قدیما ما با ۲ تومن سینما می‌رفتیم!» می‌گم: «آره، ولی الان دیگه گاری‌سواری ممنوعه!»</p></div>
-
-    <div class="joke-box"><p>۵. 🍳 زنم غذا رو سوزونده. می‌گه: «عزیزم ببخشید، یه کم زیادی سرخ شد.» می‌گم: «اشکال نداره، مگه ما سطل آشغال نداریم؟»</p></div>
-
-    <div class="joke-box"><p>۶. 🎂 روز تولدمه، دوستم می‌گه: «چند سالته؟» می‌گم: «حدس بزن.» می‌گه: «۳۰؟» می‌گم: «نه!» می‌گه: «پس بگو خودت.» می‌گم: «نمی‌گم، ۳۰ رو گفتی دیگه!»</p></div>
-
-    <div class="joke-box"><p>۷. 🚗 راننده تاکسی: «کجا می‌ری؟» مسافر: «تهران.» راننده: «تهران کجاش؟» مسافر: «اونجایی که ماشین خاموش می‌کنی دیگه!»</p></div>
-
-    <div class="joke-box"><p>۸. 🧑‍🏫 معلم: «اگه ۱۰ تا پرنده روی سیم باشن و ۳ تاشون پرواز کنن، چند تا می‌مونه؟» شاگرد: «هیچی! چون بقیه هم می‌پرن!» معلم: «غلطه، ولی از طرز فکرت خوشم اومد!»</p></div>
-
-    <div class="joke-box"><p>۹. 💻 می‌رم کافی‌نت: «اینترنت قطع شده؟» مسئول: «نه، فقط Wi-Fi رو خاموش کردم.» می‌گم: «چرا؟» می‌گه: «چون مشتری‌ها فقط می‌اومدن اینستاگرام چک می‌کردن، کافی‌نت رو به هم ریخته بودن!»</p></div>
-
-    <div class="joke-box"><p>۱۰. 🏥 دکتر: «شما استرس داری. باید یه کاری کنی که آرومت کنه.» مریض: «مثل چی؟» دکتر: «مثلاً برو پیش یه روانشناس.» مریض: «نمیشه، پول ندارم.» دکتر: «پس خودتم دیدی چقدر استرس داری!»</p></div>
-
-    <div class="joke-box"><p>۱۱. 👶 بچه‌ام می‌گه: «بابا، من از کجا اومدم؟» می‌گم: «لک‌لک تو رو آورده.» می‌گه: «بابا دروغ نگو، مامان می‌گه تو منو از شیرینی‌فروشی آوردی!»</p></div>
-
-    <div class="joke-box"><p>۱۲. 🛒 زن و شوهر میرن خرید. زن: «اینو ببین، چقدر قشنگه!» مرد: «قیمتش رو نگاه کن!» زن: «قیمت مهم نیست، قشنگی مهمه!» مرد: «پس چرا با من ازدواج کردی؟!»</p></div>
-
-    <div class="joke-box"><p>۱۳. 📞 زنگ می‌زنم به پشتیبانی: «اینترنت من قطعه.» می‌گه: «مودم رو خاموش روشن کن.» می‌گم: «کردم.» می‌گه: «کابل رو چک کن.» می‌گم: «کردم.» می‌گه: «پس مشکل از ما نیست، خداحافظ!»</p></div>
-
-    <div class="joke-box"><p>۱۴. 🐔 یه مرغه میره پیش روانشناس: «من فکر می‌کنم هیچ‌کس منو درک نمی‌کنه.» روانشناس: «چرا اینطور فکر می‌کنی؟» مرغه: «چون من فقط قدقدقد می‌کنم و همه فکر می‌کنن دارم آواز می‌خونم!»</p></div>
-
-    <div class="joke-box"><p>۱۵. 😴 ساعت ۳ صبح زنم بیدارم می‌کنه: «صدای عجیبی از آشپزخونه میاد!» می‌گم: «خب برو ببین.» می‌گه: «من می‌ترسم!» می‌گم: «پس منو چرا بیدار کردی، مگه من شجاعم؟!»</p></div>
-
-    <div class="golden-box"><p>🟡 یه جوک خوب = یه روز خوب! 😄</p></div>
+<div class="header">
+    <div class="header-title">
+        <h1>😄 کلوپ خنده</h1>
+        <p>رهیلاناب | ۳۰ جوک به‌روز و بامزه</p>
+    </div>
+    <div class="controls">
+        <button class="ctrl-btn" onclick="toggleTheme()" id="theme-btn">🌙</button>
+    </div>
 </div>
 
-<a href="index.html" class="back-btn">🔙 خانه</a>
-<div class="footer"><p>🌟 rahilanab.com</p></div></body></html>
+<div class="container">
+
+    <!-- جوک ۱ -->
+    <div class="joke-card" style="animation-delay: 0.1s;">
+        <div class="joke-emojis">🤖👵</div>
+        <div class="joke-text" id="joke-1">
+            مامانم بهم گفت: «چرا اینقدر گوشیت دستته؟» گفتم: «دارم با هوش مصنوعی حرف می‌زنم.» گفت: «خب بهش بگو بیاد ظرف‌ها رو بشوره!»
+        </div>
+        <div class="joke-actions">
+            <button class="action-btn" onclick="speakJoke('joke-1', this)">🔊 پخش صوتی</button>
+            <button class="action-btn" onclick="copyJoke('joke-1')">📋 کپی</button>
+        </div>
+    </div>
+
+    <!-- جوک ۲ -->
+    <div class="joke-card" style="animation-delay: 0.2s;">
+        <div class="joke-emojis">📞📶</div>
+        <div class="joke-text" id="joke-2">
+            به پشتیبانی اینترنت زنگ زدم، میگم: «اینترنت من قطعه.» میگه: «روتر رو خاموش روشن کنید.» کردم، گفت: «کابل رو چک کنید.» کردم، گفت: «خب پس مشکل از ما نیست.» گفتم: «پس از کیه؟ از همسایه‌ست؟!»
+        </div>
+        <div class="joke-actions">
+            <button class="action-btn" onclick="speakJoke('joke-2', this)">🔊 پخش صوتی</button>
+            <button class="action-btn" onclick="copyJoke('joke-2')">📋 کپی</button>
+        </div>
+    </div>
+
+    <!-- جوک ۳ -->
+    <div class="joke-card" style="animation-delay: 0.3s;">
+        <div class="joke-emojis">💍🛒</div>
+        <div class="joke-text" id="joke-3">
+            زنم تو مغازه گفت: «عزیزم، این لباس رو ببین چقدر قشنگه!» گفتم: «قیمتش رو هم ببین!» گفت: «قیمت مهم نیست، قشنگی مهمه.» گفتم: «پس چرا با من ازدواج کردی؟!»
+        </div>
+        <div class="joke-actions">
+            <button class="action-btn" onclick="speakJoke('joke-3', this)">🔊 پخش صوتی</button>
+            <button class="action-btn" onclick="copyJoke('joke-3')">📋 کپی</button>
+        </div>
+    </div>
+
+    <!-- جوک ۴ -->
+    <div class="joke-card" style="animation-delay: 0.4s;">
+        <div class="joke-emojis">👨‍⚕️🥗</div>
+        <div class="joke-text" id="joke-4">
+            دکتر به مریضش گفت: «باید رژیم بگیری، فقط سبزیجات و میوه بخور.» مریض با خوشحالی پرسید: «دقیقاً چه پیتزایی اجازه دارم بخورم؟!»
+        </div>
+        <div class="joke-actions">
+            <button class="action-btn" onclick="speakJoke('joke-4', this)">🔊 پخش صوتی</button>
+            <button class="action-btn" onclick="copyJoke('joke-4')">📋 کپی</button>
+        </div>
+    </div>
+
+    <!-- جوک ۵ -->
+    <div class="joke-card" style="animation-delay: 0.5s;">
+        <div class="joke-emojis">🚗🔧</div>
+        <div class="joke-text" id="joke-5">
+            رفتم تعمیرگاه، گفتم: «ماشینم صدای عجیبی میده.» مکانیک گفت: «چی میگه؟» گفتم: «میگه کمکم کن، دیگه طاقت ندارم!»
+        </div>
+        <div class="joke-actions">
+            <button class="action-btn" onclick="speakJoke('joke-5', this)">🔊 پخش صوتی</button>
+            <button class="action-btn" onclick="copyJoke('joke-5')">📋 کپی</button>
+        </div>
+    </div>
+
+    <!-- جوک ۶ -->
+    <div class="joke-card" style="animation-delay: 0.6s;">
+        <div class="joke-emojis">🍳💨</div>
+        <div class="joke-text" id="joke-6">
+            زنم غذا رو سوزونده بود. با خجالت گفت: «عزیزم ببخشید، یه کم زیادی سرخ شد.» گفتم: «اشکال نداره عزیزم، مگه ما سطل زباله نداریم؟» (البته اینو تو دلم گفتم!)
+        </div>
+        <div class="joke-actions">
+            <button class="action-btn" onclick="speakJoke('joke-6', this)">🔊 پخش صوتی</button>
+            <button class="action-btn" onclick="copyJoke('joke-6')">📋 کپی</button>
+        </div>
+    </div>
+
+    <!-- جوک ۷ -->
+    <div class="joke-card" style="animation-delay: 0.7s;">
+        <div class="joke-emojis">👶🍬</div>
+        <div class="joke-text" id="joke-7">
+            بچه‌ام پرسید: «بابا، من از کجا اومدم؟» گفتم: «لک‌لک تو رو آورده.» گفت: «پس چرا مامان میگه من رو از شیرینی‌فروشی خریده؟» گفتم: «چون لک‌لک‌ها هم دیگه رایگان نیستن!»
+        </div>
+        <div class="joke-actions">
+            <button class="action-btn" onclick="speakJoke('joke-7', this)">🔊 پخش صوتی</button>
+            <button class="action-btn" onclick="copyJoke('joke-7')">📋 کپی</button>
+        </div>
+    </div>
+
+    <!-- جوک ۸ -->
+    <div class="joke-card" style="animation-delay: 0.8s;">
+        <div class="joke-emojis">💼💸</div>
+        <div class="joke-text" id="joke-8">
+            رئیس به کارمندش گفت: «چرا دیر اومدی؟» کارمند گفت: «چون توی راه یه تابلویی دیدم که نوشته بود: به کار خود ادامه دهید. منم ادامه دادم و رسیدم خونه!»
+        </div>
+        <div class="joke-actions">
+            <button class="action-btn" onclick="speakJoke('joke-8', this)">🔊 پخش صوتی</button>
+            <button class="action-btn" onclick="copyJoke('joke-8')">📋 کپی</button>
+        </div>
+    </div>
+
+    <!-- جوک ۹ -->
+    <div class="joke-card" style="animation-delay: 0.9s;">
+        <div class="joke-emojis">🛒🥚</div>
+        <div class="joke-text" id="joke-9">
+            تو سوپرمارکت یه بسته تخم‌مرغ برداشتم. فروشنده گفت: «این‌ها رو تازه آوردن.» گفتم: «خب، بهشون خوش بگذره!»
+        </div>
+        <div class="joke-actions">
+            <button class="action-btn" onclick="speakJoke('joke-9', this)">🔊 پخش صوتی</button>
+            <button class="action-btn" onclick="copyJoke('joke-9')">📋 کپی</button>
+        </div>
+    </div>
+
+    <!-- جوک ۱۰ -->
+    <div class="joke-card" style="animation-delay: 1.0s;">
+        <div class="joke-emojis">🤖🧠</div>
+        <div class="joke-text" id="joke-10">
+            یه ربات و یه انسان با هم از یه پل رد می‌شدن. ربات با افتخار گفت: «من ۲۰۰۰ تا زبان بلدم!» انسان گفت: «منم بلدم.» ربات پرسید: «کدوم؟» انسان گفت: «زبان سکوت، زبان نگاه، زبان اشک و زبان دل!»
+        </div>
+        <div class="joke-actions">
+            <button class="action-btn" onclick="speakJoke('joke-10', this)">🔊 پخش صوتی</button>
+            <button class="action-btn" onclick="copyJoke('joke-10')">📋 کپی</button>
+        </div>
+    </div>
+
+    <!-- جوک ۱۱ -->
+    <div class="joke-card" style="animation-delay: 1.1s;">
+        <div class="joke-emojis">⏰😴</div>
+        <div class="joke-text" id="joke-11">
+            دیشب ساعت ۳ صبح بود، زنم بیدارم کرد گفت: «یه صدای عجیبی از آشپزخونه میاد.» گفتم: «خب برو ببین چیه.» گفت: «می‌ترسم!» گفتم: «خب منم می‌ترسم، تازه من الان خوابم میاد!»
+        </div>
+        <div class="joke-actions">
+            <button class="action-btn" onclick="speakJoke('joke-11', this)">🔊 پخش صوتی</button>
+            <button class="action-btn" onclick="copyJoke('joke-11')">📋 کپی</button>
+        </div>
+    </div>
+
+    <!-- جوک ۱۲ -->
+    <div class="joke-card" style="animation-delay: 1.2s;">
+        <div class="joke-emojis">💻😭</div>
+        <div class="joke-text" id="joke-12">
+            رفتم کافی‌نت، گفتم: «اینترنتتون قطعه؟» مسئولش گفت: «نه، فقط وای‌فای رو خاموش کردم.» گفتم: «چرا؟» گفت: «چون هرکی میاد فقط میره اینستاگرام، کلاً ما رو فراموش کردن!»
+        </div>
+        <div class="joke-actions">
+            <button class="action-btn" onclick="speakJoke('joke-12', this)">🔊 پخش صوتی</button>
+            <button class="action-btn" onclick="copyJoke('joke-12')">📋 کپی</button>
+        </div>
+    </div>
+
+    <!-- جوک ۱۳ -->
+    <div class="joke-card" style="animation-delay: 1.3s;">
+        <div class="joke-emojis">🧔✂️</div>
+        <div class="joke-text" id="joke-13">
+            رفتم آرایشگاه، آرایشگر گفت: «داداش موهات خیلی ریخته!» گفتم: «راه حل داره؟» گفت: «آره، یه کلاه قشنگ بهت می‌فروشم که مشکل حل بشه!»
+        </div>
+        <div class="joke-actions">
+            <button class="action-btn" onclick="speakJoke('joke-13', this)">🔊 پخش صوتی</button>
+            <button class="action-btn" onclick="copyJoke('joke-13')">📋 کپی</button>
+        </div>
+    </div>
+
+    <!-- جوک ۱۴ -->
+    <div class="joke-card" style="animation-delay: 1.4s;">
+        <div class="joke-emojis">🏫📚</div>
+        <div class="joke-text" id="joke-14">
+            معلم پرسید: «اگه ۱۰ تا پرنده روی سیم باشن و ۳ تاشون پرواز کنن، چند تا می‌مونه؟» شاگرد گفت: «هیچی، چون بقیه هم می‌ترسن و می‌پرن!» معلم گفت: «جوابت غلطه، ولی طرز فکرت خیلی باحاله!»
+        </div>
+        <div class="joke-actions">
+            <button class="action-btn" onclick="speakJoke('joke-14', this)">🔊 پخش صوتی</button>
+            <button class="action-btn" onclick="copyJoke('joke-14')">📋 کپی</button>
+        </div>
+    </div>
+
+    <!-- جوک ۱۵ -->
+    <div class="joke-card" style="animation-delay: 1.5s;">
+        <div class="joke-emojis">💸🎂</div>
+        <div class="joke-text" id="joke-15">
+            دوستم روز تولدم پرسید: «چند سالته؟» گفتم: «حدس بزن.» گفت: «۳۰؟» گفتم: «نه!» گفت: «خب بگو.» گفتم: «نمی‌گم، چون گفتی ۳۰، دیگه حالم گرفته شد!»
+        </div>
+        <div class="joke-actions">
+            <button class="action-btn" onclick="speakJoke('joke-15', this)">🔊 پخش صوتی</button>
+            <button class="action-btn" onclick="copyJoke('joke-15')">📋 کپی</button>
+        </div>
+    </div>
+
+    <!-- جوک ۱۶ -->
+    <div class="joke-card" style="animation-delay: 1.6s;">
+        <div class="joke-emojis">🏦💳</div>
+        <div class="joke-text" id="joke-16">
+            رفتم بانک، به باجه‌دار گفتم: «میخوام حساب باز کنم.» گفت: «حساب باز کردن یا حساب پس دادن؟» گفتم: «والا از وقتی وام گرفتم، انگار هر دو تاشه!»
+        </div>
+        <div class="joke-actions">
+            <button class="action-btn" onclick="speakJoke('joke-16', this)">🔊 پخش صوتی</button>
+            <button class="action-btn" onclick="copyJoke('joke-16')">📋 کپی</button>
+        </div>
+    </div>
+
+    <!-- جوک ۱۷ -->
+    <div class="joke-card" style="animation-delay: 1.7s;">
+        <div class="joke-emojis">👨‍🏫📝</div>
+        <div class="joke-text" id="joke-17">
+            بچه‌ام گفت: «مامان، میشه فردا مدرسه نرم؟» گفتم: «چرا؟» گفت: «دیشب خواب دیدم معلم ریاضی رو دیدم، صبح بیدار شدم دیدم هنوز دارم کابوس می‌بینم!»
+        </div>
+        <div class="joke-actions">
+            <button class="action-btn" onclick="speakJoke('joke-17', this)">🔊 پخش صوتی</button>
+            <button class="action-btn" onclick="copyJoke('joke-17')">📋 کپی</button>
+        </div>
+    </div>
+
+    <!-- جوک ۱۸ -->
+    <div class="joke-card" style="animation-delay: 1.8s;">
+        <div class="joke-emojis">🛍️💸</div>
+        <div class="joke-text" id="joke-18">
+            زنم گفت: «عزیزم، اگه من یه کیف ۱۰ میلیونی بخرم چی میشه؟» گفتم: «هیچی، فقط من یه گیتار ۲۰ میلیونی میخرم!» گفت: «تو که گیتار زدن بلد نیستی!» گفتم: «خب تو هم قرار نیست با این کیف بری خرید نان!»
+        </div>
+        <div class="joke-actions">
+            <button class="action-btn" onclick="speakJoke('joke-18', this)">🔊 پخش صوتی</button>
+            <button class="action-btn" onclick="copyJoke('joke-18')">📋 کپی</button>
+        </div>
+    </div>
+
+    <!-- جوک ۱۹ -->
+    <div class="joke-card" style="animation-delay: 1.9s;">
+        <div class="joke-emojis">📡🌐</div>
+        <div class="joke-text" id="joke-19">
+            رفتم مودم بخرم، فروشنده گفت: «آنتن این مودم خیلی قویه.» گفتم: «آخه مودم قبلی من فقط با دیش ماهواره همسایه دوست بود، به بقیه وصل نمیشد!»
+        </div>
+        <div class="joke-actions">
+            <button class="action-btn" onclick="speakJoke('joke-19', this)">🔊 پخش صوتی</button>
+            <button class="action-btn" onclick="copyJoke('joke-19')">📋 کپی</button>
+        </div>
+    </div>
+
+    <!-- جوک ۲۰ -->
+    <div class="joke-card" style="animation-delay: 2.0s;">
+        <div class="joke-emojis">🏥🍔</div>
+        <div class="joke-text" id="joke-20">
+            دکتر به مریض گفت: «باید سیگار رو ترک کنی، شیرینی هم نخوری، چربی هم نخوری!» مریض گفت: «دکتر، من دیگه چیزی نمونده که بخورم، فقط استرس میخورم!» دکتر گفت: «خب استرس رو هم بذار کنار!»
+        </div>
+        <div class="joke-actions">
+            <button class="action-btn" onclick="speakJoke('joke-20', this)">🔊 پخش صوتی</button>
+            <button class="action-btn" onclick="copyJoke('joke-20')">📋 کپی</button>
+        </div>
+    </div>
+
+    <!-- جوک ۲۱ -->
+    <div class="joke-card" style="animation-delay: 2.1s;">
+        <div class="joke-emojis">👔📞</div>
+        <div class="joke-text" id="joke-21">
+            رئیس به کارمندش گفت: «چرا وقتی بهت زنگ می‌زنم جواب نمیدی؟» کارمند گفت: «چون دیدم شمارهتونه، فکر کردم یا ترفیع میدی یا اخراجم می‌کنی، ترجیح دادم فعلاً در جریان نباشم!»
+        </div>
+        <div class="joke-actions">
+            <button class="action-btn" onclick="speakJoke('joke-21', this)">🔊 پخش صوتی</button>
+            <button class="action-btn" onclick="copyJoke('joke-21')">📋 کپی</button>
+        </div>
+    </div>
+
+    <!-- جوک ۲۲ -->
+    <div class="joke-card" style="animation-delay: 2.2s;">
+        <div class="joke-emojis">🐶🐱</div>
+        <div class="joke-text" id="joke-22">
+            یه گربه به سگه گفت: «چرا اینقدر پشت سر مردم واق واق می‌کنی؟» سگه گفت: «برای اینکه نشون بدم من از آدم‌ها اجتماعی‌ترم!» گربه گفت: «آره، مخصوصاً وقتی رئیسشون در خونه رو باز می‌کنه!»
+        </div>
+        <div class="joke-actions">
+            <button class="action-btn" onclick="speakJoke('joke-22', this)">🔊 پخش صوتی</button>
+            <button class="action-btn" onclick="copyJoke('joke-22')">📋 کپی</button>
+        </div>
+    </div>
+
+    <!-- جوک ۲۳ -->
+    <div class="joke-card" style="animation-delay: 2.3s;">
+        <div class="joke-emojis">🍎📚</div>
+        <div class="joke-text" id="joke-23">
+            معلم به شاگرد گفت: «اگه ۵ تا سیب داشته باشی و ۲ تاش رو بدی به دوستت، چی میمونه؟» شاگرد گفت: «۵ تا!» معلم گفت: «چطور؟» شاگرد گفت: «چون من هیچوقت سیب نمی‌دم!»
+        </div>
+        <div class="joke-actions">
+            <button class="action-btn" onclick="speakJoke('joke-23', this)">🔊 پخش صوتی</button>
+            <button class="action-btn" onclick="copyJoke('joke-23')">📋 کپی</button>
+        </div>
+    </div>
+
+    <!-- جوک ۲۴ -->
+    <div class="joke-card" style="animation-delay: 2.4s;">
+        <div class="joke-emojis">🛌🧠</div>
+        <div class="joke-text" id="joke-24">
+            من فقط یه قابلیت دارم، اونم اینه که وقتی می‌خوام بخوابم، فقط ذهنم یادش میاد که دیروز یه حرف اشتباه زده بود و باید تا صبح بهش فکر کنه!
+        </div>
+        <div class="joke-actions">
+            <button class="action-btn" onclick="speakJoke('joke-24', this)">🔊 پخش صوتی</button>
+            <button class="action-btn" onclick="copyJoke('joke-24')">📋 کپی</button>
+        </div>
+    </div>
+
+    <!-- جوک ۲۵ -->
+    <div class="joke-card" style="animation-delay: 2.5s;">
+        <div class="joke-emojis">🚗📢</div>
+        <div class="joke-text" id="joke-25">
+            تو ترافیک بودیم، یارو به راننده بغلی گفت: «چرا بوق می‌زنی؟» راننده گفت: «چون دکمه‌ش کار می‌کنه، خوشحالم!»
+        </div>
+        <div class="joke-actions">
+            <button class="action-btn" onclick="speakJoke('joke-25', this)">🔊 پخش صوتی</button>
+            <button class="action-btn" onclick="copyJoke('joke-25')">📋 کپی</button>
+        </div>
+    </div>
+
+    <!-- جوک ۲۶ -->
+    <div class="joke-card" style="animation-delay: 2.6s;">
+        <div class="joke-emojis">🍽️🏠</div>
+        <div class="joke-text" id="joke-26">
+            به مامانم گفتم: «غذای رستوران‌ها طعمش فرق داره.» گفت: «آره، چون توش عشق و علاقه نیست، فقط پول و اجاره هست!»
+        </div>
+        <div class="joke-actions">
+            <button class="action-btn" onclick="speakJoke('joke-26', this)">🔊 پخش صوتی</button>
+            <button class="action-btn" onclick="copyJoke('joke-26')">📋 کپی</button>
+        </div>
+    </div>
+
+    <!-- جوک ۲۷ -->
+    <div class="joke-card" style="animation-delay: 2.7s;">
+        <div class="joke-emojis">🪞👟</div>
+        <div class="joke-text" id="joke-27">
+            یه آینه رفتم جلوش، گفتم: «آینه‌ام، من خوشتیپم؟» آینه گفت: «ببخشید؟ من فقط کفش‌های شمارو نشون می‌دم!»
+        </div>
+        <div class="joke-actions">
+            <button class="action-btn" onclick="speakJoke('joke-27', this)">🔊 پخش صوتی</button>
+            <button class="action-btn" onclick="copyJoke('joke-27')">📋 کپی</button>
+        </div>
+    </div>
+
+    <!-- جوک ۲۸ -->
+    <div class="joke-card" style="animation-delay: 2.8s;">
+        <div class="joke-emojis">🏋️‍♂️🐟</div>
+        <div class="joke-text" id="joke-28">
+            رفتم باشگاه، مربی گفت: «الان ۱۰ تا شنا برو.» من هم رفتم ۱۰ تا شنا کردم. بعدش گفت: «حالا ۱۰ تا دیگه!» من هم گفتم: «آقای مربی، آخه من ماهی نیستم!»
+        </div>
+        <div class="joke-actions">
+            <button class="action-btn" onclick="speakJoke('joke-28', this)">🔊 پخش صوتی</button>
+            <button class="action-btn" onclick="copyJoke('joke-28')">📋 کپی</button>
+        </div>
+    </div>
+
+    <!-- جوک ۲۹ -->
+    <div class="joke-card" style="animation-delay: 2.9s;">
+        <div class="joke-emojis">📦👕</div>
+        <div class="joke-text" id="joke-29">
+            یه لباس آنلاین خریدم، وقتی رسید اندازه کیسه فریزر بود. زنگ زدم پشتیبانی، گفتن: «شما سایز ریز رو سفارش دادید!»
+        </div>
+        <div class="joke-actions">
+            <button class="action-btn" onclick="speakJoke('joke-29', this)">🔊 پخش صوتی</button>
+            <button class="action-btn" onclick="copyJoke('joke-29')">📋 کپی</button>
+        </div>
+    </div>
+
+    <!-- جوک ۳۰ -->
+    <div class="joke-card" style="animation-delay: 3.0s;">
+        <div class="joke-emojis">⏰📅</div>
+        <div class="joke-text" id="joke-30">
+            ساعت ۶ صبح بیدار شدم، ساعت ۷ رسیدم سر کار. ساعت ۸ فهمیدم امروز جمعه‌ست!
+        </div>
+        <div class="joke-actions">
+            <button class="action-btn" onclick="speakJoke('joke-30', this)">🔊 پخش صوتی</button>
+            <button class="action-btn" onclick="copyJoke('joke-30')">📋 کپی</button>
+        </div>
+    </div>
+
+    <a href="index.html" class="back-btn">🏠 بازگشت به خانه</a>
+</div>
+
+<div class="footer">
+    <p>🌟 <strong>رهیلاناب</strong> - rahilanab.com | با خنده، زندگی قشنگ‌تره!</p>
+</div>
+
+<div id="toast">✅ جوک کپی شد!</div>
+
+<script>
+    // =============== تم ===============
+    function toggleTheme() {
+        document.body.classList.toggle('light-mode');
+        const isLight = document.body.classList.contains('light-mode');
+        document.getElementById('theme-btn').innerText = isLight ? '☀️' : '🌙';
+        localStorage.setItem('jokeTheme', isLight);
+    }
+    if (localStorage.getItem('jokeTheme') === 'true') { 
+        document.body.classList.add('light-mode');
+        document.getElementById('theme-btn').innerText = '☀️';
+    }
+
+    // =============== TTS (پخش صوتی) ===============
+    let currentUtterance = null;
+    let currentBtn = null;
+
+    function speakJoke(id, btn) {
+        if (!('speechSynthesis' in window)) {
+            showToast('❌ مرورگر شما از پخش صوتی پشتیبانی نمی‌کند');
+            return;
+        }
+
+        // اگر همون دکمه زده شد، متوقف کن
+        if (currentBtn === btn && speechSynthesis.speaking) {
+            speechSynthesis.cancel();
+            btn.classList.remove('speaking');
+            btn.innerHTML = '🔊 پخش صوتی';
+            currentBtn = null;
+            return;
+        }
+
+        // متوقف کردن بقیه
+        speechSynthesis.cancel();
+        if (currentBtn) {
+            currentBtn.classList.remove('speaking');
+            currentBtn.innerHTML = '🔊 پخش صوتی';
+        }
+
+        const text = document.getElementById(id).innerText;
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'fa-IR';
+        utterance.rate = 0.95;
+        
+        utterance.onstart = () => {
+            btn.classList.add('speaking');
+            btn.innerHTML = '⏹️ توقف';
+            currentBtn = btn;
+        };
+
+        utterance.onend = () => {
+            btn.classList.remove('speaking');
+            btn.innerHTML = '🔊 پخش صوتی';
+            currentBtn = null;
+        };
+
+        speechSynthesis.speak(utterance);
+    }
+
+    // =============== کپی کردن ===============
+    function copyJoke(id) {
+        const text = document.getElementById(id).innerText;
+        navigator.clipboard.writeText(text).then(() => {
+            showToast('✅ جوک کپی شد!');
+        }).catch(() => {
+            const textArea = document.createElement("textarea");
+            textArea.value = text;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand("copy");
+            document.body.removeChild(textArea);
+            showToast('✅ جوک کپی شد!');
+        });
+    }
+
+    // =============== Toast ===============
+    let toastTimeout;
+    function showToast(msg) {
+        const toast = document.getElementById('toast');
+        toast.innerText = msg;
+        toast.classList.add('show');
+        clearTimeout(toastTimeout);
+        toastTimeout = setTimeout(() => {
+            toast.classList.remove('show');
+        }, 2500);
+    }
+</script>
+
+</body>
+    </html>
