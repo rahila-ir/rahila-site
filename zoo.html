@@ -1,1 +1,428 @@
-<!DOCTYPE html><html lang="fa"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>🦁 باغ وحش | رهیلا</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial;background:radial-gradient(circle at center,#0a1a1a,#1a4a4a,#66ccaa);color:#fff;text-align:center;padding:15px;min-height:100vh}.header{background:rgba(255,255,255,.08);backdrop-filter:blur(20px);border-radius:25px;padding:20px;margin-bottom:15px}.header h1{color:#ffd700;font-size:22px}.back-btn{display:inline-block;background:rgba(255,255,255,.15);color:#fff;padding:8px 20px;border-radius:20px;text-decoration:none;margin:10px 0;font-size:14px}.section-title{color:#ffd700;font-size:18px;margin:20px 0 10px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.card{background:rgba(255,255,255,.05);border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,.1);text-align:right}.card h3{font-size:15px;color:#ffd700}</style></head><body><div class="header"><h1>🦁 باغ وحش</h1></div><a href="index.html" class="back-btn">🔙 برگشت</a><div class="section-title">🦁 شهرها</div><div class="grid"><div class="card"><h3>باغ وحش تهران</h3></div><div class="card"><h3>باغ وحش مشهد</h3></div><div class="card"><h3>باغ وحش شیراز</h3></div><div class="card"><h3>باغ وحش اصفهان</h3></div></div><p style="margin-top:15px"><a href="index.html" style="color:#ffd700">🔙 برگشت</a></p></body></html>
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>راهنمای جامع باغ‌وحش + برنامه‌ریز بازدید | رهیلاناب</title>
+    <meta name="description" content="همه چیز درباره بازدید از باغ‌وحش؛ از برنامه‌ریزی مسیر و نکات عکاسی تا آشنایی با گونه‌های حیوانات. همراه با ابزارهای تعاملی در رهیلاناب.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦁</text></svg>">
+    
+    <!-- فونت وزیرمتن -->
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+    
+    <style>
+        /* ============== تم‌ها (جنگل نئونی) ============== */
+        :root {
+            --bg-main: #051405;
+            --bg-card: #0a260f;
+            --text-main: #f0fdf4;
+            --text-muted: #86efac;
+            --primary: #22c55e; /* سبز نئونی */
+            --accent: #f59e0b; /* کهربایی */
+            --warning: #ef4444;
+            --border: #14532d;
+            --shadow: 0 10px 30px rgba(34, 197, 94, 0.15);
+            --gradient: linear-gradient(135deg, #22c55e, #f59e0b);
+        }
+
+        body.light-mode {
+            --bg-main: #f0fdf4;
+            --bg-card: #ffffff;
+            --text-main: #064e3b;
+            --text-muted: #047857;
+            --primary: #16a34a;
+            --accent: #d97706;
+            --border: #bbf7d0;
+            --shadow: 0 10px 30px rgba(22, 163, 74, 0.15);
+            --gradient: linear-gradient(135deg, #16a34a, #d97706);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; transition: background-color 0.3s, color 0.3s; }
+        
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background: radial-gradient(circle at 50% 0%, var(--bg-card), var(--bg-main) 70%);
+            color: var(--text-main);
+            line-height: 1.9;
+            font-size: 17px;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* ============== نوار پیشرفت ============== */
+        #progress-bar {
+            position: fixed; top: 0; left: 0; height: 4px; width: 0%;
+            background: var(--gradient); z-index: 9999;
+            box-shadow: 0 0 15px var(--primary); transition: width 0.1s;
+        }
+
+        /* ============== دکمه‌های شناور ============== */
+        .floating-controls {
+            position: fixed; top: 15px; left: 15px; z-index: 999;
+            display: flex; flex-direction: column; gap: 10px;
+        }
+        
+        .control-btn {
+            background: var(--bg-card); border: 1px solid var(--border);
+            color: var(--text-main); width: 50px; height: 50px;
+            border-radius: 50%; cursor: pointer; font-size: 20px;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: var(--shadow); backdrop-filter: blur(10px); transition: 0.3s;
+        }
+        .control-btn:hover { transform: scale(1.1); color: var(--accent); border-color: var(--accent); }
+        .control-btn.playing { background: var(--primary); color: #fff; }
+
+        /* ============== هدر ============== */
+        .header {
+            background: var(--gradient); color: #fff; padding: 100px 20px 70px;
+            text-align: center; border-radius: 0 0 40px 40px;
+            position: relative; overflow: hidden;
+            box-shadow: 0 10px 40px rgba(34, 197, 94, 0.3);
+        }
+        .header h1 { font-size: clamp(24px, 5vw, 38px); margin-bottom: 10px; position: relative; z-index: 1; font-weight: 900; }
+        .header p { font-size: 16px; opacity: 0.9; position: relative; z-index: 1; font-weight: bold; }
+
+        /* ============== انیمیشن حیوانات ============== */
+        .zoo-anim-container {
+            height: 120px; display: flex; justify-content: center; align-items: center; gap: 20px;
+            margin-bottom: 20px; position: relative; z-index: 1;
+        }
+        .animal-icon {
+            font-size: 50px; filter: drop-shadow(0 0 15px rgba(255,255,255,0.5));
+            animation: floatAnimal 3s ease-in-out infinite;
+        }
+        .animal-icon:nth-child(2) { animation-delay: 1s; font-size: 60px; }
+        .animal-icon:nth-child(3) { animation-delay: 2s; }
+        @keyframes floatAnimal { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-20px) scale(1.1); } }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; margin-top: -30px; }
+
+        /* ============== کارت‌ها ============== */
+        .card {
+            background: var(--bg-card); border-radius: 24px; padding: 30px;
+            margin-bottom: 30px; box-shadow: var(--shadow); border: 1px solid var(--border);
+        }
+        .card h2 { font-size: 22px; color: var(--primary); margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+
+        /* ============== باکس BLUF ============== */
+        .box-bluf {
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(245, 158, 11, 0.1));
+            border: 2px solid var(--primary); border-radius: 16px; padding: 25px; margin-bottom: 30px;
+        }
+        .box-bluf h3 { color: var(--primary); font-size: 20px; margin-bottom: 10px; }
+        .box-bluf p { font-weight: bold; font-size: 16px; }
+
+        /* ============== ابزارها ============== */
+        .tool-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        @media (max-width: 768px) { .tool-grid { grid-template-columns: 1fr; } }
+        
+        .tool-box { background: var(--bg-main); padding: 25px; border-radius: 16px; border: 1px dashed var(--accent); }
+        .tool-box h3 { color: var(--accent); margin-bottom: 15px; font-size: 18px; text-align: center; }
+        
+        .input-group { margin-bottom: 15px; }
+        .input-group label { display: block; font-size: 14px; margin-bottom: 5px; color: var(--text-muted); font-weight: bold; }
+        .input-group input, .input-group select {
+            width: 100%; padding: 12px; border-radius: 10px; border: 1px solid var(--border);
+            background: var(--bg-card); color: var(--text-main); font-family: inherit; font-size: 16px; outline: none;
+        }
+        .input-group input:focus, .input-group select:focus { border-color: var(--primary); box-shadow: 0 0 10px rgba(34,197,94,0.3); }
+
+        .btn-calc {
+            width: 100%; background: var(--gradient); color: #fff; padding: 12px; border-radius: 10px; border: none;
+            font-weight: bold; font-family: inherit; font-size: 16px; cursor: pointer; transition: 0.3s; margin-top: 10px;
+        }
+        .btn-calc:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(245, 158, 11, 0.4); }
+
+        .result-box {
+            display: none; margin-top: 15px; padding: 15px; background: rgba(34, 197, 94, 0.05);
+            border-right: 4px solid var(--primary); border-radius: 8px;
+            font-size: 15px; line-height: 1.8; color: var(--text-main); animation: fadeIn 0.5s;
+        }
+        .result-box strong { color: var(--accent); font-size: 20px; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        /* ============== جدول ============== */
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 15px; border-radius: 12px; overflow: hidden; }
+        th { background: var(--primary); color: #fff; padding: 15px; text-align: center; font-weight: 900; }
+        td { padding: 12px; text-align: center; border-bottom: 1px solid var(--border); background: var(--bg-card); font-weight: 500; }
+        tr:hover td { background: var(--bg-main); color: var(--primary); }
+
+        /* ============== آکاردئون ============== */
+        .accordion { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 12px; overflow: hidden; }
+        .accordion-btn { background: none; border: none; width: 100%; padding: 18px; text-align: right; font-family: inherit; font-size: 16px; font-weight: bold; color: var(--text-main); cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .accordion-btn:hover { color: var(--primary); }
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; padding: 0 18px; color: var(--text-muted); font-size: 15px; }
+        .accordion.active .accordion-content { max-height: 500px; padding-bottom: 18px; }
+        .arrow { transition: transform 0.3s; color: var(--accent); }
+        .accordion.active .arrow { transform: rotate(180deg); }
+
+        .footer { text-align: center; padding: 30px; color: var(--text-muted); font-size: 14px; border-top: 1px solid var(--border); margin-top: 40px; }
+        .footer a { color: var(--primary); text-decoration: none; }
+
+        /* ============== انیمیشن اسکرول ============== */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<div class="floating-controls">
+    <button class="control-btn" id="tts-btn" onclick="toggleSpeech()" title="گوش دادن">
+        <span id="tts-icon">🔊</span>
+    </button>
+    <button class="control-btn" onclick="toggleTheme()" title="تاریک/روشن">
+        <span id="theme-icon">🌙</span>
+    </button>
+</div>
+
+<div class="header">
+    <div class="zoo-anim-container">
+        <div class="animal-icon">🐒</div>
+        <div class="animal-icon">🦁</div>
+        <div class="animal-icon">🦜</div>
+    </div>
+    <h1>🦁 ماجراجویی در باغ‌وحش</h1>
+    <p>راهنمای کامل برای یک بازدید هیجان‌انگیز و آموزشی</p>
+</div>
+
+<div class="container" id="main-content">
+
+    <!-- BLUF -->
+    <div class="card box-bluf reveal">
+        <h3>⚡ جواب سریع در ۳ خط:</h3>
+        <p>
+            ۱. <strong>بهترین زمان بازدید</strong> صبح‌ها (به محض باز شدن درها) یا نزدیک غروب است؛ چون حیوانات فعال‌ترند و هوا خنک‌تر است.<br>
+            ۲. <strong>هرگز به حیوانات غذا ندهید</strong>؛ رژیم غذایی آن‌ها توسط دامپزشک تنظیم شده و غذای شما می‌تواند باعث بیماری یا مرگ آن‌ها شود.<br>
+            ۳. برای عکاسی، <strong>فلاش دوربین را خاموش کنید</strong> تا حیوانات (مخصوصاً شب‌زی‌ها) استرس نگیرند.
+        </p>
+    </div>
+
+    <!-- ابزارهای هوشمند -->
+    <div class="card reveal">
+        <h2>🧠 ابزارهای بازدید</h2>
+        <div class="tool-grid">
+            
+            <!-- برنامه‌ریز سفر -->
+            <div class="tool-box">
+                <h3>🗺️ برنامه‌ریز بازدید از باغ‌وحش</h3>
+                <div class="input-group">
+                    <label>با چه کسی می‌خواهید بروید؟</label>
+                    <select id="company">
+                        <option value="family">👨‍👩‍👧‍👦 خانواده (با بچه‌های کوچک)</option>
+                        <option value="friends">👫 دوستان (جوون و پرانرژی)</option>
+                        <option value="solo">🚶‍♂️ تنها (برای عکاسی و تمرکز)</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>چقدر زمان دارید؟</label>
+                    <select id="time-avail">
+                        <option value="short">⏱️ حدود ۲ ساعت</option>
+                        <option value="medium">🕒 نصف روز (۳ تا ۴ ساعت)</option>
+                        <option value="long">☀️ تمام روز</option>
+                    </select>
+                </div>
+                <button class="btn-calc" onclick="planZooVisit()">🔍 دریافت برنامه پیشنهادی</button>
+                <div class="result-box" id="zoo-result"></div>
+            </div>
+
+            <!-- تست شخصیت -->
+            <div class="tool-box">
+                <h3>🦁 حیوان‌شناس شخصیت</h3>
+                <p style="font-size: 14px; margin-bottom: 10px; color: var(--text-muted); text-align: center;">کدوم محیط رو بیشتر دوست داری؟</p>
+                <div class="input-group">
+                    <label>زیستگاه مورد علاقه:</label>
+                    <select id="habitat">
+                        <option value="savanna">🌾 دشت‌های گرم و آفتابی</option>
+                        <option value="jungle">🌴 جنگل‌های سرسبز و بارانی</option>
+                        <option value="ocean">🌊 اقیانوس‌ها و آب‌های عمیق</option>
+                        <option value="night">🌙 شب و تاریکی</option>
+                    </select>
+                </div>
+                <button class="btn-calc" onclick="matchAnimal()">🔍 مشاهده حیوان شبیه شما</button>
+                <div class="result-box" id="animal-result"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- جدول مقایسه -->
+    <div class="card reveal">
+        <h2>⚖️ نکات مهم عکاسی در باغ‌وحش</h2>
+        <table>
+            <thead>
+                <tr><th>موضوع</th><th>توصیه</th><th>دلیل</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>فلاش دوربین</strong></td><td style="color: var(--warning); font-weight: bold;">حتماً خاموش باشد</td><td>باعث استرس و آسیب به چشم حیوانات می‌شود</td></tr>
+                <tr><td><strong>شیشه یا قفس</strong></td><td>لنز را تا حد امکان به شیشه بچسبانید</td><td>برای جلوگیری از انعکاس نور و ثبت تصویر واضح‌تر</td></tr>
+                <tr><td><strong>غذا دادن</strong></td><td style="color: var(--warning); font-weight: bold;">هرگز انجام ندهید</td><td>خطر مسمومیت و بیماری برای حیوان</td></tr>
+                <tr><td><strong>حرکات سریع</strong></td><td>از حالت Burst (عکاسی پیاپی) استفاده کنید</td><td>برای ثبت لحظات پرش یا حرکت حیوان</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- آکاردئون -->
+    <div class="card reveal">
+        <h2>💡 دانستنی‌های جالب و مهم</h2>
+        
+        <div class="accordion">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+                چرا بعضی از حیوانات در باغ‌وحش بی‌حال یا خوابیده هستند؟
+                <span class="arrow">▼</span>
+            </button>
+            <div class="accordion-content">
+                بیشتر حیوانات (به‌ویژه گربه‌سانان مثل شیر و پلنگ) در طول روز (به خصوص ساعات گرم ظهر) می‌خوابند و شب‌ها فعال هستند. این چرخه طبیعی آن‌هاست و نشانه بیماری نیست. برای دیدن فعالیت آن‌ها، بهترین زمان اوایل صبح یا نزدیک غروب است.
+            </div>
+        </div>
+
+        <div class="accordion">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+                چرا نباید به حیوانات غذا داد؟
+                <span class="arrow">▼</span>
+            </button>
+            <div class="accordion-content">
+                رژیم غذایی حیوانات باغ‌وحش توسط دامپزشک و متخصص تغذیه به دقت تنظیم شده است. غذای انسان (مثل چیپس، شکلات، نان یا میوه‌های نامناسب) می‌تواند باعث چاقی مفرط، بیماری‌های گوارشی، مسمومیت و حتی مرگ حیوانات شود. همچنین این کار باعث می‌شود حیوانات به انسان وابسته شوند.
+            </div>
+        </div>
+    </div>
+
+    <div class="card reveal" style="text-align: center;">
+        <h2>🔗 صفحات مرتبط</h2>
+        <p>
+            <a href="vet.html" class="btn-calc" style="display:inline-block; width:auto; margin:5px; text-decoration:none;">🐾 دامپزشکی</a>
+            <a href="nature.html" class="btn-calc" style="display:inline-block; width:auto; margin:5px; text-decoration:none;">🌲 طبیعت</a>
+            <a href="home.html" class="btn-calc" style="display:inline-block; width:auto; margin:5px; text-decoration:none;">🏠 خانه</a>
+        </p>
+    </div>
+
+</div>
+
+<div class="footer">
+    <p>🌟 <strong>رهیلاناب</strong> - <a href="index.html">خانه</a> | <a href="nature.html">طبیعت</a></p>
+    <p>© ۲۰۲۶ rahilanab.com | با ماجراجویی، دنیا را کشف کن.</p>
+</div>
+
+<script>
+    // =============== ۱. نوار پیشرفت ===============
+    window.onscroll = function() {
+        var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var scrolled = (winScroll / height) * 100;
+        document.getElementById("progress-bar").style.width = scrolled + "%";
+    };
+
+    // =============== ۲. تم تاریک/روشن ===============
+    function toggleTheme() {
+        document.body.classList.toggle('light-mode');
+        const isLight = document.body.classList.contains('light-mode');
+        document.getElementById('theme-icon').innerText = isLight ? '☀️' : '🌙';
+        localStorage.setItem('zooTheme', isLight);
+    }
+    if (localStorage.getItem('zooTheme') === 'true') { toggleTheme(); }
+
+    // =============== ۳. پخش صوتی (TTS) ===============
+    let isSpeaking = false;
+    let voices = [];
+    function loadVoices() { voices = window.speechSynthesis.getVoices(); }
+    if (typeof speechSynthesis !== 'undefined' && speechSynthesis.onvoiceschanged !== undefined) { speechSynthesis.onvoiceschanged = loadVoices; }
+
+    function toggleSpeech() {
+        if (isSpeaking) {
+            window.speechSynthesis.cancel();
+            isSpeaking = false;
+            document.getElementById('tts-icon').innerText = '🔊';
+            document.getElementById('tts-btn').classList.remove('playing');
+            return;
+        }
+        const mainText = document.getElementById('main-content').innerText;
+        const speech = new SpeechSynthesisUtterance(mainText);
+        speech.lang = 'fa-IR';
+        const persianVoice = voices.find(v => v.lang.includes('fa') || v.lang === 'fa-IR');
+        if (persianVoice) speech.voice = persianVoice;
+        speech.onend = function() {
+            isSpeaking = false;
+            document.getElementById('tts-icon').innerText = '🔊';
+            document.getElementById('tts-btn').classList.remove('playing');
+        };
+        window.speechSynthesis.speak(speech);
+        isSpeaking = true;
+        document.getElementById('tts-icon').innerText = '⏹️';
+        document.getElementById('tts-btn').classList.add('playing');
+    }
+
+    // =============== ۴. آکاردئون ===============
+    function toggleAccordion(btn) { btn.parentElement.classList.toggle('active'); }
+
+    // =============== ۵. برنامه‌ریز بازدید ===============
+    function planZooVisit() {
+        const company = document.getElementById('company').value;
+        const time = document.getElementById('time-avail').value;
+        const resultBox = document.getElementById('zoo-result');
+        let plan = '';
+
+        if (time === 'short') {
+            plan = 'از آنجایی که وقت کمی دارید، بهتره فقط روی <strong>بخش پستانداران بزرگ (شیر، فیل، زرافه)</strong> و <strong>پرندگان شکاری</strong> تمرکز کنید. از نقشه باغ‌وحش استفاده کنید و از بخش‌های تکراری عبور کنید.';
+        } else if (time === 'medium') {
+            plan = 'زمان کافی برای دیدن <strong>پستانداران، خزندگان و آکواریوم</strong> دارید. پیشنهاد می‌شه برنامه تغذیه حیوانات (Feedings) رو از قبل چک کنید تا در اون ساعت‌ها در قفس مربوطه حاضر باشید.';
+        } else {
+            plan = 'شما زمان کامل دارید! همه بخش‌ها از جمله <strong>شب‌زی‌ها (Nocturnal House)</strong>، <strong>پارک پرندگان</strong> و <strong>نمایش‌های آموزشی</strong> رو ببینید. یک وقت استراحت و ناهار هم برای خودتون در نظر بگیرید.';
+        }
+
+        if (company === 'family') {
+            plan += ' <br><br>👨‍👩‍👧‍👦 برای بچه‌ها: حتماً به سراغ بخش <strong>حیوانات اهلی (پتینگ زو)</strong> بروید تا بتوانند به حیوانات بی‌آزار نزدیک شوند. کالسکه یا آبنما را فراموش نکنید.';
+        } else if (company === 'friends') {
+            plan += ' <br><br>👫 برای شما: مسیرهای طولانی و هیجان‌انگیز (مثل قفس شیرها و پل معلق) را انتخاب کنید و حتماً از بخش تعاملی و عکاسی با حیوانات (مانند طوطی‌ها) لذت ببرید.';
+        } else {
+            plan += ' <br><br>🚶‍♂️ برای تنهایی: بهترین زمان برای عکاسی با کیفیت و بدون شلوغی است. لوازم عکاسی (لنز تله) را فراموش نکنید و در سکوت به تماشای رفتار حیوانات بنشینید.';
+        }
+
+        resultBox.innerHTML = `<strong>برنامه شما:</strong><br>${plan}`;
+        resultBox.style.display = 'block';
+    }
+
+    // =============== ۶. حیوان‌شناس شخصیت ===============
+    function matchAnimal() {
+        const habitat = document.getElementById('habitat').value;
+        const resultBox = document.getElementById('animal-result');
+        let animal = '';
+        let desc = '';
+
+        if (habitat === 'savanna') {
+            animal = '🦁 شیر (Lion)';
+            desc = 'شما رهبر متولد شده‌اید! شجاع، با اعتماد به نفس و عاشق خانواده هستید. در گروه، نقش رهبری را به عهده می‌گیرید.';
+        } else if (habitat === 'jungle') {
+            animal = '🐒 میمون (Monkey)';
+            desc = 'شما باهوش، خلاق و بسیار پرانرژی هستید. عاشق یادگیری چیزهای جدید و شیطنت‌های بامزه هستید!';
+        } else if (habitat === 'ocean') {
+            animal = '🐬 دلفین (Dolphin)';
+            desc = 'شما آرام، اجتماعی و بسیار دوست‌داشتنی هستید. از کمک به دیگران لذت می‌برید و در برقراری ارتباط عالی عمل می‌کنید.';
+        } else {
+            animal = '🦉 جغد (Owl)';
+            desc = 'شما متفکر، ناظر و مرموز هستید. ترجیح می‌دهید در سکوت و تاریکی به تحلیل مسائل بپردازید و از تنهایی لذت می‌برید.';
+        }
+
+        resultBox.innerHTML = `شما شبیه این حیوان هستید: <strong>${animal}</strong><br><br>${desc}`;
+        resultBox.style.display = 'block';
+    }
+
+    // =============== ۷. انیمیشن اسکرول ===============
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach(el => {
+        revealObserver.observe(el);
+    });
+
+    loadVoices();
+</script>
+
+</body>
+                                                                                                                                                             </html>
