@@ -1,1 +1,402 @@
-<!DOCTYPE html><html lang="fa"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>🎓 دانشگاه کامل | رهیلا</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial;background:radial-gradient(circle at center,#0a1a1a,#1a4a4a,#66ccaa);color:#fff;text-align:center;padding:15px;min-height:100vh}.header{background:rgba(255,255,255,.08);backdrop-filter:blur(20px);border-radius:25px;padding:20px;margin-bottom:15px}.header h1{color:#ffd700;font-size:22px}.back-btn{display:inline-block;background:rgba(255,255,255,.15);color:#fff;padding:8px 20px;border-radius:20px;text-decoration:none;margin:10px 0;font-size:14px}.section-title{color:#ffd700;font-size:18px;margin:20px 0 10px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.card{background:rgba(255,255,255,.05);border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,.1);text-align:right}.card h3{font-size:15px;color:#ffd700}</style></head><body><div class="header"><h1>🎓 دانشگاه کامل</h1></div><a href="university.html" class="back-btn">🔙 برگشت</a><div class="section-title">🎓 دانشگاه</div><div class="grid"><div class="card"><h3>دانشگاه تهران</h3></div><div class="card"><h3>شریف</h3></div><div class="card"><h3>امیرکبیر</h3></div><div class="card"><h3>علم و صنعت</h3></div><div class="card"><h3>بهشتی</h3></div><div class="card"><h3>خوارزمی</h3></div></div><div class="section-title">📚 رشته‌ها</div><div class="grid"><div class="card"><h3>پزشکی</h3></div><div class="card"><h3>مهندسی</h3></div><div class="card"><h3>حقوق</h3></div><div class="card"><h3>هنر</h3></div></div><p style="margin-top:15px"><a href="index.html" style="color:#ffd700">🔙 برگشت</a></p></body></html>
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>راهنمای جامع تحصیلات دانشگاهی + ماشین‌حساب معدل | رهیلاناب</title>
+    <meta name="description" content="نسخه کامل راهنمای دانشگاه؛ از ماشین‌حساب معدل (GPA) و سنجش آمادگی تحصیل در خارج، تا معرفی مقاطع تحصیلی و شرایط پذیرش. رهیلاناب.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏛️</text></svg>">
+    
+    <!-- فونت وزیرمتن -->
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+    
+    <style>
+        /* ============== تم‌ها (سرمه‌ای و طلایی لوکس) ============== */
+        :root {
+            --bg-main: #0a1128;
+            --bg-card: #121c3a;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --primary: #3b82f6; /* آبی سلطنتی */
+            --accent: #fbbf24; /* طلایی */
+            --green: #10b981;
+            --border: #24315c;
+            --shadow: 0 10px 30px rgba(59, 130, 246, 0.15);
+            --gradient: linear-gradient(135deg, #3b82f6, #fbbf24);
+        }
+
+        body.light-mode {
+            --bg-main: #f0f4f8;
+            --bg-card: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --primary: #1d4ed8;
+            --accent: #b45309;
+            --border: #cbd5e1;
+            --shadow: 0 10px 30px rgba(29, 78, 216, 0.15);
+            --gradient: linear-gradient(135deg, #1d4ed8, #b45309);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; transition: background-color 0.3s, color 0.3s; }
+        
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background: radial-gradient(circle at 50% 0%, var(--bg-card), var(--bg-main) 70%);
+            color: var(--text-main);
+            line-height: 1.9;
+            font-size: 17px;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* ============== نوار پیشرفت ============== */
+        #progress-bar {
+            position: fixed; top: 0; left: 0; height: 4px; width: 0%;
+            background: var(--gradient); z-index: 9999;
+            box-shadow: 0 0 15px var(--accent); transition: width 0.1s;
+        }
+
+        /* ============== دکمه‌های شناور ============== */
+        .floating-controls {
+            position: fixed; top: 15px; left: 15px; z-index: 999;
+            display: flex; flex-direction: column; gap: 10px;
+        }
+        
+        .control-btn {
+            background: var(--bg-card); border: 1px solid var(--border);
+            color: var(--text-main); width: 50px; height: 50px;
+            border-radius: 50%; cursor: pointer; font-size: 20px;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: var(--shadow); backdrop-filter: blur(10px); transition: 0.3s;
+        }
+        .control-btn:hover { transform: scale(1.1); color: var(--accent); border-color: var(--accent); }
+        .control-btn.playing { background: var(--primary); color: #fff; }
+
+        /* ============== هدر ============== */
+        .header {
+            background: var(--gradient); color: #fff; padding: 90px 20px 60px;
+            text-align: center; border-radius: 0 0 40px 40px;
+            position: relative; overflow: hidden;
+            box-shadow: 0 10px 40px rgba(59, 130, 246, 0.3);
+        }
+        .header h1 { font-size: clamp(24px, 5vw, 38px); margin-bottom: 10px; position: relative; z-index: 1; font-weight: 900; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+        .header p { font-size: 16px; opacity: 0.9; position: relative; z-index: 1; font-weight: bold; }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; margin-top: -30px; }
+
+        /* ============== کارت‌ها ============== */
+        .card {
+            background: var(--bg-card); border-radius: 24px; padding: 30px;
+            margin-bottom: 30px; box-shadow: var(--shadow); border: 1px solid var(--border);
+        }
+        .card h2 { font-size: 22px; color: var(--primary); margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+
+        /* ============== باکس BLUF ============== */
+        .box-bluf {
+            background: linear-gradient(135deg, rgba(251, 191, 36, 0.1), rgba(59, 130, 246, 0.1));
+            border: 2px solid var(--accent); border-radius: 16px; padding: 25px; margin-bottom: 30px;
+        }
+        .box-bluf h3 { color: var(--accent); font-size: 20px; margin-bottom: 10px; }
+        .box-bluf p { font-weight: bold; font-size: 16px; }
+
+        /* ============== ابزارها ============== */
+        .tool-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        @media (max-width: 768px) { .tool-grid { grid-template-columns: 1fr; } }
+        
+        .tool-box { background: var(--bg-main); padding: 25px; border-radius: 16px; border: 1px dashed var(--primary); }
+        .tool-box h3 { color: var(--accent); margin-bottom: 15px; font-size: 18px; text-align: center; }
+        
+        .input-group { margin-bottom: 15px; }
+        .input-group label { display: block; font-size: 14px; margin-bottom: 5px; color: var(--text-muted); font-weight: bold; }
+        .input-group input, .input-group select {
+            width: 100%; padding: 12px; border-radius: 10px; border: 1px solid var(--border);
+            background: var(--bg-card); color: var(--text-main); font-family: inherit; font-size: 16px; outline: none;
+        }
+        .input-group input:focus, .input-group select:focus { border-color: var(--primary); box-shadow: 0 0 10px rgba(59,130,246,0.3); }
+
+        .btn-calc {
+            width: 100%; background: var(--gradient); color: #fff; padding: 12px; border-radius: 10px; border: none;
+            font-weight: bold; font-family: inherit; font-size: 16px; cursor: pointer; transition: 0.3s; margin-top: 10px;
+        }
+        .btn-calc:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(251, 191, 36, 0.4); }
+
+        .result-box {
+            display: none; margin-top: 15px; padding: 15px; background: rgba(59, 130, 246, 0.1);
+            border-right: 4px solid var(--green); border-radius: 8px; text-align: center;
+            font-size: 20px; font-weight: bold; color: var(--green); animation: fadeIn 0.5s;
+        }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        /* ============== جدول ============== */
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 15px; border-radius: 12px; overflow: hidden; }
+        th { background: var(--primary); color: #fff; padding: 15px; text-align: center; font-weight: 900; }
+        td { padding: 12px; text-align: center; border-bottom: 1px solid var(--border); background: var(--bg-card); font-weight: 500; }
+        tr:hover td { background: var(--bg-main); color: var(--accent); }
+
+        /* ============== آکاردئون ============== */
+        .accordion { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 12px; overflow: hidden; }
+        .accordion-btn { background: none; border: none; width: 100%; padding: 18px; text-align: right; font-family: inherit; font-size: 16px; font-weight: bold; color: var(--text-main); cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .accordion-btn:hover { color: var(--primary); }
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; padding: 0 18px; color: var(--text-muted); font-size: 15px; }
+        .accordion.active .accordion-content { max-height: 500px; padding-bottom: 18px; }
+        .arrow { transition: transform 0.3s; color: var(--accent); }
+        .accordion.active .arrow { transform: rotate(180deg); }
+
+        .footer { text-align: center; padding: 30px; color: var(--text-muted); font-size: 14px; border-top: 1px solid var(--border); margin-top: 40px; }
+        .footer a { color: var(--primary); text-decoration: none; }
+
+        /* ============== انیمیشن اسکرول ============== */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<div class="floating-controls">
+    <button class="control-btn" id="tts-btn" onclick="toggleSpeech()" title="گوش دادن">
+        <span id="tts-icon">🔊</span>
+    </button>
+    <button class="control-btn" onclick="toggleTheme()" title="تاریک/روشن">
+        <span id="theme-icon">🌙</span>
+    </button>
+</div>
+
+<div class="header">
+    <h1>🏛️ نسخه کامل دانشگاه</h1>
+    <p>ابزارهای هوشمند برای مسیر تحصیلی و آکادمیک شما</p>
+</div>
+
+<div class="container" id="main-content">
+
+    <!-- BLUF -->
+    <div class="card box-bluf reveal">
+        <h3>⚡ راهنمای سریع:</h3>
+        <p>
+            ۱. برای گرفتن پذیرش از دانشگاه‌های خارجی، <strong>معدل و ریزنمرات (GPA)</strong> اولین فیلتر است.<br>
+            ۲. در مقطع ارشد و دکتری، <strong>مقاله و رزومه پژوهشی</strong> حرف اول را می‌زند.<br>
+            ۳. برای ادامه تحصیل، همیشه <strong>شرایط بورسیه (Scholarship)</strong> دانشگاه‌ها را بررسی کنید تا هزینه‌ها کاهش یابد.
+        </p>
+    </div>
+
+    <!-- ابزارهای هوشمند (ماشین حساب و سنجش) -->
+    <div class="card reveal">
+        <h2>🧮 ابزارهای آکادمیک</h2>
+        <div class="tool-grid">
+            
+            <!-- ماشین حساب معدل -->
+            <div class="tool-box">
+                <h3>📊 ماشین‌حساب معدل (GPA)</h3>
+                <div class="input-group">
+                    <label>مجموع نمرات (مثلاً ۱۶۵):</label>
+                    <input type="number" id="sum-scores" placeholder="نمرات را جمع کنید">
+                </div>
+                <div class="input-group">
+                    <label>تعداد کل واحدها:</label>
+                    <input type="number" id="total-units" placeholder="مثلاً ۲۰">
+                </div>
+                <button class="btn-calc" onclick="calcGPA()">محاسبه معدل</button>
+                <div class="result-box" id="gpa-result">معدل شما: ۰</div>
+            </div>
+
+            <!-- سنجش آمادگی تحصیل در خارج -->
+            <div class="tool-box">
+                <h3>🌍 سنجش آمادگی مهاجرت تحصیلی</h3>
+                <div class="input-group">
+                    <label>سطح زبان انگلیسی:</label>
+                    <select id="lang-level">
+                        <option value="0">ضعیف (بدون مدرک)</option>
+                        <option value="1">متوسط (در حال یادگیری)</option>
+                        <option value="2">عالی (آیلتس ۶.۵ به بالا / تافل)</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>معدل دانشگاهی (از ۲۰):</label>
+                    <input type="number" id="uni-gpa" value="16" min="10" max="20" step="0.1">
+                </div>
+                <button class="btn-calc" onclick="calcAbroad()">سنجش شانس پذیرش</button>
+                <div class="result-box" id="abroad-result">وضعیت: -</div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- جدول مقاطع -->
+    <div class="card reveal">
+        <h2>🎓 مقاطع تحصیلی و شرایط ورود</h2>
+        <table>
+            <thead>
+                <tr><th>مقطع</th><th>مدت زمان</th><th>تمرکز اصلی</th><th>مهم‌ترین شرط ورود</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>کارشناسی (Bachelor)</strong></td><td>۴ سال</td><td>آموزش پایه و تخصصی</td><td>کنکور سراسری یا سوابق تحصیلی</td></tr>
+                <tr><td><strong>کارشناسی ارشد (Master)</strong></td><td>۲ سال</td><td>تعمیق دانش و پروژه پژوهشی</td><td>کنکور ارشد یا معدل و رزومه (برای خارج)</td></tr>
+                <tr><td><strong>دکتری (PhD)</strong></td><td>۴ تا ۵ سال</td><td>پژوهش، مقاله و تولید علم</td><td>مصاحبه دکتری، مقاله ISI و نمره زبان</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- آکاردئون -->
+    <div class="card reveal">
+        <h2>💡 نکات کلیدی برای موفقیت آکادمیک</h2>
+        
+        <div class="accordion">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+                ریزنمرات (Transcript) چقدر اهمیت دارد؟
+                <span class="arrow">▼</span>
+            </button>
+            <div class="accordion-content">
+                ریزنمرات نشان‌دهنده ثبات علمی شماست. افت شدید معدل در یک ترم می‌تواند برای پذیرش در دانشگاه‌های خوب مشکل‌ساز شود. سعی کنید معدل خود را به صورت یکنواخت بالا نگه دارید، به‌خصوص در دروس تخصصی که به رشته‌تان مربوط است.
+            </div>
+        </div>
+
+        <div class="accordion">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+                تفاوت دانشگاه‌های دولتی و آزاد چیست؟
+                <span class="arrow">▼</span>
+            </button>
+            <div class="accordion-content">
+                دانشگاه‌های دولتی (مثل تهران، شریف) بودجه دولتی دارند، شهریه‌شان بسیار کم است و اعتبار بالایی دارند. دانشگاه‌های آزاد، غیرانتفاعی و پیام نور شهریه‌پذیرند اما انعطاف بیشتری در پذیرش دارند. برای مهاجرت، اعتبار دانشگاه دولتی معمولاً بهتر دیده می‌شود.
+            </div>
+        </div>
+    </div>
+
+    <div class="card reveal" style="text-align: center;">
+        <h2>🔗 صفحات مرتبط</h2>
+        <p>
+            <a href="university.html" class="btn-calc" style="display:inline-block; width:auto; margin:5px; text-decoration:none;">🎓 انتخاب رشته</a>
+            <a href="education-full.html" class="btn-calc" style="display:inline-block; width:auto; margin:5px; text-decoration:none;">📚 آموزش</a>
+            <a href="language_full.html" class="btn-calc" style="display:inline-block; width:auto; margin:5px; text-decoration:none;">🗣️ زبان</a>
+        </p>
+    </div>
+
+</div>
+
+<div class="footer">
+    <p>🌟 <strong>رهیلاناب</strong> - <a href="index.html">خانه</a> | <a href="education-full.html">آموزش</a></p>
+    <p>© ۲۰۲۶ rahilanab.com | با دانش، آینده را بساز.</p>
+</div>
+
+<script>
+    // =============== ۱. نوار پیشرفت ===============
+    window.onscroll = function() {
+        var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var scrolled = (winScroll / height) * 100;
+        document.getElementById("progress-bar").style.width = scrolled + "%";
+    };
+
+    // =============== ۲. تم تاریک/روشن ===============
+    function toggleTheme() {
+        document.body.classList.toggle('light-mode');
+        const isLight = document.body.classList.contains('light-mode');
+        document.getElementById('theme-icon').innerText = isLight ? '☀️' : '🌙';
+        localStorage.setItem('uniFullTheme', isLight);
+    }
+    if (localStorage.getItem('uniFullTheme') === 'true') { toggleTheme(); }
+
+    // =============== ۳. پخش صوتی (TTS) ===============
+    let isSpeaking = false;
+    let voices = [];
+    function loadVoices() { voices = window.speechSynthesis.getVoices(); }
+    if (typeof speechSynthesis !== 'undefined' && speechSynthesis.onvoiceschanged !== undefined) { speechSynthesis.onvoiceschanged = loadVoices; }
+
+    function toggleSpeech() {
+        if (isSpeaking) {
+            window.speechSynthesis.cancel();
+            isSpeaking = false;
+            document.getElementById('tts-icon').innerText = '🔊';
+            document.getElementById('tts-btn').classList.remove('playing');
+            return;
+        }
+        const mainText = document.getElementById('main-content').innerText;
+        const speech = new SpeechSynthesisUtterance(mainText);
+        speech.lang = 'fa-IR';
+        const persianVoice = voices.find(v => v.lang.includes('fa') || v.lang === 'fa-IR');
+        if (persianVoice) speech.voice = persianVoice;
+        speech.onend = function() {
+            isSpeaking = false;
+            document.getElementById('tts-icon').innerText = '🔊';
+            document.getElementById('tts-btn').classList.remove('playing');
+        };
+        window.speechSynthesis.speak(speech);
+        isSpeaking = true;
+        document.getElementById('tts-icon').innerText = '⏹️';
+        document.getElementById('tts-btn').classList.add('playing');
+    }
+
+    // =============== ۴. آکاردئون ===============
+    function toggleAccordion(btn) { btn.parentElement.classList.toggle('active'); }
+
+    // =============== ۵. ماشین حساب معدل ===============
+    function calcGPA() {
+        const sum = parseFloat(document.getElementById('sum-scores').value);
+        const units = parseFloat(document.getElementById('total-units').value);
+        const resultBox = document.getElementById('gpa-result');
+
+        if (!sum || !units || units === 0) {
+            alert('لطفاً مجموع نمرات و تعداد واحدها را به درستی وارد کنید.');
+            return;
+        }
+
+        const gpa = (sum / units).toFixed(2);
+        resultBox.innerHTML = `معدل شما: <span style="color: var(--accent); font-size: 24px;">${gpa}</span>`;
+        resultBox.style.display = 'block';
+    }
+
+    // =============== ۶. سنجش مهاجرت تحصیلی ===============
+    function calcAbroad() {
+        const lang = parseInt(document.getElementById('lang-level').value);
+        const gpa = parseFloat(document.getElementById('uni-gpa').value);
+        const resultBox = document.getElementById('abroad-result');
+
+        if (!gpa || gpa < 10 || gpa > 20) {
+            alert('معدل باید بین ۱۰ تا ۲۰ باشد.');
+            return;
+        }
+
+        let score = 0;
+        score += (lang === 2) ? 50 : (lang === 1 ? 25 : 0);
+        score += (gpa / 20) * 50; // 50% وزن برای معدل
+
+        let msg = '';
+        let color = '';
+        if (score >= 80) {
+            msg = 'عالی! شانس بسیار خوبی برای بورسیه و دانشگاه‌های برتر داری.';
+            color = 'var(--green)';
+        } else if (score >= 60) {
+            msg = 'خوب! با تقویت رزومه و مقاله، شانس پذیرش بالایی داری.';
+            color = 'var(--primary)';
+        } else if (score >= 40) {
+            msg = 'متوسط. باید روی نمره زبان یا معدل بیشتر کار کنی.';
+            color = 'var(--accent)';
+        } else {
+            msg = 'ضعیف. بهتره فعلاً روی زبان و بهبود معدل تمرکز کنی.';
+            color = '#ef4444';
+        }
+
+        resultBox.innerHTML = `<span style="color: ${color}; font-size: 16px;">${msg}</span>`;
+        resultBox.style.borderRightColor = color;
+        resultBox.style.display = 'block';
+    }
+
+    // =============== ۷. انیمیشن اسکرول ===============
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach(el => {
+        revealObserver.observe(el);
+    });
+
+    loadVoices();
+</script>
+
+</body>
+  </html>
