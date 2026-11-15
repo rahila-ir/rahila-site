@@ -1,56 +1,698 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🎮 ۱۰ بازی بعدی | رهیلا</title>
+    <title>🎮 آرکید نئونی ۲ (۳۰ بازی) | رهیلاناب</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🕹️</text></svg>">
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+    
     <style>
-        *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:'Arial';background:linear-gradient(135deg,#e3f2fd,#bbdefb,#90caf9,#a5d6a7);color:#111;padding:15px;min-height:100vh;text-align:center}
-        .header{background:#fff;border-radius:20px;padding:18px;margin-bottom:15px;box-shadow:0 4px 15px rgba(0,0,0,.1)}
-        .header h1{color:#0d47a1;font-size:22px}
-        .back-btn{display:inline-block;background:#0d47a1;color:#fff;padding:10px 25px;border-radius:20px;text-decoration:none;margin:10px 0}
-        .game-zone{background:#fff;border-radius:20px;padding:20px;margin:15px 0;box-shadow:0 2px 10px rgba(0,0,0,.08)}
-        .game-zone h2{color:#0d47a1;margin-bottom:10px}
-        button{padding:10px 20px;font-size:15px;background:#0d47a1;color:#fff;border:none;border-radius:8px;cursor:pointer;margin:3px}
-        button:active{background:#1565c0}
-        .result{font-size:18px;color:#0d47a1;font-weight:bold;margin:8px 0}
-        input{padding:10px;font-size:18px;width:120px;text-align:center;border-radius:8px;border:2px solid #0d47a1;margin:5px}
+        :root {
+            --bg-main: #05050f; --bg-card: rgba(15, 15, 30, 0.85); --text-main: #f0f8ff; --text-muted: #8ba3c7;
+            --primary: #00f5ff; --accent: #ff00aa; --gold: #ffcc00; --border: rgba(0, 245, 255, 0.3);
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.6); --gradient: linear-gradient(135deg, #00f5ff, #ff00aa);
+            --btn-bg: linear-gradient(135deg, #ffcc00, #ff8c00); --btn-text: #000;
+        }
+        body.light-mode {
+            --bg-main: #eef2f6; --bg-card: rgba(255, 255, 255, 0.9); --text-main: #0f172a; --text-muted: #475569;
+            --primary: #0284c7; --accent: #be185d; --gold: #b45309; --border: rgba(2, 132, 199, 0.3);
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08); --gradient: linear-gradient(135deg, #0284c7, #be185d);
+            --btn-bg: linear-gradient(135deg, #0284c7, #be185d); --btn-text: #fff;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; transition: background-color 0.3s, color 0.3s; }
+        body { font-family: 'Vazirmatn', Tahoma, sans-serif; background: radial-gradient(circle at 50% 0%, var(--bg-card), var(--bg-main) 80%); color: var(--text-main); min-height: 100vh; padding-bottom: 50px; }
+        .header { position: sticky; top: 0; z-index: 1000; background: rgba(5, 5, 15, 0.85); backdrop-filter: blur(15px); padding: 15px 20px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; box-shadow: var(--shadow); }
+        body.light-mode .header { background: rgba(255, 255, 255, 0.9); }
+        .header h1 { font-size: 20px; font-weight: 900; background: var(--gradient); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .theme-btn { background: var(--bg-card); border: 1px solid var(--border); color: var(--text-main); width: 40px; height: 40px; border-radius: 50%; cursor: pointer; font-size: 18px; display: flex; justify-content: center; align-items: center; transition: 0.3s; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
+        .game-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; padding: 20px; box-shadow: var(--shadow); backdrop-filter: blur(10px); display: flex; flex-direction: column; position: relative; overflow: hidden; }
+        .game-title { font-size: 18px; font-weight: 800; color: var(--gold); margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; text-shadow: 0 0 10px rgba(255,204,0,0.3); }
+        .game-content { flex-grow: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+        button { background: var(--btn-bg); color: var(--btn-text); border: none; padding: 10px 20px; border-radius: 12px; font-family: inherit; font-weight: 800; font-size: 14px; cursor: pointer; margin: 5px; transition: 0.2s; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+        button:hover { transform: scale(1.05) translateY(-2px); filter: brightness(1.1); }
+        button:active { transform: scale(0.95); }
+        input { padding: 10px; font-size: 16px; border-radius: 10px; border: 1px solid var(--border); background: var(--bg-main); color: var(--text-main); text-align: center; font-family: inherit; width: 150px; margin: 5px; outline: none; }
+        input:focus { border-color: var(--primary); box-shadow: 0 0 10px var(--border); }
+        
+        /* Custom Game Styles */
+        .dart-board { width: 200px; height: 200px; background: radial-gradient(circle, #ff0000 10%, #111 15%, #ffcc00 15%, #111 35%, #ffcc00 35%, #111 55%, #ffcc00 55%, #111 100%); border-radius: 50%; margin: 10px auto; cursor: crosshair; border: 4px solid var(--border); box-shadow: 0 0 20px var(--border); position: relative; }
+        .dart-board::after { content: ''; position: absolute; top: 50%; left: 50%; width: 10px; height: 10px; background: red; border-radius: 50%; transform: translate(-50%, -50%); }
+        .word-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; width: 100%; max-width: 300px; margin: 10px auto; }
+        .word-cell { background: var(--bg-main); border: 1px solid var(--border); border-radius: 10px; height: 40px; display: flex; justify-content: center; align-items: center; font-size: 20px; font-weight: bold; cursor: pointer; }
+        .word-cell.selected { background: var(--primary); color: #000; }
+        .emoji-grid { display: grid; grid-template-columns: repeat(3, 60px); gap: 10px; margin: 10px auto; }
+        .emoji-cell { width: 60px; height: 60px; background: var(--bg-main); border: 1px solid var(--border); border-radius: 10px; display: flex; justify-content: center; align-items: center; font-size: 30px; cursor: pointer; }
+        .simon-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; width: 200px; height: 200px; margin: 10px 0; }
+        .simon-btn { border-radius: 15px; cursor: pointer; opacity: 0.5; transition: 0.1s; border: none; }
+        .simon-btn.active { opacity: 1; transform: scale(1.05); box-shadow: 0 0 20px #fff; }
+        .s-red { background: #ff0055; } .s-blue { background: #00f5ff; } .s-green { background: #00ff66; } .s-yellow { background: #ffcc00; }
+        
+        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.5s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
     </style>
 </head>
 <body>
-    <div class="header"><h1>🎮 ۱۰ بازی بعدی (۱۱-۲۰)</h1><p>rahilanab.com</p></div>
-    <a href="games.html" class="back-btn">🔙 ۱۰ بازی اول</a>
 
-<!-- ۱۱ --><div class="game-zone"><h2>۱۱. 🎯 دارت</h2><p>امتیاز: <span id="dartScore">0</span></p><div id="dartArea" style="width:250px;height:250px;background:#f0f4ff;border-radius:50%;margin:10px auto;position:relative;cursor:crosshair" onclick="dartHit(event)"><div style="position:absolute;top:50%;left:50%;width:20px;height:20px;background:red;border-radius:50%;transform:translate(-50%,-50%)"></div></div><p class="result" id="dartR"></p></div>
+<div class="header">
+    <h1>🕹️ آرکید نئونی ۲ (۳۰ بازی)</h1>
+    <button class="theme-btn" onclick="toggleTheme()" id="theme-btn">🌙</button>
+</div>
 
-<!-- ۱۲ --><div class="game-zone"><h2>۱۲. 🔢 حدس کلمه</h2><p>کلمه ۵ حرفی رو حدس بزن</p><input id="wordIn" placeholder="کلمه"><button onclick="wordGuess()">حدس</button><p class="result" id="wordR"></p></div>
+<div class="container">
+    <!-- 1. Darts -->
+    <div class="game-card reveal">
+        <div class="game-title"><span>۱. 🎯 دارت</span><span style="font-size:14px; color:var(--primary);">امتیاز: <span id="dart-score">0</span></span></div>
+        <div class="game-content">
+            <div class="dart-board" onclick="hitDart(event)"></div>
+            <div id="dart-res" style="font-weight:bold; color:var(--gold);"></div>
+        </div>
+    </div>
 
-<!-- ۱۳ --><div class="game-zone"><h2>۱۳. ⏱️ زمان واکنش</h2><button id="reactBtn" onclick="reactStart()" style="padding:30px;font-size:20px">کلیک کن تا شروع بشه</button><p class="result" id="reactR"></p></div>
+    <!-- 2. Word Guess -->
+    <div class="game-card reveal">
+        <div class="game-title"><span>۲. 📝 حدس کلمه</span></div>
+        <div class="game-content">
+            <p style="font-size:12px; color:var(--text-muted); margin-bottom:10px;">کلمه ۵ حرفی رو حدس بزن</p>
+            <input id="wg-inp" maxlength="5" placeholder="کلمه">
+            <button onclick="guessWord()">حدس</button>
+            <div id="wg-res" style="font-weight:bold; margin-top:10px;"></div>
+        </div>
+    </div>
 
-<!-- ۱۴ --><div class="game-zone"><h2>۱۴. 🎨 انتخاب رنگ</h2><p>رنگ رو حدس بزن: <span id="colorName"></span></p><button style="background:red" onclick="colorPick('red')"></button><button style="background:blue" onclick="colorPick('blue')"></button><button style="background:green" onclick="colorPick('green')"></button><button style="background:yellow" onclick="colorPick('yellow')"></button><p class="result" id="colorR"></p></div>
+    <!-- 3. Reaction -->
+    <div class="game-card reveal">
+        <div class="game-title"><span>۳. ⏱️ زمان واکنش</span></div>
+        <div class="game-content">
+            <button id="react-btn" onclick="reactAction()" style="width:100%; height:100px; font-size:20px; background:var(--bg-main); border:1px solid var(--border); color:var(--text-main);">کلیک کن تا شروع</button>
+            <div id="react-res" style="margin-top:10px; font-weight:bold;"></div>
+        </div>
+    </div>
 
-<!-- ۱۵ --><div class="game-zone"><h2>۱۵. 🔤 کلمه‌سازی</h2><p>حروف: <span id="letters"></span></p><input id="wordMake" placeholder="کلمه بساز"><button onclick="wordMake()">بساز</button><p class="result" id="wordMakeR"></p></div>
+    <!-- 4. Color Pick -->
+    <div class="game-card reveal">
+        <div class="game-title"><span>۴. 🎨 انتخاب رنگ</span></div>
+        <div class="game-content">
+            <p>رنگِ <span id="cp-target" style="font-weight:bold; font-size:20px;"></span> رو انتخاب کن</p>
+            <div style="display:flex; gap:10px; margin-top:10px;">
+                <button onclick="pickColor('red')" style="background:red; color:white; width:50px; height:50px; border-radius:50%;"></button>
+                <button onclick="pickColor('blue')" style="background:blue; color:white; width:50px; height:50px; border-radius:50%;"></button>
+                <button onclick="pickColor('green')" style="background:green; color:white; width:50px; height:50px; border-radius:50%;"></button>
+                <button onclick="pickColor('yellow')" style="background:gold; color:black; width:50px; height:50px; border-radius:50%;"></button>
+            </div>
+            <div id="cp-res" style="font-weight:bold; margin-top:10px;"></div>
+        </div>
+    </div>
+
+    <!-- 5. Word Maker -->
+    <div class="game-card reveal">
+        <div class="game-title"><span>۵. 🔤 کلمه‌سازی</span></div>
+        <div class="game-content">
+            <div id="wm-letters" style="font-size:20px; font-weight:bold; margin-bottom:10px; letter-spacing:3px;"></div>
+            <input id="wm-inp" placeholder="کلمه بساز">
+            <button onclick="makeWord()">بررسی</button>
+            <div id="wm-res" style="font-weight:bold; margin-top:10px;"></div>
+        </div>
+    </div>
+
+    <!-- 6. Math Quiz -->
+    <div class="game-card reveal">
+        <div class="game-title"><span>۶. 🧮 چالش ریاضی</span></div>
+        <div class="game-content">
+            <div id="math-q" style="font-size:24px; font-weight:bold; margin-bottom:10px;">2 + 2 = ?</div>
+            <input id="math-inp" type="number" placeholder="جواب">
+            <button onclick="checkMath()">بررسی</button>
+            <div id="math-res" style="margin-top:10px; font-weight:bold;"></div>
+        </div>
+    </div>
+
+    <!-- 7. Guess Number -->
+    <div class="game-card reveal">
+        <div class="game-title"><span>۷. 🔢 حدس عدد</span></div>
+        <div class="game-content">
+            <p style="font-size:12px; color:var(--text-muted); margin-bottom:10px;">عددی بین ۱ تا ۱۰۰</p>
+            <input id="gn-inp" type="number" placeholder="حدس">
+            <button onclick="checkGuessNum()">حدس بزن</button>
+            <div id="gn-res" style="font-weight:bold; margin-top:10px;"></div>
+        </div>
+    </div>
+
+    <!-- 8. RPS -->
+    <div class="game-card reveal">
+        <div class="game-title"><span>۸. ✊ سنگ کاغذ قیچی</span></div>
+        <div class="game-content">
+            <div id="rps-res" style="font-weight:bold; margin-bottom:10px;">انتخاب کن!</div>
+            <div><button onclick="playRPS('سنگ')">✊</button><button onclick="playRPS('کاغذ')">✋</button><button onclick="playRPS('قیچی')">✌️</button></div>
+        </div>
+    </div>
+
+    <!-- 9. Coin Flip -->
+    <div class="game-card reveal">
+        <div class="game-title"><span>۹. 🪙 شیر یا خط</span></div>
+        <div class="game-content">
+            <div id="coin-res" style="font-size:40px; margin:10px 0;">🪙</div>
+            <button onclick="flipCoin()">بنداز</button>
+        </div>
+    </div>
+
+    <!-- 10. Dice Roll -->
+    <div class="game-card reveal">
+        <div class="game-title"><span>۱۰. 🎲 تاس</span></div>
+        <div class="game-content">
+            <div id="dice-res" style="font-size:50px; margin:10px 0;">🎲</div>
+            <button onclick="rollDice()">بنداز</button>
+        </div>
+    </div>
+
+    <!-- 11. Scramble -->
+    <div class="game-card reveal">
+        <div class="game-title"><span>۱۱. 🔄 حروف درهم</span></div>
+        <div class="game-content">
+            <div id="scr-word" style="font-size:24px; font-weight:bold; margin-bottom:10px; letter-spacing:2px;"></div>
+            <input id="scr-inp" placeholder="کلمه درست">
+            <button onclick="checkScramble()">بررسی</button>
+            <div id="scr-res" style="font-weight:bold; margin-top:10px;"></div>
+        </div>
+    </div>
+
+    <!-- 12. Typing Speed -->
+    <div class="game-card reveal">
+        <div class="game-title"><span>۱۲. ⌨️ سرعت تایپ</span></div>
+        <div class="game-content">
+            <div id="type-word" style="font-size:24px; font-weight:bold; margin-bottom:10px;"></div>
+            <input id="type-inp" placeholder="تایپ کن" oninput="checkTyping(this)">
+        </div>
+    </div>
+
+    <!-- 13. Click Counter -->
+    <div class="game-card reveal">
+        <div class="game-title"><span>۱۳. 👆 کلیک سریع</span><span style="font-size:14px; color:var(--primary);">کلیک: <span id="click-score">0</span></span></div>
+        <div class="game-content">
+            <button onclick="doClick()" style="width:100px; height:100px; border-radius:50%; font-size:40px;">👆</button>
+        </div>
+    </div>
+
+    <!-- 14. Find Emoji -->
+    <div class="game-card reveal">
+        <div class="game-title"><span>۱۴. 😃 پیدا کردن ایموجی</span></div>
+        <div class="game-content">
+            <div id="find-target" style="font-size:30px; margin-bottom:10px;">هدف: 🍎</div>
+            <div class="emoji-grid" id="find-grid"></div>
+            <button onclick="initFind()" style="margin-top:10px;">شروع مجدد</button>
+        </div>
+    </div>
+
+    <!-- 15. Odd One Out -->
+    <div class="game-card reveal">
+        <div class="game-title"><span>۱۵. 🧐 کدام متفاوت است؟</span><span id="odd-score" style="font-size:14px; color:var(--primary);">0</span></div>
+        <div class="game-content">
+            <div class="emoji-grid" id="odd-grid"></div>
+        </div>
+    </div>
+
+    <!-- 16. RPSLS -->
+    <div class="game-card reveal">
+        <div class="game-title"><span>۱۶. 🖖 RPSLS</span></div>
+        <div class="game-content">
+            <div id="rpsls-res" style="font-weight:bold; margin-bottom:10px;">انتخاب کن!</div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:5px;">
+                <button onclick="playRPSLS(0)">✊ سنگ</button><button onclick="playRPSLS(1)">✋ کاغذ</button>
+                <button onclick="playRPSLS(2)">✌️ قیچی</button><button onclick="playRPSLS(3)">🦎 مارمولک</button>
+                <button onclick="playRPSLS(4)" style="grid-column:1/-1;">🖖 اسپاک</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 17. Spin Wheel -->
+    <div class="game-card reveal">
+        <div class="game-title"><span>۱۷. 🎡 گردونه شانس</span></div>
+        <div class="game-content">
+            <div class="wheel" id="wheel" style="width:100px; height:100px; border-radius:50%; background:conic-gradient(red, blue, green, yellow, purple, orange, red); margin-bottom:10px; transition:3s;"></div>
+            <button onclick="spinWheel()">بچرخون</button>
+            <div id="wheel-res" style="font-weight:bold; margin-top:10px;"></div>
+        </div>
+    </div>
+
+    <!-- 18. True/False -->
+    <div class="game-card reveal">
+        <div class="game-title"><span>۱۸. ⚖️ درست یا غلط</span></div>
+        <div class="game-content">
+            <div id="tf-q" style="font-weight:bold; margin-bottom:10px; font-size:16px;">زمین گرد است.</div>
+            <div style="display:flex; gap:10px;">
+                <button onclick="checkTF(true)" style="background:green;">درست</button>
+                <button onclick="checkTF(false)" style="background:red;">غلط</button>
+            </div>
+            <div id="tf-res" style="font-weight:bold; margin-top:10px;"></div>
+        </div>
+    </div>
+
+    <!-- 19. Higher/Lower -->
+    <div class="game-card reveal">
+        <div class="game-title"><span>۱۹. ⬆️⬇️ بزرگتر یا کوچکتر</span></div>
+        <div class="game-content">
+            <div id="hl-num" style="font-size:40px; font-weight:bold;">50</div>
+            <div style="display:flex; gap:10px;">
+                <button onclick="guessHL('higher')">⬆ بزرگتر</button>
+                <button onclick="guessHL('lower')">⬇ کوچکتر</button>
+            </div>
+            <div id="hl-res" style="font-weight:bold; margin-top:10px;"></div>
+        </div>
+    </div>
+
+    <!-- 20. Tic Tac Toe -->
+    <div class="game-card reveal">
+        <div class="game-title"><span>۲۰. ⭕ دوز</span></div>
+        <div class="game-content">
+            <div class="xo-grid" id="xo-grid" style="display:grid; grid-template-columns:repeat(3,60px); gap:5px;"></div>
+            <button onclick="resetXO()" style="margin-top:10px;">شروع مجدد</button>
+            <div id="xo-status" style="font-weight:bold; margin-top:5px; color:var(--gold);">نوبت تو (X)</div>
+        </div>
+    </div>
+
+    <!-- 21. Tap Box -->
+    <div class="game-card reveal">
+        <div class="game-title"><span>۲۱. 📦 لمس جعبه</span><span id="tap-score" style="font-size:14px; color:var(--primary);">0</span></div>
+        <div class="game-content">
+            <div id="tap-area" style="width:200px; height:150px; background:var(--bg-main); border:1px solid var(--border); position:relative; border-radius:10px;">
+                <div id="tap-box" onclick="tapBox()" style="width:40px; height:40px; background:var(--primary); position:absolute; top:55px; left:80px; border-radius:5px; cursor:pointer;"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 22. Color Memory -->
+    <div class="game-card reveal">
+        <div class="game-title"><span>۲۲. 🧠 حافظه رنگ</span></div>
+        <div class="game-content">
+            <div id="cm-display" style="width:100px; height:100px; background:#333; border-radius:10px; margin-bottom:10px;"></div>
+            <button onclick="startCM()">شروع</button>
+            <div id="cm-opts" style="display:flex; gap:10px; margin-top:10px;"></div>
+            <div id="cm-res" style="font-weight:bold; margin-top:5px;"></div>
+        </div>
+    </div>
+
+    <!-- 23. Emoji Math -->
+    <div class="game-card reveal">
+        <div class="game-title"><span>۲۳. ➕ ریاضی ایموجی</span></div>
+        <div class="game-content">
+            <div id="em-q" style="font-size:24px; font-weight:bold; margin-bottom:10px;"></div>
+            <input id="em-inp" type="number" placeholder="جواب">
+            <button onclick="checkEmMath()">بررسی</button>
+            <div id="em-res" style="font-weight:bold; margin-top:10px;"></div>
+        </div>
+    </div>
+
+    <!-- 24. Capital Cities -->
+    <div class="game-card reveal">
+        <div class="game-title"><span>۲۴. 🌍 پایتخت‌ها</span></div>
+        <div class="game-content">
+            <div id="cap-q" style="font-weight:bold; margin-bottom:10px;">پایتخت ایران؟</div>
+            <div id="cap-opts" style="display:flex; flex-direction:column; gap:5px;"></div>
+        </div>
+    </div>
+
+    <!-- 25. Fast Tap -->
+    <div class="game-card reveal">
+        <div class="game-title"><span>۲۵. ⚡ تپ سریع</span></div>
+        <div class="game-content">
+            <div id="ft-timer" style="font-size:30px; font-weight:bold;">5.0</div>
+            <button id="ft-btn" onclick="tapFast()" disabled style="width:100%; height:60px;">شروع</button>
+            <div id="ft-res" style="font-weight:bold; margin-top:10px;"></div>
+        </div>
+    </div>
+
+    <!-- 26. Sequence -->
+    <div class="game-card reveal">
+        <div class="game-title"><span>۲۶. 🔢 دنباله اعداد</span></div>
+        <div class="game-content">
+            <div id="seq-q" style="font-size:24px; font-weight:bold; margin-bottom:10px;">2, 4, 6, ?</div>
+            <input id="seq-inp" type="number" placeholder="جواب">
+            <button onclick="checkSeq()">بررسی</button>
+            <div id="seq-res" style="font-weight:bold; margin-top:10px;"></div>
+        </div>
+    </div>
+
+    <!-- 27. Emoji Riddles -->
+    <div class="game-card reveal">
+        <div class="game-title"><span>۲۷. 🧩 معما ایموجی</span></div>
+        <div class="game-content">
+            <div id="riddle-q" style="font-size:30px; font-weight:bold; margin-bottom:10px;">🍎 + 📱 = ?</div>
+            <input id="riddle-inp" placeholder="جواب (فارسی)">
+            <button onclick="checkRiddle()">بررسی</button>
+            <div id="riddle-res" style="font-weight:bold; margin-top:10px;"></div>
+        </div>
+    </div>
+
+    <!-- 28. Stop Clock -->
+    <div class="game-card reveal">
+        <div class="game-title"><span>۲۸. ⏱️ توقف ساعت</span></div>
+        <div class="game-content">
+            <div id="clock-display" style="font-size:40px; font-family:monospace; font-weight:bold; margin-bottom:10px;">0.00</div>
+            <button onclick="startStopClock()" id="clock-btn">شروع</button>
+            <div id="clock-res" style="font-weight:bold; margin-top:10px;"></div>
+        </div>
+    </div>
+
+    <!-- 29. Anagrams -->
+    <div class="game-card reveal">
+        <div class="game-title"><span>۲۹. 🔠 آناگرام</span></div>
+        <div class="game-content">
+            <div id="ana-word" style="font-size:24px; font-weight:bold; margin-bottom:10px;"></div>
+            <input id="ana-inp" placeholder="کلمه درست">
+            <button onclick="checkAna()">بررسی</button>
+            <div id="ana-res" style="font-weight:bold; margin-top:10px;"></div>
+        </div>
+    </div>
+
+    <!-- 30. Memory Match -->
+    <div class="game-card reveal">
+        <div class="game-title"><span>۳۰. 🧩 جفت‌یابی</span><span id="match-score" style="font-size:14px; color:var(--primary);">0</span></div>
+        <div class="game-content">
+            <div id="match-grid" style="display:grid; grid-template-columns:repeat(4, 50px); gap:5px; margin-bottom:10px;"></div>
+            <button onclick="initMatch()">شروع مجدد</button>
+        </div>
+    </div>
+
+</div>
+
+<div style="text-align: center; margin: 30px 0 20px; color: var(--text-muted); font-size: 13px;">
+    🌟 <strong>رهیلاناب</strong> - rahilanab.com
+</div>
 
 <script>
-// دارت
-let dartS=0;function dartHit(e){let r=e.target.getBoundingClientRect(),x=e.clientX-r.left-125,y=e.clientY-r.top-125,dist=Math.sqrt(x*x+y*y);if(dist<20)dartS+=100;else if(dist<50)dartS+=50;else if(dist<100)dartS+=25;else dartS+=5;document.getElementById('dartScore').textContent=dartS;document.getElementById('dartR').textContent='+'+dartS+' امتیاز!'}
+    // =============== Theme ===============
+    function toggleTheme() { document.body.classList.toggle('light-mode'); const isLight = document.body.classList.contains('light-mode'); document.getElementById('theme-btn').innerText = isLight ? '☀️' : '🌙'; localStorage.setItem('arcade2Theme', isLight); }
+    if (localStorage.getItem('arcade2Theme') === 'true') { toggleTheme(); }
 
-// حدس کلمه
-let words=['سلام','کتاب','مداد','مادر','آسمان','زمین','دریا','کوه','گل','ابر','ماه','ستاره'];let wTarget=words[Math.floor(Math.random()*words.length)];
-function wordGuess(){let g=document.getElementById('wordIn').value;if(g===wTarget){document.getElementById('wordR').textContent='🎉 درسته!';wTarget=words[Math.floor(Math.random()*words.length)]}else{document.getElementById('wordR').textContent='❌ دوباره سعی کن'}document.getElementById('wordIn').value='';}
+    // =============== 1. Darts ===============
+    let dartScore = 0;
+    function hitDart(e) {
+        let r = e.target.getBoundingClientRect();
+        let x = e.clientX - r.left - 100;
+        let y = e.clientY - r.top - 100;
+        let dist = Math.sqrt(x*x + y*y);
+        let pts = dist < 20 ? 100 : dist < 50 ? 50 : dist < 100 ? 25 : 10;
+        dartScore += pts;
+        document.getElementById('dart-score').innerText = dartScore;
+        document.getElementById('dart-res').innerText = `+${pts} امتیاز`;
+    }
 
-// زمان واکنش
-let reactStartTime;function reactStart(){let b=document.getElementById('reactBtn');if(b.textContent.includes('کلیک کن')){b.textContent='صبر کن...';b.style.background='red';setTimeout(()=>{b.textContent='الان بزن!';b.style.background='lime';reactStartTime=Date.now()},Math.random()*3000+1000)}else if(b.textContent==='الان بزن!'){let t=Date.now()-reactStartTime;document.getElementById('reactR').textContent='⏱️ '+t+' میلی‌ثانیه!';b.textContent='کلیک کن تا شروع بشه';b.style.background='#0d47a1'}}
+    // =============== 2. Word Guess ===============
+    let wgWords = ['کتاب', 'مادر', 'دریا', 'ماه', 'ستاره', 'پنجره', 'مدرسه'];
+    let wgTarget = wgWords[Math.floor(Math.random()*wgWords.length)];
+    function guessWord() {
+        let v = document.getElementById('wg-inp').value;
+        let r = document.getElementById('wg-res');
+        if(v === wgTarget) { r.innerText = '🎉 درست بود!'; r.style.color = 'lime'; wgTarget = wgWords[Math.floor(Math.random()*wgWords.length)]; }
+        else { r.innerText = '❌ اشتباه!'; r.style.color = 'red'; }
+        document.getElementById('wg-inp').value = '';
+    }
 
-// انتخاب رنگ
-let colorNames=['قرمز','آبی','سبز','زرد'];let cTarget=Math.floor(Math.random()*4);document.getElementById('colorName').textContent=colorNames[cTarget];
-function colorPick(c){let i={'red':0,'blue':1,'green':2,'yellow':3};if(i[c]===cTarget){document.getElementById('colorR').textContent='✅ درسته!';cTarget=Math.floor(Math.random()*4);document.getElementById('colorName').textContent=colorNames[cTarget]}else{document.getElementById('colorR').textContent='❌ اشتباه!'}}
+    // =============== 3. Reaction ===============
+    let reactStart;
+    function reactAction() {
+        const btn = document.getElementById('react-btn'), res = document.getElementById('react-res');
+        if(btn.innerText === 'کلیک کن تا شروع') {
+            btn.innerText = 'صبر کن...'; btn.style.background = 'var(--accent)'; res.innerText = '';
+            setTimeout(() => { btn.innerText = 'الان بزن!'; btn.style.background = 'var(--primary)'; reactStart = Date.now(); }, Math.random()*3000+1000);
+        } else if(btn.innerText === 'الان بزن!') {
+            res.innerText = `⏱️ ${Date.now() - reactStart} میلی‌ثانیه`;
+            btn.innerText = 'کلیک کن تا شروع'; btn.style.background = 'var(--bg-main)';
+        }
+    }
 
-// کلمه‌سازی
-let letters='اب ت ث ج ح خ د ذ ر ز س ش ص ض ط ظ ع غ ف ق ک ل م ن و ه ی'.split(' ');let selected=letters.sort(()=>Math.random()-0.5).slice(0,6);
-document.getElementById('letters').textContent=selected.join(' ');
-function wordMake(){let w=document.getElementById('wordMake').value;let ok=true;for(let c of w){if(!selected.includes(c)){ok=false;break}}document.getElementById('wordMakeR').textContent=ok?'✅ کلمه معتبر!':'❌ از این حروف استفاده کن';document.getElementById('wordMake').value='';}
+    // =============== 4. Color Pick ===============
+    let cpColors = ['قرمز', 'آبی', 'سبز', 'زرد'];
+    let cpMap = {'قرمز':'red', 'آبی':'blue', 'سبز':'green', 'زرد':'yellow'};
+    let cpTarget = cpColors[Math.floor(Math.random()*cpColors.length)];
+    document.getElementById('cp-target').innerText = cpTarget;
+    function pickColor(c) {
+        let r = document.getElementById('cp-res');
+        if(c === cpMap[cpTarget]) { r.innerText = '✅ درست!'; r.style.color = 'lime'; cpTarget = cpColors[Math.floor(Math.random()*cpColors.length)]; document.getElementById('cp-target').innerText = cpTarget; }
+        else { r.innerText = '❌ اشتباه!'; r.style.color = 'red'; }
+    }
+
+    // =============== 5. Word Maker ===============
+    let wmLetters = ['ا','ب','ت','ث','ج','ح','د','ر','س','ش','ک','ل','م','ن','و','ه','ی'].sort(() => 0.5 - Math.random()).slice(0, 5);
+    document.getElementById('wm-letters').innerText = wmLetters.join(' ');
+    function makeWord() {
+        let v = document.getElementById('wm-inp').value;
+        let ok = v.split('').every(c => wmLetters.includes(c));
+        let r = document.getElementById('wm-res');
+        if(ok) { r.innerText = '✅ کلمه معتبر!'; r.style.color = 'lime'; }
+        else { r.innerText = '❌ حروف اشتباه!'; r.style.color = 'red'; }
+        document.getElementById('wm-inp').value = '';
+    }
+
+    // =============== 6. Math Quiz ===============
+    let mathAns;
+    function newMath() { const a = Math.floor(Math.random()*10)+1, b = Math.floor(Math.random()*10)+1; mathAns = a + b; document.getElementById('math-q').innerText = `${a} + ${b} = ?`; }
+    function checkMath() { const v = parseInt(document.getElementById('math-inp').value); const r = document.getElementById('math-res'); if(v === mathAns) { r.innerText = '✅ درست!'; r.style.color = 'lime'; newMath(); } else { r.innerText = '❌ اشتباه!'; r.style.color = 'red'; } document.getElementById('math-inp').value = ''; }
+    newMath();
+
+    // =============== 7. Guess Number ===============
+    let gnTarget = Math.floor(Math.random()*100)+1;
+    function checkGuessNum() { const v = parseInt(document.getElementById('gn-inp').value); const r = document.getElementById('gn-res'); if(v === gnTarget) { r.innerText = '🎉 درست!'; r.style.color = 'lime'; gnTarget = Math.floor(Math.random()*100)+1; } else if(v < gnTarget) { r.innerText = '⬆ بالاتر'; r.style.color = 'gold'; } else { r.innerText = '⬇ پایین‌تر'; r.style.color = 'gold'; } document.getElementById('gn-inp').value = ''; }
+
+    // =============== 8. RPS ===============
+    function playRPS(c) { const o = ['سنگ','کاغذ','قیچی'][Math.floor(Math.random()*3)]; let r = c===o ? 'مساوی' : (c==='سنگ'&&o==='قیچی'||c==='کاغذ'&&o==='سنگ'||c==='قیچی'&&o==='کاغذ') ? '🎉 بردی!' : '😢 باختی'; document.getElementById('rps-res').innerText = `تو: ${c} | سیستم: ${o} | ${r}`; }
+
+    // =============== 9. Coin Flip ===============
+    function flipCoin() { document.getElementById('coin-res').innerText = Math.random() < 0.5 ? '🦁 شیر' : '📖 خط'; }
+
+    // =============== 10. Dice ===============
+    function rollDice() { const n = Math.floor(Math.random()*6)+1; const e = ['⚀','⚁','⚂','⚃','⚄','⚅']; document.getElementById('dice-res').innerText = e[n-1]; }
+
+    // =============== 11. Scramble ===============
+    const scrWords = ['کتاب', 'مداد', 'میز', 'صندلی', 'پنجره', 'آسمان', 'دریا']; let scrTarget = '';
+    function newScramble() { scrTarget = scrWords[Math.floor(Math.random()*scrWords.length)]; document.getElementById('scr-word').innerText = scrTarget.split('').sort(() => Math.random()-0.5).join(''); }
+    function checkScramble() { const v = document.getElementById('scr-inp').value; const r = document.getElementById('scr-res'); if(v === scrTarget) { r.innerText = '✅ درست!'; r.style.color = 'lime'; newScramble(); } else { r.innerText = '❌ اشتباه!'; r.style.color = 'red'; } document.getElementById('scr-inp').value = ''; }
+    newScramble();
+
+    // =============== 12. Typing ===============
+    const typeWords = ['ماشین', 'کتاب', 'دریا', 'آسمان', 'پنجره']; let typeIdx = 0;
+    function newTyping() { document.getElementById('type-word').innerText = typeWords[typeIdx % typeWords.length]; typeIdx++; }
+    function checkTyping(inp) { if(inp.value === document.getElementById('type-word').innerText) { inp.value = ''; newTyping(); } }
+    newTyping();
+
+    // =============== 13. Click Counter ===============
+    let clicks = 0; function doClick() { clicks++; document.getElementById('click-score').innerText = clicks; }
+
+    // =============== 14. Find Emoji ===============
+    function initFind() {
+        const emojis = ['🍎','🍊','🍋','🍉','🍇','🍓']; const target = emojis[Math.floor(Math.random()*emojis.length)];
+        document.getElementById('find-target').innerText = 'هدف: ' + target;
+        const grid = document.getElementById('find-grid'); grid.innerHTML = '';
+        for(let i=0; i<9; i++) {
+            const cell = document.createElement('div'); cell.className = 'emoji-cell';
+            cell.innerText = emojis[Math.floor(Math.random()*emojis.length)];
+            cell.onclick = () => { if(cell.innerText === target) { alert('درست بود!'); initFind(); } else { alert('اشتباه!'); } };
+            grid.appendChild(cell);
+        }
+    }
+    initFind();
+
+    // =============== 15. Odd One Out ===============
+    let oddScore = 0;
+    function initOdd() {
+        const emojis = ['🍎','🍊','🍋','🍉','🍇']; const same = emojis[Math.floor(Math.random()*emojis.length)];
+        let diff = emojis[Math.floor(Math.random()*emojis.length)]; while(diff === same) diff = emojis[Math.floor(Math.random()*emojis.length)];
+        const grid = document.getElementById('odd-grid'); grid.innerHTML = '';
+        for(let i=0; i<9; i++) {
+            const cell = document.createElement('div'); cell.className = 'emoji-cell';
+            const isDiff = i === Math.floor(Math.random()*9);
+            cell.innerText = isDiff ? diff : same;
+            cell.onclick = () => { if(isDiff) { oddScore++; document.getElementById('odd-score').innerText = oddScore; initOdd(); } else { oddScore = Math.max(0, oddScore-1); document.getElementById('odd-score').innerText = oddScore; } };
+            grid.appendChild(cell);
+        }
+    }
+    initOdd();
+
+    // =============== 16. RPSLS ===============
+    const rpslsNames = ['سنگ','کاغذ','قیچی','مارمولک','اسپاک']; const rpslsRules = [[2,3],[0,4],[1,3],[1,4],[0,2]];
+    function playRPSLS(c) { const o = Math.floor(Math.random()*5); let res = c === o ? 'مساوی' : rpslsRules[c].includes(o) ? '🎉 بردی!' : '😢 باختی'; document.getElementById('rpsls-res').innerText = `تو: ${rpslsNames[c]} | سیستم: ${rpslsNames[o]} | ${res}`; }
+
+    // =============== 17. Spin Wheel ===============
+    let wheelRot = 0;
+    function spinWheel() { wheelRot += 360 * 3 + Math.floor(Math.random()*360); document.getElementById('wheel').style.transform = `rotate(${wheelRot}deg)`; setTimeout(() => { const res = ['۵۰ امتیاز','۲۰ امتیاز','۱۰۰ امتیاز','شانس مجدد','هیچی','۳۰ امتیاز']; document.getElementById('wheel-res').innerText = res[Math.floor(Math.random()*res.length)]; }, 3000); }
+
+    // =============== 18. True/False ===============
+    const tfQ = [{q:'زمین گرد است.', a:true}, {q:'خورشید به دور زمین می‌چرخد.', a:false}, {q:'آب در ۱۰۰ درجه می‌جوشد.', a:true}]; let tfIdx = 0;
+    function loadTF() { document.getElementById('tf-q').innerText = tfQ[tfIdx].q; document.getElementById('tf-res').innerText = ''; }
+    function checkTF(v) { const r = document.getElementById('tf-res'); if(v === tfQ[tfIdx].a) { r.innerText = '✅ درست!'; r.style.color = 'lime'; tfIdx = (tfIdx+1)%tfQ.length; setTimeout(loadTF, 1000); } else { r.innerText = '❌ اشتباه!'; r.style.color = 'red'; } }
+    loadTF();
+
+    // =============== 19. Higher/Lower ===============
+    let hlCurrent = 50, hlNext = 0;
+    function newHL() { hlNext = Math.floor(Math.random()*100)+1; document.getElementById('hl-res').innerText = ''; }
+    newHL();
+    function guessHL(dir) { const r = document.getElementById('hl-res'); if((dir==='higher' && hlNext > hlCurrent) || (dir==='lower' && hlNext < hlCurrent)) { r.innerText = '✅ درست!'; r.style.color = 'lime'; hlCurrent = hlNext; newHL(); } else { r.innerText = '❌ اشتباه!'; r.style.color = 'red'; hlCurrent = hlNext; newHL(); } document.getElementById('hl-num').innerText = hlCurrent; }
+
+    // =============== 20. Tic Tac Toe ===============
+    let xoBoard = [], isPlayerTurn = true, xoGameActive = true;
+    function resetXO() { xoBoard = Array(9).fill(''); xoGameActive = true; isPlayerTurn = true; document.getElementById('xo-status').innerText = 'نوبت تو (X)'; renderXO(); }
+    function renderXO() {
+        const grid = document.getElementById('xo-grid'); grid.innerHTML = '';
+        for(let i=0; i<9; i++) {
+            const cell = document.createElement('div');
+            cell.style.cssText = 'background:var(--bg-main); border:1px solid var(--border); border-radius:8px; display:flex; justify-content:center; align-items:center; font-size:30px; font-weight:bold; cursor:pointer; color:var(--text-main);';
+            cell.innerText = xoBoard[i];
+            cell.onclick = () => playerMoveXO(i);
+            grid.appendChild(cell);
+        }
+    }
+    function playerMoveXO(i) { if(!xoGameActive || !isPlayerTurn || xoBoard[i] !== '') return; xoBoard[i] = 'X'; renderXO(); isPlayerTurn = false; document.getElementById('xo-status').innerText = 'نوبت سیستم...'; if(!checkWinXO()) setTimeout(aiMoveXO, 500); }
+    function aiMoveXO() { if(!xoGameActive) return; let bestScore = -Infinity, move = -1; for(let i=0; i<9; i++) { if(xoBoard[i] === '') { xoBoard[i] = 'O'; let score = minimaxXO(xoBoard, 0, false); xoBoard[i] = ''; if(score > bestScore) { bestScore = score; move = i; } } } if(move !== -1) { xoBoard[move] = 'O'; renderXO(); if(!checkWinXO()) { isPlayerTurn = true; document.getElementById('xo-status').innerText = 'نوبت تو (X)'; } } }
+    function minimaxXO(board, depth, isMax) { let res = evaluateXO(board); if(res !== null) return res; if(isMax) { let best = -Infinity; for(let i=0; i<9; i++) if(board[i]==='') { board[i]='O'; best = Math.max(best, minimaxXO(board, depth+1, false)); board[i]=''; } return best; } else { let best = Infinity; for(let i=0; i<9; i++) if(board[i]==='') { board[i]='X'; best = Math.min(best, minimaxXO(board, depth+1, true)); board[i]=''; } return best; } }
+    function evaluateXO(b) { const wins = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]]; for(let w of wins) if(b[w[0]] !== '' && b[w[0]] === b[w[1]] && b[w[1]] === b[w[2]]) return b[w[0]] === 'O' ? 10 : -10; return b.includes('') ? null : 0; }
+    function checkWinXO() { const wins = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]]; for(let w of wins) { if(xoBoard[w[0]] !== '' && xoBoard[w[0]] === xoBoard[w[1]] && xoBoard[w[1]] === xoBoard[w[2]]) { xoGameActive = false; let winner = xoBoard[w[0]]; document.getElementById('xo-status').innerText = winner === 'X' ? '🎉 تو بردی!' : '😢 سیستم برد!'; document.getElementById('xo-status').style.color = winner === 'X' ? 'var(--primary)' : 'var(--accent)'; return true; } } if(!xoBoard.includes('')) { xoGameActive = false; document.getElementById('xo-status').innerText = '🤝 مساوی!'; document.getElementById('xo-status').style.color = 'var(--text-main)'; return true; } return false; }
+    resetXO();
+
+    // =============== 21. Tap Box ===============
+    let tapScore = 0;
+    function tapBox() {
+        tapScore++; document.getElementById('tap-score').innerText = tapScore;
+        const box = document.getElementById('tap-box');
+        box.style.top = Math.random() * 110 + 'px';
+        box.style.left = Math.random() * 150 + 'px';
+    }
+
+    // =============== 22. Color Memory ===============
+    let cmColor = '', cmTimer;
+    function startCM() {
+        const colors = ['red', 'blue', 'green', 'yellow', 'purple', 'orange'];
+        cmColor = colors[Math.floor(Math.random()*colors.length)];
+        const display = document.getElementById('cm-display');
+        display.style.background = cmColor;
+        document.getElementById('cm-res').innerText = '';
+        const opts = document.getElementById('cm-opts'); opts.innerHTML = '';
+        let options = [cmColor, ...colors.filter(c => c !== cmColor).sort(()=>Math.random()-0.5).slice(0,2)].sort(()=>Math.random()-0.5);
+        options.forEach(c => {
+            const b = document.createElement('button');
+            b.style.background = c; b.style.width = '40px'; b.style.height = '40px'; b.style.padding = '0';
+            b.onclick = () => {
+                if(c === cmColor) { document.getElementById('cm-res').innerText = '✅ درست!'; document.getElementById('cm-res').style.color = 'lime'; }
+                else { document.getElementById('cm-res').innerText = '❌ اشتباه!'; document.getElementById('cm-res').style.color = 'red'; }
+                display.style.background = '#333';
+            };
+            opts.appendChild(b);
+        });
+        setTimeout(() => { display.style.background = '#333'; }, 1500);
+    }
+
+    // =============== 23. Emoji Math ===============
+    let emAns;
+    function newEmMath() {
+        const a = Math.floor(Math.random()*5)+1, b = Math.floor(Math.random()*5)+1;
+        emAns = a + b;
+        document.getElementById('em-q').innerText = `🍎 (${a}) + 🍌 (${b}) = ?`;
+    }
+    function checkEmMath() { const v = parseInt(document.getElementById('em-inp').value); const r = document.getElementById('em-res'); if(v === emAns) { r.innerText = '✅ درست!'; r.style.color = 'lime'; newEmMath(); } else { r.innerText = '❌ اشتباه!'; r.style.color = 'red'; } document.getElementById('em-inp').value = ''; }
+    newEmMath();
+
+    // =============== 24. Capital Cities ===============
+    const capQ = [{q:'پایتخت ایران؟', o:['تهران','شیراز'], a:0}, {q:'پایتخت فرانسه؟', o:['لندن','پاریس'], a:1}, {q:'پایتخت ژاپن؟', o:['توکیو','سئول'], a:0}]; let capIdx = 0;
+    function loadCap() {
+        const q = capQ[capIdx];
+        document.getElementById('cap-q').innerText = q.q;
+        const opts = document.getElementById('cap-opts'); opts.innerHTML = '';
+        q.o.forEach((o, i) => {
+            const b = document.createElement('button'); b.innerText = o;
+            b.onclick = () => { if(i === q.a) { alert('درست!'); capIdx = (capIdx+1)%capQ.length; loadCap(); } else { alert('اشتباه!'); } };
+            opts.appendChild(b);
+        });
+    }
+    loadCap();
+
+    // =============== 25. Fast Tap ===============
+    let ftCount = 0, ftTime = 5, ftTimer, ftActive = false;
+    function startFastTap() {
+        ftCount = 0; ftTime = 5; ftActive = true;
+        document.getElementById('ft-res').innerText = '';
+        document.getElementById('ft-btn').innerText = 'بزن!';
+        document.getElementById('ft-btn').disabled = false;
+        clearInterval(ftTimer);
+        ftTimer = setInterval(() => {
+            ftTime -= 0.1;
+            document.getElementById('ft-timer').innerText = ftTime.toFixed(1);
+            if(ftTime <= 0) { clearInterval(ftTimer); ftActive = false; document.getElementById('ft-btn').innerText = 'پایان'; document.getElementById('ft-btn').disabled = true; document.getElementById('ft-res').innerText = `تعداد تپ: ${ftCount}`; }
+        }, 100);
+    }
+    function tapFast() { if(!ftActive) return; ftCount++; }
+    document.getElementById('ft-btn').addEventListener('click', tapFast);
+    document.getElementById('ft-btn').addEventListener('click', function() { if(this.innerText === 'شروع') startFastTap(); });
+
+    // =============== 26. Sequence ===============
+    let seqAns = 8;
+    function newSeq() {
+        const start = Math.floor(Math.random()*5)+1, step = Math.floor(Math.random()*3)+2;
+        seqAns = start + step * 3;
+        document.getElementById('seq-q').innerText = `${start}, ${start+step}, ${start+step*2}, ?`;
+    }
+    function checkSeq() { const v = parseInt(document.getElementById('seq-inp').value); const r = document.getElementById('seq-res'); if(v === seqAns) { r.innerText = '✅ درست!'; r.style.color = 'lime'; newSeq(); } else { r.innerText = '❌ اشتباه!'; r.style.color = 'red'; } document.getElementById('seq-inp').value = ''; }
+    newSeq();
+
+    // =============== 27. Emoji Riddles ===============
+    const riddles = [{q:'🍎 + 📱', a:'اپل'}, {q:'🦇 + 👨', a:'بتمن'}, {q:'☀️ + 🌻', a:'آفتابگردان'}]; let riddleIdx = 0;
+    function loadRiddle() { document.getElementById('riddle-q').innerText = riddles[riddleIdx].q; }
+    function checkRiddle() { const v = document.getElementById('riddle-inp').value; const r = document.getElementById('riddle-res'); if(v === riddles[riddleIdx].a) { r.innerText = '✅ درست!'; r.style.color = 'lime'; riddleIdx = (riddleIdx+1)%riddles.length; loadRiddle(); } else { r.innerText = '❌ اشتباه!'; r.style.color = 'red'; } document.getElementById('riddle-inp').value = ''; }
+    loadRiddle();
+
+    // =============== 28. Stop Clock ===============
+    let clockTime = 0, clockTimer, clockActive = false;
+    function startStopClock() {
+        const btn = document.getElementById('clock-btn');
+        if(clockActive) { clearInterval(clockTimer); clockActive = false; btn.innerText = 'شروع مجدد'; const diff = Math.abs(clockTime - 10); if(diff < 0.1) { document.getElementById('clock-res').innerText = '🎯 عالی بود!'; document.getElementById('clock-res').style.color = 'lime'; } else { document.getElementById('clock-res').innerText = 'دقت: ' + diff.toFixed(2) + ' ثانیه'; document.getElementById('clock-res').style.color = 'gold'; } }
+        else { clockTime = 0; clockActive = true; btn.innerText = 'توقف!'; document.getElementById('clock-res').innerText = ''; clearInterval(clockTimer); clockTimer = setInterval(() => { clockTime += 0.01; document.getElementById('clock-display').innerText = clockTime.toFixed(2); }, 10); }
+    }
+
+    // =============== 29. Anagrams ===============
+    const anaWords = ['ماشین', 'کتابخانه', 'دانشگاه', 'تلویزیون', 'آفتابگردان']; let anaTarget = '';
+    function newAna() { anaTarget = anaWords[Math.floor(Math.random()*anaWords.length)]; document.getElementById('ana-word').innerText = anaTarget.split('').sort(()=>Math.random()-0.5).join(''); }
+    function checkAna() { const v = document.getElementById('ana-inp').value; const r = document.getElementById('ana-res'); if(v === anaTarget) { r.innerText = '✅ درست!'; r.style.color = 'lime'; newAna(); } else { r.innerText = '❌ اشتباه!'; r.style.color = 'red'; } document.getElementById('ana-inp').value = ''; }
+    newAna();
+
+    // =============== 30. Memory Match ===============
+    let matchCards = [], matchFlipped = [], matchLocked = false, matchCount = 0;
+    function initMatch() {
+        const emojis = ['🍎','🍊','🍋','🍉','🍇','🍓','🍒','🍑'];
+        matchCards = [...emojis, ...emojis].sort(()=>Math.random()-0.5);
+        matchFlipped = []; matchLocked = false; matchCount = 0;
+        document.getElementById('match-score').innerText = '0';
+        const grid = document.getElementById('match-grid'); grid.innerHTML = '';
+        matchCards.forEach((e, i) => {
+            const cell = document.createElement('div');
+            cell.className = 'word-cell';
+            cell.style.fontSize = '20px';
+            cell.style.color = 'transparent';
+            cell.innerText = e;
+            cell.onclick = () => flipMatch(i, cell);
+            grid.appendChild(cell);
+        });
+    }
+    function flipMatch(i, cell) {
+        if(matchLocked || matchFlipped.length >= 2 || cell.classList.contains('selected')) return;
+        cell.classList.add('selected'); cell.style.color = '#000';
+        matchFlipped.push({i, cell});
+        if(matchFlipped.length === 2) {
+            matchLocked = true;
+            let [a, b] = matchFlipped;
+            if(matchCards[a.i] === matchCards[b.i]) {
+                matchCount++; document.getElementById('match-score').innerText = matchCount;
+                a.cell.style.background = 'var(--accent)'; b.cell.style.background = 'var(--accent)';
+                matchFlipped = []; matchLocked = false;
+                if(matchCount === 8) setTimeout(() => alert('🎉 بردی!'), 500);
+            } else {
+                setTimeout(() => { a.cell.classList.remove('selected'); a.cell.style.color = 'transparent'; b.cell.classList.remove('selected'); b.cell.style.color = 'transparent'; matchFlipped = []; matchLocked = false; }, 800);
+            }
+        }
+    }
+    initMatch();
+
+    // Reveal Observer
+    const revealObserver = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('active'); revealObserver.unobserve(entry.target); } }); }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
 </script>
 </body>
-</html>
+                                                                                        </html>
