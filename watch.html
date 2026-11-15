@@ -1,1 +1,432 @@
-<!DOCTYPE html><html lang="fa"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>⌚ ساعت | رهیلا</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial;background:radial-gradient(circle at center,#0a1a1a,#1a4a4a,#66ccaa);color:#fff;text-align:center;padding:15px;min-height:100vh}.header{background:rgba(255,255,255,.08);backdrop-filter:blur(20px);border-radius:25px;padding:20px;margin-bottom:15px}.header h1{color:#ffd700;font-size:22px}.back-btn{display:inline-block;background:rgba(255,255,255,.15);color:#fff;padding:8px 20px;border-radius:20px;text-decoration:none;margin:10px 0;font-size:14px}.section-title{color:#ffd700;font-size:18px;margin:20px 0 10px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.card{background:rgba(255,255,255,.05);border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,.1);text-align:right}.card h3{font-size:15px;color:#ffd700}</style></head><body><div class="header"><h1>⌚ ساعت</h1></div><a href="index.html" class="back-btn">🔙 برگشت</a><div class="section-title">⌚ برندها</div><div class="grid"><div class="card"><h3>رولکس</h3></div><div class="card"><h3>کاسیو</h3></div><div class="card"><h3>ساعت هوشمند</h3></div><div class="card"><h3>اپل واچ</h3></div></div><p style="margin-top:15px"><a href="index.html" style="color:#ffd700">🔙 برگشت</a></p></body></html>
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>راهنمای جامع خرید ساعت + ماشین‌حساب سایز مچ | رهیلاناب</title>
+    <meta name="description" content="همه چیز درباره انتخاب ساعت هوشمند و کلاسیک؛ از محاسبه سایز مناسب مچ دست تا مقایسه برترین ساعت‌های هوشمند بازار. راهنمای کامل در رهیلاناب.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⌚</text></svg>">
+    
+    <!-- فونت وزیرمتن -->
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+    
+    <style>
+        /* ============== تم‌ها (لاکچری و تکنولوژی) ============== */
+        :root {
+            --bg-main: #09090b;
+            --bg-card: #18181b;
+            --text-main: #f4f4f5;
+            --text-muted: #a1a1aa;
+            --primary: #fbbf24; /* طلایی */
+            --accent: #06b6d4; /* فیروزه‌ای */
+            --green: #10b981;
+            --border: #27272a;
+            --shadow: 0 10px 30px rgba(251, 191, 36, 0.15);
+            --gradient: linear-gradient(135deg, #fbbf24, #06b6d4);
+        }
+
+        body.light-mode {
+            --bg-main: #f8fafc;
+            --bg-card: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --primary: #b45309;
+            --accent: #0369a1;
+            --border: #e2e8f0;
+            --shadow: 0 10px 30px rgba(180, 83, 9, 0.15);
+            --gradient: linear-gradient(135deg, #b45309, #0369a1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; transition: background-color 0.3s, color 0.3s; }
+        
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background: radial-gradient(circle at 50% 0%, var(--bg-card), var(--bg-main) 70%);
+            color: var(--text-main);
+            line-height: 1.9;
+            font-size: 17px;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* ============== نوار پیشرفت ============== */
+        #progress-bar {
+            position: fixed; top: 0; left: 0; height: 4px; width: 0%;
+            background: var(--gradient); z-index: 9999;
+            box-shadow: 0 0 15px var(--primary); transition: width 0.1s;
+        }
+
+        /* ============== دکمه‌های شناور ============== */
+        .floating-controls {
+            position: fixed; top: 15px; left: 15px; z-index: 999;
+            display: flex; flex-direction: column; gap: 10px;
+        }
+        
+        .control-btn {
+            background: var(--bg-card); border: 1px solid var(--border);
+            color: var(--text-main); width: 50px; height: 50px;
+            border-radius: 50%; cursor: pointer; font-size: 20px;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: var(--shadow); backdrop-filter: blur(10px); transition: 0.3s;
+        }
+        .control-btn:hover { transform: scale(1.1); color: var(--primary); border-color: var(--primary); }
+        .control-btn.playing { background: var(--primary); color: #000; }
+
+        /* ============== هدر ============== */
+        .header {
+            background: var(--gradient); color: #fff; padding: 90px 20px 60px;
+            text-align: center; border-radius: 0 0 40px 40px;
+            position: relative; overflow: hidden;
+            box-shadow: 0 10px 40px rgba(251, 191, 36, 0.3);
+        }
+        .header h1 { font-size: clamp(24px, 5vw, 38px); margin-bottom: 10px; position: relative; z-index: 1; font-weight: 900; }
+        .header p { font-size: 16px; opacity: 0.9; position: relative; z-index: 1; font-weight: bold; }
+
+        /* ============== انیمیشن ساعت ============== */
+        .watch-container {
+            display: flex; justify-content: center; align-items: center; height: 140px; margin-bottom: 20px;
+        }
+        .smart-watch {
+            width: 90px; height: 110px; background: #111; border-radius: 20px;
+            border: 3px solid var(--border); position: relative;
+            box-shadow: 0 0 30px rgba(251, 191, 36, 0.4); display: flex; justify-content: center; align-items: center;
+            animation: floatWatch 4s ease-in-out infinite;
+        }
+        .smart-watch::before, .smart-watch::after {
+            content: ''; position: absolute; width: 30px; height: 80px; background: #222; left: 50%; transform: translateX(-50%);
+            z-index: -1; border-radius: 10px;
+        }
+        .smart-watch::before { top: -70px; }
+        .smart-watch::after { bottom: -70px; }
+        
+        .watch-screen {
+            width: 100%; height: 100%; border-radius: 15px; background: #000;
+            display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;
+        }
+        .watch-hand {
+            position: absolute; background: var(--primary); border-radius: 5px;
+            bottom: 50%; left: 50%; transform-origin: bottom center;
+        }
+        .hand-hour { width: 3px; height: 20px; animation: rotateHand 43200s linear infinite; transform: translateX(-50%) rotate(0deg); }
+        .hand-minute { width: 2px; height: 30px; animation: rotateHand 3600s linear infinite; transform: translateX(-50%) rotate(0deg); }
+        .hand-second { width: 1px; height: 35px; background: var(--accent); animation: rotateHand 60s linear infinite; transform: translateX(-50%) rotate(0deg); }
+
+        @keyframes floatWatch { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        @keyframes rotateHand { 100% { transform: translateX(-50%) rotate(360deg); } }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; margin-top: -30px; }
+
+        /* ============== کارت‌ها ============== */
+        .card {
+            background: var(--bg-card); border-radius: 24px; padding: 30px;
+            margin-bottom: 30px; box-shadow: var(--shadow); border: 1px solid var(--border);
+        }
+        .card h2 { font-size: 22px; color: var(--primary); margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+
+        /* ============== باکس BLUF ============== */
+        .box-bluf {
+            background: linear-gradient(135deg, rgba(251, 191, 36, 0.1), rgba(6, 182, 212, 0.1));
+            border: 2px solid var(--primary); border-radius: 16px; padding: 25px; margin-bottom: 30px;
+        }
+        .box-bluf h3 { color: var(--primary); font-size: 20px; margin-bottom: 10px; }
+        .box-bluf p { font-weight: bold; font-size: 16px; }
+
+        /* ============== ابزارها ============== */
+        .tool-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        @media (max-width: 768px) { .tool-grid { grid-template-columns: 1fr; } }
+        
+        .tool-box { background: var(--bg-main); padding: 25px; border-radius: 16px; border: 1px dashed var(--accent); }
+        .tool-box h3 { color: var(--accent); margin-bottom: 15px; font-size: 18px; text-align: center; }
+        
+        .input-group { margin-bottom: 15px; }
+        .input-group label { display: block; font-size: 14px; margin-bottom: 5px; color: var(--text-muted); font-weight: bold; }
+        .input-group input, .input-group select {
+            width: 100%; padding: 12px; border-radius: 10px; border: 1px solid var(--border);
+            background: var(--bg-card); color: var(--text-main); font-family: inherit; font-size: 16px; outline: none;
+        }
+        .input-group input:focus, .input-group select:focus { border-color: var(--accent); box-shadow: 0 0 10px rgba(6,182,212,0.3); }
+
+        .btn-calc {
+            width: 100%; background: var(--gradient); color: #fff; padding: 12px; border-radius: 10px; border: none;
+            font-weight: bold; font-family: inherit; font-size: 16px; cursor: pointer; transition: 0.3s; margin-top: 10px;
+        }
+        .btn-calc:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(251, 191, 36, 0.4); }
+
+        .result-box {
+            display: none; margin-top: 15px; padding: 15px; background: rgba(6, 182, 212, 0.1);
+            border-right: 4px solid var(--green); border-radius: 8px;
+            font-size: 15px; line-height: 1.8; color: var(--text-main); animation: fadeIn 0.5s;
+        }
+        .result-box strong { color: var(--primary); font-size: 18px; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        /* ============== جدول ============== */
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 15px; border-radius: 12px; overflow: hidden; }
+        th { background: var(--primary); color: #000; padding: 15px; text-align: center; font-weight: 900; }
+        td { padding: 12px; text-align: center; border-bottom: 1px solid var(--border); background: var(--bg-card); font-weight: 500; }
+        tr:hover td { background: var(--bg-main); color: var(--accent); }
+
+        /* ============== آکاردئون ============== */
+        .accordion { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 12px; overflow: hidden; }
+        .accordion-btn { background: none; border: none; width: 100%; padding: 18px; text-align: right; font-family: inherit; font-size: 16px; font-weight: bold; color: var(--text-main); cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .accordion-btn:hover { color: var(--primary); }
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; padding: 0 18px; color: var(--text-muted); font-size: 15px; }
+        .accordion.active .accordion-content { max-height: 500px; padding-bottom: 18px; }
+        .arrow { transition: transform 0.3s; color: var(--accent); }
+        .accordion.active .arrow { transform: rotate(180deg); }
+
+        .footer { text-align: center; padding: 30px; color: var(--text-muted); font-size: 14px; border-top: 1px solid var(--border); margin-top: 40px; }
+        .footer a { color: var(--primary); text-decoration: none; }
+
+        /* ============== انیمیشن اسکرول ============== */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<div class="floating-controls">
+    <button class="control-btn" id="tts-btn" onclick="toggleSpeech()" title="گوش دادن">
+        <span id="tts-icon">🔊</span>
+    </button>
+    <button class="control-btn" onclick="toggleTheme()" title="تاریک/روشن">
+        <span id="theme-icon">🌙</span>
+    </button>
+</div>
+
+<div class="header">
+    <div class="watch-container">
+        <div class="smart-watch">
+            <div class="watch-screen">
+                <div class="watch-hand hand-hour"></div>
+                <div class="watch-hand hand-minute"></div>
+                <div class="watch-hand hand-second"></div>
+            </div>
+        </div>
+    </div>
+    <h1>⌚ دنیای ساعت‌ها</h1>
+    <p>از ساعت‌های کلاسیک تا اسمارت‌واچ‌های هوشمند</p>
+</div>
+
+<div class="container" id="main-content">
+
+    <!-- BLUF -->
+    <div class="card box-bluf reveal">
+        <h3>⚡ جواب سریع در ۳ خط:</h3>
+        <p>
+            ۱. اگر برای <strong>سلامتی، ورزش و اعلان‌های گوشی</strong> می‌خواهید، ساعت هوشمند (Smartwatch) بهترین انتخاب است.<br>
+            ۲. اگر به دنبال <strong>میراث، استایل رسمی و دوام نسل‌به‌نسب</strong> هستید، ساعت‌های مکانیکی کلاسیک حرف اول را می‌زنند.<br>
+            ۳. قبل از خرید ساعت آنلاین، حتماً <strong>سایز مچ دست</strong> خود را اندازه بگیرید تا ساعت روی دست شما گنده یا کوچک به نظر نرسد.
+        </p>
+    </div>
+
+    <!-- ابزارهای هوشمند -->
+    <div class="card reveal">
+        <h2>🧠 ابزارهای انتخاب ساعت</h2>
+        <div class="tool-grid">
+            
+            <!-- محاسبه سایز مچ -->
+            <div class="tool-box">
+                <h3>📏 محاسبه‌گر سایز ساعت</h3>
+                <p style="font-size: 14px; margin-bottom: 15px; color: var(--text-muted);">دور مچ دست خود را اندازه بگیرید و وارد کنید:</p>
+                <div class="input-group">
+                    <label>دور مچ دست (سانتی‌متر):</label>
+                    <input type="number" id="wrist-size" placeholder="مثلاً 16" step="0.1" min="10" max="25">
+                </div>
+                <button class="btn-calc" onclick="calcWatchSize()">📏 محاسبه سایز مناسب</button>
+                <div class="result-box" id="size-result"></div>
+            </div>
+
+            <!-- مشاور انتخاب ساعت -->
+            <div class="tool-box">
+                <h3>🧭 مشاور انتخاب نوع ساعت</h3>
+                <div class="input-group">
+                    <label>سبک زندگی و نیاز اصلی شما:</label>
+                    <select id="watch-need">
+                        <option value="sport">🏃 ورزش، سلامتی و ردگیری فعالیت</option>
+                        <option value="formal">🤵 استایل رسمی و مجلسی</option>
+                        <option value="everyday">☕ استفاده روزمره و راحتی</option>
+                    </select>
+                </div>
+                <button class="btn-calc" onclick="calcWatchType()">🔍 مشاهده پیشنهاد</button>
+                <div class="result-box" id="type-result"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- جدول مقایسه -->
+    <div class="card reveal">
+        <h2>⚖️ مقایسه برترین ساعت‌های هوشمند</h2>
+        <table>
+            <thead>
+                <tr><th>ساعت</th><th>سیستم‌عامل</th><th>نقطه قوت</th><th>عمر باتری</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>Apple Watch Series 9</strong></td><td>watchOS</td><td>یکپارچگی عالی با آیفون، دقت سنسورها</td><td>۱ تا ۲ روز</td></tr>
+                <tr><td><strong>Samsung Galaxy Watch 6</strong></td><td>Wear OS</td><td>صفحه نمایش AMOLED، بدنه باریک</td><td>۱ تا ۲ روز</td></tr>
+                <tr><td><strong>Huawei Watch GT 4</strong></td><td>HarmonyOS</td><td>عمر باتری فوق‌العاده، طراحی کلاسیک</td><td>تا ۱۴ روز</td></tr>
+                <tr><td><strong>Xiaomi Watch S3</strong></td><td>HyperOS</td><td>قیمت مناسب، قابلیت تعویض قاب</td><td>تا ۱۵ روز</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- آکاردئون -->
+    <div class="card reveal">
+        <h2>💡 نکات نگهداری و خرید</h2>
+        
+        <div class="accordion">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+                آیا ساعت‌های هوشمند ضدآب هستند؟
+                <span class="arrow">▼</span>
+            </button>
+            <div class="accordion-content">
+                بیشتر ساعت‌های هوشمند استاندارد 5ATM یا IP68 دارند که برای شنا کردن و دوش گرفتن مناسب است. اما هرگز از آن‌ها در سونا، حمام بخار یا هنگام غواصی استفاده نکنید، چون بخار آب می‌تواند به درزگیرهای آن‌ها نفوذ کند.
+            </div>
+        </div>
+
+        <div class="accordion">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+                ساعت مکانیکی را هر چند وقت یک‌بار باید کوک کرد؟
+                <span class="arrow">▼</span>
+            </button>
+            <div class="accordion-content">
+                ساعت‌های مکانیکی اتوماتیک با حرکت مچ دست کوک می‌شوند، اما اگر چند روز آن را استفاده نکنید، از کار می‌افتند. ساعت‌های دستی (Manual) را باید هر ۲۴ تا ۴۸ ساعت یک‌بار کوک کنید. برای سلامت موتور، حداقل هر ۵ سال یک‌بار سرویس دوره‌ای (روغن‌کاری) انجام دهید.
+            </div>
+        </div>
+    </div>
+
+    <div class="card reveal" style="text-align: center;">
+        <h2>🔗 صفحات مرتبط</h2>
+        <p>
+            <a href="tech.html" class="btn-calc" style="display:inline-block; width:auto; margin:5px; text-decoration:none;">💻 تکنولوژی</a>
+            <a href="phone-full.html" class="btn-calc" style="display:inline-block; width:auto; margin:5px; text-decoration:none;">📱 گوشی</a>
+            <a href="sport.html" class="btn-calc" style="display:inline-block; width:auto; margin:5px; text-decoration:none;">🏅 ورزش</a>
+        </p>
+    </div>
+
+</div>
+
+<div class="footer">
+    <p>🌟 <strong>رهیلاناب</strong> - <a href="index.html">خانه</a> | <a href="tech.html">تکنولوژی</a></p>
+    <p>© ۲۰۲۶ rahilanab.com | زمان را در دستان خود بگیر.</p>
+</div>
+
+<script>
+    // =============== ۱. نوار پیشرفت ===============
+    window.onscroll = function() {
+        var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var scrolled = (winScroll / height) * 100;
+        document.getElementById("progress-bar").style.width = scrolled + "%";
+    };
+
+    // =============== ۲. تم تاریک/روشن ===============
+    function toggleTheme() {
+        document.body.classList.toggle('light-mode');
+        const isLight = document.body.classList.contains('light-mode');
+        document.getElementById('theme-icon').innerText = isLight ? '☀️' : '🌙';
+        localStorage.setItem('watchThemeLight', isLight);
+    }
+    if (localStorage.getItem('watchThemeLight') === 'true') { toggleTheme(); }
+
+    // =============== ۳. پخش صوتی (TTS) ===============
+    let isSpeaking = false;
+    let voices = [];
+    function loadVoices() { voices = window.speechSynthesis.getVoices(); }
+    if (typeof speechSynthesis !== 'undefined' && speechSynthesis.onvoiceschanged !== undefined) { speechSynthesis.onvoiceschanged = loadVoices; }
+
+    function toggleSpeech() {
+        if (isSpeaking) {
+            window.speechSynthesis.cancel();
+            isSpeaking = false;
+            document.getElementById('tts-icon').innerText = '🔊';
+            document.getElementById('tts-btn').classList.remove('playing');
+            return;
+        }
+        const mainText = document.getElementById('main-content').innerText;
+        const speech = new SpeechSynthesisUtterance(mainText);
+        speech.lang = 'fa-IR';
+        const persianVoice = voices.find(v => v.lang.includes('fa') || v.lang === 'fa-IR');
+        if (persianVoice) speech.voice = persianVoice;
+        speech.onend = function() {
+            isSpeaking = false;
+            document.getElementById('tts-icon').innerText = '🔊';
+            document.getElementById('tts-btn').classList.remove('playing');
+        };
+        window.speechSynthesis.speak(speech);
+        isSpeaking = true;
+        document.getElementById('tts-icon').innerText = '⏹️';
+        document.getElementById('tts-btn').classList.add('playing');
+    }
+
+    // =============== ۴. آکاردئون ===============
+    function toggleAccordion(btn) { btn.parentElement.classList.toggle('active'); }
+
+    // =============== ۵. محاسبه سایز ساعت ===============
+    function calcWatchSize() {
+        const wrist = parseFloat(document.getElementById('wrist-size').value);
+        const resultBox = document.getElementById('size-result');
+
+        if (!wrist || wrist < 10 || wrist > 25) {
+            alert('لطفاً دور مچ را به درستی وارد کنید (بین ۱۰ تا ۲۵ سانتی‌متر).');
+            return;
+        }
+
+        let size = '';
+        let desc = '';
+
+        if (wrist < 14) {
+            size = '۳۸ تا ۴۰ میلی‌متر';
+            desc = 'مچ شما باریک است. ساعت‌های بزرگ روی دستتان گنده به نظر می‌رسند.';
+        } else if (wrist >= 14 && wrist <= 17) {
+            size = '۴۰ تا ۴۲ میلی‌متر';
+            desc = 'این سایز استانداردترین و متناسب‌ترین سایز برای اکثر افراد است.';
+        } else {
+            size = '۴۴ تا ۴۶ میلی‌متر';
+            desc = 'مچ شما بزرگ است. ساعت‌های با قاب بزرگ روی دست شما هماهنگ‌تر دیده می‌شوند.';
+        }
+
+        resultBox.innerHTML = `سایز قاب پیشنهادی برای شما: <strong>${size}</strong><br><br>${desc}`;
+        resultBox.style.display = 'block';
+    }
+
+    // =============== ۶. مشاور انتخاب ساعت ===============
+    function calcWatchType() {
+        const need = document.getElementById('watch-need').value;
+        const resultBox = document.getElementById('type-result');
+        let advice = '';
+
+        if (need === 'sport') {
+            advice = 'پیشنهاد ما: <strong>ساعت هوشمند (Smartwatch)</strong> با سنسور ضربان قلب، GPS داخلی و مقاومت بالا در برابر آب. برندهای اپل، سامسونگ و هواوی گزینه‌های عالی هستند.';
+        } else if (need === 'formal') {
+            advice = 'پیشنهاد ما: <strong>ساعت مکانیکی یا کوارتز کلاسیک</strong> با بند چرمی یا استیل. این ساعت‌ها با کت و شلوار و استایل رسمی فوق‌العاده هماهنگ می‌شوند.';
+        } else {
+            advice = 'پیشنهاد ما: <strong>ساعت هوشمند با طراحی کلاسیک (Hybrid Smartwatch)</strong> یا ساعت‌های کوارتز ساده. این مدل‌ها هم زیبایی کلاسیک دارند و هم امکانات پایه هوشمند.';
+        }
+
+        resultBox.innerHTML = advice;
+        resultBox.style.display = 'block';
+    }
+
+    // =============== ۷. انیمیشن اسکرول ===============
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach(el => {
+        revealObserver.observe(el);
+    });
+
+    loadVoices();
+</script>
+
+</body>
+                  </html>
