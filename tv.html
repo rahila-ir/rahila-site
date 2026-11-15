@@ -1,1 +1,379 @@
-<!DOCTYPE html><html lang="fa"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>📺 تلویزیون | رهیلا</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial;background:radial-gradient(circle at center,#0a1a1a,#1a4a4a,#66ccaa);color:#fff;text-align:center;padding:15px;min-height:100vh}.header{background:rgba(255,255,255,.08);backdrop-filter:blur(20px);border-radius:25px;padding:20px;margin-bottom:15px}.header h1{color:#ffd700;font-size:22px}.back-btn{display:inline-block;background:rgba(255,255,255,.15);color:#fff;padding:8px 20px;border-radius:20px;text-decoration:none;margin:10px 0;font-size:14px}.section-title{color:#ffd700;font-size:18px;margin:20px 0 10px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.card{background:rgba(255,255,255,.05);border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,.1);text-align:right}.card h3{font-size:15px;color:#ffd700}</style></head><body><div class="header"><h1>📺 تلویزیون</h1></div><a href="index.html" class="back-btn">🔙 برگشت</a><div class="section-title">📺 برندها</div><div class="grid"><div class="card"><h3>سامسونگ</h3></div><div class="card"><h3>الجی</h3></div><div class="card"><h3>سونی</h3></div><div class="card"><h3>تی سی ال</h3></div></div><div class="section-title">💰 خرید</div><div class="grid"><div class="card"><h3>قیمت تلویزیون</h3></div><div class="card"><h3>LED</h3></div><div class="card"><h3>OLED</h3></div><div class="card"><h3>QLED</h3></div></div><p style="margin-top:15px"><a href="index.html" style="color:#ffd700">🔙 برگشت</a></p></body></html>
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>راهنمای جامع خرید تلویزیون + ماشین‌حساب سایز | رهیلاناب</title>
+    <meta name="description" content="همه چیز درباره تلویزیون؛ از انتخاب سایز مناسب بر اساس فاصله تا مقایسه پنل‌های OLED، QLED و LED. همراه با ماشین‌حساب هوشمند و راهنمای خرید.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📺</text></svg>">
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+    
+    <style>
+        /* ============== تم‌ها ============== */
+        :root {
+            --bg-main: #0b0f19;
+            --bg-card: #151b2b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --primary: #f59e0b; /* طلایی/نارنجی */
+            --primary-dark: #d97706;
+            --accent: #8b5cf6; /* بنفش */
+            --border: #2a3447;
+            --shadow: 0 10px 30px rgba(245, 158, 11, 0.15);
+            --gradient: linear-gradient(135deg, #f59e0b, #8b5cf6);
+        }
+
+        body.light-mode {
+            --bg-main: #f8fafc;
+            --bg-card: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --border: #e2e8f0;
+            --shadow: 0 10px 30px rgba(245, 158, 11, 0.1);
+            --gradient: linear-gradient(135deg, #d97706, #6d28d9);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; transition: background-color 0.3s, color 0.3s; }
+        
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.9;
+            font-size: 17px;
+            overflow-x: hidden;
+        }
+
+        /* ============== نوار پیشرفت ============== */
+        #progress-bar {
+            position: fixed; top: 0; left: 0; height: 4px; width: 0%;
+            background: var(--gradient); z-index: 9999;
+            box-shadow: 0 0 10px var(--primary); transition: width 0.1s;
+        }
+
+        /* ============== دکمه‌های شناور ============== */
+        .floating-controls {
+            position: fixed; top: 15px; left: 15px; z-index: 999;
+            display: flex; flex-direction: column; gap: 10px;
+        }
+        
+        .control-btn {
+            background: var(--bg-card); border: 1px solid var(--border);
+            color: var(--text-main); width: 50px; height: 50px;
+            border-radius: 50%; cursor: pointer; font-size: 20px;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: var(--shadow); backdrop-filter: blur(10px); transition: 0.3s;
+        }
+        .control-btn:hover { transform: scale(1.1); color: var(--primary); }
+        .control-btn.playing { background: var(--primary); color: #000; }
+
+        /* ============== هدر ============== */
+        .header {
+            background: var(--gradient); color: white; padding: 80px 20px 60px;
+            text-align: center; border-radius: 0 0 40px 40px;
+            position: relative; overflow: hidden;
+        }
+        .header h1 { font-size: clamp(24px, 5vw, 36px); margin-bottom: 10px; position: relative; z-index: 1; }
+        .header p { font-size: 16px; opacity: 0.9; position: relative; z-index: 1; }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; margin-top: -30px; }
+
+        /* ============== کارت‌ها ============== */
+        .card {
+            background: var(--bg-card); border-radius: 24px; padding: 30px;
+            margin-bottom: 30px; box-shadow: var(--shadow); border: 1px solid var(--border);
+        }
+        .card h2 { font-size: 22px; color: var(--primary); margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+
+        /* ============== انیمیشن تلویزیون ============== */
+        .tv-container { display: flex; justify-content: center; align-items: center; height: 250px; margin: 20px 0; perspective: 1000px; }
+        .tv-3d {
+            width: 320px; height: 190px; background: #000; border-radius: 10px;
+            border: 5px solid #222; position: relative; transform-style: preserve-3d;
+            animation: tvFloat 6s ease-in-out infinite; box-shadow: 0 0 50px rgba(245, 158, 11, 0.3);
+        }
+        .tv-3d::after {
+            content: ''; position: absolute; bottom: -20px; left: 50%; transform: translateX(-50%);
+            width: 100px; height: 10px; background: #333; border-radius: 5px;
+        }
+        .tv-3d .tv-screen {
+            position: absolute; inset: 0; background: linear-gradient(45deg, var(--primary), var(--accent), #00f5ff);
+            border-radius: 5px; animation: screenGlow 4s infinite alternate; display: flex; justify-content: center; align-items: center;
+            color: white; font-weight: bold; font-size: 24px; letter-spacing: 2px; text-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+        @keyframes tvFloat { 0%, 100% { transform: translateY(0) rotateY(-5deg); } 50% { transform: translateY(-10px) rotateY(5deg); } }
+        @keyframes screenGlow { 0% { opacity: 0.8; } 100% { opacity: 1; } }
+
+        /* ============== ماشین حساب ============== */
+        .calc-box { background: var(--bg-main); padding: 25px; border-radius: 20px; border: 1px dashed var(--primary); }
+        .calc-row { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px; }
+        @media (max-width: 600px) { .calc-row { grid-template-columns: 1fr; } }
+        
+        .input-group label { display: block; font-size: 14px; margin-bottom: 8px; color: var(--text-muted); font-weight: bold; }
+        .input-group input, .input-group select {
+            width: 100%; padding: 12px; border-radius: 10px; border: 1px solid var(--border);
+            background: var(--bg-card); color: var(--text-main); font-family: inherit; font-size: 16px; outline: none;
+        }
+        .input-group input:focus, .input-group select:focus { border-color: var(--primary); }
+
+        .calc-result {
+            background: rgba(245, 158, 11, 0.1); border-right: 5px solid var(--primary);
+            padding: 20px; border-radius: 10px; text-align: center; display: none;
+        }
+        .calc-result h3 { font-size: 28px; color: var(--primary); margin-bottom: 5px; }
+        .calc-result p { font-size: 15px; color: var(--text-muted); }
+
+        /* ============== جدول ============== */
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 15px; border-radius: 12px; overflow: hidden; }
+        th { background: var(--primary); color: #000; padding: 15px; text-align: center; font-weight: bold; }
+        td { padding: 12px; text-align: center; border-bottom: 1px solid var(--border); background: var(--bg-card); font-weight: 500; }
+        tr:hover td { background: var(--bg-main); }
+
+        /* ============== آکاردئون ============== */
+        .accordion { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 12px; overflow: hidden; }
+        .accordion-btn { background: none; border: none; width: 100%; padding: 18px; text-align: right; font-family: inherit; font-size: 16px; font-weight: bold; color: var(--text-main); cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .accordion-btn:hover { color: var(--primary); }
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; padding: 0 18px; color: var(--text-muted); font-size: 15px; }
+        .accordion.active .accordion-content { max-height: 500px; padding-bottom: 18px; }
+        .arrow { transition: transform 0.3s; }
+        .accordion.active .arrow { transform: rotate(180deg); }
+
+        .btn { display: inline-block; background: var(--primary); color: #000; padding: 14px 30px; border-radius: 12px; border: none; text-decoration: none; font-weight: bold; font-size: 16px; cursor: pointer; transition: 0.3s; width: 100%; }
+        .btn:hover { background: var(--primary-dark); color: white; }
+        
+        .footer { text-align: center; padding: 30px; color: var(--text-muted); font-size: 14px; border-top: 1px solid var(--border); margin-top: 40px; }
+        .footer a { color: var(--primary); text-decoration: none; }
+
+        /* ============== انیمیشن اسکرول ============== */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<div class="floating-controls">
+    <button class="control-btn" id="tts-btn" onclick="toggleSpeech()" title="گوش دادن">
+        <span id="tts-icon">🔊</span>
+    </button>
+    <button class="control-btn" onclick="toggleTheme()" title="تاریک/روشن">
+        <span id="theme-icon">🌙</span>
+    </button>
+</div>
+
+<div class="header">
+    <h1>📺 راهنمای جامع تلویزیون</h1>
+    <p>سایز مناسب، پنل درست و بهترین تجربه تماشا</p>
+</div>
+
+<div class="container" id="main-content">
+
+    <!-- بخش تلویزیون متحرک -->
+    <div class="card reveal">
+        <div class="tv-container">
+            <div class="tv-3d">
+                <div class="tv-screen">RAHILA TV</div>
+            </div>
+        </div>
+        <p style="text-align:center; font-size: 14px; color: var(--text-muted); margin-top: 20px;">
+            آینده‌ی سرگرمی در خانه‌ی شما
+        </p>
+    </div>
+
+    <!-- ماشین حساب سایز -->
+    <div class="card reveal">
+        <h2>📏 ماشین‌حساب هوشمند سایز تلویزیون</h2>
+        <p style="margin-bottom: 20px; color: var(--text-muted);">فاصله‌ی مبل تا تلویزیون و کیفیت تصویر مورد نظرت رو انتخاب کن تا بگیم چه اینچی برات مناسبه.</p>
+        
+        <div class="calc-box">
+            <div class="calc-row">
+                <div class="input-group">
+                    <label>فاصله تا تلویزیون (متر):</label>
+                    <input type="number" id="distance" value="2.5" min="1" max="10" step="0.1">
+                </div>
+                <div class="input-group">
+                    <label>کیفیت تصویر (رزولوشن):</label>
+                    <select id="resolution">
+                        <option value="1080">Full HD (1080p)</option>
+                        <option value="2160" selected>4K Ultra HD (2160p)</option>
+                        <option value="4320">8K (4320p)</option>
+                    </select>
+                </div>
+            </div>
+            <button class="btn" onclick="calculateTV()">🔍 محاسبه سایز پیشنهادی</button>
+            
+            <div class="calc-result" id="calc-result">
+                <h3 id="tv-size">۰ اینچ</h3>
+                <p id="tv-desc">مناسب برای فاصله شما</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- مقایسه پنل‌ها -->
+    <div class="card reveal">
+        <h2>🖥️ کدوم پنل رو انتخاب کنم؟ (LED, QLED, OLED)</h2>
+        <table>
+            <thead>
+                <tr><th>نوع پنل</th><th>نقطه قوت</th><th>نقطه ضعف</th><th>مناسب برای</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>LED</strong></td><td>قیمت اقتصادی، روشنایی بالا</td><td>مشکی کامل نیست</td><td>بودجه محدود، اتاق‌های روشن</td></tr>
+                <tr><td><strong>QLED</strong></td><td>رنگ‌های فوق‌العاده شاداب، ضد سوختگی</td><td>مشکی عمیق OLED رو نداره</td><td>تماشای ورزش، اتاق‌های پرنور</td></tr>
+                <tr><td><strong>OLED</strong></td><td>مشکی مطلق، زاویه دید عالی</td><td>احتمال سوختگی تصویر، قیمت بالا</td><td>سینما خانگی، اتاق‌های تاریک</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- آکاردئون نکات -->
+    <div class="card reveal">
+        <h2>💡 نکات حیاتی قبل از خرید</h2>
+        
+        <div class="accordion">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+                نرخ نوسازی (Refresh Rate) چیه و چرا مهمه؟
+                <span class="arrow">▼</span>
+            </button>
+            <div class="accordion-content">
+                نرخ نوسازی یعنی تعداد دفعاتی که تصویر در ثانیه به‌روز میشه. تلویزیون‌های ۶۰ هرتز برای فیلم دیدن عالین، اما اگه گیمر هستی (PS5 یا Xbox) حتماً تلویزیونی بگیر که ۱۲۰ هرتز باشه تا بازی‌ها روون‌تر و بدون تیک اجرا بشن.
+            </div>
+        </div>
+
+        <div class="accordion">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+                فناوری HDR چیست؟
+                <span class="arrow">▼</span>
+            </button>
+            <div class="accordion-content">
+                HDR باعث میشه صحنه‌های تاریک (مثل شب) جزئیات بیشتری داشته باشن و صحنه‌های روشن (مثل خورشید) چشم رو اذیت نکنن. استانداردهای HDR10 و Dolby Vision بهترین گزینه‌ها هستن.
+            </div>
+        </div>
+    </div>
+
+    <div class="card reveal" style="text-align: center;">
+        <h2>🔗 صفحات مرتبط</h2>
+        <p>
+            <a href="tech.html" class="btn" style="display:inline-block; width:auto; margin:5px;">📱 تکنولوژی</a>
+            <a href="tablet.html" class="btn" style="display:inline-block; width:auto; margin:5px;">📟 تبلت</a>
+            <a href="phone-full.html" class="btn" style="display:inline-block; width:auto; margin:5px;">📱 گوشی</a>
+        </p>
+    </div>
+
+</div>
+
+<div class="footer">
+    <p>🌟 <strong>رهیلاناب</strong> - <a href="index.html">خانه</a> | <a href="tech.html">تکنولوژی</a></p>
+    <p>© ۲۰۲۶ rahilanab.com | با تکنولوژی، آینده را بساز.</p>
+</div>
+
+<script>
+    // =============== ۱. نوار پیشرفت ===============
+    window.onscroll = function() {
+        var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var scrolled = (winScroll / height) * 100;
+        document.getElementById("progress-bar").style.width = scrolled + "%";
+    };
+
+    // =============== ۲. تم تاریک/روشن ===============
+    function toggleTheme() {
+        document.body.classList.toggle('light-mode');
+        const isLight = document.body.classList.contains('light-mode');
+        document.getElementById('theme-icon').innerText = isLight ? '☀️' : '🌙';
+        localStorage.setItem('tvThemeLight', isLight);
+    }
+    if (localStorage.getItem('tvThemeLight') === 'true') { toggleTheme(); }
+
+    // =============== ۳. پخش صوتی (TTS) ===============
+    let isSpeaking = false;
+    let voices = [];
+    function loadVoices() { voices = window.speechSynthesis.getVoices(); }
+    if (typeof speechSynthesis !== 'undefined' && speechSynthesis.onvoiceschanged !== undefined) { speechSynthesis.onvoiceschanged = loadVoices; }
+
+    function toggleSpeech() {
+        if (isSpeaking) {
+            window.speechSynthesis.cancel();
+            isSpeaking = false;
+            document.getElementById('tts-icon').innerText = '🔊';
+            document.getElementById('tts-btn').classList.remove('playing');
+            return;
+        }
+        const mainText = document.getElementById('main-content').innerText;
+        const speech = new SpeechSynthesisUtterance(mainText);
+        speech.lang = 'fa-IR';
+        const persianVoice = voices.find(v => v.lang.includes('fa') || v.lang === 'fa-IR');
+        if (persianVoice) speech.voice = persianVoice;
+        speech.onend = function() {
+            isSpeaking = false;
+            document.getElementById('tts-icon').innerText = '🔊';
+            document.getElementById('tts-btn').classList.remove('playing');
+        };
+        window.speechSynthesis.speak(speech);
+        isSpeaking = true;
+        document.getElementById('tts-icon').innerText = '⏹️';
+        document.getElementById('tts-btn').classList.add('playing');
+    }
+
+    // =============== ۴. آکاردئون ===============
+    function toggleAccordion(btn) { btn.parentElement.classList.toggle('active'); }
+
+    // =============== ۵. ماشین حساب تلویزیون ===============
+    function calculateTV() {
+        const distanceMeters = parseFloat(document.getElementById('distance').value);
+        const resolution = parseInt(document.getElementById('resolution').value);
+        
+        if (!distanceMeters || distanceMeters < 1) {
+            alert('لطفاً فاصله معتبر وارد کنید (حداقل ۱ متر).');
+            return;
+        }
+
+        // فرمول استاندارد THX و SMPTE (تبدیل متر به اینچ)
+        // برای 4K فاصله دید 1.5 برابر و برای 8K نزدیک تر است
+        let multiplier = 1.0; 
+        if (resolution === 2160) multiplier = 1.5;
+        else if (resolution === 4320) multiplier = 2.0;
+        
+        // فاصله (سانتی متر) / (فاصله استاندارد * 2.54)
+        // این یه فرمول تخمینی و بسیار کاربردی هست
+        const distanceCm = distanceMeters * 100;
+        const optimalInch = Math.round(distanceCm / (1.2 * 2.54 * multiplier));
+        
+        // گرد کردن به سایزهای استاندارد بازار
+        const standardSizes = [32, 43, 50, 55, 65, 75, 85, 98];
+        let bestSize = standardSizes[0];
+        for (let size of standardSizes) {
+            if (optimalInch >= size - 5) bestSize = size;
+        }
+
+        const resultDiv = document.getElementById('calc-result');
+        document.getElementById('tv-size').innerText = `${bestSize} اینچ`;
+        
+        let desc = '';
+        if (bestSize <= 43) desc = 'مناسب برای اتاق خواب یا فاصله‌های کم.';
+        else if (bestSize <= 55) desc = 'انتخاب استاندارد و عالی برای اکثر خانه‌ها.';
+        else if (bestSize <= 75) desc = 'یک تجربه سینمایی واقعی در پذیرایی!';
+        else desc = 'فوق‌العاده بزرگ! حتماً دیوار محکم و فاصله کافی داشته باش.';
+
+        document.getElementById('tv-desc').innerText = desc;
+        resultDiv.style.display = 'block';
+    }
+
+    // =============== ۶. انیمیشن اسکرول ===============
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach(el => {
+        revealObserver.observe(el);
+    });
+
+    loadVoices();
+</script>
+
+</body>
+      </html>
