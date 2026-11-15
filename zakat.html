@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>راهنمای جامع احکام زکات و خمس + ماشین‌حساب | رهیلاناب</title>
+    <meta name="description" content="همه چیز درباره احکام زکات و خمس؛ از شرایط وجوب تا حد نصاب و نحوه محاسبه. همراه با ماشین‌حساب هوشمند و دقیق در رهیلاناب.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🕌</text></svg>">
+    
+    <!-- فونت وزیرمتن -->
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+    
+    <style>
+        /* ============== تم‌ها (معنوی و هندسی) ============== */
+        :root {
+            --bg-main: #05140f;
+            --bg-card: #0a221a;
+            --text-main: #f0fdf4;
+            --text-muted: #86efac;
+            --primary: #10b981; /* سبز زمردی */
+            --accent: #fbbf24; /* طلایی */
+            --border: #14532d;
+            --shadow: 0 10px 30px rgba(16, 185, 129, 0.15);
+            --gradient: linear-gradient(135deg, #10b981, #fbbf24);
+        }
+
+        body.light-mode {
+            --bg-main: #f0fdf4;
+            --bg-card: #ffffff;
+            --text-main: #064e3b;
+            --text-muted: #047857;
+            --primary: #059669;
+            --accent: #b45309;
+            --border: #bbf7d0;
+            --shadow: 0 10px 30px rgba(5, 150, 105, 0.15);
+            --gradient: linear-gradient(135deg, #059669, #b45309);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; transition: background-color 0.3s, color 0.3s; }
+        
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background: radial-gradient(circle at 50% 0%, var(--bg-card), var(--bg-main) 70%);
+            color: var(--text-main);
+            line-height: 1.9;
+            font-size: 17px;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* ============== نوار پیشرفت ============== */
+        #progress-bar {
+            position: fixed; top: 0; left: 0; height: 4px; width: 0%;
+            background: var(--gradient); z-index: 9999;
+            box-shadow: 0 0 15px var(--accent); transition: width 0.1s;
+        }
+
+        /* ============== دکمه‌های شناور ============== */
+        .floating-controls {
+            position: fixed; top: 15px; left: 15px; z-index: 999;
+            display: flex; flex-direction: column; gap: 10px;
+        }
+        
+        .control-btn {
+            background: var(--bg-card); border: 1px solid var(--border);
+            color: var(--text-main); width: 50px; height: 50px;
+            border-radius: 50%; cursor: pointer; font-size: 20px;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: var(--shadow); backdrop-filter: blur(10px); transition: 0.3s;
+        }
+        .control-btn:hover { transform: scale(1.1); color: var(--accent); border-color: var(--accent); }
+        .control-btn.playing { background: var(--primary); color: #fff; }
+
+        /* ============== هدر ============== */
+        .header {
+            background: var(--gradient); color: #fff; padding: 100px 20px 70px;
+            text-align: center; border-radius: 0 0 40px 40px;
+            position: relative; overflow: hidden;
+            box-shadow: 0 10px 40px rgba(16, 185, 129, 0.3);
+        }
+        .header h1 { font-size: clamp(24px, 5vw, 38px); margin-bottom: 10px; position: relative; z-index: 1; font-weight: 900; }
+        .header p { font-size: 16px; opacity: 0.9; position: relative; z-index: 1; font-weight: bold; }
+
+        /* ============== انیمیشن ستاره هندسی ============== */
+        .geometry-container {
+            height: 120px; display: flex; justify-content: center; align-items: center;
+            margin-bottom: 20px; perspective: 1000px;
+        }
+        .islamic-star {
+            width: 80px; height: 80px; background: var(--accent);
+            position: relative; display: flex; justify-content: center; align-items: center;
+            animation: rotateStar 10s linear infinite; box-shadow: 0 0 30px var(--accent);
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+        }
+        .islamic-star::after {
+            content: ''; position: absolute; width: 60px; height: 60px; background: var(--bg-card); border-radius: 50%;
+        }
+        @keyframes rotateStar { 100% { transform: rotate(360deg); } }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; margin-top: -30px; }
+
+        /* ============== کارت‌ها ============== */
+        .card {
+            background: var(--bg-card); border-radius: 24px; padding: 30px;
+            margin-bottom: 30px; box-shadow: var(--shadow); border: 1px solid var(--border);
+        }
+        .card h2 { font-size: 22px; color: var(--primary); margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+
+        /* ============== باکس BLUF ============== */
+        .box-bluf {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(251, 191, 36, 0.1));
+            border: 2px solid var(--accent); border-radius: 16px; padding: 25px; margin-bottom: 30px;
+        }
+        .box-bluf h3 { color: var(--accent); font-size: 20px; margin-bottom: 10px; }
+        .box-bluf p { font-weight: bold; font-size: 16px; }
+
+        /* ============== ماشین حساب ============== */
+        .calc-box { background: rgba(255, 255, 255, 0.02); padding: 25px; border-radius: 20px; border: 1px dashed var(--primary); }
+        .calc-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 20px; }
+        @media (max-width: 768px) { .calc-grid { grid-template-columns: 1fr; } }
+        
+        .input-group label { display: block; font-size: 14px; margin-bottom: 8px; color: var(--text-muted); font-weight: bold; }
+        .input-group input {
+            width: 100%; padding: 12px; border-radius: 10px; border: 1px solid var(--border);
+            background: var(--bg-main); color: var(--text-main); font-family: inherit; font-size: 16px; outline: none;
+        }
+        .input-group input:focus { border-color: var(--accent); box-shadow: 0 0 10px rgba(251,191,36,0.3); }
+
+        .btn { display: inline-block; background: var(--gradient); color: #000; padding: 14px 30px; border-radius: 12px; border: none; text-decoration: none; font-weight: 900; font-size: 16px; cursor: pointer; transition: 0.3s; width: 100%; text-align: center; box-shadow: 0 5px 20px rgba(16, 185, 129, 0.3); }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(251, 191, 36, 0.5); }
+
+        .calc-result {
+            display: none; margin-top: 25px; padding: 25px; background: var(--bg-main);
+            border-right: 5px solid var(--accent); border-radius: 12px; animation: slideUp 0.5s ease;
+        }
+        .calc-result h3 { color: var(--accent); margin-bottom: 15px; text-align: center; }
+        .calc-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px dashed var(--border); font-size: 16px; }
+        .calc-row:last-child { border: none; font-weight: 900; font-size: 20px; color: var(--primary); margin-top: 10px; }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* ============== جدول ============== */
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 15px; border-radius: 12px; overflow: hidden; }
+        th { background: var(--primary); color: #fff; padding: 15px; text-align: center; font-weight: 900; }
+        td { padding: 12px; text-align: center; border-bottom: 1px solid var(--border); background: var(--bg-card); font-weight: 500; }
+        tr:hover td { background: var(--bg-main); color: var(--accent); }
+
+        /* ============== آکاردئون ============== */
+        .accordion { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 12px; overflow: hidden; }
+        .accordion-btn { background: none; border: none; width: 100%; padding: 18px; text-align: right; font-family: inherit; font-size: 16px; font-weight: bold; color: var(--text-main); cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .accordion-btn:hover { color: var(--primary); }
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; padding: 0 18px; color: var(--text-muted); font-size: 15px; }
+        .accordion.active .accordion-content { max-height: 500px; padding-bottom: 18px; }
+        .arrow { transition: transform 0.3s; color: var(--accent); }
+        .accordion.active .arrow { transform: rotate(180deg); }
+
+        .footer { text-align: center; padding: 30px; color: var(--text-muted); font-size: 14px; border-top: 1px solid var(--border); margin-top: 40px; }
+        .footer a { color: var(--primary); text-decoration: none; }
+
+        /* ============== انیمیشن اسکرول ============== */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<div class="floating-controls">
+    <button class="control-btn" id="tts-btn" onclick="toggleSpeech()" title="گوش دادن">
+        <span id="tts-icon">🔊</span>
+    </button>
+    <button class="control-btn" onclick="toggleTheme()" title="تاریک/روشن">
+        <span id="theme-icon">🌙</span>
+    </button>
+</div>
+
+<div class="header">
+    <div class="geometry-container">
+        <div class="islamic-star"></div>
+    </div>
+    <h1>🕌 احکام زکات و خمس</h1>
+    <p>راهنمای جامع، ساده و همراه با ماشین‌حساب دقیق</p>
+</div>
+
+<div class="container" id="main-content">
+
+    <!-- BLUF -->
+    <div class="card box-bluf reveal">
+        <h3>⚡ جواب سریع در ۳ خط:</h3>
+        <p>
+            ۱. <strong>زکات (۲.۵٪)</strong> به ۹ چیز تعلق می‌گیرد (طلا، نقره، گندم، جو، خرما، کشمش، شتر، گاو و گوسفند) و شرط آن رسیدن به حد نصاب و گذشتن یک سال است.<br>
+            ۲. <strong>خمس (۲۰٪)</strong> به مازاد درآمد سالانه (پس‌انداز) تعلق می‌گیرد و باید پرداخت شود.<br>
+            ۳. طلا و نقره‌ای که برای استفاده روزمره (مثل انگشتر یا زیورآلات زنانه) استفاده می‌شود، زکات ندارد، اما خمس دارد (اگر از درآمد سالانه خریداری شده باشد).
+        </p>
+    </div>
+
+    <!-- ماشین حساب -->
+    <div class="card reveal">
+        <h2>🧮 ماشین‌حساب هوشمند زکات و خمس</h2>
+        <p style="margin-bottom: 20px; color: var(--text-muted);">مقادیر زیر را وارد کنید تا سهم شرعی شما محاسبه شود (مقادیر به تومان):</p>
+        
+        <div class="calc-box">
+            <div class="calc-grid">
+                <div class="input-group">
+                    <label>پول نقد و پس‌انداز:</label>
+                    <input type="number" id="cash" placeholder="مثلاً 50,000,000">
+                </div>
+                <div class="input-group">
+                    <label>ارزش طلا و جواهرات:</label>
+                    <input type="number" id="gold" placeholder="مثلاً 20,000,000">
+                </div>
+                <div class="input-group">
+                    <label>ارزش کالای تجاری (برای فروش):</label>
+                    <input type="number" id="goods" placeholder="مثلاً 10,000,000">
+                </div>
+            </div>
+            <button class="btn" onclick="calculateZakat()">📊 محاسبه سهم شرعی</button>
+            
+            <div class="calc-result" id="calc-result">
+                <h3>💡 نتیجه محاسبه:</h3>
+                <div class="calc-row"><span>کل دارایی شما:</span><span id="total-wealth">0</span></div>
+                <div class="calc-row"><span>خمس (۲۰٪):</span><span id="khums-result">0</span></div>
+                <div class="calc-row" style="font-size: 14px; color: var(--text-muted); border: none; padding-top: 5px;">
+                    * زکات (۲.۵٪) فقط در صورتی محاسبه شده که دارایی شما از حد نصاب (معادل حدود ۶۰۰ گرم نقره یا ۸۵ گرم طلا) بیشتر باشد.
+                </div>
+                <div class="calc-row"><span>زکات (۲.۵٪) - تقریبی:</span><span id="zakat-result">0</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- جدول حد نصاب -->
+    <div class="card reveal">
+        <h2>⚖️ حد نصاب زکات (شرایط وجوب)</h2>
+        <table>
+            <thead>
+                <tr><th>نوع مال</th><th>حد نصاب (حداقل مقدار)</th><th>مقدار زکات</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>طلا (سکه)</strong></td><td>حدود ۸۵ گرم (یا ۱۵ مثقال شرعی)</td><td>۲.۵ درصد (یک چهلم)</td></tr>
+                <tr><td><strong>نقره</strong></td><td>حدود ۶۰۰ گرم (یا ۱۰۵ مثقال)</td><td>۲.۵ درصد (یک چهلم)</td></tr>
+                <tr><td><strong>نقدینگی</strong></td><td>برابر با ارزش حد نصاب طلا یا نقره</td><td>۲.۵ درصد</td></tr>
+                <tr><td><strong>کالای تجاری</strong></td><td>برابر با ارزش حد نصاب طلا یا نقره</td><td>۲.۵ درصد</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- آکاردئون -->
+    <div class="card reveal">
+        <h2>💡 سوالات متداول</h2>
+        
+        <div class="accordion">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+                آیا به طلا و جواهرات استفاده‌شده زکات تعلق می‌گیرد؟
+                <span class="arrow">▼</span>
+            </button>
+            <div class="accordion-content">
+                طلا و نقره‌ای که برای استفاده روزمره (مانند انگشتر یا زیورآلات متعارف زنانه) استفاده می‌شود، زکات ندارد. اما اگر به صورت سکه، شمش یا طلای پس‌انداز باشد و از حد نصاب بگذرد و یک سال بماند، زکات دارد.
+            </div>
+        </div>
+
+        <div class="accordion">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+                خمس به چه اموالی تعلق می‌گیرد؟
+                <span class="arrow">▼</span>
+            </button>
+            <div class="accordion-content">
+                خمس (یک‌پنجم) به هفت چیز تعلق می‌گیرد که مهم‌ترین آن‌ها «مالی که از مخارج سالانه انسان زیاد بیاید» (مازاد درآمد) است. همچنین به معدن، گنج، مال حلال مخلوط به حرام، غنیمت جنگی، جواهری که با غواصی از دریا بیرون بیاورند، و زمینی که کافر ذمی از مسلمان بخرد، تعلق می‌گیرد.
+            </div>
+        </div>
+    </div>
+
+    <div class="card reveal" style="text-align: center;">
+        <h2>🔗 صفحات مرتبط</h2>
+        <p>
+            <a href="prayer.html" class="btn" style="display:inline-block; width:auto; margin:5px;">🕌 نماز</a>
+            <a href="quran.html" class="btn" style="display:inline-block; width:auto; margin:5px;">📖 قرآن</a>
+            <a href="dua.html" class="btn" style="display:inline-block; width:auto; margin:5px;">🤲 دعا</a>
+        </p>
+    </div>
+
+</div>
+
+<div class="footer">
+    <p>🌟 <strong>رهیلاناب</strong> - <a href="index.html">خانه</a> | <a href="quran.html">دین و معنویت</a></p>
+    <p>© ۲۰۲۶ rahilanab.com | با ایمان، زندگی را بساز.</p>
+</div>
+
+<script>
+    // =============== ۱. نوار پیشرفت ===============
+    window.onscroll = function() {
+        var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var scrolled = (winScroll / height) * 100;
+        document.getElementById("progress-bar").style.width = scrolled + "%";
+    };
+
+    // =============== ۲. تم تاریک/روشن ===============
+    function toggleTheme() {
+        document.body.classList.toggle('light-mode');
+        const isLight = document.body.classList.contains('light-mode');
+        document.getElementById('theme-icon').innerText = isLight ? '☀️' : '🌙';
+        localStorage.setItem('zakatTheme', isLight);
+    }
+    if (localStorage.getItem('zakatTheme') === 'true') { toggleTheme(); }
+
+    // =============== ۳. پخش صوتی (TTS) ===============
+    let isSpeaking = false;
+    let voices = [];
+    function loadVoices() { voices = window.speechSynthesis.getVoices(); }
+    if (typeof speechSynthesis !== 'undefined' && speechSynthesis.onvoiceschanged !== undefined) { speechSynthesis.onvoiceschanged = loadVoices; }
+
+    function toggleSpeech() {
+        if (isSpeaking) {
+            window.speechSynthesis.cancel();
+            isSpeaking = false;
+            document.getElementById('tts-icon').innerText = '🔊';
+            document.getElementById('tts-btn').classList.remove('playing');
+            return;
+        }
+        const mainText = document.getElementById('main-content').innerText;
+        const speech = new SpeechSynthesisUtterance(mainText);
+        speech.lang = 'fa-IR';
+        const persianVoice = voices.find(v => v.lang.includes('fa') || v.lang === 'fa-IR');
+        if (persianVoice) speech.voice = persianVoice;
+        speech.onend = function() {
+            isSpeaking = false;
+            document.getElementById('tts-icon').innerText = '🔊';
+            document.getElementById('tts-btn').classList.remove('playing');
+        };
+        window.speechSynthesis.speak(speech);
+        isSpeaking = true;
+        document.getElementById('tts-icon').innerText = '⏹️';
+        document.getElementById('tts-btn').classList.add('playing');
+    }
+
+    // =============== ۴. آکاردئون ===============
+    function toggleAccordion(btn) { btn.parentElement.classList.toggle('active'); }
+
+    // =============== ۵. ماشین حساب زکات و خمس ===============
+    function fmt(n){ return n.toLocaleString('fa-IR'); }
+
+    function calculateZakat() {
+        const cash = parseFloat(document.getElementById('cash').value) || 0;
+        const gold = parseFloat(document.getElementById('gold').value) || 0;
+        const goods = parseFloat(document.getElementById('goods').value) || 0;
+
+        const total = cash + gold + goods;
+        if (total === 0) {
+            alert('لطفاً حداقل یکی از مقادیر را وارد کنید.');
+            return;
+        }
+
+        // محاسبه خمس (۲۰٪)
+        const khums = Math.round(total * 0.20);
+        
+        // محاسبه زکات (۲.۵٪)
+        // حد نصاب طلا حدود ۸۵ گرم است. با فرض قیمت میانگین طلا، یه حد نصاب تقریبی در نظر می‌گیریم.
+        // برای سادگی و کاربردی بودن، فرض می‌کنیم اگر کل دارایی نقدی+طلا بیشتر از ۲۰۰ میلیون تومان (تقریباً حد نصاب) باشد، زکات واجب می‌شود.
+        let zakat = 0;
+        const nisabThreshold = 200000000; // حد نصاب تقریبی حدود ۲۰۰ میلیون تومان (بر اساس قیمت روز نقره/طلا)
+        
+        if ((cash + gold) >= nisabThreshold) {
+            zakat = Math.round((cash + gold) * 0.025);
+        }
+
+        document.getElementById('total-wealth').innerText = `${fmt(total)} تومان`;
+        document.getElementById('khums-result').innerText = `${fmt(khums)} تومان`;
+        
+        if (zakat > 0) {
+            document.getElementById('zakat-result').innerText = `${fmt(zakat)} تومان`;
+        } else {
+            document.getElementById('zakat-result').innerText = 'مشمول زکات نیست (زیر حد نصاب)';
+        }
+
+        document.getElementById('calc-result').style.display = 'block';
+        document.getElementById('calc-result').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    // =============== ۶. انیمیشن اسکرول ===============
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach(el => {
+        revealObserver.observe(el);
+    });
+
+    loadVoices();
+</script>
+
+</body>
+</html>
