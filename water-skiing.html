@@ -1,1 +1,447 @@
-<!DOCTYPE html><html lang="fa"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>🏄 اسکی روی آب | رهیلا</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial;background:radial-gradient(circle at center,#0a1a1a,#1a4a4a,#66ccaa);color:#fff;text-align:center;padding:15px;min-height:100vh}.header{background:rgba(255,255,255,.08);backdrop-filter:blur(20px);border-radius:25px;padding:20px;margin-bottom:15px}.header h1{color:#ffd700;font-size:22px}.back-btn{display:inline-block;background:rgba(255,255,255,.15);color:#fff;padding:8px 20px;border-radius:20px;text-decoration:none;margin:10px 0;font-size:14px}.section-title{color:#ffd700;font-size:18px;margin:20px 0 10px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.card{background:rgba(255,255,255,.05);border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,.1);text-align:right}.card h3{font-size:15px;color:#ffd700}</style></head><body><div class="header"><h1>🏄 اسکی روی آب</h1></div><a href="index.html" class="back-btn">🔙 برگشت</a><div class="section-title">🏄 اطلاعات</div><div class="grid"><div class="card"><h3>اسکی روی آب چیست</h3></div><div class="card"><h3>تجهیزات</h3></div><div class="card"><h3>مسابقات</h3></div><div class="card"><h3>قهرمانان</h3></div></div><p style="margin-top:15px"><a href="index.html" style="color:#ffd700">🔙 برگشت</a></p></body></html>
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>راهنمای جامع اسکی روی آب + مشاور انتخاب اسکی | رهیلاناب</title>
+    <meta name="description" content="همه چیز درباره ورزش اسکی روی آب؛ از انتخاب اسکی مناسب و علائم دستی تا نکات ایمنی. همراه با مشاور هوشمند در رهیلاناب.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎿</text></svg>">
+    
+    <!-- فونت وزیرمتن -->
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+    
+    <style>
+        /* ============== تم‌ها (نئون غروب) ============== */
+        :root {
+            --bg-main: #0f0817;
+            --bg-card: #1a0f2b;
+            --text-main: #fdf4ff;
+            --text-muted: #d8b4fe;
+            --primary: #ff7e5f; /* نارنجی غروب */
+            --accent: #feb47b; /* هلویی */
+            --neon: #00f5ff; /* فیروزه‌ای */
+            --border: #3b1f5e;
+            --shadow: 0 10px 30px rgba(255, 126, 95, 0.15);
+            --gradient: linear-gradient(135deg, #ff7e5f, #8b5cf6);
+        }
+
+        body.light-mode {
+            --bg-main: #fff7ed;
+            --bg-card: #ffffff;
+            --text-main: #431407;
+            --text-muted: #9a3412;
+            --primary: #ea580c;
+            --accent: #c2410c;
+            --border: #fed7aa;
+            --shadow: 0 10px 30px rgba(234, 88, 12, 0.15);
+            --gradient: linear-gradient(135deg, #ea580c, #7e22ce);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; transition: background-color 0.3s, color 0.3s; }
+        
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background: radial-gradient(circle at 50% 0%, var(--bg-card), var(--bg-main) 70%);
+            color: var(--text-main);
+            line-height: 1.9;
+            font-size: 17px;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* ============== نوار پیشرفت ============== */
+        #progress-bar {
+            position: fixed; top: 0; left: 0; height: 4px; width: 0%;
+            background: var(--gradient); z-index: 9999;
+            box-shadow: 0 0 15px var(--primary); transition: width 0.1s;
+        }
+
+        /* ============== دکمه‌های شناور ============== */
+        .floating-controls {
+            position: fixed; top: 15px; left: 15px; z-index: 999;
+            display: flex; flex-direction: column; gap: 10px;
+        }
+        
+        .control-btn {
+            background: var(--bg-card); border: 1px solid var(--border);
+            color: var(--text-main); width: 50px; height: 50px;
+            border-radius: 50%; cursor: pointer; font-size: 20px;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: var(--shadow); backdrop-filter: blur(10px); transition: 0.3s;
+        }
+        .control-btn:hover { transform: scale(1.1); color: var(--primary); border-color: var(--primary); }
+        .control-btn.playing { background: var(--primary); color: #fff; }
+
+        /* ============== هدر ============== */
+        .header {
+            background: var(--gradient); color: #fff; padding: 90px 20px 60px;
+            text-align: center; border-radius: 0 0 40px 40px;
+            position: relative; overflow: hidden;
+            box-shadow: 0 10px 40px rgba(255, 126, 95, 0.3);
+        }
+        .header h1 { font-size: clamp(24px, 5vw, 38px); margin-bottom: 10px; position: relative; z-index: 1; font-weight: 900; }
+        .header p { font-size: 16px; opacity: 0.9; position: relative; z-index: 1; font-weight: bold; }
+
+        /* ============== انیمیشن اسکی روی آب ============== */
+        .ski-container {
+            height: 100px; position: relative; display: flex; justify-content: center; align-items: flex-end;
+            margin-bottom: 20px; overflow: hidden;
+        }
+        .water-splash {
+            position: absolute; bottom: 0; width: 200%; height: 20px;
+            background: rgba(255,255,255,0.2); border-radius: 50%; animation: waveAnim 4s linear infinite;
+        }
+        .skier {
+            font-size: 40px; position: relative; z-index: 2; margin-bottom: 10px;
+            animation: skiJump 2s ease-in-out infinite; filter: drop-shadow(0 5px 10px rgba(0,0,0,0.3));
+        }
+        @keyframes waveAnim { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        @keyframes skiJump { 0%, 100% { transform: translateY(0) rotate(-5deg); } 50% { transform: translateY(-20px) rotate(5deg); } }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; margin-top: -30px; }
+
+        /* ============== کارت‌ها ============== */
+        .card {
+            background: var(--bg-card); border-radius: 24px; padding: 30px;
+            margin-bottom: 30px; box-shadow: var(--shadow); border: 1px solid var(--border);
+        }
+        .card h2 { font-size: 22px; color: var(--primary); margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+
+        /* ============== باکس BLUF ============== */
+        .box-bluf {
+            background: linear-gradient(135deg, rgba(255, 126, 95, 0.1), rgba(139, 92, 246, 0.1));
+            border: 2px solid var(--primary); border-radius: 16px; padding: 25px; margin-bottom: 30px;
+        }
+        .box-bluf h3 { color: var(--primary); font-size: 20px; margin-bottom: 10px; }
+        .box-bluf p { font-weight: bold; font-size: 16px; }
+
+        /* ============== ابزارها ============== */
+        .tool-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        @media (max-width: 768px) { .tool-grid { grid-template-columns: 1fr; } }
+        
+        .tool-box { background: var(--bg-main); padding: 25px; border-radius: 16px; border: 1px dashed var(--accent); }
+        .tool-box h3 { color: var(--accent); margin-bottom: 15px; font-size: 18px; text-align: center; }
+        
+        .input-group { margin-bottom: 15px; }
+        .input-group label { display: block; font-size: 14px; margin-bottom: 5px; color: var(--text-muted); font-weight: bold; }
+        .input-group input, .input-group select {
+            width: 100%; padding: 12px; border-radius: 10px; border: 1px solid var(--border);
+            background: var(--bg-card); color: var(--text-main); font-family: inherit; font-size: 16px; outline: none;
+        }
+        .input-group input:focus, .input-group select:focus { border-color: var(--primary); box-shadow: 0 0 10px rgba(255,126,95,0.3); }
+
+        .btn-calc {
+            width: 100%; background: var(--gradient); color: #fff; padding: 12px; border-radius: 10px; border: none;
+            font-weight: bold; font-family: inherit; font-size: 16px; cursor: pointer; transition: 0.3s; margin-top: 10px;
+        }
+        .btn-calc:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(255, 126, 95, 0.4); }
+
+        .result-box {
+            display: none; margin-top: 15px; padding: 15px; background: rgba(255, 126, 95, 0.05);
+            border-right: 4px solid var(--neon); border-radius: 8px;
+            font-size: 15px; line-height: 1.8; color: var(--text-main); animation: fadeIn 0.5s;
+        }
+        .result-box strong { color: var(--primary); font-size: 18px; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        /* ============== علائم دستی ============== */
+        .signals-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin-bottom: 20px; }
+        .signal-btn {
+            background: var(--bg-card); border: 2px solid var(--border); padding: 15px 10px; border-radius: 12px;
+            text-align: center; cursor: pointer; transition: 0.3s; font-family: inherit; font-size: 15px; font-weight: bold; color: var(--text-main);
+        }
+        .signal-btn:hover, .signal-btn.active { border-color: var(--primary); background: rgba(255,126,95,0.1); transform: scale(1.05); }
+        .signal-btn .emoji { font-size: 24px; display: block; margin-bottom: 5px; }
+        
+        .signal-result {
+            display: none; padding: 20px; background: var(--bg-main); border-radius: 12px;
+            border-right: 4px solid var(--primary); font-size: 16px; text-align: center; animation: fadeIn 0.4s;
+        }
+
+        /* ============== جدول ============== */
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 15px; border-radius: 12px; overflow: hidden; }
+        th { background: var(--primary); color: #fff; padding: 15px; text-align: center; font-weight: 900; }
+        td { padding: 12px; text-align: center; border-bottom: 1px solid var(--border); background: var(--bg-card); font-weight: 500; }
+        tr:hover td { background: var(--bg-main); color: var(--primary); }
+
+        /* ============== آکاردئون ============== */
+        .accordion { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 12px; overflow: hidden; }
+        .accordion-btn { background: none; border: none; width: 100%; padding: 18px; text-align: right; font-family: inherit; font-size: 16px; font-weight: bold; color: var(--text-main); cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .accordion-btn:hover { color: var(--primary); }
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; padding: 0 18px; color: var(--text-muted); font-size: 15px; }
+        .accordion.active .accordion-content { max-height: 500px; padding-bottom: 18px; }
+        .arrow { transition: transform 0.3s; color: var(--primary); }
+        .accordion.active .arrow { transform: rotate(180deg); }
+
+        .footer { text-align: center; padding: 30px; color: var(--text-muted); font-size: 14px; border-top: 1px solid var(--border); margin-top: 40px; }
+        .footer a { color: var(--primary); text-decoration: none; }
+
+        /* ============== انیمیشن اسکرول ============== */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<div class="floating-controls">
+    <button class="control-btn" id="tts-btn" onclick="toggleSpeech()" title="گوش دادن">
+        <span id="tts-icon">🔊</span>
+    </button>
+    <button class="control-btn" onclick="toggleTheme()" title="تاریک/روشن">
+        <span id="theme-icon">🌙</span>
+    </button>
+</div>
+
+<div class="header">
+    <div class="ski-container">
+        <div class="water-splash"></div>
+        <div class="skier">🎿</div>
+    </div>
+    <h1>🎿 اسکی روی آب</h1>
+    <p>سرعت، تعادل و هیجان روی موج‌ها</p>
+</div>
+
+<div class="container" id="main-content">
+
+    <!-- BLUF -->
+    <div class="card box-bluf reveal">
+        <h3>⚡ جواب سریع در ۳ خط:</h3>
+        <p>
+            ۱. برای شروع، اسکی‌های <strong>دو نفره (Combo)</strong> بهترین گزینه هستند چون شناوری بیشتری دارند و بلند شدن از آب راحت‌تر است.<br>
+            ۲. مهم‌ترین قانون، <strong>ارتباط با راننده قایق</strong> از طریق علائم دستی است (مثل انگشت شست رو به بالا برای افزایش سرعت).<br>
+            ۳. هرگز بدون <strong>جلیقه نجات (Life Jacket)</strong> وارد آب نشوید و همیشه یک نفر به عنوان ناظر (Spotter) در قایق همراه راننده باشد.
+        </p>
+    </div>
+
+    <!-- ابزارهای هوشمند -->
+    <div class="card reveal">
+        <h2>🧠 ابزارهای اسکی روی آب</h2>
+        <div class="tool-grid">
+            
+            <!-- مشاور انتخاب اسکی -->
+            <div class="tool-box">
+                <h3>🎿 مشاور انتخاب اسکی</h3>
+                <div class="input-group">
+                    <label>وزن شما (کیلوگرم):</label>
+                    <input type="number" id="user-weight" value="70" min="30" max="150">
+                </div>
+                <div class="input-group">
+                    <label>سطح مهارت شما:</label>
+                    <select id="skill-level">
+                        <option value="beginner">🌱 مبتدی (تازه‌کار)</option>
+                        <option value="intermediate">🌿 متوسط (می‌توانم بلند شوم)</option>
+                        <option value="advanced">🌳 حرفه‌ای (اسلالوم باز)</option>
+                    </select>
+                </div>
+                <button class="btn-calc" onclick="calcSki()">🔍 محاسبه سایز اسکی</button>
+                <div class="result-box" id="ski-result"></div>
+            </div>
+
+            <!-- مترجم علائم دستی -->
+            <div class="tool-box">
+                <h3>✋ مترجم علائم دستی</h3>
+                <p style="font-size: 14px; margin-bottom: 10px; color: var(--text-muted); text-align: center;">برای ارتباط با راننده، روی علامت کلیک کنید:</p>
+                <div class="signals-grid">
+                    <button class="signal-btn" onclick="showSignal('faster', this)"><span class="emoji">👍</span> سرعت بیشتر</button>
+                    <button class="signal-btn" onclick="showSignal('slower', this)"><span class="emoji">👎</span> سرعت کمتر</button>
+                    <button class="signal-btn" onclick="showSignal('stop', this)"><span class="emoji">✋</span> توقف کامل</button>
+                    <button class="signal-btn" onclick="showSignal('turn', this)"><span class="emoji">🔄</span> دور زدن</button>
+                    <button class="signal-btn" onclick="showSignal('ok', this)"><span class="emoji">👌</span> عالی است</button>
+                    <button class="signal-btn" onclick="showSignal('ready', this)"><span class="emoji">🤚</span> آماده‌ام</button>
+                </div>
+                <div class="signal-result" id="signal-result"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- جدول مقایسه -->
+    <div class="card reveal">
+        <h2>⚖️ مقایسه انواع اسکی</h2>
+        <table>
+            <thead>
+                <tr><th>نوع اسکی</th><th>مناسب برای</th><th>ویژگی</th><th>سختی یادگیری</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>دو نفره (Combo)</strong></td><td>مبتدی‌ها و کودکان</td><td>پایداری بالا، بلند شدن آسان</td><td style="color: var(--green); font-weight: bold;">آسان</td></tr>
+                <tr><td><strong>تک‌نفره (Slalom)</strong></td><td>حرفه‌ای‌ها</td><td>سرعت بالا، چرخش‌های تند</td><td style="color: var(--warning); font-weight: bold;">سخت</td></tr>
+                <tr><td><strong>نمایشی (Trick)</strong></td><td>حرفه‌ای‌های حرکات نمایشی</td><td>کوتاه و پهن، مخصوص چرخش و پرش</td><td style="color: var(--warning); font-weight: bold;">بسیار سخت</td></tr>
+                <tr><td><strong>ویک‌بورد (Wakeboard)</strong></td><td>همه سطوح (علاقه‌مندان به پرش)</td><td>تخته واحد، مناسب پرش از روی موج</td><td style="color: var(--primary); font-weight: bold;">متوسط</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- آکاردئون -->
+    <div class="card reveal">
+        <h2>🛡️ نکات حیاتی ایمنی</h2>
+        
+        <div class="accordion">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+                چرا ناظر (Spotter) در قایق الزامی است؟
+                <span class="arrow">▼</span>
+            </button>
+            <div class="accordion-content">
+                راننده قایق باید به مسیر جلو نگاه کند. ناظر (Spotter) وظیفه دارد اسکی‌باز را زیر نظر داشته باشد. اگر اسکی‌باز زمین بیفتد، ناظر فوراً به راننده علامت می‌دهد تا قایق متوقف شود و از برخورد یا گم شدن اسکی‌باز جلوگیری می‌شود.
+            </div>
+        </div>
+
+        <div class="accordion">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+                چطور از آب بلند شوم (Deep Water Start)؟
+                <span class="arrow">▼</span>
+            </button>
+            <div class="accordion-content">
+                در آب شناور بمانید (پای تخم‌مرغی)، زانوها را به سینه بچسبانید و نوک اسکی‌ها را بالای آب نگه دارید. دسته طناب را بین زانوها بگیرید. با افزایش سرعت قایق، اسکی‌ها روی آب می‌آیند؛ در این لحظه پاها را صاف کنید و بایستید. کشش را با دست‌های صاف تحمل کنید.
+            </div>
+        </div>
+    </div>
+
+    <div class="card reveal" style="text-align: center;">
+        <h2>🔗 صفحات مرتبط</h2>
+        <p>
+            <a href="wakeboarding.html" class="btn-calc" style="display:inline-block; width:auto; margin:5px; text-decoration:none;">🏄‍♂️ ویک‌بوردینگ</a>
+            <a href="surfing.html" class="btn-calc" style="display:inline-block; width:auto; margin:5px; text-decoration:none;">🏄 سرفینگ</a>
+            <a href="sport.html" class="btn-calc" style="display:inline-block; width:auto; margin:5px; text-decoration:none;">🏅 ورزش</a>
+        </p>
+    </div>
+
+</div>
+
+<div class="footer">
+    <p>🌟 <strong>رهیلاناب</strong> - <a href="index.html">خانه</a> | <a href="sport.html">ورزش</a></p>
+    <p>© ۲۰۲۶ rahilanab.com | موج‌ها را رام کن.</p>
+</div>
+
+<script>
+    // =============== ۱. نوار پیشرفت ===============
+    window.onscroll = function() {
+        var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var scrolled = (winScroll / height) * 100;
+        document.getElementById("progress-bar").style.width = scrolled + "%";
+    };
+
+    // =============== ۲. تم تاریک/روشن ===============
+    function toggleTheme() {
+        document.body.classList.toggle('light-mode');
+        const isLight = document.body.classList.contains('light-mode');
+        document.getElementById('theme-icon').innerText = isLight ? '☀️' : '🌙';
+        localStorage.setItem('skiTheme', isLight);
+    }
+    if (localStorage.getItem('skiTheme') === 'true') { toggleTheme(); }
+
+    // =============== ۳. پخش صوتی (TTS) ===============
+    let isSpeaking = false;
+    let voices = [];
+    function loadVoices() { voices = window.speechSynthesis.getVoices(); }
+    if (typeof speechSynthesis !== 'undefined' && speechSynthesis.onvoiceschanged !== undefined) { speechSynthesis.onvoiceschanged = loadVoices; }
+
+    function toggleSpeech() {
+        if (isSpeaking) {
+            window.speechSynthesis.cancel();
+            isSpeaking = false;
+            document.getElementById('tts-icon').innerText = '🔊';
+            document.getElementById('tts-btn').classList.remove('playing');
+            return;
+        }
+        const mainText = document.getElementById('main-content').innerText;
+        const speech = new SpeechSynthesisUtterance(mainText);
+        speech.lang = 'fa-IR';
+        const persianVoice = voices.find(v => v.lang.includes('fa') || v.lang === 'fa-IR');
+        if (persianVoice) speech.voice = persianVoice;
+        speech.onend = function() {
+            isSpeaking = false;
+            document.getElementById('tts-icon').innerText = '🔊';
+            document.getElementById('tts-btn').classList.remove('playing');
+        };
+        window.speechSynthesis.speak(speech);
+        isSpeaking = true;
+        document.getElementById('tts-icon').innerText = '⏹️';
+        document.getElementById('tts-btn').classList.add('playing');
+    }
+
+    // =============== ۴. آکاردئون ===============
+    function toggleAccordion(btn) { btn.parentElement.classList.toggle('active'); }
+
+    // =============== ۵. مشاور انتخاب اسکی ===============
+    function calcSki() {
+        const weight = parseFloat(document.getElementById('user-weight').value);
+        const skill = document.getElementById('skill-level').value;
+        const resultBox = document.getElementById('ski-result');
+        
+        if (!weight || weight < 30 || weight > 150) {
+            alert('لطفاً وزن معتبر (بین ۳۰ تا ۱۵۰ کیلوگرم) وارد کنید.');
+            return;
+        }
+
+        let skiLength = '';
+        let skiType = '';
+
+        // محاسبه طول
+        if (weight < 50) skiLength = '۵۹ تا ۶۳ اینچ';
+        else if (weight >= 50 && weight < 70) skiLength = '۶۳ تا ۶۷ اینچ';
+        else if (weight >= 70 && weight < 90) skiLength = '۶۷ تا ۷۱ اینچ';
+        else skiLength = '۷۱ اینچ به بالا';
+
+        // محاسبه نوع
+        if (skill === 'beginner') {
+            skiType = 'اسکی‌های <strong>دو نفره (Combo)</strong> با عرض بیشتر. این اسکی‌ها شناوری بالایی دارند و راحت‌تر روی آب می‌آیند.';
+        } else if (skill === 'intermediate') {
+            skiType = 'اسکی‌های <strong>دو نفره یا ویک‌بورد</strong>. اگر می‌خواهید به سمت حرکات نمایشی بروید، ویک‌بورد انتخاب بهتری است.';
+        } else {
+            skiType = 'اسکی <strong>تک‌نفره (Slalom)</strong>. برای چرخش‌های تند و سرعت بالا طراحی شده است.';
+        }
+
+        resultBox.innerHTML = `طول اسکی پیشنهادی: <strong>${skiLength}</strong><br><br>نوع مناسب برای شما: ${skiType}`;
+        resultBox.style.display = 'block';
+    }
+
+    // =============== ۶. مترجم علائم دستی ===============
+    function showSignal(type, btn) {
+        // Remove active class from all buttons
+        document.querySelectorAll('.signal-btn').forEach(b => b.classList.remove('active'));
+        // Add active to clicked
+        btn.classList.add('active');
+
+        const resultBox = document.getElementById('signal-result');
+        let text = '';
+
+        if (type === 'faster') {
+            text = '👍 <strong>شست رو به بالا:</strong> سرعت قایق را بیشتر کن!';
+        } else if (type === 'slower') {
+            text = '👎 <strong>شست رو به پایین:</strong> سرعت قایق را کمتر کن.';
+        } else if (type === 'stop') {
+            text = '✋ <strong>کشیدن دست روی گردن یا علامت توقف:</strong> فوراً متوقف شو، من می‌خواهم رها کنم. (علامت بین‌المللی توقف)';
+        } else if (type === 'turn') {
+            text = '🔄 <strong>چرخاندن انگشت یا حرکت دایره‌ای دست:</strong> لطفاً مسیر را دور بزن و برگرد.';
+        } else if (type === 'ok') {
+            text = '👌 <strong>علامت اوکی (OK):</strong> سرعت فعلی عالی است، همینطور ادامه بده.';
+        } else if (type === 'ready') {
+            text = '🤚 <strong>ضربه زدن به سر یا دست بلند شده:</strong> من آماده‌ام، می‌توانی گاز بدهی (برای شروع از آب).';
+        }
+
+        resultBox.innerHTML = text;
+        resultBox.style.display = 'block';
+    }
+
+    // =============== ۷. انیمیشن اسکرول ===============
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach(el => {
+        revealObserver.observe(el);
+    });
+
+    loadVoices();
+</script>
+
+</body>
+  </html>
