@@ -5,27 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- SEO Meta Tags -->
-    <title>رهیلاناب | پورتال جامع سلامت، آشپزی، اقتصاد و سرگرمی در ایران</title>
+    <title>رهیلاناب | پورتال جامع سلامت، اقتصاد و سرگرمی</title>
     <meta name="description" content="رهیلاناب (rahilanab.com) بزرگترین پورتال جامع ایرانی است. از راهنمای خرید و قیمت لحظه‌ای طلا تا سلامت، آشپزی، بازی‌های آنلاین و آموزش. همه چیز در یک جا.">
     <meta name="robots" content="index, follow, max-image-preview:large">
     
-    <!-- Canonical URL -->
     <link rel="canonical" href="https://rahilanab.com/">
     
-    <!-- Open Graph (Social Media) -->
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="رهیلاناب | پورتال جامع ایرانی">
     <meta property="og:description" content="بزرگترین پورتال جامع ایرانی شامل سلامت، آشپزی، اقتصاد، تکنولوژی و بازی‌های آنلاین.">
     <meta property="og:url" content="https://rahilanab.com/">
-    <!-- فراموش نکنید تصویر 1200x630 با این نام در روت سایت بسازید -->
     <meta property="og:image" content="https://rahilanab.com/og-image.jpg">
     <meta name="twitter:card" content="summary_large_image">
 
-    <!-- Preconnect for Performance -->
+    <!-- Preconnect -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link rel="preconnect" href="https://pagead2.googlesyndication.com">
 
-    <!-- Sitemap Link -->
     <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
     <!-- فونت وزیرمتن -->
@@ -33,15 +30,22 @@
 
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2212822534276249" crossorigin="anonymous"></script>
-    
-    <!-- Fix FOUC (Flash of Unstyled Content) for Dark Mode -->
+
+    <!-- ✅ FOUC Fix + احترام به تم سیستم -->
     <script>
-        if (localStorage.getItem('homeTheme') === 'true') {
-            document.documentElement.style.backgroundColor = '#0f172a';
-        }
+        (function() {
+            try {
+                var stored = localStorage.getItem('homeTheme');
+                if (stored === 'true') {
+                    document.documentElement.style.backgroundColor = '#0f172a';
+                } else if (stored === null && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    document.documentElement.style.backgroundColor = '#0f172a';
+                }
+            } catch (e) { /* ignore */ }
+        })();
     </script>
 
-    <!-- Schema Markup (WebSite) -->
+    <!-- Schema Markup -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -52,7 +56,7 @@
     </script>
 
     <style>
-        /* ============== تم آبی و ساده ============== */
+        /* ============== تم ============== */
         :root {
             --bg-main: linear-gradient(135deg, #e3f2fd, #bbdefb, #90caf9, #a5d6a7);
             --bg-card: #ffffff;
@@ -75,6 +79,20 @@
             --input-bg: #0f172a;
         }
 
+        /* ✅ احترام به تنظیمات سیستم (وقتی کاربر دستی لایت انتخاب نکرده) */
+        @media (prefers-color-scheme: dark) {
+            body:not(.light-mode-forced):not(.dark-mode) {
+                --bg-main: linear-gradient(135deg, #0f172a, #1e293b, #0f172a);
+                --bg-card: #1e293b;
+                --text-main: #f8fafc;
+                --text-title: #38bdf8;
+                --border: #334155;
+                --shadow: 0 4px 15px rgba(0,0,0,0.3);
+                --header-bg: #1e293b;
+                --input-bg: #0f172a;
+            }
+        }
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
@@ -88,7 +106,14 @@
             transition: background 0.3s, color 0.3s;
         }
 
-        /* Accessibility: Skip Link */
+        /* ✅ Focus واضح */
+        :focus-visible {
+            outline: 3px solid var(--text-title);
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+
+        /* Skip Link */
         .skip-link {
             position: absolute; top: -40px; left: 0;
             background: var(--text-title); color: #fff;
@@ -114,7 +139,6 @@
             background: none; border: none; font-size: 24px; cursor: pointer;
         }
 
-        /* جستجو */
         .search-box { width: 100%; max-width: 500px; margin: 0 auto; position: relative; }
         .search-box input {
             width: 100%; padding: 12px 20px; border-radius: 30px;
@@ -123,7 +147,7 @@
         }
         .search-box input:focus { border-color: var(--text-title); }
 
-        /* ============== محتوای واقعی (SEO) ============== */
+        /* ============== محتوای معرفی ============== */
         .intro-content {
             background: var(--bg-card);
             border-radius: 15px;
@@ -150,8 +174,24 @@
             border: none; padding: 15px 20px; color: #fff; font-family: inherit;
             font-size: 16px; font-weight: bold; cursor: pointer;
             display: flex; justify-content: space-between; align-items: center;
+            gap: 8px;
         }
-        .hot-news-content { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; padding: 0 15px; }
+        .hot-news-btn > span:first-child {
+            display: flex; align-items: center; gap: 6px; flex-wrap: wrap;
+        }
+
+        /* ✅ visibility برای Screen Reader */
+        .hot-news-content {
+            max-height: 0;
+            overflow: hidden;
+            visibility: hidden;
+            transition: max-height 0.4s ease-out, visibility 0.4s;
+            padding: 0 15px;
+        }
+        .hot-news-content.is-open {
+            visibility: visible;
+            padding: 0 15px;
+        }
         .hot-news-inner { padding: 15px 0; display: flex; flex-direction: column; gap: 10px; text-align: right; }
         .hot-link {
             display: block; background: #f1f8e9; padding: 12px 15px; border-radius: 10px;
@@ -185,6 +225,22 @@
         .card .emoji { font-size: 32px; margin-bottom: 8px; }
         .card h3 { font-size: 13px; font-weight: bold; line-height: 1.4; }
 
+        /* ✅ پیام "نتیجه‌ای یافت نشد" */
+        .no-results {
+            display: none;
+            text-align: center;
+            padding: 40px 20px;
+            background: var(--bg-card);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            font-size: 15px;
+            color: var(--text-main);
+            margin-bottom: 20px;
+        }
+        .no-results.is-visible { display: block; }
+        .no-results .emoji { font-size: 48px; display: block; margin-bottom: 15px; }
+        .no-results a { color: var(--text-title); font-weight: bold; }
+
         /* دکمه مشاهده همه */
         .explore-more { text-align: center; margin: 40px 0; }
         .explore-btn {
@@ -195,7 +251,7 @@
         }
         .explore-btn:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(13, 71, 161, 0.4); }
 
-        /* ============== تبلیغات و فوتر ============== */
+        /* تبلیغات و فوتر */
         .ad-box { margin: 25px 0; text-align: center; background: var(--bg-card); padding: 10px; border-radius: 15px; box-shadow: var(--shadow); }
 
         .footer {
@@ -205,7 +261,7 @@
         }
         .footer a { color: var(--text-title); text-decoration: none; font-weight: bold; margin: 0 5px; }
 
-        /* ============== ریسپانسیو ============== */
+        /* ریسپانسیو */
         @media(max-width: 400px) {
             .grid { grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); gap: 8px; }
             .card { padding: 12px 5px; }
@@ -213,25 +269,37 @@
             .card h3 { font-size: 11px; }
             .header h1 { font-size: 18px; }
         }
+
+        /* ✅ کاهش حرکت برای کاربران حساس */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
     </style>
 </head>
 <body>
 
 <a href="#main-content" class="skip-link">پرش به محتوای اصلی</a>
 
-<!-- هدر -->
 <header class="header">
-    <button class="theme-btn" onclick="toggleTheme()" id="theme-btn" aria-label="تغییر حالت شب و روز">🌙</button>
+    <button class="theme-btn" id="theme-btn" type="button" 
+            aria-label="فعال‌سازی حالت شب" aria-pressed="false">🌙</button>
     <h1>رهیلاناب | پورتال جامع سلامت، آشپزی، اقتصاد و سرگرمی</h1>
     <div class="brand-subtitle">🌍 دنیایی از همه چی | rahilanab.com</div>
     <div class="search-box">
-        <input type="text" id="search-input" placeholder="جستجوی سریع در سایت..." aria-label="جستجو در سایت">
+        <input type="text" id="search-input" 
+               placeholder="جستجوی سریع در سایت..." 
+               aria-label="جستجو در سایت"
+               autocomplete="off">
     </div>
 </header>
 
 <main id="main-content">
     
-    <!-- محتوای معرفی (SEO) با لینک‌های داخلی -->
     <section class="intro-content">
         <h2>به دنیای رهیلاناب خوش آمدید</h2>
         <p>
@@ -247,9 +315,13 @@
 
     <!-- 🔥 اخبار داغ -->
     <section class="hot-news-box">
-        <button onclick="toggleHotNews()" class="hot-news-btn" aria-expanded="false" aria-controls="hot-news-content">
-            <span>🔥 اخبار و ترندهای داغ <span id="hot-date" style="font-size: 12px; opacity: 0.8; font-weight: normal;"></span></span>
-            <span id="hot-arrow" style="transition: transform 0.3s;">▼</span>
+        <button id="hot-news-btn" class="hot-news-btn" type="button"
+                aria-expanded="false" aria-controls="hot-news-content">
+            <span>
+                <span>🔥 اخبار و ترندهای داغ</span>
+                <span id="hot-date" style="font-size:12px;opacity:0.8;font-weight:normal;"></span>
+            </span>
+            <span id="hot-arrow" style="transition:transform 0.3s;" aria-hidden="true">▼</span>
         </button>
         <div id="hot-news-content" class="hot-news-content">
             <div class="hot-news-inner">
@@ -261,8 +333,6 @@
         </div>
     </section>
 
-    <!-- ⭐ دسته‌بندی‌ها -->
-    
     <section>
         <h2 class="section-title">🔥 داغ‌ترین‌های سایت</h2>
         <div class="grid">
@@ -345,12 +415,19 @@
         </div>
     </section>
 
-    <!-- دکمه مشاهده همه لینک‌ها -->
+    <!-- ✅ پیام "نتیجه‌ای یافت نشد" -->
+    <div id="no-results" class="no-results" role="status" aria-live="polite">
+        <span class="emoji">🔍</span>
+        <strong>نتیجه‌ای یافت نشد!</strong>
+        <p style="margin-top:10px;opacity:0.8;">
+            عبارت دیگری را جستجو کنید یا از <a href="all.html">همه لینک‌ها</a> استفاده کنید.
+        </p>
+    </div>
+
     <div class="explore-more">
         <a href="all.html" class="explore-btn">📋 مشاهده تمام ۳۰۰+ صفحه سایت</a>
     </div>
 
-    <!-- تبلیغات (بنر 300x250) -->
     <div class="ad-box">
         <script>atOptions={'key':'939c6f3df75112fca8cc907d853dc8bb','format':'iframe','height':250,'width':300,'params':{}};</script>
         <script src="https://www.highperformanceformat.com/939c6f3df75112fca8cc907d853dc8bb/invoke.js"></script>
@@ -358,7 +435,6 @@
 
 </main>
 
-<!-- فوتر -->
 <footer class="footer">
     <p>🌟 <strong>رهیلاناب</strong> - rahilanab.com</p>
     <p style="margin-top: 8px;">
@@ -367,73 +443,222 @@
 </footer>
 
 <script>
-    // =============== تاریخ خودکار ===============
+(function () {
+    'use strict';
+
+    // ============================================================
+    // 🎯 عناصر اصلی
+    // ============================================================
+    const STORAGE_KEY = 'homeTheme';
+    const root = document.documentElement;
+    const body = document.body;
+    const themeBtn = document.getElementById('theme-btn');
+    const hotNewsBtn = document.getElementById('hot-news-btn');
+    const hotNewsContent = document.getElementById('hot-news-content');
+    const hotArrow = document.getElementById('hot-arrow');
     const hotDate = document.getElementById('hot-date');
-    if (hotDate) {
-        hotDate.innerText = `(${new Date().toLocaleDateString('fa-IR', { weekday: 'long', day: 'numeric', month: 'long' })})`;
-    }
+    const searchInput = document.getElementById('search-input');
+    const noResults = document.getElementById('no-results');
 
-    // =============== باز و بسته کردن اخبار ===============
-    function toggleHotNews() {
-        const content = document.getElementById('hot-news-content');
-        const arrow = document.getElementById('hot-arrow');
-        const btn = document.querySelector('.hot-news-btn');
-        
-        if (content.style.maxHeight && content.style.maxHeight !== '0px') {
-            content.style.maxHeight = '0px';
-            arrow.style.transform = 'rotate(0deg)';
-            btn.setAttribute('aria-expanded', 'false');
-        } else {
-            content.style.maxHeight = content.scrollHeight + 'px';
-            arrow.style.transform = 'rotate(180deg)';
-            btn.setAttribute('aria-expanded', 'true');
-        }
-    }
+    // ============================================================
+    // 🌙 Theme Manager (با پشتیبانی از سیستم)
+    // ============================================================
+    const ThemeManager = {
+        getSystemPrefersDark() {
+            return window.matchMedia('(prefers-color-scheme: dark)').matches;
+        },
 
-    // =============== تغییر تم ===============
-    function toggleTheme() {
-        document.body.classList.toggle('dark-mode');
-        const isDark = document.body.classList.contains('dark-mode');
-        document.getElementById('theme-btn').innerText = isDark ? '☀️' : '🌙';
-        localStorage.setItem('homeTheme', isDark);
-        
-        // حذف بک‌گراند موقت FOUC
-        if (isDark) {
-            document.documentElement.style.backgroundColor = '#0f172a';
-        } else {
-            document.documentElement.style.backgroundColor = '';
-        }
-    }
-    // اعمال تم ذخیره شده
-    if (localStorage.getItem('homeTheme') === 'true') {
-        document.body.classList.add('dark-mode');
-        document.getElementById('theme-btn').innerText = '☀️';
-    }
-
-    // =============== جستجوی هوشمند با Debounce ===============
-    let searchTimeout;
-    document.getElementById('search-input').addEventListener('input', (e) => {
-        clearTimeout(searchTimeout);
-        searchTimeout = setTimeout(() => {
-            const query = e.target.value.toLowerCase().trim();
-            const sections = document.querySelectorAll('main section');
+        apply(isDark, saveToStorage = true) {
+            body.classList.toggle('dark-mode', isDark);
+            body.classList.toggle('light-mode-forced', !isDark && this.getSystemPrefersDark());
             
+            if (themeBtn) {
+                themeBtn.textContent = isDark ? '☀️' : '🌙';
+                themeBtn.setAttribute('aria-label', isDark ? 'فعال‌سازی حالت روز' : 'فعال‌سازی حالت شب');
+                themeBtn.setAttribute('aria-pressed', String(isDark));
+            }
+            
+            root.style.backgroundColor = isDark ? '#0f172a' : '';
+
+            if (saveToStorage) {
+                try { localStorage.setItem(STORAGE_KEY, String(isDark)); } 
+                catch (e) { /* ignore */ }
+            }
+        },
+
+        init() {
+            let stored = null;
+            try { stored = localStorage.getItem(STORAGE_KEY); } 
+            catch (e) { /* ignore */ }
+
+            if (stored !== null) {
+                this.apply(stored === 'true');
+            } else {
+                this.apply(this.getSystemPrefersDark(), false);
+            }
+
+            // گوش دادن به تغییرات سیستم
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+                try {
+                    if (localStorage.getItem(STORAGE_KEY) === null) {
+                        this.apply(e.matches, false);
+                    }
+                } catch (err) { /* ignore */ }
+            });
+
+            if (themeBtn) {
+                themeBtn.addEventListener('click', () => {
+                    const isDark = !body.classList.contains('dark-mode');
+                    this.apply(isDark, true);
+                });
+            }
+        }
+    };
+
+    // ============================================================
+    // 🔥 Hot News
+    // ============================================================
+    const HotNews = {
+        isOpen: false,
+
+        toggle() {
+            if (!hotNewsContent) return;
+            this.isOpen = !this.isOpen;
+            
+            if (this.isOpen) {
+                hotNewsContent.style.maxHeight = hotNewsContent.scrollHeight + 'px';
+                hotNewsContent.classList.add('is-open');
+            } else {
+                hotNewsContent.style.maxHeight = '0px';
+                hotNewsContent.classList.remove('is-open');
+            }
+
+            if (hotArrow) hotArrow.style.transform = this.isOpen ? 'rotate(180deg)' : 'rotate(0deg)';
+            if (hotNewsBtn) hotNewsBtn.setAttribute('aria-expanded', String(this.isOpen));
+        },
+
+        init() {
+            if (hotNewsBtn) {
+                hotNewsBtn.addEventListener('click', () => this.toggle());
+            }
+
+            if (hotDate) {
+                try {
+                    hotDate.textContent = `(${new Date().toLocaleDateString('fa-IR', {
+                        weekday: 'long', day: 'numeric', month: 'long'
+                    })})`;
+                } catch (e) { hotDate.textContent = ''; }
+            }
+
+            window.addEventListener('resize', () => {
+                if (this.isOpen && hotNewsContent) {
+                    hotNewsContent.style.maxHeight = hotNewsContent.scrollHeight + 'px';
+                }
+            });
+        }
+    };
+
+    // ============================================================
+    // 🔍 Search Engine
+    // ============================================================
+    const SearchEngine = {
+        timeoutId: null,
+        debounceMs: 200,
+
+        normalize(text) {
+            return text
+                .toLowerCase()
+                .trim()
+                .replace(/ي/g, 'ی')
+                .replace(/ك/g, 'ک')
+                .replace(/[\u064B-\u0652]/g, '')
+                .replace(/\s+/g, ' ');
+        },
+
+        perform(rawQuery) {
+            const query = this.normalize(rawQuery);
+            const sections = document.querySelectorAll('main section');
+            let totalMatches = 0;
+
             sections.forEach(section => {
                 const cards = section.querySelectorAll('.card');
-                if (cards.length === 0) return; // بخش معرفی یا اخبار داغ (بدون کارت)
-                
-                let hasMatch = false;
+                if (cards.length === 0) return;
+
+                // حالت خالی: بازگردانی
+                if (query === '') {
+                    cards.forEach(card => card.style.removeProperty('display'));
+                    section.style.removeProperty('display');
+                    return;
+                }
+
+                let sectionHasMatch = false;
                 cards.forEach(card => {
-                    const match = card.innerText.toLowerCase().includes(query);
-                    card.style.display = match ? 'flex' : 'none';
-                    if (match) hasMatch = true;
+                    const cardText = this.normalize(card.textContent);
+                    const isMatch = cardText.includes(query);
+                    card.style.display = isMatch ? 'flex' : 'none';
+                    if (isMatch) {
+                        sectionHasMatch = true;
+                        totalMatches++;
+                    }
                 });
-                
-                // مخفی کردن کل بخش (شامل تیتر) اگر هیچ کارتی پیدا نشد
-                section.style.display = (query === '' || hasMatch) ? '' : 'none';
+
+                section.style.display = sectionHasMatch ? '' : 'none';
             });
-        }, 200);
-    });
+
+            if (noResults) {
+                noResults.classList.toggle('is-visible', query !== '' && totalMatches === 0);
+            }
+        },
+
+        init() {
+            if (!searchInput) return;
+
+            searchInput.addEventListener('input', (e) => {
+                clearTimeout(this.timeoutId);
+                this.timeoutId = setTimeout(() => this.perform(e.target.value), this.debounceMs);
+            });
+
+            // Escape = پاک کردن
+            searchInput.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    searchInput.value = '';
+                    this.perform('');
+                }
+            });
+        }
+    };
+
+    // ============================================================
+    // ⌨️ میانبر صفحه‌کلید: / برای فوکوس روی جستجو
+    // ============================================================
+    function initKeyboardShortcuts() {
+        document.addEventListener('keydown', (e) => {
+            const tag = document.activeElement?.tagName;
+            if (tag === 'INPUT' || tag === 'TEXTAREA') return;
+
+            if (e.key === '/' && !e.ctrlKey && !e.metaKey) {
+                e.preventDefault();
+                searchInput?.focus();
+            }
+        });
+    }
+
+    // ============================================================
+    // 🚀 اجرا
+    // ============================================================
+    function init() {
+        ThemeManager.init();
+        HotNews.init();
+        SearchEngine.init();
+        initKeyboardShortcuts();
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+})();
 </script>
 </body>
 </html>
