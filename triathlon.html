@@ -1,1 +1,421 @@
-<!DOCTYPE html><html lang="fa"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>🏊 سه‌گانه | رهیلا</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial;background:radial-gradient(circle at center,#0a1a1a,#1a4a4a,#66ccaa);color:#fff;text-align:center;padding:15px;min-height:100vh}.header{background:rgba(255,255,255,.08);backdrop-filter:blur(20px);border-radius:25px;padding:20px;margin-bottom:15px}.header h1{color:#ffd700;font-size:22px}.back-btn{display:inline-block;background:rgba(255,255,255,.15);color:#fff;padding:8px 20px;border-radius:20px;text-decoration:none;margin:10px 0;font-size:14px}.section-title{color:#ffd700;font-size:18px;margin:20px 0 10px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.card{background:rgba(255,255,255,.05);border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,.1);text-align:right}.card h3{font-size:15px;color:#ffd700}</style></head><body><div class="header"><h1>🏊 سه‌گانه</h1></div><a href="index.html" class="back-btn">🔙 برگشت</a><div class="section-title">🏊 اطلاعات</div><div class="grid"><div class="card"><h3>سه‌گانه چیست</h3></div><div class="card"><h3>تمرینات</h3></div><div class="card"><h3>مسابقات</h3></div><div class="card"><h3>تجهیزات</h3></div></div><p style="margin-top:15px"><a href="index.html" style="color:#ffd700">🔙 برگشت</a></p></body></html>
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>راهنمای جامع ورزش سه‌گانه + برنامه‌ریز تمرین | رهیلاناب</title>
+    <meta name="description" content="همه چیز درباره ورزش سه‌گانه (شنا، دوچرخه، دویدن)؛ از تجهیزات لازم تا برنامه تمرینی هوشمند برای سطوح مختلف. راهنمای کامل در رهیلاناب.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏊‍♂️</text></svg>">
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+    
+    <style>
+        /* ============== تم‌ها ============== */
+        :root {
+            --bg-main: #050b14;
+            --bg-card: #0f1a2c;
+            --text-main: #e2e8f0;
+            --text-muted: #94a3b8;
+            --primary: #38bdf8; /* آبی ورزشی */
+            --primary-dark: #0284c7;
+            --accent: #f97316; /* نارنجی انرژی */
+            --green: #22c55e;
+            --border: #1e293b;
+            --shadow: 0 10px 30px rgba(56, 189, 248, 0.15);
+            --gradient: linear-gradient(135deg, #38bdf8, #f97316);
+        }
+
+        body.light-mode {
+            --bg-main: #f8fafc;
+            --bg-card: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --primary: #0284c7;
+            --accent: #ea580c;
+            --border: #cbd5e1;
+            --shadow: 0 10px 30px rgba(2, 132, 199, 0.15);
+            --gradient: linear-gradient(135deg, #0284c7, #ea580c);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; transition: background-color 0.3s, color 0.3s; }
+        
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.9;
+            font-size: 17px;
+            overflow-x: hidden;
+        }
+
+        /* ============== نوار پیشرفت ============== */
+        #progress-bar {
+            position: fixed; top: 0; left: 0; height: 4px; width: 0%;
+            background: var(--gradient); z-index: 9999;
+            box-shadow: 0 0 10px var(--primary); transition: width 0.1s;
+        }
+
+        /* ============== دکمه‌های شناور ============== */
+        .floating-controls {
+            position: fixed; top: 15px; left: 15px; z-index: 999;
+            display: flex; flex-direction: column; gap: 10px;
+        }
+        
+        .control-btn {
+            background: var(--bg-card); border: 1px solid var(--border);
+            color: var(--text-main); width: 50px; height: 50px;
+            border-radius: 50%; cursor: pointer; font-size: 20px;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: var(--shadow); backdrop-filter: blur(10px); transition: 0.3s;
+        }
+        .control-btn:hover { transform: scale(1.1); color: var(--primary); border-color: var(--primary); }
+        .control-btn.playing { background: var(--primary); color: #000; }
+
+        /* ============== هدر ============== */
+        .header {
+            background: var(--gradient); color: #fff; padding: 80px 20px 60px;
+            text-align: center; border-radius: 0 0 40px 40px;
+            position: relative; overflow: hidden;
+        }
+        .header h1 { font-size: clamp(24px, 5vw, 38px); margin-bottom: 10px; position: relative; z-index: 1; font-weight: 900; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+        .header p { font-size: 16px; opacity: 0.9; position: relative; z-index: 1; font-weight: bold; }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; margin-top: -30px; }
+
+        /* ============== کارت‌ها ============== */
+        .card {
+            background: var(--bg-card); border-radius: 24px; padding: 30px;
+            margin-bottom: 30px; box-shadow: var(--shadow); border: 1px solid var(--border);
+        }
+        .card h2 { font-size: 22px; color: var(--primary); margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+
+        /* ============== باکس BLUF ============== */
+        .box-bluf {
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.1), rgba(249, 115, 22, 0.1));
+            border: 2px solid var(--accent); border-radius: 16px; padding: 25px; margin-bottom: 30px;
+        }
+        .box-bluf h3 { color: var(--accent); font-size: 20px; margin-bottom: 10px; }
+        .box-bluf p { font-weight: bold; font-size: 16px; }
+
+        /* ============== انیمیشن مسیر ============== */
+        .race-track {
+            display: flex; justify-content: space-between; align-items: center;
+            background: var(--bg-main); padding: 20px; border-radius: 20px; border: 1px dashed var(--border);
+            margin: 30px 0; position: relative;
+        }
+        .race-track::before {
+            content: ''; position: absolute; top: 50%; left: 10%; right: 10%; height: 4px;
+            background: var(--border); z-index: 0; transform: translateY(-50%);
+        }
+        .sport-icon {
+            width: 60px; height: 60px; background: var(--bg-card); border-radius: 50%;
+            display: flex; justify-content: center; align-items: center; font-size: 28px;
+            position: relative; z-index: 1; border: 3px solid var(--primary); box-shadow: 0 0 15px var(--primary);
+            animation: pulse 2s infinite alternate;
+        }
+        .sport-icon:nth-child(2) { border-color: var(--accent); box-shadow: 0 0 15px var(--accent); animation-delay: 0.5s; }
+        .sport-icon:nth-child(3) { border-color: var(--green); box-shadow: 0 0 15px var(--green); animation-delay: 1s; }
+        @keyframes pulse { 0% { transform: scale(1); } 100% { transform: scale(1.1); } }
+
+        /* ============== برنامه‌ریز ============== */
+        .planner-box { background: rgba(255, 255, 255, 0.02); padding: 25px; border-radius: 20px; border: 1px solid var(--border); }
+        .planner-row { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px; }
+        @media (max-width: 600px) { .planner-row { grid-template-columns: 1fr; } }
+        
+        .input-group label { display: block; font-size: 14px; margin-bottom: 8px; color: var(--text-muted); font-weight: bold; }
+        .input-group select {
+            width: 100%; padding: 12px; border-radius: 10px; border: 1px solid var(--border);
+            background: var(--bg-main); color: var(--text-main); font-family: inherit; font-size: 16px; outline: none; cursor: pointer;
+        }
+        .input-group select:focus { border-color: var(--primary); box-shadow: 0 0 10px rgba(56,189,248,0.3); }
+
+        .btn { display: inline-block; background: var(--gradient); color: #fff; padding: 14px 30px; border-radius: 12px; border: none; text-decoration: none; font-weight: 900; font-size: 16px; cursor: pointer; transition: 0.3s; width: 100%; text-align: center; box-shadow: 0 5px 20px rgba(56, 189, 248, 0.3); }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(249, 115, 22, 0.5); }
+
+        .plan-result {
+            display: none; margin-top: 25px; padding: 25px; background: var(--bg-main);
+            border-right: 5px solid var(--accent); border-radius: 12px; animation: slideUp 0.5s ease;
+        }
+        .plan-result h3 { color: var(--accent); margin-bottom: 15px; }
+        .plan-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; text-align: center; }
+        @media (max-width: 600px) { .plan-grid { grid-template-columns: 1fr; } }
+        .plan-item { background: var(--bg-card); padding: 15px; border-radius: 12px; border: 1px solid var(--border); }
+        .plan-item h4 { color: var(--primary); margin-bottom: 5px; font-size: 18px; }
+        .plan-item p { font-size: 14px; color: var(--text-muted); }
+        .plan-item span { font-size: 20px; font-weight: bold; color: var(--text-main); display: block; margin-top: 5px; }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* ============== جدول ============== */
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 15px; border-radius: 12px; overflow: hidden; }
+        th { background: var(--primary); color: #000; padding: 15px; text-align: center; font-weight: 900; }
+        td { padding: 12px; text-align: center; border-bottom: 1px solid var(--border); background: var(--bg-card); font-weight: 500; }
+        tr:hover td { background: var(--bg-main); color: var(--primary); }
+
+        /* ============== آکاردئون ============== */
+        .accordion { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 12px; overflow: hidden; }
+        .accordion-btn { background: none; border: none; width: 100%; padding: 18px; text-align: right; font-family: inherit; font-size: 16px; font-weight: bold; color: var(--text-main); cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .accordion-btn:hover { color: var(--primary); }
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; padding: 0 18px; color: var(--text-muted); font-size: 15px; }
+        .accordion.active .accordion-content { max-height: 500px; padding-bottom: 18px; }
+        .arrow { transition: transform 0.3s; color: var(--primary); }
+        .accordion.active .arrow { transform: rotate(180deg); }
+
+        .footer { text-align: center; padding: 30px; color: var(--text-muted); font-size: 14px; border-top: 1px solid var(--border); margin-top: 40px; }
+        .footer a { color: var(--primary); text-decoration: none; }
+
+        /* ============== انیمیشن اسکرول ============== */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<div class="floating-controls">
+    <button class="control-btn" id="tts-btn" onclick="toggleSpeech()" title="گوش دادن">
+        <span id="tts-icon">🔊</span>
+    </button>
+    <button class="control-btn" onclick="toggleTheme()" title="تاریک/روشن">
+        <span id="theme-icon">🌙</span>
+    </button>
+</div>
+
+<div class="header">
+    <h1>🏊‍♂️🚴‍♂️🏃‍♂️ ورزش سه‌گانه</h1>
+    <p>شنا، رکاب زدن و دویدن؛ چالشی برای قهرمان‌ها</p>
+</div>
+
+<div class="container" id="main-content">
+
+    <!-- BLUF -->
+    <div class="card box-bluf reveal">
+        <h3>⚡ جواب سریع در ۳ خط:</h3>
+        <p>
+            ۱. ورزش سه‌گانه ترکیبی از سه رشته‌ی <strong>شنا، دوچرخه‌سواری و دویدن</strong> است که پشت سر هم انجام می‌شوند.<br>
+            ۲. برای شروع، حتماً باید در هر سه رشته پایه‌ی آمادگی بدنی داشته باشی و روی <strong>انتقال‌ها (Transitions)</strong> تمرین کنی.<br>
+            ۳. تجهیزات اصلی شامل: عینک شنا، کلاه، دوچرخه مناسب، کفش دویدن و لباس مخصوص سه‌گانه (Trisuit) است.
+        </p>
+    </div>
+
+    <!-- مسیر مسابقه -->
+    <div class="card reveal">
+        <h2>🏁 مسیر مسابقه</h2>
+        <div class="race-track">
+            <div class="sport-icon" title="شنا">🏊‍♂️</div>
+            <div class="sport-icon" title="دوچرخه">🚴‍♂️</div>
+            <div class="sport-icon" title="دویدن">🏃‍♂️</div>
+        </div>
+        <p style="text-align:center; font-size: 14px; color: var(--text-muted); margin-top: 10px;">
+            هر مسابقه سه‌گانه از یک استخر یا آب آزاد شروع شده و با دویدن به پایان می‌رسد.
+        </p>
+    </div>
+
+    <!-- برنامه‌ریز هوشمند -->
+    <div class="card reveal">
+        <h2>📅 برنامه‌ریز هوشمند تمرین</h2>
+        <p style="margin-bottom: 20px; color: var(--text-muted);">سطح و مسافت هدف خود را انتخاب کنید تا حجم تمرین هفتگی پیشنهادی را ببینید:</p>
+        
+        <div class="planner-box">
+            <div class="planner-row">
+                <div class="input-group">
+                    <label>سطح فعلی شما:</label>
+                    <select id="level">
+                        <option value="beginner">🌱 مبتدی (تازه‌کار)</option>
+                        <option value="intermediate">🌿 متوسط (چند سال ورزش)</option>
+                        <option value="advanced">🌳 حرفه‌ای (ورزشکار فعال)</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>مسافت هدف:</label>
+                    <select id="distance">
+                        <option value="sprint">اسپرینت (۷۵۰ متر شنا، ۲۰ کیلومتر دوچرخه، ۵ کیلومتر دویدن)</option>
+                        <option value="olympic" selected>المپیک (۱.۵ کیلومتر شنا، ۴۰ کیلومتر دوچرخه، ۱۰ کیلومتر دویدن)</option>
+                        <option value="ironman">آیرون‌من (۳.۸ کیلومتر شنا، ۱۸۰ کیلومتر دوچرخه، ۴۲ کیلومتر دویدن)</option>
+                    </select>
+                </div>
+            </div>
+            <button class="btn" onclick="calculatePlan()">🔍 تولید برنامه تمرینی</button>
+            
+            <div class="plan-result" id="plan-result">
+                <h3>📋 برنامه هفتگی پیشنهادی شما:</h3>
+                <div class="plan-grid">
+                    <div class="plan-item">
+                        <h4>🏊‍♂️ شنا</h4>
+                        <p>تعداد جلسات در هفته</p>
+                        <span id="plan-swim">-</span>
+                    </div>
+                    <div class="plan-item">
+                        <h4>🚴‍♂️ دوچرخه</h4>
+                        <p>تعداد جلسات در هفته</p>
+                        <span id="plan-bike">-</span>
+                    </div>
+                    <div class="plan-item">
+                        <h4>🏃‍♂️ دویدن</h4>
+                        <p>تعداد جلسات در هفته</p>
+                        <span id="plan-run">-</span>
+                    </div>
+                </div>
+                <p style="margin-top: 15px; font-size: 14px; color: var(--text-muted); text-align: center;">
+                    <em>توصیه: یک روز در هفته را به استراحت کامل و یک روز را به تمرین انتقال (Brick Workout) اختصاص دهید.</em>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- جدول تجهیزات -->
+    <div class="card reveal">
+        <h2>🎒 تجهیزات ضروری</h2>
+        <table>
+            <thead>
+                <tr><th>رشته</th><th>تجهیزات کلیدی</th><th>نکته مهم</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>شنا</strong></td><td>عینک شنا، کلاه، مایو یا Trisuit</td><td>عینک ضد آب با دید خوب انتخاب کنید.</td></tr>
+                <tr><td><strong>دوچرخه</strong></td><td>دوچرخه جاده یا TT، کلاه ایمنی، کفش مخصوص</td><td>کلاه ایمنی استاندارد (CPSC یا CE) الزامی است.</td></tr>
+                <tr><td><strong>دویدن</strong></td><td>کفش دویدن مناسب، جوراب نخی</td><td>کفش‌های مخصوص سه‌گانه با بندهای سریع.</td></tr>
+                <tr><td><strong>انتقال</strong></td><td>حوله، شماره مسابقه، بند الاستیک</td><td>سرعت تعویض لباس و کفش، کلید موفقیت است.</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- آکاردئون -->
+    <div class="card reveal">
+        <h2>💡 نکات کلیدی برای موفقیت</h2>
+        
+        <div class="accordion">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+                تمرین انتقال (Brick Workout) چیست؟
+                <span class="arrow">▼</span>
+            </button>
+            <div class="accordion-content">
+                تمرین انتقال یعنی پشت سر هم دو رشته را تمرین کنید (مثلاً دوچرخه و سپس دویدن). این کار به بدن شما یاد می‌دهد که بعد از رکاب زدن، پاهایتان برای دویدن آماده شود و عضلات سریع‌تر به حالت عادی برگردند.
+            </div>
+        </div>
+
+        <div class="accordion">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+                تغذیه در طول مسابقه چگونه باشد؟
+                <span class="arrow">▼</span>
+            </button>
+            <div class="accordion-content">
+                در مسافت‌های اسپرینت و المپیک، معمولاً آب و کمی ژل انرژی کافی است. اما برای آیرون‌من، باید برنامه دقیق تغذیه (کربوهیدرات و الکترولیت) داشته باشید. هر ۱۵ تا ۲۰ دقیقه یک جرعه آب بنوشید.
+            </div>
+        </div>
+    </div>
+
+    <div class="card reveal" style="text-align: center;">
+        <h2>🔗 صفحات مرتبط</h2>
+        <p>
+            <a href="sport.html" class="btn" style="display:inline-block; width:auto; margin:5px;">🏅 ورزش</a>
+            <a href="cycling.html" class="btn" style="display:inline-block; width:auto; margin:5px;">🚴 دوچرخه</a>
+            <a href="marathon.html" class="btn" style="display:inline-block; width:auto; margin:5px;">🏃 ماراتن</a>
+        </p>
+    </div>
+
+</div>
+
+<div class="footer">
+    <p>🌟 <strong>رهیلاناب</strong> - <a href="index.html">خانه</a> | <a href="sport.html">ورزش</a></p>
+    <p>© ۲۰۲۶ rahilanab.com | با اراده، قهرمان شو.</p>
+</div>
+
+<script>
+    // =============== ۱. نوار پیشرفت ===============
+    window.onscroll = function() {
+        var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var scrolled = (winScroll / height) * 100;
+        document.getElementById("progress-bar").style.width = scrolled + "%";
+    };
+
+    // =============== ۲. تم تاریک/روشن ===============
+    function toggleTheme() {
+        document.body.classList.toggle('light-mode');
+        const isLight = document.body.classList.contains('light-mode');
+        document.getElementById('theme-icon').innerText = isLight ? '☀️' : '🌙';
+        localStorage.setItem('triThemeLight', isLight);
+    }
+    if (localStorage.getItem('triThemeLight') === 'true') { toggleTheme(); }
+
+    // =============== ۳. پخش صوتی (TTS) ===============
+    let isSpeaking = false;
+    let voices = [];
+    function loadVoices() { voices = window.speechSynthesis.getVoices(); }
+    if (typeof speechSynthesis !== 'undefined' && speechSynthesis.onvoiceschanged !== undefined) { speechSynthesis.onvoiceschanged = loadVoices; }
+
+    function toggleSpeech() {
+        if (isSpeaking) {
+            window.speechSynthesis.cancel();
+            isSpeaking = false;
+            document.getElementById('tts-icon').innerText = '🔊';
+            document.getElementById('tts-btn').classList.remove('playing');
+            return;
+        }
+        const mainText = document.getElementById('main-content').innerText;
+        const speech = new SpeechSynthesisUtterance(mainText);
+        speech.lang = 'fa-IR';
+        const persianVoice = voices.find(v => v.lang.includes('fa') || v.lang === 'fa-IR');
+        if (persianVoice) speech.voice = persianVoice;
+        speech.onend = function() {
+            isSpeaking = false;
+            document.getElementById('tts-icon').innerText = '🔊';
+            document.getElementById('tts-btn').classList.remove('playing');
+        };
+        window.speechSynthesis.speak(speech);
+        isSpeaking = true;
+        document.getElementById('tts-icon').innerText = '⏹️';
+        document.getElementById('tts-btn').classList.add('playing');
+    }
+
+    // =============== ۴. آکاردئون ===============
+    function toggleAccordion(btn) { btn.parentElement.classList.toggle('active'); }
+
+    // =============== ۵. برنامه‌ریز تمرین ===============
+    function calculatePlan() {
+        const level = document.getElementById('level').value;
+        const distance = document.getElementById('distance').value;
+        const resultDiv = document.getElementById('plan-result');
+        
+        let swim = 0, bike = 0, run = 0;
+
+        if (level === 'beginner') {
+            if (distance === 'sprint') { swim = '۲ جلسه'; bike = '۲ جلسه'; run = '۲ جلسه'; }
+            else if (distance === 'olympic') { swim = '۲ جلسه'; bike = '۳ جلسه'; run = '۳ جلسه'; }
+            else { swim = '۳ جلسه'; bike = '۳ جلسه'; run = '۴ جلسه'; }
+        } else if (level === 'intermediate') {
+            if (distance === 'sprint') { swim = '۲ جلسه'; bike = '۳ جلسه'; run = '۳ جلسه'; }
+            else if (distance === 'olympic') { swim = '۳ جلسه'; bike = '۳ جلسه'; run = '۴ جلسه'; }
+            else { swim = '۳ جلسه'; bike = '۴ جلسه'; run = '۵ جلسه'; }
+        } else { // Advanced
+            if (distance === 'sprint') { swim = '۳ جلسه'; bike = '۳ جلسه'; run = '۴ جلسه'; }
+            else if (distance === 'olympic') { swim = '۴ جلسه'; bike = '۴ جلسه'; run = '۵ جلسه'; }
+            else { swim = '۵ جلسه'; bike = '۵ جلسه'; run = '۶ جلسه'; }
+        }
+
+        document.getElementById('plan-swim').innerText = swim;
+        document.getElementById('plan-bike').innerText = bike;
+        document.getElementById('plan-run').innerText = run;
+
+        resultDiv.style.display = 'block';
+        resultDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    // =============== ۶. انیمیشن اسکرول ===============
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach(el => {
+        revealObserver.observe(el);
+    });
+
+    loadVoices();
+</script>
+
+</body>
+  </html>
