@@ -1,1 +1,424 @@
-<!DOCTYPE html><html lang="fa"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>🤸 ترامپولین | رهیلا</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial;background:radial-gradient(circle at center,#0a1a1a,#1a4a4a,#66ccaa);color:#fff;text-align:center;padding:15px;min-height:100vh}.header{background:rgba(255,255,255,.08);backdrop-filter:blur(20px);border-radius:25px;padding:20px;margin-bottom:15px}.header h1{color:#ffd700;font-size:22px}.back-btn{display:inline-block;background:rgba(255,255,255,.15);color:#fff;padding:8px 20px;border-radius:20px;text-decoration:none;margin:10px 0;font-size:14px}.section-title{color:#ffd700;font-size:18px;margin:20px 0 10px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.card{background:rgba(255,255,255,.05);border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,.1);text-align:right}.card h3{font-size:15px;color:#ffd700}</style></head><body><div class="header"><h1>🤸 ترامپولین</h1></div><a href="index.html" class="back-btn">🔙 برگشت</a><div class="section-title">🤸 اطلاعات</div><div class="grid"><div class="card"><h3>ترامپولین چیست</h3></div><div class="card"><h3>حرکات</h3></div><div class="card"><h3>مسابقات</h3></div><div class="card"><h3>قیمت</h3></div></div><p style="margin-top:15px"><a href="index.html" style="color:#ffd700">🔙 برگشت</a></p></body></html>
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>راهنمای جامع خرید ترامپولین + مشاور هوشمند | رهیلاناب</title>
+    <meta name="description" content="همه چیز درباره ترامپولین؛ از انتخاب سایز مناسب برای کودکان و بزرگسالان تا نکات حیاتی ایمنی. همراه با مشاور هوشمند خرید و مقایسه انواع ترامپولین.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤸‍♂️</text></svg>">
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+    
+    <style>
+        /* ============== تم‌ها ============== */
+        :root {
+            --bg-main: #0a0514;
+            --bg-card: #18102b;
+            --text-main: #f4f0ff;
+            --text-muted: #a78bfa;
+            --primary: #00f5ff; /* فیروزه‌ای نئونی */
+            --primary-dark: #00b3b8;
+            --accent: #ff00aa; /* صورتی نئونی */
+            --border: #3b2c59;
+            --shadow: 0 10px 30px rgba(0, 245, 255, 0.15);
+            --gradient: linear-gradient(135deg, #00f5ff, #ff00aa);
+        }
+
+        body.light-mode {
+            --bg-main: #f4f0ff;
+            --bg-card: #ffffff;
+            --text-main: #1e1035;
+            --text-muted: #6b4c9a;
+            --primary: #0090a8;
+            --accent: #c4007f;
+            --border: #e2d5f8;
+            --shadow: 0 10px 30px rgba(0, 144, 168, 0.15);
+            --gradient: linear-gradient(135deg, #0090a8, #c4007f);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; transition: background-color 0.3s, color 0.3s; }
+        
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background: radial-gradient(circle at 20% 10%, var(--bg-card), var(--bg-main) 70%);
+            color: var(--text-main);
+            line-height: 1.9;
+            font-size: 17px;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* ============== نوار پیشرفت ============== */
+        #progress-bar {
+            position: fixed; top: 0; left: 0; height: 4px; width: 0%;
+            background: var(--gradient); z-index: 9999;
+            box-shadow: 0 0 15px var(--primary); transition: width 0.1s;
+        }
+
+        /* ============== دکمه‌های شناور ============== */
+        .floating-controls {
+            position: fixed; top: 15px; left: 15px; z-index: 999;
+            display: flex; flex-direction: column; gap: 10px;
+        }
+        
+        .control-btn {
+            background: var(--bg-card); border: 1px solid var(--border);
+            color: var(--text-main); width: 50px; height: 50px;
+            border-radius: 50%; cursor: pointer; font-size: 20px;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: var(--shadow); backdrop-filter: blur(10px); transition: 0.3s;
+        }
+        .control-btn:hover { transform: scale(1.1); color: var(--primary); border-color: var(--primary); }
+        .control-btn.playing { background: var(--primary); color: #000; }
+
+        /* ============== هدر ============== */
+        .header {
+            background: var(--gradient); color: #000; padding: 80px 20px 60px;
+            text-align: center; border-radius: 0 0 40px 40px;
+            position: relative; overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 245, 255, 0.3);
+        }
+        body.light-mode .header { color: #fff; }
+        .header h1 { font-size: clamp(24px, 5vw, 38px); margin-bottom: 10px; position: relative; z-index: 1; font-weight: 900; }
+        .header p { font-size: 16px; opacity: 0.9; position: relative; z-index: 1; font-weight: bold; }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; margin-top: -30px; }
+
+        /* ============== کارت‌ها ============== */
+        .card {
+            background: var(--bg-card); border-radius: 24px; padding: 30px;
+            margin-bottom: 30px; box-shadow: var(--shadow); border: 1px solid var(--border);
+        }
+        .card h2 { font-size: 22px; color: var(--primary); margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+
+        /* ============== باکس BLUF ============== */
+        .box-bluf {
+            background: linear-gradient(135deg, rgba(0, 245, 255, 0.1), rgba(255, 0, 170, 0.1));
+            border: 2px solid var(--accent); border-radius: 16px; padding: 25px; margin-bottom: 30px;
+        }
+        .box-bluf h3 { color: var(--accent); font-size: 20px; margin-bottom: 10px; }
+        .box-bluf p { font-weight: bold; font-size: 16px; }
+
+        /* ============== انیمیشن ترامپولین ============== */
+        .tramp-container { 
+            display: flex; justify-content: center; align-items: flex-end; 
+            height: 250px; margin: 40px 0; position: relative;
+        }
+        .trampoline {
+            width: 200px; height: 20px; background: #333; border-radius: 50px;
+            position: relative; box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+            border-bottom: 4px solid var(--primary);
+        }
+        .trampoline::before, .trampoline::after {
+            content: ''; position: absolute; bottom: -30px; width: 8px; height: 30px;
+            background: #555; border-radius: 4px;
+        }
+        .trampoline::before { left: 20px; transform: rotate(15deg); }
+        .trampoline::after { right: 20px; transform: rotate(-15deg); }
+        
+        .ball {
+            width: 50px; height: 50px; background: var(--gradient);
+            border-radius: 50%; position: absolute; bottom: 30px; left: 75px;
+            animation: bounce 1.5s infinite cubic-bezier(0.28, 0.84, 0.42, 1);
+            box-shadow: 0 0 20px var(--accent);
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0) scaleY(0.9) scaleX(1.1); }
+            10% { transform: translateY(0) scaleY(1) scaleX(1); }
+            50% { transform: translateY(-120px) scaleY(1) scaleX(1); }
+            90% { transform: translateY(0) scaleY(1) scaleX(1); }
+        }
+
+        /* ============== مشاور هوشمند ============== */
+        .advisor-box { background: rgba(255, 255, 255, 0.02); padding: 25px; border-radius: 20px; border: 1px dashed var(--primary); }
+        .advisor-step { margin-bottom: 20px; }
+        .advisor-step label { display: block; font-weight: bold; margin-bottom: 10px; color: var(--text-main); }
+        .advisor-step select {
+            width: 100%; padding: 12px 15px; border-radius: 12px; border: 1px solid var(--border);
+            background: var(--bg-main); color: var(--text-main); font-family: inherit; font-size: 16px; outline: none;
+            cursor: pointer; transition: 0.3s;
+        }
+        .advisor-step select:focus { border-color: var(--primary); box-shadow: 0 0 10px rgba(0,245,255,0.3); }
+        
+        #advisor-result { display: none; margin-top: 25px; padding: 25px; background: rgba(0, 245, 255, 0.05); border-right: 5px solid var(--primary); border-radius: 12px; animation: slideUp 0.5s ease; }
+        #advisor-result h3 { color: var(--primary); margin-bottom: 10px; font-size: 20px; }
+        #advisor-result p { font-size: 16px; margin-bottom: 10px; color: var(--text-main); }
+        #advisor-result span { color: var(--accent); font-weight: bold; }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* ============== جدول ============== */
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 15px; border-radius: 12px; overflow: hidden; }
+        th { background: var(--primary); color: #000; padding: 15px; text-align: center; font-weight: 900; }
+        td { padding: 12px; text-align: center; border-bottom: 1px solid var(--border); background: var(--bg-card); font-weight: 500; }
+        tr:hover td { background: var(--bg-main); color: var(--primary); }
+
+        /* ============== آکاردئون ============== */
+        .accordion { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 12px; overflow: hidden; }
+        .accordion-btn { background: none; border: none; width: 100%; padding: 18px; text-align: right; font-family: inherit; font-size: 16px; font-weight: bold; color: var(--text-main); cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .accordion-btn:hover { color: var(--primary); }
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; padding: 0 18px; color: var(--text-muted); font-size: 15px; }
+        .accordion.active .accordion-content { max-height: 500px; padding-bottom: 18px; }
+        .arrow { transition: transform 0.3s; color: var(--primary); }
+        .accordion.active .arrow { transform: rotate(180deg); }
+
+        .btn { display: inline-block; background: var(--gradient); color: #000; padding: 14px 30px; border-radius: 12px; border: none; text-decoration: none; font-weight: 900; font-size: 16px; cursor: pointer; transition: 0.3s; width: 100%; text-align: center; box-shadow: 0 5px 20px rgba(0, 245, 255, 0.3); }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(255, 0, 170, 0.5); }
+        
+        .footer { text-align: center; padding: 30px; color: var(--text-muted); font-size: 14px; border-top: 1px solid var(--border); margin-top: 40px; }
+        .footer a { color: var(--primary); text-decoration: none; }
+
+        /* ============== انیمیشن اسکرول ============== */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<div class="floating-controls">
+    <button class="control-btn" id="tts-btn" onclick="toggleSpeech()" title="گوش دادن">
+        <span id="tts-icon">🔊</span>
+    </button>
+    <button class="control-btn" onclick="toggleTheme()" title="تاریک/روشن">
+        <span id="theme-icon">🌙</span>
+    </button>
+</div>
+
+<div class="header">
+    <h1>🤸‍♂️ دنیای ترامپولین</h1>
+    <p>پرش به سوی سلامتی و سرگرمی با انتخاب هوشمندانه</p>
+</div>
+
+<div class="container" id="main-content">
+
+    <!-- BLUF -->
+    <div class="card box-bluf reveal">
+        <h3>⚡ جواب سریع در ۳ خط:</h3>
+        <p>
+            ۱. برای <strong>کودکان</strong>، ترامپولین‌های دایره‌ای ۶ تا ۸ فوتی با تور محافظ بهترین گزینه است.<br>
+            ۲. برای <strong>ورزش و فیتنس بزرگسالان</strong>، ترامپولین‌های مستطیلی (Rebounder) فضای پرش بهتر و ایمن‌تری دارند.<br>
+            ۳. برای <strong>آپارتمان و فضای کم</strong>، ترامپولین‌های مینی (فیتنس) بدون دستگیره یا با دستگیره‌ی تک‌پایه عالی هستند.
+        </p>
+    </div>
+
+    <!-- انیمیشن ترامپولین -->
+    <div class="card reveal">
+        <h2>🎯 یک پرش تا انرژی مثبت</h2>
+        <div class="tramp-container">
+            <div class="trampoline">
+                <div class="ball"></div>
+            </div>
+        </div>
+        <p style="text-align:center; font-size: 14px; color: var(--text-muted); margin-top: 10px;">
+            ورزشی که هم برای کودکان سرگرمی است و هم برای بزرگسالان یک تمرین هوازی عالی!
+        </p>
+    </div>
+
+    <!-- مشاور هوشمند -->
+    <div class="card reveal">
+        <h2>🔍 مشاور هوشمند انتخاب ترامپولین</h2>
+        <p style="margin-bottom: 20px; color: var(--text-muted);">به سوالات زیر پاسخ دهید تا بهترین گزینه به شما پیشنهاد شود:</p>
+        
+        <div class="advisor-box">
+            <div class="advisor-step">
+                <label>۱. ترامپولین برای چه کسی خریداری می‌شود؟</label>
+                <select id="user-type">
+                    <option value="kid">👶 کودکان (زیر ۱۲ سال)</option>
+                    <option value="teen">🧑 نوجوانان (۱۲ تا ۱۸ سال)</option>
+                    <option value="adult">🏋️ بزرگسالان (فیتنس و ورزش)</option>
+                </select>
+            </div>
+
+            <div class="advisor-step">
+                <label>۲. فضای موجود شما چقدر است؟</label>
+                <select id="space-type">
+                    <option value="small">🏢 آپارتمان / فضای بسته (کمتر از ۱۰ متر)</option>
+                    <option value="medium">🏡 حیاط کوچک (۱۰ تا ۲۰ متر)</option>
+                    <option value="large">🌳 حیاط بزرگ / ویلا (بیش از ۲۰ متر)</option>
+                </select>
+            </div>
+
+            <button class="btn" onclick="showAdvisorResult()">🤸‍♂️ مشاهده پیشنهاد</button>
+
+            <div id="advisor-result">
+                <h3>💡 پیشنهاد ویژه رهیلاناب:</h3>
+                <p id="result-text"></p>
+                <p style="margin-top: 10px; font-size: 14px; color: var(--text-muted);">
+                    <em>نکته: همیشه هنگام خرید، حداکثر وزن مجاز (Weight Capacity) درج شده روی دستگاه را با وزن کاربر مقایسه کنید.</em>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- جدول مقایسه -->
+    <div class="card reveal">
+        <h2>📊 مقایسه انواع ترامپولین</h2>
+        <table>
+            <thead>
+                <tr><th>نوع ترامپولین</th><th>شکل</th><th>مناسب برای</th><th>مزیت اصلی</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>تور محافظ‌دار</strong></td><td>دایره‌ای</td><td>کودکان</td><td>ایمنی بالا، پرش یکنواخت در مرکز</td></tr>
+                <tr><td><strong>مستطیلی (Rebounder)</strong></td><td>مستطیل</td><td>ورزشکاران و فیتنس</td><td>پرش در طول، مناسب حرکات ترکیبی</td></tr>
+                <tr><td><strong>مینی فیتنس</strong></td><td>دایره‌ای کوچک</td><td>آپارتمان و بزرگسالان</td><td>فضای اشغال کم، تمرین‌های هوازی سریع</td></tr>
+                <tr><td><strong>بدون فنر (Springless)</strong></td><td>متنوع</td><td>همه سنین</td><td>ایمنی بیشتر، بدون گیر کردن پا در فنر</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- نکات ایمنی -->
+    <div class="card reveal">
+        <h2>🛡️ نکات حیاتی ایمنی</h2>
+        
+        <div class="accordion">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+                چرا استفاده از تور محافظ (Enclosure) الزامی است؟
+                <span class="arrow">▼</span>
+            </button>
+            <div class="accordion-content">
+                طبق آمار، بیشترین آسیب‌های ترامپولین مربوط به سقوط از لبه است. یک تور محافظ با کیفیت که به خوبی به پایه‌ها متصل شده باشد، از افتادن کودکان جلوگیری می‌کند. دقت کنید که درب ورودی تور حتماً زیپ‌دار باشد.
+            </div>
+        </div>
+
+        <div class="accordion">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+                چند نفر همزمان می‌توانند روی ترامپولین بپرند؟
+                <span class="arrow">▼</span>
+            </button>
+            <div class="accordion-content">
+                برای ایمنی کامل، <strong>فقط یک نفر در هر لحظه</strong> باید روی ترامپولین بپرد. همزمان پریدن چند نفر (مخصوصاً با اختلاف وزن زیاد) خطر برخورد و پیچ‌خوردگی مچ پا را به شدت بالا می‌برد.
+            </div>
+        </div>
+
+        <div class="accordion">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+                حداقل ارتفاع لازم از سقف در آپارتمان چقدر است؟
+                <span class="arrow">▼</span>
+            </button>
+            <div class="accordion-content">
+                اگر در آپارتمان از ترامپولین مینی استفاده می‌کنید، فاصله‌ی سر شما تا سقف هنگام پرش باید حداقل ۳۰ سانتی‌متر باشد. همچنین حتماً از پدهای ضد ضربه (Safety Pads) روی فنرها و لبه‌ها استفاده کنید.
+            </div>
+        </div>
+    </div>
+
+    <div class="card reveal" style="text-align: center;">
+        <h2>🔗 صفحات مرتبط</h2>
+        <p>
+            <a href="sport.html" class="btn" style="display:inline-block; width:auto; margin:5px;">🏅 ورزش</a>
+            <a href="gym.html" class="btn" style="display:inline-block; width:auto; margin:5px;">🏋️ باشگاه</a>
+            <a href="calisthenics.html" class="btn" style="display:inline-block; width:auto; margin:5px;">💪 کالیستنیکس</a>
+        </p>
+    </div>
+
+</div>
+
+<div class="footer">
+    <p>🌟 <strong>رهیلاناب</strong> - <a href="index.html">خانه</a> | <a href="sport.html">ورزش</a></p>
+    <p>© ۲۰۲۶ rahilanab.com | با انرژی مثبت، آینده را بساز.</p>
+</div>
+
+<script>
+    // =============== ۱. نوار پیشرفت ===============
+    window.onscroll = function() {
+        var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var scrolled = (winScroll / height) * 100;
+        document.getElementById("progress-bar").style.width = scrolled + "%";
+    };
+
+    // =============== ۲. تم تاریک/روشن ===============
+    function toggleTheme() {
+        document.body.classList.toggle('light-mode');
+        const isLight = document.body.classList.contains('light-mode');
+        document.getElementById('theme-icon').innerText = isLight ? '☀️' : '🌙';
+        localStorage.setItem('trampThemeLight', isLight);
+    }
+    if (localStorage.getItem('trampThemeLight') === 'true') { toggleTheme(); }
+
+    // =============== ۳. پخش صوتی (TTS) ===============
+    let isSpeaking = false;
+    let voices = [];
+    function loadVoices() { voices = window.speechSynthesis.getVoices(); }
+    if (typeof speechSynthesis !== 'undefined' && speechSynthesis.onvoiceschanged !== undefined) { speechSynthesis.onvoiceschanged = loadVoices; }
+
+    function toggleSpeech() {
+        if (isSpeaking) {
+            window.speechSynthesis.cancel();
+            isSpeaking = false;
+            document.getElementById('tts-icon').innerText = '🔊';
+            document.getElementById('tts-btn').classList.remove('playing');
+            return;
+        }
+        const mainText = document.getElementById('main-content').innerText;
+        const speech = new SpeechSynthesisUtterance(mainText);
+        speech.lang = 'fa-IR';
+        const persianVoice = voices.find(v => v.lang.includes('fa') || v.lang === 'fa-IR');
+        if (persianVoice) speech.voice = persianVoice;
+        speech.onend = function() {
+            isSpeaking = false;
+            document.getElementById('tts-icon').innerText = '🔊';
+            document.getElementById('tts-btn').classList.remove('playing');
+        };
+        window.speechSynthesis.speak(speech);
+        isSpeaking = true;
+        document.getElementById('tts-icon').innerText = '⏹️';
+        document.getElementById('tts-btn').classList.add('playing');
+    }
+
+    // =============== ۴. آکاردئون ===============
+    function toggleAccordion(btn) { btn.parentElement.classList.toggle('active'); }
+
+    // =============== ۵. مشاور هوشمند ترامپولین ===============
+    function showAdvisorResult() {
+        const userType = document.getElementById('user-type').value;
+        const spaceType = document.getElementById('space-type').value;
+        const resultDiv = document.getElementById('advisor-result');
+        const resultText = document.getElementById('result-text');
+        let recommendation = '';
+
+        if (userType === 'kid') {
+            if (spaceType === 'small') {
+                recommendation = 'ترامپولین <strong>مینی با دستگیره (حدود ۴۰ تا ۵۰ اینچ)</strong>. برای کودکان در آپارتمان بسیار مناسب است. حتماً مدل‌هایی با پایه‌های پهن و ضدلغزش انتخاب کنید.';
+            } else if (spaceType === 'medium') {
+                recommendation = 'ترامپولین <strong>دایره‌ای ۶ فوتی با تور محافظ</strong>. برای حیاط کوچک و یک یا دو کودک عالی است.';
+            } else {
+                recommendation = 'ترامپولین <strong>دایره‌ای ۸ تا ۱۰ فوتی با تور محافظ و نردبان</strong>. فضای پرش بسیار ایمن و هیجان‌انگیزی برای کودکان فراهم می‌کند.';
+            }
+        } else if (userType === 'teen') {
+            if (spaceType === 'small') {
+                recommendation = 'ترامپولین <strong>فیتنس مینی با دستگیره بلند</strong>. برای نوجوانان در فضای بسته مناسب است، اما تحمل وزن دستگاه را حتماً چک کنید.';
+            } else {
+                recommendation = 'ترامپولین <strong>مستطیلی (Rebounder) با ابعاد ۶ در ۱۰ فوت</strong>. برای پرش‌های بلندتر و حرکات ورزشی نوجوانان بهترین گزینه است.';
+            }
+        } else if (userType === 'adult') {
+            if (spaceType === 'small') {
+                recommendation = 'ترامپولین <strong>مینی فیتنس حرفه‌ای (Rebounder)</strong> بدون دستگیره یا با دستگیره‌ی تک‌پایه. برای تمرین‌های هوازی، کاهش وزن و سلامت مفاصل در آپارتمان عالی است.';
+            } else {
+                recommendation = 'ترامپولین <strong>مستطیلی بزرگ ورزشی</strong> (یا مدل‌های اسپرینگ‌لس بدون فنر). برای تمرینات حرفه‌ای، جامپینگ فیتنس و حرکات ترکیبی بهترین انتخاب است.';
+            }
+        }
+
+        resultText.innerHTML = recommendation;
+        resultDiv.style.display = 'block';
+        resultDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    // =============== ۶. انیمیشن اسکرول ===============
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach(el => {
+        revealObserver.observe(el);
+    });
+
+    loadVoices();
+</script>
+
+</body>
+</html>
