@@ -1,1 +1,527 @@
-<!DOCTYPE html><html lang="fa"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>🤽 واترپلو | رهیلا</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial;background:radial-gradient(circle at center,#0a1a1a,#1a4a4a,#66ccaa);color:#fff;text-align:center;padding:15px;min-height:100vh}.header{background:rgba(255,255,255,.08);backdrop-filter:blur(20px);border-radius:25px;padding:20px;margin-bottom:15px}.header h1{color:#ffd700;font-size:22px}.back-btn{display:inline-block;background:rgba(255,255,255,.15);color:#fff;padding:8px 20px;border-radius:20px;text-decoration:none;margin:10px 0;font-size:14px}.section-title{color:#ffd700;font-size:18px;margin:20px 0 10px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.card{background:rgba(255,255,255,.05);border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,.1);text-align:right}.card h3{font-size:15px;color:#ffd700}</style></head><body><div class="header"><h1>🤽 واترپلو</h1></div><a href="index.html" class="back-btn">🔙 برگشت</a><div class="section-title">🤽 اطلاعات</div><div class="grid"><div class="card"><h3>واترپلو چیست</h3></div><div class="card"><h3>قوانین</h3></div><div class="card"><h3>مسابقات</h3></div><div class="card"><h3>قهرمانان</h3></div></div><p style="margin-top:15px"><a href="index.html" style="color:#ffd700">🔙 برگشت</a></p></body></html>
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>راهنمای جامع واترپولو + امتیازشمار زنده | رهیلاناب</title>
+    <meta name="description" content="همه چیز درباره ورزش واترپولو؛ از قوانین و پست‌های بازی تا تمرینات پایه. همراه با تابلوی امتیاز تعاملی و مشاور پست بازی در رهیلاناب.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤽‍♂️</text></svg>">
+    
+    <!-- فونت وزیرمتن -->
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+    
+    <style>
+        /* ============== تم‌ها (اقیانوسی-رقابتی) ============== */
+        :root {
+            --bg-main: #020b14;
+            --bg-card: #061c30;
+            --text-main: #e0f2fe;
+            --text-muted: #7dd3fc;
+            --primary: #00f5ff; /* فیروزه‌ای */
+            --accent: #ff0055; /* قرمز نئونی */
+            --blue-team: #3b82f6;
+            --red-team: #ef4444;
+            --border: #113a5c;
+            --shadow: 0 10px 30px rgba(0, 245, 255, 0.15);
+            --gradient: linear-gradient(135deg, #00f5ff, #3b82f6);
+        }
+
+        body.light-mode {
+            --bg-main: #f0f9ff;
+            --bg-card: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #0369a1;
+            --primary: #0284c7;
+            --accent: #be123c;
+            --border: #bae6fd;
+            --shadow: 0 10px 30px rgba(2, 132, 199, 0.15);
+            --gradient: linear-gradient(135deg, #0284c7, #2563eb);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; transition: background-color 0.3s, color 0.3s; }
+        
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background: radial-gradient(circle at 50% 0%, var(--bg-card), var(--bg-main) 70%);
+            color: var(--text-main);
+            line-height: 1.9;
+            font-size: 17px;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* ============== نوار پیشرفت ============== */
+        #progress-bar {
+            position: fixed; top: 0; left: 0; height: 4px; width: 0%;
+            background: var(--gradient); z-index: 9999;
+            box-shadow: 0 0 15px var(--primary); transition: width 0.1s;
+        }
+
+        /* ============== دکمه‌های شناور ============== */
+        .floating-controls {
+            position: fixed; top: 15px; left: 15px; z-index: 999;
+            display: flex; flex-direction: column; gap: 10px;
+        }
+        
+        .control-btn {
+            background: var(--bg-card); border: 1px solid var(--border);
+            color: var(--text-main); width: 50px; height: 50px;
+            border-radius: 50%; cursor: pointer; font-size: 20px;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: var(--shadow); backdrop-filter: blur(10px); transition: 0.3s;
+        }
+        .control-btn:hover { transform: scale(1.1); color: var(--primary); border-color: var(--primary); }
+        .control-btn.playing { background: var(--primary); color: #000; }
+
+        /* ============== هدر ============== */
+        .header {
+            background: var(--gradient); color: #fff; padding: 90px 20px 60px;
+            text-align: center; border-radius: 0 0 40px 40px;
+            position: relative; overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 245, 255, 0.3);
+        }
+        .header h1 { font-size: clamp(24px, 5vw, 38px); margin-bottom: 10px; position: relative; z-index: 1; font-weight: 900; }
+        .header p { font-size: 16px; opacity: 0.9; position: relative; z-index: 1; font-weight: bold; }
+
+        /* ============== انیمیشن توپ و آب ============== */
+        .pool-container {
+            height: 100px; position: relative; display: flex; justify-content: center; align-items: flex-end;
+            margin-bottom: 20px; overflow: hidden;
+        }
+        .water {
+            position: absolute; bottom: 0; width: 200%; height: 30px;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.11,130.83,113.39,185.14,100.9,230.26,90.46,274.66,78.19,321.39,56.44Z" fill="%23ffffff" fill-opacity="0.3"/></svg>');
+            background-size: 50% 100%; animation: waveAnim 6s linear infinite;
+        }
+        .polo-ball {
+            width: 40px; height: 40px; background: #fff; border-radius: 50%;
+            position: relative; z-index: 2; margin-bottom: 20px;
+            border: 2px solid var(--accent);
+            background-image: radial-gradient(circle at 30% 30%, #fff, #ccc);
+            animation: bounceBall 2s ease-in-out infinite;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        }
+        .polo-ball::after {
+            content: ''; position: absolute; top: 50%; left: 10%; width: 80%; height: 4px;
+            background: var(--accent); transform: translateY(-50%); border-radius: 50%;
+        }
+        @keyframes waveAnim { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        @keyframes bounceBall { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-40px); } }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; margin-top: -30px; }
+
+        /* ============== کارت‌ها ============== */
+        .card {
+            background: var(--bg-card); border-radius: 24px; padding: 30px;
+            margin-bottom: 30px; box-shadow: var(--shadow); border: 1px solid var(--border);
+        }
+        .card h2 { font-size: 22px; color: var(--primary); margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+
+        /* ============== باکس BLUF ============== */
+        .box-bluf {
+            background: linear-gradient(135deg, rgba(0, 245, 255, 0.1), rgba(59, 130, 246, 0.1));
+            border: 2px solid var(--primary); border-radius: 16px; padding: 25px; margin-bottom: 30px;
+        }
+        .box-bluf h3 { color: var(--primary); font-size: 20px; margin-bottom: 10px; }
+        .box-bluf p { font-weight: bold; font-size: 16px; }
+
+        /* ============== تابلوی امتیاز ============== */
+        .scoreboard {
+            background: #000; border: 2px solid var(--border); border-radius: 20px;
+            padding: 25px; text-align: center; box-shadow: inset 0 0 20px rgba(0,245,255,0.2);
+            margin-bottom: 20px;
+        }
+        .timer-display {
+            font-family: monospace; font-size: 48px; font-weight: bold; color: var(--primary);
+            margin-bottom: 20px; text-shadow: 0 0 15px var(--primary);
+        }
+        .score-row {
+            display: flex; justify-content: space-around; align-items: center;
+        }
+        .team-score {
+            display: flex; flex-direction: column; align-items: center; gap: 10px;
+        }
+        .team-name { font-size: 18px; font-weight: bold; }
+        .score-num { font-size: 60px; font-weight: 900; font-family: monospace; text-shadow: 0 0 15px currentColor; }
+        .team-blue .team-name { color: var(--blue-team); }
+        .team-blue .score-num { color: var(--blue-team); }
+        .team-red .team-name { color: var(--red-team); }
+        .team-red .score-num { color: var(--red-team); }
+        
+        .score-btn {
+            background: rgba(255,255,255,0.1); border: 1px solid var(--border); color: #fff;
+            width: 50px; height: 50px; border-radius: 50%; font-size: 24px; cursor: pointer;
+            transition: 0.2s; display: flex; justify-content: center; align-items: center; font-weight: bold;
+        }
+        .score-btn:hover { background: rgba(255,255,255,0.2); transform: scale(1.1); }
+        .team-blue .score-btn { border-color: var(--blue-team); color: var(--blue-team); }
+        .team-red .score-btn { border-color: var(--red-team); color: var(--red-team); }
+        
+        .timer-controls { display: flex; justify-content: center; gap: 15px; margin-top: 25px; }
+        .ctrl-btn {
+            background: var(--primary); color: #000; border: none; padding: 10px 20px;
+            border-radius: 10px; font-weight: bold; font-family: inherit; cursor: pointer; transition: 0.3s;
+        }
+        .ctrl-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,245,255,0.4); }
+        .ctrl-btn.reset { background: var(--accent); color: #fff; }
+
+        /* ============== مشاور پست ============== */
+        .advisor-box { background: rgba(255, 255, 255, 0.02); padding: 25px; border-radius: 20px; border: 1px dashed var(--primary); }
+        .advisor-step { margin-bottom: 20px; }
+        .advisor-step label { display: block; font-weight: bold; margin-bottom: 10px; color: var(--text-main); }
+        .advisor-step select {
+            width: 100%; padding: 12px 15px; border-radius: 12px; border: 1px solid var(--border);
+            background: var(--bg-main); color: var(--text-main); font-family: inherit; font-size: 16px; outline: none;
+            cursor: pointer; transition: 0.3s;
+        }
+        .advisor-step select:focus { border-color: var(--primary); box-shadow: 0 0 10px rgba(0,245,255,0.3); }
+        
+        #advisor-result { display: none; margin-top: 25px; padding: 25px; background: rgba(0, 245, 255, 0.05); border-right: 5px solid var(--primary); border-radius: 12px; animation: slideUp 0.5s ease; }
+        #advisor-result h3 { color: var(--primary); margin-bottom: 10px; font-size: 20px; }
+        #advisor-result p { font-size: 16px; margin-bottom: 10px; color: var(--text-main); }
+        #advisor-result strong { color: var(--accent); font-size: 18px; }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* ============== جدول ============== */
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 15px; border-radius: 12px; overflow: hidden; }
+        th { background: var(--primary); color: #000; padding: 15px; text-align: center; font-weight: 900; }
+        td { padding: 12px; text-align: center; border-bottom: 1px solid var(--border); background: var(--bg-card); font-weight: 500; }
+        tr:hover td { background: var(--bg-main); color: var(--primary); }
+
+        /* ============== آکاردئون ============== */
+        .accordion { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 12px; overflow: hidden; }
+        .accordion-btn { background: none; border: none; width: 100%; padding: 18px; text-align: right; font-family: inherit; font-size: 16px; font-weight: bold; color: var(--text-main); cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .accordion-btn:hover { color: var(--primary); }
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; padding: 0 18px; color: var(--text-muted); font-size: 15px; }
+        .accordion.active .accordion-content { max-height: 500px; padding-bottom: 18px; }
+        .arrow { transition: transform 0.3s; color: var(--primary); }
+        .accordion.active .arrow { transform: rotate(180deg); }
+
+        .btn { display: inline-block; background: var(--gradient); color: #fff; padding: 14px 30px; border-radius: 12px; border: none; text-decoration: none; font-weight: 900; font-size: 16px; cursor: pointer; transition: 0.3s; width: 100%; text-align: center; box-shadow: 0 5px 20px rgba(0, 245, 255, 0.3); }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(59, 130, 246, 0.5); }
+        
+        .footer { text-align: center; padding: 30px; color: var(--text-muted); font-size: 14px; border-top: 1px solid var(--border); margin-top: 40px; }
+        .footer a { color: var(--primary); text-decoration: none; }
+
+        /* ============== انیمیشن اسکرول ============== */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<div class="floating-controls">
+    <button class="control-btn" id="tts-btn" onclick="toggleSpeech()" title="گوش دادن">
+        <span id="tts-icon">🔊</span>
+    </button>
+    <button class="control-btn" onclick="toggleTheme()" title="تاریک/روشن">
+        <span id="theme-icon">🌙</span>
+    </button>
+</div>
+
+<div class="header">
+    <div class="pool-container">
+        <div class="water"></div>
+        <div class="polo-ball"></div>
+    </div>
+    <h1>🤽‍♂️ دنیای واترپولو</h1>
+    <p>قدرت، استقامت و تاکتیک در استخر</p>
+</div>
+
+<div class="container" id="main-content">
+
+    <!-- BLUF -->
+    <div class="card box-bluf reveal">
+        <h3>⚡ جواب سریع در ۳ خط:</h3>
+        <p>
+            ۱. واترپولو یکی از <strong>سخت‌ترین ورزش‌های المپیکی</strong> است که ترکیبی از شنا، بسکتبال و فوتبال در آب است.<br>
+            ۲. هر تیم ۷ بازیکن در آب دارد (۶ بازیکن زمین + ۱ دروازه‌بان) و زمان حمله محدود به <strong>۳۰ ثانیه</strong> است.<br>
+            ۳. مهم‌ترین مهارت پایه برای بازی، یادگیری حرکت <strong>پای تخم‌مرغی (Eggbeater Kick)</strong> است که به شما اجازه می‌دهد بدون شنا کردن، بالای آب بمانید.
+        </p>
+    </div>
+
+    <!-- تابلوی امتیاز و تایمر -->
+    <div class="card reveal">
+        <h2>🏆 تابلوی امتیاز و تایمر بازی</h2>
+        <p style="margin-bottom: 20px; color: var(--text-muted); text-align: center;">تایمر ۸ دقیقه‌ای (استاندارد هر کوارتر) برای بازی دوستانه شما:</p>
+        
+        <div class="scoreboard">
+            <div class="timer-display" id="timer">08:00</div>
+            <div class="score-row">
+                <div class="team-score team-blue">
+                    <span class="team-name">تیم آبی</span>
+                    <span class="score-num" id="score-blue">0</span>
+                    <button class="score-btn" onclick="addGoal('blue')">+</button>
+                </div>
+                <div class="team-score team-red">
+                    <span class="team-name">تیم قرمز</span>
+                    <span class="score-num" id="score-red">0</span>
+                    <button class="score-btn" onclick="addGoal('red')">+</button>
+                </div>
+            </div>
+            <div class="timer-controls">
+                <button class="ctrl-btn" id="start-btn" onclick="toggleTimer()">شروع</button>
+                <button class="ctrl-btn reset" onclick="resetGame()">ریست</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- مشاور پست بازی -->
+    <div class="card reveal">
+        <h2>🧭 مشاور پست بازی</h2>
+        <p style="margin-bottom: 20px; color: var(--text-muted);">ویژگی‌های بدنی خود را وارد کنید تا پست مناسب در زمین مشخص شود:</p>
+        
+        <div class="advisor-box">
+            <div class="advisor-step">
+                <label>۱. قد شما:</label>
+                <select id="height">
+                    <option value="short">کوتاه‌تر از ۱۷۵ سانتی‌متر</option>
+                    <option value="medium">بین ۱۷۵ تا ۱۸۵ سانتی‌متر</option>
+                    <option value="tall">بالای ۱۸۵ سانتی‌متر</option>
+                </select>
+            </div>
+            <div class="advisor-step">
+                <label>۲. سرعت شنا و استقامت شما:</label>
+                <select id="speed">
+                    <option value="low">متوسط یا پایین</option>
+                    <option value="high">سرعت و استقامت بالا</option>
+                </select>
+            </div>
+            <div class="advisor-step">
+                <label>۳. قدرت بدنی و شوت:</label>
+                <select id="power">
+                    <option value="low">قدرت متوسط</option>
+                    <option value="high">قدرت بدنی بالا و شوت سنگین</option>
+                </select>
+            </div>
+
+            <button class="btn" onclick="showAdvisorResult()">🤽‍♂️ پیشنهاد پست بازی</button>
+
+            <div id="advisor-result">
+                <h3>💡 پست پیشنهادی برای شما:</h3>
+                <p id="result-text"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- جدول قوانین -->
+    <div class="card reveal">
+        <h2>📜 قوانین کلیدی که باید بدانید</h2>
+        <table>
+            <thead>
+                <tr><th>قانون</th><th>توضیح</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>زمان شوت (Possession)</strong></td><td>هر تیم ۳۰ ثانیه فرصت دارد تا به سمت دروازه شوت کند.</td></tr>
+                <tr><td><strong>خطاهای فاحش (Major Fouls)</strong></td><td>نگه داشتن یا پایین کشیدن بازیکن حریف. بازیکن ۲۰ ثانیه اخراج می‌شود.</td></tr>
+                <tr><td><strong>خطای پنالتی (Penalty Foul)</strong></td><td>مانع شدن از گل حتمی در فاصله ۵ متری. منجر به پنالتی می‌شود.</td></tr>
+                <tr><td><strong>لمس توپ</strong></td><td>بازیکنان فقط با یک دست می‌توانند توپ را کنترل یا پرتاب کنند (به جز دروازه‌بان).</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- آکاردئون -->
+    <div class="card reveal">
+        <h2>💡 نکات کلیدی برای مبتدیان</h2>
+        
+        <div class="accordion">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+                حرکت پای تخم‌مرغی (Eggbeater) چیست؟
+                <span class="arrow">▼</span>
+            </button>
+            <div class="accordion-content">
+                این حرکت پایه و اساس واترپلو است. در این حرکت، پاها به صورت متناوب و دایره‌ای در آب می‌چرخند (مثل همزن تخم‌مرغ). این تکنیک به بازیکن اجازه می‌دهد تا بالای آب بماند، سرش خشک باشد و دست‌هایش برای پاس دادن و شوت کردن آزاد باشد.
+            </div>
+        </div>
+
+        <div class="accordion">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+                چطور بدون خوردن آب، شوت بزنیم؟
+                <span class="arrow">▼</span>
+            </button>
+            <div class="accordion-content">
+                هنگام شوت، باید از قدرت پای تخم‌مرغی برای بالا آمدن از آب استفاده کنید. بدن را به سمت جلو متمایل کنید و از حرکت مچ دست برای چرخش سریع توپ استفاده کنید. عمل شوت باید در بالاترین نقطه ارتفاع بدن شما انجام شود تا توپ از دست مدافعان عبور کند.
+            </div>
+        </div>
+    </div>
+
+    <div class="card reveal" style="text-align: center;">
+        <h2>🔗 صفحات مرتبط</h2>
+        <p>
+            <a href="sport.html" class="btn" style="display:inline-block; width:auto; margin:5px;">🏅 ورزش</a>
+            <a href="surfing.html" class="btn" style="display:inline-block; width:auto; margin:5px;">🏄‍♂️ سرفینگ</a>
+            <a href="synchronized-swimming.html" class="btn" style="display:inline-block; width:auto; margin:5px;">🩱 شنای موزون</a>
+        </p>
+    </div>
+
+</div>
+
+<div class="footer">
+    <p>🌟 <strong>رهیلاناب</strong> - <a href="index.html">خانه</a> | <a href="sport.html">ورزش</a></p>
+    <p>© ۲۰۲۶ rahilanab.com | با قدرت، آب‌ها را بشکاف.</p>
+</div>
+
+<script>
+    // =============== ۱. نوار پیشرفت ===============
+    window.onscroll = function() {
+        var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var scrolled = (winScroll / height) * 100;
+        document.getElementById("progress-bar").style.width = scrolled + "%";
+    };
+
+    // =============== ۲. تم تاریک/روشن ===============
+    function toggleTheme() {
+        document.body.classList.toggle('light-mode');
+        const isLight = document.body.classList.contains('light-mode');
+        document.getElementById('theme-icon').innerText = isLight ? '☀️' : '🌙';
+        localStorage.setItem('poloTheme', isLight);
+    }
+    if (localStorage.getItem('poloTheme') === 'true') { toggleTheme(); }
+
+    // =============== ۳. پخش صوتی (TTS) ===============
+    let isSpeaking = false;
+    let voices = [];
+    function loadVoices() { voices = window.speechSynthesis.getVoices(); }
+    if (typeof speechSynthesis !== 'undefined' && speechSynthesis.onvoiceschanged !== undefined) { speechSynthesis.onvoiceschanged = loadVoices; }
+
+    function toggleSpeech() {
+        if (isSpeaking) {
+            window.speechSynthesis.cancel();
+            isSpeaking = false;
+            document.getElementById('tts-icon').innerText = '🔊';
+            document.getElementById('tts-btn').classList.remove('playing');
+            return;
+        }
+        const mainText = document.getElementById('main-content').innerText;
+        const speech = new SpeechSynthesisUtterance(mainText);
+        speech.lang = 'fa-IR';
+        const persianVoice = voices.find(v => v.lang.includes('fa') || v.lang === 'fa-IR');
+        if (persianVoice) speech.voice = persianVoice;
+        speech.onend = function() {
+            isSpeaking = false;
+            document.getElementById('tts-icon').innerText = '🔊';
+            document.getElementById('tts-btn').classList.remove('playing');
+        };
+        window.speechSynthesis.speak(speech);
+        isSpeaking = true;
+        document.getElementById('tts-icon').innerText = '⏹️';
+        document.getElementById('tts-btn').classList.add('playing');
+    }
+
+    // =============== ۴. آکاردئون ===============
+    function toggleAccordion(btn) { btn.parentElement.classList.toggle('active'); }
+
+    // =============== ۵. تابلوی امتیاز و تایمر ===============
+    let timeLeft = 480; // 8 minutes in seconds
+    let timerInterval = null;
+    let isRunning = false;
+    let scoreBlue = 0;
+    let scoreRed = 0;
+
+    function updateTimerDisplay() {
+        const mins = Math.floor(timeLeft / 60);
+        const secs = timeLeft % 60;
+        document.getElementById('timer').innerText = 
+            `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+    }
+
+    function toggleTimer() {
+        const btn = document.getElementById('start-btn');
+        if (isRunning) {
+            clearInterval(timerInterval);
+            btn.innerText = 'ادامه';
+            isRunning = false;
+        } else {
+            if (timeLeft === 0) return;
+            timerInterval = setInterval(() => {
+                if (timeLeft > 0) {
+                    timeLeft--;
+                    updateTimerDisplay();
+                } else {
+                    clearInterval(timerInterval);
+                    btn.innerText = 'پایان';
+                    isRunning = false;
+                    // Flash the timer
+                    document.getElementById('timer').style.color = 'red';
+                }
+            }, 1000);
+            btn.innerText = 'توقف';
+            isRunning = true;
+        }
+    }
+
+    function addGoal(team) {
+        if (team === 'blue') {
+            scoreBlue++;
+            document.getElementById('score-blue').innerText = scoreBlue;
+        } else {
+            scoreRed++;
+            document.getElementById('score-red').innerText = scoreRed;
+        }
+    }
+
+    function resetGame() {
+        clearInterval(timerInterval);
+        isRunning = false;
+        timeLeft = 480;
+        scoreBlue = 0;
+        scoreRed = 0;
+        
+        document.getElementById('score-blue').innerText = '0';
+        document.getElementById('score-red').innerText = '0';
+        document.getElementById('start-btn').innerText = 'شروع';
+        document.getElementById('timer').style.color = 'var(--primary)';
+        updateTimerDisplay();
+    }
+
+    // =============== ۶. مشاور پست بازی ===============
+    function showAdvisorResult() {
+        const height = document.getElementById('height').value;
+        const speed = document.getElementById('speed').value;
+        const power = document.getElementById('power').value;
+        const resultDiv = document.getElementById('advisor-result');
+        const resultText = document.getElementById('result-text');
+        let position = '';
+        let desc = '';
+
+        if (height === 'tall' && speed === 'low') {
+            position = 'دروازه‌بان (Goalkeeper) 🧤';
+            desc = 'قد بلند و دست‌های بلند شما را قادر می‌سازد تا سد محکمی برای دروازه باشید. دروازه‌بان‌ها نیازی به شنا کردن سریع ندارند، بلکه به واکنش سریع و پرش‌های عمودی نیاز دارند.';
+        } else if (power === 'high' && height === 'medium') {
+            position = 'سنتر فوروارد (Center Forward) 💪';
+            desc = 'قدرت بدنی بالا به شما اجازه می‌دهد در نزدیکی دروازه حریف (سنتر) بایستید، توپ را حفظ کنید و برای تیم پنالتی بگیرید. این پست نیازمند استقامت بالا و قدرت بدنی است.';
+        } else if (speed === 'high') {
+            position = 'درایور (Driver) یا وینگ (Wing) 🏊‍♂️';
+            desc = 'سرعت و استقامت شنا، ویژگی اصلی شماست. در پست درایور، شما باید سریع در عرض استخر حرکت کنید، پاس‌های برقی بدهید و از مدافعان عبور کنید.';
+        } else {
+            position = 'مدافع (Defender) 🛡️';
+            desc = 'شما می‌توانید با هوش تاکتیکی و موقعیت‌یابی خوب در دفاع عمل کنید. مدافعان باید مانع حرکت سنتر فوروارد حریف شوند و پاس‌های آن‌ها را قطع کنند.';
+        }
+
+        resultText.innerHTML = `پست مناسب شما: <strong>${position}</strong><br><br>${desc}`;
+        resultDiv.style.display = 'block';
+        resultDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    // =============== ۷. انیمیشن اسکرول ===============
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach(el => {
+        revealObserver.observe(el);
+    });
+
+    loadVoices();
+</script>
+
+</body>
+          </html>
