@@ -1,1 +1,415 @@
-<!DOCTYPE html><html lang="fa"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>💃 زومبا | رهیلا</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial;background:radial-gradient(circle at center,#0a1a1a,#1a4a4a,#66ccaa);color:#fff;text-align:center;padding:15px;min-height:100vh}.header{background:rgba(255,255,255,.08);backdrop-filter:blur(20px);border-radius:25px;padding:20px;margin-bottom:15px}.header h1{color:#ffd700;font-size:22px}.back-btn{display:inline-block;background:rgba(255,255,255,.15);color:#fff;padding:8px 20px;border-radius:20px;text-decoration:none;margin:10px 0;font-size:14px}.section-title{color:#ffd700;font-size:18px;margin:20px 0 10px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.card{background:rgba(255,255,255,.05);border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,.1);text-align:right}.card h3{font-size:15px;color:#ffd700}</style></head><body><div class="header"><h1>💃 زومبا</h1></div><a href="index.html" class="back-btn">🔙 برگشت</a><div class="section-title">💃 اطلاعات</div><div class="grid"><div class="card"><h3>زومبا چیست</h3></div><div class="card"><h3>حرکات</h3></div><div class="card"><h3>فواید</h3></div><div class="card"><h3>باشگاه‌ها</h3></div></div><p style="margin-top:15px"><a href="index.html" style="color:#ffd700">🔙 برگشت</a></p></body></html>
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>راهنمای جامع رقص زومبا + ماشین‌حساب کالری | رهیلاناب</title>
+    <meta name="description" content="همه چیز درباره ورزش زومبا؛ از سبک‌های مختلف رقص تا کالری‌سوزی و انتخاب کفش مناسب. همراه با ابزارهای تعاملی در رهیلاناب.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💃</text></svg>">
+    
+    <!-- فونت وزیرمتن -->
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+    
+    <style>
+        /* ============== تم‌ها (پیست رقص نئونی) ============== */
+        :root {
+            --bg-main: #0f0514;
+            --bg-card: #1f0b2c;
+            --text-main: #f8fafc;
+            --text-muted: #d8b4fe;
+            --primary: #ff007f; /* صورتی نئونی */
+            --accent: #00f5ff; /* فیروزه‌ای نئونی */
+            --green: #22c55e;
+            --border: #4c1d95;
+            --shadow: 0 10px 30px rgba(255, 0, 127, 0.15);
+            --gradient: linear-gradient(135deg, #ff007f, #00f5ff);
+        }
+
+        body.light-mode {
+            --bg-main: #fdf2f8;
+            --bg-card: #ffffff;
+            --text-main: #4c0519;
+            --text-muted: #9d174d;
+            --primary: #be185d;
+            --accent: #0e7490;
+            --border: #fbcfe8;
+            --shadow: 0 10px 30px rgba(190, 24, 93, 0.15);
+            --gradient: linear-gradient(135deg, #be185d, #0e7490);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; transition: background-color 0.3s, color 0.3s; }
+        
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background: radial-gradient(circle at 50% 0%, var(--bg-card), var(--bg-main) 70%);
+            color: var(--text-main);
+            line-height: 1.9;
+            font-size: 17px;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* ============== نوار پیشرفت ============== */
+        #progress-bar {
+            position: fixed; top: 0; left: 0; height: 4px; width: 0%;
+            background: var(--gradient); z-index: 9999;
+            box-shadow: 0 0 15px var(--accent); transition: width 0.1s;
+        }
+
+        /* ============== دکمه‌های شناور ============== */
+        .floating-controls {
+            position: fixed; top: 15px; left: 15px; z-index: 999;
+            display: flex; flex-direction: column; gap: 10px;
+        }
+        
+        .control-btn {
+            background: var(--bg-card); border: 1px solid var(--border);
+            color: var(--text-main); width: 50px; height: 50px;
+            border-radius: 50%; cursor: pointer; font-size: 20px;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: var(--shadow); backdrop-filter: blur(10px); transition: 0.3s;
+        }
+        .control-btn:hover { transform: scale(1.1); color: var(--primary); border-color: var(--primary); }
+        .control-btn.playing { background: var(--primary); color: #fff; }
+
+        /* ============== هدر ============== */
+        .header {
+            background: var(--gradient); color: #fff; padding: 100px 20px 70px;
+            text-align: center; border-radius: 0 0 40px 40px;
+            position: relative; overflow: hidden;
+            box-shadow: 0 10px 40px rgba(255, 0, 127, 0.3);
+        }
+        .header h1 { font-size: clamp(24px, 5vw, 38px); margin-bottom: 10px; position: relative; z-index: 1; font-weight: 900; }
+        .header p { font-size: 16px; opacity: 0.9; position: relative; z-index: 1; font-weight: bold; }
+
+        /* ============== انیمیشن نوت موسیقی ============== */
+        .music-notes-container {
+            height: 120px; display: flex; justify-content: center; align-items: center; gap: 30px;
+            margin-bottom: 20px; position: relative; z-index: 1;
+        }
+        .note {
+            font-size: 40px; color: #fff; filter: drop-shadow(0 0 15px rgba(255,255,255,0.8));
+            animation: floatNote 2.5s ease-in-out infinite;
+        }
+        .note:nth-child(2) { animation-delay: 0.8s; font-size: 50px; color: var(--accent); }
+        .note:nth-child(3) { animation-delay: 1.5s; }
+        @keyframes floatNote { 0%, 100% { transform: translateY(0) rotate(-10deg); } 50% { transform: translateY(-30px) rotate(10deg); } }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; margin-top: -30px; }
+
+        /* ============== کارت‌ها ============== */
+        .card {
+            background: var(--bg-card); border-radius: 24px; padding: 30px;
+            margin-bottom: 30px; box-shadow: var(--shadow); border: 1px solid var(--border);
+        }
+        .card h2 { font-size: 22px; color: var(--primary); margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+
+        /* ============== باکس BLUF ============== */
+        .box-bluf {
+            background: linear-gradient(135deg, rgba(255, 0, 127, 0.1), rgba(0, 245, 255, 0.1));
+            border: 2px solid var(--primary); border-radius: 16px; padding: 25px; margin-bottom: 30px;
+        }
+        .box-bluf h3 { color: var(--primary); font-size: 20px; margin-bottom: 10px; }
+        .box-bluf p { font-weight: bold; font-size: 16px; }
+
+        /* ============== ابزارها ============== */
+        .tool-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        @media (max-width: 768px) { .tool-grid { grid-template-columns: 1fr; } }
+        
+        .tool-box { background: var(--bg-main); padding: 25px; border-radius: 16px; border: 1px dashed var(--accent); }
+        .tool-box h3 { color: var(--accent); margin-bottom: 15px; font-size: 18px; text-align: center; }
+        
+        .input-group { margin-bottom: 15px; }
+        .input-group label { display: block; font-size: 14px; margin-bottom: 5px; color: var(--text-muted); font-weight: bold; }
+        .input-group input, .input-group select {
+            width: 100%; padding: 12px; border-radius: 10px; border: 1px solid var(--border);
+            background: var(--bg-card); color: var(--text-main); font-family: inherit; font-size: 16px; outline: none;
+        }
+        .input-group input:focus, .input-group select:focus { border-color: var(--primary); box-shadow: 0 0 10px rgba(255,0,127,0.3); }
+
+        .btn-calc {
+            width: 100%; background: var(--gradient); color: #fff; padding: 12px; border-radius: 10px; border: none;
+            font-weight: bold; font-family: inherit; font-size: 16px; cursor: pointer; transition: 0.3s; margin-top: 10px;
+        }
+        .btn-calc:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0, 245, 255, 0.4); }
+
+        .result-box {
+            display: none; margin-top: 15px; padding: 15px; background: rgba(255, 0, 127, 0.05);
+            border-right: 4px solid var(--green); border-radius: 8px;
+            font-size: 15px; line-height: 1.8; color: var(--text-main); animation: fadeIn 0.5s;
+        }
+        .result-box strong { color: var(--primary); font-size: 20px; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        /* ============== جدول ============== */
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 15px; border-radius: 12px; overflow: hidden; }
+        th { background: var(--primary); color: #fff; padding: 15px; text-align: center; font-weight: 900; }
+        td { padding: 12px; text-align: center; border-bottom: 1px solid var(--border); background: var(--bg-card); font-weight: 500; }
+        tr:hover td { background: var(--bg-main); color: var(--accent); }
+
+        /* ============== آکاردئون ============== */
+        .accordion { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 12px; overflow: hidden; }
+        .accordion-btn { background: none; border: none; width: 100%; padding: 18px; text-align: right; font-family: inherit; font-size: 16px; font-weight: bold; color: var(--text-main); cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .accordion-btn:hover { color: var(--primary); }
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; padding: 0 18px; color: var(--text-muted); font-size: 15px; }
+        .accordion.active .accordion-content { max-height: 500px; padding-bottom: 18px; }
+        .arrow { transition: transform 0.3s; color: var(--accent); }
+        .accordion.active .arrow { transform: rotate(180deg); }
+
+        .footer { text-align: center; padding: 30px; color: var(--text-muted); font-size: 14px; border-top: 1px solid var(--border); margin-top: 40px; }
+        .footer a { color: var(--primary); text-decoration: none; }
+
+        /* ============== انیمیشن اسکرول ============== */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<div class="floating-controls">
+    <button class="control-btn" id="tts-btn" onclick="toggleSpeech()" title="گوش دادن">
+        <span id="tts-icon">🔊</span>
+    </button>
+    <button class="control-btn" onclick="toggleTheme()" title="تاریک/روشن">
+        <span id="theme-icon">🌙</span>
+    </button>
+</div>
+
+<div class="header">
+    <div class="music-notes-container">
+        <div class="note">🎵</div>
+        <div class="note">💃</div>
+        <div class="note">🎶</div>
+    </div>
+    <h1>💃 جشن رقص زومبا</h1>
+    <p>کالری بسوزان، شاد باش و با ریتم حرکت کن!</p>
+</div>
+
+<div class="container" id="main-content">
+
+    <!-- BLUF -->
+    <div class="card box-bluf reveal">
+        <h3>⚡ جواب سریع در ۳ خط:</h3>
+        <p>
+            ۱. زومبا یک ورزش <strong>هوازی (کاردیو) با ریتم‌های لاتین</strong> است که در هر ساعت بین ۴۰۰ تا ۶۰۰ کالری می‌سوزاند.<br>
+            ۲. برای شروع <strong>نیازی به مهارت رقص</strong> ندارید؛ هدف اصلی لذت بردن، حرکت کردن و دنبال کردن مربی است.<br>
+            ۳. استفاده از <strong>کفش‌های مخصوص رقص یا ایروبیک</strong> (با زیره‌ی نرم و بدون چسبندگی زیاد) برای محافظت از زانو و مچ پا الزامی است.
+        </p>
+    </div>
+
+    <!-- ابزارهای هوشمند -->
+    <div class="card reveal">
+        <h2>🧠 ابزارهای تمرین زومبا</h2>
+        <div class="tool-grid">
+            
+            <!-- ماشین حساب کالری -->
+            <div class="tool-box">
+                <h3>🔥 ماشین‌حساب کالری‌سوزی</h3>
+                <div class="input-group">
+                    <label>وزن شما (کیلوگرم):</label>
+                    <input type="number" id="user-weight" placeholder="مثلاً 70" min="30" max="150">
+                </div>
+                <div class="input-group">
+                    <label>مدت زمان تمرین (دقیقه):</label>
+                    <input type="number" id="duration" placeholder="مثلاً 45" min="10" max="180">
+                </div>
+                <div class="input-group">
+                    <label>شدت تمرین:</label>
+                    <select id="intensity">
+                        <option value="5.5">🟢 سبک (تازه‌کار، استراحت‌های زیاد)</option>
+                        <option value="7.5" selected>🟡 متوسط (استاندارد)</option>
+                        <option value="9.0">🔴 شدید (رقص مداوم و پرانرژی)</option>
+                    </select>
+                </div>
+                <button class="btn-calc" onclick="calcCalories()">🔥 محاسبه کالری</button>
+                <div class="result-box" id="calorie-result"></div>
+            </div>
+
+            <!-- سبک‌یاب زومبا -->
+            <div class="tool-box">
+                <h3>🎶 سبک‌یاب موسیقی زومبا</h3>
+                <div class="input-group">
+                    <label>چه نوع ریتمی را ترجیح می‌دهید؟</label>
+                    <select id="rhythm-pref">
+                        <option value="fast">🔥 بسیار تند و پرانرژی (هیپ‌هاپ و رگاتون)</option>
+                        <option value="latin">🌴 شاد و لاتین (سالسا و مرنگه)</option>
+                        <option value="sensual">💃 حسی و آرام‌تر (بولیوود یا ریتم‌های شرقی)</option>
+                    </select>
+                </div>
+                <button class="btn-calc" onclick="matchZumbaStyle()">🎵 مشاهده سبک پیشنهادی</button>
+                <div class="result-box" id="style-result"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- جدول مقایسه -->
+    <div class="card reveal">
+        <h2>⚖️ مقایسه زومبا با سایر ورزش‌های هوازی</h2>
+        <table>
+            <thead>
+                <tr><th>ورزش</th><th>کالری سوزی (در ساعت)</th><th>حس و حال</th><th>مناسب برای</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>زومبا</strong></td><td>۴۰۰ تا ۶۰۰</td><td style="color: var(--green); font-weight: bold;">شاد، رقص و موسیقی</td><td>افرادی که از باشگاه و وزنه خسته شدند</td></tr>
+                <tr><td><strong>ایروبیک کلاسیک</strong></td><td>۳۵۰ تا ۵۰۰</td><td>منظم و تکراری</td><td>علاقه‌مندان به حرکات ساختاریافته</td></tr>
+                <tr><td><strong>دویدن</strong></td><td>۶۰۰ تا ۸۰۰</td><td>انفرادی و چالش‌برانگیز</td><td>افراد با آمادگی جسمانی بالا</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- آکاردئون -->
+    <div class="card reveal">
+        <h2>💡 نکات کلیدی برای مبتدیان</h2>
+        
+        <div class="accordion">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+                آیا باید حتماً رقص بلد باشم تا زومبا بروم؟
+                <span class="arrow">▼</span>
+            </button>
+            <div class="accordion-content">
+                <strong>خیر!</strong> زومبا برخلاف رقص‌های کلاسیک، نیازی به تکنیک دقیق ندارد. اگر چپ بروید و پای راست را بالا بیاورید، کسی به شما ایراد نمی‌گیرد! هدف اصلی لذت بردن، حرکت کردن و بالا نگه داشتن ضربان قلب است. مربی حرکات را ساده می‌کند تا همه بتوانند همراهی کنند.
+            </div>
+        </div>
+
+        <div class="accordion">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+                بهترین کفش برای زومبا چیست؟
+                <span class="arrow">▼</span>
+            </button>
+            <div class="accordion-content">
+                کفش‌های مخصوص رقص (Dance Sneakers) یا کفش‌های ایروبیک بهترین انتخاب هستند. <strong>هرگز از کفش‌های دویدن (Running Shoes) استفاده نکنید</strong>، چون زیره آن‌ها برای دویدن به جلو طراحی شده و در حرکات چرخشی زومبا به مچ و زانو فشار می‌آورند. کفش زومبا باید انعطاف‌پذیر باشد و اجازه چرخش طبیعی پا را بدهد.
+            </div>
+        </div>
+    </div>
+
+    <div class="card reveal" style="text-align: center;">
+        <h2>🔗 صفحات مرتبط</h2>
+        <p>
+            <a href="sport.html" class="btn-calc" style="display:inline-block; width:auto; margin:5px; text-decoration:none;">🏅 ورزش</a>
+            <a href="aerobics.html" class="btn-calc" style="display:inline-block; width:auto; margin:5px; text-decoration:none;">🤸 ایروبیک</a>
+            <a href="dance.html" class="btn-calc" style="display:inline-block; width:auto; margin:5px; text-decoration:none;">💃 رقص</a>
+        </p>
+    </div>
+
+</div>
+
+<div class="footer">
+    <p>🌟 <strong>رهیلاناب</strong> - <a href="index.html">خانه</a> | <a href="sport.html">ورزش</a></p>
+    <p>© ۲۰۲۶ rahilanab.com | با ریتم، زندگی را جشن بگیر.</p>
+</div>
+
+<script>
+    // =============== ۱. نوار پیشرفت ===============
+    window.onscroll = function() {
+        var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var scrolled = (winScroll / height) * 100;
+        document.getElementById("progress-bar").style.width = scrolled + "%";
+    };
+
+    // =============== ۲. تم تاریک/روشن ===============
+    function toggleTheme() {
+        document.body.classList.toggle('light-mode');
+        const isLight = document.body.classList.contains('light-mode');
+        document.getElementById('theme-icon').innerText = isLight ? '☀️' : '🌙';
+        localStorage.setItem('zumbaTheme', isLight);
+    }
+    if (localStorage.getItem('zumbaTheme') === 'true') { toggleTheme(); }
+
+    // =============== ۳. پخش صوتی (TTS) ===============
+    let isSpeaking = false;
+    let voices = [];
+    function loadVoices() { voices = window.speechSynthesis.getVoices(); }
+    if (typeof speechSynthesis !== 'undefined' && speechSynthesis.onvoiceschanged !== undefined) { speechSynthesis.onvoiceschanged = loadVoices; }
+
+    function toggleSpeech() {
+        if (isSpeaking) {
+            window.speechSynthesis.cancel();
+            isSpeaking = false;
+            document.getElementById('tts-icon').innerText = '🔊';
+            document.getElementById('tts-btn').classList.remove('playing');
+            return;
+        }
+        const mainText = document.getElementById('main-content').innerText;
+        const speech = new SpeechSynthesisUtterance(mainText);
+        speech.lang = 'fa-IR';
+        const persianVoice = voices.find(v => v.lang.includes('fa') || v.lang === 'fa-IR');
+        if (persianVoice) speech.voice = persianVoice;
+        speech.onend = function() {
+            isSpeaking = false;
+            document.getElementById('tts-icon').innerText = '🔊';
+            document.getElementById('tts-btn').classList.remove('playing');
+        };
+        window.speechSynthesis.speak(speech);
+        isSpeaking = true;
+        document.getElementById('tts-icon').innerText = '⏹️';
+        document.getElementById('tts-btn').classList.add('playing');
+    }
+
+    // =============== ۴. آکاردئون ===============
+    function toggleAccordion(btn) { btn.parentElement.classList.toggle('active'); }
+
+    // =============== ۵. ماشین حساب کالری (فرمول MET) ===============
+    function calcCalories() {
+        const weight = parseFloat(document.getElementById('user-weight').value);
+        const duration = parseFloat(document.getElementById('duration').value);
+        const intensity = parseFloat(document.getElementById('intensity').value);
+        const resultBox = document.getElementById('calorie-result');
+
+        if (!weight || weight < 30 || weight > 150) {
+            alert('لطفاً وزن معتبر (بین ۳۰ تا ۱۵۰ کیلوگرم) وارد کنید.');
+            return;
+        }
+        if (!duration || duration < 10) {
+            alert('لطفاً مدت زمان تمرین را وارد کنید (حداقل ۱۰ دقیقه).');
+            return;
+        }
+
+        // فرمول استاندارد: MET × Weight (kg) × Duration (hours)
+        const durationHours = duration / 60;
+        const calories = Math.round(intensity * weight * durationHours);
+
+        resultBox.innerHTML = `شما در این تمرین حدود <strong>${calories}</strong> کالری سوزانده‌اید.<br><br><span style="font-size: 13px; color: var(--text-muted);">(این عدد تقریبی است و به فاکتورهایی مثل متابولیسم بدن و دقت در اجرای حرکات بستگی دارد)</span>`;
+        resultBox.style.display = 'block';
+    }
+
+    // =============== ۶. سبک‌یاب زومبا ===============
+    function matchZumbaStyle() {
+        const pref = document.getElementById('rhythm-pref').value;
+        const resultBox = document.getElementById('style-result');
+        let advice = '';
+
+        if (pref === 'fast') {
+            advice = 'پیشنهاد ما: <strong>زومبای رگاتون (Reggaeton) و هیپ‌هاپ</strong>. این سبک‌ها تند، پرانرژی و با حرکات قوی هیپ هستند که ضربان قلب را به شدت بالا می‌برند.';
+        } else if (pref === 'latin') {
+            advice = 'پیشنهاد ما: <strong>سالسا (Salsa) و مرنگه (Merengue)</strong>. ریتم‌های کلاسیک و شاد لاتین که پایه و اساس زومبا هستند و یادگیری حرکاتشان بسیار لذت‌بخش است.';
+        } else {
+            advice = 'پیشنهاد ما: <strong>زومبای حسی (Zumba Sentao) یا ریتم‌های شرقی (Bollywood)</strong>. این سبک‌ها با حرکات نرم‌تر، کشش‌های عمیق و ریتم‌های آرام‌تر همراه هستند و برای شروع عالی‌اند.';
+        }
+
+        resultBox.innerHTML = advice;
+        resultBox.style.display = 'block';
+    }
+
+    // =============== ۷. انیمیشن اسکرول ===============
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach(el => {
+        revealObserver.observe(el);
+    });
+
+    loadVoices();
+</script>
+
+</body>
+  </html>
