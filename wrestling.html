@@ -1,1 +1,439 @@
-<!DOCTYPE html><html lang="fa"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>🤼 کشتی | رهیلا</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial;background:radial-gradient(circle at center,#0a1a1a,#1a4a4a,#66ccaa);color:#fff;text-align:center;padding:15px;min-height:100vh}.header{background:rgba(255,255,255,.08);backdrop-filter:blur(20px);border-radius:25px;padding:20px;margin-bottom:15px}.header h1{color:#ffd700;font-size:22px}.back-btn{display:inline-block;background:rgba(255,255,255,.15);color:#fff;padding:8px 20px;border-radius:20px;text-decoration:none;margin:10px 0;font-size:14px}.section-title{color:#ffd700;font-size:18px;margin:20px 0 10px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.card{background:rgba(255,255,255,.05);border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,.1);text-align:right}.card h3{font-size:15px;color:#ffd700}</style></head><body><div class="header"><h1>🤼 کشتی</h1></div><a href="index.html" class="back-btn">🔙 برگشت</a><div class="section-title">🤼 اطلاعات</div><div class="grid"><div class="card"><h3>کشتی آزاد</h3></div><div class="card"><h3>کشتی فرنگی</h3></div><div class="card"><h3>قهرمانان</h3></div><div class="card"><h3>باشگاه‌ها</h3></div></div><p style="margin-top:15px"><a href="index.html" style="color:#ffd700">🔙 برگشت</a></p></body></html>
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>راهنمای جامع کشتی + مشاور انتخاب وزن و سبک | رهیلاناب</title>
+    <meta name="description" content="همه چیز درباره ورزش کشتی؛ از تفاوت کشتی آزاد و فرنگی تا فنون پایه و مدیریت وزن. همراه با مشاور هوشمند در رهیلاناب.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥇</text></svg>">
+    
+    <!-- فونت وزیرمتن -->
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+    
+    <style>
+        /* ============== تم‌ها (تاتامی و مدال) ============== */
+        :root {
+            --bg-main: #061424;
+            --bg-card: #0f243e;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --primary: #fbbf24; /* طلایی */
+            --primary-dark: #d97706;
+            --accent: #ef4444; /* قرمز کشتی */
+            --green: #10b981;
+            --border: #1e3a5f;
+            --shadow: 0 10px 30px rgba(251, 191, 36, 0.15);
+            --gradient: linear-gradient(135deg, #fbbf24, #ef4444);
+        }
+
+        body.light-mode {
+            --bg-main: #f8fafc;
+            --bg-card: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --primary: #b45309;
+            --accent: #b91c1c;
+            --border: #cbd5e1;
+            --shadow: 0 10px 30px rgba(180, 83, 9, 0.15);
+            --gradient: linear-gradient(135deg, #b45309, #b91c1c);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; transition: background-color 0.3s, color 0.3s; }
+        
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background: radial-gradient(circle at 50% 0%, var(--bg-card), var(--bg-main) 70%);
+            color: var(--text-main);
+            line-height: 1.9;
+            font-size: 17px;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* ============== نوار پیشرفت ============== */
+        #progress-bar {
+            position: fixed; top: 0; left: 0; height: 4px; width: 0%;
+            background: var(--gradient); z-index: 9999;
+            box-shadow: 0 0 15px var(--primary); transition: width 0.1s;
+        }
+
+        /* ============== دکمه‌های شناور ============== */
+        .floating-controls {
+            position: fixed; top: 15px; left: 15px; z-index: 999;
+            display: flex; flex-direction: column; gap: 10px;
+        }
+        
+        .control-btn {
+            background: var(--bg-card); border: 1px solid var(--border);
+            color: var(--text-main); width: 50px; height: 50px;
+            border-radius: 50%; cursor: pointer; font-size: 20px;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: var(--shadow); backdrop-filter: blur(10px); transition: 0.3s;
+        }
+        .control-btn:hover { transform: scale(1.1); color: var(--primary); border-color: var(--primary); }
+        .control-btn.playing { background: var(--primary); color: #000; }
+
+        /* ============== هدر ============== */
+        .header {
+            background: var(--gradient); color: #fff; padding: 90px 20px 60px;
+            text-align: center; border-radius: 0 0 40px 40px;
+            position: relative; overflow: hidden;
+            box-shadow: 0 10px 40px rgba(251, 191, 36, 0.3);
+        }
+        .header h1 { font-size: clamp(24px, 5vw, 38px); margin-bottom: 10px; position: relative; z-index: 1; font-weight: 900; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+        .header p { font-size: 16px; opacity: 0.9; position: relative; z-index: 1; font-weight: bold; }
+
+        /* ============== انیمیشن مدال طلا ============== */
+        .medal-container {
+            height: 120px; display: flex; justify-content: center; align-items: center;
+            margin-bottom: 20px; perspective: 1000px;
+        }
+        .gold-medal {
+            width: 80px; height: 80px; background: radial-gradient(circle, #fde047, #eab308, #854d0e);
+            border-radius: 50%; border: 5px solid #a16207; position: relative;
+            box-shadow: 0 0 30px rgba(251, 191, 36, 0.6);
+            animation: spinMedal 5s linear infinite; display: flex; justify-content: center; align-items: center;
+        }
+        .gold-medal::before {
+            content: '🥇'; font-size: 40px; text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+        }
+        .gold-medal::after {
+            content: ''; position: absolute; width: 10px; height: 60px; background: #dc2626;
+            top: -30px; left: 50%; transform: translateX(-50%); z-index: -1;
+        }
+        @keyframes spinMedal { 
+            0% { transform: rotateY(0deg); } 
+            100% { transform: rotateY(360deg); } 
+        }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; margin-top: -30px; }
+
+        /* ============== کارت‌ها ============== */
+        .card {
+            background: var(--bg-card); border-radius: 24px; padding: 30px;
+            margin-bottom: 30px; box-shadow: var(--shadow); border: 1px solid var(--border);
+        }
+        .card h2 { font-size: 22px; color: var(--primary); margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+
+        /* ============== باکس BLUF ============== */
+        .box-bluf {
+            background: linear-gradient(135deg, rgba(251, 191, 36, 0.1), rgba(239, 68, 68, 0.1));
+            border: 2px solid var(--primary); border-radius: 16px; padding: 25px; margin-bottom: 30px;
+        }
+        .box-bluf h3 { color: var(--primary); font-size: 20px; margin-bottom: 10px; }
+        .box-bluf p { font-weight: bold; font-size: 16px; }
+
+        /* ============== ابزارها ============== */
+        .tool-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        @media (max-width: 768px) { .tool-grid { grid-template-columns: 1fr; } }
+        
+        .tool-box { background: var(--bg-main); padding: 25px; border-radius: 16px; border: 1px dashed var(--primary); }
+        .tool-box h3 { color: var(--accent); margin-bottom: 15px; font-size: 18px; text-align: center; }
+        
+        .input-group { margin-bottom: 15px; }
+        .input-group label { display: block; font-size: 14px; margin-bottom: 5px; color: var(--text-muted); font-weight: bold; }
+        .input-group input, .input-group select {
+            width: 100%; padding: 12px; border-radius: 10px; border: 1px solid var(--border);
+            background: var(--bg-card); color: var(--text-main); font-family: inherit; font-size: 16px; outline: none;
+        }
+        .input-group input:focus, .input-group select:focus { border-color: var(--primary); box-shadow: 0 0 10px rgba(251,191,36,0.3); }
+
+        .btn-calc {
+            width: 100%; background: var(--gradient); color: #000; padding: 12px; border-radius: 10px; border: none;
+            font-weight: 900; font-family: inherit; font-size: 16px; cursor: pointer; transition: 0.3s; margin-top: 10px;
+        }
+        .btn-calc:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(251, 191, 36, 0.4); }
+
+        .result-box {
+            display: none; margin-top: 15px; padding: 15px; background: rgba(251, 191, 36, 0.05);
+            border-right: 4px solid var(--accent); border-radius: 8px;
+            font-size: 15px; line-height: 1.8; color: var(--text-main); animation: fadeIn 0.5s;
+        }
+        .result-box strong { color: var(--primary); font-size: 20px; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        /* ============== جدول ============== */
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 15px; border-radius: 12px; overflow: hidden; }
+        th { background: var(--primary); color: #000; padding: 15px; text-align: center; font-weight: 900; }
+        td { padding: 12px; text-align: center; border-bottom: 1px solid var(--border); background: var(--bg-card); font-weight: 500; }
+        tr:hover td { background: var(--bg-main); color: var(--primary); }
+
+        /* ============== آکاردئون ============== */
+        .accordion { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 12px; overflow: hidden; }
+        .accordion-btn { background: none; border: none; width: 100%; padding: 18px; text-align: right; font-family: inherit; font-size: 16px; font-weight: bold; color: var(--text-main); cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .accordion-btn:hover { color: var(--primary); }
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; padding: 0 18px; color: var(--text-muted); font-size: 15px; }
+        .accordion.active .accordion-content { max-height: 500px; padding-bottom: 18px; }
+        .arrow { transition: transform 0.3s; color: var(--accent); }
+        .accordion.active .arrow { transform: rotate(180deg); }
+
+        .footer { text-align: center; padding: 30px; color: var(--text-muted); font-size: 14px; border-top: 1px solid var(--border); margin-top: 40px; }
+        .footer a { color: var(--primary); text-decoration: none; }
+
+        /* ============== انیمیشن اسکرول ============== */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<div class="floating-controls">
+    <button class="control-btn" id="tts-btn" onclick="toggleSpeech()" title="گوش دادن">
+        <span id="tts-icon">🔊</span>
+    </button>
+    <button class="control-btn" onclick="toggleTheme()" title="تاریک/روشن">
+        <span id="theme-icon">🌙</span>
+    </button>
+</div>
+
+<div class="header">
+    <div class="medal-container">
+        <div class="gold-medal"></div>
+    </div>
+    <h1>🥇 دنیای کشتی</h1>
+    <p>هنر تعادل، قدرت و تکنیک روی تاتامی</p>
+</div>
+
+<div class="container" id="main-content">
+
+    <!-- BLUF -->
+    <div class="card box-bluf reveal">
+        <h3>⚡ جواب سریع در ۳ خط:</h3>
+        <p>
+            ۱. در <strong>کشتی آزاد</strong>، گرفتن پاها و استفاده از تمام بدن مجاز است، اما در <strong>کشتی فرنگی</strong> فقط تماس بدنی از کمر به بالا مجاز است.<br>
+            ۲. برای موفقیت، باید روی <strong>تعادل، انعطاف‌پذیری و قدرت گرفتن (Grip Strength)</strong> کار کنید.<br>
+            ۳. کاهش وزن باید به صورت <strong>علمی و تدریجی</strong> باشد تا به کلیه‌ها و سیستم عصبی آسیب نرسد.
+        </p>
+    </div>
+
+    <!-- ابزارهای هوشمند -->
+    <div class="card reveal">
+        <h2>🧠 ابزارهای انتخاب کشتی</h2>
+        <div class="tool-grid">
+            
+            <!-- مشاور انتخاب وزن -->
+            <div class="tool-box">
+                <h3>⚖️ مشاور انتخاب وزن (Weight Class)</h3>
+                <div class="input-group">
+                    <label>وزن فعلی شما (کیلوگرم):</label>
+                    <input type="number" id="weight" placeholder="مثلاً 75" min="30" max="150">
+                </div>
+                <div class="input-group">
+                    <label>رده سنی:</label>
+                    <select id="age-cat">
+                        <option value="youth">🧒 نوجوانان (۱۴ تا ۱۷ سال)</option>
+                        <option value="senior">🧑 بزرگسالان (۱۸ سال به بالا)</option>
+                    </select>
+                </div>
+                <button class="btn-calc" onclick="calcWeightClass()">⚖️ مشاهده وزن پیشنهادی</button>
+                <div class="result-box" id="weight-result"></div>
+            </div>
+
+            <!-- سبک‌سنج کشتی -->
+            <div class="tool-box">
+                <h3>🤼‍♂️ سبک‌سنج کشتی (آزاد یا فرنگی؟)</h3>
+                <div class="input-group">
+                    <label>در مبارزه به چه چیزی بیشتر علاقه داری؟</label>
+                    <select id="style-pref">
+                        <option value="legs">🦵 گرفتن پاها و فنون مختلف از پایین</option>
+                        <option value="upper">💪 درگیری‌های تن‌به‌تن و گرفتن بالاتنه</option>
+                        <option value="both">🤝 هر دو برای من جذابه</option>
+                    </select>
+                </div>
+                <button class="btn-calc" onclick="matchStyle()">🔍 مشاهده سبک مناسب</button>
+                <div class="result-box" id="style-result"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- جدول مقایسه -->
+    <div class="card reveal">
+        <h2>⚖️ مقایسه کشتی آزاد و فرنگی</h2>
+        <table>
+            <thead>
+                <tr><th>ویژگی</th><th>کشتی آزاد (Freestyle)</th><th>کشتی فرنگی (Greco-Roman)</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>گرفتن پاها</strong></td><td style="color: var(--green); font-weight: bold;">مجاز است</td><td style="color: var(--accent); font-weight: bold;">ممنوع است</td></tr>
+                <tr><td><strong>فنون اصلی</strong></td><td>فنون روی پا و خاک (مثل زیرگیری)</td><td>فنون پرتابی و گرفتن بالاتنه</td></tr>
+                <tr><td><strong>سرعت و جابه‌جایی</strong></td><td>نیاز به سرعت بالا و چابکی</td><td>نیاز به قدرت بدنی و تعادل بالا</td></tr>
+                <tr><td><strong>لباس</strong></td><td>سینگر (Singlet) با رنگ‌های متنوع</td><td>سینگر قرمز یا آبی</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- آکاردئون -->
+    <div class="card reveal">
+        <h2>🛡️ نکات کلیدی برای کشتی‌گیران</h2>
+        
+        <div class="accordion">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+                کاهش وزن (Weight Cutting) چگونه باید باشد؟
+                <span class="arrow">▼</span>
+            </button>
+            <div class="accordion-content">
+                کاهش وزن باید در طول چند هفته و با کاهش تدریجی چربی (حداکثر ۱ تا ۱.۵ کیلوگرم در هفته) انجام شود. استفاده از لباس‌های عرق‌گیر و سونا برای کاهش ناگهانی وزن (که در برخی رشته‌ها رایج است) باعث کم‌آبی شدید، آسیب به کلیه و افت شدید عملکرد مغز و عضلات می‌شود. همیشه آب و الکترولیت بدن را حفظ کنید.
+            </div>
+        </div>
+
+        <div class="accordion">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+                تمرینات پایه برای تقویت قدرت گرفتن (Grip) چیست؟
+                <span class="arrow">▼</span>
+            </button>
+            <div class="accordion-content">
+                قدرت دست و مچ در کشتی حیاتی است. تمرینات بارفیکس بدون استفاده از انگشت شست (Fingertip Pull-ups)، استفاده از توپ‌های فشار (Grip Strengtheners)، و بالا رفتن از طناب بدون استفاده از پاها، از بهترین تمرینات برای تقویت گریپ و ساعد هستند.
+            </div>
+        </div>
+    </div>
+
+    <div class="card reveal" style="text-align: center;">
+        <h2>🔗 صفحات مرتبط</h2>
+        <p>
+            <a href="sport.html" class="btn-calc" style="display:inline-block; width:auto; margin:5px; text-decoration:none;">🏅 ورزش</a>
+            <a href="weightlifting.html" class="btn-calc" style="display:inline-block; width:auto; margin:5px; text-decoration:none;">🏋️ وزنه‌برداری</a>
+            <a href="judo.html" class="btn-calc" style="display:inline-block; width:auto; margin:5px; text-decoration:none;">🥋 جودو</a>
+        </p>
+    </div>
+
+</div>
+
+<div class="footer">
+    <p>🌟 <strong>رهیلاناب</strong> - <a href="index.html">خانه</a> | <a href="sport.html">ورزش</a></p>
+    <p>© ۲۰۲۶ rahilanab.com | با قدرت، روی سکو بایست.</p>
+</div>
+
+<script>
+    // =============== ۱. نوار پیشرفت ===============
+    window.onscroll = function() {
+        var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var scrolled = (winScroll / height) * 100;
+        document.getElementById("progress-bar").style.width = scrolled + "%";
+    };
+
+    // =============== ۲. تم تاریک/روشن ===============
+    function toggleTheme() {
+        document.body.classList.toggle('light-mode');
+        const isLight = document.body.classList.contains('light-mode');
+        document.getElementById('theme-icon').innerText = isLight ? '☀️' : '🌙';
+        localStorage.setItem('wrestlingTheme', isLight);
+    }
+    if (localStorage.getItem('wrestlingTheme') === 'true') { toggleTheme(); }
+
+    // =============== ۳. پخش صوتی (TTS) ===============
+    let isSpeaking = false;
+    let voices = [];
+    function loadVoices() { voices = window.speechSynthesis.getVoices(); }
+    if (typeof speechSynthesis !== 'undefined' && speechSynthesis.onvoiceschanged !== undefined) { speechSynthesis.onvoiceschanged = loadVoices; }
+
+    function toggleSpeech() {
+        if (isSpeaking) {
+            window.speechSynthesis.cancel();
+            isSpeaking = false;
+            document.getElementById('tts-icon').innerText = '🔊';
+            document.getElementById('tts-btn').classList.remove('playing');
+            return;
+        }
+        const mainText = document.getElementById('main-content').innerText;
+        const speech = new SpeechSynthesisUtterance(mainText);
+        speech.lang = 'fa-IR';
+        const persianVoice = voices.find(v => v.lang.includes('fa') || v.lang === 'fa-IR');
+        if (persianVoice) speech.voice = persianVoice;
+        speech.onend = function() {
+            isSpeaking = false;
+            document.getElementById('tts-icon').innerText = '🔊';
+            document.getElementById('tts-btn').classList.remove('playing');
+        };
+        window.speechSynthesis.speak(speech);
+        isSpeaking = true;
+        document.getElementById('tts-icon').innerText = '⏹️';
+        document.getElementById('tts-btn').classList.add('playing');
+    }
+
+    // =============== ۴. آکاردئون ===============
+    function toggleAccordion(btn) { btn.parentElement.classList.toggle('active'); }
+
+    // =============== ۵. مشاور انتخاب وزن ===============
+    function calcWeightClass() {
+        const weight = parseFloat(document.getElementById('weight').value);
+        const age = document.getElementById('age-cat').value;
+        const resultBox = document.getElementById('weight-result');
+
+        if (!weight || weight < 30 || weight > 150) {
+            alert('لطفاً وزن معتبر (بین ۳۰ تا ۱۵۰ کیلوگرم) وارد کنید.');
+            return;
+        }
+
+        let targetWeight = '';
+        let note = '';
+
+        // وزن‌های استاندارد المپیک (بزرگسالان)
+        const seniorClasses = [57, 65, 74, 86, 97, 125];
+        // وزن‌های نوجوانان
+        const youthClasses = [45, 48, 51, 55, 60, 65, 71, 80, 92, 110];
+
+        let classes = age === 'senior' ? seniorClasses : youthClasses;
+        
+        // پیدا کردن نزدیک‌ترین وزن کلاس
+        for (let i = 0; i < classes.length; i++) {
+            if (weight <= classes[i]) {
+                targetWeight = classes[i];
+                break;
+            }
+        }
+
+        if (!targetWeight) targetWeight = classes[classes.length - 1];
+
+        if (weight > targetWeight + 3) {
+            note = 'شما برای رسیدن به این وزن نیاز به کاهش وزن تدریجی دارید. حتماً با متخصص تغذیه ورزشی مشورت کنید.';
+        } else if (weight < targetWeight - 3) {
+            note = 'شما باید وزن خود را با افزایش حجم عضلانی (نه چربی) کمی بالا ببرید.';
+        } else {
+            note = 'وزن شما کاملاً به این رده نزدیک است و با یک رژیم اصولی به راحتی به آن می‌رسید.';
+        }
+
+        resultBox.innerHTML = `وزن پیشنهادی برای شما: <strong>${targetWeight} کیلوگرم</strong><br><br>${note}`;
+        resultBox.style.display = 'block';
+    }
+
+    // =============== ۶. سبک‌سنج کشتی ===============
+    function matchStyle() {
+        const pref = document.getElementById('style-pref').value;
+        const resultBox = document.getElementById('style-result');
+        let advice = '';
+
+        if (pref === 'legs') {
+            advice = 'پیشنهاد ما: <strong>کشتی آزاد (Freestyle)</strong>. در این سبک شما می‌توانید از فنون زیرگیری، گرفتن پاها و تکنیک‌های متنوع‌تری استفاده کنید که برای افراد چابک و خلاق عالی است.';
+        } else if (pref === 'upper') {
+            advice = 'پیشنهاد ما: <strong>کشتی فرنگی (Greco-Roman)</strong>. اگر قدرت بدنی بالایی دارید و درگیری‌های تن‌به‌تن و پرتاب‌های بالاتنه را دوست دارید، فرنگی بهترین گزینه برای شماست.';
+        } else {
+            advice = 'پیشنهاد ما: <strong>هر دو سبک را امتحان کنید!</strong> بسیاری از کشتی‌گیران بزرگ ابتدا فرنگی را شروع می‌کنند و سپس به آزاد می‌روند. با تست کردن هر دو، می‌توانید استعداد خود را در بهترین سبک کشف کنید.';
+        }
+
+        resultBox.innerHTML = advice;
+        resultBox.style.display = 'block';
+    }
+
+    // =============== ۷. انیمیشن اسکرول ===============
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach(el => {
+        revealObserver.observe(el);
+    });
+
+    loadVoices();
+</script>
+
+</body>
+                          </html>
