@@ -3,25 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🌟 رهیلاناب | دنیایی از همه چی | rahilanab.com</title>
-    <meta name="description" content="رهیلاناب - بزرگترین سایت ایرانی با ۲۰۰+ صفحه. آشپزی، سلامت، زیبایی، مد، خودرو، فیلم، کارتون، موسیقی، ورزش، تکنولوژی، بازی">
     
-    <!-- Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2212822534276249" crossorigin="anonymous"></script>
+    <!-- SEO Meta Tags -->
+    <title>رهیلاناب | پورتال جامع سلامت، آشپزی، اقتصاد و سرگرمی در ایران</title>
+    <meta name="description" content="رهیلاناب (rahilanab.com) بزرگترین پورتال جامع ایرانی است. از راهنمای خرید و قیمت لحظه‌ای طلا تا سلامت، آشپزی، بازی‌های آنلاین و آموزش. همه چیز در یک جا.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
     
-    <!-- Monetag Popunder -->
-    <script src="https://pl29908821.effectivecpmnetwork.com/e9/ae/8d/e9ae8d48a2e7ec166a90d883f6dda3a5.js"></script>
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://rahilanab.com/">
     
+    <!-- Open Graph (Social Media) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="رهیلاناب | پورتال جامع ایرانی">
+    <meta property="og:description" content="بزرگترین پورتال جامع ایرانی شامل سلامت، آشپزی، اقتصاد، تکنولوژی و بازی‌های آنلاین.">
+    <meta property="og:url" content="https://rahilanab.com/">
+    <meta property="og:image" content="https://rahilanab.com/og-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com">
+
     <!-- فونت وزیرمتن -->
     <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
 
-    <!-- Google Translate (مخفی) -->
-    <div id="google_translate_element" style="display:none;"></div>
-    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-    <script>function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:'fa',includedLanguages:'en,de,ar,es,fr,it,tr,ru,zh,ja,ko,hi,pt,nl,sv,pl,ro,uk,th,vi,id,ms,ur',layout:google.translate.TranslateElement.InlineLayout.SIMPLE})}</script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2212822534276249" crossorigin="anonymous"></script>
     
+    <!-- Google Translate (Hidden) -->
+    <div id="google_translate_element" style="display:none;"></div>
+    <script>
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage:'fa', includedLanguages:'en,de,ar,es,fr,tr,ru,zh', layout: google.translate.TranslateElement.InlineLayout.SIMPLE});
+        }
+    </script>
+
+    <!-- Schema Markup (WebSite) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "رهیلاناب",
+      "url": "https://rahilanab.com/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://rahilanab.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
     <style>
-        /* ============== تم آبی و ساده (همون تم خودت) ============== */
+        /* ============== تم آبی و ساده (همون تم محبوبت) ============== */
         :root {
             --bg-main: linear-gradient(135deg, #e3f2fd, #bbdefb, #90caf9, #a5d6a7);
             --bg-card: #ffffff;
@@ -44,7 +77,7 @@
             --input-bg: #0f172a;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; transition: background 0.3s, color 0.3s; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
             font-family: 'Vazirmatn', Tahoma, sans-serif;
@@ -54,25 +87,36 @@
             padding: 10px;
             min-height: 100vh;
             background-attachment: fixed;
+            transition: background 0.3s, color 0.3s;
         }
 
-        /* ============== هدر و جستجو ============== */
+        /* Accessibility: Skip Link */
+        .skip-link {
+            position: absolute; top: -40px; left: 0;
+            background: var(--text-title); color: #fff;
+            padding: 8px; z-index: 10000; text-decoration: none;
+        }
+        .skip-link:focus { top: 0; }
+
+        /* ============== هدر ============== */
         .header {
             background: var(--header-bg);
             border-radius: 20px;
-            padding: 20px 15px;
-            margin-bottom: 15px;
+            padding: 25px 15px;
+            margin-bottom: 20px;
             box-shadow: var(--shadow);
             position: relative;
+            transition: background 0.3s;
         }
-        .header h1 { color: var(--text-title); font-size: 26px; font-weight: 900; margin-bottom: 5px; }
-        .header p { font-size: 14px; font-weight: bold; opacity: 0.8; margin-bottom: 15px; }
+        .header h1 { color: var(--text-title); font-size: 22px; font-weight: 900; margin-bottom: 5px; line-height: 1.4; }
+        .header .brand-subtitle { font-size: 14px; font-weight: bold; opacity: 0.8; margin-bottom: 15px; color: var(--text-main); }
 
         .theme-btn {
             position: absolute; top: 15px; left: 15px;
             background: none; border: none; font-size: 24px; cursor: pointer;
         }
 
+        /* جستجو */
         .search-box { width: 100%; max-width: 500px; margin: 0 auto; position: relative; }
         .search-box input {
             width: 100%; padding: 12px 20px; border-radius: 30px;
@@ -81,10 +125,26 @@
         }
         .search-box input:focus { border-color: var(--text-title); }
 
+        /* ============== محتوای واقعی (SEO) ============== */
+        .intro-content {
+            background: var(--bg-card);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+            text-align: justify;
+            line-height: 2;
+            font-size: 15px;
+            color: var(--text-main);
+            transition: background 0.3s;
+        }
+        .intro-content h2 { color: var(--text-title); font-size: 18px; margin-bottom: 10px; text-align: right; }
+
         /* ============== اخبار داغ ============== */
         .hot-news-box {
             background: var(--bg-card); border-radius: 15px; overflow: hidden;
-            box-shadow: var(--shadow); margin-bottom: 20px; border: 1px solid var(--border);
+            box-shadow: var(--shadow); margin-bottom: 25px; border: 1px solid var(--border);
+            transition: background 0.3s;
         }
         .hot-news-btn {
             width: 100%; background: linear-gradient(135deg, #db4437, #f9a825);
@@ -97,21 +157,21 @@
         .hot-link {
             display: block; background: #f1f8e9; padding: 12px 15px; border-radius: 10px;
             text-decoration: none; color: #000; font-weight: bold; font-size: 14px;
-            border: 1px solid #c8e6c9; transition: 0.2s;
+            border: 1px solid #c8e6c9; transition: transform 0.2s;
         }
         body.dark-mode .hot-link { background: #0f172a; color: #f8fafc; border-color: #334155; }
         .hot-link:hover { transform: translateX(-5px); }
         .hot-link.special { background: linear-gradient(135deg, #ffd700, #ff8c00); color: #000; text-align: center; border: none; }
 
         /* ============== دسته‌بندی‌ها ============== */
-        .category-section { margin-bottom: 25px; }
         .section-title {
-            color: var(--text-title); font-size: 18px; margin: 15px 0 10px;
+            color: var(--text-title); font-size: 18px; margin: 20px 0 15px;
             font-weight: bold; text-align: right; padding-right: 5px;
         }
         
         .grid {
-            display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 8px;
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 10px;
+            margin-bottom: 30px;
         }
         
         .card {
@@ -119,30 +179,42 @@
             text-decoration: none; color: var(--text-main); display: flex;
             flex-direction: column; align-items: center; justify-content: center;
             border: 1px solid var(--border); box-shadow: var(--shadow);
-            transition: transform 0.2s, background 0.2s;
+            transition: transform 0.2s, border-color 0.2s, background 0.3s;
         }
         .card:active { transform: scale(0.95); }
-        .card:hover { border-color: var(--text-title); }
-        .card .emoji { font-size: 30px; margin-bottom: 5px; }
-        .card h3 { font-size: 12px; font-weight: bold; line-height: 1.4; }
+        .card:hover { border-color: var(--text-title); transform: translateY(-3px); }
+        .card .emoji { font-size: 32px; margin-bottom: 8px; }
+        .card h3 { font-size: 13px; font-weight: bold; line-height: 1.4; }
+
+        /* دکمه مشاهده همه */
+        .explore-more {
+            text-align: center; margin: 40px 0;
+        }
+        .explore-btn {
+            display: inline-block; background: var(--text-title); color: #fff;
+            padding: 15px 40px; border-radius: 30px; text-decoration: none;
+            font-weight: bold; font-size: 16px; box-shadow: 0 4px 15px rgba(13, 71, 161, 0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .explore-btn:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(13, 71, 161, 0.4); }
 
         /* ============== تبلیغات و فوتر ============== */
-        .ad-box { margin: 20px 0; text-align: center; background: var(--bg-card); padding: 10px; border-radius: 15px; box-shadow: var(--shadow); }
+        .ad-box { margin: 25px 0; text-align: center; background: var(--bg-card); padding: 10px; border-radius: 15px; box-shadow: var(--shadow); }
 
         .footer {
-            background: var(--bg-card); padding: 15px; margin-top: 30px;
-            font-size: 12px; color: var(--text-main); border-radius: 15px;
-            font-weight: bold; box-shadow: var(--shadow);
+            background: var(--bg-card); padding: 20px; margin-top: 30px;
+            font-size: 13px; color: var(--text-main); border-radius: 15px;
+            font-weight: bold; box-shadow: var(--shadow); line-height: 2;
         }
         .footer a { color: var(--text-title); text-decoration: none; font-weight: bold; margin: 0 5px; }
 
         /* ============== ریسپانسیو ============== */
         @media(max-width: 400px) {
-            .grid { grid-template-columns: repeat(auto-fill, minmax(85px, 1fr)); gap: 6px; }
+            .grid { grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); gap: 8px; }
             .card { padding: 12px 5px; }
-            .card .emoji { font-size: 24px; }
+            .card .emoji { font-size: 26px; }
             .card h3 { font-size: 11px; }
-            .header h1 { font-size: 22px; }
+            .header h1 { font-size: 18px; }
         }
         
         .goog-te-banner-frame{display:none!important} body{top:0!important}
@@ -150,458 +222,177 @@
 </head>
 <body>
 
+<a href="#main-content" class="skip-link">پرش به محتوای اصلی</a>
+
 <!-- هدر -->
-<div class="header">
-    <button class="theme-btn" onclick="toggleTheme()" id="theme-btn">🌙</button>
-    <h1>🌟 رهیلاناب</h1>
-    <p>🌍 دنیایی از همه چی | rahilanab.com</p>
+<header class="header">
+    <button class="theme-btn" onclick="toggleTheme()" id="theme-btn" aria-label="تغییر حالت شب و روز">🌙</button>
+    <h1>رهیلاناب | پورتال جامع سلامت، آشپزی، اقتصاد و سرگرمی</h1>
+    <div class="brand-subtitle">🌍 دنیایی از همه چی | rahilanab.com</div>
     <div class="search-box">
-        <input type="text" id="search-input" placeholder="جستجوی سریع در سایت..." oninput="searchCards()">
+        <input type="text" id="search-input" placeholder="جستجوی سریع در سایت..." aria-label="جستجو در سایت">
     </div>
-</div>
+</header>
 
-<!-- 🔥 اخبار داغ -->
-<div class="hot-news-box">
-    <button onclick="toggleHotNews()" class="hot-news-btn">
-        <span>🔥 اخبار و ترندهای داغ <span id="hot-date" style="font-size: 12px; opacity: 0.8; font-weight: normal;"></span></span>
-        <span id="hot-arrow" style="transition: transform 0.3s;">▼</span>
-    </button>
-    <div id="hot-news-content" class="hot-news-content">
-        <div class="hot-news-inner">
-            <a href="kala-barg.html" class="hot-link">راهنمای ثبت‌نام کالابرگ و سامانه دولت من</a>
-            <a href="gold.html" class="hot-link">قیمت لحظه‌ای طلا، سکه و دلار (آپدیت زنده)</a>
-            <a href="ai-tools.html" class="hot-link">بهترین ابزارهای هوش مصنوعی در ایران</a>
-            <a href="ganj-ya-bomb.html" class="hot-link special">🎮 بازی جدید: گنج یا بمب! (رایگان)</a>
+<main id="main-content">
+    
+    <!-- محتوای معرفی (SEO) -->
+    <section class="intro-content">
+        <h2>به دنیای رهیلاناب خوش آمدید</h2>
+        <p>
+            پورتال جامع <strong>رهیلاناب</strong> با هدف ایجاد یک مرجع کامل و در دسترس برای کاربران ایرانی طراحی شده است. ما در رهیلاناب تلاش کرده‌ایم تا تمام نیازهای روزمره شما را در یک نقطه جمع کنیم؛ از بررسی <strong>قیمت لحظه‌ای طلا و ارز</strong> و راهنمای خرید کالاهای مختلف، تا مقالات آموزشی در حوزه <strong>سلامت و پزشکی</strong>، دستور پخت انواع غذاهای ایرانی و فرنگی، راهنمای مد و زیبایی، و حتی بازی‌های آنلاین و سرگرمی.
+        </p>
+        <p>
+            اگر به دنبال راهنمای خرید تبلت یا تلویزیون هستید، یا می‌خواهید در مورد سفر با قطار و رزرو بلیت اطلاعات کسب کنید، بخش‌های تخصصی ما با ابزارهای تعاملی و محاسبه‌گرهای هوشمند در خدمت شما هستند. همچنین بخش ورزش و تناسب اندام ما شامل راهنمای تمرینات، برنامه‌های غذایی و معرفی رشته‌های ورزشی مختلف است.
+        </p>
+        <p>
+            در رهیلاناب، ما به کیفیت محتوا و تجربه کاربری اهمیت می‌دهیم. هر صفحه به گونه‌ای طراحی شده است که اطلاعات مفید و کاربردی را به ساده‌ترین شکل ممکن به شما ارائه دهد. برای دسترسی به تمام ۳۰۰+ صفحه سایت، می‌توانید از منوی «همه لینک‌ها» یا نوار جستجوی بالا استفاده کنید.
+        </p>
+    </section>
+
+    <!-- 🔥 اخبار داغ -->
+    <section class="hot-news-box">
+        <button onclick="toggleHotNews()" class="hot-news-btn" aria-expanded="false" aria-controls="hot-news-content">
+            <span>🔥 اخبار و ترندهای داغ <span id="hot-date" style="font-size: 12px; opacity: 0.8; font-weight: normal;"></span></span>
+            <span id="hot-arrow" style="transition: transform 0.3s;">▼</span>
+        </button>
+        <div id="hot-news-content" class="hot-news-content">
+            <div class="hot-news-inner">
+                <a href="kala-barg.html" class="hot-link">راهنمای ثبت‌نام کالابرگ و سامانه دولت من</a>
+                <a href="gold.html" class="hot-link">قیمت لحظه‌ای طلا، سکه و دلار (آپدیت زنده)</a>
+                <a href="ai-tools.html" class="hot-link">بهترین ابزارهای هوش مصنوعی در ایران</a>
+                <a href="ganj-ya-bomb.html" class="hot-link special">🎮 بازی جدید: گنج یا بمب! (رایگان)</a>
+            </div>
         </div>
+    </section>
+
+    <!-- ⭐ محبوب‌ترین‌ها (۴۰ لینک اصلی) -->
+    
+    <section>
+        <h2 class="section-title">🔥 داغ‌ترین‌های سایت</h2>
+        <div class="grid" id="search-grid">
+            <a href="gold.html" class="card"><div class="emoji">💰</div><h3>قیمت طلا</h3></a>
+            <a href="train.html" class="card"><div class="emoji">🚆</div><h3>سفر با قطار</h3></a>
+            <a href="ai-tools.html" class="card"><div class="emoji">🤖</div><h3>هوش مصنوعی</h3></a>
+            <a href="ganj-ya-bomb.html" class="card"><div class="emoji">💣</div><h3>گنج یا بمب</h3></a>
+            <a href="tablet.html" class="card"><div class="emoji">📱</div><h3>تبلت</h3></a>
+            <a href="tv.html" class="card"><div class="emoji">📺</div><h3>تلویزیون</h3></a>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">💊 سلامت و درمان</h2>
+        <div class="grid" id="search-grid">
+            <a href="health-full.html" class="card"><div class="emoji">🩺</div><h3>دنیای سلامت</h3></a>
+            <a href="nutrition.html" class="card"><div class="emoji">🥗</div><h3>تغذیه</h3></a>
+            <a href="psychology.html" class="card"><div class="emoji">🧠</div><h3>روانشناسی</h3></a>
+            <a href="diet-full.html" class="card"><div class="emoji">📋</div><h3>رژیم جامع</h3></a>
+            <a href="dentist.html" class="card"><div class="emoji">🦷</div><h3>دندانپزشکی</h3></a>
+            <a href="pregnancy.html" class="card"><div class="emoji">🤰</div><h3>بارداری</h3></a>
+            <a href="vet.html" class="card"><div class="emoji">🐕</div><h3>دامپزشکی</h3></a>
+            <a href="meditation2.html" class="card"><div class="emoji">🧘</div><h3>مدیتیشن</h3></a>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">🏃 ورزش و فیتنس</h2>
+        <div class="grid" id="search-grid">
+            <a href="sport-full.html" class="card"><div class="emoji">🏆</div><h3>دنیای ورزش</h3></a>
+            <a href="yoga2.html" class="card"><div class="emoji">🧘‍♀️</div><h3>یوگا</h3></a>
+            <a href="gym.html" class="card"><div class="emoji">🏋️‍♂️</div><h3>باشگاه</h3></a>
+            <a href="weightlifting.html" class="card"><div class="emoji">🏋️</div><h3>وزنه‌برداری</h3></a>
+            <a href="zumba2.html" class="card"><div class="emoji">💃</div><h3>زومبا</h3></a>
+            <a href="football.html" class="card"><div class="emoji">⚽</div><h3>فوتبال</h3></a>
+            <a href="swimming.html" class="card"><div class="emoji">🏊</div><h3>شنا</h3></a>
+            <a href="wrestling.html" class="card"><div class="emoji">🤼</div><h3>کشتی</h3></a>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">🍳 آشپزی و خانه</h2>
+        <div class="grid" id="search-grid">
+            <a href="foods_1.html" class="card"><div class="emoji">🍲</div><h3>غذاهای ۱-۳۰</h3></a>
+            <a href="cook.html" class="card"><div class="emoji">🍳</div><h3>غذای سریع</h3></a>
+            <a href="home-full.html" class="card"><div class="emoji">🏡</div><h3>دنیای خانه</h3></a>
+            <a href="vacuum.html" class="card"><div class="emoji">🧹</div><h3>جاروبرقی</h3></a>
+            <a href="washing.html" class="card"><div class="emoji">🧺</div><h3>لباسشویی</h3></a>
+            <a href="fridge.html" class="card"><div class="emoji">🧊</div><h3>یخچال</h3></a>
+            <a href="salad.html" class="card"><div class="emoji">🥗</div><h3>سالاد</h3></a>
+            <a href="saffron.html" class="card"><div class="emoji">🌺</div><h3>زعفران</h3></a>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">📱 تکنولوژی و خرید</h2>
+        <div class="grid" id="search-grid">
+            <a href="tech.html" class="card"><div class="emoji">📱</div><h3>تکنولوژی</h3></a>
+            <a href="phone-full.html" class="card"><div class="emoji">📲</div><h3>گوشی جامع</h3></a>
+            <a href="laptop.html" class="card"><div class="emoji">💻</div><h3>لپ‌تاپ</h3></a>
+            <a href="camera.html" class="card"><div class="emoji">📸</div><h3>دوربین</h3></a>
+            <a href="watch.html" class="card"><div class="emoji">⌚</div><h3>ساعت</h3></a>
+            <a href="headphone.html" class="card"><div class="emoji">🎧</div><h3>هدفون</h3></a>
+            <a href="telescope.html" class="card"><div class="emoji">🔭</div><h3>تلسکوپ</h3></a>
+            <a href="electric-scooter.html" class="card"><div class="emoji">🛴</div><h3>اسکوتر برقی</h3></a>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">🎮 بازی و سرگرمی</h2>
+        <div class="grid" id="search-grid">
+            <a href="games.html" class="card"><div class="emoji">🎯</div><h3>بازی آنلاین</h3></a>
+            <a href="games-101-150.html" class="card"><div class="emoji">🕹️</div><h3>بازی ۱۰۱-۱۵۰</h3></a>
+            <a href="joke.html" class="card"><div class="emoji">😂</div><h3>جوک</h3></a>
+            <a href="fal.html" class="card"><div class="emoji">🔮</div><h3>فال</h3></a>
+            <a href="music.html" class="card"><div class="emoji">🎵</div><h3>موسیقی</h3></a>
+            <a href="movie-new.html" class="card"><div class="emoji">🍿</div><h3>فیلم جدید</h3></a>
+            <a href="cartoon.html" class="card"><div class="emoji">📺</div><h3>کارتون</h3></a>
+            <a href="zoo.html" class="card"><div class="emoji">🦁</div><h3>باغ وحش</h3></a>
+        </div>
+    </section>
+
+    <!-- دکمه مشاهده همه لینک‌ها -->
+    <div class="explore-more">
+        <a href="all.html" class="explore-btn">📋 مشاهده تمام ۳۰۰+ صفحه سایت</a>
     </div>
-</div>
 
-<div class="ad-box">
-    <script>atOptions={'key':'939c6f3df75112fca8cc907d853dc8bb','format':'iframe','height':250,'width':300,'params':{}};</script>
-    <script src="https://www.highperformanceformat.com/939c6f3df75112fca8cc907d853dc8bb/invoke.js"></script>
-</div>
-
-<!-- ================= دسته‌بندی‌ها ================= -->
-
-<!-- اقتصاد -->
-<div class="category-section">
-    <div class="section-title">💰 اقتصاد و خرید</div>
-    <div class="grid">
-        <a href="economy.html" class="card"><div class="emoji">💵</div><h3>قیمت لحظه‌ای</h3></a>
-        <a href="bank.html" class="card"><div class="emoji">🏦</div><h3>بانکداری</h3></a>
-        <a href="insurance-full.html" class="card"><div class="emoji">🛡️</div><h3>بیمه جامع</h3></a>
-        <a href="insurance.html" class="card"><div class="emoji">📋</div><h3>بیمه</h3></a>
-        <a href="gold.html" class="card"><div class="emoji">💰</div><h3>طلا</h3></a>
-        <a href="gold2.html" class="card"><div class="emoji">📚</div><h3>راهنمای طلا</h3></a>
+    <!-- تبلیغات -->
+    <div class="ad-box">
+        <script>atOptions={'key':'939c6f3df75112fca8cc907d853dc8bb','format':'iframe','height':250,'width':300,'params':{}};</script>
+        <script src="https://www.highperformanceformat.com/939c6f3df75112fca8cc907d853dc8bb/invoke.js"></script>
     </div>
-</div>
 
-<!-- آشپزی -->
-<div class="category-section">
-    <div class="section-title">🍳 آشپزی</div>
-    <div class="grid">
-        <a href="foods_1.html" class="card"><div class="emoji">🍲</div><h3>غذاهای ۱-۳۰</h3></a>
-        <a href="foods_2.html" class="card"><div class="emoji">🍗</div><h3>غذاهای ۳۱-۶۰</h3></a>
-        <a href="foods_3.html" class="card"><div class="emoji">🍝</div><h3>غذاهای ۶۱-۹۰</h3></a>
-        <a href="foods_4.html" class="card"><div class="emoji">🍰</div><h3>غذاهای ۹۱-۱۲۰</h3></a>
-        <a href="cook.html" class="card"><div class="emoji">🍳</div><h3>غذای سریع</h3></a>
-        <a href="cook2.html" class="card"><div class="emoji">🥘</div><h3>۵۰ غذای بعدی</h3></a>
-    </div>
-</div>
+</main>
 
-<!-- ادعیه -->
-<div class="category-section">
-    <div class="section-title">🤲 ادعیه و مذهب</div>
-    <div class="grid">
-        <a href="dua.html" class="card"><div class="emoji">🤲</div><h3>ادعیه ۱</h3></a>
-        <a href="dua2.html" class="card"><div class="emoji">🕌</div><h3>ادعیه ۲</h3></a>
-        <a href="dua_full.html" class="card"><div class="emoji">🛡️</div><h3>جوشن کبیر ۱</h3></a>
-        <a href="dua_full_2.html" class="card"><div class="emoji">🛡️</div><h3>جوشن کبیر ۲</h3></a>
-        <a href="dua_full_3.html" class="card"><div class="emoji">🛡️</div><h3>جوشن کبیر ۳</h3></a>
-        <a href="quran.html" class="card"><div class="emoji">📖</div><h3>قرآن</h3></a>
-        <a href="prayer.html" class="card"><div class="emoji">🕌</div><h3>نماز</h3></a>
-        <a href="prayer_full.html" class="card"><div class="emoji">🤲</div><h3>نماز جامع</h3></a>
-        <a href="quran_surah.html" class="card"><div class="emoji">📖</div><h3>سوره‌ها</h3></a>
-        <a href="haj-full.html" class="card"><div class="emoji">🕋</div><h3>حج جامع</h3></a>
-        <a href="haj.html" class="card"><div class="emoji">🕌</div><h3>حج</h3></a>
-        <a href="zakat.html" class="card"><div class="emoji">💰</div><h3>زکات</h3></a>
-        <a href="fajr.html" class="card"><div class="emoji">🌅</div><h3>فجر</h3></a>
-        <a href="ghadir.html" class="card"><div class="emoji">💚</div><h3>غدیر</h3></a>
-        <a href="mosque.html" class="card"><div class="emoji">🕌</div><h3>مسجد</h3></a>
-        <a href="synagogue.html" class="card"><div class="emoji">🕍</div><h3>کنیسه</h3></a>
-    </div>
-</div>
-
-<!-- سلامت -->
-<div class="category-section">
-    <div class="section-title">💊 سلامت و درمان</div>
-    <div class="grid">
-        <a href="health.html" class="card"><div class="emoji">💊</div><h3>سلامت ۱-۱۵</h3></a>
-        <a href="health2.html" class="card"><div class="emoji">🏥</div><h3>سلامت ۱۶-۳۰</h3></a>
-        <a href="health-full.html" class="card"><div class="emoji">🩺</div><h3>سلامت جامع</h3></a>
-        <a href="acupuncture.html" class="card"><div class="emoji">🪡</div><h3>طب سوزنی</h3></a>
-        <a href="cupping.html" class="card"><div class="emoji">🩸</div><h3>حجامت</h3></a>
-        <a href="chemotherapy.html" class="card"><div class="emoji">💊</div><h3>شیمی‌درمانی</h3></a>
-        <a href="chiropractic.html" class="card"><div class="emoji">🦴</div><h3>کایروپراکتیک</h3></a>
-        <a href="clinic.html" class="card"><div class="emoji">🏥</div><h3>کلینیک</h3></a>
-        <a href="dentist.html" class="card"><div class="emoji">🦷</div><h3>دندانپزشکی</h3></a>
-        <a href="homeopathy.html" class="card"><div class="emoji">🌿</div><h3>هومیوپاتی</h3></a>
-        <a href="hypnosis.html" class="card"><div class="emoji">🌀</div><h3>هیپنوتیزم</h3></a>
-        <a href="massage.html" class="card"><div class="emoji">💆</div><h3>ماساژ</h3></a>
-        <a href="naturopathy.html" class="card"><div class="emoji">🌱</div><h3>طب طبیعی</h3></a>
-        <a href="nutrition.html" class="card"><div class="emoji">🥗</div><h3>تغذیه</h3></a>
-        <a href="occupational-therapy.html" class="card"><div class="emoji">🖐️</div><h3>کاردرمانی</h3></a>
-        <a href="optician.html" class="card"><div class="emoji">👁️</div><h3>چشم‌پزشکی</h3></a>
-        <a href="osteopathy.html" class="card"><div class="emoji">🦴</div><h3>استئوپاتی</h3></a>
-        <a href="pharmacy.html" class="card"><div class="emoji">💊</div><h3>داروخانه</h3></a>
-        <a href="physiotherapy.html" class="card"><div class="emoji">🩻</div><h3>فیزیوتراپی</h3></a>
-        <a href="psychology.html" class="card"><div class="emoji">🧠</div><h3>روانشناسی</h3></a>
-        <a href="radiotherapy.html" class="card"><div class="emoji">☢️</div><h3>رادیوتراپی</h3></a>
-        <a href="reflexology.html" class="card"><div class="emoji">🦶</div><h3>رفلکسولوژی</h3></a>
-        <a href="aromatherapy.html" class="card"><div class="emoji">🌸</div><h3>آروماتراپی</h3></a>
-        <a href="pregnancy.html" class="card"><div class="emoji">🤰</div><h3>بارداری</h3></a>
-        <a href="diet-full.html" class="card"><div class="emoji">📋</div><h3>رژیم جامع</h3></a>
-        <a href="diet.html" class="card"><div class="emoji">⚖️</div><h3>رژیم</h3></a>
-        <a href="meditation2.html" class="card"><div class="emoji">🧘</div><h3>مدیتیشن</h3></a>
-        <a href="speech-therapy.html" class="card"><div class="emoji">🗣️</div><h3>گفتاردرمانی</h3></a>
-        <a href="vet.html" class="card"><div class="emoji">🐕</div><h3>دامپزشکی</h3></a>
-    </div>
-</div>
-
-<!-- زیبایی و مد -->
-<div class="category-section">
-    <div class="section-title">💄 زیبایی، مد و زیورآلات</div>
-    <div class="grid">
-        <a href="beauty.html" class="card"><div class="emoji">💄</div><h3>زیبایی ۱-۲۰</h3></a>
-        <a href="beauty2.html" class="card"><div class="emoji">💅</div><h3>زیبایی ۲۱-۴۰</h3></a>
-        <a href="beauty-full.html" class="card"><div class="emoji">✨</div><h3>زیبایی جامع</h3></a>
-        <a href="makeup-full.html" class="card"><div class="emoji">💋</div><h3>آرایش جامع</h3></a>
-        <a href="makeup2.html" class="card"><div class="emoji">🎨</div><h3>آرایش ۲</h3></a>
-        <a href="makeup3.html" class="card"><div class="emoji">🖌️</div><h3>آرایش ۳</h3></a>
-        <a href="nail.html" class="card"><div class="emoji">💅</div><h3>ناخن</h3></a>
-        <a href="hair-style.html" class="card"><div class="emoji">💇</div><h3>مدل مو</h3></a>
-        <a href="fashion.html" class="card"><div class="emoji">👗</div><h3>مد ۱-۲۵</h3></a>
-        <a href="fashion2.html" class="card"><div class="emoji">👠</div><h3>مد ۲۶-۵۰</h3></a>
-        <a href="fashion_detail.html" class="card"><div class="emoji">👜</div><h3>جزئیات مد</h3></a>
-        <a href="earring.html" class="card"><div class="emoji">💎</div><h3>گوشواره</h3></a>
-        <a href="necklace.html" class="card"><div class="emoji">📿</div><h3>گردنبند</h3></a>
-        <a href="ring.html" class="card"><div class="emoji">💍</div><h3>انگشتر</h3></a>
-        <a href="glasses.html" class="card"><div class="emoji">👓</div><h3>عینک</h3></a>
-        <a href="sunglasses.html" class="card"><div class="emoji">🕶️</div><h3>عینک آفتابی</h3></a>
-        <a href="skin.html" class="card"><div class="emoji">🧴</div><h3>پوست</h3></a>
-        <a href="skin-full.html" class="card"><div class="emoji">🧴</div><h3>پوست جامع</h3></a>
-    </div>
-</div>
-
-<!-- ورزش -->
-<div class="category-section">
-    <div class="section-title">🏃 ورزش (همه رشته‌ها)</div>
-    <div class="grid">
-        <a href="sport.html" class="card"><div class="emoji">🏃</div><h3>ورزش ۱-۳۰</h3></a>
-        <a href="sport2.html" class="card"><div class="emoji">🏋️</div><h3>ورزش ۳۱-۵۰</h3></a>
-        <a href="sport-full.html" class="card"><div class="emoji">🏆</div><h3>ورزش جامع</h3></a>
-        <a href="bodybuilding.html" class="card"><div class="emoji">💪</div><h3>بدنسازی</h3></a>
-        <a href="gym.html" class="card"><div class="emoji">🏋️‍♂️</div><h3>باشگاه</h3></a>
-        <a href="crossfit.html" class="card"><div class="emoji">🏋️</div><h3>کراسفیت</h3></a>
-        <a href="boxing.html" class="card"><div class="emoji">🥊</div><h3>بوکس</h3></a>
-        <a href="yoga2.html" class="card"><div class="emoji">🧘</div><h3>یوگا</h3></a>
-        <a href="zumba2.html" class="card"><div class="emoji">💃</div><h3>زومبا</h3></a>
-        <a href="aerobics.html" class="card"><div class="emoji">🩰</div><h3>ایروبیک</h3></a>
-        <a href="calisthenics.html" class="card"><div class="emoji">🤸</div><h3>کالیستنیکس</h3></a>
-        <a href="pilates2.html" class="card"><div class="emoji">🧘‍♀️</div><h3>پیلاتس</h3></a>
-        <a href="powerlifting.html" class="card"><div class="emoji">🏋️‍♂️</div><h3>پاورلیفتینگ</h3></a>
-        <a href="weightlifting.html" class="card"><div class="emoji">🏋️</div><h3>وزنه‌برداری</h3></a>
-        <a href="wrestling.html" class="card"><div class="emoji">🤼</div><h3>کشتی</h3></a>
-        <a href="judo.html" class="card"><div class="emoji">🥋</div><h3>جودو</h3></a>
-        <a href="karate.html" class="card"><div class="emoji">🥋</div><h3>کاراته</h3></a>
-        <a href="taekwondo.html" class="card"><div class="emoji">🥋</div><h3>تکواندو</h3></a>
-        <a href="kickboxing.html" class="card"><div class="emoji">🥊</div><h3>کیک‌بوکسینگ</h3></a>
-        <a href="muay-thai.html" class="card"><div class="emoji">🇹🇭</div><h3>موای تای</h3></a>
-        <a href="fencing.html" class="card"><div class="emoji">🤺</div><h3>شمشیربازی</h3></a>
-        <a href="archery.html" class="card"><div class="emoji">🏹</div><h3>تیر و کمان</h3></a>
-        <a href="shooting.html" class="card"><div class="emoji">🎯</div><h3>تیراندازی</h3></a>
-        <a href="gymnastics.html" class="card"><div class="emoji">🤸</div><h3>ژیمناستیک</h3></a>
-        <a href="swimming.html" class="card"><div class="emoji">🏊</div><h3>شنا</h3></a>
-        <a href="diving.html" class="card"><div class="emoji">🤿</div><h3>غواصی</h3></a>
-        <a href="diving-sport.html" class="card"><div class="emoji">🌊</div><h3>شیرجه</h3></a>
-        <a href="water-polo.html" class="card"><div class="emoji">🤽</div><h3>واترپلو</h3></a>
-        <a href="rowing.html" class="card"><div class="emoji">🚣</div><h3>روئینگ</h3></a>
-        <a href="canoeing.html" class="card"><div class="emoji">🛶</div><h3>قایق‌رانی</h3></a>
-        <a href="kayaking.html" class="card"><div class="emoji">🛶</div><h3>کایاک</h3></a>
-        <a href="rafting.html" class="card"><div class="emoji">🌊</div><h3>رفتینگ</h3></a>
-        <a href="sailing.html" class="card"><div class="emoji">⛵</div><h3>قایقرانی</h3></a>
-        <a href="surfing.html" class="card"><div class="emoji">🏄</div><h3>موج‌سواری</h3></a>
-        <a href="kitesurfing.html" class="card"><div class="emoji">🪁</div><h3>کایت‌سرف</h3></a>
-        <a href="water-skiing.html" class="card"><div class="emoji">🎿</div><h3>اسکی روی آب</h3></a>
-        <a href="wakeboarding.html" class="card"><div class="emoji">🏄</div><h3>ویک‌بورد</h3></a>
-        <a href="skiing.html" class="card"><div class="emoji">⛷️</div><h3>اسکی</h3></a>
-        <a href="snowboarding.html" class="card"><div class="emoji">🏂</div><h3>اسنوبرد</h3></a>
-        <a href="freestyle-skiing.html" class="card"><div class="emoji">⛷️</div><h3>اسکی آزاد</h3></a>
-        <a href="nordic-skiing.html" class="card"><div class="emoji">🎿</div><h3>اسکی نوردیک</h3></a>
-        <a href="biathlon.html" class="card"><div class="emoji">🎿🔫</div><h3>بیاتلون</h3></a>
-        <a href="curling.html" class="card"><div class="emoji">🥌</div><h3>کرلینگ</h3></a>
-        <a href="bobsleigh.html" class="card"><div class="emoji">🛷</div><h3>بابسلد</h3></a>
-        <a href="luge.html" class="card"><div class="emoji">🛷</div><h3>لژ</h3></a>
-        <a href="skeleton.html" class="card"><div class="emoji">🦴</div><h3>اسکلتون</h3></a>
-        <a href="figure-skating.html" class="card"><div class="emoji">⛸️</div><h3>اسکیت نمایشی</h3></a>
-        <a href="speed-skating.html" class="card"><div class="emoji">⛸️</div><h3>اسکیت سرعت</h3></a>
-        <a href="ice-hockey.html" class="card"><div class="emoji">🏒</div><h3>هاکی روی یخ</h3></a>
-        <a href="hockey.html" class="card"><div class="emoji">🏑</div><h3>هاکی</h3></a>
-        <a href="golf.html" class="card"><div class="emoji">⛳</div><h3>گلف</h3></a>
-        <a href="tennis2.html" class="card"><div class="emoji">🎾</div><h3>تنیس</h3></a>
-        <a href="table-tennis.html" class="card"><div class="emoji">🏓</div><h3>تنیس روی میز</h3></a>
-        <a href="badminton.html" class="card"><div class="emoji">🏸</div><h3>بدمینتون</h3></a>
-        <a href="squash.html" class="card"><div class="emoji">🎾</div><h3>اسکواش</h3></a>
-        <a href="cycling.html" class="card"><div class="emoji">🚴</div><h3>دوچرخه‌سواری</h3></a>
-        <a href="bicycle.html" class="card"><div class="emoji">🚲</div><h3>دوچرخه</h3></a>
-        <a href="marathon.html" class="card"><div class="emoji">🏃</div><h3>ماراتن</h3></a>
-        <a href="triathlon.html" class="card"><div class="emoji">🏊🚴🏃</div><h3>سه‌گانه</h3></a>
-        <a href="pentathlon.html" class="card"><div class="emoji">🤺🏊🐴</div><h3>پنج‌گانه</h3></a>
-        <a href="equestrian.html" class="card"><div class="emoji">🐴</div><h3>اسب‌سواری</h3></a>
-        <a href="rock-climbing.html" class="card"><div class="emoji">🧗</div><h3>سنگ‌نوردی</h3></a>
-        <a href="parkour.html" class="card"><div class="emoji">🏃</div><h3>پارکور</h3></a>
-        <a href="bungee-jumping.html" class="card"><div class="emoji">🪂</div><h3>بانجی جامپینگ</h3></a>
-        <a href="paragliding.html" class="card"><div class="emoji">🪂</div><h3>پاراگلایدینگ</h3></a>
-        <a href="skydiving.html" class="card"><div class="emoji">🪂</div><h3>چتربازی</h3></a>
-        <a href="flyboarding.html" class="card"><div class="emoji">🛹</div><h3>فلای‌بورد</h3></a>
-        <a href="jet-ski.html" class="card"><div class="emoji">🛥️</div><h3>جت اسکی</h3></a>
-        <a href="formula1.html" class="card"><div class="emoji">🏎️</div><h3>فرمول یک</h3></a>
-        <a href="rally.html" class="card"><div class="emoji">🚗</div><h3>رالی</h3></a>
-        <a href="motogp.html" class="card"><div class="emoji">🏍️</div><h3>موتو جی‌پی</h3></a>
-        <a href="bowling.html" class="card"><div class="emoji">🎳</div><h3>بولینگ</h3></a>
-        <a href="billiards.html" class="card"><div class="emoji">🎱</div><h3>بیلیارد</h3></a>
-        <a href="pool.html" class="card"><div class="emoji">🎱</div><h3>استخر بیلیارد</h3></a>
-        <a href="darts.html" class="card"><div class="emoji">🎯</div><h3>دارت</h3></a>
-        <a href="chess.html" class="card"><div class="emoji">♟️</div><h3>شطرنج</h3></a>
-        <a href="backgammon.html" class="card"><div class="emoji">🎲</div><h3>تخته نرد</h3></a>
-        <a href="domino.html" class="card"><div class="emoji">🁫</div><h3>دومینو</h3></a>
-        <a href="bridge.html" class="card"><div class="emoji">🃏</div><h3>بریج</h3></a>
-        <a href="poker2.html" class="card"><div class="emoji">🃏</div><h3>پوکر</h3></a>
-        <a href="longboard.html" class="card"><div class="emoji">🛹</div><h3>لانگ‌بورد</h3></a>
-        <a href="skateboard.html" class="card"><div class="emoji">🛹</div><h3>اسکیت‌بورد</h3></a>
-        <a href="hoverboard.html" class="card"><div class="emoji">🛹</div><h3>هاوربرد</h3></a>
-        <a href="trampoline.html" class="card"><div class="emoji">🤸</div><h3>ترامپولین</h3></a>
-        <a href="dance.html" class="card"><div class="emoji">💃</div><h3>رقص</h3></a>
-        <a href="dance-full.html" class="card"><div class="emoji">🕺</div><h3>دنیای رقص</h3></a>
-        <a href="synchronized-swimming.html" class="card"><div class="emoji">🏊‍♀️</div><h3>شنای موزون</h3></a>
-        <a href="standup-paddle.html" class="card"><div class="emoji">🏄</div><h3>پارو ایستاده</h3></a>
-        <a href="stadium.html" class="card"><div class="emoji">🏟️</div><h3>ورزشگاه</h3></a>
-    </div>
-</div>
-
-<!-- بازی‌ها -->
-<div class="category-section">
-    <div class="section-title">🎮 بازی‌ها و سرگرمی</div>
-    <div class="grid">
-        <a href="ganj-ya-bomb.html" class="card"><div class="emoji">💣</div><h3>گنج یا بمب</h3></a>
-        <a href="games.html" class="card"><div class="emoji">🎯</div><h3>بازی آنلاین</h3></a>
-        <a href="games2.html" class="card"><div class="emoji">🕹️</div><h3>بازی بعدی</h3></a>
-        <a href="game3.html" class="card"><div class="emoji">🎮</div><h3>بازی جذاب</h3></a>
-        <a href="games-51-100.html" class="card"><div class="emoji">👾</div><h3>بازی ۵۱-۱۰۰</h3></a>
-        <a href="games-101-150.html" class="card"><div class="emoji">🕹️</div><h3>بازی ۱۰۱-۱۵۰</h3></a>
-        <a href="games_151_200.html" class="card"><div class="emoji">🎰</div><h3>بازی ۱۵۱-۲۰۰</h3></a>
-        <a href="fal-full.html" class="card"><div class="emoji">🔮</div><h3>فال جامع</h3></a>
-        <a href="fal.html" class="card"><div class="emoji">🔮</div><h3>فال</h3></a>
-        <a href="joke-full.html" class="card"><div class="emoji">😂</div><h3>جوک جامع</h3></a>
-        <a href="joke.html" class="card"><div class="emoji">😄</div><h3>جوک</h3></a>
-        <a href="magic-full.html" class="card"><div class="emoji">🪄</div><h3>شعبده جامع</h3></a>
-        <a href="magic.html" class="card"><div class="emoji">🎩</div><h3>شعبده</h3></a>
-    </div>
-</div>
-
-<!-- فیلم و موسیقی -->
-<div class="category-section">
-    <div class="section-title">🎬 فیلم، کارتون و موسیقی</div>
-    <div class="grid">
-        <a href="movie.html" class="card"><div class="emoji">🎬</div><h3>فیلم‌ها</h3></a>
-        <a href="movie-new.html" class="card"><div class="emoji">🍿</div><h3>فیلم جدید</h3></a>
-        <a href="classic.html" class="card"><div class="emoji">🎭</div><h3>کلاسیک</h3></a>
-        <a href="comedy.html" class="card"><div class="emoji">😂</div><h3>کمدی</h3></a>
-        <a href="irani_film.html" class="card"><div class="emoji">🇮🇷</div><h3>فیلم ایرانی</h3></a>
-        <a href="cartoon.html" class="card"><div class="emoji">📺</div><h3>کارتون ۱-۲۵</h3></a>
-        <a href="cartoon2.html" class="card"><div class="emoji">🐱</div><h3>کارتون ۲۶-۵۰</h3></a>
-        <a href="cartoon3.html" class="card"><div class="emoji">🎬</div><h3>کارتون نوستالژیک</h3></a>
-        <a href="love_like_the_galaxy.html" class="card"><div class="emoji">🌟</div><h3>عشق مثل کهکشان</h3></a>
-        <a href="mojri_full.html" class="card"><div class="emoji">🎤</div><h3>مجری‌ها</h3></a>
-        <a href="bazigari_full.html" class="card"><div class="emoji">🎭</div><h3>بازیگری</h3></a>
-        <a href="players.html" class="card"><div class="emoji">⚽</div><h3>بازیکنان</h3></a>
-        <a href="interview.html" class="card"><div class="emoji">🎙️</div><h3>مصاحبه</h3></a>
-        <a href="music.html" class="card"><div class="emoji">🎵</div><h3>موسیقی</h3></a>
-        <a href="music_info.html" class="card"><div class="emoji">🎼</div><h3>اطلاعات موسیقی</h3></a>
-        <a href="concert.html" class="card"><div class="emoji">🎤</div><h3>کنسرت</h3></a>
-        <a href="concert-full.html" class="card"><div class="emoji">🎸</div><h3>دنیای کنسرت</h3></a>
-        <a href="singers.html" class="card"><div class="emoji">🎤</div><h3>خوانندگان</h3></a>
-    </div>
-</div>
-
-<!-- آموزش -->
-<div class="category-section">
-    <div class="section-title">📚 آموزش، کتاب و فرهنگ</div>
-    <div class="grid">
-        <a href="education-full.html" class="card"><div class="emoji">🎓</div><h3>آموزش جامع</h3></a>
-        <a href="education.html" class="card"><div class="emoji">📖</div><h3>آموزش</h3></a>
-        <a href="schools-full.html" class="card"><div class="emoji">🏫</div><h3>مدارس جامع</h3></a>
-        <a href="university-full.html" class="card"><div class="emoji">🏛️</div><h3>دانشگاه جامع</h3></a>
-        <a href="university.html" class="card"><div class="emoji">🎓</div><h3>دانشگاه</h3></a>
-        <a href="teach.html" class="card"><div class="emoji">👩‍🏫</div><h3>تدریس</h3></a>
-        <a href="teach2.html" class="card"><div class="emoji">📝</div><h3>تدریس ۲</h3></a>
-        <a href="language.html" class="card"><div class="emoji">🗣️</div><h3>زبان</h3></a>
-        <a href="language_full.html" class="card"><div class="emoji">🌍</div><h3>زبان جامع</h3></a>
-        <a href="history-full.html" class="card"><div class="emoji">📜</div><h3>تاریخ جامع</h3></a>
-        <a href="history.html" class="card"><div class="emoji">🏛️</div><h3>تاریخ</h3></a>
-        <a href="poem.html" class="card"><div class="emoji">📝</div><h3>شعر</h3></a>
-        <a href="poem_full.html" class="card"><div class="emoji">📜</div><h3>شعر جامع</h3></a>
-        <a href="hafez_fest.html" class="card"><div class="emoji">🎉</div><h3>جشن حافظ</h3></a>
-        <a href="book2.html" class="card"><div class="emoji">📚</div><h3>کتاب ۲</h3></a>
-        <a href="book3.html" class="card"><div class="emoji">📖</div><h3>کتاب ۳</h3></a>
-        <a href="library.html" class="card"><div class="emoji">📚</div><h3>کتابخانه</h3></a>
-    </div>
-</div>
-
-<!-- مکان‌ها -->
-<div class="category-section">
-    <div class="section-title">🏙️ مکان‌ها و سفر</div>
-    <div class="grid">
-        <a href="city.html" class="card"><div class="emoji">🏙️</div><h3>شهرهای ایران</h3></a>
-        <a href="city-full.html" class="card"><div class="emoji">🌍</div><h3>شهرهای جهان</h3></a>
-        <a href="foreign.html" class="card"><div class="emoji">✈️</div><h3>خارجی</h3></a>
-        <a href="airplane.html" class="card"><div class="emoji">✈️</div><h3>هواپیما</h3></a>
-        <a href="airplane2.html" class="card"><div class="emoji">🛫</div><h3>هواپیما ۲</h3></a>
-        <a href="airport.html" class="card"><div class="emoji">🛬</div><h3>فرودگاه</h3></a>
-        <a href="train.html" class="card"><div class="emoji">🚆</div><h3>قطار</h3></a>
-        <a href="metro.html" class="card"><div class="emoji">🚇</div><h3>مترو</h3></a>
-        <a href="bus.html" class="card"><div class="emoji">🚌</div><h3>اتوبوس</h3></a>
-        <a href="motorcycle.html" class="card"><div class="emoji">🏍️</div><h3>موتورسیکلت</h3></a>
-        <a href="ship.html" class="card"><div class="emoji">🚢</div><h3>کشتی</h3></a>
-        <a href="cafe.html" class="card"><div class="emoji">☕</div><h3>کافه</h3></a>
-        <a href="restaurant2.html" class="card"><div class="emoji">🍽️</div><h3>رستوران</h3></a>
-        <a href="hotel.html" class="card"><div class="emoji">🏨</div><h3>هتل</h3></a>
-        <a href="hospital2.html" class="card"><div class="emoji">🏥</div><h3>بیمارستان</h3></a>
-        <a href="museum.html" class="card"><div class="emoji">🏛️</div><h3>موزه</h3></a>
-        <a href="park.html" class="card"><div class="emoji">🌳</div><h3>پارک</h3></a>
-        <a href="aquarium.html" class="card"><div class="emoji">🐠</div><h3>آکواریوم</h3></a>
-        <a href="zoo.html" class="card"><div class="emoji">🦁</div><h3>باغ وحش</h3></a>
-        <a href="farm.html" class="card"><div class="emoji">🌾</div><h3>مزرعه</h3></a>
-        <a href="garden.html" class="card"><div class="emoji">🌻</div><h3>باغبانی</h3></a>
-        <a href="government.html" class="card"><div class="emoji">🏛️</div><h3>دولت</h3></a>
-        <a href="shahrbani.html" class="card"><div class="emoji">👮</div><h3>شهربانی</h3></a>
-        <a href="post.html" class="card"><div class="emoji">📮</div><h3>پست</h3></a>
-    </div>
-</div>
-
-<!-- تکنولوژی -->
-<div class="category-section">
-    <div class="section-title">📱 تکنولوژی و دیجیتال</div>
-    <div class="grid">
-        <a href="tech.html" class="card"><div class="emoji">📱</div><h3>تکنولوژی</h3></a>
-        <a href="ai-tools.html" class="card"><div class="emoji">🤖</div><h3>هوش مصنوعی</h3></a>
-        <a href="phone-full.html" class="card"><div class="emoji">📱</div><h3>گوشی جامع</h3></a>
-        <a href="phone.html" class="card"><div class="emoji">📲</div><h3>گوشی</h3></a>
-        <a href="phone-settings.html" class="card"><div class="emoji">⚙️</div><h3>تنظیمات گوشی</h3></a>
-        <a href="tablet.html" class="card"><div class="emoji">📱</div><h3>تبلت</h3></a>
-        <a href="laptop.html" class="card"><div class="emoji">💻</div><h3>لپ‌تاپ</h3></a>
-        <a href="tv.html" class="card"><div class="emoji">📺</div><h3>تلویزیون</h3></a>
-        <a href="camera.html" class="card"><div class="emoji">📸</div><h3>دوربین</h3></a>
-        <a href="headphone.html" class="card"><div class="emoji">🎧</div><h3>هدفون</h3></a>
-        <a href="speaker.html" class="card"><div class="emoji">🔊</div><h3>اسپیکر</h3></a>
-        <a href="watch.html" class="card"><div class="emoji">⌚</div><h3>ساعت</h3></a>
-        <a href="watch2.html" class="card"><div class="emoji">⌚</div><h3>ساعت ۲</h3></a>
-        <a href="printer.html" class="card"><div class="emoji">🖨️</div><h3>پرینتر</h3></a>
-        <a href="router.html" class="card"><div class="emoji">📡</div><h3>روتر</h3></a>
-        <a href="telescope-full.html" class="card"><div class="emoji">🔭</div><h3>تلسکوپ جامع</h3></a>
-        <a href="telescope.html" class="card"><div class="emoji">🔭</div><h3>تلسکوپ</h3></a>
-        <a href="telescope.htm" class="card"><div class="emoji">🔭</div><h3>تلسکوپ (htm)</h3></a>
-        <a href="electric-scooter.html" class="card"><div class="emoji">🛴</div><h3>اسکوتر برقی</h3></a>
-    </div>
-</div>
-
-<!-- خانه -->
-<div class="category-section">
-    <div class="section-title">🏠 خانه و زندگی</div>
-    <div class="grid">
-        <a href="home.html" class="card"><div class="emoji">🏠</div><h3>خانه</h3></a>
-        <a href="home-full.html" class="card"><div class="emoji">🏡</div><h3>دنیای خانه</h3></a>
-        <a href="house2.html" class="card"><div class="emoji">🏘️</div><h3>خانه ۲</h3></a>
-        <a href="dishwasher.html" class="card"><div class="emoji">🍽️</div><h3>ظرفشویی</h3></a>
-        <a href="dust.html" class="card"><div class="emoji">🧹</div><h3>گرد و غبار</h3></a>
-        <a href="air-conditioner.html" class="card"><div class="emoji">❄️</div><h3>کولر</h3></a>
-        <a href="fridge.html" class="card"><div class="emoji">🧊</div><h3>یخچال</h3></a>
-        <a href="oven.html" class="card"><div class="emoji">🔥</div><h3>فر</h3></a>
-        <a href="vacuum.html" class="card"><div class="emoji">🧹</div><h3>جاروبرقی</h3></a>
-        <a href="washing.html" class="card"><div class="emoji">🧺</div><h3>لباسشویی</h3></a>
-        <a href="flower.html" class="card"><div class="emoji">🌸</div><h3>گل</h3></a>
-        <a href="dream.html" class="card"><div class="emoji">🌙</div><h3>تعبیر خواب</h3></a>
-        <a href="dream-full.html" class="card"><div class="emoji">💭</div><h3>دنیای خواب</h3></a>
-        <a href="baby-full.html" class="card"><div class="emoji">👶</div><h3>نوزاد جامع</h3></a>
-        <a href="baby.html" class="card"><div class="emoji">🍼</div><h3>نوزاد</h3></a>
-        <a href="marriage-full.html" class="card"><div class="emoji">💒</div><h3>ازدواج جامع</h3></a>
-        <a href="marriage.html" class="card"><div class="emoji">💍</div><h3>ازدواج</h3></a>
-        <a href="saffron.html" class="card"><div class="emoji">🌺</div><h3>زعفران</h3></a>
-        <a href="sage.html" class="card"><div class="emoji">🌿</div><h3>مریم‌گلی</h3></a>
-        <a href="salt.html" class="card"><div class="emoji">🧂</div><h3>نمک</h3></a>
-        <a href="salt-full.html" class="card"><div class="emoji">🧂</div><h3>نمک جامع</h3></a>
-        <a href="salad.html" class="card"><div class="emoji">🥗</div><h3>سالاد</h3></a>
-    </div>
-</div>
-
-<!-- خودرو -->
-<div class="category-section">
-    <div class="section-title">🚗 خودرو</div>
-    <div class="grid">
-        <a href="car.html" class="card"><div class="emoji">🚗</div><h3>خودرو ۱-۲۵</h3></a>
-        <a href="car2.html" class="card"><div class="emoji">🔧</div><h3>خودرو ۲۶-۴۰</h3></a>
-        <a href="car3.html" class="card"><div class="emoji">⚙️</div><h3>خودرو ۴۱-۵۰</h3></a>
-        <a href="car_price.html" class="card"><div class="emoji">💰</div><h3>قیمت خودرو</h3></a>
-        <a href="car_repair2.html" class="card"><div class="emoji">🔧</div><h3>تعمیرات</h3></a>
-        <a href="car-full.html" class="card"><div class="emoji">🚙</div><h3>دنیای خودرو</h3></a>
-    </div>
-</div>
-
-<!-- بیشتر -->
-<div class="category-section">
-    <div class="section-title">📄 صفحات اصلی و اطلاعات</div>
-    <div class="grid">
-        <a href="main.html" class="card"><div class="emoji">🏠</div><h3>صفحه اصلی (main)</h3></a>
-        <a href="about.html" class="card"><div class="emoji">📄</div><h3>درباره ما</h3></a>
-        <a href="contact.html" class="card"><div class="emoji">📞</div><h3>تماس با ما</h3></a>
-        <a href="privacy.html" class="card"><div class="emoji">🔒</div><h3>حریم خصوصی</h3></a>
-        <a href="clock.html" class="card"><div class="emoji">⏰</div><h3>ساعت زنده</h3></a>
-        <a href="all.html" class="card"><div class="emoji">📋</div><h3>همه لینک‌ها</h3></a>
-        <a href="how_to.html" class="card"><div class="emoji">📝</div><h3>چطور...</h3></a>
-        <a href="title.html" class="card"><div class="emoji">📌</div><h3>عنوان</h3></a>
-        <a href="deleted.html" class="card"><div class="emoji">🗑️</div><h3>حذف شده</h3></a>
-        <a href="deleted2.html" class="card"><div class="emoji">🗑️</div><h3>حذف شده ۲</h3></a>
-    </div>
-</div>
-
-<div class="footer">
+<!-- فوتر -->
+<footer class="footer">
     <p>🌟 <strong>رهیلاناب</strong> - rahilanab.com</p>
     <p style="margin-top: 8px;">
-        <a href="index.html">خانه</a> | <a href="all.html">همه لینک‌ها</a> | <a href="contact.html">تماس با ما</a>
+        <a href="index.html">خانه</a> | <a href="all.html">همه لینک‌ها</a> | <a href="contact.html">تماس با ما</a> | <a href="about.html">درباره ما</a> | <a href="privacy.html">حریم خصوصی</a>
     </p>
-</div>
-
-<!-- Monetag Social Bar -->
-<script src="https://pl29908820.effectivecpmnetwork.com/66/05/a0/6605a0daa2f87af6ecfbed96472b36b9.js"></script>
+</footer>
 
 <script>
-    // تنظیم تاریخ خودکار
+    // =============== تاریخ خودکار ===============
     document.getElementById('hot-date').innerText = `(${new Date().toLocaleDateString('fa-IR', { weekday: 'long', day: 'numeric', month: 'long' })})`;
 
-    // باز و بسته کردن اخبار
+    // =============== باز و بسته کردن اخبار ===============
     function toggleHotNews() {
         const content = document.getElementById('hot-news-content');
         const arrow = document.getElementById('hot-arrow');
+        const btn = document.querySelector('.hot-news-btn');
+        
         if (content.style.maxHeight && content.style.maxHeight !== '0px') {
             content.style.maxHeight = '0px';
             arrow.style.transform = 'rotate(0deg)';
+            btn.setAttribute('aria-expanded', 'false');
         } else {
             content.style.maxHeight = content.scrollHeight + 'px';
             arrow.style.transform = 'rotate(180deg)';
+            btn.setAttribute('aria-expanded', 'true');
         }
     }
 
-    // تغییر تم
+    // =============== تغییر تم ===============
     function toggleTheme() {
         document.body.classList.toggle('dark-mode');
         const isDark = document.body.classList.contains('dark-mode');
@@ -614,36 +405,24 @@
         document.getElementById('theme-btn').innerText = '☀️';
     }
 
-    // جستجوی هوشمند
-    function searchCards() {
-        const query = document.getElementById('search-input').value.toLowerCase().trim();
-        const sections = document.querySelectorAll('.category-section');
-
-        sections.forEach(section => {
-            let hasMatch = false;
-            const cards = section.querySelectorAll('.card');
+    // =============== جستجوی هوشمند با Debounce (بهینه) ===============
+    let searchTimeout;
+    document.getElementById('search-input').addEventListener('input', (e) => {
+        clearTimeout(searchTimeout);
+        searchTimeout = setTimeout(() => {
+            const query = e.target.value.toLowerCase().trim();
+            const cards = document.querySelectorAll('.card');
             
             cards.forEach(card => {
                 const text = card.innerText.toLowerCase();
                 if (text.includes(query)) {
                     card.style.display = 'flex';
-                    hasMatch = true;
                 } else {
                     card.style.display = 'none';
                 }
             });
-
-            if (query === '') {
-                section.style.display = 'block';
-            } else {
-                if (hasMatch) {
-                    section.style.display = 'block';
-                } else {
-                    section.style.display = 'none';
-                }
-            }
-        });
-    }
+        }, 200); // 200 میلی‌ثانیه تاخیر برای جلوگیری از لگ
+    });
 </script>
 </body>
-    </html>
+                </html>
