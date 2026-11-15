@@ -1,1 +1,483 @@
-<!DOCTYPE html><html lang="fa"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>🚂 قطار | رهیلا</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial;background:radial-gradient(circle at center,#0a1a1a,#1a4a4a,#66ccaa);color:#fff;text-align:center;padding:15px;min-height:100vh}.header{background:rgba(255,255,255,.08);backdrop-filter:blur(20px);border-radius:25px;padding:20px;margin-bottom:15px}.header h1{color:#ffd700;font-size:22px}.back-btn{display:inline-block;background:rgba(255,255,255,.15);color:#fff;padding:8px 20px;border-radius:20px;text-decoration:none;margin:10px 0;font-size:14px}.section-title{color:#ffd700;font-size:18px;margin:20px 0 10px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.card{background:rgba(255,255,255,.05);border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,.1);text-align:right}.card h3{font-size:15px;color:#ffd700}</style></head><body><div class="header"><h1>🚂 قطار</h1></div><a href="index.html" class="back-btn">🔙 برگشت</a><div class="section-title">🚂 مسیرها</div><div class="grid"><div class="card"><h3>تهران-مشهد</h3></div><div class="card"><h3>تهران-شیراز</h3></div><div class="card"><h3>تهران-تبریز</h3></div><div class="card"><h3>تهران-اهواز</h3></div></div><p style="margin-top:15px"><a href="index.html" style="color:#ffd700">🔙 برگشت</a></p></body></html>
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="راهنمای جامع سفر با قطار در ایران + شبیه‌ساز خرید بلیت و اطلاعات ایستگاه‌های ۱۳ شهر بزرگ">
+<meta name="keywords" content="قطار, بلیت قطار, ایستگاه راه‌آهن, سفر با قطار, رهیلاناب">
+<meta name="theme-color" content="#0a0a1a">
+<title>🚂 قطار | راهنمای سفر و شبیه‌ساز بلیت - رهیلاناب</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚂</text></svg>">
+<link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+<style>
+:root{
+  --bg1:#070716;--bg2:#12082e;--bg3:#040416;
+  --fg:#eaf6ff;--muted:#9bb0c9;
+  --cyan:#00f5ff;--magenta:#ff00aa;--gold:#ffcc00;--green:#00ffa3;
+  --glass:rgba(255,255,255,.05);--border:rgba(0,245,255,.18);
+  --card:rgba(10,15,35,.65);
+  --shadow:0 10px 40px rgba(0,245,255,.15);
+}
+body.light{
+  --bg1:#eef3ff;--bg2:#dde7ff;--bg3:#f7faff;
+  --fg:#0e1a2b;--muted:#465e78;
+  --cyan:#0090a8;--magenta:#c4007f;--gold:#b38300;--green:#008f5a;
+  --glass:rgba(255,255,255,.7);--border:rgba(0,144,168,.25);
+  --card:rgba(255,255,255,.85);
+  --shadow:0 10px 40px rgba(0,144,168,.15);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Vazirmatn',system-ui,sans-serif;
+  background:radial-gradient(circle at 20% 10%,var(--bg2),var(--bg1) 60%),var(--bg3);
+  color:var(--fg);min-height:100vh;line-height:1.9;overflow-x:hidden;
+  transition:background .4s,color .4s;
+}
+body::before{
+  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(circle at 80% 20%,rgba(255,0,170,.12),transparent 40%),
+    radial-gradient(circle at 15% 80%,rgba(0,245,255,.12),transparent 45%);
+}
+#progress{
+  position:fixed;top:0;right:0;height:4px;width:0%;
+  background:linear-gradient(90deg,var(--cyan),var(--magenta),var(--gold));
+  z-index:999;box-shadow:0 0 15px var(--cyan);transition:width .1s;
+}
+/* NAV */
+nav{
+  position:sticky;top:0;z-index:100;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:12px 20px;background:rgba(7,7,22,.75);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border);
+}
+body.light nav{background:rgba(255,255,255,.7)}
+nav .logo{font-weight:800;font-size:1.15rem;background:linear-gradient(90deg,var(--cyan),var(--magenta));-webkit-background-clip:text;background-clip:text;color:transparent}
+nav .links{display:flex;gap:18px;align-items:center;font-size:.92rem}
+nav a{color:var(--fg);text-decoration:none;opacity:.85;transition:.2s}
+nav a:hover{opacity:1;color:var(--cyan)}
+#themeBtn{
+  background:var(--glass);border:1px solid var(--border);color:var(--fg);
+  padding:6px 12px;border-radius:10px;cursor:pointer;font-family:inherit;font-size:.9rem;transition:.2s;
+}
+#themeBtn:hover{border-color:var(--cyan);box-shadow:0 0 12px var(--cyan)}
+@media(max-width:640px){nav .links a:not(.keep){display:none}}
+/* HERO */
+.hero{
+  position:relative;text-align:center;padding:80px 20px 60px;overflow:hidden;
+}
+.hero h1{
+  font-size:clamp(2rem,6vw,3.5rem);font-weight:900;line-height:1.2;
+  background:linear-gradient(120deg,var(--cyan),var(--magenta),var(--gold));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 0 20px rgba(0,245,255,.35));
+}
+.hero p{color:var(--muted);max-width:640px;margin:18px auto 0;font-size:1.05rem}
+.track{
+  margin-top:30px;position:relative;height:60px;overflow:hidden;
+  border-top:2px dashed rgba(0,245,255,.25);border-bottom:2px dashed rgba(0,245,255,.25);
+}
+.track .train{
+  position:absolute;top:50%;transform:translateY(-50%);
+  font-size:2rem;animation:ride 14s linear infinite;
+  filter:drop-shadow(0 0 12px var(--cyan));
+}
+@keyframes ride{0%{left:-10%}100%{left:110%}}
+/* TTS */
+.tts-wrap{margin-top:26px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  background:linear-gradient(135deg,var(--cyan),var(--magenta));
+  color:#001018;border:none;padding:12px 22px;border-radius:14px;
+  font-family:inherit;font-weight:700;font-size:.95rem;cursor:pointer;
+  box-shadow:0 8px 25px rgba(0,245,255,.3);transition:.25s;
+}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 35px rgba(255,0,170,.4)}
+.btn.ghost{background:var(--glass);color:var(--fg);border:1px solid var(--border);box-shadow:none}
+.btn.ghost:hover{border-color:var(--cyan);box-shadow:0 0 15px var(--cyan)}
+/* SECTION */
+section{padding:60px 20px;max-width:1150px;margin:0 auto}
+.section-title{
+  text-align:center;font-size:clamp(1.5rem,4vw,2.1rem);font-weight:800;margin-bottom:12px;
+  background:linear-gradient(90deg,var(--cyan),var(--magenta));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.section-sub{text-align:center;color:var(--muted);margin-bottom:40px}
+/* CARD */
+.card{
+  background:var(--card);border:1px solid var(--border);border-radius:20px;
+  padding:26px;box-shadow:var(--shadow);backdrop-filter:blur(12px);
+}
+/* SIMULATOR */
+.sim-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:24px}
+@media(max-width:820px){.sim-grid{grid-template-columns:1fr}}
+.field{margin-bottom:16px}
+.field label{display:block;margin-bottom:6px;font-size:.9rem;color:var(--muted);font-weight:600}
+.field select,.field input{
+  width:100%;padding:12px 14px;border-radius:12px;font-family:inherit;font-size:.95rem;
+  background:var(--glass);border:1px solid var(--border);color:var(--fg);
+  transition:.2s;outline:none;
+}
+.field select:focus,.field input:focus{border-color:var(--cyan);box-shadow:0 0 12px rgba(0,245,255,.3)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.result{
+  background:linear-gradient(135deg,rgba(0,245,255,.08),rgba(255,0,170,.08));
+  border:1px solid var(--border);border-radius:18px;padding:22px;
+  display:flex;flex-direction:column;gap:12px;justify-content:center;
+}
+.result .rline{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed rgba(0,245,255,.15);font-size:.95rem}
+.result .rline:last-child{border:none}
+.result .rline b{color:var(--cyan)}
+.result .total{font-size:1.4rem;font-weight:900;color:var(--green);text-align:center;margin-top:8px;text-shadow:0 0 15px rgba(0,255,163,.4)}
+.badge{display:inline-block;padding:3px 10px;border-radius:8px;font-size:.78rem;font-weight:700;background:rgba(255,204,0,.15);color:var(--gold);border:1px solid rgba(255,204,0,.3)}
+/* STATIONS */
+.stations{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px}
+.station{
+  background:var(--card);border:1px solid var(--border);border-radius:18px;padding:20px;
+  cursor:pointer;transition:.25s;position:relative;overflow:hidden;
+}
+.station:hover{transform:translateY(-4px);border-color:var(--cyan);box-shadow:0 12px 30px rgba(0,245,255,.2)}
+.station::before{
+  content:"";position:absolute;top:0;right:0;width:60px;height:60px;
+  background:radial-gradient(circle,rgba(0,245,255,.25),transparent 70%);
+  filter:blur(10px);
+}
+.station .emoji{font-size:2rem}
+.station h3{font-size:1.1rem;margin:8px 0 4px}
+.station p{font-size:.85rem;color:var(--muted)}
+.station .info{display:none;margin-top:12px;padding-top:12px;border-top:1px dashed var(--border);font-size:.85rem}
+.station.open .info{display:block}
+/* GUIDE */
+.guide{max-width:850px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
+details.acc{
+  background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:.25s;
+}
+details.acc[open]{border-color:var(--cyan);box-shadow:0 0 25px rgba(0,245,255,.15)}
+details.acc summary{
+  padding:18px 22px;cursor:pointer;font-weight:700;font-size:1rem;list-style:none;
+  display:flex;justify-content:space-between;align-items:center;
+}
+details.acc summary::-webkit-details-marker{display:none}
+details.acc summary::after{content:"＋";font-size:1.2rem;color:var(--cyan);transition:.3s}
+details.acc[open] summary::after{transform:rotate(45deg)}
+details.acc .body{padding:0 22px 20px;color:var(--muted);font-size:.95rem;line-height:2}
+/* FOOTER */
+footer{
+  text-align:center;padding:40px 20px;color:var(--muted);font-size:.85rem;
+  border-top:1px solid var(--border);margin-top:40px;
+}
+footer a{color:var(--cyan);text-decoration:none}
+/* TOAST */
+#toast{
+  position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(120%);
+  background:linear-gradient(135deg,var(--cyan),var(--magenta));color:#001018;
+  padding:14px 24px;border-radius:14px;font-weight:700;font-size:.95rem;
+  box-shadow:0 10px 30px rgba(0,245,255,.4);transition:.4s;z-index:1000;
+}
+#toast.show{transform:translateX(-50%) translateY(0)}
+</style>
+</head>
+<body>
+
+<div id="progress"></div>
+
+<nav>
+  <div class="logo">🚂 رهیلاناب</div>
+  <div class="links">
+    <a href="#simulator" class="keep">شبیه‌ساز</a>
+    <a href="#stations">ایستگاه‌ها</a>
+    <a href="#guide">راهنما</a>
+    <a href="index.html">خانه</a>
+    <button id="themeBtn">🌙</button>
+  </div>
+</nav>
+
+<header class="hero">
+  <h1>سفر با قطار، از پنجره‌ی ایران</h1>
+  <p>از ریل‌های تهران تا افق‌های مشهد؛ با شبیه‌ساز خرید بلیت، اطلاعات دقیق ۱۳ ایستگاه بزرگ و راهنمای کامل سفر، مسیرت رو برنامه‌ریزی کن.</p>
+  <div class="track"><span class="train">🚂💨</span></div>
+  <div class="tts-wrap">
+    <button class="btn" onclick="speakIntro()">🔊 پخش صوتی معرفی</button>
+    <button class="btn ghost" onclick="document.getElementById('simulator').scrollIntoView()">🎫 شبیه‌ساز بلیت</button>
+  </div>
+</header>
+
+<!-- SIMULATOR -->
+<section id="simulator">
+  <h2 class="section-title">شبیه‌ساز خرید بلیت</h2>
+  <p class="section-sub">مبدا، مقصد، تاریخ و کلاس سفر رو انتخاب کن — قیمت تقریبی، زمان و مسیر رو ببین</p>
+
+  <div class="sim-grid">
+    <div class="card">
+      <div class="field">
+        <label>🚩 مبدا</label>
+        <select id="from"></select>
+      </div>
+      <div class="field">
+        <label>🎯 مقصد</label>
+        <select id="to"></select>
+      </div>
+      <div class="row">
+        <div class="field">
+          <label>📅 تاریخ حرکت</label>
+          <input type="date" id="date">
+        </div>
+        <div class="field">
+          <label>👥 تعداد مسافر</label>
+          <input type="number" id="pax" min="1" max="10" value="1">
+        </div>
+      </div>
+      <div class="field">
+        <label>💺 کلاس سفر</label>
+        <select id="cls">
+          <option value="economy">اقتصادی (۴ نفره)</option>
+          <option value="lux" selected>لوکس (۴ نفره VIP)</option>
+          <option value="first">فرست کلاس (۶ نفره)</option>
+        </select>
+      </div>
+      <div class="field" style="display:flex;gap:10px;align-items:center">
+        <input type="checkbox" id="round" style="width:auto">
+        <label for="round" style="margin:0;cursor:pointer">🔄 بلیت رفت و برگشت (۵٪ تخفیف)</label>
+      </div>
+      <button class="btn" style="width:100%;justify-content:center" onclick="calcTicket()">🎫 محاسبه‌ی قیمت</button>
+    </div>
+
+    <div class="result" id="result">
+      <div class="rline"><span>مسیر:</span><b id="rRoute">—</b></div>
+      <div class="rline"><span>مسافت تقریبی:</span><b id="rDist">—</b></div>
+      <div class="rline"><span>مدت سفر:</span><b id="rTime">—</b></div>
+      <div class="rline"><span>کلاس:</span><b id="rClass">—</b></div>
+      <div class="rline"><span>تعداد:</span><b id="rPax">—</b></div>
+      <div class="rline"><span>تاریخ:</span><b id="rDate">—</b></div>
+      <div class="total" id="rTotal">۰ تومان</div>
+      <span class="badge">⚠️ قیمت‌ها تخمینی است</span>
+    </div>
+  </div>
+</section>
+
+<!-- STATIONS -->
+<section id="stations">
+  <h2 class="section-title">ایستگاه‌های قطار در ۱۳ شهر</h2>
+  <p class="section-sub">روی هر کارت کلیک کن تا اطلاعات کامل ایستگاه رو ببینی</p>
+  <div class="stations" id="stationsGrid"></div>
+</section>
+
+<!-- GUIDE -->
+<section id="guide">
+  <h2 class="section-title">راهنمای کامل سفر با قطار</h2>
+  <p class="section-sub">هر چیزی که برای یک سفر ریلی خوب باید بدونی</p>
+  <div class="guide">
+    <details class="acc" open>
+      <summary>🧳 چطور بار سفر ببندم؟</summary>
+      <div class="body">
+        برای سفرهای ریلی، چمدان کوچک (زیر ۶۰ لیتر) بهترین گزینه است. وسایل ضروری مثل شارژر، پاوربانک، ماسک خواب، بالش سفری و یک بطری آب کوچک همراه داشته باش. قطارهای VIP تهران-مشهد معمولاً پذیرایی و پتوی مسافرتی دارند، اما برای مسیرهای طولانی بهتره خودت هم یک شال یا پتوی سبک ببری.
+      </div>
+    </details>
+    <details class="acc">
+      <summary>🍱 غذا و پذیرایی در قطار</summary>
+      <div class="body">
+        قطارهای فرست کلاس و لوکس معمولاً یک یا دو وعده غذایی (صبحانه + ناهار/شام) سرو می‌کنند. در قطارهای اقتصادی، رستوران قطار فعال است و می‌تونی غذای گرم سفارش بدی. پیشنهاد می‌کنم تنقلات سبک، میوه و آب همراه داشته باشی — مخصوصاً اگر رژیم خاصی داری.
+      </div>
+    </details>
+    <details class="acc">
+      <summary>⏰ بهترین زمان رزرو بلیت</summary>
+      <div class="body">
+        برای مسیرهای پرترافیک مثل تهران-مشهد و تهران-شیراز، حداقل ۲ تا ۳ هفته قبل اقدام کن. اپلیکیشن‌های رسمی مثل «ایران‌ریل» و آژانس‌های معتبر، بلیت‌ها رو معمولاً یک ماه قبل از حرکت باز می‌کنند. ایام تعطیل (نوروز، محرم، عید فطر) قیمت‌ها و تقاضا به شدت بالا می‌رود.
+      </div>
+    </details>
+    <details class="acc">
+      <summary>🎒 تجربه‌های خاص سفر ریلی</summary>
+      <div class="body">
+        قطارهای لوکس «فدک» و «زرین» روی مسیر تهران-مشهد تجربه‌ای شبیه هتل روی ریل ارائه می‌دهند. مسیرهای شمالی (تهران-رشت-ساری) با مناظر جنگلی و کوهستانی از زیباترین مسیرهای ریلی ایران هستند. مسیر تهران-بندرعباس هم برای عاشقان گرمای جنوب و دریا بی‌نظیر است.
+      </div>
+    </details>
+    <details class="acc">
+      <summary>📱 نکات فنی و کاربردی</summary>
+      <div class="body">
+        قبل از حرکت، شارژ گوشی و پاوربانک رو کامل کن. برخی قطارها پریز برق در هر کوپه دارند اما بهتره سیم شارژر چندکاره همراه داشته باشی. سرویس اینترنت در قطار ممکنه ضعیف باشه — فیلم، پادکست و موسیقی موردعلاقه‌ت رو دانلود کن. برای صندلی‌های کنار پنجره از قبل رزرو کن.
+      </div>
+    </details>
+  </div>
+</section>
+
+<footer>
+  <p>🚂 رهیلاناب — دانشنامه‌ی زندگی هوشمند</p>
+  <p style="margin-top:8px">ساخته شده با ❤️ برای مسافران ایران · <a href="index.html">خانه</a> · <a href="about.html">درباره ما</a> · <a href="contact.html">تماس</a></p>
+</footer>
+
+<div id="toast"></div>
+
+<script>
+/* ============ THEME ============ */
+const themeBtn = document.getElementById('themeBtn');
+function setTheme(t){
+  document.body.classList.toggle('light', t === 'light');
+  themeBtn.textContent = t === 'light' ? '☀️' : '🌙';
+  localStorage.setItem('railTheme', t);
+}
+const savedTheme = localStorage.getItem('railTheme') || 'dark';
+setTheme(savedTheme);
+themeBtn.addEventListener('click', () => {
+  setTheme(document.body.classList.contains('light') ? 'dark' : 'light');
+});
+
+/* ============ PROGRESS ============ */
+window.addEventListener('scroll', () => {
+  const h = document.documentElement;
+  const p = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+  document.getElementById('progress').style.width = p + '%';
+});
+
+/* ============ CITIES DATA ============ */
+const CITIES = [
+  {id:'tehran',name:'تهران',emoji:'🏙️',station:'راه‌آهن تهران (مرکزی)',lat:35.6892,lon:51.3890,daily:130,desc:'بزرگ‌ترین ایستگاه ریلی کشور، قطب اصلی تمام خطوط شمالی، جنوبی و شرقی.'},
+  {id:'mashhad',name:'مشهد',emoji:'🕌',station:'راه‌آهن مشهد',lat:36.2605,lon:59.6168,daily:95,desc:'دومین ایستگاه پرترافیک کشور، مقصد اصلی زیارتی و مسیر شرقی.'},
+  {id:'isfahan',name:'اصفهان',emoji:'🏛️',station:'راه‌آهن اصفهان',lat:32.6546,lon:51.6680,daily:55,desc:'دروازه‌ی فلات مرکزی، اتصال تهران به شیراز و یزد.'},
+  {id:'shiraz',name:'شیراز',emoji:'🌸',station:'راه‌آهن شیراز',lat:29.5918,lon:52.5837,daily:50,desc:'مقصد تاریخی و فرهنگی جنوب، مسیر مستقیم تهران-شیراز.'},
+  {id:'tabriz',name:'تبریز',emoji:'❄️',station:'راه‌آهن تبریز',lat:38.0800,lon:46.2919,daily:45,desc:'مرکز شمال‌غرب، اتصال به مرز جلفا و خط آهن به سمت ترکیه.'},
+  {id:'ahvaz',name:'اهواز',emoji:'🌴',station:'راه‌آهن اهواز',lat:31.3183,lon:48.6706,daily:40,desc:'قطب ریلی خوزستان، مسیرهای کارون و بندر امام.'},
+  {id:'qom',name:'قم',emoji:'🕌',station:'راه‌آهن قم',lat:34.6416,lon:50.8746,daily:70,desc:'گلوگاه اصلی مسیرهای جنوبی و شرقی، پرترافیک‌ترین تقاطع ریلی.'},
+  {id:'kerman',name:'کرمان',emoji:'🏜️',station:'راه‌آهن کرمان',lat:30.2839,lon:57.0834,daily:30,desc:'دروازه‌ی کویر لوت، مسیرهای تهران-کرمان و کرمان-بندرعباس.'},
+  {id:'yazd',name:'یزد',emoji:'🕌',station:'راه‌آهن یزد',lat:31.8974,lon:54.3569,daily:35,desc:'میراث جهانی، ایستگاه میانی خط تهران-بندرعباس.'},
+  {id:'rasht',name:'رشت',emoji:'🌾',station:'راه‌آهن رشت',lat:37.2808,lon:49.5832,daily:25,desc:'قلب گیلان، اتصال تهران به شمال از طریق مسیر جدید.'},
+  {id:'sari',name:'ساری',emoji:'🌲',station:'راه‌آهن ساری',lat:36.5633,lon:53.0601,daily:40,desc:'دروازه‌ی مازندران، مسیر ریلی دیدنی از دل جنگل.'},
+  {id:'karaj',name:'کرج',emoji:'🏙️',station:'راه‌آهن کرج',lat:35.8400,lon:50.9391,daily:85,desc:'شهر اقماری تهران، پرترددترین مسیر حومه‌ای کشور.'},
+  {id:'bandarabbas',name:'بندرعباس',emoji:'⚓',station:'راه‌آهن بندرعباس',lat:27.1832,lon:56.2666,daily:20,desc:'انتهای جنوبی شبکه ریلی، دروازه‌ی خلیج فارس.'}
+];
+
+/* ============ POPULATE SELECTS ============ */
+const fromSel = document.getElementById('from');
+const toSel = document.getElementById('to');
+CITIES.forEach(c => {
+  fromSel.innerHTML += `<option value="${c.id}">${c.emoji} ${c.name}</option>`;
+  toSel.innerHTML += `<option value="${c.id}">${c.emoji} ${c.name}</option>`;
+});
+fromSel.value = 'tehran';
+toSel.value = 'mashhad';
+const today = new Date().toISOString().split('T')[0];
+document.getElementById('date').value = today;
+document.getElementById('date').min = today;
+
+/* ============ DISTANCE (Haversine × 1.25) ============ */
+function railDistance(a, b){
+  if(a === b) return 0;
+  const A = CITIES.find(c => c.id === a);
+  const B = CITIES.find(c => c.id === b);
+  const R = 6371;
+  const dLat = (B.lat - A.lat) * Math.PI / 180;
+  const dLon = (B.lon - A.lon) * Math.PI / 180;
+  const x = Math.sin(dLat/2)**2 + Math.cos(A.lat*Math.PI/180) * Math.cos(B.lat*Math.PI/180) * Math.sin(dLon/2)**2;
+  const km = 2 * R * Math.atan2(Math.sqrt(x), Math.sqrt(1-x));
+  return Math.round(km * 1.25);
+}
+
+/* ============ PRICING ============ */
+const CLASSES = {
+  economy: {name:'اقتصادی', perKm: 420},
+  lux:     {name:'لوکس (VIP)', perKm: 700},
+  first:   {name:'فرست کلاس', perKm: 1050}
+};
+
+function fmt(n){ return n.toLocaleString('fa-IR'); }
+
+function calcTicket(){
+  const from = fromSel.value, to = toSel.value;
+  const pax = Math.max(1, Math.min(10, parseInt(document.getElementById('pax').value) || 1));
+  const cls = document.getElementById('cls').value;
+  const round = document.getElementById('round').checked;
+  const date = document.getElementById('date').value;
+
+  if(from === to){
+    showToast('مبدا و مقصد نمی‌توانند یکی باشند!');
+    return;
+  }
+  if(!date){
+    showToast('لطفاً تاریخ حرکت را انتخاب کن!');
+    return;
+  }
+
+  const dist = railDistance(from, to);
+  const fromCity = CITIES.find(c => c.id === from);
+  const toCity   = CITIES.find(c => c.id === to);
+
+  // مدت زمان: 85 km/h + 30 دقیقه بافر
+  const hours = dist / 85 + 0.5;
+  const hh = Math.floor(hours);
+  const mm = Math.round((hours - hh) * 60);
+
+  // قیمت پایه
+  let basePerPerson = dist * CLASSES[cls].perKm;
+  // حداقل قیمت
+  if(basePerPerson < 50000) basePerPerson = 50000;
+
+  let total = basePerPerson * pax;
+  if(round) total *= 2 * 0.95; // 5% تخفیف رفت و برگشت
+  if(pax >= 3) total *= 0.92;  // 8% تخفیف خانوادگی
+  total = Math.round(total / 1000) * 1000;
+
+  document.getElementById('rRoute').textContent = `${fromCity.name} ← ${toCity.name}`;
+  document.getElementById('rDist').textContent = `${fmt(dist)} کیلومتر`;
+  document.getElementById('rTime').textContent = `≈ ${fmt(hh)} ساعت و ${fmt(mm)} دقیقه`;
+  document.getElementById('rClass').textContent = CLASSES[cls].name;
+  document.getElementById('rPax').textContent = `${fmt(pax)} نفر${round ? ' (رفت و برگشت)' : ''}`;
+  document.getElementById('rDate').textContent = new Date(date).toLocaleDateString('fa-IR', {year:'numeric',month:'long',day:'numeric'});
+  document.getElementById('rTotal').textContent = `${fmt(total)} تومان`;
+
+  showToast('محاسبه انجام شد ✅');
+}
+
+/* ============ TOAST ============ */
+let toastTimer;
+function showToast(msg){
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('show'), 2800);
+}
+
+/* ============ STATIONS GRID ============ */
+const grid = document.getElementById('stationsGrid');
+CITIES.forEach(c => {
+  const el = document.createElement('div');
+  el.className = 'station';
+  el.innerHTML = `
+    <div class="emoji">${c.emoji}</div>
+    <h3>${c.name}</h3>
+    <p>${c.station}</p>
+    <div class="info">
+      <p style="margin-bottom:8px">${c.desc}</p>
+      <p style="color:var(--cyan);font-weight:700">🚆 ~${fmt(c.daily)} قطار در روز</p>
+      <p style="color:var(--gold)">📍 مختصات: ${c.lat.toFixed(2)}, ${c.lon.toFixed(2)}</p>
+    </div>
+  `;
+  el.addEventListener('click', () => el.classList.toggle('open'));
+  grid.appendChild(el);
+});
+
+/* ============ TTS (Persian) ============ */
+function speakIntro(){
+  if(!('speechSynthesis' in window)){
+    showToast('مرورگر شما از پخش صوتی پشتیبانی نمی‌کند');
+    return;
+  }
+  const text = "به صفحه‌ی قطار خوش آمدید. در این بخش می‌توانید مسیر سفر ریلی خود را انتخاب کنید، قیمت تقریبی بلیت را محاسبه کنید و با اطلاعات سیزده ایستگاه اصلی کشور آشنا شوید. سفر خوبی داشته باشید.";
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'fa-IR';
+  u.rate = 0.92;
+  u.pitch = 1.05;
+  const voices = speechSynthesis.getVoices();
+  const fa = voices.find(v => v.lang && v.lang.toLowerCase().startsWith('fa'));
+  if(fa) u.voice = fa;
+  speechSynthesis.cancel();
+  speechSynthesis.speak(u);
+  showToast('🔊 در حال پخش...');
+}
+// اگر صداها بعد از لود آمدند، cache می‌شوند (برای برخی مرورگرها)
+if('speechSynthesis' in window){
+  speechSynthesis.onvoiceschanged = () => {};
+}
+</script>
+</body>
+        </html>
