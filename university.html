@@ -1,1 +1,431 @@
-<!DOCTYPE html><html lang="fa"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>🎓 دانشگاه | رهیلا</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial;background:radial-gradient(circle at center,#0a1a1a,#1a4a4a,#66ccaa);color:#fff;text-align:center;padding:15px;min-height:100vh}.header{background:rgba(255,255,255,.08);backdrop-filter:blur(20px);border-radius:25px;padding:20px;margin-bottom:15px}.header h1{color:#ffd700;font-size:22px}.back-btn{display:inline-block;background:rgba(255,255,255,.15);color:#fff;padding:8px 20px;border-radius:20px;text-decoration:none;margin:10px 0;font-size:14px}.section-title{color:#ffd700;font-size:18px;margin:20px 0 10px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.card{background:rgba(255,255,255,.05);border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,.1);text-align:right}.card:active{background:rgba(255,215,0,.2)}.card h3{font-size:15px;color:#ffd700}</style></head><body><div class="header"><h1>🎓 دانشگاه و آموزش عالی</h1></div><a href="index.html" class="back-btn">🔙 برگشت</a><div class="section-title">🎓 دانشگاه‌ها</div><div class="grid"><div class="card"><h3>معتبرترین دانشگاه‌ها</h3></div><div class="card"><h3>بورس دانشگاه‌ها</h3></div><div class="card"><h3>اساتید معتبر</h3></div><div class="card"><h3>پایان‌نامه</h3></div><div class="card"><h3>رشته‌های دانشگاهی</h3></div><div class="card"><h3>انتخاب رشته</h3></div></div><div class="section-title">📚 منابع</div><div class="grid"><div class="card"><h3>منابع کنکور</h3></div><div class="card"><h3>کتاب‌های گاج</h3></div><div class="card"><h3>کتاب‌های خیلی سبز</h3></div><div class="card"><h3>بسته معلم خصوصی پرش</h3></div></div><p style="margin-top:15px"><a href="index.html" style="color:#ffd700">🔙 برگشت</a></p></body></html>
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>راهنمای جامع دانشگاه + علاقه‌یاب رشته | رهیلاناب</title>
+    <meta name="description" content="همه چیز درباره انتخاب دانشگاه؛ از معرفی برترین دانشگاه‌های ایران تا علاقه‌یاب رشته بر اساس شخصیت. راهنمای کامل دانشجویی در رهیلاناب.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎓</text></svg>">
+    
+    <!-- فونت وزیرمتن -->
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+    
+    <style>
+        /* ============== تم‌ها (سایبرپانک آکادمیک) ============== */
+        :root {
+            --bg-main: #0a0a14;
+            --bg-card: #12101f;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --primary: #8b5cf6;
+            --primary-dark: #6d28d9;
+            --accent: #00f5ff;
+            --gold: #fbbf24;
+            --warning: #ef4444;
+            --border: #2e2640;
+            --shadow: 0 10px 30px rgba(139, 92, 246, 0.15);
+            --gradient: linear-gradient(135deg, #8b5cf6, #00f5ff);
+        }
+
+        body.light-mode {
+            --bg-main: #f8fafc;
+            --bg-card: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --primary: #6d28d9;
+            --accent: #0284c7;
+            --gold: #b45309;
+            --warning: #b91c1c;
+            --border: #e2e8f0;
+            --shadow: 0 10px 30px rgba(109, 40, 217, 0.15);
+            --gradient: linear-gradient(135deg, #6d28d9, #0284c7);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; transition: background-color 0.3s, color 0.3s; }
+        
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background: radial-gradient(circle at 20% 10%, var(--bg-card), var(--bg-main) 60%);
+            color: var(--text-main);
+            line-height: 1.9;
+            font-size: 17px;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* ============== نوار پیشرفت ============== */
+        #progress-bar {
+            position: fixed; top: 0; left: 0; height: 4px; width: 0%;
+            background: var(--gradient); z-index: 9999;
+            box-shadow: 0 0 15px var(--accent); transition: width 0.1s;
+        }
+
+        /* ============== دکمه‌های شناور ============== */
+        .floating-controls {
+            position: fixed; top: 15px; left: 15px; z-index: 999;
+            display: flex; flex-direction: column; gap: 10px;
+        }
+        
+        .control-btn {
+            background: var(--bg-card); border: 1px solid var(--border);
+            color: var(--text-main); width: 50px; height: 50px;
+            border-radius: 50%; cursor: pointer; font-size: 20px;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: var(--shadow); backdrop-filter: blur(10px); transition: 0.3s;
+        }
+        .control-btn:hover { transform: scale(1.1); color: var(--accent); border-color: var(--accent); }
+        .control-btn.playing { background: var(--primary); color: #fff; }
+
+        /* ============== هدر ============== */
+        .header {
+            background: var(--gradient); color: #fff; padding: 90px 20px 60px;
+            text-align: center; border-radius: 0 0 40px 40px;
+            position: relative; overflow: hidden;
+            box-shadow: 0 10px 40px rgba(139, 92, 246, 0.3);
+        }
+        .header h1 { font-size: clamp(24px, 5vw, 38px); margin-bottom: 10px; position: relative; z-index: 1; font-weight: 900; }
+        .header p { font-size: 16px; opacity: 0.9; position: relative; z-index: 1; font-weight: bold; }
+
+        /* ============== انیمیشن کلاه فارغ‌التحصیلی 3D ============== */
+        .cap-container { display: flex; justify-content: center; margin-bottom: 20px; perspective: 1000px; }
+        .graduation-cap {
+            width: 100px; height: 100px; position: relative;
+            animation: floatCap 4s ease-in-out infinite; transform-style: preserve-3d;
+        }
+        .cap-top {
+            width: 100px; height: 100px; background: var(--bg-card); border: 3px solid var(--accent);
+            transform: rotateX(60deg) rotateZ(45deg); position: absolute; top: 0; left: 0;
+            box-shadow: 0 0 20px var(--accent);
+        }
+        .cap-base {
+            width: 50px; height: 40px; background: var(--primary); position: absolute;
+            top: 50px; left: 25px; border-radius: 5px; transform: rotateX(60deg) translateZ(-20px);
+            box-shadow: 0 0 15px var(--primary);
+        }
+        .tassel {
+            width: 4px; height: 40px; background: var(--gold); position: absolute;
+            top: 40px; right: 10px; transform-origin: top; animation: swing 2s infinite alternate;
+        }
+        @keyframes floatCap { 0%, 100% { transform: translateY(0) rotateY(-10deg); } 50% { transform: translateY(-15px) rotateY(10deg); } }
+        @keyframes swing { 0% { transform: rotate(15deg); } 100% { transform: rotate(-15deg); } }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; margin-top: -30px; }
+
+        /* ============== کارت‌ها ============== */
+        .card {
+            background: var(--bg-card); border-radius: 24px; padding: 30px;
+            margin-bottom: 30px; box-shadow: var(--shadow); border: 1px solid var(--border);
+        }
+        .card h2 { font-size: 22px; color: var(--primary); margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+
+        /* ============== باکس BLUF ============== */
+        .box-bluf {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(0, 245, 255, 0.05));
+            border: 2px solid var(--accent); border-radius: 16px; padding: 25px; margin-bottom: 30px;
+        }
+        .box-bluf h3 { color: var(--accent); font-size: 20px; margin-bottom: 10px; }
+        .box-bluf p { font-weight: bold; font-size: 16px; }
+
+        /* ============== علاقه‌یاب ============== */
+        .advisor-box { background: rgba(255, 255, 255, 0.02); padding: 25px; border-radius: 20px; border: 1px dashed var(--primary); }
+        .advisor-step { margin-bottom: 20px; }
+        .advisor-step label { display: block; font-weight: bold; margin-bottom: 10px; color: var(--text-main); }
+        .advisor-step select {
+            width: 100%; padding: 12px 15px; border-radius: 12px; border: 1px solid var(--border);
+            background: var(--bg-main); color: var(--text-main); font-family: inherit; font-size: 16px; outline: none;
+            cursor: pointer; transition: 0.3s;
+        }
+        .advisor-step select:focus { border-color: var(--accent); box-shadow: 0 0 10px rgba(0,245,255,0.3); }
+        
+        #advisor-result { display: none; margin-top: 25px; padding: 25px; background: rgba(139, 92, 246, 0.08); border-right: 5px solid var(--accent); border-radius: 12px; animation: slideUp 0.5s ease; }
+        #advisor-result h3 { color: var(--accent); margin-bottom: 10px; font-size: 20px; }
+        #advisor-result p { font-size: 16px; margin-bottom: 10px; color: var(--text-main); }
+        #advisor-result strong { color: var(--gold); font-size: 18px; }
+        
+        /* باکس هشدار سلب مسئولیت */
+        .disclaimer {
+            margin-top: 15px; padding: 15px; background: rgba(239, 68, 68, 0.1);
+            border: 1px solid var(--warning); border-radius: 10px; font-size: 14px; color: var(--warning); font-weight: bold;
+        }
+        
+        @keyframes slideUp { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* ============== جدول ============== */
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 15px; border-radius: 12px; overflow: hidden; }
+        th { background: var(--primary); color: #fff; padding: 15px; text-align: center; font-weight: 900; }
+        td { padding: 12px; text-align: center; border-bottom: 1px solid var(--border); background: var(--bg-card); font-weight: 500; }
+        tr:hover td { background: var(--bg-main); color: var(--accent); }
+
+        /* ============== آکاردئون ============== */
+        .accordion { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 12px; overflow: hidden; }
+        .accordion-btn { background: none; border: none; width: 100%; padding: 18px; text-align: right; font-family: inherit; font-size: 16px; font-weight: bold; color: var(--text-main); cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .accordion-btn:hover { color: var(--primary); }
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; padding: 0 18px; color: var(--text-muted); font-size: 15px; }
+        .accordion.active .accordion-content { max-height: 500px; padding-bottom: 18px; }
+        .arrow { transition: transform 0.3s; color: var(--accent); }
+        .accordion.active .arrow { transform: rotate(180deg); }
+
+        .btn { display: inline-block; background: var(--gradient); color: #fff; padding: 14px 30px; border-radius: 12px; border: none; text-decoration: none; font-weight: 900; font-size: 16px; cursor: pointer; transition: 0.3s; width: 100%; text-align: center; box-shadow: 0 5px 20px rgba(139, 92, 246, 0.3); }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0, 245, 255, 0.5); }
+        
+        .footer { text-align: center; padding: 30px; color: var(--text-muted); font-size: 14px; border-top: 1px solid var(--border); margin-top: 40px; }
+        .footer a { color: var(--primary); text-decoration: none; }
+
+        /* ============== انیمیشن اسکرول ============== */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<div class="floating-controls">
+    <button class="control-btn" id="tts-btn" onclick="toggleSpeech()" title="گوش دادن">
+        <span id="tts-icon">🔊</span>
+    </button>
+    <button class="control-btn" onclick="toggleTheme()" title="تاریک/روشن">
+        <span id="theme-icon">🌙</span>
+    </button>
+</div>
+
+<div class="header">
+    <div class="cap-container">
+        <div class="graduation-cap">
+            <div class="cap-top"></div>
+            <div class="cap-base"></div>
+            <div class="tassel"></div>
+        </div>
+    </div>
+    <h1>🎓 مسیر دانشگاه</h1>
+    <p>انتخاب رشته و دانشگاه، اولین قدم برای آینده‌ای درخشان</p>
+</div>
+
+<div class="container" id="main-content">
+
+    <!-- BLUF -->
+    <div class="card box-bluf reveal">
+        <h3>⚡ جواب سریع در ۳ خط:</h3>
+        <p>
+            ۱. قبل از انتخاب رشته، <strong>علاقه و بازار کار</strong> رو با هم بسنج، نه فقط رتبه‌ات رو.<br>
+            ۲. برای مهاجرت یا کارهای تحقیقاتی، <strong>دانشگاه‌های برتر (رتبه‌های زیر ۵۰۰)</strong> اولویت دارن.<br>
+            ۳. اگه دنبال مهارت و کار سریع هستی، <strong>دانشگاه‌های علمی-کاربردی و فنی-حرفه‌ای</strong> گزینه‌های بهتری هستن.
+        </p>
+    </div>
+
+    <!-- علاقه‌یاب رشته -->
+    <div class="card reveal">
+        <h2>🧭 علاقه‌یاب و تطبیق‌دهنده رشته</h2>
+        <p style="margin-bottom: 20px; color: var(--text-muted);">این ابزار صرفاً برای آشنایی اولیه با رشته‌های متناسب با شخصیت شماست:</p>
+        
+        <div class="advisor-box">
+            <div class="advisor-step">
+                <label>۱. کدوم درس رو بیشتر دوست داری؟</label>
+                <select id="fav-subject">
+                    <option value="math">📐 ریاضی و فیزیک (محاسبات و منطق)</option>
+                    <option value="bio">🧬 زیست و شیمی (موجودات زنده و آزمایش)</option>
+                    <option value="lit">📖 ادبیات و هنر (خلاقیت و بیان)</option>
+                    <option value="biz">💼 اقتصاد و علوم اجتماعی (مدیریت و ارتباطات)</option>
+                </select>
+            </div>
+
+            <div class="advisor-step">
+                <label>۲. سبک یادگیری و کار کردن شما چیه؟</label>
+                <select id="learning-style">
+                    <option value="theory">📚 مطالعه عمیق، تئوری و تحلیل داده</option>
+                    <option value="practical">🛠️ کار عملی، ساخت و ساز و آزمایش</option>
+                    <option value="creative">🎨 طراحی، ایده‌پردازی و خلق اثر</option>
+                    <option value="people">🗣️ تعامل با مردم، مدیریت و رهبری تیم</option>
+                </select>
+            </div>
+
+            <button class="btn" onclick="showAdvisorResult()">🔍 مشاهده رشته‌های پیشنهادی</button>
+
+            <div id="advisor-result">
+                <h3>💡 پیشنهاد رهیلاناب:</h3>
+                <p id="result-text"></p>
+                
+                <!-- باکس سلب مسئولیت -->
+                <div class="disclaimer">
+                    ⚠️ <strong>هشدار مهم:</strong> این نتیجه‌گیری صرفاً بر اساس یک الگوریتم ساده (درخت تصمیم‌گیری) و برای آشنایی اولیه است. انتخاب نهایی رشته حتماً باید با مطالعه دفترچه سازمان سنجش، مشورت با خانواده و مشاوران تحصیلی متخصص انجام شود. رهیلاناب هیچ مسئولیتی در قبال انتخاب نهایی شما ندارد.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- جدول برترین دانشگاه‌ها -->
+    <div class="card reveal">
+        <h2>🏆 برترین دانشگاه‌های ایران (بر اساس رتبه‌بندی داخلی)</h2>
+        <table>
+            <thead>
+                <tr><th>دانشگاه</th><th>شهر</th><th>نقطه قوت اصلی</th><th>مناسب برای</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>دانشگاه تهران</strong></td><td>تهران</td><td>تنوع رشته‌ها، اعتبار بین‌المللی</td><td>پژوهش و تحصیلات تکمیلی</td></tr>
+                <tr><td><strong>دانشگاه صنعتی شریف</strong></td><td>تهران</td><td>مهندسی و علوم پایه (قطب فنی)</td><td>مهندسی، کامپیوتر، فیزیک</td></tr>
+                <tr><td><strong>دانشگاه صنعتی امیرکبیر</strong></td><td>تهران</td><td>مهندسی‌های کاربردی و صنعتی</td><td>مهندسی مکانیک، برق، عمران</td></tr>
+                <tr><td><strong>دانشگاه علوم پزشکی تهران</strong></td><td>تهران</td><td>پزشکی، دندانپزشکی، داروسازی</td><td>علوم پزشکی و سلامت</td></tr>
+                <tr><td><strong>دانشگاه شیراز</strong></td><td>شیراز</td><td>ادبیات، حقوق، علوم پایه</td><td>علوم انسانی و تجربی</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- آکاردئون نکات -->
+    <div class="card reveal">
+        <h2>💡 نکات طلایی برای دانشجویان تازه‌وارد</h2>
+        
+        <div class="accordion">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+                چطور با استادها ارتباط خوبی بسازم؟
+                <span class="arrow">▼</span>
+            </button>
+            <div class="accordion-content">
+                در کلاس‌ها فعال باش و سوال بپرس. در ساعات اداری (Office Hours) به دفتر استاد برو و در مورد مباحث درسی یا پروژه‌ها سوال کن. احترام و پیگیری نشان دادن، کلید ساختن رابطه حرفه‌ای با اساتید است.
+            </div>
+        </div>
+
+        <div class="accordion">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+                واحدهای عمومی رو کِی پاس کنم؟
+                <span class="arrow">▼</span>
+            </button>
+            <div class="accordion-content">
+                پیشنهاد می‌شود واحدهای عمومی (مثل معارف، زبان، تربیت بدنی) رو در ترم‌های اول و دوم پاس کنی. این کار باعث می‌شه در ترم‌های بالاتر تمرکزت فقط روی دروس تخصصی و سنگین باشه.
+            </div>
+        </div>
+
+        <div class="accordion">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+                برای خوابگاه و اسکان چه کنم؟
+                <span class="arrow">▼</span>
+            </button>
+            <div class="accordion-content">
+                معمولاً اولویت خوابگاه به دانشجویان شهرستانی و رتبه‌های برتر داده می‌شه. در فرم ثبت‌نام حتماً درخواست خوابگاه رو بزن. اگر خوابگاه نبود، از همون روزهای اول دنبال اجاره خانه یا سوئیت با چند هم‌اتاقی باش.
+            </div>
+        </div>
+    </div>
+
+    <div class="card reveal" style="text-align: center;">
+        <h2>🔗 صفحات مرتبط</h2>
+        <p>
+            <a href="schools-full.html" class="btn" style="display:inline-block; width:auto; margin:5px;">🏫 مدارس</a>
+            <a href="education-full.html" class="btn" style="display:inline-block; width:auto; margin:5px;">📚 آموزش</a>
+            <a href="tech.html" class="btn" style="display:inline-block; width:auto; margin:5px;">💻 تکنولوژی</a>
+        </p>
+    </div>
+
+</div>
+
+<div class="footer">
+    <p>🌟 <strong>رهیلاناب</strong> - <a href="index.html">خانه</a> | <a href="education-full.html">آموزش</a></p>
+    <p>© ۲۰۲۶ rahilanab.com | با دانش، آینده را بساز.</p>
+</div>
+
+<script>
+    // =============== ۱. نوار پیشرفت ===============
+    window.onscroll = function() {
+        var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var scrolled = (winScroll / height) * 100;
+        document.getElementById("progress-bar").style.width = scrolled + "%";
+    };
+
+    // =============== ۲. تم تاریک/روشن ===============
+    function toggleTheme() {
+        document.body.classList.toggle('light-mode');
+        const isLight = document.body.classList.contains('light-mode');
+        document.getElementById('theme-icon').innerText = isLight ? '☀️' : '🌙';
+        localStorage.setItem('uniThemeLight', isLight);
+    }
+    if (localStorage.getItem('uniThemeLight') === 'true') { toggleTheme(); }
+
+    // =============== ۳. پخش صوتی (TTS) ===============
+    let isSpeaking = false;
+    let voices = [];
+    function loadVoices() { voices = window.speechSynthesis.getVoices(); }
+    if (typeof speechSynthesis !== 'undefined' && speechSynthesis.onvoiceschanged !== undefined) { speechSynthesis.onvoiceschanged = loadVoices; }
+
+    function toggleSpeech() {
+        if (isSpeaking) {
+            window.speechSynthesis.cancel();
+            isSpeaking = false;
+            document.getElementById('tts-icon').innerText = '🔊';
+            document.getElementById('tts-btn').classList.remove('playing');
+            return;
+        }
+        const mainText = document.getElementById('main-content').innerText;
+        const speech = new SpeechSynthesisUtterance(mainText);
+        speech.lang = 'fa-IR';
+        const persianVoice = voices.find(v => v.lang.includes('fa') || v.lang === 'fa-IR');
+        if (persianVoice) speech.voice = persianVoice;
+        speech.onend = function() {
+            isSpeaking = false;
+            document.getElementById('tts-icon').innerText = '🔊';
+            document.getElementById('tts-btn').classList.remove('playing');
+        };
+        window.speechSynthesis.speak(speech);
+        isSpeaking = true;
+        document.getElementById('tts-icon').innerText = '⏹️';
+        document.getElementById('tts-btn').classList.add('playing');
+    }
+
+    // =============== ۴. آکاردئون ===============
+    function toggleAccordion(btn) { btn.parentElement.classList.toggle('active'); }
+
+    // =============== ۵. علاقه‌یاب رشته ===============
+    function showAdvisorResult() {
+        const subject = document.getElementById('fav-subject').value;
+        const style = document.getElementById('learning-style').value;
+        const resultDiv = document.getElementById('advisor-result');
+        const resultText = document.getElementById('result-text');
+        let recommendation = '';
+
+        if (subject === 'math') {
+            if (style === 'theory') recommendation = 'رشته‌های <strong>ریاضیات و کاربردها، فیزیک، آمار</strong> می‌توانند برای پژوهش‌های علمی و تحصیلات تکمیلی شما مناسب باشند.';
+            else if (style === 'practical') recommendation = 'رشته‌های <strong>مهندسی کامپیوتر، مهندسی برق، مهندسی مکانیک</strong> با بازار کار عالی و پروژه‌های عملی فراوان، احتمالاً برای شما جذاب خواهند بود.';
+            else if (style === 'creative') recommendation = 'رشته‌های <strong>معماری، طراحی صنعتی</strong> که ترکیبی از ریاضیات با خلاقیت و هنر هستند، ارزش بررسی دارند.';
+            else recommendation = 'رشته‌های <strong>مهندسی صنایع، مدیریت مالی</strong> که از منطق ریاضی برای مدیریت و بهینه‌سازی استفاده می‌کنند، می‌توانند گزینه‌های خوبی باشند.';
+        } 
+        else if (subject === 'bio') {
+            if (style === 'theory') recommendation = 'رشته‌های <strong>پزشکی، داروسازی، بیوتکنولوژی</strong> برای کسانی که عاشق مطالعه عمیق بدن انسان و ژنتیک هستند، مناسب است.';
+            else if (style === 'practical') recommendation = 'رشته‌های <strong>پرستاری، علوم آزمایشگاهی، اتاق عمل</strong> که کار عملی و مستقیم با بیماران و تجهیزات دارند، احتمالاً به کارتان می‌آید.';
+            else if (style === 'creative') recommendation = 'رشته‌های <strong>دندانپزشکی، فیزیوتراپی</strong> که ترکیب علم با دقت و مهارت دست برای بهبود کیفیت زندگی هستند، ارزش بررسی دارند.';
+            else recommendation = 'رشته‌های <strong>روانشناسی، بهداشت عمومی</strong> که بر تعامل با انسان‌ها و کمک به سلامت روان و جامعه تمرکز دارند، می‌توانند مناسب باشند.';
+        }
+        else if (subject === 'lit') {
+            if (style === 'theory') recommendation = 'رشته‌های <strong>ادبیات فارسی، تاریخ، فلسفه</strong> برای مطالعه عمیق فرهنگ، زبان و اندیشه‌های بشری پیشنهاد می‌شوند.';
+            else if (style === 'practical') recommendation = 'رشته‌های <strong>حقوق، مترجمی زبان</strong> که کاربرد عملی زبان و قوانین در دنیای واقعی دارند، گزینه‌های خوبی هستند.';
+            else if (style === 'creative') recommendation = 'رشته‌های <strong>گرافیک، طراحی لباس، سینما</strong> برای خلق آثار هنری و بصری می‌توانند بسیار جذاب باشند.';
+            else recommendation = 'رشته‌های <strong>روابط عمومی، روزنامه‌نگاری، علوم ارتباطات</strong> که بر تعامل با مخاطب و انتقال پیام تمرکز دارند، ارزش بررسی دارند.';
+        }
+        else if (subject === 'biz') {
+            if (style === 'theory') recommendation = 'رشته‌های <strong>اقتصاد نظری، حسابداری</strong> برای تحلیل داده‌های مالی و بازارهای اقتصادی مناسب هستند.';
+            else if (style === 'practical') recommendation = 'رشته‌های <strong>مدیریت بازرگانی، بازاریابی</strong> برای اجرای کمپین‌ها و مدیریت فروش می‌توانند گزینه‌های خوبی باشند.';
+            else if (style === 'creative') recommendation = 'رشته‌های <strong>کارآفرینی، مدیریت کسب‌وکار</strong> برای خلق ایده‌های نو و راه‌اندازی استارتاپ‌ها پیشنهاد می‌شوند.';
+            else recommendation = 'رشته‌های <strong>مدیریت دولتی، روابط بین‌الملل</strong> برای مدیریت سازمان‌ها و ارتباطات کلان ارزش بررسی دارند.';
+        }
+
+        resultText.innerHTML = recommendation;
+        resultDiv.style.display = 'block';
+        resultDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    // =============== ۶. انیمیشن اسکرول ===============
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach(el => {
+        revealObserver.observe(el);
+    });
+
+    loadVoices();
+</script>
+
+</body>
+                                                                                                                      </html>
