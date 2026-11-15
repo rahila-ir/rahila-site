@@ -1,1 +1,419 @@
-<!DOCTYPE html><html lang="fa"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>🐶 دامپزشکی | رهیلا</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial;background:radial-gradient(circle at center,#0a1a1a,#1a4a4a,#66ccaa);color:#fff;text-align:center;padding:15px;min-height:100vh}.header{background:rgba(255,255,255,.08);backdrop-filter:blur(20px);border-radius:25px;padding:20px;margin-bottom:15px}.header h1{color:#ffd700;font-size:22px}.back-btn{display:inline-block;background:rgba(255,255,255,.15);color:#fff;padding:8px 20px;border-radius:20px;text-decoration:none;margin:10px 0;font-size:14px}.section-title{color:#ffd700;font-size:18px;margin:20px 0 10px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.card{background:rgba(255,255,255,.05);border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,.1);text-align:right}.card h3{font-size:15px;color:#ffd700}</style></head><body><div class="header"><h1>🐶 دامپزشکی</h1></div><a href="index.html" class="back-btn">🔙 برگشت</a><div class="section-title">🐶 شهرها</div><div class="grid"><div class="card"><h3>دامپزشکی تهران</h3></div><div class="card"><h3>دامپزشکی مشهد</h3></div><div class="card"><h3>بیماری سگ</h3></div><div class="card"><h3>بیماری گربه</h3></div></div><p style="margin-top:15px"><a href="index.html" style="color:#ffd700">🔙 برگشت</a></p></body></html>
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>راهنمای جامع دامپزشکی + مشاور هوشمند علائم | رهیلاناب</title>
+    <meta name="description" content="همه چیز درباره سلامت حیوانات خانگی؛ از تقویم واکسیناسیون تا تشخیص اولیه علائم بیماری. همراه با مشاور هوشمند و راهنمای مراجعه به دامپزشک در رهیلاناب.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐾</text></svg>">
+    
+    <!-- فونت وزیرمتن -->
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+    
+    <style>
+        /* ============== تم‌ها (نئون زمرد و دارک) ============== */
+        :root {
+            --bg-main: #06120e;
+            --bg-card: #0c231b;
+            --text-main: #ecfdf5;
+            --text-muted: #6ee7b7;
+            --primary: #10b981; /* زمردی */
+            --accent: #06b6d4; /* فیروزه‌ای */
+            --warning: #ef4444; /* قرمز خطر */
+            --gold: #fbbf24;
+            --border: #1b4b3b;
+            --shadow: 0 10px 30px rgba(16, 185, 129, 0.15);
+            --gradient: linear-gradient(135deg, #10b981, #06b6d4);
+        }
+
+        body.light-mode {
+            --bg-main: #f0fdf4;
+            --bg-card: #ffffff;
+            --text-main: #064e3b;
+            --text-muted: #047857;
+            --primary: #059669;
+            --accent: #0891b2;
+            --border: #bbf7d0;
+            --shadow: 0 10px 30px rgba(5, 150, 105, 0.15);
+            --gradient: linear-gradient(135deg, #059669, #0891b2);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; transition: background-color 0.3s, color 0.3s; }
+        
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background: radial-gradient(circle at 50% 0%, var(--bg-card), var(--bg-main) 70%);
+            color: var(--text-main);
+            line-height: 1.9;
+            font-size: 17px;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* ============== نوار پیشرفت ============== */
+        #progress-bar {
+            position: fixed; top: 0; left: 0; height: 4px; width: 0%;
+            background: var(--gradient); z-index: 9999;
+            box-shadow: 0 0 15px var(--primary); transition: width 0.1s;
+        }
+
+        /* ============== دکمه‌های شناور ============== */
+        .floating-controls {
+            position: fixed; top: 15px; left: 15px; z-index: 999;
+            display: flex; flex-direction: column; gap: 10px;
+        }
+        
+        .control-btn {
+            background: var(--bg-card); border: 1px solid var(--border);
+            color: var(--text-main); width: 50px; height: 50px;
+            border-radius: 50%; cursor: pointer; font-size: 20px;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: var(--shadow); backdrop-filter: blur(10px); transition: 0.3s;
+        }
+        .control-btn:hover { transform: scale(1.1); color: var(--primary); border-color: var(--primary); }
+        .control-btn.playing { background: var(--primary); color: #fff; }
+
+        /* ============== هدر ============== */
+        .header {
+            background: var(--gradient); color: #fff; padding: 90px 20px 60px;
+            text-align: center; border-radius: 0 0 40px 40px;
+            position: relative; overflow: hidden;
+            box-shadow: 0 10px 40px rgba(16, 185, 129, 0.3);
+        }
+        .header h1 { font-size: clamp(24px, 5vw, 38px); margin-bottom: 10px; position: relative; z-index: 1; font-weight: 900; }
+        .header p { font-size: 16px; opacity: 0.9; position: relative; z-index: 1; font-weight: bold; }
+
+        /* ============== انیمیشن ضربان قلب ============== */
+        .heartbeat-container {
+            width: 100%; height: 60px; margin-bottom: 20px; display: flex; justify-content: center; align-items: center;
+        }
+        .heartbeat-line {
+            width: 200px; height: 40px;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg"><path d="M0,20 L50,20 L60,5 L70,35 L80,20 L100,20 L110,0 L120,40 L130,20 L200,20" fill="none" stroke="%23ffffff" stroke-width="2" stroke-dasharray="300" stroke-dashoffset="0" stroke-linecap="round"/></svg>') no-repeat center;
+            animation: drawLine 2s linear infinite;
+        }
+        @keyframes drawLine {
+            0% { stroke-dashoffset: 300; }
+            100% { stroke-dashoffset: 0; }
+        }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; position: relative; z-index: 2; margin-top: -30px; }
+
+        /* ============== کارت‌ها ============== */
+        .card {
+            background: var(--bg-card); border-radius: 24px; padding: 30px;
+            margin-bottom: 30px; box-shadow: var(--shadow); border: 1px solid var(--border);
+        }
+        .card h2 { font-size: 22px; color: var(--primary); margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+
+        /* ============== باکس BLUF ============== */
+        .box-bluf {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(6, 182, 212, 0.1));
+            border: 2px solid var(--accent); border-radius: 16px; padding: 25px; margin-bottom: 30px;
+        }
+        .box-bluf h3 { color: var(--accent); font-size: 20px; margin-bottom: 10px; }
+        .box-bluf p { font-weight: bold; font-size: 16px; }
+
+        /* ============== مشاور هوشمند ============== */
+        .advisor-box { background: rgba(255, 255, 255, 0.02); padding: 25px; border-radius: 20px; border: 1px dashed var(--primary); }
+        .advisor-step { margin-bottom: 20px; }
+        .advisor-step label { display: block; font-weight: bold; margin-bottom: 10px; color: var(--text-main); }
+        .advisor-step select {
+            width: 100%; padding: 12px 15px; border-radius: 12px; border: 1px solid var(--border);
+            background: var(--bg-main); color: var(--text-main); font-family: inherit; font-size: 16px; outline: none;
+            cursor: pointer; transition: 0.3s;
+        }
+        .advisor-step select:focus { border-color: var(--primary); box-shadow: 0 0 10px rgba(16,185,129,0.3); }
+        
+        #advisor-result { display: none; margin-top: 25px; padding: 25px; background: rgba(16, 185, 129, 0.05); border-right: 5px solid var(--primary); border-radius: 12px; animation: slideUp 0.5s ease; }
+        #advisor-result h3 { color: var(--primary); margin-bottom: 10px; font-size: 20px; }
+        #advisor-result p { font-size: 16px; margin-bottom: 10px; color: var(--text-main); }
+        
+        .disclaimer {
+            margin-top: 15px; padding: 15px; background: rgba(239, 68, 68, 0.1);
+            border: 1px solid var(--warning); border-radius: 10px; font-size: 14px; color: var(--warning); font-weight: bold;
+        }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* ============== تقویم واکسیناسیون ============== */
+        .vaccine-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 20px; }
+        .vaccine-card {
+            background: var(--bg-main); padding: 20px; border-radius: 16px; border: 1px solid var(--border);
+            border-top: 4px solid var(--primary); text-align: center; transition: 0.3s;
+        }
+        .vaccine-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(16,185,129,0.2); }
+        .vaccine-card h4 { color: var(--primary); margin-bottom: 5px; font-size: 18px; }
+        .vaccine-card p { font-size: 14px; color: var(--text-muted); }
+
+        /* ============== جدول ============== */
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 15px; border-radius: 12px; overflow: hidden; }
+        th { background: var(--primary); color: #fff; padding: 15px; text-align: center; font-weight: 900; }
+        td { padding: 12px; text-align: center; border-bottom: 1px solid var(--border); background: var(--bg-card); font-weight: 500; }
+        tr:hover td { background: var(--bg-main); color: var(--accent); }
+
+        /* ============== آکاردئون ============== */
+        .accordion { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 12px; overflow: hidden; }
+        .accordion-btn { background: none; border: none; width: 100%; padding: 18px; text-align: right; font-family: inherit; font-size: 16px; font-weight: bold; color: var(--text-main); cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .accordion-btn:hover { color: var(--primary); }
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; padding: 0 18px; color: var(--text-muted); font-size: 15px; }
+        .accordion.active .accordion-content { max-height: 500px; padding-bottom: 18px; }
+        .arrow { transition: transform 0.3s; color: var(--primary); }
+        .accordion.active .arrow { transform: rotate(180deg); }
+
+        .btn { display: inline-block; background: var(--gradient); color: #fff; padding: 14px 30px; border-radius: 12px; border: none; text-decoration: none; font-weight: 900; font-size: 16px; cursor: pointer; transition: 0.3s; width: 100%; text-align: center; box-shadow: 0 5px 20px rgba(16, 185, 129, 0.3); }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(6, 182, 212, 0.5); }
+        
+        .footer { text-align: center; padding: 30px; color: var(--text-muted); font-size: 14px; border-top: 1px solid var(--border); margin-top: 40px; }
+        .footer a { color: var(--primary); text-decoration: none; }
+
+        /* ============== انیمیشن اسکرول ============== */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<div class="floating-controls">
+    <button class="control-btn" id="tts-btn" onclick="toggleSpeech()" title="گوش دادن">
+        <span id="tts-icon">🔊</span>
+    </button>
+    <button class="control-btn" onclick="toggleTheme()" title="تاریک/روشن">
+        <span id="theme-icon">🌙</span>
+    </button>
+</div>
+
+<div class="header">
+    <div class="heartbeat-container">
+        <div class="heartbeat-line"></div>
+    </div>
+    <h1>🐾 سلامت حیوانات خانگی</h1>
+    <p>راهنمای جامع دامپزشکی و مراقبت از دوستان کوچک شما</p>
+</div>
+
+<div class="container" id="main-content">
+
+    <!-- BLUF -->
+    <div class="card box-bluf reveal">
+        <h3>⚡ جواب سریع در ۳ خط:</h3>
+        <p>
+            ۱. مهم‌ترین اصل در دامپزشکی، <strong>پیشگیری</strong> است؛ واکسیناسیون و انگل‌زدایی دوره‌ای را جدی بگیرید.<br>
+            ۲. در صورت مشاهده علائمی مثل <strong>بی‌اشتهایی، بی‌حالی شدید یا تنفس سخت</strong>، فوراً به دامپزشک مراجعه کنید.<br>
+            ۳. هیچ‌وقت داروی انسانی (مثل استامینوفن یا بروفن) به حیوان خانگی ندهید؛ این داروها برای آن‌ها <strong>سمی</strong> هستند.
+        </p>
+    </div>
+
+    <!-- مشاور هوشمند علائم -->
+    <div class="card reveal">
+        <h2>🩺 مشاور هوشمند بررسی علائم</h2>
+        <p style="margin-bottom: 20px; color: var(--text-muted);">حیوان شما چه علائمی دارد؟ (این ابزار فقط برای آگاهی اولیه است)</p>
+        
+        <div class="advisor-box">
+            <div class="advisor-step">
+                <label>۱. نوع حیوان خانگی:</label>
+                <select id="pet-type">
+                    <option value="dog">🐶 سگ</option>
+                    <option value="cat">🐱 گربه</option>
+                </select>
+            </div>
+
+            <div class="advisor-step">
+                <label>۲. علامت اصلی که مشاهده می‌کنید:</label>
+                <select id="symptom">
+                    <option value="appetite">🍽️ بی‌اشتهایی (غذا نمی‌خورد)</option>
+                    <option value="vomit">🤢 استفراغ و اسهال</option>
+                    <option value="lethargy">😴 بی‌حالی و کم‌تحرکی شدید</option>
+                    <option value="cough">🫁 سرفه یا تنفس سخت</option>
+                </select>
+            </div>
+
+            <button class="btn" onclick="showAdvisorResult()">🔍 بررسی وضعیت</button>
+
+            <div id="advisor-result">
+                <h3>💡 نتیجه بررسی:</h3>
+                <p id="result-text"></p>
+                
+                <!-- باکس سلب مسئولیت -->
+                <div class="disclaimer">
+                    ⚠️ <strong>هشدار مهم:</strong> این بررسی صرفاً یک راهنمای عمومی است و جایگزین معاینه بالینی دامپزشک نیست. در صورت تشدید علائم، حتماً به کلینیک دامپزشکی مراجعه کنید.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- تقویم واکسیناسیون -->
+    <div class="card reveal">
+        <h2>💉 برنامه واکسیناسیون پایه</h2>
+        <p style="color: var(--text-muted);">برنامه پیشنهادی برای توله‌سگ‌ها و بچه‌گربه‌ها (طبق نظر دامپزشک شما ممکن است تغییر کند):</p>
+        
+        <div class="vaccine-grid">
+            <div class="vaccine-card">
+                <h4>۶ تا ۸ هفتگی</h4>
+                <p>واکسن چندگانه (اولین دوز)</p>
+            </div>
+            <div class="vaccine-card">
+                <h4>۱۰ تا ۱۲ هفتگی</h4>
+                <p>واکسن چندگانه (دوز یادآور)</p>
+            </div>
+            <div class="vaccine-card">
+                <h4>۱۴ تا ۱۶ هفتگی</h4>
+                <p>واکسن هاری + تکمیل دوزها</p>
+            </div>
+            <div class="vaccine-card">
+                <h4>یک سالگی</h4>
+                <p>یادآور سالانه تمام واکسن‌ها</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- جدول فوریت‌ها -->
+    <div class="card reveal">
+        <h2>🚨 چه زمانی فوراً به دامپزشکی برویم؟</h2>
+        <table>
+            <thead>
+                <tr><th>وضعیت</th><th>سطح فوریت</th><th>اقدام لازم</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>مسمومیت (خوردن سم یا شکلات)</strong></td><td style="color: var(--warning); font-weight: bold;">بسیار فوری</td><td>بدون تاخیر به کلینیک شبانه‌روزی</td></tr>
+                <tr><td><strong>تشنج یا لرزش شدید</strong></td><td style="color: var(--warning); font-weight: bold;">بسیار فوری</td><td>حفظ آرامش حیوان و انتقال سریع</td></tr>
+                <tr><td><strong>استفراغ خونی یا اسهال شدید</strong></td><td style="color: var(--gold); font-weight: bold;">فوری</td><td>مراجعه در همان روز</td></tr>
+                <tr><td><strong>کم‌اشتهایی موقت (۱ روز)</strong></td><td style="color: var(--primary); font-weight: bold;">نیاز به بررسی</td><td>رصد کردن و تماس با دامپزشک</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- آکاردئون -->
+    <div class="card reveal">
+        <h2>💡 نکات مراقبتی مهم</h2>
+        
+        <div class="accordion">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+                چطور به حیوان خانگی دارو بدهم؟
+                <span class="arrow">▼</span>
+            </button>
+            <div class="accordion-content">
+                هرگز دارو را بدون تجویز دامپزشک به حیوان ندهید. برای دادن داروی خوراکی، می‌توانید قرص را داخل یک تکه پنیر یا غذای مورد علاقه‌اش پنهان کنید. اگر حیوان مقاومت کرد، از سرنگ بدون سوزن (برای مایعات) استفاده کنید و به آرامی در کنار دهانش تزریق کنید.
+            </div>
+        </div>
+
+        <div class="accordion">
+            <button class="accordion-btn" onclick="toggleAccordion(this)">
+                بهترین زمان برای انگل‌زدایی (کرم و کک)؟
+                <span class="arrow">▼</span>
+            </button>
+            <div class="accordion-content">
+                توله‌سگ‌ها و بچه‌گربه‌ها باید از ۲ هفتگی شروع به انگل‌زدایی شوند و تا ۳ ماهگی ماهانه تکرار شود. پس از آن، بسته به سبک زندگی (بیرون رفتن یا داخل خانه ماندن) معمولاً هر ۳ ماه یک‌بار انجام می‌شود.
+            </div>
+        </div>
+    </div>
+
+    <div class="card reveal" style="text-align: center;">
+        <h2>🔗 صفحات مرتبط</h2>
+        <p>
+            <a href="health.html" class="btn" style="display:inline-block; width:auto; margin:5px;">🩺 سلامت</a>
+            <a href="zoo.html" class="btn" style="display:inline-block; width:auto; margin:5px;">🦁 باغ‌وحش</a>
+            <a href="pregnancy.html" class="btn" style="display:inline-block; width:auto; margin:5px;">🤰 بارداری</a>
+        </p>
+    </div>
+
+</div>
+
+<div class="footer">
+    <p>🌟 <strong>رهیلاناب</strong> - <a href="index.html">خانه</a> | <a href="health.html">سلامت</a></p>
+    <p>© ۲۰۲۶ rahilanab.com | با مراقبت، زندگی را زیباتر کن.</p>
+</div>
+
+<script>
+    // =============== ۱. نوار پیشرفت ===============
+    window.onscroll = function() {
+        var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var scrolled = (winScroll / height) * 100;
+        document.getElementById("progress-bar").style.width = scrolled + "%";
+    };
+
+    // =============== ۲. تم تاریک/روشن ===============
+    function toggleTheme() {
+        document.body.classList.toggle('light-mode');
+        const isLight = document.body.classList.contains('light-mode');
+        document.getElementById('theme-icon').innerText = isLight ? '☀️' : '🌙';
+        localStorage.setItem('vetThemeLight', isLight);
+    }
+    if (localStorage.getItem('vetThemeLight') === 'true') { toggleTheme(); }
+
+    // =============== ۳. پخش صوتی (TTS) ===============
+    let isSpeaking = false;
+    let voices = [];
+    function loadVoices() { voices = window.speechSynthesis.getVoices(); }
+    if (typeof speechSynthesis !== 'undefined' && speechSynthesis.onvoiceschanged !== undefined) { speechSynthesis.onvoiceschanged = loadVoices; }
+
+    function toggleSpeech() {
+        if (isSpeaking) {
+            window.speechSynthesis.cancel();
+            isSpeaking = false;
+            document.getElementById('tts-icon').innerText = '🔊';
+            document.getElementById('tts-btn').classList.remove('playing');
+            return;
+        }
+        const mainText = document.getElementById('main-content').innerText;
+        const speech = new SpeechSynthesisUtterance(mainText);
+        speech.lang = 'fa-IR';
+        const persianVoice = voices.find(v => v.lang.includes('fa') || v.lang === 'fa-IR');
+        if (persianVoice) speech.voice = persianVoice;
+        speech.onend = function() {
+            isSpeaking = false;
+            document.getElementById('tts-icon').innerText = '🔊';
+            document.getElementById('tts-btn').classList.remove('playing');
+        };
+        window.speechSynthesis.speak(speech);
+        isSpeaking = true;
+        document.getElementById('tts-icon').innerText = '⏹️';
+        document.getElementById('tts-btn').classList.add('playing');
+    }
+
+    // =============== ۴. آکاردئون ===============
+    function toggleAccordion(btn) { btn.parentElement.classList.toggle('active'); }
+
+    // =============== ۵. مشاور هوشمند علائم ===============
+    function showAdvisorResult() {
+        const pet = document.getElementById('pet-type').value;
+        const symptom = document.getElementById('symptom').value;
+        const resultDiv = document.getElementById('advisor-result');
+        const resultText = document.getElementById('result-text');
+        let advice = '';
+
+        if (symptom === 'appetite') {
+            advice = `بی‌اشتهایی در ${pet === 'dog' ? 'سگ‌ها' : 'گربه‌ها'} می‌تواند دلایل ساده (مثل بدقلقی) یا جدی (مثل مشکلات دندانی یا گوارشی) داشته باشد. اگر بیش از ۲۴ ساعت طول کشید، حتماً با دامپزشک تماس بگیرید.`;
+        } else if (symptom === 'vomit') {
+            advice = `استفراغ و اسهال در ${pet === 'dog' ? 'سگ' : 'گربه'} شما می‌تواند نشانه مسمومیت، عفونت ویروسی یا مشکل گوارشی باشد. آب کافی در دسترس حیوان قرار دهید تا دچار کم‌آبی نشود و در اولین فرصت به دامپزشک مراجعه کنید.`;
+        } else if (symptom === 'lethargy') {
+            advice = `بی‌حالی شدید یکی از علائم هشداردهنده است. دمای بدن حیوان را چک کنید (اگر به آن دسترسی دارید). اگر با تب، لرزش یا بی‌توجهی کامل به محیط همراه است، این یک اورژانس پزشکی است و باید فوراً به کلینیک برده شود.`;
+        } else if (symptom === 'cough') {
+            advice = `سرفه در ${pet === 'dog' ? 'سگ‌ها' : 'گربه‌ها'} می‌تواند ناشی از مشکلات تنفسی، انگل قلبی، یا جسم خارجی باشد. اگر سرفه‌ها خشک و مداوم هستند یا با تنفس سخت و صدای خس‌خس همراهند، فوراً به دامپزشک مراجعه کنید.`;
+        }
+
+        resultText.innerHTML = advice;
+        resultDiv.style.display = 'block';
+        resultDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    // =============== ۶. انیمیشن اسکرول ===============
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach(el => {
+        revealObserver.observe(el);
+    });
+
+    loadVoices();
+</script>
+
+</body>
+      </html>
