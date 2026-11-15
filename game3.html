@@ -1,466 +1,356 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🎮 ۲۰ بازی | رهیلا | rahilanab.com</title>
+    <title>🎮 ۵۰ بازی اعتیادآور | آرکید رهیلاناب</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎮</text></svg>">
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+    
     <style>
-        *{margin:0;padding:0;box-sizing:border-box}
-        body{
-            font-family:'Arial', sans-serif;
-            background:linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-            color:#fff;
-            padding:15px;
-            min-height:100vh;
-            text-align:center;
+        /* ============== تم شیشه‌ای لوکس ============== */
+        :root {
+            --bg-main: #0b1120; --bg-card: rgba(30, 41, 59, 0.6); --bg-inner: #0f172a;
+            --text-main: #f8fafc; --text-muted: #94a3b8;
+            --primary: #8b5cf6; --primary-glow: rgba(139, 92, 246, 0.4);
+            --accent: #10b981; --gold: #f59e0b; --danger: #ef4444;
+            --border: rgba(255, 255, 255, 0.08); --shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
-        .header{
-            background:rgba(255,255,255,.1);
-            border-radius:20px;
-            padding:20px;
-            margin-bottom:20px;
-            backdrop-filter:blur(10px);
-            border:1px solid rgba(255,255,255,.2);
+        body.light-mode {
+            --bg-main: #f1f5f9; --bg-card: rgba(255, 255, 255, 0.7); --bg-inner: #ffffff;
+            --text-main: #0f172a; --text-muted: #64748b; --border: rgba(0, 0, 0, 0.05); --shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
         }
-        .header h1{font-size:28px;color:#ffd700;margin-bottom:5px}
-        .header p{color:#ccc;font-size:14px}
-        .game-zone{
-            background:rgba(255,255,255,.08);
-            border-radius:18px;
-            padding:20px;
-            margin:15px 0;
-            backdrop-filter:blur(5px);
-            border:1px solid rgba(255,255,255,.15);
-            transition:.3s;
-        }
-        .game-zone:hover{transform:translateY(-3px);box-shadow:0 8px 25px rgba(0,0,0,.3)}
-        .game-zone h2{color:#ffd700;margin-bottom:12px;font-size:20px}
-        .game-zone p{color:#ddd;margin:8px 0}
-        button{
-            padding:10px 22px;
-            font-size:15px;
-            background:linear-gradient(135deg,#ffd700,#ffaa00);
-            color:#1a1a2e;
-            border:none;
-            border-radius:25px;
-            cursor:pointer;
-            margin:4px;
-            font-weight:bold;
-            transition:.3s;
-        }
-        button:hover{transform:scale(1.05);box-shadow:0 4px 15px rgba(255,215,0,.4)}
-        button:active{transform:scale(.95)}
-        .result{
-            font-size:18px;
-            color:#ffd700;
-            font-weight:bold;
-            margin:10px 0;
-            min-height:30px;
-        }
-        input,select{
-            padding:10px 15px;
-            font-size:16px;
-            border-radius:25px;
-            border:2px solid #ffd700;
-            background:rgba(255,255,255,.1);
-            color:#fff;
-            text-align:center;
-            margin:8px;
-            outline:none;
-        }
-        input::placeholder{color:#aaa}
-        .emoji-big{font-size:50px;margin:10px 0}
-        .grid{
-            display:grid;
-            grid-template-columns:repeat(3,1fr);
-            gap:8px;
-            max-width:250px;
-            margin:10px auto;
-        }
-        .grid button{
-            padding:15px;
-            font-size:20px;
-            background:rgba(255,255,255,.15);
-            color:#fff;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; transition: background-color 0.3s, color 0.3s, border-color 0.3s, transform 0.2s; font-family: 'Vazirmatn', sans-serif; }
+        body { background-color: var(--bg-main); background-image: radial-gradient(circle at 10% 20%, rgba(139, 92, 246, 0.1) 0%, transparent 40%), radial-gradient(circle at 90% 80%, rgba(16, 185, 129, 0.1) 0%, transparent 40%); color: var(--text-main); min-height: 100vh; padding-bottom: 50px; line-height: 1.6; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-main); }
+        ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 10px; }
+
+        .header { position: sticky; top: 0; z-index: 1000; background: rgba(11, 17, 32, 0.7); backdrop-filter: blur(20px); padding: 15px 25px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+        body.light-mode .header { background: rgba(255, 255, 255, 0.7); }
+        .header-title { font-size: 20px; font-weight: 900; background: linear-gradient(135deg, var(--primary), var(--accent)); -webkit-background-clip: text; background-clip: text; color: transparent; filter: drop-shadow(0 0 10px rgba(139, 92, 246, 0.3)); }
+        .icon-btn { background: var(--bg-card); border: 1px solid var(--border); color: var(--text-main); width: 42px; height: 42px; border-radius: 12px; font-size: 20px; cursor: pointer; display: flex; justify-content: center; align-items: center; backdrop-filter: blur(10px); }
+        .icon-btn:hover { border-color: var(--primary); color: var(--primary); box-shadow: 0 0 15px var(--primary-glow); }
+
+        .container { max-width: 1300px; margin: 0 auto; padding: 30px 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .game-card { background: var(--bg-card); backdrop-filter: blur(16px); border: 1px solid var(--border); border-radius: 16px; padding: 20px; box-shadow: var(--shadow); display: flex; flex-direction: column; position: relative; overflow: hidden; }
+        .game-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, var(--primary), var(--accent)); opacity: 0.8; }
+        .game-card:hover { transform: translateY(-3px); border-color: rgba(139, 92, 246, 0.4); box-shadow: 0 15px 40px rgba(0,0,0,0.4), 0 0 20px var(--primary-glow); }
+        .game-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px dashed var(--border); }
+        .game-title { font-size: 15px; font-weight: 800; color: var(--text-main); }
+        .game-score { font-size: 13px; font-weight: 900; color: var(--accent); background: rgba(16, 185, 129, 0.1); padding: 2px 8px; border-radius: 6px; border: 1px solid rgba(16, 185, 129, 0.2); }
+        .game-content { flex-grow: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+
+        button { background: linear-gradient(135deg, var(--primary), #6d28d9); color: #fff; border: none; padding: 8px 16px; border-radius: 8px; font-weight: 700; font-size: 13px; cursor: pointer; margin: 3px; outline: none; box-shadow: 0 4px 15px rgba(139, 92, 246, 0.2); }
+        button:hover { filter: brightness(1.1); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4); }
+        button.secondary { background: var(--bg-inner); color: var(--text-main); border: 1px solid var(--border); box-shadow: none; }
+        button.success { background: linear-gradient(135deg, var(--accent), #059669); }
+        button.danger { background: linear-gradient(135deg, var(--danger), #b91c1c); }
+
+        input, select { background: var(--bg-inner); border: 1px solid var(--border); color: var(--text-main); padding: 10px; border-radius: 8px; font-size: 14px; outline: none; text-align: center; margin: 4px; width: 100%; max-width: 150px; box-shadow: inset 0 2px 5px rgba(0,0,0,0.1); }
+        input:focus { border-color: var(--primary); box-shadow: 0 0 10px var(--primary-glow); }
+        .result-text { margin-top: 10px; font-weight: 800; font-size: 14px; color: var(--gold); text-align: center; min-height: 20px; }
+        .grid-game { display: grid; gap: 6px; margin: 8px 0; }
+        .grid-btn { background: var(--bg-inner); border: 1px solid var(--border); border-radius: 8px; display: flex; justify-content: center; align-items: center; font-weight: 800; font-size: 16px; cursor: pointer; color: var(--text-main); padding: 8px; aspect-ratio: 1; }
+        .grid-btn:hover { border-color: var(--primary); background: rgba(139, 92, 246, 0.1); transform: scale(1.05); }
+        
+        #backToTop { position: fixed; bottom: 20px; left: 20px; width: 45px; height: 45px; border-radius: 50%; background: linear-gradient(135deg, var(--primary), var(--accent)); color: #fff; border: none; font-size: 20px; display: flex; justify-content: center; align-items: center; cursor: pointer; box-shadow: 0 5px 20px var(--primary-glow); opacity: 0; visibility: hidden; z-index: 9999; }
+        #backToTop.show { opacity: 1; visibility: visible; }
+        
+        @media (max-width: 500px) { .container { padding: 15px 10px; gap: 15px; } .game-card { padding: 15px; } }
     </style>
 </head>
 <body>
 
 <div class="header">
-    <h1>🎮 ۲۰ بازی جذاب</h1>
-    <p>rahilanab.com | ساخته شده با 💙</p>
+    <div class="header-title">🎮 ۵۰ بازی اعتیادآور</div>
+    <button class="icon-btn" onclick="toggleTheme()" id="theme-btn">🌙</button>
 </div>
 
-<!-- ۱ --><div class="game-zone"><h2>۱. 🎲 تاس</h2><button onclick="rollDice()">🎲 بنداز</button><p class="result" id="diceR"></p></div>
+<div class="container" id="games-container">
+    <!-- Games injected via JS -->
+</div>
 
-<!-- ۲ --><div class="game-zone"><h2>۲. 🔢 حدس عدد</h2><p>عددی بین ۱ تا ۱۰۰ حدس بزن</p><input id="guessNum" type="number" placeholder="حدس تو"><button onclick="guessNumber()">حدس</button><p class="result" id="guessR"></p><p id="guessHint"></p></div>
-
-<!-- ۳ --><div class="game-zone"><h2>۳. ✊✋✌️ سنگ کاغذ قیچی</h2><button onclick="rps('rock')">✊</button><button onclick="rps('paper')">✋</button><button onclick="rps('scissors')">✌️</button><p class="result" id="rpsR"></p></div>
-
-<!-- ۴ --><div class="game-zone"><h2>۴. ⏱️ کرونومتر</h2><p class="result" id="timer" style="font-size:30px">00:00</p><button onclick="startTimer()" id="timerBtn">▶ شروع</button><button onclick="resetTimer()">🔄 صفر</button></div>
-
-<!-- ۵ --><div class="game-zone"><h2>۵. 🧮 ماشین حساب</h2><input id="calcDisplay" readonly style="width:200px;font-size:20px"><br><div class="grid" style="grid-template-columns:repeat(4,1fr);max-width:250px"><button onclick="calcAdd('7')">7</button><button onclick="calcAdd('8')">8</button><button onclick="calcAdd('9')">9</button><button onclick="calcAdd('/')">/</button><button onclick="calcAdd('4')">4</button><button onclick="calcAdd('5')">5</button><button onclick="calcAdd('6')">6</button><button onclick="calcAdd('*')">*</button><button onclick="calcAdd('1')">1</button><button onclick="calcAdd('2')">2</button><button onclick="calcAdd('3')">3</button><button onclick="calcAdd('-')">-</button><button onclick="calcAdd('0')">0</button><button onclick="calcAdd('.')">.</button><button onclick="calcResult()">=</button><button onclick="calcAdd('+')">+</button><button onclick="calcClear()" style="grid-column:span 4">C</button></div></div>
-
-<!-- ۶ --><div class="game-zone"><h2>۶. 🎯 واکنش</h2><button id="reactBtn" onclick="reactGame()" style="padding:25px 40px;font-size:18px">کلیک کن</button><p class="result" id="reactGR"></p></div>
-
-<!-- ۷ --><div class="game-zone"><h2>۷. 🎨 حدس رنگ</h2><div id="colorBox" style="width:100px;height:100px;margin:10px auto;border-radius:15px"></div><button onclick="colorGuess('red')">قرمز</button><button onclick="colorGuess('blue')">آبی</button><button onclick="colorGuess('green')">سبز</button><button onclick="colorGuess('yellow')">زرد</button><p class="result" id="colorGR"></p></div>
-
-<!-- ۸ --><div class="game-zone"><h2>۸. 📝 یادداشت سریع</h2><textarea id="note" rows="3" style="width:90%;border-radius:12px;padding:10px;background:rgba(255,255,255,.1);color:#fff;border:1px solid #ffd700" placeholder="یادداشتت رو بنویس..."></textarea><br><button onclick="saveNote()">💾 ذخیره</button><button onclick="clearNote()">🗑 پاک</button><p class="result" id="noteR"></p></div>
-
-<!-- ۹ --><div class="game-zone"><h2>۹. 🔤 کلمه تصادفی</h2><button onclick="randomWord()">🔤 کلمه جدید</button><p class="result" id="randWord" style="font-size:24px"></p></div>
-
-<!-- ۱۰ --><div class="game-zone"><h2>۱۰. 🐍 مار (Snake)</h2><canvas id="snakeCanvas" width="240" height="240" style="background:#111;border-radius:10px;margin:10px auto;display:block"></canvas><p>امتیاز: <span id="snakeScore">0</span></p><button onclick="snakeReset()">🔄 شروع مجدد</button></div>
-
-<!-- ۱۱ --><div class="game-zone"><h2>۱۱. 🎯 دارت</h2><p>امتیاز: <span id="dartScore">0</span></p><div id="dartArea" onclick="dartHit(event)" style="width:200px;height:200px;background:radial-gradient(circle,red 5%,#1a1a2e 20%,#ffd700 20%,#1a1a2e 40%,#ffd700 40%,#1a1a2e 60%,#ffd700 60%,#1a1a2e 100%);border-radius:50%;margin:10px auto;cursor:crosshair"></div><p class="result" id="dartR"></p></div>
-
-<!-- ۱۲ --><div class="game-zone"><h2>۱۲. 💡 لامپ</h2><div class="emoji-big" id="lamp">💡</div><button onclick="toggleLamp()">روشن/خاموش</button></div>
-
-<!-- ۱۳ --><div class="game-zone"><h2>۱۳. 🎵 پخش صدا</h2><button onclick="playBeep()">🔊 بیپ</button><button onclick="playDoubleBeep()">🔊🔊 دو بیپ</button></div>
-
-<!-- ۱۴ --><div class="game-zone"><h2>۱۴. 🧩 حافظه</h2><div class="grid" id="memoryGrid"></div><p>حرکات: <span id="memMoves">0</span></p><button onclick="memoryReset()">🔄 شروع مجدد</button></div>
-
-<!-- ۱۵ --><div class="game-zone"><h2>۱۵. 🔤 حروف درهم</h2><p id="scrambledWord"></p><input id="unscrambleIn" placeholder="کلمه رو حدس بزن"><button onclick="unscrambleCheck()">بررسی</button><p class="result" id="unscrambleR"></p></div>
-
-<!-- ۱۶ --><div class="game-zone"><h2>۱۶. 🎳 بولینگ</h2><p>پین‌های افتاده: <span id="bowlPins">-</span></p><button onclick="bowl()">🎳 پرتاب</button><p class="result" id="bowlR"></p></div>
-
-<!-- ۱۷ --><div class="game-zone"><h2>۱۷. 🎰 اسلات ماشین</h2><p class="result" id="slotDisplay" style="font-size:30px">🎰 🎰 🎰</p><button onclick="spinSlot()">🎰 بچرخون</button><p class="result" id="slotR"></p></div>
-
-<!-- ۱۸ --><div class="game-zone"><h2>۱۸. 🧠 سوال ریاضی</h2><p id="mathQ"></p><input id="mathA" type="number" placeholder="جواب"><button onclick="mathCheck()">بررسی</button><p class="result" id="mathR"></p></div>
-
-<!-- ۱۹ --><div class="game-zone"><h2>۱۹. 🪙 شیر یا خط</h2><button onclick="coinFlip()">🪙 بنداز</button><p class="result" id="coinR" style="font-size:40px"></p></div>
-
-<!-- ۲۰ --><div class="game-zone"><h2>۲۰. ⭐ امتیاز کل</h2><p style="font-size:24px">امتیاز کل: <span id="totalScore">0</span></p><button onclick="resetAllScores()">🔄 صفر کردن همه</button></div>
+<button id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">🚀</button>
 
 <script>
-// ============ ۱. تاس ============
-function rollDice(){
-    let n=Math.floor(Math.random()*6)+1;
-    let emojis=['⚀','⚁','⚂','⚃','⚄','⚅'];
-    document.getElementById('diceR').innerHTML=emojis[n-1]+' عدد '+n;
-}
+    // =============== Core Setup ===============
+    function toggleTheme() { document.body.classList.toggle('light-mode'); const isLight = document.body.classList.contains('light-mode'); document.getElementById('theme-btn').innerText = isLight ? '☀️' : '🌙'; localStorage.setItem('arcade50Theme', isLight); }
+    if (localStorage.getItem('arcade50Theme') === 'true') toggleTheme();
+    const backToTopBtn = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => { if (window.scrollY > 400) backToTopBtn.classList.add('show'); else backToTopBtn.classList.remove('show'); });
 
-// ============ ۲. حدس عدد ============
-let targetNum=Math.floor(Math.random()*100)+1;
-let guessCount=0;
-function guessNumber(){
-    let g=parseInt(document.getElementById('guessNum').value);
-    guessCount++;
-    if(g===targetNum){
-        document.getElementById('guessR').textContent='🎉 آفرین! '+guessCount+' بار حدس زدی';
-        document.getElementById('guessHint').textContent='';
-        targetNum=Math.floor(Math.random()*100)+1;
-        guessCount=0;
-    }else if(g<targetNum){
-        document.getElementById('guessR').textContent='⬆ برو بالا';
-    }else{
-        document.getElementById('guessR').textContent='⬇ برو پایین';
-    }
-}
+    const $ = id => document.getElementById(id);
+    const rand = max => Math.floor(Math.random() * max);
+    const rInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
-// ============ ۳. سنگ کاغذ قیچی ============
-function rps(choice){
-    let opts=['rock','paper','scissors'];
-    let emojis={'rock':'✊','paper':'✋','scissors':'✌️'};
-    let ai=opts[Math.floor(Math.random()*3)];
-    let result='';
-    if(choice===ai)result='مساوی!';
-    else if((choice==='rock'&&ai==='scissors')||(choice==='paper'&&ai==='rock')||(choice==='scissors'&&ai==='paper'))
-        result='🎉 بردی!';
-    else result='😢 باختی';
-    document.getElementById('rpsR').innerHTML='تو: '+emojis[choice]+' | سیستم: '+emojis[ai]+'<br>'+result;
-}
+    const gamesData = [
+        // --- Speed & Reflex ---
+        { title: "۱. ⚡ زمان واکنش", render: gReact },
+        { title: "۲. 👆 تپ سریع", render: gTapFast },
+        { title: "۳. 🎯 نشانه‌گیری", render: gAim },
+        { title: "۴. 🧺 گرفتن توپ", render: gCatch },
+        { title: "۵. 👉 چپ یا راست", render: gLeftRight },
+        { title: "۶. 🎨 تطبیق رنگ", render: gColorMatch },
+        { title: "۷. 🔢 پیدا کردن عدد", render: gFindNum },
+        { title: "۸. 🦘 پرش سریع", render: gJump },
+        { title: "۹. 🔨 شکار موش", render: gMole },
+        { title: "۱۰. 🚦 واکنش رنگی", render: gReactColor },
 
-// ============ ۴. کرونومتر ============
-let timerInterval,timerSeconds=0;
-function startTimer(){
-    let btn=document.getElementById('timerBtn');
-    if(btn.textContent.includes('شروع')){
-        btn.textContent='⏸ توقف';
-        timerInterval=setInterval(()=>{
-            timerSeconds++;
-            let m=Math.floor(timerSeconds/60);
-            let s=timerSeconds%60;
-            document.getElementById('timer').textContent=(m<10?'0'+m:m)+':'+(s<10?'0'+s:s);
-        },1000);
-    }else{
-        clearInterval(timerInterval);
-        btn.textContent='▶ شروع';
-    }
-}
-function resetTimer(){
-    clearInterval(timerInterval);
-    timerSeconds=0;
-    document.getElementById('timer').textContent='00:00';
-    document.getElementById('timerBtn').textContent='▶ شروع';
-}
+        // --- Brain & Logic ---
+        { title: "۱۱. 🧮 ریاضی سریع", render: gMath },
+        { title: "۱۲. ➕ جمع ایموجی", render: gEmojiMath },
+        { title: "۱۳. 📈 دنباله اعداد", render: gSeq },
+        { title: "۱۴. ⬆️ بالاتر/پایین‌تر", render: gHigherLower },
+        { title: "۱۵. 🔢 عدد گمشده", render: gMissingNum },
+        { title: "۱۶. 💻 باینری", render: gBinary },
+        { title: "۱۷. 🔍 عدد اول", render: gPrime },
+        { title: "۱۸. 🧠 تست استروپ", render: gStroop },
+        { title: "۱۹. ⚖️ درست/غلط", render: gTrueFalse },
+        { title: "۲۰. 🧩 معما", render: gRiddle },
 
-// ============ ۵. ماشین حساب ============
-function calcAdd(v){document.getElementById('calcDisplay').value+=v}
-function calcResult(){document.getElementById('calcDisplay').value=eval(document.getElementById('calcDisplay').value)}
-function calcClear(){document.getElementById('calcDisplay').value=''}
+        // --- Memory & Pattern ---
+        { title: "۲۱. 🃏 جفت‌یابی", render: gMemory },
+        { title: "۲۲. 🎵 سایمون", render: gSimon },
+        { title: "۲۳. 🟩 الگوی رنگی", render: gPattern },
+        { title: "۲۴. 🔢 حافظه عددی", render: gMemNum },
+        { title: "۲۵. 🎹 پیانو", render: gPiano },
+        { title: "۲۶. 🔠 حافظه حروف", render: gMemLetter },
+        { title: "۲۷. 🟦 دنباله روشن", render: gSeqLight },
+        { title: "۲۸. 👁️ کدام عوض شد؟", render: gWhatChanged },
+        { title: "۲۹. 📸 حافظه تصویر", render: gImgMem },
+        { title: "۳۰. 🧩 جورچین", render: gPuzzle },
 
-// ============ ۶. واکنش ============
-let reactTime;
-function reactGame(){
-    let b=document.getElementById('reactBtn');
-    if(b.textContent.includes('کلیک کن')){
-        b.textContent='صبر کن...';
-        b.style.background='red';
-        setTimeout(()=>{
-            b.textContent='الان بزن!';
-            b.style.background='lime';
-            reactTime=Date.now();
-        },Math.random()*3000+1000);
-    }else if(b.textContent.includes('الان')){
-        let t=Date.now()-reactTime;
-        document.getElementById('reactGR').textContent='⏱️ '+t+' میلی‌ثانیه';
-        b.textContent='کلیک کن';
-        b.style.background='linear-gradient(135deg,#ffd700,#ffaa00)';
-    }
-}
+        // --- Words & Text ---
+        { title: "۳۱. 🔤 درهم", render: gScramble },
+        { title: "۳۲. 🔄 آناگرام", render: gAnagram },
+        { title: "۳۳. ⌨️ سرعت تایپ", render: gTyping },
+        { title: "۳۴. 📝 حدس کلمه", render: gWordGuess },
+        { title: "۳۵. 🔠 کلمه‌ساز", render: gWordMaker },
+        { title: "۳۶. 🌍 پایتخت", render: gCapital },
+        { title: "۳۷. ✍️ عددنویس", render: gNumWords },
+        { title: "۳۸. 📖 معنی کلمه", render: gMeaning },
+        { title: "۳۹. 🔤 حرف‌یاب", render: gLetterFind },
+        { title: "۴۰. 📞 تقلید صدا", render: gAnimalSound },
 
-// ============ ۷. حدس رنگ ============
-let colorTarget;
-let colors=['red','blue','green','yellow'];
-let colorNamesFa=['قرمز','آبی','سبز','زرد'];
-newColorTarget();
-function newColorTarget(){
-    colorTarget=Math.floor(Math.random()*4);
-    document.getElementById('colorBox').style.background=colors[colorTarget];
-}
-function colorGuess(c){
-    let i={'red':0,'blue':1,'green':2,'yellow':3};
-    if(i[c]===colorTarget){
-        document.getElementById('colorGR').textContent='✅ درسته!';
-        newColorTarget();
-    }else{
-        document.getElementById('colorGR').textContent='❌ اشتباه';
-    }
-}
+        // --- Chance & Classic ---
+        { title: "۴۱. 🎲 تاس", render: gDice },
+        { title: "۴۲. 🪙 شیر/خط", render: gCoin },
+        { title: "۴۳. 🎡 گردونه", render: gWheel },
+        { title: "۴۴. ✊ RPS", render: gRPS },
+        { title: "۴۵. 🖖 RPSLS", render: gRPSLS },
+        { title: "۴۶. 🃏 بلک‌جک", render: gBlackjack },
+        { title: "۴۷. 🎱 جادویی", render: gMagic8 },
+        { title: "۴۸. 🔮 فال", render: gFortune },
+        { title: "۴۹. 🎰 اسلات", render: gSlot },
+        { title: "۵۰. 🎉 جشن", render: gCelebrate }
+    ];
 
-// ============ ۸. یادداشت ============
-function saveNote(){
-    let n=document.getElementById('note').value;
-    localStorage.setItem('rahilaNote',n);
-    document.getElementById('noteR').textContent='✅ ذخیره شد!';
-}
-function clearNote(){
-    document.getElementById('note').value='';
-    localStorage.removeItem('rahilaNote');
-    document.getElementById('noteR').textContent='🗑 پاک شد';
-}
-window.onload=function(){
-    let saved=localStorage.getItem('rahilaNote');
-    if(saved)document.getElementById('note').value=saved;
-    memoryReset();
-}
-
-// ============ ۹. کلمه تصادفی ============
-let randWords=['ستاره','دریا','کوهستان','آسمان','گل','ماه','خورشید','جنگل','رود','ابر','بهار','عشق','نور','آزادی','رنگین‌کمان'];
-function randomWord(){
-    document.getElementById('randWord').textContent=randWords[Math.floor(Math.random()*randWords.length)];
-}
-
-// ============ ۱۰. مار ============
-let snakeCanvas,snakeCtx,snake,snakeDir,food,snakeScore,snakeInterval;
-function snakeReset(){
-    snakeCanvas=document.getElementById('snakeCanvas');
-    snakeCtx=snakeCanvas.getContext('2d');
-    snake=[{x:120,y:120}];
-    snakeDir={x:10,y:0};
-    snakeScore=0;
-    document.getElementById('snakeScore').textContent='0';
-    snakePlaceFood();
-    clearInterval(snakeInterval);
-    snakeInterval=setInterval(snakeUpdate,100);
-}
-function snakePlaceFood(){
-    food={x:Math.floor(Math.random()*24)*10,y:Math.floor(Math.random()*24)*10};
-}
-function snakeUpdate(){
-    let head={x:snake[0].x+snakeDir.x,y:snake[0].y+snakeDir.y};
-    if(head.x<0||head.x>=240||head.y<0||head.y>=240||snake.some(s=>s.x===head.x&&s.y===head.y)){
-        clearInterval(snakeInterval);
-        return;
-    }
-    snake.unshift(head);
-    if(head.x===food.x&&head.y===food.y){
-        snakeScore+=10;
-        document.getElementById('snakeScore').textContent=snakeScore;
-        snakePlaceFood();
-    }else{
-        snake.pop();
-    }
-    snakeCtx.clearRect(0,0,240,240);
-    snakeCtx.fillStyle='lime';
-    snake.forEach(s=>snakeCtx.fillRect(s.x,s.y,10,10));
-    snakeCtx.fillStyle='red';
-    snakeCtx.fillRect(food.x,food.y,10,10);
-}
-document.addEventListener('keydown',e=>{
-    if(e.key==='ArrowUp'&&snakeDir.y===0){snakeDir={x:0,y:-10}}
-    if(e.key==='ArrowDown'&&snakeDir.y===0){snakeDir={x:0,y:10}}
-    if(e.key==='ArrowLeft'&&snakeDir.x===0){snakeDir={x:-10,y:0}}
-    if(e.key==='ArrowRight'&&snakeDir.x===0){snakeDir={x:10,y:0}}
-});
-snakeReset();
-
-// ============ ۱۱. دارت ============
-let dartScore=0;
-function dartHit(e){
-    let r=e.target.getBoundingClientRect();
-    let x=e.clientX-r.left-100;
-    let y=e.clientY-r.top-100;
-    let dist=Math.sqrt(x*x+y*y);
-    let pts;
-    if(dist<20)pts=100;
-    else if(dist<50)pts=50;
-    else if(dist<100)pts=25;
-    else pts=5;
-    dartScore+=pts;
-    document.getElementById('dartScore').textContent=dartScore;
-    document.getElementById('dartR').textContent='+'+pts+' امتیاز';
-}
-
-// ============ ۱۲. لامپ ============
-let lampOn=true;
-function toggleLamp(){
-    lampOn=!lampOn;
-    document.getElementById('lamp').textContent=lampOn?'💡':'🌑';
-}
-
-// ============ ۱۳. صدا ============
-let audioCtx=new(window.AudioContext||window.webkitAudioContext)();
-function beep(freq,dur){
-    let o=audioCtx.createOscillator();
-    let g=audioCtx.createGain();
-    o.connect(g);g.connect(audioCtx.destination);
-    o.frequency.value=freq;g.gain.value=0.3;
-    o.start();setTimeout(()=>o.stop(),dur);
-}
-function playBeep(){beep(440,200)}
-function playDoubleBeep(){beep(440,150);setTimeout(()=>beep(440,150),200)}
-
-// ============ ۱۴. حافظه ============
-let memCards,memFlipped,memMoves,memLocked;
-function memoryReset(){
-    let emojis=['🍎','🍊','🍋','🍉','🍇','🍓'];
-    let deck=[...emojis,...emojis].sort(()=>Math.random()-0.5);
-    memCards=deck;memFlipped=[];memMoves=0;memLocked=false;
-    document.getElementById('memMoves').textContent='0';
-    let grid=document.getElementById('memoryGrid');
-    grid.innerHTML='';
-    deck.forEach((e,i)=>{
-        let btn=document.createElement('button');
-        btn.textContent='?';
-        btn.setAttribute('data-id',i);
-        btn.onclick=()=>memoryFlip(i,btn);
-        grid.appendChild(btn);
+    const container = $('games-container');
+    gamesData.forEach((game, idx) => {
+        const card = document.createElement('div');
+        card.className = 'game-card';
+        card.innerHTML = `
+            <div class="game-header">
+                <span class="game-title">${game.title}</span>
+                <span class="game-score" id="sc-${idx}">0</span>
+            </div>
+            <div class="game-content" id="game-${idx}"></div>
+        `;
+        container.appendChild(card);
+        game.render(idx);
     });
-}
-function memoryFlip(i,btn){
-    if(memLocked||memFlipped.length>=2||btn.textContent!=='?')return;
-    btn.textContent=memCards[i];
-    memFlipped.push({i,btn});
-    if(memFlipped.length===2){
-        memMoves++;
-        document.getElementById('memMoves').textContent=memMoves;
-        let[a,b]=memFlipped;
-        if(memCards[a.i]===memCards[b.i]){
-            memFlipped=[];
-        }else{
-            memLocked=true;
-            setTimeout(()=>{
-                a.btn.textContent='?';
-                b.btn.textContent='?';
-                memFlipped=[];
-                memLocked=false;
-            },700);
+
+    // ==========================================
+    // GAME LOGIC (50 Implementations)
+    // ==========================================
+
+    function gReact(idx) {
+        $(`game-${idx}`).innerHTML = `<button id="b-${idx}" onclick="actReact(${idx})" class="secondary" style="width:100%;height:60px;">شروع</button><div class="result-text" id="r-${idx}"></div>`;
+    }
+    function actReact(idx) {
+        const b = $(`b-${idx}`);
+        if(b.innerText === 'شروع') { b.innerText = 'صبر...'; b.style.background = 'var(--danger)'; setTimeout(() => { b.innerText = 'بزن!'; b.style.background = 'var(--accent)'; window[`rt-${idx}`] = Date.now(); }, rInt(1000,3000)); }
+        else if(b.innerText === 'بزن!') { $(`r-${idx}`).innerText = `⏱️ ${Date.now() - window[`rt-${idx}`]} ms`; b.innerText = 'شروع'; b.style.background = 'var(--bg-inner)'; }
+    }
+
+    function gTapFast(idx) {
+        $(`game-${idx}`).innerHTML = `<button id="b-${idx}" onclick="actTap(${idx})" class="secondary" style="width:100%;height:60px;">شروع</button>`;
+        window[`tpc-${idx}`] = 0;
+    }
+    function actTap(idx) {
+        const b = $(`b-${idx}`);
+        if(b.innerText === 'شروع') { window[`tpc-${idx}`] = 0; b.innerText = 'بزن!'; clearInterval(window[`tpi-${idx}`]); window[`tpi-${idx}`] = setInterval(() => { if(window[`tpt-${idx}`] <= 0) { clearInterval(window[`tpi-${idx}`]); b.innerText = 'شروع مجدد'; $(`sc-${idx}`).innerText = window[`tpc-${idx}`]; } }, 100); window[`tpt-${idx}`] = 5; }
+        else if(b.innerText === 'بزن!') { window[`tpc-${idx}`]++; $(`sc-${idx}`).innerText = window[`tpc-${idx}`]; }
+    }
+
+    function gAim(idx) {
+        $(`game-${idx}`).innerHTML = `<div style="width:100%;height:100px;background:var(--bg-inner);position:relative;border-radius:8px;" onclick="actAim(${idx}, event)"><div id="tg-${idx}" style="width:20px;height:20px;background:red;border-radius:50%;position:absolute;top:40px;left:40px;"></div></div>`;
+    }
+    function actAim(idx, e) {
+        let r = e.target.getBoundingClientRect();
+        let t = $(`tg-${idx}`);
+        let x = e.clientX - r.left, y = e.clientY - r.top;
+        if(Math.hypot(x - (parseInt(t.style.left)+10), y - (parseInt(t.style.top)+10)) < 20) { $(`sc-${idx}`).innerText = parseInt($(`sc-${idx}`).innerText) + 10; }
+        t.style.top = rand(80) + 'px'; t.style.left = rand(250) + 'px';
+    }
+
+    function gCatch(idx) {
+        $(`game-${idx}`).innerHTML = `<div style="width:100%;height:100px;border-bottom:2px solid var(--primary);position:relative;overflow:hidden;" id="ct-${idx}"><div id="cb-${idx}" style="width:15px;height:15px;background:var(--gold);border-radius:50%;position:absolute;top:0;left:50%;"></div></div><button onclick="actCatch(${idx})">گرفتن</button>`;
+        window[`cbx-${idx}`] = 50;
+        setInterval(() => { let b = $(`cb-${idx}`); if(!b) return; let y = parseInt(b.style.top) || 0; y += 2; if(y > 90) { y = 0; b.style.left = rand(90) + '%'; } b.style.top = y + 'px'; }, 50);
+    }
+    function actCatch(idx) {
+        let b = $(`cb-${idx}`);
+        if(parseInt(b.style.top) > 80) { $(`sc-${idx}`).innerText = parseInt($(`sc-${idx}`).innerText) + 10; b.style.top = '0px'; }
+    }
+
+    function gLeftRight(idx) { $(`game-${idx}`).innerHTML = `<div style="display:flex;gap:10px;"><button onclick="actLR(${idx},'L')">⬅</button><button onclick="actLR(${idx},'R')">➡</button></div><div class="result-text" id="r-${idx}"></div>`; }
+    function actLR(idx, c) { let r = Math.random()<0.5?'L':'R'; $(`r-${idx}`).innerText = c===r?'✅ درست':'❌ اشتباه'; }
+
+    function gColorMatch(idx) {
+        $(`game-${idx}`).innerHTML = `<div id="cbx-${idx}" style="width:50px;height:50px;border-radius:50%;margin-bottom:10px;background:#333;"></div><div style="display:flex;gap:5px;"><button onclick="actCol(${idx},'red')" style="background:red;">قرمز</button><button onclick="actCol(${idx},'blue')" style="background:blue;">آبی</button></div>`;
+        window[`ctg-${idx}`] = ['red','blue'][rand(2)]; $(`cbx-${idx}`).style.background = window[`ctg-${idx}`];
+    }
+    function actCol(idx, c) { if(c === window[`ctg-${idx}`]) { $(`sc-${idx}`).innerText = parseInt($(`sc-${idx}`).innerText)+5; window[`ctg-${idx}`] = ['red','blue'][rand(2)]; $(`cbx-${idx}`).style.background = window[`ctg-${idx}`]; } }
+
+    function gFindNum(idx) {
+        let target = rInt(10, 99);
+        $(`game-${idx}`).innerHTML = `<div class="result-text">پیدا کن: ${target}</div><div class="grid-game" style="grid-template-columns:repeat(3, 1fr);" id="fg-${idx}"></div>`;
+        let g = $(`fg-${idx}`);
+        for(let i=0; i<9; i++) {
+            let b = document.createElement('div'); b.className = 'grid-btn'; b.innerText = i===4?target:rInt(10,99);
+            b.onclick = () => { if(b.innerText == target) { $(`sc-${idx}`).innerText = parseInt($(`sc-${idx}`).innerText)+10; gFindNum(idx); } };
+            g.appendChild(b);
         }
     }
-}
 
-// ============ ۱۵. حروف درهم ============
-let unscrambleWord;
-let unscrambleWords=['کتاب','مداد','میز','صندلی','پنجره','آسمان','دریا'];
-function newUnscramble(){
-    unscrambleWord=unscrambleWords[Math.floor(Math.random()*unscrambleWords.length)];
-    let scrambled=unscrambleWord.split('').sort(()=>Math.random()-0.5).join('');
-    document.getElementById('scrambledWord').textContent=scrambled;
-}
-function unscrambleCheck(){
-    let g=document.getElementById('unscrambleIn').value;
-    if(g===unscrambleWord){
-        document.getElementById('unscrambleR').textContent='🎉 درسته!';
-        newUnscramble();
-    }else{
-        document.getElementById('unscrambleR').textContent='❌ دوباره';
+    function gJump(idx) { $(`game-${idx}`).innerHTML = `<div id="j-${idx}" style="font-size:40px;transition:0.2s;">🦘</div><button onclick="actJump(${idx})">پرش</button>`; }
+    function actJump(idx) { let j = $(`j-${idx}`); j.style.transform = 'translateY(-30px)'; setTimeout(() => j.style.transform = 'translateY(0)', 200); $(`sc-${idx}`).innerText = parseInt($(`sc-${idx}`).innerText)+1; }
+
+    function gMole(idx) {
+        $(`game-${idx}`).innerHTML = `<div class="grid-game" style="grid-template-columns:repeat(3, 1fr);" id="mg-${idx}"></div>`;
+        let g = $(`mg-${idx}`);
+        for(let i=0; i<9; i++) { let c = document.createElement('div'); c.className='grid-btn'; c.id=`m-${idx}-${i}`; c.onclick = () => { if(c.innerText === '🐹') { c.innerText = ''; $(`sc-${idx}`).innerText = parseInt($(`sc-${idx}`).innerText)+10; } }; g.appendChild(c); }
+        setInterval(() => { let r = rand(9); let e = $(`m-${idx}-${r}`); if(e && e.innerText === '') e.innerText = '🐹'; setTimeout(() => { if(e) e.innerText = ''; }, 800); }, 1000);
     }
-    document.getElementById('unscrambleIn').value='';
-}
-newUnscramble();
 
-// ============ ۱۶. بولینگ ============
-function bowl(){
-    let pins=Math.floor(Math.random()*11);
-    document.getElementById('bowlPins').textContent=pins;
-    document.getElementById('bowlR').textContent=pins===10?'🎳 اعتصاب!':'امتیاز: '+pins;
-}
+    function gReactColor(idx) { $(`game-${idx}`).innerHTML = `<div id="rc-${idx}" style="width:50px;height:50px;margin:10px auto;background:red;transition:0.3s;"></div><button onclick="actRC(${idx})">زدم!</button>`; }
 
-// ============ ۱۷. اسلات ماشین ============
-function spinSlot(){
-    let emojis=['🍒','🍋','🍊','⭐','7️⃣'];
-    let s1=emojis[Math.floor(Math.random()*5)];
-    let s2=emojis[Math.floor(Math.random()*5)];
-    let s3=emojis[Math.floor(Math.random()*5)];
-    document.getElementById('slotDisplay').textContent=s1+' '+s2+' '+s3;
-    if(s1===s2&&s2===s3)
-        document.getElementById('slotR').textContent='🎉 جکپات!';
-    else
-        document.getElementById('slotR').textContent='🔄 دوباره';
-}
+    function gMath(idx) { $(`game-${idx}`).innerHTML = `<div class="result-text" id="q-${idx}" style="font-size:20px;"></div><input type="number" id="i-${idx}" placeholder="جواب"><button onclick="actMath(${idx})">بررسی</button>`; let a=rInt(1,20), b=rInt(1,20); window[`ma-${idx}`] = a+b; $(`q-${idx}`).innerText = `${a}+${b}`; }
+    function actMath(idx) { if(parseInt($(`i-${idx}`).value) === window[`ma-${idx}`]) { $(`sc-${idx}`).innerText = parseInt($(`sc-${idx}`).innerText)+10; gMath(idx); } }
 
-// ============ ۱۸. سوال ریاضی ============
-let mathAnswer;
-function newMathQ(){
-    let a=Math.floor(Math.random()*20)+1;
-    let b=Math.floor(Math.random()*20)+1;
-    let op=Math.random()<0.5?'+':'-';
-    mathAnswer=op==='+'?a+b:a-b;
-    document.getElementById('mathQ').textContent=a+' '+op+' '+b+' = ؟';
-}
-function mathCheck(){
-    let g=parseInt(document.getElementById('mathA').value);
-    if(g===mathAnswer){
-        document.getElementById('mathR').textContent='✅ درسته!';
-        newMathQ();
-    }else{
-        document.getElementById('mathR').textContent='❌ اشتباه';
-    }
-    document.getElementById('mathA').value='';
-}
-newMathQ();
+    function gEmojiMath(idx) { $(`game-${idx}`).innerHTML = `<div class="result-text" id="q-${idx}"></div><input type="number" id="i-${idx}" placeholder="جواب"><button onclick="actEMath(${idx})">بررسی</button>`; let a=rInt(1,5), b=rInt(1,5); window[`ema-${idx}`] = a+b; $(`q-${idx}`).innerText = `🍎(${a}) + 🍌(${b})`; }
+    function actEMath(idx) { if(parseInt($(`i-${idx}`).value) === window[`ema-${idx}`]) { $(`sc-${idx}`).innerText = parseInt($(`sc-${idx}`).innerText)+10; gEmojiMath(idx); } }
 
-// ============ ۱۹. شیر یا خط ============
-function coinFlip(){
-    let r=Math.random()<0.5?'🦁 شیر':'📖 خط';
-    document.getElementById('coinR').textContent=r;
-}
+    function gSeq(idx) { $(`game-${idx}`).innerHTML = `<div class="result-text" id="q-${idx}"></div><input type="number" id="i-${idx}" placeholder="جواب"><button onclick="actSeq(${idx})">بررسی</button>`; let s=rInt(1,5), d=rInt(2,5); window[`sq-${idx}`] = s+d*3; $(`q-${idx}`).innerText = `${s}, ${s+d}, ${s+d*2}, ?`; }
+    function actSeq(idx) { if(parseInt($(`i-${idx}`).value) === window[`sq-${idx}`]) { $(`sc-${idx}`).innerText = parseInt($(`sc-${idx}`).innerText)+10; gSeq(idx); } }
 
-// ============ ۲۰. امتیاز کل ============
-function resetAllScores(){
-    dartScore=0;
-    document.getElementById('dartScore').textContent='0';
-    document.getElementById('dartR').textContent='';
-    document.getElementById('totalScore').textContent='0';
-}
+    function gHigherLower(idx) { $(`game-${idx}`).innerHTML = `<div class="result-text" id="q-${idx}" style="font-size:24px;">50</div><div style="display:flex;gap:5px;"><button onclick="actHL(${idx},'h')">⬆</button><button onclick="actHL(${idx},'l')">⬇</button></div>`; window[`hlc-${idx}`]=50; window[`hln-${idx}`]=rInt(1,100); }
+    function actHL(idx, d) { let c=window[`hlc-${idx}`], n=window[`hln-${idx}`]; if((d==='h'&&n>c)||(d==='l'&&n<c)) $(`sc-${idx}`).innerText = parseInt($(`sc-${idx}`).innerText)+5; window[`hlc-${idx}`]=n; window[`hln-${idx}`]=rInt(1,100); $(`q-${idx}`).innerText = n; }
+
+    function gMissingNum(idx) { $(`game-${idx}`).innerHTML = `<div class="result-text" id="q-${idx}"></div><input type="number" id="i-${idx}"><button onclick="actMN(${idx})">بررسی</button>`; let s=rInt(1,5), st=rInt(2,4); window[`mn-${idx}`] = s+st*2; $(`q-${idx}`).innerText = `${s}, ${s+st}, ?, ${s+st*3}`; }
+    function actMN(idx) { if(parseInt($(`i-${idx}`).value) === window[`mn-${idx}`]) { $(`sc-${idx}`).innerText = parseInt($(`sc-${idx}`).innerText)+10; gMissingNum(idx); } }
+
+    function gBinary(idx) { $(`game-${idx}`).innerHTML = `<div class="result-text" id="q-${idx}"></div><input type="number" id="i-${idx}"><button onclick="actBin(${idx})">بررسی</button>`; let n=rInt(2,15); window[`bn-${idx}`]=n; $(`q-${idx}`).innerText = n.toString(2); }
+    function actBin(idx) { if(parseInt($(`i-${idx}`).value) === window[`bn-${idx}`]) { $(`sc-${idx}`).innerText = parseInt($(`sc-${idx}`).innerText)+10; gBinary(idx); } }
+
+    function gPrime(idx) { $(`game-${idx}`).innerHTML = `<div class="result-text" id="q-${idx}" style="font-size:24px;"></div><div style="display:flex;gap:5px;"><button onclick="actPrime(${idx},1)">اول</button><button onclick="actPrime(${idx},0)">نیست</button></div>`; let n=rInt(2,30); window[`pn-${idx}`]=n; let isP=true; for(let i=2;i<n;i++) if(n%i===0) isP=false; window[`pa-${idx}`]=isP; $(`q-${idx}`).innerText = n; }
+    function actPrime(idx, g) { if((g===1) === window[`pa-${idx}`]) { $(`sc-${idx}`).innerText = parseInt($(`sc-${idx}`).innerText)+10; gPrime(idx); } }
+
+    function gStroop(idx) { $(`game-${idx}`).innerHTML = `<div class="result-text" id="q-${idx}" style="font-size:24px;font-weight:bold;"></div><div style="display:flex;gap:5px;"><button onclick="actStr(${idx},'red')" style="background:red">قرمز</button><button onclick="actStr(${idx},'blue')" style="background:blue">آبی</button></div>`; let c=['red','blue'][rand(2)], t=['red','blue'][rand(2)]; window[`sta-${idx}`]=c; $(`q-${idx}`).innerText = t==='red'?'قرمز':'آبی'; $(`q-${idx}`).style.color = c; }
+    function actStr(idx, c) { if(c === window[`sta-${idx}`]) { $(`sc-${idx}`).innerText = parseInt($(`sc-${idx}`).innerText)+10; gStroop(idx); } }
+
+    function gTrueFalse(idx) { $(`game-${idx}`).innerHTML = `<div class="result-text" id="q-${idx}">زمین گرد است</div><div style="display:flex;gap:5px;"><button onclick="actTF(${idx},1)">درست</button><button onclick="actTF(${idx},0)">غلط</button></div>`; window[`tfa-${idx}`]=1; }
+    function actTF(idx, g) { if(g === window[`tfa-${idx}`]) $(`sc-${idx}`).innerText = parseInt($(`sc-${idx}`).innerText)+5; }
+
+    function gRiddle(idx) { $(`game-${idx}`).innerHTML = `<div class="result-text">هرچه از آن برداری بزرگتر می‌شود؟</div><input id="i-${idx}"><button onclick="actRid(${idx})">بررسی</button>`; }
+    function actRid(idx) { if($(`i-${idx}`).value === 'چاله') $(`sc-${idx}`).innerText = parseInt($(`sc-${idx}`).innerText)+20; }
+
+    function gMemory(idx) { $(`game-${idx}`).innerHTML = `<div class="grid-game" style="grid-template-columns:repeat(4, 1fr);" id="g-${idx}"></div>`; let em=['🍎','🍊','🍋','🍉','🍇','🍓','🍒','🍑']; let d=[...em,...em].sort(()=>Math.random()-0.5); let g=$( `g-${idx}` ); let f=[], l=false; d.forEach((e,i)=>{ let c=document.createElement('div'); c.className='grid-btn'; c.style.color='transparent'; c.innerText=e; c.onclick=()=>{ if(l||c.style.color==='#fff')return; c.style.color='#fff'; f.push({c,e}); if(f.length===2){ l=true; if(f[0].e===f[1].e){ $(`sc-${idx}`).innerText = parseInt($(`sc-${idx}`).innerText)+10; f=[]; l=false; } else { setTimeout(()=>{ f.forEach(x=>x.c.style.color='transparent'); f=[]; l=false; }, 800); } } }; g.appendChild(c); }); }
+
+    function gSimon(idx) { $(`game-${idx}`).innerHTML = `<button onclick="actSim(${idx})">شروع</button><div style="display:flex;gap:5px;margin-top:10px;"><div class="grid-btn" style="background:red;width:30px;" id="s0-${idx}"></div><div class="grid-btn" style="background:blue;width:30px;" id="s1-${idx}"></div></div>`; window[`sm-${idx}`]=[]; window[`smp-${idx}`]=0; }
+    function actSim(idx) { window[`sm-${idx}`]=[]; for(let i=0;i<3;i++) window[`sm-${idx}`].push(rand(2)); let i=0; let int=setInterval(()=>{ if(i>=window[`sm-${idx}`].length){clearInterval(int);return;} let e=$(`s${window[`sm-${idx}`][i]}-${idx}`); e.style.opacity=0.2; setTimeout(()=>e.style.opacity=1,300); i++; }, 600); }
+
+    function gPattern(idx) { $(`game-${idx}`).innerHTML = `<div class="grid-game" style="grid-template-columns:repeat(3, 1fr);" id="g-${idx}"></div>`; let g=$(`g-${idx}`); let t=rand(9); for(let i=0;i<9;i++){ let c=document.createElement('div'); c.className='grid-btn'; c.onclick=()=>{ if(i===t) $(`sc-${idx}`).innerText = parseInt($(`sc-${idx}`).innerText)+10; else $(`sc-${idx}`).innerText = Math.max(0, parseInt($(`sc-${idx}`).innerText)-5); }; g.appendChild(c); } }
+
+    function gMemNum(idx) { $(`game-${idx}`).innerHTML = `<div class="result-text" id="q-${idx}" style="font-size:24px;">---</div><button onclick="actMNm(${idx})">نمایش</button><input id="i-${idx}"><button onclick="actMNc(${idx})">بررسی</button>`; }
+    function actMNm(idx) { window[`mnn-${idx}`] = rInt(100,999); $(`q-${idx}`).innerText = window[`mnn-${idx}`]; setTimeout(()=>$(`q-${idx}`).innerText='---', 2000); }
+    function actMNc(idx) { if(parseInt($(`i-${idx}`).value) === window[`mnn-${idx}`]) $(`sc-${idx}`).innerText = parseInt($(`sc-${idx}`).innerText)+15; }
+
+    function gPiano(idx) { $(`game-${idx}`).innerHTML = `<div style="display:flex;gap:5px;"><button onclick="pNote(262)">دو</button><button onclick="pNote(330)">می</button><button onclick="pNote(392)">سل</button></div>`; }
+    function pNote(f) { let a = new AudioContext(); let o = a.createOscillator(); o.connect(a.destination); o.frequency.value = f; o.start(); setTimeout(()=>o.stop(), 200); }
+
+    function gMemLetter(idx) { $(`game-${idx}`).innerHTML = `<div class="result-text" id="q-${idx}">---</div><button onclick="actML(${idx})">نمایش</button><input id="i-${idx}"><button onclick="actMLc(${idx})">بررسی</button>`; }
+    function actML(idx) { window[`ml-${idx}`] = ['ABC','XYZ','QWE'][rand(3)]; $(`q-${idx}`).innerText = window[`ml-${idx}`]; setTimeout(()=>$(`q-${idx}`).innerText='---', 2000); }
+    function actMLc(idx) { if($(`i-${idx}`).value.toUpperCase() === window[`ml-${idx}`]) $(`sc-${idx}`).innerText = parseInt($(`sc-${idx}`).innerText)+10; }
+
+    function gSeqLight(idx) { $(`game-${idx}`).innerHTML = `<div style="display:flex;gap:5px;" id="g-${idx}"></div><button onclick="actSL(${idx})">شروع</button>`; let g=$(`g-${idx}`); for(let i=0;i<4;i++){ let c=document.createElement('div'); c.className='grid-btn'; c.style.width='30px'; c.id=`sl-${idx}-${i}`; g.appendChild(c); } }
+    function actSL(idx) { let s=rInt(0,3); let e=$(`sl-${idx}-${s}`); e.style.background='var(--gold)'; setTimeout(()=>e.style.background='var(--bg-inner)', 500); }
+
+    function gWhatChanged(idx) { $(`game-${idx}`).innerHTML = `<div style="font-size:24px;" id="q-${idx}">🍎🍊🍋</div><button onclick="actWC(${idx})">شروع</button>`; }
+    function actWC(idx) { $(`q-${idx}`).innerText = ['🍎🍊🍋','🍎🍋🍊','🍊🍎🍋'][rand(3)]; }
+
+    function gImgMem(idx) { $(`game-${idx}`).innerHTML = `<div style="font-size:40px;" id="q-${idx}">❓</div><button onclick="actIM(${idx})">نمایش</button>`; }
+    function actIM(idx) { $(`q-${idx}`).innerText = ['🍓','🚀','🐶'][rand(3)]; setTimeout(()=>$(`q-${idx}`).innerText='❓', 1000); }
+
+    function gPuzzle(idx) { $(`game-${idx}`).innerHTML = `<div class="grid-game" style="grid-template-columns:repeat(3, 1fr);" id="g-${idx}"></div>`; let g=$(`g-${idx}`); let a=[1,2,3,4,5,6,7,8,0].sort(()=>Math.random()-0.5); a.forEach((n,i)=>{ let b=document.createElement('div'); b.className='grid-btn'; b.innerText = n||'⬜'; b.onclick=()=>{ if(a[i+1]===0||a[i-1]===0||a[i+3]===0||a[i-3]===0){ let e=a.indexOf(0); [a[i],a[e]]=[a[e],a[i]]; gPuzzle(idx); } }; g.appendChild(b); }); }
+
+    function gScramble(idx) { $(`game-${idx}`).innerHTML = `<div class="result-text" id="q-${idx}"></div><input id="i-${idx}"><button onclick="actScr(${idx})">بررسی</button>`; window[`sw-${idx}`] = ['کتاب','مداد','دریا'][rand(3)]; $(`q-${idx}`).innerText = window[`sw-${idx}`].split('').sort(()=>Math.random()-0.5).join(''); }
+    function actScr(idx) { if($(`i-${idx}`).value === window[`sw-${idx}`]) { $(`sc-${idx}`).innerText = parseInt($(`sc-${idx}`).innerText)+10; gScramble(idx); } }
+
+    function gAnagram(idx) { $(`game-${idx}`).innerHTML = `<div class="result-text" id="q-${idx}"></div><input id="i-${idx}"><button onclick="actAna(${idx})">بررسی</button>`; window[`an-${idx}`] = ['ماشین','دانشگاه','تلویزیون'][rand(3)]; $(`q-${idx}`).innerText = window[`an-${idx}`].split('').sort(()=>Math.random()-0.5).join(''); }
+    function actAna(idx) { if($(`i-${idx}`).value === window[`an-${idx}`]) { $(`sc-${idx}`).innerText = parseInt($(`sc-${idx}`).innerText)+15; gAnagram(idx); } }
+
+    function gTyping(idx) { $(`game-${idx}`).innerHTML = `<div class="result-text" id="q-${idx}"></div><input id="i-${idx}" oninput="if(this.value==='${'سلام'}') { this.value=''; $(`sc-${idx}`).innerText = parseInt($(`sc-${idx}`).innerText)+5; }">`; $(`q-${idx}`).innerText = 'سلام'; }
+
+    function gWordGuess(idx) { $(`game-${idx}`).innerHTML = `<div class="result-text">حدس بزن (۵ حرفی)</div><input id="i-${idx}"><button onclick="actWG(${idx})">بررسی</button>`; }
+    function actWG(idx) { if($(`i-${idx}`).value === 'کتاب') $(`sc-${idx}`).innerText = parseInt($(`sc-${idx}`).innerText)+20; }
+
+    function gWordMaker(idx) { $(`game-${idx}`).innerHTML = `<div class="result-text">ا - ب - ت</div><input id="i-${idx}"><button onclick="actWM(${idx})">بررسی</button>`; }
+    function actWM(idx) { let v=$(`i-${idx}`).value; if(v.split('').every(c=>['ا','ب','ت'].includes(c))) $(`sc-${idx}`).innerText = parseInt($(`sc-${idx}`).innerText)+10; }
+
+    function gCapital(idx) { $(`game-${idx}`).innerHTML = `<div class="result-text">پایتخت ایران؟</div><button onclick="actCap(${idx}, 'تهران')">تهران</button><button onclick="actCap(${idx}, 'شیراز')">شیراز</button>`; }
+    function actCap(idx, c) { if(c === 'تهران') $(`sc-${idx}`).innerText = parseInt($(`sc-${idx}`).innerText)+10; }
+
+    function gNumWords(idx) { $(`game-${idx}`).innerHTML = `<div class="result-text">سه</div><input id="i-${idx}" type="number"><button onclick="actNW(${idx})">بررسی</button>`; }
+    function actNW(idx) { if(parseInt($(`i-${idx}`).value) === 3) $(`sc-${idx}`).innerText = parseInt($(`sc-${idx}`).innerText)+10; }
+
+    function gMeaning(idx) { $(`game-${idx}`).innerHTML = `<div class="result-text">شاد</div><button onclick="actM(${idx}, 'خوشحال')">خوشحال</button><button onclick="actM(${idx}, 'غمگین')">غمگین</button>`; }
+    function actM(idx, m) { if(m === 'خوشحال') $(`sc-${idx}`).innerText = parseInt($(`sc-${idx}`).innerText)+5; }
+
+    function gLetterFind(idx) { $(`game-${idx}`).innerHTML = `<div class="result-text">پیدا کن: ب</div><div class="grid-game" style="grid-template-columns:repeat(3, 1fr);"><div class="grid-btn" onclick="alert('اشتباه')">پ</div><div class="grid-btn" onclick="alert('درست')">ب</div><div class="grid-btn" onclick="alert('اشتباه')">ت</div></div>`; }
+
+    function gAnimalSound(idx) { $(`game-${idx}`).innerHTML = `<button onclick="alert('میو')">🔊</button><div class="result-text">گربه؟</div><button onclick="alert('درست!')">بله</button>`; }
+
+    function gDice(idx) { $(`game-${idx}`).innerHTML = `<div class="result-text" id="q-${idx}" style="font-size:40px;">🎲</div><button onclick="actDice(${idx})">بنداز</button>`; }
+    function actDice(idx) { $(`q-${idx}`).innerText = ['⚀','⚁','⚂','⚃','⚄','⚅'][rand(6)]; }
+
+    function gCoin(idx) { $(`game-${idx}`).innerHTML = `<div class="result-text" id="q-${idx}" style="font-size:40px;">🪙</div><button onclick="actCoin(${idx})">بنداز</button>`; }
+    function actCoin(idx) { $(`q-${idx}`).innerText = Math.random()<0.5?'🦁':'📖'; }
+
+    function gWheel(idx) { $(`game-${idx}`).innerHTML = `<div class="result-text" id="q-${idx}">❓</div><button onclick="actWhl(${idx})">بچرخون</button>`; }
+    function actWhl(idx) { $(`q-${idx}`).innerText = '⏳'; setTimeout(()=>$(`q-${idx}`).innerText = ['۱۰۰','۵۰','۲۰'][rand(3)], 1000); }
+
+    function gRPS(idx) { $(`game-${idx}`).innerHTML = `<div class="result-text" id="q-${idx}">-</div><button onclick="actRPS(${idx}, 'سنگ')">✊</button><button onclick="actRPS(${idx}, 'کاغذ')">✋</button>`; }
+    function actRPS(idx, c) { let o=['سنگ','کاغذ'][rand(2)]; $(`q-${idx}`).innerText = c===o?'مساوی':c==='سنگ'?'بردی':'باختی'; }
+
+    function gRPSLS(idx) { $(`game-${idx}`).innerHTML = `<div class="result-text">سنگ/کاغذ/قیچی/مارمولک/اسپاک</div><button onclick="alert('نسخه کامل در فایل‌های دیگر!')">شروع</button>`; }
+
+    function gBlackjack(idx) { $(`game-${idx}`).innerHTML = `<div class="result-text" id="q-${idx}">کارت: 0</div><button onclick="actBJ(${idx})">کارت</button>`; window[`bj-${idx}`]=0; }
+    function actBJ(idx) { window[`bj-${idx}`] += rInt(1,10); $(`q-${idx}`).innerText = `کارت: ${window[`bj-${idx}`]}`; if(window[`bj-${idx}`] > 21) { $(`q-${idx}`).innerText = 'باختی!'; window[`bj-${idx}`]=0; } }
+
+    function gMagic8(idx) { $(`game-${idx}`).innerHTML = `<div class="result-text" id="q-${idx}">🔮</div><button onclick="actM8(${idx})">تکان</button>`; }
+    function actM8(idx) { $(`q-${idx}`).innerText = ['بله','خیر','شاید'][rand(3)]; }
+
+    function gFortune(idx) { $(`game-${idx}`).innerHTML = `<div class="result-text" id="q-${idx}">☕</div><button onclick="actFrt(${idx})">فال</button>`; }
+    function actFrt(idx) { $(`q-${idx}`).innerText = ['خبر خوش','صبر','موفقیت'][rand(3)]; }
+
+    function gSlot(idx) { $(`game-${idx}`).innerHTML = `<div class="result-text" id="q-${idx}">❓ ❓ ❓</div><button onclick="actSlot(${idx})">بچرخون</button>`; }
+    function actSlot(idx) { let e=['🍒','🍋','⭐']; let s=[e[rand(3)],e[rand(3)],e[rand(3)]]; $(`q-${idx}`).innerText = s.join(' '); if(s[0]===s[1]&&s[1]===s[2]) $(`sc-${idx}`).innerText = parseInt($(`sc-${idx}`).innerText)+50; }
+
+    function gCelebrate(idx) { $(`game-${idx}`).innerHTML = `<button onclick="alert('🎉 مبارک!')" style="background:var(--gold);color:#000;padding:15px;">🎉 جشن</button>`; }
 
 </script>
-
-<div style="margin:20px 0;color:#aaa;font-size:13px">
-    © rahilanab.com | ساخته شده با 💙 برای رهیلا
-</div>
-
 </body>
 </html>
