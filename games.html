@@ -1,92 +1,458 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🎮 ۲۰ بازی آنلاین | رهیلا</title>
+    <title>🎮 آرکید نئونی ۳۰ بازی | رهیلاناب</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🕹️</text></svg>">
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+    
     <style>
-        *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:'Arial';background:linear-gradient(135deg,#e3f2fd,#bbdefb,#90caf9,#a5d6a7);color:#111;padding:15px;min-height:100vh;text-align:center}
-        .header{background:#fff;border-radius:20px;padding:18px;margin-bottom:15px;box-shadow:0 4px 15px rgba(0,0,0,.1)}
-        .header h1{color:#0d47a1;font-size:22px}
-        .back-btn{display:inline-block;background:#0d47a1;color:#fff;padding:10px 25px;border-radius:20px;text-decoration:none;margin:10px 0}
-        .game-zone{background:#fff;border-radius:20px;padding:20px;margin:15px 0;box-shadow:0 2px 10px rgba(0,0,0,.08)}
-        .game-zone h2{color:#0d47a1;margin-bottom:10px}
-        input{padding:10px;font-size:18px;width:120px;text-align:center;border-radius:8px;border:2px solid #0d47a1;margin:5px}
-        button{padding:10px 20px;font-size:15px;background:#0d47a1;color:#fff;border:none;border-radius:8px;cursor:pointer;margin:3px}
-        button:active{background:#1565c0}
-        .result{font-size:18px;color:#0d47a1;font-weight:bold;margin:8px 0}
-        canvas{background:#f0f0f0;border-radius:10px;margin:10px auto;display:block}
+        :root {
+            --bg-main: #05050f; --bg-card: rgba(15, 15, 30, 0.8); --text-main: #f0f8ff; --text-muted: #8ba3c7;
+            --primary: #00f5ff; --accent: #ff00aa; --gold: #ffcc00; --border: rgba(0, 245, 255, 0.3);
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.6); --gradient: linear-gradient(135deg, #00f5ff, #ff00aa);
+            --btn-bg: linear-gradient(135deg, #ffcc00, #ff8c00); --btn-text: #000;
+        }
+        body.light-mode {
+            --bg-main: #eef2f6; --bg-card: rgba(255, 255, 255, 0.9); --text-main: #0f172a; --text-muted: #475569;
+            --primary: #0284c7; --accent: #be185d; --gold: #b45309; --border: rgba(2, 132, 199, 0.3);
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08); --gradient: linear-gradient(135deg, #0284c7, #be185d);
+            --btn-bg: linear-gradient(135deg, #0284c7, #be185d); --btn-text: #fff;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; transition: background-color 0.3s, color 0.3s; }
+        body { font-family: 'Vazirmatn', Tahoma, sans-serif; background: radial-gradient(circle at 50% 0%, var(--bg-card), var(--bg-main) 80%); color: var(--text-main); min-height: 100vh; padding-bottom: 50px; }
+        .header { position: sticky; top: 0; z-index: 1000; background: rgba(5, 5, 15, 0.85); backdrop-filter: blur(15px); padding: 15px 20px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; box-shadow: var(--shadow); }
+        body.light-mode .header { background: rgba(255, 255, 255, 0.9); }
+        .header h1 { font-size: 20px; font-weight: 900; background: var(--gradient); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .theme-btn { background: var(--bg-card); border: 1px solid var(--border); color: var(--text-main); width: 40px; height: 40px; border-radius: 50%; cursor: pointer; font-size: 18px; display: flex; justify-content: center; align-items: center; transition: 0.3s; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
+        .game-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; padding: 20px; box-shadow: var(--shadow); backdrop-filter: blur(10px); display: flex; flex-direction: column; position: relative; overflow: hidden; }
+        .game-title { font-size: 18px; font-weight: 800; color: var(--gold); margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; text-shadow: 0 0 10px rgba(255,204,0,0.3); }
+        .game-content { flex-grow: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+        button { background: var(--btn-bg); color: var(--btn-text); border: none; padding: 10px 20px; border-radius: 12px; font-family: inherit; font-weight: 800; font-size: 14px; cursor: pointer; margin: 5px; transition: 0.2s; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+        button:hover { transform: scale(1.05) translateY(-2px); filter: brightness(1.1); }
+        button:active { transform: scale(0.95); }
+        button:disabled { opacity: 0.5; cursor: not-allowed; }
+        .grid-2048 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; background: rgba(0,0,0,0.5); padding: 8px; border-radius: 12px; width: 280px; height: 280px; position: relative; touch-action: none; }
+        .cell-2048 { background: rgba(255,255,255,0.05); border-radius: 8px; display: flex; justify-content: center; align-items: center; font-size: 24px; font-weight: 900; color: #fff; transition: 0.1s; }
+        .c2{background:#eee4da; color:#776e65} .c4{background:#ede0c8; color:#776e65} .c8{background:#f2b179; color:#f9f6f2} .c16{background:#f59563; color:#f9f6f2} .c32{background:#f67c5f; color:#f9f6f2} .c64{background:#f65e3b; color:#f9f6f2} .c128{background:#edcf72; color:#f9f6f2; font-size:20px} .c256{background:#edcc61; color:#f9f6f2; font-size:20px} .c512{background:#edc850; color:#f9f6f2; font-size:20px} .c1024{background:#edc53f; color:#f9f6f2; font-size:16px} .c2048{background:#edc22e; color:#f9f6f2; font-size:16px}
+        .game-over-2048 { position: absolute; inset: 0; background: rgba(0,0,0,0.8); border-radius: 12px; display: none; flex-direction: column; justify-content: center; align-items: center; color: #fff; font-weight: bold; z-index: 10; }
+        .mole-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; width: 240px; height: 240px; }
+        .mole-hole { background: rgba(0,0,0,0.6); border-radius: 50%; border: 2px solid var(--border); display: flex; justify-content: center; align-items: center; cursor: crosshair; font-size: 40px; overflow: hidden; }
+        .mole { animation: popUp 0.2s ease-out; }
+        @keyframes popUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
+        .xo-grid { display: grid; grid-template-columns: repeat(3, 80px); grid-template-rows: repeat(3, 80px); gap: 5px; background: var(--border); padding: 5px; border-radius: 12px; }
+        .xo-cell { background: var(--bg-main); border-radius: 8px; display: flex; justify-content: center; align-items: center; font-size: 40px; font-weight: 900; cursor: pointer; color: #fff; }
+        .xo-cell:hover { background: var(--bg-card); }
+        .xo-x { color: var(--primary); text-shadow: 0 0 10px var(--primary); }
+        .xo-o { color: var(--accent); text-shadow: 0 0 10px var(--accent); }
+        .stroop-word { font-size: 50px; font-weight: 900; margin: 20px 0; letter-spacing: 2px; }
+        .stroop-btns { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; width: 100%; max-width: 250px; }
+        .stroop-btns button { padding: 15px; font-size: 16px; }
+        #snakeCanvas { background: #000; border-radius: 10px; border: 2px solid var(--primary); box-shadow: 0 0 15px var(--border); margin: 10px 0; }
+        .d-pad { display: grid; grid-template-columns: repeat(3, 50px); gap: 5px; justify-content: center; margin-top: 10px; }
+        .d-pad button { width: 50px; height: 50px; border-radius: 10px; padding: 0; font-size: 20px; background: var(--bg-main); border: 1px solid var(--border); color: var(--text-main); }
+        .memory-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; width: 260px; }
+        .memory-card { aspect-ratio: 1; background: var(--bg-main); border: 2px solid var(--border); border-radius: 10px; display: flex; justify-content: center; align-items: center; font-size: 30px; cursor: pointer; transition: 0.3s; color: transparent; }
+        .memory-card.flipped { background: var(--primary); border-color: var(--primary); color: #000; transform: rotateY(180deg); }
+        .memory-card.matched { background: var(--accent); border-color: var(--accent); color: #fff; pointer-events: none; transform: scale(0.95); }
+        #flappyCanvas { background: #111; border: 2px solid var(--primary); border-radius: 10px; box-shadow: 0 0 15px var(--border); cursor: pointer; }
+        #breakoutCanvas { background: #000; border: 2px solid var(--accent); border-radius: 10px; box-shadow: 0 0 15px var(--border); cursor: none; }
+        .mine-grid { display: grid; gap: 3px; background: var(--border); padding: 3px; border-radius: 8px; }
+        .mine-cell { width: 30px; height: 30px; background: var(--bg-main); border-radius: 4px; display: flex; justify-content: center; align-items: center; font-weight: bold; font-size: 14px; cursor: pointer; user-select: none; color: var(--text-main); }
+        .mine-cell.revealed { background: rgba(255,255,255,0.1); cursor: default; }
+        .mine-cell.mine { background: red; color: #fff; }
+        .mine-cell.flag { background: var(--gold); color: #000; }
+        .simon-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; width: 200px; height: 200px; margin: 10px 0; }
+        .simon-btn { border-radius: 15px; cursor: pointer; opacity: 0.5; transition: 0.1s; border: none; }
+        .simon-btn.active { opacity: 1; transform: scale(1.05); box-shadow: 0 0 20px #fff; }
+        .simon-red { background: #ff0055; } .simon-blue { background: #00f5ff; } .simon-green { background: #00ff66; } .simon-yellow { background: #ffcc00; }
+        #dodgeCanvas { background: #0a0a0a; border: 2px solid var(--gold); border-radius: 10px; box-shadow: 0 0 15px var(--border); cursor: none; }
+        
+        /* New Game Styles */
+        .wheel { width: 120px; height: 120px; border-radius: 50%; background: conic-gradient(red, blue, green, yellow, purple, orange, red); margin: 10px auto; transition: 3s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; }
+        .wheel::after { content: '▼'; position: absolute; top: -20px; left: 50%; transform: translateX(-50%); color: var(--gold); font-size: 24px; text-shadow: 0 0 5px #000; }
+        .hanoi { display: flex; justify-content: space-around; width: 100%; margin: 20px 0; }
+        .peg { width: 80px; height: 120px; border-bottom: 5px solid var(--primary); position: relative; display: flex; flex-direction: column-reverse; align-items: center; cursor: pointer; }
+        .disk { height: 15px; background: var(--accent); border-radius: 5px; margin-bottom: 2px; transition: 0.3s; }
+        .piano-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 5px; width: 240px; height: 240px; }
+        .piano-key { background: var(--bg-main); border: 1px solid var(--border); border-radius: 5px; cursor: pointer; transition: 0.1s; }
+        .piano-key.active { background: var(--accent); box-shadow: 0 0 15px var(--accent); }
+        .emoji-grid { display: grid; grid-template-columns: repeat(3, 60px); gap: 10px; margin: 10px auto; }
+        .emoji-cell { width: 60px; height: 60px; background: var(--bg-main); border: 1px solid var(--border); border-radius: 10px; display: flex; justify-content: center; align-items: center; font-size: 30px; cursor: pointer; }
+        .catch-area { width: 280px; height: 200px; border: 2px solid var(--border); border-radius: 10px; position: relative; overflow: hidden; background: #0a0a0a; }
+        .catcher { position: absolute; bottom: 5px; width: 50px; height: 20px; background: var(--primary); border-radius: 5px; transition: 0.1s; }
+        .falling-box { position: absolute; top: -30px; width: 20px; height: 20px; background: var(--gold); border-radius: 50%; }
+        
+        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.5s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
     </style>
 </head>
 <body>
-    <div class="header"><h1>🎮 ۲۰ بازی آنلاین</h1><p>همه بازی‌ها فعال و رایگان | rahilanab.com</p></div>
-    <a href="index.html" class="back-btn">🔙 خانه</a>
 
-<!-- ۱. حدس عدد --><div class="game-zone"><h2>۱. 🎯 حدس عدد</h2><p>یه عدد بین ۱ تا ۱۰۰ حدس بزن</p><input id="g1in" type="number" placeholder="عدد"><br><button onclick="g1check()">حدس بزن</button><p class="result" id="g1r"></p><p id="g1t"></p></div>
+<div class="header">
+    <h1>🕹️ آرکید رهیلاناب (۳۰ بازی)</h1>
+    <button class="theme-btn" onclick="toggleTheme()" id="theme-btn">🌙</button>
+</div>
 
-<!-- ۲. سنگ کاغذ قیچی --><div class="game-zone"><h2>۲. ✂️ سنگ کاغذ قیچی</h2><button onclick="rps('✊')">✊</button><button onclick="rps('✋')">✋</button><button onclick="rps('✌️')">✌️</button><p class="result" id="rpsR"></p></div>
+<div class="container">
+    <!-- 1-11 (Original Games) -->
+    <div class="game-card reveal">
+        <div class="game-title"><span>۱. 🔢 بازی 2048</span><span style="font-size:14px; color:var(--primary);">امتیاز: <span id="score-2048">0</span></span></div>
+        <div class="game-content">
+            <div class="grid-2048" id="grid-2048"></div>
+            <div class="game-over-2048" id="game-over-2048"><h2 style="color:var(--accent);">تموم شد!</h2><button onclick="init2048()" style="margin-top:15px;">شروع مجدد</button></div>
+        </div>
+    </div>
+    <div class="game-card reveal">
+        <div class="game-title"><span>۲. 🔨 شکار موش</span><span style="font-size:14px; color:var(--primary);">امتیاز: <span id="score-mole">0</span></span></div>
+        <div class="game-content"><div class="mole-grid" id="mole-grid"></div><button onclick="startMole()" style="margin-top:15px; width:100%;" id="mole-btn">شروع (۳۰ ثانیه)</button></div>
+    </div>
+    <div class="game-card reveal">
+        <div class="game-title"><span>۳. ⭕ دوز (XO)</span><span style="font-size:14px; color:var(--gold);" id="xo-status">نوبت تو (X)</span></div>
+        <div class="game-content"><div class="xo-grid" id="xo-grid"></div><button onclick="resetXO()" style="margin-top:15px; width:100%;">شروع مجدد</button></div>
+    </div>
+    <div class="game-card reveal">
+        <div class="game-title"><span>۴. 🧠 تست استروپ</span><span style="font-size:14px; color:var(--primary);">امتیاز: <span id="score-stroop">0</span></span></div>
+        <div class="game-content"><div class="stroop-word" id="stroop-word">قرمز</div><div class="stroop-btns"><button onclick="checkStroop('red')" style="background:red; color:white;">قرمز</button><button onclick="checkStroop('blue')" style="background:blue; color:white;">آبی</button><button onclick="checkStroop('green')" style="background:green; color:white;">سبز</button><button onclick="checkStroop('yellow')" style="background:gold; color:black;">زرد</button></div><button onclick="startStroop()" style="margin-top:10px; width:100%;" id="stroop-start-btn">شروع بازی</button></div>
+    </div>
+    <div class="game-card reveal">
+        <div class="game-title"><span>۵. 🐍 مار نئونی</span><span style="font-size:14px; color:var(--primary);">امتیاز: <span id="snakeScore">0</span></span></div>
+        <div class="game-content"><canvas id="snakeCanvas" width="240" height="240"></canvas><button onclick="snakeReset()" style="margin-top:5px;">شروع مجدد</button><div class="d-pad"><div></div><button onclick="changeSnakeDir(0,-1)">⬆</button><div></div><button onclick="changeSnakeDir(-1,0)">⬅</button><button onclick="changeSnakeDir(0,1)">⬇</button><button onclick="changeSnakeDir(1,0)">➡</button></div></div>
+    </div>
+    <div class="game-card reveal">
+        <div class="game-title"><span>۶. 🧩 بازی حافظه</span><span style="font-size:14px; color:var(--primary);">حرکات: <span id="memMoves">0</span></span></div>
+        <div class="game-content"><div class="memory-grid" id="memoryGrid"></div><button onclick="memoryReset()" style="margin-top:15px; width:100%;">شروع مجدد</button></div>
+    </div>
+    <div class="game-card reveal">
+        <div class="game-title"><span>۷. 🐤 پرنده خشمگین</span><span style="font-size:14px; color:var(--primary);">امتیاز: <span id="flappyScore">0</span></span></div>
+        <div class="game-content"><canvas id="flappyCanvas" width="280" height="350"></canvas><button onclick="flappyReset()" style="margin-top:10px; width:100%;">شروع / تلاش مجدد</button></div>
+    </div>
+    <div class="game-card reveal">
+        <div class="game-title"><span>۸. 🧱 آجرشکن</span><span style="font-size:14px; color:var(--primary);">امتیاز: <span id="breakoutScore">0</span></span></div>
+        <div class="game-content"><canvas id="breakoutCanvas" width="280" height="350"></canvas><button onclick="breakoutReset()" style="margin-top:10px; width:100%;">شروع مجدد</button></div>
+    </div>
+    <div class="game-card reveal">
+        <div class="game-title"><span>۹. 💣 مین‌یاب</span><span style="font-size:14px; color:var(--primary);" id="mine-status">بازی جدید</span></div>
+        <div class="game-content"><div class="mine-grid" id="mine-grid" style="grid-template-columns: repeat(6, 30px);"></div><button onclick="initMinesweeper()" style="margin-top:15px; width:100%;">شروع مجدد</button></div>
+    </div>
+    <div class="game-card reveal">
+        <div class="game-title"><span>۱۰. 🎵 سایمون</span><span style="font-size:14px; color:var(--primary);">مرحله: <span id="simonScore">0</span></span></div>
+        <div class="game-content"><div class="simon-grid"><button class="simon-btn simon-red" onclick="simonClick(0)"></button><button class="simon-btn simon-blue" onclick="simonClick(1)"></button><button class="simon-btn simon-green" onclick="simonClick(2)"></button><button class="simon-btn simon-yellow" onclick="simonClick(3)"></button></div><button onclick="startSimon()" style="margin-top:10px; width:100%;">شروع بازی</button><p style="font-size:12px; color:var(--text-muted); margin-top:5px;" id="simon-status">آماده‌ای؟</p></div>
+    </div>
+    <div class="game-card reveal">
+        <div class="game-title"><span>۱۱. 🚗 فرار از موانع</span><span style="font-size:14px; color:var(--primary);">امتیاز: <span id="dodgeScore">0</span></span></div>
+        <div class="game-content"><canvas id="dodgeCanvas" width="280" height="350"></canvas><button onclick="dodgeReset()" style="margin-top:10px; width:100%;">شروع مجدد</button></div>
+    </div>
 
-<!-- ۳. سرعت کلیک --><div class="game-zone"><h2>۳. ⚡ سرعت کلیک</h2><p style="font-size:35px" id="clkT">10</p><button onclick="clkTap()" style="padding:20px 40px;font-size:20px">کلیک کن!</button><p class="result" id="clkR"></p></div>
+    <!-- 12. RPS -->
+    <div class="game-card reveal">
+        <div class="game-title"><span>۱۲. ✊ سنگ کاغذ قیچی</span></div>
+        <div class="game-content"><div id="res-rps" style="font-weight:bold; margin-bottom:10px;">انتخاب کن!</div><div><button onclick="playRPS('سنگ')" style="font-size:20px;">✊</button><button onclick="playRPS('کاغذ')" style="font-size:20px;">✋</button><button onclick="playRPS('قیچی')" style="font-size:20px;">✌️</button></div></div>
+    </div>
 
-<!-- ۴. ریاضی سریع --><div class="game-zone"><h2>۴. 🔢 ریاضی سریع</h2><p style="font-size:28px" id="mQ"></p><input id="mIn" type="number" placeholder="جواب"><button onclick="mCheck()">جواب</button><p class="result" id="mR"></p></div>
+    <!-- 13. Math -->
+    <div class="game-card reveal">
+        <div class="game-title"><span>۱۳. 🧮 چالش ریاضی</span></div>
+        <div class="game-content"><div id="math-q" style="font-size:24px; font-weight:bold; margin-bottom:10px;">2 + 2 = ?</div><input id="math-inp" type="number" placeholder="جواب" style="padding:10px; border-radius:10px; border:1px solid var(--border); background:var(--bg-main); color:var(--text-main); text-align:center; width:100px; font-family:inherit;"><button onclick="checkMath()">بررسی</button><div id="math-res" style="margin-top:10px; font-weight:bold;"></div></div>
+    </div>
 
-<!-- ۵. حافظه رنگ --><div class="game-zone"><h2>۵. 🧠 حافظه رنگ</h2><div id="cBox" style="width:60px;height:60px;border-radius:10px;background:gray;margin:8px auto"></div><div id="cBtns"></div><button onclick="memStart()">شروع</button><p class="result" id="memR"></p></div>
+    <!-- 14. Reaction -->
+    <div class="game-card reveal">
+        <div class="game-title"><span>۱۴. ⚡ زمان واکنش</span></div>
+        <div class="game-content"><button id="react-btn" onclick="startReact()" style="width:100%; height:100px; font-size:20px; background:var(--bg-main); border:1px solid var(--border); color:var(--text-main);">کلیک کن تا شروع</button><div id="react-res" style="margin-top:10px; font-weight:bold;"></div></div>
+    </div>
 
-<!-- ۶. شیر یا خط --><div class="game-zone"><h2>۶. 🪙 شیر یا خط</h2><button onclick="coin()">پرتاب سکه</button><p class="result" id="coinR"></p></div>
+    <!-- 15. Guess -->
+    <div class="game-card reveal">
+        <div class="game-title"><span>۱۵. 🔢 حدس عدد</span></div>
+        <div class="game-content"><p style="font-size:12px; color:var(--text-muted); margin-bottom:10px;">عددی بین ۱ تا ۱۰۰</p><input id="guess-inp" type="number" placeholder="حدس" style="padding:10px; border-radius:10px; border:1px solid var(--border); background:var(--bg-main); color:var(--text-main); text-align:center; width:100px; font-family:inherit;"><button onclick="checkGuess()">حدس بزن</button><div id="guess-res" style="margin-top:10px; font-weight:bold;"></div></div>
+    </div>
 
-<!-- ۷. تاس --><div class="game-zone"><h2>۷. 🎲 تاس</h2><button onclick="dice()">بنداز</button><p class="result" id="diceR" style="font-size:50px"></p></div>
+    <!-- 16. Scramble -->
+    <div class="game-card reveal">
+        <div class="game-title"><span>۱۶. 📝 مرتب کردن کلمات</span></div>
+        <div class="game-content"><div id="scramble-word" style="font-size:24px; font-weight:bold; margin-bottom:10px; letter-spacing:2px;">تاکب</div><input id="scramble-inp" placeholder="کلمه درست" style="padding:10px; border-radius:10px; border:1px solid var(--border); background:var(--bg-main); color:var(--text-main); text-align:center; font-family:inherit;"><button onclick="checkScramble()">بررسی</button><div id="scramble-res" style="margin-top:10px; font-weight:bold;"></div></div>
+    </div>
 
-<!-- ۸. گل یا پوچ --><div class="game-zone"><h2>۸. ✊ گل یا پوچ</h2><button onclick="gol('گل')">🌸 گل</button><button onclick="gol('پوچ')">💨 پوچ</button><p class="result" id="golR"></p></div>
+    <!-- 17. Typing Speed -->
+    <div class="game-card reveal">
+        <div class="game-title"><span>۱۷. ⌨️ سرعت تایپ</span></div>
+        <div class="game-content"><div id="type-word" style="font-size:24px; font-weight:bold; margin-bottom:10px;">ماشین</div><input id="type-inp" placeholder="تایپ کن" style="padding:10px; border-radius:10px; border:1px solid var(--border); background:var(--bg-main); color:var(--text-main); text-align:center; font-family:inherit;" oninput="checkTyping(this)"></div>
+    </div>
 
-<!-- ۹. دوز XO --><div class="game-zone"><h2>۹. ⭕❌ دوز</h2><div id="xoB" style="display:grid;grid-template-columns:repeat(3,60px);gap:5px;justify-content:center;margin:10px"></div><p class="result" id="xoR"></p><button onclick="xoReset()">بازی جدید</button></div>
+    <!-- 18. Color Match -->
+    <div class="game-card reveal">
+        <div class="game-title"><span>۱۸. 🎨 تطبیق رنگ</span></div>
+        <div class="game-content"><div id="color-box" style="width:100px; height:100px; border-radius:50%; margin-bottom:10px; box-shadow:0 0 20px rgba(0,0,0,0.5);"></div><div id="color-btns" style="display:flex; gap:10px;"></div><div id="color-res" style="margin-top:10px; font-weight:bold;"></div></div>
+    </div>
 
-<!-- ۱۰. مار --><div class="game-zone"><h2>۱۰. 🐍 مار</h2><canvas id="snakeC" width="280" height="280"></canvas><p style="font-size:12px;color:#666">با کلیدهای جهت یا لمس بازی کن</p></div>
+    <!-- 19. Clicker -->
+    <div class="game-card reveal">
+        <div class="game-title"><span>۱۹. 👆 بازی کلیک</span><span style="font-size:14px; color:var(--primary);">امتیاز: <span id="click-score">0</span></span></div>
+        <div class="game-content"><button onclick="doClick()" style="width:100px; height:100px; border-radius:50%; font-size:40px;">👆</button></div>
+    </div>
+
+    <!-- 20. Coin Flip -->
+    <div class="game-card reveal">
+        <div class="game-title"><span>۲۰. 🪙 شیر یا خط</span></div>
+        <div class="game-content"><div id="coin-res" style="font-size:40px; margin:10px 0;">🪙</div><button onclick="flipCoin()">بنداز</button></div>
+    </div>
+
+    <!-- 21. Dice -->
+    <div class="game-card reveal">
+        <div class="game-title"><span>۲۱. 🎲 تاس</span></div>
+        <div class="game-content"><div id="dice-res" style="font-size:50px; margin:10px 0;">🎲</div><button onclick="rollDice()">بنداز</button></div>
+    </div>
+
+    <!-- 22. Odd One Out -->
+    <div class="game-card reveal">
+        <div class="game-title"><span>۲۲. 🧐 کدام متفاوت است؟</span><span id="odd-score" style="font-size:14px; color:var(--primary);">0</span></div>
+        <div class="game-content"><div class="emoji-grid" id="odd-grid"></div></div>
+    </div>
+
+    <!-- 23. Memory Sequence -->
+    <div class="game-card reveal">
+        <div class="game-title"><span>۲۳. 🧠 دنباله حافظه</span><span id="memseq-score" style="font-size:14px; color:var(--primary);">0</span></div>
+        <div class="game-content"><div id="memseq-display" style="font-size:40px; font-weight:bold; height:50px;">- - -</div><button onclick="startMemSeq()">شروع</button><input id="memseq-inp" type="number" placeholder="اعداد" style="padding:5px; width:100px; text-align:center; border-radius:10px; border:1px solid var(--border); background:var(--bg-main); color:var(--text-main); margin-top:5px; font-family:inherit;"><button onclick="checkMemSeq()">بررسی</button></div>
+    </div>
+
+    <!-- 24. Emoji Match -->
+    <div class="game-card reveal">
+        <div class="game-title"><span>۲۴. 😃 پیدا کردن ایموجی</span></div>
+        <div class="game-content"><div id="emoji-target" style="font-size:30px; margin-bottom:10px;">هدف: 🍎</div><div class="emoji-grid" id="emoji-grid"></div><button onclick="initEmoji()" style="margin-top:10px;">شروع مجدد</button></div>
+    </div>
+
+    <!-- 25. RPSLS -->
+    <div class="game-card reveal">
+        <div class="game-title"><span>۲۵. 🖖 RPSLS</span></div>
+        <div class="game-content"><div id="rpsls-res" style="font-weight:bold; margin-bottom:10px;">انتخاب کن!</div><div style="display:grid; grid-template-columns:1fr 1fr; gap:5px;"><button onclick="playRPSLS(0)">✊ سنگ</button><button onclick="playRPSLS(1)">✋ کاغذ</button><button onclick="playRPSLS(2)">✌️ قیچی</button><button onclick="playRPSLS(3)">🦎 مارمولک</button><button onclick="playRPSLS(4)">🖖 اسپاک</button></div></div>
+    </div>
+
+    <!-- 26. Spin Wheel -->
+    <div class="game-card reveal">
+        <div class="game-title"><span>۲۶. 🎡 گردونه شانس</span></div>
+        <div class="game-content"><div class="wheel" id="wheel"></div><button onclick="spinWheel()">بچرخون</button><div id="wheel-res" style="margin-top:10px; font-weight:bold;"></div></div>
+    </div>
+
+    <!-- 27. Quiz -->
+    <div class="game-card reveal">
+        <div class="game-title"><span>۲۷. ❓ کوییز</span></div>
+        <div class="game-content"><div id="quiz-q" style="font-weight:bold; margin-bottom:10px;">پایتخت ایران؟</div><div id="quiz-opts" style="display:flex; gap:10px; flex-direction:column;"></div></div>
+    </div>
+
+    <!-- 28. Catch -->
+    <div class="game-card reveal">
+        <div class="game-title"><span>۲۸. 🧺 گرفتن جعبه</span><span id="catch-score" style="font-size:14px; color:var(--primary);">0</span></div>
+        <div class="game-content"><div class="catch-area" id="catch-area"><div class="catcher" id="catcher" style="left:115px;"></div><div class="falling-box" id="falling-box" style="left:130px;"></div></div><div style="display:flex; gap:20px; margin-top:10px;"><button onclick="moveCatcher(-15)">⬅</button><button onclick="moveCatcher(15)">➡</button></div></div>
+    </div>
+
+    <!-- 29. Hanoi -->
+    <div class="game-card reveal">
+        <div class="game-title"><span>۲۹. 🗼 برج هانوی</span></div>
+        <div class="game-content"><div class="hanoi"><div class="peg" id="peg-0" onclick="selectPeg(0)"><div class="disk" style="width:30px;"></div><div class="disk" style="width:50px;"></div><div class="disk" style="width:70px;"></div></div><div class="peg" id="peg-1" onclick="selectPeg(1)"></div><div class="peg" id="peg-2" onclick="selectPeg(2)"></div></div><p style="font-size:12px; color:var(--text-muted);">میله‌ها رو به ترتیب کلیک کن تا دیسک‌ها به میله سوم برن.</p></div>
+    </div>
+
+    <!-- 30. Piano -->
+    <div class="game-card reveal">
+        <div class="game-title"><span>۳۰. 🎹 کاشی‌های پیانو</span><span id="piano-score" style="font-size:14px; color:var(--primary);">0</span></div>
+        <div class="game-content"><div class="piano-grid" id="piano-grid"><div class="piano-key" id="p0"></div><div class="piano-key" id="p1"></div><div class="piano-key" id="p2"></div><div class="piano-key" id="p3"></div></div><button onclick="startPiano()" style="margin-top:10px;">شروع</button></div>
+    </div>
+
+</div>
 
 <script>
-// ۱. حدس عدد
-let g1n=Math.floor(Math.random()*100)+1,g1c=0;
-function g1check(){let g=parseInt(document.getElementById('g1in').value);g1c++;if(g===g1n){document.getElementById('g1r').textContent='🎉 برنده!';document.getElementById('g1t').textContent='حدس: '+g1c;g1n=Math.floor(Math.random()*100)+1;g1c=0}else{document.getElementById('g1r').textContent=g<g1n?'⬆️ بالا':'⬇️ پایین'}document.getElementById('g1in').value='';}
+    // =============== Theme ===============
+    function toggleTheme() { document.body.classList.toggle('light-mode'); const isLight = document.body.classList.contains('light-mode'); document.getElementById('theme-btn').innerText = isLight ? '☀️' : '🌙'; localStorage.setItem('gameTheme', isLight); }
+    if (localStorage.getItem('gameTheme') === 'true') { toggleTheme(); }
 
-// ۲. سنگ کاغذ قیچی
-function rps(u){let o=['✊','✋','✌️'],c=o[Math.floor(Math.random()*3)],r='';if(u===c)r='مساوی 🤝';else if((u==='✊'&&c==='✌️')||(u==='✋'&&c==='✊')||(u==='✌️'&&c==='✋'))r='بردی 🎉';else r='باختی 😢';document.getElementById('rpsR').textContent='تو: '+u+' | 💻: '+c+' → '+r;}
+    // =============== 1. 2048 ===============
+    let board2048 = [], score2048 = 0, size = 4;
+    function init2048() { board2048 = Array(size).fill().map(() => Array(size).fill(0)); score2048 = 0; document.getElementById('score-2048').innerText = '0'; document.getElementById('game-over-2048').style.display = 'none'; addRandom2048(); addRandom2048(); render2048(); }
+    function addRandom2048() { let empty = []; for (let r = 0; r < size; r++) for (let c = 0; c < size; c++) if (board2048[r][c] === 0) empty.push({ r, c }); if (empty.length === 0) return; let spot = empty[Math.floor(Math.random() * empty.length)]; board2048[spot.r][spot.c] = Math.random() < 0.9 ? 2 : 4; }
+    function render2048() { const grid = document.getElementById('grid-2048'); grid.innerHTML = ''; for (let r = 0; r < size; r++) for (let c = 0; c < size; c++) { let val = board2048[r][c]; let cell = document.createElement('div'); cell.className = 'cell-2048 ' + (val > 0 ? 'c' + val : ''); cell.innerText = val > 0 ? val : ''; grid.appendChild(cell); } }
+    function slide2048(row) { let arr = row.filter(val => val); let missing = size - arr.length; return Array(missing).fill(0).concat(arr); }
+    function combine2048(row) { for (let i = size - 1; i > 0; i--) if (row[i] === row[i - 1] && row[i] !== 0) { row[i] *= 2; row[i - 1] = 0; score2048 += row[i]; } return row; }
+    function operate2048(dir) { let rotated = rotate2048(dir); let newBoard = rotated.map(row => slide2048(combine2048(slide2048(row)))); board2048 = rotateBack2048(newBoard, dir); document.getElementById('score-2048').innerText = score2048; addRandom2048(); render2048(); if (checkGameOver2048()) document.getElementById('game-over-2048').style.display = 'flex'; }
+    function rotate2048(dir) { let b = JSON.parse(JSON.stringify(board2048)); for (let i = 0; i < (dir === 'left' ? 1 : dir === 'right' ? 3 : dir === 'up' ? 2 : 0); i++) b = b[0].map((_, c) => b.map(r => r[c])).reverse(); return b; }
+    function rotateBack2048(b, dir) { for (let i = 0; i < (dir === 'left' ? 3 : dir === 'right' ? 1 : dir === 'up' ? 2 : 0); i++) b = b[0].map((_, c) => b.map(r => r[c])).reverse(); return b; }
+    function checkGameOver2048() { for (let r = 0; r < size; r++) for (let c = 0; c < size; c++) { if (board2048[r][c] === 0) return false; if (c < size - 1 && board2048[r][c] === board2048[r][c + 1]) return false; if (r < size - 1 && board2048[r][c] === board2048[r + 1][c]) return false; } return true; }
+    document.addEventListener('keydown', (e) => { if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(e.key)) { e.preventDefault(); if (e.key === 'ArrowLeft') operate2048('left'); if (e.key === 'ArrowRight') operate2048('right'); if (e.key === 'ArrowUp') operate2048('up'); if (e.key === 'ArrowDown') operate2048('down'); } });
+    let touchStartX = 0, touchStartY = 0; document.getElementById('grid-2048').addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; touchStartY = e.changedTouches[0].screenY; }, {passive: true});
+    document.getElementById('grid-2048').addEventListener('touchend', e => { let dx = e.changedTouches[0].screenX - touchStartX; let dy = e.changedTouches[0].screenY - touchStartY; if (Math.abs(dx) > Math.abs(dy)) { if (dx > 50) operate2048('right'); else if (dx < -50) operate2048('left'); } else { if (dy > 50) operate2048('down'); else if (dy < -50) operate2048('up'); } }, {passive: true});
+    init2048();
 
-// ۳. سرعت کلیک
-let cc=0,ctl,ci;function clkTap(){if(ctl===undefined){cc=0;ctl=10;document.getElementById('clkT').textContent=10;document.getElementById('clkR').textContent='';clearInterval(ci);ci=setInterval(()=>{ctl--;document.getElementById('clkT').textContent=ctl;if(ctl<=0){clearInterval(ci);document.getElementById('clkR').textContent='🎉 '+cc+' کلیک!';ctl=undefined}},1000)}if(ctl>0)cc++;}
+    // =============== 2. Whack a Mole ===============
+    let moleScore = 0, moleInterval, moleTimeout, activeMole = null, moleTime = 30;
+    function initMoleGrid() { let grid = document.getElementById('mole-grid'); grid.innerHTML = ''; for (let i = 0; i < 9; i++) { let hole = document.createElement('div'); hole.className = 'mole-hole'; hole.id = 'hole-' + i; hole.onclick = () => whackMole(i); grid.appendChild(hole); } }
+    function startMole() { initMoleGrid(); moleScore = 0; moleTime = 30; document.getElementById('score-mole').innerText = '0'; let btn = document.getElementById('mole-btn'); btn.innerText = 'زمان: 30'; btn.disabled = true; clearInterval(moleInterval); clearTimeout(moleTimeout); moleInterval = setInterval(() => { moleTime--; btn.innerText = 'زمان: ' + moleTime; if (moleTime <= 0) { clearInterval(moleInterval); clearTimeout(moleTimeout); btn.innerText = 'شروع مجدد'; btn.disabled = false; if (activeMole !== null) document.getElementById('hole-' + activeMole).innerHTML = ''; } }, 1000); popMole(); }
+    function popMole() { if (moleTime <= 0) return; if (activeMole !== null) document.getElementById('hole-' + activeMole).innerHTML = ''; let rand = Math.floor(Math.random() * 9); activeMole = rand; document.getElementById('hole-' + rand).innerHTML = '<div class="mole">🐹</div>'; moleTimeout = setTimeout(popMole, Math.random() * 600 + 400); }
+    function whackMole(i) { if (i === activeMole && moleTime > 0) { moleScore += 10; document.getElementById('score-mole').innerText = moleScore; document.getElementById('hole-' + i).innerHTML = '💥'; activeMole = null; clearTimeout(moleTimeout); setTimeout(popMole, 100); } }
+    initMoleGrid();
 
-// ۴. ریاضی سریع
-let ms=0,ma;function genM(){let a=Math.floor(Math.random()*50)+1,b=Math.floor(Math.random()*50)+1;ma=a+b;document.getElementById('mQ').textContent=a+'+'+b+'=؟';}genM();
-function mCheck(){if(parseInt(document.getElementById('mIn').value)===ma){ms++;document.getElementById('mR').textContent='✅ امتیاز: '+ms;genM()}document.getElementById('mIn').value='';}
+    // =============== 3. Tic-Tac-Toe ===============
+    let xoBoard = [], isPlayerTurn = true, xoGameActive = true;
+    function initXO() { let grid = document.getElementById('xo-grid'); grid.innerHTML = ''; for (let i = 0; i < 9; i++) { let cell = document.createElement('div'); cell.className = 'xo-cell'; cell.id = 'xo-' + i; cell.onclick = () => playerMoveXO(i); grid.appendChild(cell); } }
+    function playerMoveXO(i) { if (!xoGameActive || !isPlayerTurn || xoBoard[i] !== '') return; xoBoard[i] = 'X'; renderXO(); isPlayerTurn = false; document.getElementById('xo-status').innerText = 'نوبت سیستم...'; if (!checkWinXO()) setTimeout(aiMoveXO, 500); }
+    function aiMoveXO() { if (!xoGameActive) return; let bestScore = -Infinity, move = -1; for (let i = 0; i < 9; i++) { if (xoBoard[i] === '') { xoBoard[i] = 'O'; let score = minimaxXO(xoBoard, 0, false); xoBoard[i] = ''; if (score > bestScore) { bestScore = score; move = i; } } } if (move !== -1) { xoBoard[move] = 'O'; renderXO(); if (!checkWinXO()) { isPlayerTurn = true; document.getElementById('xo-status').innerText = 'نوبت تو (X)'; } } }
+    function minimaxXO(board, depth, isMax) { let result = evaluateXO(board); if (result !== null) return result; if (isMax) { let best = -Infinity; for (let i = 0; i < 9; i++) if (board[i] === '') { board[i] = 'O'; best = Math.max(best, minimaxXO(board, depth + 1, false)); board[i] = ''; } return best; } else { let best = Infinity; for (let i = 0; i < 9; i++) if (board[i] === '') { board[i] = 'X'; best = Math.min(best, minimaxXO(board, depth + 1, true)); board[i] = ''; } return best; } }
+    function evaluateXO(b) { const wins = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]]; for (let w of wins) if (b[w[0]] !== '' && b[w[0]] === b[w[1]] && b[w[1]] === b[w[2]]) return b[w[0]] === 'O' ? 10 : -10; return b.includes('') ? null : 0; }
+    function checkWinXO() { const wins = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]]; for (let w of wins) { if (xoBoard[w[0]] !== '' && xoBoard[w[0]] === xoBoard[w[1]] && xoBoard[w[1]] === xoBoard[w[2]]) { xoGameActive = false; let winner = xoBoard[w[0]]; document.getElementById('xo-status').innerText = winner === 'X' ? '🎉 تو بردی!' : '😢 سیستم برد!'; document.getElementById('xo-status').style.color = winner === 'X' ? 'var(--primary)' : 'var(--accent)'; return true; } } if (!xoBoard.includes('')) { xoGameActive = false; document.getElementById('xo-status').innerText = '🤝 مساوی!'; document.getElementById('xo-status').style.color = 'var(--text-main)'; return true; } return false; }
+    function renderXO() { for (let i = 0; i < 9; i++) { let cell = document.getElementById('xo-' + i); cell.innerText = xoBoard[i]; cell.className = 'xo-cell ' + (xoBoard[i] === 'X' ? 'xo-x' : xoBoard[i] === 'O' ? 'xo-o' : ''); } }
+    function resetXO() { xoBoard = ['', '', '', '', '', '', '', '', '']; xoGameActive = true; isPlayerTurn = true; document.getElementById('xo-status').innerText = 'نوبت تو (X)'; document.getElementById('xo-status').style.color = 'var(--gold)'; renderXO(); }
+    initXO();
 
-// ۵. حافظه رنگ
-let mseq=[],midx=0,msc=0,mp=false;let cols=['🔴','🔵','🟢','🟡'],ccodes={'🔴':'red','🔵':'blue','🟢':'green','🟡':'yellow'};
-function memStart(){mseq=[];msc=0;mp=false;addColor();}
-function addColor(){mseq.push(cols[Math.floor(Math.random()*4)]);showSeq();}
-function showSeq(){mp=false;let i=0;let iv=setInterval(()=>{if(i<mseq.length){document.getElementById('cBox').style.background=ccodes[mseq[i]];i++}else{clearInterval(iv);document.getElementById('cBox').style.background='gray';let h='';cols.forEach(c=>{h+='<button style="background:'+ccodes[c]+';margin:3px;padding:12px;font-size:18px;border:none;border-radius:8px;cursor:pointer" onclick="memClick(\''+c+'\')">'+c+'</button>'});document.getElementById('cBtns').innerHTML=h;mp=true;midx=0}},600);}
-function memClick(c){if(!mp)return;if(c===mseq[midx]){midx++;if(midx===mseq.length){msc++;document.getElementById('memR').textContent='✅ امتیاز: '+msc;addColor()}}else{document.getElementById('memR').textContent='❌ اشتباه!';mp=false;document.getElementById('cBtns').innerHTML=''}}
+    // =============== 4. Stroop ===============
+    let stroopScore = 0, stroopTime = 20, stroopInterval, stroopGameActive = false, currentStroopColor = '';
+    const colorsMap = { 'red': { name: 'قرمز', code: 'red' }, 'blue': { name: 'آبی', code: 'blue' }, 'green': { name: 'سبز', code: 'green' }, 'yellow': { name: 'زرد', code: 'gold' } };
+    const colorKeys = Object.keys(colorsMap);
+    function startStroop() { stroopScore = 0; stroopTime = 20; stroopGameActive = true; document.getElementById('score-stroop').innerText = '0'; let btn = document.getElementById('stroop-start-btn'); btn.innerText = 'زمان: ' + stroopTime; btn.disabled = true; clearInterval(stroopInterval); stroopInterval = setInterval(() => { stroopTime--; btn.innerText = 'زمان: ' + stroopTime; if (stroopTime <= 0) { clearInterval(stroopInterval); stroopGameActive = false; btn.innerText = 'شروع بازی'; btn.disabled = false; document.getElementById('stroop-word').innerText = 'تموم شد!'; document.getElementById('stroop-word').style.color = 'var(--text-main)'; } }, 1000); nextStroop(); }
+    function nextStroop() { if (!stroopGameActive) return; let textColorKey = colorKeys[Math.floor(Math.random() * colorKeys.length)]; let inkColorKey = colorKeys[Math.floor(Math.random() * colorKeys.length)]; if (Math.random() < 0.3) inkColorKey = textColorKey; currentStroopColor = inkColorKey; let wordEl = document.getElementById('stroop-word'); wordEl.innerText = colorsMap[textColorKey].name; wordEl.style.color = colorsMap[inkColorKey].code; wordEl.style.textShadow = `0 0 15px ${colorsMap[inkColorKey].code}`; }
+    function checkStroop(selectedColor) { if (!stroopGameActive) return; if (selectedColor === currentStroopColor) { stroopScore += 10; document.getElementById('score-stroop').innerText = stroopScore; nextStroop(); } else { stroopScore = Math.max(0, stroopScore - 5); document.getElementById('score-stroop').innerText = stroopScore; let wordEl = document.getElementById('stroop-word'); wordEl.style.transform = 'translateX(10px)'; setTimeout(() => wordEl.style.transform = 'translateX(-10px)', 50); setTimeout(() => wordEl.style.transform = 'translateX(0)', 100); } }
 
-// ۶. شیر یا خط
-function coin(){document.getElementById('coinR').textContent=Math.random()<0.5?'🪙 شیر':'💰 خط';}
+    // =============== 5. Snake ===============
+    let snakeCanvas, snakeCtx, snake, snakeDir, food, snakeScore, snakeInterval;
+    function snakeReset() { snakeCanvas = document.getElementById('snakeCanvas'); snakeCtx = snakeCanvas.getContext('2d'); snake = [{ x: 120, y: 120 }]; snakeDir = { x: 10, y: 0 }; snakeScore = 0; document.getElementById('snakeScore').textContent = '0'; snakePlaceFood(); clearInterval(snakeInterval); snakeInterval = setInterval(snakeUpdate, 100); }
+    function snakePlaceFood() { food = { x: Math.floor(Math.random() * 24) * 10, y: Math.floor(Math.random() * 24) * 10 }; }
+    function snakeUpdate() { let head = { x: snake[0].x + snakeDir.x, y: snake[0].y + snakeDir.y }; if (head.x < 0 || head.x >= 240 || head.y < 0 || head.y >= 240 || snake.some(s => s.x === head.x && s.y === head.y)) { clearInterval(snakeInterval); snakeCtx.fillStyle = 'red'; snakeCtx.font = '20px Vazirmatn'; snakeCtx.fillText('باختی!', 85, 120); return; } snake.unshift(head); if (head.x === food.x && head.y === food.y) { snakeScore += 10; document.getElementById('snakeScore').textContent = snakeScore; snakePlaceFood(); } else snake.pop(); snakeCtx.clearRect(0, 0, 240, 240); snakeCtx.shadowBlur = 10; snakeCtx.shadowColor = '#00f5ff'; snakeCtx.fillStyle = '#00f5ff'; snake.forEach(s => snakeCtx.fillRect(s.x, s.y, 10, 10)); snakeCtx.shadowColor = '#ff00aa'; snakeCtx.fillStyle = '#ff00aa'; snakeCtx.fillRect(food.x, food.y, 10, 10); snakeCtx.shadowBlur = 0; }
+    function changeSnakeDir(x, y) { if (x === 1 && snakeDir.x === -10) return; if (x === -1 && snakeDir.x === 10) return; if (y === 1 && snakeDir.y === -10) return; if (y === -1 && snakeDir.y === 10) return; snakeDir = { x: x * 10, y: y * 10 }; }
+    document.addEventListener('keydown', e => { if (e.key === 'ArrowUp') changeSnakeDir(0, -1); if (e.key === 'ArrowDown') changeSnakeDir(0, 1); if (e.key === 'ArrowLeft') changeSnakeDir(-1, 0); if (e.key === 'ArrowRight') changeSnakeDir(1, 0); });
+    snakeReset();
 
-// ۷. تاس
-function dice(){document.getElementById('diceR').textContent=['⚀','⚁','⚂','⚃','⚄','⚅'][Math.floor(Math.random()*6)];}
+    // =============== 6. Memory ===============
+    let memCards, memFlipped, memMoves, memLocked;
+    function memoryReset() { let emojis = ['🍎', '🍊', '🍋', '🍉', '🍇', '🍓']; let deck = [...emojis, ...emojis].sort(() => Math.random() - 0.5); memCards = deck; memFlipped = []; memMoves = 0; memLocked = false; document.getElementById('memMoves').textContent = '0'; let grid = document.getElementById('memoryGrid'); grid.innerHTML = ''; deck.forEach((e, i) => { let btn = document.createElement('div'); btn.className = 'memory-card'; btn.textContent = e; btn.setAttribute('data-id', i); btn.onclick = () => memoryFlip(i, btn); grid.appendChild(btn); }); }
+    function memoryFlip(i, btn) { if (memLocked || memFlipped.length >= 2 || btn.classList.contains('flipped')) return; btn.classList.add('flipped'); memFlipped.push({ i, btn }); if (memFlipped.length === 2) { memMoves++; document.getElementById('memMoves').textContent = memMoves; let [a, b] = memFlipped; if (memCards[a.i] === memCards[b.i]) { a.btn.classList.add('matched'); b.btn.classList.add('matched'); memFlipped = []; } else { memLocked = true; setTimeout(() => { a.btn.classList.remove('flipped'); b.btn.classList.remove('flipped'); memFlipped = []; memLocked = false; }, 700); } } }
+    memoryReset();
 
-// ۸. گل یا پوچ
-function gol(u){let r=Math.random()<0.5?'گل':'پوچ';document.getElementById('golR').textContent='💻: '+r+' | '+(u===r?'🎉 بردی!':'😢 باختی');}
+    // =============== 7. Flappy ===============
+    let flappyCanvas, flappyCtx, flappyBird, flappyPipes, flappyScore, flappyInterval, flappyPlaying = false, flappyGravity = 0.5, flappyJump = -7;
+    function flappyReset() { flappyCanvas = document.getElementById('flappyCanvas'); flappyCtx = flappyCanvas.getContext('2d'); flappyBird = { x: 50, y: 150, w: 20, h: 20, vy: 0 }; flappyPipes = []; flappyScore = 0; flappyPlaying = true; document.getElementById('flappyScore').innerText = '0'; clearInterval(flappyInterval); flappyInterval = setInterval(flappyUpdate, 1000/60); }
+    function flappyUpdate() { if (!flappyPlaying) return; flappyCtx.fillStyle = '#111'; flappyCtx.fillRect(0, 0, flappyCanvas.width, flappyCanvas.height); flappyBird.vy += flappyGravity; flappyBird.y += flappyBird.vy; flappyCtx.fillStyle = '#ffcc00'; flappyCtx.beginPath(); flappyCtx.arc(flappyBird.x + flappyBird.w/2, flappyBird.y + flappyBird.h/2, flappyBird.w/2, 0, Math.PI*2); flappyCtx.fill(); flappyCtx.strokeStyle = '#000'; flappyCtx.stroke(); if (flappyPipes.length === 0 || flappyPipes[flappyPipes.length - 1].x < flappyCanvas.width - 150) { let pipeH = Math.random() * 150 + 50; flappyPipes.push({ x: flappyCanvas.width, topH: pipeH, w: 40, passed: false }); } for (let i = flappyPipes.length - 1; i >= 0; i--) { let p = flappyPipes[i]; p.x -= 2; flappyCtx.fillStyle = '#00f5ff'; flappyCtx.fillRect(p.x, 0, p.w, p.topH); flappyCtx.fillStyle = '#ff00aa'; flappyCtx.fillRect(p.x, p.topH + 100, p.w, flappyCanvas.height - p.topH - 100); if (flappyBird.x + flappyBird.w > p.x && flappyBird.x < p.x + p.w) { if (flappyBird.y < p.topH || flappyBird.y + flappyBird.h > p.topH + 100) { flappyPlaying = false; clearInterval(flappyInterval); flappyCtx.fillStyle = 'red'; flappyCtx.font = '24px Vazirmatn'; flappyCtx.fillText('باختی!', 90, 180); } } if (!p.passed && flappyBird.x > p.x + p.w) { p.passed = true; flappyScore++; document.getElementById('flappyScore').innerText = flappyScore; } if (p.x + p.w < 0) flappyPipes.splice(i, 1); } if (flappyBird.y > flappyCanvas.height || flappyBird.y < 0) { flappyPlaying = false; clearInterval(flappyInterval); flappyCtx.fillStyle = 'red'; flappyCtx.font = '24px Vazirmatn'; flappyCtx.fillText('باختی!', 90, 180); } }
+    function flappyJumpAction() { if (flappyPlaying) flappyBird.vy = flappyJump; }
+    document.getElementById('flappyCanvas').addEventListener('mousedown', flappyJumpAction); document.getElementById('flappyCanvas').addEventListener('touchstart', (e) => { e.preventDefault(); flappyJumpAction(); }, {passive: false});
 
-// ۹. دوز
-let xoB=Array(9).fill(''),xoT='❌',xoG=false;
-function xoRender(){let h='';xoB.forEach((c,i)=>{h+='<div onclick="xoClick('+i+')" style="width:60px;height:60px;background:#f0f4ff;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:30px;cursor:pointer">'+c+'</div>'});document.getElementById('xoB').innerHTML=h;}
-function xoClick(i){if(xoB[i]||xoG)return;xoB[i]=xoT;xoRender();let w=[[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];if(w.some(c=>c.every(j=>xoB[j]===xoT))){document.getElementById('xoR').textContent=xoT+' برنده! 🎉';xoG=true}else if(!xoB.includes('')){document.getElementById('xoR').textContent='مساوی 🤝';xoG=true}else{xoT=xoT==='❌'?'⭕':'❌'}}
-function xoReset(){xoB=Array(9).fill('');xoT='❌';xoG=false;xoRender();document.getElementById('xoR').textContent='';}
-xoRender();
+    // =============== 8. Breakout ===============
+    let bCanvas, bCtx, bBall, bPaddle, bBricks, bScore, bInterval, bPlaying = false;
+    function breakoutReset() { bCanvas = document.getElementById('breakoutCanvas'); bCtx = bCanvas.getContext('2d'); bBall = { x: bCanvas.width/2, y: bCanvas.height-30, dx: 3, dy: -3, r: 6 }; bPaddle = { h: 10, w: 60, x: bCanvas.width/2 - 30, y: bCanvas.height-15 }; bBricks = []; bScore = 0; bPlaying = true; document.getElementById('breakoutScore').innerText = '0'; for(let c=0; c<5; c++) for(let r=0; r<3; r++) { bBricks.push({ x: c*50 + 20, y: r*20 + 30, w: 45, h: 15, status: 1 }); } clearInterval(bInterval); bInterval = setInterval(breakoutUpdate, 1000/60); }
+    function breakoutUpdate() { if (!bPlaying) return; bCtx.clearRect(0, 0, bCanvas.width, bCanvas.height); bCtx.fillStyle = '#00f5ff'; bCtx.fillRect(bPaddle.x, bPaddle.y, bPaddle.w, bPaddle.h); bBricks.forEach(b => { if (b.status === 1) { bCtx.fillStyle = '#ff00aa'; bCtx.fillRect(b.x, b.y, b.w, b.h); } }); bCtx.beginPath(); bCtx.arc(bBall.x, bBall.y, bBall.r, 0, Math.PI*2); bCtx.fillStyle = '#ffcc00'; bCtx.fill(); bCtx.closePath(); bBall.x += bBall.dx; bBall.y += bBall.dy; if(bBall.x + bBall.dx > bCanvas.width-bBall.r || bBall.x + bBall.dx < bBall.r) bBall.dx = -bBall.dx; if(bBall.y + bBall.dy < bBall.r) bBall.dy = -bBall.dy; if (bBall.y + bBall.r > bPaddle.y && bBall.x > bPaddle.x && bBall.x < bPaddle.x + bPaddle.w) { bBall.dy = -bBall.dy; let hitPos = (bBall.x - (bPaddle.x + bPaddle.w/2)) / (bPaddle.w/2); bBall.dx = hitPos * 5; } if(bBall.y + bBall.r > bCanvas.height) { bPlaying = false; clearInterval(bInterval); bCtx.fillStyle = 'red'; bCtx.font = '24px Vazirmatn'; bCtx.fillText('باختی!', 90, 180); } bBricks.forEach(b => { if (b.status === 1) { if (bBall.x > b.x && bBall.x < b.x + b.w && bBall.y > b.y && bBall.y < b.y + b.h) { bBall.dy = -bBall.dy; b.status = 0; bScore += 10; document.getElementById('breakoutScore').innerText = bScore; } } }); }
+    document.getElementById('breakoutCanvas').addEventListener('mousemove', (e) => { if(!bPaddle) return; let rect = bCanvas.getBoundingClientRect(); bPaddle.x = e.clientX - rect.left - bPaddle.w/2; }); document.getElementById('breakoutCanvas').addEventListener('touchmove', (e) => { if(!bPaddle) return; e.preventDefault(); let rect = bCanvas.getBoundingClientRect(); bPaddle.x = e.touches[0].clientX - rect.left - bPaddle.w/2; }, {passive: false});
 
-// ۱۰. مار
-let snake,sDir,sFood,sScore,sInterval;
-function startSnake(){let c=document.getElementById('snakeC'),ctx=c.getContext('2d');snake=[{x:10,y:10}];sDir={x:1,y:0};sFood={x:15,y:10};sScore=0;clearInterval(sInterval);sInterval=setInterval(()=>{let h={x:snake[0].x+sDir.x,y:snake[0].y+sDir.y};if(h.x<0||h.x>=28||h.y<0||h.y>=28||snake.some(p=>p.x===h.x&&p.y===h.y)){clearInterval(sInterval);alert('پایان! امتیاز: '+sScore);return}snake.unshift(h);if(h.x===sFood.x&&h.y===sFood.y){sScore++;sFood={x:Math.floor(Math.random()*28),y:Math.floor(Math.random()*28)}}else{snake.pop()}ctx.fillStyle='#f0f0f0';ctx.fillRect(0,0,280,280);ctx.fillStyle='lime';snake.forEach(p=>ctx.fillRect(p.x*10,p.y*10,8,8));ctx.fillStyle='red';ctx.fillRect(sFood.x*10,sFood.y*10,8,8)},100);
-document.onkeydown=function(e){if(e.key==='ArrowUp'&&sDir.y===0)sDir={x:0,y:-1};if(e.key==='ArrowDown'&&sDir.y===0)sDir={x:0,y:1};if(e.key==='ArrowLeft'&&sDir.x===0)sDir={x:-1,y:0};if(e.key==='ArrowRight'&&sDir.x===0)sDir={x:1,y:0}};
-c.ontouchstart=function(e){e.preventDefault();let t=e.touches[0],r=c.getBoundingClientRect(),x=t.clientX-r.left,y=t.clientY-r.top;if(Math.abs(x-140)>Math.abs(y-140)){sDir=x>140?{x:1,y:0}:{x:-1,y:0}}else{sDir=y>140?{x:0,y:1}:{x:0,y:-1}}}
-}startSnake();
+    // =============== 9. Minesweeper ===============
+    let mineGrid = [], mineRows = 6, mineCols = 6, mineCount = 5, mineGameOver = false;
+    function initMinesweeper() { mineGrid = []; mineGameOver = false; document.getElementById('mine-status').innerText = 'در حال بازی...'; document.getElementById('mine-status').style.color = 'var(--text-main)'; let container = document.getElementById('mine-grid'); container.innerHTML = ''; for (let r = 0; r < mineRows; r++) { let row = []; for (let c = 0; c < mineCols; c++) { row.push({ mine: false, revealed: false, flagged: false, count: 0 }); let cell = document.createElement('div'); cell.className = 'mine-cell'; cell.id = `mine-${r}-${c}`; cell.onclick = () => revealMine(r, c); cell.oncontextmenu = (e) => { e.preventDefault(); flagMine(r, c); }; let pressTimer; cell.ontouchstart = (e) => { pressTimer = setTimeout(() => { flagMine(r, c); e.preventDefault(); }, 500); }; cell.ontouchend = () => clearTimeout(pressTimer); container.appendChild(cell); } mineGrid.push(row); } let placed = 0; while (placed < mineCount) { let r = Math.floor(Math.random() * mineRows); let c = Math.floor(Math.random() * mineCols); if (!mineGrid[r][c].mine) { mineGrid[r][c].mine = true; placed++; } } for (let r = 0; r < mineRows; r++) { for (let c = 0; c < mineCols; c++) { if (!mineGrid[r][c].mine) { let count = 0; for (let i = -1; i <= 1; i++) for (let j = -1; j <= 1; j++) { let nr = r + i, nc = c + j; if (nr >= 0 && nr < mineRows && nc >= 0 && nc < mineCols && mineGrid[nr][nc].mine) count++; } mineGrid[r][c].count = count; } } } }
+    function revealMine(r, c) { if (mineGameOver) return; let cellData = mineGrid[r][c]; if (cellData.revealed || cellData.flagged) return; cellData.revealed = true; let el = document.getElementById(`mine-${r}-${c}`); el.classList.add('revealed'); if (cellData.mine) { el.classList.add('mine'); el.innerText = '💣'; mineGameOver = true; document.getElementById('mine-status').innerText = 'باختی! 💥'; document.getElementById('mine-status').style.color = 'red'; for (let i = 0; i < mineRows; i++) for (let j = 0; j < mineCols; j++) if (mineGrid[i][j].mine && !mineGrid[i][j].revealed) { document.getElementById(`mine-${i}-${j}`).classList.add('mine'); document.getElementById(`mine-${i}-${j}`).innerText = '💣'; } } else { if (cellData.count > 0) { el.innerText = cellData.count; el.style.color = cellData.count === 1 ? 'blue' : cellData.count === 2 ? 'green' : 'red'; } else { for (let i = -1; i <= 1; i++) for (let j = -1; j <= 1; j++) { let nr = r + i, nc = c + j; if (nr >= 0 && nr < mineRows && nc >= 0 && nc < mineCols && !mineGrid[nr][nc].revealed) revealMine(nr, nc); } } } checkWinMinesweeper(); }
+    function flagMine(r, c) { if (mineGameOver) return; let cellData = mineGrid[r][c]; if (cellData.revealed) return; cellData.flagged = !cellData.flagged; let el = document.getElementById(`mine-${r}-${c}`); el.classList.toggle('flag'); el.innerText = cellData.flagged ? '🚩' : ''; }
+    function checkWinMinesweeper() { let revealedCount = 0; for (let r = 0; r < mineRows; r++) for (let c = 0; c < mineCols; c++) if (mineGrid[r][c].revealed) revealedCount++; if (revealedCount === (mineRows * mineCols - mineCount)) { mineGameOver = true; document.getElementById('mine-status').innerText = '🎉 بردی!'; document.getElementById('mine-status').style.color = 'lime'; } }
+    initMinesweeper();
+
+    // =============== 10. Simon ===============
+    let simonSequence = [], simonPlayerSeq = [], simonLevel = 0, simonPlaying = false, simonCanClick = false, simonSpeed = 600;
+    const simonButtons = document.querySelectorAll('.simon-btn');
+    function startSimon() { simonSequence = []; simonPlayerSeq = []; simonLevel = 0; simonSpeed = 600; simonPlaying = true; document.getElementById('simonScore').innerText = '0'; document.getElementById('simon-status').innerText = 'آماده...'; document.getElementById('simon-status').style.color = 'var(--text-muted)'; nextSimonLevel(); }
+    function nextSimonLevel() { if (!simonPlaying) return; simonCanClick = false; document.getElementById('simon-status').innerText = 'با دقت نگاه کن!'; simonLevel++; document.getElementById('simonScore').innerText = simonLevel - 1; simonPlayerSeq = []; simonSequence.push(Math.floor(Math.random() * 4)); let i = 0; let playInterval = setInterval(() => { if (i >= simonSequence.length) { clearInterval(playInterval); simonCanClick = true; document.getElementById('simon-status').innerText = 'حالا نوبت توئه!'; return; } flashSimonBtn(simonSequence[i]); i++; }, simonSpeed); }
+    function flashSimonBtn(index) { let btn = simonButtons[index]; btn.classList.add('active'); setTimeout(() => btn.classList.remove('active'), simonSpeed / 2); }
+    function simonClick(index) { if (!simonCanClick || !simonPlaying) return; flashSimonBtn(index); simonPlayerSeq.push(index); let currentIndex = simonPlayerSeq.length - 1; if (simonPlayerSeq[currentIndex] !== simonSequence[currentIndex]) { simonPlaying = false; document.getElementById('simon-status').innerText = 'باختی! دوباره امتحان کن.'; document.getElementById('simon-status').style.color = 'red'; return; } if (simonPlayerSeq.length === simonSequence.length) { simonCanClick = false; document.getElementById('simon-status').innerText = 'عالی بود!'; setTimeout(() => { if (simonSpeed > 200) simonSpeed -= 50; nextSimonLevel(); }, 1000); } }
+
+    // =============== 11. Dodge ===============
+    let dCanvas, dCtx, dPlayer, dObstacles, dScore, dInterval, dPlaying = false, dSpeed = 3;
+    function dodgeReset() { dCanvas = document.getElementById('dodgeCanvas'); dCtx = dCanvas.getContext('2d'); dPlayer = { x: dCanvas.width/2 - 15, y: dCanvas.height - 40, w: 30, h: 30 }; dObstacles = []; dScore = 0; dSpeed = 3; dPlaying = true; document.getElementById('dodgeScore').innerText = '0'; clearInterval(dInterval); dInterval = setInterval(dodgeUpdate, 1000/60); }
+    function dodgeUpdate() { if (!dPlaying) return; dCtx.clearRect(0, 0, dCanvas.width, dCanvas.height); dCtx.fillStyle = '#00f5ff'; dCtx.fillRect(dPlayer.x, dPlayer.y, dPlayer.w, dPlayer.h); if (Math.random() < 0.05) dObstacles.push({ x: Math.random() * (dCanvas.width - 30), y: -30, w: 30, h: 30 }); for (let i = dObstacles.length - 1; i >= 0; i--) { let o = dObstacles[i]; o.y += dSpeed; dCtx.fillStyle = '#ff00aa'; dCtx.fillRect(o.x, o.y, o.w, o.h); if (dPlayer.x < o.x + o.w && dPlayer.x + dPlayer.w > o.x && dPlayer.y < o.y + o.h && dPlayer.y + dPlayer.h > o.y) { dPlaying = false; clearInterval(dInterval); dCtx.fillStyle = 'red'; dCtx.font = '24px Vazirmatn'; dCtx.fillText('تصادف!', 90, 180); } if (o.y > dCanvas.height) { dObstacles.splice(i, 1); dScore += 10; document.getElementById('dodgeScore').innerText = dScore; if (dScore % 100 === 0) dSpeed += 0.5; } } }
+    document.getElementById('dodgeCanvas').addEventListener('mousemove', (e) => { if(!dPlayer || !dPlaying) return; let rect = dCanvas.getBoundingClientRect(); dPlayer.x = e.clientX - rect.left - dPlayer.w/2; if (dPlayer.x < 0) dPlayer.x = 0; if (dPlayer.x > dCanvas.width - dPlayer.w) dPlayer.x = dCanvas.width - dPlayer.w; });
+    document.getElementById('dodgeCanvas').addEventListener('touchmove', (e) => { if(!dPlayer || !dPlaying) return; e.preventDefault(); let rect = dCanvas.getBoundingClientRect(); dPlayer.x = e.touches[0].clientX - rect.left - dPlayer.w/2; if (dPlayer.x < 0) dPlayer.x = 0; if (dPlayer.x > dCanvas.width - dPlayer.w) dPlayer.x = dCanvas.width - dPlayer.w; }, {passive: false});
+
+    // =============== 12. RPS ===============
+    function playRPS(c) { const o = ['سنگ','کاغذ','قیچی'][Math.floor(Math.random()*3)]; let r = c===o ? 'مساوی' : (c==='سنگ'&&o==='قیچی'||c==='کاغذ'&&o==='سنگ'||c==='قیچی'&&o==='کاغذ') ? '🎉 بردی!' : '😢 باختی'; document.getElementById('res-rps').innerText = `تو: ${c} | سیستم: ${o} | ${r}`; }
+
+    // =============== 13. Math ===============
+    let mathAns;
+    function newMath() { const a = Math.floor(Math.random()*10)+1, b = Math.floor(Math.random()*10)+1; mathAns = a + b; document.getElementById('math-q').innerText = `${a} + ${b} = ?`; }
+    function checkMath() { const v = parseInt(document.getElementById('math-inp').value); const r = document.getElementById('math-res'); if(v === mathAns) { r.innerText = '✅ درست بود!'; r.style.color = 'lime'; newMath(); } else { r.innerText = '❌ اشتباه!'; r.style.color = 'red'; } document.getElementById('math-inp').value = ''; }
+    newMath();
+
+    // =============== 14. Reaction ===============
+    let reactStart;
+    function startReact() { const btn = document.getElementById('react-btn'); const res = document.getElementById('react-res'); if(btn.innerText === 'کلیک کن تا شروع') { btn.innerText = 'صبر کن...'; btn.style.background = 'var(--accent)'; res.innerText = ''; setTimeout(() => { btn.innerText = 'الان بزن!'; btn.style.background = 'var(--primary)'; reactStart = Date.now(); }, Math.random()*3000+1000); } else if(btn.innerText === 'الان بزن!') { const t = Date.now() - reactStart; res.innerText = `⏱️ ${t} میلی‌ثانیه`; btn.innerText = 'کلیک کن تا شروع'; btn.style.background = 'var(--bg-main)'; } }
+
+    // =============== 15. Guess ===============
+    let guessTarget = Math.floor(Math.random()*100)+1;
+    function checkGuess() { const v = parseInt(document.getElementById('guess-inp').value); const r = document.getElementById('guess-res'); if(v === guessTarget) { r.innerText = '🎉 درست بود!'; r.style.color = 'lime'; guessTarget = Math.floor(Math.random()*100)+1; } else if(v < guessTarget) { r.innerText = '⬆ برو بالاتر'; r.style.color = 'gold'; } else { r.innerText = '⬇ برو پایین‌تر'; r.style.color = 'gold'; } document.getElementById('guess-inp').value = ''; }
+
+    // =============== 16. Scramble ===============
+    const words = ['کتاب', 'سیب', 'پنجره', 'مدرسه', 'ماشین', 'دریا']; let currentWord = '';
+    function newScramble() { currentWord = words[Math.floor(Math.random()*words.length)]; const scrambled = currentWord.split('').sort(() => Math.random()-0.5).join(''); document.getElementById('scramble-word').innerText = scrambled; }
+    function checkScramble() { const v = document.getElementById('scramble-inp').value; const r = document.getElementById('scramble-res'); if(v === currentWord) { r.innerText = '✅ درست بود!'; r.style.color = 'lime'; newScramble(); } else { r.innerText = '❌ اشتباه!'; r.style.color = 'red'; } document.getElementById('scramble-inp').value = ''; }
+    newScramble();
+
+    // =============== 17. Typing ===============
+    const typeWords = ['ماشین', 'کتاب', 'دریا', 'آسمان', 'پنجره']; let typeIndex = 0;
+    function newTyping() { document.getElementById('type-word').innerText = typeWords[typeIndex % typeWords.length]; typeIndex++; }
+    function checkTyping(inp) { if(inp.value === document.getElementById('type-word').innerText) { inp.value = ''; newTyping(); } }
+    newTyping();
+
+    // =============== 18. Color Match ===============
+    const colorHexes = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff']; let currentColor = '';
+    function newColorMatch() { currentColor = colorHexes[Math.floor(Math.random()*colorHexes.length)]; document.getElementById('color-box').style.background = currentColor; let btns = document.getElementById('color-btns'); btns.innerHTML = ''; let opts = [currentColor, ...colorHexes.filter(c => c !== currentColor).sort(() => Math.random()-0.5).slice(0,2)].sort(() => Math.random()-0.5); opts.forEach(c => { let b = document.createElement('button'); b.style.background = c; b.style.width = '40px'; b.style.height = '40px'; b.onclick = () => { if(c === currentColor) { document.getElementById('color-res').innerText = '✅ درست!'; newColorMatch(); } else { document.getElementById('color-res').innerText = '❌ اشتباه!'; } }; btns.appendChild(b); }); }
+    newColorMatch();
+
+    // =============== 19. Clicker ===============
+    let clicks = 0; function doClick() { clicks++; document.getElementById('click-score').innerText = clicks; }
+
+    // =============== 20. Coin Flip ===============
+    function flipCoin() { document.getElementById('coin-res').innerText = Math.random() < 0.5 ? '🦁 شیر' : '📖 خط'; }
+
+    // =============== 21. Dice ===============
+    function rollDice() { const n = Math.floor(Math.random()*6)+1; const e = ['⚀','⚁','⚂','⚃','⚄','⚅']; document.getElementById('dice-res').innerText = e[n-1]; }
+
+    // =============== 22. Odd One Out ===============
+    let oddScore = 0;
+    function initOdd() { const emojis = ['🍎','🍊','🍋','🍉','🍇']; const same = emojis[Math.floor(Math.random()*emojis.length)]; let diff = emojis[Math.floor(Math.random()*emojis.length)]; while(diff === same) diff = emojis[Math.floor(Math.random()*emojis.length)]; const grid = document.getElementById('odd-grid'); grid.innerHTML = ''; for(let i=0; i<9; i++) { const cell = document.createElement('div'); cell.className = 'emoji-cell'; const isDiff = i === Math.floor(Math.random()*9); cell.innerText = isDiff ? diff : same; cell.onclick = () => { if(isDiff) { oddScore++; document.getElementById('odd-score').innerText = oddScore; initOdd(); } else { oddScore = Math.max(0, oddScore-1); document.getElementById('odd-score').innerText = oddScore; } }; grid.appendChild(cell); } }
+    initOdd();
+
+    // =============== 23. Memory Sequence ===============
+    let memSeq = [], memSeqLevel = 0;
+    function startMemSeq() { memSeq = []; memSeqLevel = 0; nextMemSeq(); }
+    function nextMemSeq() { memSeqLevel++; document.getElementById('memseq-score').innerText = memSeqLevel-1; memSeq.push(Math.floor(Math.random()*10)); document.getElementById('memseq-display').innerText = memSeq.join(' - '); setTimeout(() => { document.getElementById('memseq-display').innerText = '- - -'; document.getElementById('memseq-inp').value = ''; document.getElementById('memseq-inp').focus(); }, 1500); }
+    function checkMemSeq() { const v = document.getElementById('memseq-inp').value; if(v === memSeq.join('')) { nextMemSeq(); } else { alert('اشتباه بود!'); startMemSeq(); } }
+
+    // =============== 24. Emoji Match ===============
+    function initEmoji() { const emojis = ['🍎','🍊','🍋','🍉','🍇','🍓']; const target = emojis[Math.floor(Math.random()*emojis.length)]; document.getElementById('emoji-target').innerText = 'هدف: ' + target; const grid = document.getElementById('emoji-grid'); grid.innerHTML = ''; for(let i=0; i<9; i++) { const cell = document.createElement('div'); cell.className = 'emoji-cell'; cell.innerText = emojis[Math.floor(Math.random()*emojis.length)]; cell.onclick = () => { if(cell.innerText === target) { alert('درست بود!'); initEmoji(); } else { alert('اشتباه!'); } }; grid.appendChild(cell); } }
+    initEmoji();
+
+    // =============== 25. RPSLS ===============
+    const rpslsNames = ['سنگ','کاغذ','قیچی','مارمولک','اسپاک']; const rpslsRules = [[2,3],[0,4],[1,3],[1,4],[0,2]];
+    function playRPSLS(c) { const o = Math.floor(Math.random()*5); let res = c === o ? 'مساوی' : rpslsRules[c].includes(o) ? '🎉 بردی!' : '😢 باختی'; document.getElementById('rpsls-res').innerText = `تو: ${rpslsNames[c]} | سیستم: ${rpslsNames[o]} | ${res}`; }
+
+    // =============== 26. Spin Wheel ===============
+    let wheelRot = 0;
+    function spinWheel() { wheelRot += 360 * 3 + Math.floor(Math.random()*360); document.getElementById('wheel').style.transform = `rotate(${wheelRot}deg)`; setTimeout(() => { const res = ['۵۰ امتیاز','۲۰ امتیاز','۱۰۰ امتیاز','شانس مجدد','هیچی','۳۰ امتیاز']; document.getElementById('wheel-res').innerText = res[Math.floor(Math.random()*res.length)]; }, 3000); }
+
+    // =============== 27. Quiz ===============
+    const quizQ = [{q:'پایتخت ایران؟', o:['تهران','شیراز','اصفهان'], a:0}, {q:'آب از چه فرمولی ساخته شده؟', o:['CO2','H2O','O2'], a:1}, {q:'خورشید چه رنگی است؟', o:['آبی','زرد','سبز'], a:1}]; let currentQ = 0;
+    function loadQuiz() { const q = quizQ[currentQ]; document.getElementById('quiz-q').innerText = q.q; const opts = document.getElementById('quiz-opts'); opts.innerHTML = ''; q.o.forEach((o, i) => { const b = document.createElement('button'); b.innerText = o; b.onclick = () => { if(i === q.a) { alert('درست!'); currentQ = (currentQ+1)%quizQ.length; loadQuiz(); } else { alert('اشتباه!'); } }; opts.appendChild(b); }); }
+    loadQuiz();
+
+    // =============== 28. Catch ===============
+    let catcherX = 115, catchScore = 0, fallingY = -30, fallingX = 130, catchInterval;
+    function startCatch() { catcherX = 115; catchScore = 0; fallingY = -30; fallingX = Math.random()*250; document.getElementById('catch-score').innerText = '0'; document.getElementById('catcher').style.left = catcherX + 'px'; clearInterval(catchInterval); catchInterval = setInterval(() => { fallingY += 5; if(fallingY > 200) { if(fallingX > catcherX-20 && fallingX < catcherX+50) { catchScore += 10; document.getElementById('catch-score').innerText = catchScore; } fallingY = -30; fallingX = Math.random()*250; } document.getElementById('falling-box').style.top = fallingY + 'px'; document.getElementById('falling-box').style.left = fallingX + 'px'; }, 50); }
+    function moveCatcher(dx) { catcherX += dx; if(catcherX < 0) catcherX = 0; if(catcherX > 230) catcherX = 230; document.getElementById('catcher').style.left = catcherX + 'px'; }
+
+    // =============== 29. Hanoi ===============
+    let hanoiState = [[3,2,1],[],[]], selectedPeg = null;
+    function renderHanoi() { for(let i=0; i<3; i++) { const peg = document.getElementById('peg-'+i); peg.innerHTML = ''; hanoiState[i].forEach(d => { const disk = document.createElement('div'); disk.className = 'disk'; disk.style.width = (d*20+10) + 'px'; peg.appendChild(disk); }); } }
+    function selectPeg(i) { if(selectedPeg === null) { if(hanoiState[i].length > 0) selectedPeg = i; } else { if(i !== selectedPeg) { const top1 = hanoiState[selectedPeg][hanoiState[selectedPeg].length-1]; const top2 = hanoiState[i][hanoiState[i].length-1]; if(!top2 || top1 < top2) { hanoiState[i].push(hanoiState[selectedPeg].pop()); if(hanoiState[2].length === 3) alert('بردی!'); } } selectedPeg = null; renderHanoi(); } }
+    renderHanoi();
+
+    // =============== 30. Piano ===============
+    let pianoScore = 0, pianoInterval, pianoActive = false;
+    function startPiano() { pianoScore = 0; pianoActive = true; document.getElementById('piano-score').innerText = '0'; clearInterval(pianoInterval); pianoInterval = setInterval(() => { if(!pianoActive) return; const key = Math.floor(Math.random()*4); const el = document.getElementById('p'+key); el.classList.add('active'); setTimeout(() => { el.classList.remove('active'); }, 300); el.onclick = () => { if(el.classList.contains('active')) { pianoScore++; document.getElementById('piano-score').innerText = pianoScore; el.classList.remove('active'); } }; }, 600); }
+    function toggleTheme() { document.body.classList.toggle('light-mode'); const isLight = document.body.classList.contains('light-mode'); document.getElementById('theme-btn').innerText = isLight ? '☀️' : '🌙'; localStorage.setItem('gameTheme', isLight); }
+    if (localStorage.getItem('gameTheme') === 'true') { toggleTheme(); }
+
+    // Animation
+    const revealObserver = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('active'); revealObserver.unobserve(entry.target); } }); }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 </script>
 </body>
-</html>
+            </html>
