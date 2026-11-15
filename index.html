@@ -17,6 +17,7 @@
     <meta property="og:title" content="رهیلاناب | پورتال جامع ایرانی">
     <meta property="og:description" content="بزرگترین پورتال جامع ایرانی شامل سلامت، آشپزی، اقتصاد، تکنولوژی و بازی‌های آنلاین.">
     <meta property="og:url" content="https://rahilanab.com/">
+    <!-- فراموش نکنید تصویر 1200x630 با این نام در روت سایت بسازید -->
     <meta property="og:image" content="https://rahilanab.com/og-image.jpg">
     <meta name="twitter:card" content="summary_large_image">
 
@@ -24,17 +25,19 @@
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link rel="preconnect" href="https://pagead2.googlesyndication.com">
 
+    <!-- Sitemap Link -->
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
     <!-- فونت وزیرمتن -->
     <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
 
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2212822534276249" crossorigin="anonymous"></script>
     
-    <!-- Google Translate (Hidden) -->
-    <div id="google_translate_element" style="display:none;"></div>
+    <!-- Fix FOUC (Flash of Unstyled Content) for Dark Mode -->
     <script>
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({pageLanguage:'fa', includedLanguages:'en,de,ar,es,fr,tr,ru,zh', layout: google.translate.TranslateElement.InlineLayout.SIMPLE});
+        if (localStorage.getItem('homeTheme') === 'true') {
+            document.documentElement.style.backgroundColor = '#0f172a';
         }
     </script>
 
@@ -44,17 +47,12 @@
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "رهیلاناب",
-      "url": "https://rahilanab.com/",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://rahilanab.com/search?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
+      "url": "https://rahilanab.com/"
     }
     </script>
 
     <style>
-        /* ============== تم آبی و ساده (همون تم محبوبت) ============== */
+        /* ============== تم آبی و ساده ============== */
         :root {
             --bg-main: linear-gradient(135deg, #e3f2fd, #bbdefb, #90caf9, #a5d6a7);
             --bg-card: #ffffff;
@@ -139,6 +137,7 @@
             transition: background 0.3s;
         }
         .intro-content h2 { color: var(--text-title); font-size: 18px; margin-bottom: 10px; text-align: right; }
+        .intro-content a { color: var(--text-title); font-weight: bold; text-decoration: underline; }
 
         /* ============== اخبار داغ ============== */
         .hot-news-box {
@@ -187,9 +186,7 @@
         .card h3 { font-size: 13px; font-weight: bold; line-height: 1.4; }
 
         /* دکمه مشاهده همه */
-        .explore-more {
-            text-align: center; margin: 40px 0;
-        }
+        .explore-more { text-align: center; margin: 40px 0; }
         .explore-btn {
             display: inline-block; background: var(--text-title); color: #fff;
             padding: 15px 40px; border-radius: 30px; text-decoration: none;
@@ -216,8 +213,6 @@
             .card h3 { font-size: 11px; }
             .header h1 { font-size: 18px; }
         }
-        
-        .goog-te-banner-frame{display:none!important} body{top:0!important}
     </style>
 </head>
 <body>
@@ -236,17 +231,17 @@
 
 <main id="main-content">
     
-    <!-- محتوای معرفی (SEO) -->
+    <!-- محتوای معرفی (SEO) با لینک‌های داخلی -->
     <section class="intro-content">
         <h2>به دنیای رهیلاناب خوش آمدید</h2>
         <p>
-            پورتال جامع <strong>رهیلاناب</strong> با هدف ایجاد یک مرجع کامل و در دسترس برای کاربران ایرانی طراحی شده است. ما در رهیلاناب تلاش کرده‌ایم تا تمام نیازهای روزمره شما را در یک نقطه جمع کنیم؛ از بررسی <strong>قیمت لحظه‌ای طلا و ارز</strong> و راهنمای خرید کالاهای مختلف، تا مقالات آموزشی در حوزه <strong>سلامت و پزشکی</strong>، دستور پخت انواع غذاهای ایرانی و فرنگی، راهنمای مد و زیبایی، و حتی بازی‌های آنلاین و سرگرمی.
+            پورتال جامع <strong>رهیلاناب</strong> با هدف ایجاد یک مرجع کامل و در دسترس برای کاربران ایرانی طراحی شده است. ما در رهیلاناب تلاش کرده‌ایم تا تمام نیازهای روزمره شما را در یک نقطه جمع کنیم؛ از بررسی <a href="gold.html">قیمت لحظه‌ای طلا</a> و ارز و راهنمای خرید کالاهای مختلف، تا مقالات آموزشی در حوزه <a href="health-full.html">سلامت و پزشکی</a>، دستور پخت انواع غذاهای ایرانی و فرنگی در بخش <a href="foods_1.html">آشپزی</a>، راهنمای مد و زیبایی، و حتی بازی‌های آنلاین و سرگرمی.
         </p>
         <p>
-            اگر به دنبال راهنمای خرید تبلت یا تلویزیون هستید، یا می‌خواهید در مورد سفر با قطار و رزرو بلیت اطلاعات کسب کنید، بخش‌های تخصصی ما با ابزارهای تعاملی و محاسبه‌گرهای هوشمند در خدمت شما هستند. همچنین بخش ورزش و تناسب اندام ما شامل راهنمای تمرینات، برنامه‌های غذایی و معرفی رشته‌های ورزشی مختلف است.
+            اگر به دنبال راهنمای خرید <a href="tablet.html">تبلت</a> یا <a href="tv.html">تلویزیون</a> هستید، یا می‌خواهید در مورد <a href="train.html">سفر با قطار</a> و رزرو بلیت اطلاعات کسب کنید، بخش‌های تخصصی ما با ابزارهای تعاملی و محاسبه‌گرهای هوشمند در خدمت شما هستند. همچنین بخش <a href="sport-full.html">ورزش و تناسب اندام</a> ما شامل راهنمای تمرینات، برنامه‌های غذایی و معرفی رشته‌های ورزشی مختلف است.
         </p>
         <p>
-            در رهیلاناب، ما به کیفیت محتوا و تجربه کاربری اهمیت می‌دهیم. هر صفحه به گونه‌ای طراحی شده است که اطلاعات مفید و کاربردی را به ساده‌ترین شکل ممکن به شما ارائه دهد. برای دسترسی به تمام ۳۰۰+ صفحه سایت، می‌توانید از منوی «همه لینک‌ها» یا نوار جستجوی بالا استفاده کنید.
+            در رهیلاناب، ما به کیفیت محتوا و تجربه کاربری اهمیت می‌دهیم. هر صفحه به گونه‌ای طراحی شده است که اطلاعات مفید و کاربردی را به ساده‌ترین شکل ممکن به شما ارائه دهد. برای دسترسی به تمام صفحات سایت، می‌توانید از منوی «همه لینک‌ها» یا نوار جستجوی بالا استفاده کنید.
         </p>
     </section>
 
@@ -266,11 +261,11 @@
         </div>
     </section>
 
-    <!-- ⭐ محبوب‌ترین‌ها (۴۰ لینک اصلی) -->
+    <!-- ⭐ دسته‌بندی‌ها -->
     
     <section>
         <h2 class="section-title">🔥 داغ‌ترین‌های سایت</h2>
-        <div class="grid" id="search-grid">
+        <div class="grid">
             <a href="gold.html" class="card"><div class="emoji">💰</div><h3>قیمت طلا</h3></a>
             <a href="train.html" class="card"><div class="emoji">🚆</div><h3>سفر با قطار</h3></a>
             <a href="ai-tools.html" class="card"><div class="emoji">🤖</div><h3>هوش مصنوعی</h3></a>
@@ -282,7 +277,7 @@
 
     <section>
         <h2 class="section-title">💊 سلامت و درمان</h2>
-        <div class="grid" id="search-grid">
+        <div class="grid">
             <a href="health-full.html" class="card"><div class="emoji">🩺</div><h3>دنیای سلامت</h3></a>
             <a href="nutrition.html" class="card"><div class="emoji">🥗</div><h3>تغذیه</h3></a>
             <a href="psychology.html" class="card"><div class="emoji">🧠</div><h3>روانشناسی</h3></a>
@@ -296,13 +291,13 @@
 
     <section>
         <h2 class="section-title">🏃 ورزش و فیتنس</h2>
-        <div class="grid" id="search-grid">
+        <div class="grid">
             <a href="sport-full.html" class="card"><div class="emoji">🏆</div><h3>دنیای ورزش</h3></a>
             <a href="yoga2.html" class="card"><div class="emoji">🧘‍♀️</div><h3>یوگا</h3></a>
             <a href="gym.html" class="card"><div class="emoji">🏋️‍♂️</div><h3>باشگاه</h3></a>
             <a href="weightlifting.html" class="card"><div class="emoji">🏋️</div><h3>وزنه‌برداری</h3></a>
             <a href="zumba2.html" class="card"><div class="emoji">💃</div><h3>زومبا</h3></a>
-            <a href="football.html" class="card"><div class="emoji">⚽</div><h3>فوتبال</h3></a>
+            <a href="sport.html" class="card"><div class="emoji">⚽</div><h3>رشته‌های ورزشی</h3></a>
             <a href="swimming.html" class="card"><div class="emoji">🏊</div><h3>شنا</h3></a>
             <a href="wrestling.html" class="card"><div class="emoji">🤼</div><h3>کشتی</h3></a>
         </div>
@@ -310,7 +305,7 @@
 
     <section>
         <h2 class="section-title">🍳 آشپزی و خانه</h2>
-        <div class="grid" id="search-grid">
+        <div class="grid">
             <a href="foods_1.html" class="card"><div class="emoji">🍲</div><h3>غذاهای ۱-۳۰</h3></a>
             <a href="cook.html" class="card"><div class="emoji">🍳</div><h3>غذای سریع</h3></a>
             <a href="home-full.html" class="card"><div class="emoji">🏡</div><h3>دنیای خانه</h3></a>
@@ -324,7 +319,7 @@
 
     <section>
         <h2 class="section-title">📱 تکنولوژی و خرید</h2>
-        <div class="grid" id="search-grid">
+        <div class="grid">
             <a href="tech.html" class="card"><div class="emoji">📱</div><h3>تکنولوژی</h3></a>
             <a href="phone-full.html" class="card"><div class="emoji">📲</div><h3>گوشی جامع</h3></a>
             <a href="laptop.html" class="card"><div class="emoji">💻</div><h3>لپ‌تاپ</h3></a>
@@ -338,7 +333,7 @@
 
     <section>
         <h2 class="section-title">🎮 بازی و سرگرمی</h2>
-        <div class="grid" id="search-grid">
+        <div class="grid">
             <a href="games.html" class="card"><div class="emoji">🎯</div><h3>بازی آنلاین</h3></a>
             <a href="games-101-150.html" class="card"><div class="emoji">🕹️</div><h3>بازی ۱۰۱-۱۵۰</h3></a>
             <a href="joke.html" class="card"><div class="emoji">😂</div><h3>جوک</h3></a>
@@ -355,7 +350,7 @@
         <a href="all.html" class="explore-btn">📋 مشاهده تمام ۳۰۰+ صفحه سایت</a>
     </div>
 
-    <!-- تبلیغات -->
+    <!-- تبلیغات (بنر 300x250) -->
     <div class="ad-box">
         <script>atOptions={'key':'939c6f3df75112fca8cc907d853dc8bb','format':'iframe','height':250,'width':300,'params':{}};</script>
         <script src="https://www.highperformanceformat.com/939c6f3df75112fca8cc907d853dc8bb/invoke.js"></script>
@@ -373,7 +368,10 @@
 
 <script>
     // =============== تاریخ خودکار ===============
-    document.getElementById('hot-date').innerText = `(${new Date().toLocaleDateString('fa-IR', { weekday: 'long', day: 'numeric', month: 'long' })})`;
+    const hotDate = document.getElementById('hot-date');
+    if (hotDate) {
+        hotDate.innerText = `(${new Date().toLocaleDateString('fa-IR', { weekday: 'long', day: 'numeric', month: 'long' })})`;
+    }
 
     // =============== باز و بسته کردن اخبار ===============
     function toggleHotNews() {
@@ -398,31 +396,44 @@
         const isDark = document.body.classList.contains('dark-mode');
         document.getElementById('theme-btn').innerText = isDark ? '☀️' : '🌙';
         localStorage.setItem('homeTheme', isDark);
+        
+        // حذف بک‌گراند موقت FOUC
+        if (isDark) {
+            document.documentElement.style.backgroundColor = '#0f172a';
+        } else {
+            document.documentElement.style.backgroundColor = '';
+        }
     }
-    // ذخیره تم
+    // اعمال تم ذخیره شده
     if (localStorage.getItem('homeTheme') === 'true') {
         document.body.classList.add('dark-mode');
         document.getElementById('theme-btn').innerText = '☀️';
     }
 
-    // =============== جستجوی هوشمند با Debounce (بهینه) ===============
+    // =============== جستجوی هوشمند با Debounce ===============
     let searchTimeout;
     document.getElementById('search-input').addEventListener('input', (e) => {
         clearTimeout(searchTimeout);
         searchTimeout = setTimeout(() => {
             const query = e.target.value.toLowerCase().trim();
-            const cards = document.querySelectorAll('.card');
+            const sections = document.querySelectorAll('main section');
             
-            cards.forEach(card => {
-                const text = card.innerText.toLowerCase();
-                if (text.includes(query)) {
-                    card.style.display = 'flex';
-                } else {
-                    card.style.display = 'none';
-                }
+            sections.forEach(section => {
+                const cards = section.querySelectorAll('.card');
+                if (cards.length === 0) return; // بخش معرفی یا اخبار داغ (بدون کارت)
+                
+                let hasMatch = false;
+                cards.forEach(card => {
+                    const match = card.innerText.toLowerCase().includes(query);
+                    card.style.display = match ? 'flex' : 'none';
+                    if (match) hasMatch = true;
+                });
+                
+                // مخفی کردن کل بخش (شامل تیتر) اگر هیچ کارتی پیدا نشد
+                section.style.display = (query === '' || hasMatch) ? '' : 'none';
             });
-        }, 200); // 200 میلی‌ثانیه تاخیر برای جلوگیری از لگ
+        }, 200);
     });
 </script>
 </body>
-                </html>
+</html>
