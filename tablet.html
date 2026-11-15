@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>راهنمای جامع خرید تبلت: مشاور هوشمند و مقایسه برترین‌ها | رهیلاناب</title>
     <meta name="description" content="همه چیز درباره تبلت؛ از انتخاب تبلت مناسب برای درس و طراحی تا مقایسه بهترین تبلت‌های ۲۰۲۶ (آیپد، سامسونگ، شیائومی). همراه با مشاور هوشمند خرید.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📱</text></svg>">
+    
+    <!-- اضافه شدن فونت وزیرمتن -->
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
     
     <style>
         /* ============== تم‌ها ============== */
@@ -40,6 +44,17 @@
             line-height: 1.9;
             font-size: 17px;
             overflow-x: hidden;
+        }
+
+        /* ============== انیمیشن اسکرول (Reveal) ============== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         /* ============== نوار پیشرفت ============== */
@@ -117,7 +132,7 @@
         .advisor-step { margin-bottom: 20px; text-align: center; }
         .advisor-step p { font-weight: bold; margin-bottom: 10px; font-size: 16px; }
         .options-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
-        .opt-btn { background: var(--bg-card); border: 2px solid var(--border); padding: 10px 20px; border-radius: 30px; cursor: pointer; font-family: inherit; font-weight: bold; transition: 0.3s; font-size: 15px; }
+        .opt-btn { background: var(--bg-card); border: 2px solid var(--border); padding: 10px 20px; border-radius: 30px; cursor: pointer; font-family: inherit; font-weight: bold; transition: 0.3s; font-size: 15px; color: var(--text-main); }
         .opt-btn:hover, .opt-btn.selected { background: var(--primary); color: white; border-color: var(--primary); transform: scale(1.05); }
         
         #advisor-result { display: none; margin-top: 20px; padding: 20px; background: rgba(14, 165, 233, 0.1); border-right: 5px solid var(--primary); border-radius: 10px; animation: slideUp 0.5s ease; }
@@ -126,7 +141,7 @@
         /* ============== جدول ============== */
         table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 15px; border-radius: 12px; overflow: hidden; }
         th { background: var(--primary); color: white; padding: 15px; text-align: center; }
-        td { padding: 12px; text-align: center; border-bottom: 1px solid var(--border); background: var(--bg-card); font-weight: 500; }
+        td { padding: 12px; text-align: center; border-bottom: 1px solid var(--border); background: var(--bg-card); font-weight: 500; color: var(--text-main); }
         tr:hover td { background: var(--bg-main); }
 
         /* ============== آکاردئون ============== */
@@ -311,6 +326,7 @@
             document.getElementById('tts-btn').classList.remove('playing');
             return;
         }
+        // گرفتن متن فقط از بخش‌های اصلی (بدون منوها)
         const mainText = document.getElementById('main-content').innerText;
         const speech = new SpeechSynthesisUtterance(mainText);
         speech.lang = 'fa-IR';
@@ -380,8 +396,23 @@
         resultDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
 
+    // =============== ۶. انیمیشن اسکرول (Reveal) ===============
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target); // فقط یکبار اجرا شود
+            }
+        });
+    }, { rootMargin: "0px", threshold: 0.15 });
+
+    revealElements.forEach(el => {
+        revealObserver.observe(el);
+    });
+
     loadVoices();
 </script>
 
 </body>
-  </html>
+</html>
