@@ -3,123 +3,505 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🔮 فال کامل | فال حافظ + فال قهوه + فال تاروت + فال شمع | rahilanab.com</title>
-    <meta name="description" content="راهنمای کامل انواع فال: فال حافظ، فال قهوه، فال تاروت، فال شمع، فال ورق، آموزش کامل تعبیر و تفسیر انواع فال">
-    <meta name="keywords" content="فال, فال حافظ, فال قهوه, فال تاروت, فال شمع, فال ورق, rahilanab">
+    <title>🔮 تالار اسرار | دانشنامه فال قهوه، تاروت و شمع | rahilanab.com</title>
+    <meta name="description" content="تجربه‌ای جادویی از انواع فال. گوی کریستالی، کارت‌های تاروت سه‌بعدی، آموزش فال قهوه و فال شمع. کلیک کنید و اسرار آینده را ببینید.">
+    
+    <!-- فونت‌ها -->
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+    
     <style>
-        *{margin:0;padding:0;box-sizing:border-box}body{font-family:'Arial';background:linear-gradient(135deg,#e3f2fd,#bbdefb,#90caf9,#a5d6a7);color:#000;text-align:center;padding:10px;min-height:100vh}.header{background:#fff;border-radius:20px;padding:20px;margin-bottom:12px;box-shadow:0 4px 15px rgba(0,0,0,.1)}.header h1{color:#0d47a1;font-size:28px}.header p{color:#000;font-size:18px;font-weight:bold}.full-card{background:#fff;border-radius:15px;padding:22px;margin:14px 0;box-shadow:0 2px 10px rgba(0,0,0,.08);text-align:right;line-height:2.4}.full-card h2{color:#0d47a1;font-size:22px;margin-bottom:12px;text-align:center;border-bottom:2px solid #e3f2fd;padding-bottom:10px}.full-card h3{color:#0d47a1;font-size:19px;margin:14px 0 8px}.full-card p{color:#000;font-size:17px;font-weight:bold;margin:10px 0}.full-card li{color:#000;font-size:17px;font-weight:bold;margin:8px 0}table{width:100%;border-collapse:collapse;margin:12px 0}th{background:#0d47a1;color:#fff;padding:14px;font-size:16px}td{padding:12px;border:1px solid #ddd;font-size:16px;font-weight:bold}.golden-box{background:linear-gradient(135deg,#fff8e1,#ffe082,#ffd54f);border-right:5px solid #ff8f00;padding:18px;border-radius:12px;margin:18px 0}.golden-box p{color:#000;font-size:17px;font-weight:bold}.blue-box{background:linear-gradient(135deg,#e3f2fd,#bbdefb,#90caf9);border-right:5px solid #0d47a1;padding:18px;border-radius:12px;margin:18px 0}.blue-box p{color:#000;font-size:17px;font-weight:bold}.green-box{background:linear-gradient(135deg,#e8f5e9,#c8e6c9,#a5d6a7);border-right:5px solid #2e7d32;padding:18px;border-radius:12px;margin:18px 0}.green-box p{color:#000;font-size:17px;font-weight:bold}.red-box{background:linear-gradient(135deg,#ffebee,#ffcdd2,#ef9a9a);border-right:5px solid #c62828;padding:18px;border-radius:12px;margin:18px 0}.red-box p{color:#000;font-size:17px;font-weight:bold}.purple-box{background:linear-gradient(135deg,#f3e5f5,#e1bee7,#ce93d8);border-right:5px solid #6a1b9a;padding:18px;border-radius:12px;margin:18px 0}.purple-box p{color:#000;font-size:17px;font-weight:bold}iframe{border-radius:12px;width:100%;max-width:100%}.back-btn{display:inline-block;background:#0d47a1;color:#fff;padding:12px 26px;border-radius:22px;text-decoration:none;margin:12px 0;font-weight:bold;font-size:17px}.footer{background:#fff;padding:14px;margin-top:14px;font-size:14px;color:#000;border-radius:15px;font-weight:bold}.footer a{color:#0d47a1}</style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background: #09050d; /* مشکی متمایل به بنفش تیره */
+            color: #e2e8f0;
+            min-height: 100vh;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(88, 28, 135, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 100% 100%, rgba(212, 175, 55, 0.05) 0%, transparent 40%);
+            background-attachment: fixed;
+        }
+
+        /* --- نوار پیشرفت --- */
+        .scroll-progress {
+            position: fixed; top: 0; right: 0; height: 4px;
+            background: linear-gradient(90deg, #d4af37, #8b5cf6);
+            z-index: 9999; width: 0; transition: width 0.1s;
+            box-shadow: 0 0 10px #8b5cf6;
+        }
+
+        /* --- هدر (Hero) با گوی کریستالی --- */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            z-index: 10;
+        }
+
+        .hero h1 {
+            font-size: 40px;
+            font-weight: 900;
+            background: linear-gradient(to right, #fbbf24, #d4af37, #fbbf24);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+            text-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+        }
+        .hero p { color: #94a3b8; font-size: 16px; margin-bottom: 40px; letter-spacing: 1px; }
+
+        /* گوی کریستالی (CSS Pure) */
+        .crystal-ball-container {
+            position: relative;
+            width: 180px;
+            height: 180px;
+            cursor: pointer;
+            margin-bottom: 30px;
+            perspective: 1000px;
+        }
+        .crystal-ball {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.8), rgba(139,92,246,0.4) 40%, rgba(15,23,42,0.9) 80%);
+            box-shadow: 
+                inset 0 0 40px rgba(139, 92, 246, 0.5),
+                0 0 60px rgba(139, 92, 246, 0.4),
+                0 20px 40px rgba(0,0,0,0.6);
+            animation: floatBall 4s ease-in-out infinite;
+            position: relative;
+            transition: transform 0.3s;
+        }
+        .crystal-ball:hover { transform: scale(1.05); }
+        
+        /* انعکاس نور روی گوی */
+        .crystal-ball::before {
+            content: '';
+            position: absolute;
+            top: 15%; left: 20%;
+            width: 30%; height: 20%;
+            background: rgba(255,255,255,0.6);
+            border-radius: 50%;
+            transform: rotate(-45deg);
+            filter: blur(8px);
+        }
+        /* پایه گوی */
+        .crystal-ball-container::after {
+            content: '';
+            position: absolute;
+            bottom: -20px; left: 50%;
+            transform: translateX(-50%);
+            width: 120px; height: 30px;
+            background: linear-gradient(to top, #0f172a, #d4af37);
+            border-radius: 50%;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.8);
+            z-index: -1;
+        }
+
+        @keyframes floatBall {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* پیام گوی */
+        #ball-message {
+            background: rgba(30, 41, 59, 0.8);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            padding: 15px 25px;
+            border-radius: 15px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #fbbf24;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(10px);
+            opacity: 0;
+            transform: translateY(10px);
+            transition: 0.5s;
+            max-width: 400px;
+        }
+        #ball-message.show { opacity: 1; transform: translateY(0); }
+
+        /* --- منوی چسبنده جادویی --- */
+        .magic-nav {
+            position: sticky; top: 15px; z-index: 1000;
+            margin: 0 auto 40px; width: 90%; max-width: 600px;
+            background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(20px);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 50px; padding: 10px;
+            display: flex; justify-content: center; gap: 5px; flex-wrap: wrap;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .magic-nav a {
+            color: #94a3b8; text-decoration: none; font-size: 13px; font-weight: bold;
+            padding: 8px 16px; border-radius: 30px; transition: 0.3s;
+        }
+        .magic-nav a:hover { background: rgba(139, 92, 246, 0.2); color: #fff; }
+        .magic-nav a.active { background: #8b5cf6; color: #fff; box-shadow: 0 0 15px rgba(139,92,246,0.5); }
+
+        /* --- محتوا --- */
+        .container { max-width: 900px; margin: 0 auto; padding: 0 20px 50px; text-align: right; }
+
+        .section {
+            margin-bottom: 60px; scroll-margin-top: 100px;
+            opacity: 0; transform: translateY(30px); transition: 0.8s;
+        }
+        .section.visible { opacity: 1; transform: translateY(0); }
+        
+        .section-title {
+            font-size: 28px; color: #fff; margin-bottom: 20px; font-weight: 900;
+            display: flex; align-items: center; gap: 15px;
+        }
+        .section-title span { 
+            background: rgba(139, 92, 246, 0.2); color: #a78bfa; 
+            width: 45px; height: 45px; border-radius: 12px; 
+            display: flex; align-items: center; justify-content: center; font-size: 22px;
+        }
+
+        /* باکس‌های شیشه‌ای */
+        .glass-box {
+            background: rgba(30, 41, 59, 0.4);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 20px; padding: 25px;
+            backdrop-filter: blur(10px);
+            margin-bottom: 20px;
+        }
+        .glass-box p { color: #cbd5e1; font-size: 15px; line-height: 2; margin-bottom: 10px; }
+
+        /* --- بخش قهوه --- */
+        .coffee-steps { display: flex; flex-direction: column; gap: 15px; }
+        .coffee-step {
+            display: flex; align-items: center; gap: 15px;
+            background: rgba(15, 23, 42, 0.6); padding: 15px 20px;
+            border-radius: 15px; border-right: 4px solid #d4af37;
+            transition: 0.3s;
+        }
+        .coffee-step:hover { transform: translateX(-10px); background: rgba(15, 23, 42, 0.9); }
+        .coffee-step .num { 
+            width: 35px; height: 35px; border-radius: 50%; background: #d4af37; color: #000;
+            display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 16px; flex-shrink: 0;
+        }
+        .coffee-step div { color: #e2e8f0; font-size: 15px; font-weight: bold; line-height: 1.6; }
+
+        /* --- بخش تاروت (3D Flip Cards) --- */
+        .tarot-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 20px; margin-top: 20px; }
+        
+        .flip-card {
+            background-color: transparent;
+            height: 220px;
+            perspective: 1000px;
+            cursor: pointer;
+        }
+        .flip-card-inner {
+            position: relative; width: 100%; height: 100%;
+            text-align: center; transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+        .flip-card:hover .flip-card-inner, .flip-card.flipped .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        .flip-card-front, .flip-card-back {
+            position: absolute; width: 100%; height: 100%;
+            -webkit-backface-visibility: hidden; backface-visibility: hidden;
+            border-radius: 15px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        }
+        .flip-card-front {
+            background: linear-gradient(135deg, #1e1b4b, #312e81);
+            border: 2px solid #8b5cf6;
+        }
+        .flip-card-front .icon { font-size: 50px; margin-bottom: 10px; filter: drop-shadow(0 0 10px rgba(255,255,255,0.3)); }
+        .flip-card-front h3 { color: #e2e8f0; font-size: 18px; }
+        .flip-card-back {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            border: 2px solid #d4af37;
+            transform: rotateY(180deg);
+        }
+        .flip-card-back p { color: #cbd5e1; font-size: 14px; line-height: 1.6; font-weight: bold; }
+        .flip-card-back .hint { color: #d4af37; font-size: 11px; margin-top: 15px; opacity: 0.7; }
+
+        /* --- بخش شمع --- */
+        .candle-container { display: flex; align-items: center; gap: 30px; flex-wrap: wrap; }
+        .css-candle {
+            width: 60px; height: 150px; position: relative; background: linear-gradient(to right, #fdfbf7, #e2e8f0);
+            border-radius: 5px; box-shadow: inset -5px 0 10px rgba(0,0,0,0.1), 0 10px 20px rgba(0,0,0,0.5);
+        }
+        .css-candle::after {
+            content: ''; position: absolute; top: -10px; left: 50%; transform: translateX(-50%);
+            width: 5px; height: 15px; background: #333;
+        }
+        .flame {
+            position: absolute; top: -40px; left: 50%; transform: translateX(-50%);
+            width: 20px; height: 40px;
+            background: radial-gradient(ellipse at bottom, #ffd700 0%, #ff8c00 50%, transparent 100%);
+            border-radius: 50% 50% 20% 20%;
+            box-shadow: 0 0 20px #ff8c00, 0 0 40px #ffd700;
+            animation: flicker 0.1s infinite alternate;
+        }
+        @keyframes flicker {
+            0% { transform: translateX(-50%) scale(1) rotate(-2deg); opacity: 0.9; }
+            100% { transform: translateX(-50%) scale(1.1) rotate(2deg); opacity: 1; }
+        }
+
+        /* --- دکمه پورتال به فال حافظ --- */
+        .portal-section { text-align: center; margin: 80px 0; }
+        .portal-btn {
+            display: inline-flex; align-items: center; justify-content: center; gap: 15px;
+            background: linear-gradient(45deg, #d4af37, #fbbf24, #d4af37);
+            background-size: 200% auto;
+            color: #000; font-size: 20px; font-weight: 900;
+            padding: 20px 50px; border-radius: 50px;
+            text-decoration: none; position: relative;
+            animation: shine 3s linear infinite;
+            box-shadow: 0 0 30px rgba(212,175,55,0.4);
+            transition: 0.3s;
+        }
+        .portal-btn:hover { transform: scale(1.05); box-shadow: 0 0 50px rgba(212,175,55,0.8); }
+        @keyframes shine { to { background-position: 200% center; } }
+
+        /* --- دکمه‌های پایین --- */
+        .back-btn {
+            display: inline-block; background: transparent; color: #94a3b8;
+            padding: 12px 25px; border-radius: 30px; text-decoration: none;
+            font-weight: bold; font-size: 14px; border: 1px solid #334155;
+            transition: 0.3s; margin-top: 30px;
+        }
+        .back-btn:hover { background: #1e293b; color: #fff; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 28px; }
+            .crystal-ball-container { width: 140px; height: 140px; }
+            .section-title { font-size: 22px; }
+            .tarot-grid { grid-template-columns: repeat(2, 1fr); }
+            .flip-card { height: 200px; }
+            .candle-container { flex-direction: column; text-align: center; }
+        }
+    </style>
 </head>
 <body>
-<div class="header"><h1>🔮 فال کامل</h1><p>راهنمای کامل انواع فال + آموزش تعبیر و تفسیر | rahilanab.com</p></div>
 
-<div class="full-card">
-    <h2>📜 انواع فال در فرهنگ ایرانی و جهانی</h2>
-    <p>فال گرفتن یکی از رسوم کهن ایرانیان است که از گذشته‌های دور در مناسبت‌های مختلف مانند <strong>شب یلدا، عید نوروز و شب چهارشنبه‌سوری</strong> انجام می‌شود. در فرهنگ اسلامی نیز <strong>تفأل به قرآن</strong> و <strong>فال حافظ</strong> جایگاه ویژه‌ای دارد.</p>
-    <div class="blue-box"><p>🔵 <strong>جالب است بدانید:</strong> قدمت فال‌گیری در ایران به بیش از <strong>۳۰۰۰ سال</strong> می‌رسد. در ایران باستان، موبدان زرتشتی با استفاده از کتاب <strong>اوستا</strong> فال می‌گرفتند.</p></div>
-</div>
+    <div class="scroll-progress" id="scrollProgress"></div>
 
-<div class="full-card">
-    <h2>📊 جدول کامل انواع فال</h2>
-    <table><tr><th>نوع فال</th><th>خاستگاه</th><th>ابزار</th><th>قدمت</th><th>زمان مناسب</th></tr>
-    <tr><td>📖 <strong>فال حافظ</strong></td><td>ایران (شیراز)</td><td>دیوان حافظ</td><td>۶۵۰ سال</td><td>همیشه (مخصوص شب یلدا)</td></tr>
-    <tr><td>☕ <strong>فال قهوه</strong></td><td>عثمانی (ترکیه)</td><td>فنجان قهوه</td><td>۵۰۰ سال</td><td>بعد از نوشیدن قهوه</td></tr>
-    <tr><td>🃏 <strong>فال تاروت</strong></td><td>اروپا (ایتالیا)</td><td>کارت‌های تاروت</td><td>۶۰۰ سال</td><td>همیشه</td></tr>
-    <tr><td>🕯️ <strong>فال شمع</strong></td><td>جهان باستان</td><td>شمع و آب</td><td>۲۰۰۰ سال</td><td>شب‌های خاص</td></tr>
-    <tr><td>🃏 <strong>فال ورق</strong></td><td>فرانسه</td><td>ورق بازی</td><td>۵۰۰ سال</td><td>همیشه</td></tr>
-    <tr><td>📿 <strong>فال چای</strong></td><td>چین و ایران</td><td>برگ چای</td><td>۱۵۰۰ سال</td><td>بعد از نوشیدن چای</td></tr>
-    <tr><td>🦴 <strong>فال استخوان</strong></td><td>آفریقا</td><td>استخوان حیوانات</td><td>۵۰۰۰ سال</td><td>مناسبت‌های خاص</td></tr>
-    <tr><td>📖 <strong>فال قرآن</strong></td><td>جهان اسلام</td><td>قرآن کریم</td><td>۱۴۰۰ سال</td><td>همیشه</td></tr></table>
-</div>
+    <!-- هدر با گوی کریستالی -->
+    <div class="hero">
+        <h1>تالار اسرار</h1>
+        <p>برای دریافت پیام امروز، روی گوی کریستالی کلیک کنید</p>
+        
+        <div class="crystal-ball-container" onclick="revealFortune()">
+            <div class="crystal-ball"></div>
+        </div>
+        
+        <div id="ball-message">اینجا پیام گوی ظاهر می‌شود...</div>
+    </div>
 
-<div class="full-card">
-    <h2>🎥 ویدئوی آموزش فال قهوه</h2>
-    <iframe width="100%" height="400" src="https://www.aparat.com/video/video/embed/videohash/5Q2K3/showvideo" frameborder="0" allowfullscreen></iframe>
-    <p style="text-align:center;margin-top:10px;">🎬 آموزش کامل تعبیر فال قهوه — از مبتدی تا حرفه‌ای</p>
-</div>
+    <!-- منوی چسبنده -->
+    <nav class="magic-nav" id="nav">
+        <a href="#coffee" class="active">☕ فال قهوه</a>
+        <a href="#tarot">🃏 فال تاروت</a>
+        <a href="#candle">🕯️ فال شمع</a>
+        <a href="#portal">✨ فال حافظ</a>
+    </nav>
 
-<div class="full-card">
-    <h2>📖 فال حافظ — راهنمای کامل</h2>
-    <table><tr><th>موضوع</th><th>توضیح</th></tr>
-    <tr><td>📚 <strong>کتاب</strong></td><td>دیوان غزلیات حافظ شیرازی</td></tr>
-    <tr><td>🔢 <strong>تعداد غزل‌ها</strong></td><td>۴۹۵ غزل</td></tr>
-    <tr><td>🤲 <strong>نیت</strong></td><td>نیت در دل + صلوات + باز کردن کتاب</td></tr>
-    <tr><td>📖 <strong>غزل شماره ۱ (تفأل)</strong></td><td>غزل سمت راست + غزل بعدی (شاهد)</td></tr>
-    <tr><td>🎯 <strong>شب یلدا</strong></td><td>مهم‌ترین شب فال حافظ در ایران</td></tr>
-    <tr><td>💬 <strong>تعبیر</strong></td><td>نیاز به شناخت استعاره‌های شعر حافظ دارد</td></tr></table>
-    <div class="golden-box"><p>🟡 <strong>نکته طلایی:</strong> معروفترین غزل برای تفأل: <strong>«الا یا ایها الساقی ادر کأساً و ناولها»</strong> — این غزل معمولاً به فال «دولت و سعادت» تعبیر می‌شود.</p></div>
-</div>
+    <div class="container">
+        
+        <!-- فال قهوه -->
+        <section class="section" id="coffee">
+            <h2 class="section-title"><span>☕</span> رازهای فال قهوه</h2>
+            <div class="glass-box">
+                <p>فال قهوه یکی از محبوب‌ترین روش‌های پیش‌گویی در خاورمیانه است. برای این کار حتماً باید از <strong>قهوه ترک</strong> (قهوه آسیاب‌شده بسیار ریز) استفاده کنید تا رسوبات آن به دیواره فنجان بچسبد.</p>
+            </div>
+            
+            <div class="coffee-steps">
+                <div class="coffee-step">
+                    <div class="num">۱</div>
+                    <div>قهوه را آرام بنوشید و نیت خود را در ذهن مرور کنید. ته‌نشین قهوه نباید خیلی رقیق یا خیلی غلیظ باشد.</div>
+                </div>
+                <div class="coffee-step">
+                    <div class="num">۲</div>
+                    <div>فنجان را روی نعلبکی قرار داده و با یک حرکت چرخشی (معمولاً ۳ بار) آن را برگردانید.</div>
+                </div>
+                <div class="coffee-step">
+                    <div class="num">۳</div>
+                    <div>۵ تا ۱۰ دقیقه صبر کنید تا رسوبات خنک شده و خشک شوند.</div>
+                </div>
+                <div class="coffee-step">
+                    <div class="num">۴</div>
+                    <div>ابتدا نعلبکی (نماد گذشته) و سپس داخل فنجان (نماد حال و آینده) را از پایین به بالا تفسیر می‌کنند.</div>
+                </div>
+            </div>
+        </section>
 
-<div class="full-card">
-    <h2>☕ فال قهوه — آموزش گام به گام</h2>
-    <table><tr><th>مرحله</th><th>شرح</th></tr>
-    <tr><td>۱ ☕ <strong>نوشیدن قهوه</strong></td><td>قهوه ترک بنوشید — ته‌نشین داشته باشد</td></tr>
-    <tr><td>۲ 🔄 <strong>برگرداندن فنجان</strong></td><td>فنجان را برگردانید روی نعلبکی — ۳ بار بچرخانید</td></tr>
-    <tr><td>۳ ⏳ <strong>صبر کردن</strong></td><td>۵-۱۰ دقیقه صبر کنید تا رسوبات خشک شوند</td></tr>
-    <tr><td>۴ 🔍 <strong>خواندن فال</strong></td><td>از نعلبکی شروع کنید (گذشته) — فنجان (حال و آینده)</td></tr>
-    <tr><td>۵ 🔮 <strong>تعبیر</strong></td><td>اشکال: قلب (عشق)، جاده (سفر)، کوه (مشکل)، پرنده (خبر)</td></tr></table>
-    <div class="green-box"><p>🟢 <strong>توصیه:</strong> برای فال قهوه، قهوه <strong>ترک (ترکیش کافی)</strong> بهترین است. اسپرسو و قهوه فوری مناسب فال نیستند.</p></div>
-</div>
+        <!-- فال تاروت -->
+        <section class="section" id="tarot">
+            <h2 class="section-title"><span>🃏</span> کارت‌های تاروت (لمس کنید)</h2>
+            <div class="glass-box">
+                <p>تاروت یک دسته کارت ۷۸ تایی است. روی هر کارت (یا در موبایل روی آن ضربه بزنید) تا معنی آن برای شما آشکار شود.</p>
+            </div>
+            
+            <div class="tarot-grid">
+                <!-- کارت خورشید -->
+                <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <span class="icon">☀️</span>
+                            <h3>خورشید</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>موفقیت، شادی، پیروزی و انرژی مثبت در راه است.</p>
+                            <span class="hint">برای برگشت کلیک کنید</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- کارت ماه -->
+                <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <span class="icon">🌙</span>
+                            <h3>ماه</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>توهم، ترس‌های پنهان، اما در نهایت آشکار شدن حقیقت.</p>
+                            <span class="hint">برای برگشت کلیک کنید</span>
+                        </div>
+                    </div>
+                </div>
 
-<div class="full-card">
-    <h2>🃏 فال تاروت — کارت‌ها و معانی</h2>
-    <table><tr><th>دسته کارت</th><th>تعداد</th><th>معنای کلی</th><th>کارت معروف</th></tr>
-    <tr><td>🃏 <strong>آرکانای بزرگ</strong></td><td>۲۲ کارت</td><td>مسیر زندگی، سرنوشت</td><td>مرگ، عاشق، احمق، جهان</td></tr>
-    <tr><td>🍷 <strong>جام‌ها (Cups)</strong></td><td>۱۴ کارت</td><td>احساسات، عشق، روابط</td><td>تک جام، شاه جام</td></tr>
-    <tr><td>⚔️ <strong>شمشیرها (Swords)</strong></td><td>۱۴ کارت</td><td>افکار، چالش، تصمیم</td><td>سه شمشیر، آس شمشیر</td></tr>
-    <tr><td>🪙 <strong>سکه‌ها (Pentacles)</strong></td><td>۱۴ کارت</td><td>مال، کار، سلامتی</td><td>ده سکه، شاه سکه</td></tr>
-    <tr><td>🪄 <strong>چوب‌ها (Wands)</strong></td><td>۱۴ کارت</td><td>انرژی، خلاقیت، شغل</td><td>آس چوب، شوالیه چوب</td></tr></table>
-    <div class="purple-box"><p>🟣 <strong>کارت مرگ:</strong> برخلاف تصور، کارت «مرگ» در تاروت به معنای <strong>پایان و شروع دوباره</strong> است — نه مرگ فیزیکی. نشانه تحول و تغییر بزرگ در زندگی.</p></div>
-</div>
+                <!-- کارت ستاره -->
+                <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <span class="icon">⭐</span>
+                            <h3>ستاره</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>امید، الهام و شروع یک مسیر تازه. به شهود خود اعتماد کنید.</p>
+                            <span class="hint">برای برگشت کلیک کنید</span>
+                        </div>
+                    </div>
+                </div>
 
-<div class="full-card">
-    <h2>🎥 ویدئوی آموزش فال تاروت</h2>
-    <iframe width="100%" height="400" src="https://www.aparat.com/video/video/embed/videohash/8RM7N/showvideo" frameborder="0" allowfullscreen></iframe>
-    <p style="text-align:center;margin-top:10px;">🎬 آموزش کامل کارت‌های تاروت و روش خواندن آنها</p>
-</div>
+                <!-- کارت مرگ -->
+                <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <span class="icon">💀</span>
+                            <h3>مرگ</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>پایان یک مرحله و تولد دوباره. تحولی بزرگ در راه است.</p>
+                            <span class="hint">برای برگشت کلیک کنید</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<div class="full-card">
-    <h2>🕯️ فال شمع — روش کامل</h2>
-    <table><tr><th>مرحله</th><th>شرح</th></tr>
-    <tr><td>🕯️ <strong>روشن کردن شمع</strong></td><td>شمع سفید یا رنگی — نیت کنید</td></tr>
-    <tr><td>💧 <strong>چکاندن موم در آب</strong></td><td>قطره‌های موم را در ظرف آب سرد بچکانید</td></tr>
-    <tr><td>🔍 <strong>خواندن اشکال</strong></td><td>اشکال ایجاد شده در آب را تفسیر کنید</td></tr>
-    <tr><td>🔥 <strong>رفتار شعله</strong></td><td>شعله آرام = آرامش | شعله بی‌قرار = خبر ناگهانی</td></tr>
-    <tr><td>💨 <strong>دود شمع</strong></td><td>دود صاف = مسیر هموار | دود سیاه = مانع</td></tr></table>
-    <div class="red-box"><p>🔴 <strong>هشدار:</strong> فال شمع را حتماً با رعایت ایمنی انجام دهید. ظرف آب نزدیک شمع باشد. هرگز شمع را بدون مراقبت رها نکنید.</p></div>
-</div>
+        <!-- فال شمع -->
+        <section class="section" id="candle">
+            <h2 class="section-title"><span>🕯️</span> اسرار فال شمع</h2>
+            <div class="glass-box candle-container">
+                <div class="css-candle">
+                    <div class="flame"></div>
+                </div>
+                <div style="flex: 1;">
+                    <p style="color: #d4af37; font-weight: bold; margin-bottom: 10px;">رفتار شعله و دود را تفسیر کنید:</p>
+                    <ul style="color: #cbd5e1; line-height: 2; margin-right: 20px; font-size: 15px;">
+                        <li>🔥 <strong>شعله آرام:</strong> نشانه آرامش و مسیر هموار است.</li>
+                        <li>🔥 <strong>شعله بی‌قرار:</strong> نشانه انرژی‌های متغیر یا یک خبر ناگهانی.</li>
+                        <li>💨 <strong>دود صاف:</strong> رفع موانع و رسیدن به خواسته‌ها.</li>
+                        <li>💨 <strong>دود سیاه:</strong> وجود انرژی منفی که باید دور شود.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-<div class="full-card">
-    <h2>📊 مقایسه انواع فال</h2>
-    <table><tr><th>ویژگی</th><th>حافظ 📖</th><th>قهوه ☕</th><th>تاروت 🃏</th><th>شمع 🕯️</th></tr>
-    <tr><td>💰 <strong>هزینه</strong></td><td>رایگان</td><td>کم</td><td>متوسط</td><td>کم</td></tr>
-    <tr><td>⏱️ <strong>زمان</strong></td><td>۵ دقیقه</td><td>۲۰ دقیقه</td><td>۱۵-۳۰ دقیقه</td><td>۱۵ دقیقه</td></tr>
-    <tr><td>📚 <strong>یادگیری</strong></td><td>متوسط</td><td>آسان</td><td>سخت</td><td>آسان</td></tr>
-    <tr><td>🎯 <strong>دقت</strong></td><td>بالا (شاعرانه)</td><td>متوسط</td><td>بالا (جزئیات)</td><td>متوسط</td></tr>
-    <tr><td>🌟 <strong>محبوبیت</strong></td><td>بسیار بالا</td><td>بالا</td><td>در حال رشد</td><td>متوسط</td></tr>
-    <tr><td>👥 <strong>مناسب</strong></td><td>همه</td><td>دورهمی</td><td>حرفه‌ای</td><td>شب‌های خاص</td></tr></table>
-    <div class="golden-box"><p>🟡 <strong>پیشنهاد:</strong> برای شروع، <strong>فال حافظ</strong> ساده‌ترین و در دسترس‌ترین گزینه است. برای دورهمی‌های دوستانه، <strong>فال قهوه</strong> جذابیت بیشتری دارد.</p></div>
-</div>
+        <!-- پورتال فال حافظ (بخش اصلی CTA) -->
+        <section class="section portal-section" id="portal">
+            <h2 class="section-title" style="justify-content: center; margin-bottom: 30px;">✨ دیوان حافظ</h2>
+            <p style="color: #94a3b8; margin-bottom: 30px; font-size: 16px;">حالا که با تالار اسرار آشنا شدید، وقت آن است که با لسان‌الغیب سخن بگویید.</p>
+            
+            <a href="fal.html" class="portal-btn">
+                📖 ورود به کتاب فال حافظ
+            </a>
+        </section>
 
-<div class="full-card">
-    <h2>📖 فال قرآن (استخاره)</h2>
-    <table><tr><th>نوع استخاره</th><th>روش</th><th>ابزار</th></tr>
-    <tr><td>📿 <strong>استخاره با تسبیح</strong></td><td>نیت + صلوات + گرفتن تسبیح</td><td>تسبیح</td></tr>
-    <tr><td>📖 <strong>استخاره با قرآن</strong></td><td>نیت + باز کردن قرآن + نگاه به اولین آیه</td><td>قرآن کریم</td></tr>
-    <tr><td>🤲 <strong>نماز استخاره</strong></td><td>۲ رکعت نماز + دعای استخاره</td><td>سجاده</td></tr>
-    <tr><td>📱 <strong>استخاره آنلاین</strong></td><td>سایت‌ها و اپلیکیشن‌ها</td><td>گوشی</td></tr></table>
-    <div class="blue-box"><p>🔵 <strong>نکته شرعی:</strong> استخاره فقط برای <strong>رفع تردید</strong> است. در کارهای خیر (مانند ازدواج، کار حلال) بدون استخاره هم اقدام کنید. در کارهای حرام استخاره معنا ندارد.</p></div>
-</div>
+        <!-- دکمه بازگشت -->
+        <div style="text-align: center;">
+            <a href="index.html" class="back-btn">🔙 بازگشت به صفحه اصلی</a>
+        </div>
 
-<div class="full-card">
-    <h2>🌟 فال شب یلدا</h2>
-    <table><tr><th>رسم</th><th>توضیح</th></tr>
-    <tr><td>📖 <strong>فال حافظ</strong></td><td>هر مهمان نیت می‌کند و فال می‌گیرد</td></tr>
-    <tr><td>🍉 <strong>هندوانه و انار</strong></td><td>نماد شادی و برکت در سفره یلدا</td></tr>
-    <tr><td>🕯️ <strong>شمع</strong></td><td>روشن کردن شمع برای روشنایی و امید</td></tr>
-    <tr><td>📜 <strong>شاهنامه‌خوانی</strong></td><td>خواندن داستان‌های حماسی</td></tr>
-    <tr><td>👴 <strong>بزرگترها</strong></td><td>فال را بزرگتر فامیل می‌گیرد</td></tr></table>
-    <div class="green-box"><p>🟢 <strong>یلدا:</strong> طولانی‌ترین شب سال (۳۰ آذر) — بهترین شب برای فال حافظ. ایرانیان باستان معتقد بودند در این شب <strong>نور بر تاریکی پیروز می‌شود</strong>.</p></div>
-</div>
+    </div>
 
-<a href="index.html" class="back-btn">🔙 خانه</a>
-<div class="footer"><p>🌟 rahilanab.com</p></div></body></html>
+    <script>
+        // اسکرول بار
+        window.onscroll = function() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("scrollProgress").style.width = scrolled + "%";
+        };
+
+        // انیمیشن ورود بخش‌ها
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.section').forEach(section => observer.observe(section));
+
+        // منطق گوی کریستالی
+        const fortunes = [
+            "آینده متعلق به کسانی است که به رویاهایشان ایمان دارند.",
+            "به زودی خبری می‌رسد که قلب شما را روشن می‌کند.",
+            "صبر کلید حل تمام مشکلات پیش روست.",
+            "مسیری که امروز آغاز می‌کنی، درهای بزرگی را باز خواهد کرد.",
+            "نور ستاره‌ها همیشه راهنمای گمشدگان بوده است.",
+            "یک فرصت طلایی به زودی در زندگی شما ظاهر می‌شود."
+        ];
+        
+        function revealFortune() {
+            const msgBox = document.getElementById('ball-message');
+            msgBox.classList.remove('show');
+            
+            setTimeout(() => {
+                const randomMsg = fortunes[Math.floor(Math.random() * fortunes.length)];
+                msgBox.innerText = "✨ " + randomMsg;
+                msgBox.classList.add('show');
+            }, 300);
+        }
+
+        // اسکرول اسپای منو
+        const sections = document.querySelectorAll('.section');
+        const navLinks = document.querySelectorAll('.magic-nav a');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= sectionTop - 150) {
+                    current = section.getAttribute('id');
+                }
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+                                </html>
